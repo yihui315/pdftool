@@ -6,6 +6,15 @@ import { vi } from "vitest";
 
 const projectRoot = resolve(import.meta.dirname, "../..");
 
+function adaptDocument(document) {
+  const copyPages = document.copyPages.bind(document);
+  document.copyPages = (sourceDocument, indices) => copyPages(sourceDocument, Array.from(indices));
+
+  const setKeywords = document.setKeywords.bind(document);
+  document.setKeywords = (keywords) => setKeywords(Array.from(keywords));
+  return document;
+}
+
 export function loadPage(pageName, scriptName) {
   const html = readFileSync(resolve(projectRoot, pageName), "utf8");
   const script = readFileSync(resolve(projectRoot, "assets/js", scriptName), "utf8");
@@ -17,8 +26,8 @@ export function loadPage(pageName, scriptName) {
 
   dom.window.PDFLib = {
     PDFDocument: {
-      create: (...args) => PDFDocument.create(...args),
-      load: (input, options) => PDFDocument.load(new Uint8Array(input), options)
+      create: async (...args) => adaptDocument(await PDFDocument.create(...args)),
+      load: async (input, options) => adaptDocument(await PDFDocument.load(new Uint8Array(input), options))
     },
     degrees
   };
