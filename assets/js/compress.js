@@ -102,8 +102,9 @@
       largeFileTip?.classList.toggle("hidden", file.size < 50 * 1024 * 1024);
       setProgress(0, "可以开始压缩");
     } catch (error) {
-      showError("无法打开该 PDF。文件可能已损坏、加密或格式不正确。");
       resetAll(false);
+      showError("无法打开该 PDF。文件可能已损坏、加密或格式不正确。");
+      setProgress(0, "读取失败");
     } finally {
       updateButtons();
     }

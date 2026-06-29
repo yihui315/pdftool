@@ -96,6 +96,22 @@ describe("PDF tool flows", () => {
     expect(dom.window.URL.createObjectURL).not.toHaveBeenCalled();
   });
 
+  it.each([
+    ["manage.html", "manage.js"],
+    ["compress.html", "compress.js"]
+  ])("keeps damaged-PDF errors visible on %s", async (pageName, scriptName) => {
+    dom = loadPage(pageName, scriptName);
+    const damaged = new dom.window.File(["not a pdf"], "damaged.pdf", { type: "application/pdf" });
+
+    setInputFiles(dom, "[data-file-input]", [damaged]);
+    await waitFor(() => !dom.window.document.querySelector("[data-error-box]").classList.contains("hidden"));
+
+    const error = dom.window.document.querySelector("[data-error-box]");
+    expect(error.classList.contains("hidden")).toBe(false);
+    expect(error.textContent).toContain("无法打开该 PDF");
+    expect(dom.window.document.querySelector("[data-progress-label]").textContent).toBe("读取失败");
+  });
+
   it("reports a split range that exceeds the uploaded PDF", async () => {
     dom = loadPage("split.html", "split.js");
     const file = new dom.window.File([await createPdf(2)], "two-pages.pdf", { type: "application/pdf" });
