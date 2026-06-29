@@ -18,6 +18,41 @@ describe("PDF tool flows", () => {
     expect(dom.window.document.querySelector("[data-merge-button]").disabled).toBe(true);
   });
 
+  it.each([
+    ["split.html", "split.js"],
+    ["manage.html", "manage.js"],
+    ["compress.html", "compress.js"]
+  ])("rejects non-PDF files on %s", (pageName, scriptName) => {
+    dom = loadPage(pageName, scriptName);
+    const file = new dom.window.File(["notes"], "notes.txt", { type: "text/plain" });
+
+    setInputFiles(dom, "[data-file-input]", [file]);
+
+    const error = dom.window.document.querySelector("[data-error-box]");
+    expect(error.classList.contains("hidden")).toBe(false);
+    expect(error.textContent).toContain("有效的 PDF");
+  });
+
+  it("supports reordering and removing files before a merge", async () => {
+    dom = loadPage("merge.html", "merge.js");
+    const files = await Promise.all(
+      ["first.pdf", "second.pdf", "third.pdf"].map(async (name) => (
+        new dom.window.File([await createPdf()], name, { type: "application/pdf" })
+      ))
+    );
+
+    setInputFiles(dom, "[data-file-input]", files);
+    const rows = () => [...dom.window.document.querySelectorAll("[data-file-id]")];
+    expect(rows()).toHaveLength(3);
+
+    rows()[1].querySelector("[data-move-up]").click();
+    expect(rows()[0].textContent).toContain("second.pdf");
+
+    rows()[2].querySelector("[data-remove-file]").click();
+    expect(rows()).toHaveLength(2);
+    expect(dom.window.document.querySelector("[data-file-summary]").textContent).toContain("2 个文件");
+  });
+
   it("merges two valid PDF files into a downloadable result", async () => {
     dom = loadPage("merge.html", "merge.js");
     const first = new dom.window.File([await createPdf()], "first.pdf", { type: "application/pdf" });
@@ -46,6 +81,19 @@ describe("PDF tool flows", () => {
 
     expect(dom.window.document.querySelector("[data-error-box]").textContent).toContain("无法打开");
     expect(dom.window.document.querySelector("[data-result-card]").classList.contains("is-visible")).toBe(false);
+  });
+
+  it("reports when the PDF processing library is unavailable", async () => {
+    dom = loadPage("merge.html", "merge.js");
+    const first = new dom.window.File([await createPdf()], "first.pdf", { type: "application/pdf" });
+    const second = new dom.window.File([await createPdf()], "second.pdf", { type: "application/pdf" });
+
+    setInputFiles(dom, "[data-file-input]", [first, second]);
+    dom.window.PDFLib = undefined;
+    dom.window.document.querySelector("[data-merge-button]").click();
+
+    expect(dom.window.document.querySelector("[data-error-box]").textContent).toContain("pdf-lib.js");
+    expect(dom.window.URL.createObjectURL).not.toHaveBeenCalled();
   });
 
   it("reports a split range that exceeds the uploaded PDF", async () => {
@@ -81,12 +129,30 @@ describe("PDF tool flows", () => {
     expect(dom.window.document.querySelector("[data-result-meta]").textContent).toContain("已生成 3 个 PDF");
   });
 
+  it("splits custom page ranges into separate results", async () => {
+    dom = loadPage("split.html", "split.js");
+    const file = new dom.window.File([await createPdf(3)], "ranges.pdf", { type: "application/pdf" });
+
+    setInputFiles(dom, "[data-file-input]", [file]);
+    await waitFor(() => !dom.window.document.querySelector("[data-split-button]").disabled);
+
+    dom.window.document.querySelector("[data-range-input]").value = "1-2,3";
+    dom.window.document.querySelector("[data-split-button]").click();
+    await waitFor(() => dom.window.document.querySelector("[data-result-card]").classList.contains("is-visible"));
+
+    expect(dom.window.document.querySelectorAll("[data-result-list] a[download]")).toHaveLength(2);
+    expect(dom.window.document.querySelector("[data-result-meta]").textContent).toContain("已生成 2 个 PDF");
+  });
+
   it("rotates and removes pages before export", async () => {
     dom = loadPage("manage.html", "manage.js");
     const file = new dom.window.File([await createPdf(2)], "manage.pdf", { type: "application/pdf" });
 
     setInputFiles(dom, "[data-file-input]", [file]);
     await waitFor(() => dom.window.document.querySelectorAll("[data-page-id]").length === 2);
+
+    dom.window.document.querySelectorAll("[data-move-up]")[1].click();
+    expect(dom.window.document.querySelector(".page-preview").textContent).toContain("2");
 
     dom.window.document.querySelector("[data-rotate-page]").click();
     expect(dom.window.document.querySelector(".page-preview").style.transform).toBe("rotate(90deg)");
@@ -117,5 +183,10 @@ describe("PDF tool flows", () => {
     expect(dom.window.URL.createObjectURL).toHaveBeenCalledOnce();
     expect(dom.window.document.querySelector("[data-progress-percent]").textContent).toBe("100%");
     expect(dom.window.document.querySelector("[data-download-link]").download).toMatch(/^pdftool-compressed-\d{4}-\d{2}-\d{2}\.pdf$/);
+
+    dom.window.document.querySelector("[data-clear-file]").click();
+    expect(dom.window.URL.revokeObjectURL).toHaveBeenCalledWith("blob:pdftool-result");
+    expect(dom.window.document.querySelector("[data-compress-button]").disabled).toBe(true);
+    expect(dom.window.document.querySelector("[data-result-card]").classList.contains("is-visible")).toBe(false);
   });
 });
