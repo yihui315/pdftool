@@ -105,7 +105,8 @@ npm run watch:css
 
 ## 部署到 Ubuntu VPS
 
-服务器地址：154.217.241.238  
+服务器地址：154.217.241.238
+
 生产域名：https://pdftool.work
 
 ### 0. 运行上线预检
@@ -270,7 +271,7 @@ sudo systemctl reload nginx
 1. 在七个 HTML 页面的 head 中，把 ca-pub-XXXXXXXXXXXXXXXX 替换为真实 Publisher ID，并将 AdSense async script 移出 HTML 注释。
 2. 把每个 data-ad-slot 的示例数字替换为 AdSense 后台创建的真实 responsive ad unit ID。
 3. 编辑 ads.txt，删除授权记录前的 #，并替换真实 Publisher ID：
-   
+
    ~~~text
    google.com, pub-你的真实ID, DIRECT, f08c47fec0942fa0
    ~~~
