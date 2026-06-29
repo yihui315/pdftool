@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PDF压缩工具 在线 - 浏览器本地安全压缩 | pdftool.work</title>
+    <meta name="description" content="pdftool.work PDF压缩工具 在线运行，使用 pdf-lib.js 在浏览器本地优化 PDF 结构，文件不会上传服务器。" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://pdftool.work/compress.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="pdftool.work" />
+    <meta property="og:title" content="PDF压缩工具 在线 - pdftool.work" />
+    <meta property="og:description" content="上传 PDF 后在浏览器本地进行结构优化，并下载压缩结果。" />
+    <meta property="og:url" content="https://pdftool.work/compress.html" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="stylesheet" href="assets/css/tailwind.min.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <!--
+      AdSense 全站脚本位置：审核通过后替换 ca-pub-XXXXXXXXXXXXXXXX 并取消注释。
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+    -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "PDF 压缩会上传文件吗？", "acceptedAnswer": { "@type": "Answer", "text": "不会。压缩在浏览器本地完成，文件不会上传服务器。" } },
+          { "@type": "Question", "name": "为什么有些 PDF 压缩不明显？", "acceptedAnswer": { "@type": "Answer", "text": "浏览器端安全压缩主要优化 PDF 结构，不会破坏性降低图片质量，因此图片型 PDF 的体积变化可能较小。" } },
+          { "@type": "Question", "name": "压缩后会影响清晰度吗？", "acceptedAnswer": { "@type": "Answer", "text": "本站 MVP 压缩不主动重采样图片，通常不会明显降低页面清晰度。" } },
+          { "@type": "Question", "name": "可以批量压缩吗？", "acceptedAnswer": { "@type": "Answer", "text": "当前页面一次处理一个 PDF，建议大文件逐个处理以降低浏览器内存压力。" } }
+        ]
+      }
+    </script>
+  </head>
+  <body class="bg-white text-slate-900 antialiased">
+    <a class="skip-link" href="#main">跳过导航</a>
+    <header class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/95 backdrop-blur">
+      <nav class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8" aria-label="主导航">
+        <a href="index.html" class="flex items-center gap-3" aria-label="pdftool.work 首页"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 2h8l4 4v16H6z" fill="currentColor" opacity=".14"></path><path d="M14 2v5h5" fill="none" stroke="currentColor" stroke-width="1.8"></path><path d="M8.5 12h7M8.5 15h7M8.5 18h4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path></svg></span><span class="text-lg font-semibold tracking-normal text-slate-950">pdftool.work</span></a>
+        <div class="hidden items-center gap-1 lg:flex"><a class="nav-link" data-nav-link href="index.html">首页</a><a class="nav-link" data-nav-link href="merge.html">PDF合并</a><a class="nav-link" data-nav-link href="split.html">PDF分割</a><a class="nav-link" data-nav-link href="manage.html">页面管理</a><a class="nav-link" data-nav-link href="compress.html">PDF压缩</a><a class="nav-link" data-nav-link href="about.html">关于我们</a><a class="nav-link" data-nav-link href="privacy.html">隐私政策</a></div>
+        <div class="hidden items-center gap-3 lg:flex"><a class="btn btn-secondary" href="index.html#tools">查看工具</a><a class="btn btn-primary" href="#compress-tool">开始压缩</a></div>
+        <button class="icon-button lg:hidden" type="button" data-menu-toggle aria-label="打开导航菜单" aria-expanded="false" aria-controls="mobile-menu"><svg class="h-5 w-5 menu-open" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg><svg class="hidden h-5 w-5 menu-close" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg></button>
+      </nav>
+      <div id="mobile-menu" class="hidden border-t border-slate-200 bg-white px-4 py-4 shadow-soft lg:hidden" data-mobile-menu><div class="mx-auto grid max-w-7xl gap-2"><a class="mobile-nav-link" data-nav-link href="index.html">首页</a><a class="mobile-nav-link" data-nav-link href="merge.html">PDF合并</a><a class="mobile-nav-link" data-nav-link href="split.html">PDF分割</a><a class="mobile-nav-link" data-nav-link href="manage.html">页面管理</a><a class="mobile-nav-link" data-nav-link href="compress.html">PDF压缩</a><a class="mobile-nav-link" data-nav-link href="about.html">关于我们</a><a class="mobile-nav-link" data-nav-link href="privacy.html">隐私政策</a></div></div>
+    </header>
+
+    <main id="main">
+      <section class="border-b border-slate-100" data-ad-container><div class="mx-auto max-w-7xl px-4 py-3 sm:px-6 lg:px-8" aria-label="顶部横幅广告位"><!-- AdSense 顶部横幅广告位：responsive ad unit，替换后启用。 --><ins class="adsbygoogle ad-unit" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="5000000001" data-ad-format="auto" data-full-width-responsive="true"></ins></div></section>
+
+      <section class="hero-surface">
+        <div class="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 lg:grid-cols-[1fr_.72fr] lg:px-8 lg:py-16">
+          <div>
+            <h1 class="max-w-4xl text-4xl font-semibold leading-tight tracking-normal text-slate-950 sm:text-5xl">PDF压缩工具 在线：本地优化 PDF 体积</h1>
+            <p class="mt-5 max-w-3xl text-lg leading-8 text-slate-600">上传一个 PDF，工具会在浏览器本地重新整理 PDF 结构并使用对象流保存，尽量减少冗余数据。适合需要快速尝试安全压缩、又不希望上传文件的场景。</p>
+            <div class="mt-8 flex flex-col gap-3 sm:flex-row"><a class="btn btn-primary btn-lg" href="#compress-tool">上传 PDF 压缩</a><a class="btn btn-quiet btn-lg" href="privacy.html">查看隐私政策</a></div>
+          </div>
+          <div class="notice-card self-start">
+            <h2 class="text-lg font-extrabold text-slate-950">压缩方式说明</h2>
+            <p class="mt-3 text-sm leading-7 text-slate-600">MVP 版本采用安全结构优化，不主动重采样图片。因此文字型或结构冗余的 PDF 更可能变小，纯扫描图片 PDF 的压缩效果可能有限。</p>
+            <ul class="aside-list mt-4"><li>优先保留清晰度。</li><li>不上传文件到服务器。</li><li>结果可能因 PDF 结构而不同。</li></ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="compress-tool" class="section">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="tool-layout">
+            <div class="tool-panel">
+              <div class="tool-panel-header"><div class="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between"><div><h2 class="text-2xl font-bold tracking-normal text-slate-950">PDF 压缩器</h2><p class="mt-2 text-sm leading-6 text-slate-600">一次处理一个 PDF，更适合稳定完成大文件操作。</p></div><button class="btn btn-secondary" type="button" data-clear-file disabled>清空文件</button></div></div>
+              <div class="tool-panel-body">
+                <div class="drop-zone" data-drop-zone role="button" tabindex="0" aria-label="拖拽 PDF 文件到这里，或点击选择文件">
+                  <span class="drop-zone-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 15V4m0 0 4 4m-4-4-4 4M5 15v3a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+                  <div><p class="text-lg font-extrabold text-slate-950">拖拽一个 PDF 到这里</p><p class="mt-2 text-sm leading-6 text-slate-600">或点击选择文件，随后开始本地压缩。</p></div>
+                  <button class="btn btn-primary" type="button" data-select-file>选择 PDF 文件</button>
+                  <input class="hidden" type="file" accept="application/pdf,.pdf" data-file-input />
+                </div>
+                <div class="mt-5 hidden status-banner info" data-file-info></div>
+                <div class="mt-5 hidden status-banner warning" data-large-file-tip>已检测到较大的 PDF 文件。压缩过程会占用更多内存，请保持页面打开。</div>
+
+                <div class="form-grid mt-6">
+                  <div class="form-field">
+                    <label class="form-label" for="compress-mode">压缩模式</label>
+                    <select id="compress-mode" class="select-input" data-compress-mode>
+                      <option value="safe">安全结构优化（推荐）</option>
+                      <option value="clean">结构优化 + 清理元数据</option>
+                    </select>
+                    <p class="form-help">两种模式都不会主动降低图片分辨率；清理元数据会移除部分标题、作者等文档信息。</p>
+                  </div>
+                </div>
+
+                <div class="mt-6 grid gap-3"><div class="flex items-center justify-between gap-4"><span class="text-sm font-bold text-slate-700" data-progress-label>等待上传 PDF</span><span class="text-sm font-bold text-slate-500" data-progress-percent>0%</span></div><div class="progress-track" aria-hidden="true"><div class="progress-fill" data-progress-fill></div></div></div>
+                <div class="mt-5 hidden status-banner error" data-error-box></div>
+                <div class="mt-6 flex flex-col gap-3 sm:flex-row"><button class="btn btn-primary btn-lg" type="button" data-compress-button disabled>开始压缩 PDF</button><button class="btn btn-quiet btn-lg" type="button" data-reset-button disabled>重新选择</button></div>
+
+                <div class="result-card mt-6" data-result-card>
+                  <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                    <div><h3 class="text-xl font-extrabold text-slate-950">压缩完成</h3><p class="mt-2 text-sm leading-6 text-slate-600" data-result-meta>结果文件已在本地生成。</p></div>
+                    <a class="btn btn-primary" href="#" download="pdftool-compressed.pdf" data-download-link>下载压缩 PDF</a>
+                  </div>
+                  <div class="mt-4 hidden status-banner warning" data-compress-note></div>
+                  <div class="mt-4" aria-label="结果页广告位" data-ad-container><!-- AdSense 结果页广告位：responsive ad unit，替换后启用。 --><ins class="adsbygoogle ad-unit" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="5000000003" data-ad-format="auto" data-full-width-responsive="true"></ins></div>
+                </div>
+              </div>
+            </div>
+
+            <aside class="tool-aside">
+              <h2 class="text-lg font-extrabold text-slate-950">操作步骤</h2>
+              <ol class="mt-4 grid gap-4"><li class="step-item"><span>1</span><h3>上传 PDF</h3><p>选择一个需要压缩的 PDF 文件。</p></li><li class="step-item"><span>2</span><h3>选择模式</h3><p>默认使用安全结构优化，优先保持清晰度。</p></li><li class="step-item"><span>3</span><h3>下载结果</h3><p>压缩完成后下载本地生成的新 PDF。</p></li></ol>
+              <div class="mt-6 rounded-lg bg-slate-50 p-4"><h3 class="font-extrabold text-slate-950">大文件提示</h3><ul class="aside-list mt-3"><li>扫描图片型 PDF 可能压缩不明显。</li><li>大文件建议使用电脑浏览器。</li><li>处理时请勿刷新页面。</li></ul></div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="mx-auto max-w-7xl px-4 py-2 sm:px-6 lg:px-8" aria-label="工具操作区下方广告位" data-ad-container><!-- AdSense 工具操作区下方广告位：responsive ad unit，替换后启用。 --><ins class="adsbygoogle ad-unit" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="5000000002" data-ad-format="auto" data-full-width-responsive="true"></ins></section>
+
+      <section class="section bg-slate-50">
+        <div class="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[.8fr_1.2fr] lg:px-8">
+          <div><h2 class="text-3xl font-semibold leading-tight tracking-normal text-slate-950 sm:text-4xl">PDF 压缩常见问题</h2><p class="mt-5 text-base leading-8 text-slate-600">PDF压缩工具 在线适合先做安全优化。如果你需要极限压缩，可能需要服务端图片重采样能力。</p></div>
+          <div class="faq-list">
+            <div class="faq-item is-open"><button class="faq-question" type="button" data-faq-button aria-expanded="true">PDF 压缩会上传文件吗？<span class="faq-icon" aria-hidden="true"></span></button><div class="faq-panel"><p>不会。文件在浏览器本地读取和处理，不会上传服务器。</p></div></div>
+            <div class="faq-item"><button class="faq-question" type="button" data-faq-button aria-expanded="false">为什么有些文件没有变小？<span class="faq-icon" aria-hidden="true"></span></button><div class="faq-panel"><p>如果 PDF 已经高度优化，或主要由大图片组成，浏览器端结构优化的空间可能有限。</p></div></div>
+            <div class="faq-item"><button class="faq-question" type="button" data-faq-button aria-expanded="false">压缩会降低清晰度吗？<span class="faq-icon" aria-hidden="true"></span></button><div class="faq-panel"><p>本站 MVP 不主动降低图片分辨率，通常不会明显降低页面清晰度。</p></div></div>
+            <div class="faq-item"><button class="faq-question" type="button" data-faq-button aria-expanded="false">清理元数据是什么意思？<span class="faq-icon" aria-hidden="true"></span></button><div class="faq-panel"><p>它会清理部分标题、作者、主题等文档信息，减少少量体积并降低无关信息保留。</p></div></div>
+            <div class="faq-item"><button class="faq-question" type="button" data-faq-button aria-expanded="false">可以批量压缩吗？<span class="faq-icon" aria-hidden="true"></span></button><div class="faq-panel"><p>当前版本一次处理一个 PDF。这样更利于控制浏览器内存和失败率。</p></div></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-slate-200 bg-white"><div class="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:px-6 md:grid-cols-[1fr_auto] lg:px-8"><div><a href="index.html" class="flex items-center gap-3"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 2h8l4 4v16H6z" fill="currentColor" opacity=".14"></path><path d="M14 2v5h5" fill="none" stroke="currentColor" stroke-width="1.8"></path><path d="M8.5 12h7M8.5 15h7M8.5 18h4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path></svg></span><span class="text-lg font-semibold text-slate-950">pdftool.work</span></a><p class="mt-4 max-w-xl text-sm leading-6 text-slate-500">免费在线 PDF 工具站，面向日常办公、学习资料整理和轻量文档处理场景。</p></div><div class="grid gap-2 text-sm text-slate-600 sm:grid-cols-2 sm:gap-x-8"><a class="footer-link" href="merge.html">PDF合并</a><a class="footer-link" href="split.html">PDF分割</a><a class="footer-link" href="manage.html">页面管理</a><a class="footer-link" href="compress.html">PDF压缩</a><a class="footer-link" href="about.html">关于我们</a><a class="footer-link" href="privacy.html">隐私政策</a></div></div><div class="border-t border-slate-100 px-4 py-5 text-center text-sm text-slate-500">© <span data-current-year>2026</span> pdftool.work. 保留所有权利。</div></footer>
+    <script src="assets/vendor/pdf-lib.min.js" defer></script>
+    <script src="assets/js/site.js" defer></script>
+    <script src="assets/js/compress.js" defer></script>
+  </body>
+</html>

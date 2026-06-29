@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PDF页面管理 在线 - 删除、旋转、拖拽排序 | pdftool.work</title>
+    <meta name="description" content="使用 pdftool.work PDF页面管理 在线工具，删除 PDF 页面、旋转页面并拖拽调整顺序。文件仅在浏览器本地处理。" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://pdftool.work/manage.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="pdftool.work" />
+    <meta property="og:title" content="PDF页面管理 在线 - pdftool.work" />
+    <meta property="og:description" content="删除、旋转、拖拽排序 PDF 页面，并在浏览器本地导出结果。" />
+    <meta property="og:url" content="https://pdftool.work/manage.html" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="stylesheet" href="assets/css/tailwind.min.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <!--
+      AdSense 全站脚本位置：审核通过后替换 ca-pub-XXXXXXXXXXXXXXXX 并取消注释。
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+    -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "PDF 页面管理会上传文件吗？", "acceptedAnswer": { "@type": "Answer", "text": "不会。页面管理在浏览器本地完成，文件不会上传到服务器。" } },
+          { "@type": "Question", "name": "可以删除 PDF 中间的某一页吗？", "acceptedAnswer": { "@type": "Answer", "text": "可以。上传后点击对应页面卡片上的删除按钮，再导出新 PDF。" } },
+          { "@type": "Question", "name": "可以旋转页面吗？", "acceptedAnswer": { "@type": "Answer", "text": "可以。每次点击旋转按钮会顺时针旋转 90 度。" } },
+          { "@type": "Question", "name": "可以拖拽调整顺序吗？", "acceptedAnswer": { "@type": "Answer", "text": "可以。拖动页面卡片到目标位置即可调整导出顺序。" } }
+        ]
+      }
+    </script>
+  </head>
+  <body class="bg-white text-slate-900 antialiased">
+    <a class="skip-link" href="#main">跳过导航</a>
+    <header class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/95 backdrop-blur">
+      <nav class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8" aria-label="主导航">
+        <a href="index.html" class="flex items-center gap-3" aria-label="pdftool.work 首页">
+          <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 2h8l4 4v16H6z" fill="currentColor" opacity=".14"></path><path d="M14 2v5h5" fill="none" stroke="currentColor" stroke-width="1.8"></path><path d="M8.5 12h7M8.5 15h7M8.5 18h4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path></svg></span>
+          <span class="text-lg font-semibold tracking-normal text-slate-950">pdftool.work</span>
+        </a>
+        <div class="hidden items-center gap-1 lg:flex">
+          <a class="nav-link" data-nav-link href="index.html">首页</a><a class="nav-link" data-nav-link href="merge.html">PDF合并</a><a class="nav-link" data-nav-link href="split.html">PDF分割</a><a class="nav-link" data-nav-link href="manage.html">页面管理</a><a class="nav-link" data-nav-link href="compress.html">PDF压缩</a><a class="nav-link" data-nav-link href="about.html">关于我们</a><a class="nav-link" data-nav-link href="privacy.html">隐私政策</a>
+        </div>
+        <div class="hidden items-center gap-3 lg:flex"><a class="btn btn-secondary" href="index.html#tools">查看工具</a><a class="btn btn-primary" href="#manage-tool">开始管理</a></div>
+        <button class="icon-button lg:hidden" type="button" data-menu-toggle aria-label="打开导航菜单" aria-expanded="false" aria-controls="mobile-menu">
+          <svg class="h-5 w-5 menu-open" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg>
+          <svg class="hidden h-5 w-5 menu-close" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg>
+        </button>
+      </nav>
+      <div id="mobile-menu" class="hidden border-t border-slate-200 bg-white px-4 py-4 shadow-soft lg:hidden" data-mobile-menu>
+        <div class="mx-auto grid max-w-7xl gap-2">
+          <a class="mobile-nav-link" data-nav-link href="index.html">首页</a><a class="mobile-nav-link" data-nav-link href="merge.html">PDF合并</a><a class="mobile-nav-link" data-nav-link href="split.html">PDF分割</a><a class="mobile-nav-link" data-nav-link href="manage.html">页面管理</a><a class="mobile-nav-link" data-nav-link href="compress.html">PDF压缩</a><a class="mobile-nav-link" data-nav-link href="about.html">关于我们</a><a class="mobile-nav-link" data-nav-link href="privacy.html">隐私政策</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="border-b border-slate-100" data-ad-container>
+        <div class="mx-auto max-w-7xl px-4 py-3 sm:px-6 lg:px-8" aria-label="顶部横幅广告位">
+          <!-- AdSense 顶部横幅广告位：responsive ad unit，替换后启用。 -->
+          <ins class="adsbygoogle ad-unit" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="4000000001" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        </div>
+      </section>
+
+      <section class="hero-surface">
+        <div class="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 lg:grid-cols-[1fr_.72fr] lg:px-8 lg:py-16">
+          <div>
+            <h1 class="max-w-4xl text-4xl font-semibold leading-tight tracking-normal text-slate-950 sm:text-5xl">PDF页面管理 在线：删除、旋转、拖拽排序</h1>
+            <p class="mt-5 max-w-3xl text-lg leading-8 text-slate-600">把 PDF 上传到浏览器本地后，你可以删除不需要的页面，旋转横竖方向，拖拽调整页面顺序，再导出一个新的 PDF 文件。</p>
+            <div class="mt-8 flex flex-col gap-3 sm:flex-row"><a class="btn btn-primary btn-lg" href="#manage-tool">上传 PDF 管理页面</a><a class="btn btn-quiet btn-lg" href="privacy.html">文件隐私说明</a></div>
+          </div>
+          <div class="notice-card self-start">
+            <h2 class="text-lg font-extrabold text-slate-950">页面管理能力</h2>
+            <ul class="aside-list mt-4">
+              <li>删除多余页面，保留需要的内容。</li>
+              <li>顺时针旋转页面，修正文档方向。</li>
+              <li>拖拽页面卡片，重新排列导出顺序。</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="manage-tool" class="section">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="tool-layout">
+            <div class="tool-panel">
+              <div class="tool-panel-header">
+                <div class="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                  <div><h2 class="text-2xl font-bold tracking-normal text-slate-950">PDF 页面管理器</h2><p class="mt-2 text-sm leading-6 text-slate-600">上传一个 PDF 后，页面卡片会显示在下方。</p></div>
+                  <button class="btn btn-secondary" type="button" data-clear-file disabled>清空文件</button>
+                </div>
+              </div>
+              <div class="tool-panel-body">
+                <div class="drop-zone" data-drop-zone role="button" tabindex="0" aria-label="拖拽 PDF 文件到这里，或点击选择文件">
+                  <span class="drop-zone-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 15V4m0 0 4 4m-4-4-4 4M5 15v3a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+                  <div><p class="text-lg font-extrabold text-slate-950">拖拽一个 PDF 到这里</p><p class="mt-2 text-sm leading-6 text-slate-600">页面读取后可删除、旋转和排序。</p></div>
+                  <button class="btn btn-primary" type="button" data-select-file>选择 PDF 文件</button>
+                  <input class="hidden" type="file" accept="application/pdf,.pdf" data-file-input />
+                </div>
+
+                <div class="mt-5 hidden status-banner info" data-file-info></div>
+                <div class="mt-5 hidden status-banner warning" data-large-file-tip>已检测到较大的 PDF 文件。页面较多时渲染列表和导出会更慢。</div>
+
+                <div class="mt-6">
+                  <div class="mb-3 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+                    <h3 class="text-base font-extrabold text-slate-950">页面列表</h3>
+                    <span class="text-sm font-semibold text-slate-500" data-page-summary>尚未上传文件</span>
+                  </div>
+                  <div class="page-grid" data-page-grid>
+                    <div class="rounded-lg border border-dashed border-slate-300 p-5 text-center text-sm leading-6 text-slate-500">上传 PDF 后，页面卡片会显示在这里。</div>
+                  </div>
+                </div>
+
+                <div class="mt-6 grid gap-3">
+                  <div class="flex items-center justify-between gap-4"><span class="text-sm font-bold text-slate-700" data-progress-label>等待上传 PDF</span><span class="text-sm font-bold text-slate-500" data-progress-percent>0%</span></div>
+                  <div class="progress-track" aria-hidden="true"><div class="progress-fill" data-progress-fill></div></div>
+                </div>
+                <div class="mt-5 hidden status-banner error" data-error-box></div>
+                <div class="mt-6 flex flex-col gap-3 sm:flex-row"><button class="btn btn-primary btn-lg" type="button" data-export-button disabled>导出新 PDF</button><button class="btn btn-quiet btn-lg" type="button" data-reset-button disabled>重新选择</button></div>
+
+                <div class="result-card mt-6" data-result-card>
+                  <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                    <div><h3 class="text-xl font-extrabold text-slate-950">导出完成</h3><p class="mt-2 text-sm leading-6 text-slate-600" data-result-meta>新的 PDF 已在本地生成。</p></div>
+                    <a class="btn btn-primary" href="#" download="pdftool-managed.pdf" data-download-link>下载新 PDF</a>
+                  </div>
+                  <div class="mt-4" aria-label="结果页广告位" data-ad-container>
+                    <!-- AdSense 结果页广告位：responsive ad unit，建议放在下载按钮附近。 -->
+                    <ins class="adsbygoogle ad-unit" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="4000000003" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <aside class="tool-aside">
+              <h2 class="text-lg font-extrabold text-slate-950">操作步骤</h2>
+              <ol class="mt-4 grid gap-4">
+                <li class="step-item"><span>1</span><h3>上传 PDF</h3><p>读取页面数量，并生成可管理的页面卡片。</p></li>
+                <li class="step-item"><span>2</span><h3>管理页面</h3><p>删除、旋转或拖拽调整页面顺序。</p></li>
+                <li class="step-item"><span>3</span><h3>导出下载</h3><p>生成新的 PDF，并下载到本地设备。</p></li>
+              </ol>
+              <div class="mt-6 rounded-lg bg-slate-50 p-4"><h3 class="font-extrabold text-slate-950">注意事项</h3><ul class="aside-list mt-3"><li>被删除的页面不会进入最终导出。</li><li>至少需要保留 1 页才能导出。</li><li>页面很多时，建议分批处理。</li></ul></div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="mx-auto max-w-7xl px-4 py-2 sm:px-6 lg:px-8" aria-label="工具操作区下方广告位" data-ad-container>
+        <!-- AdSense 工具操作区下方广告位：responsive ad unit，替换后启用。 -->
+        <ins class="adsbygoogle ad-unit" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="4000000002" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      </section>
+
+      <section class="section bg-slate-50">
+        <div class="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[.8fr_1.2fr] lg:px-8">
+          <div><h2 class="text-3xl font-semibold leading-tight tracking-normal text-slate-950 sm:text-4xl">PDF 页面管理常见问题</h2><p class="mt-5 text-base leading-8 text-slate-600">PDF页面管理 在线工具适合快速整理页面顺序、删除空白页和修正方向。</p></div>
+          <div class="faq-list">
+            <div class="faq-item is-open"><button class="faq-question" type="button" data-faq-button aria-expanded="true">页面管理会上传文件吗？<span class="faq-icon" aria-hidden="true"></span></button><div class="faq-panel"><p>不会。文件在浏览器本地处理，不会上传到服务器。</p></div></div>
+            <div class="faq-item"><button class="faq-question" type="button" data-faq-button aria-expanded="false">可以删除多个页面吗？<span class="faq-icon" aria-hidden="true"></span></button><div class="faq-panel"><p>可以。点击页面卡片上的删除按钮即可标记删除，再次点击可恢复。</p></div></div>
+            <div class="faq-item"><button class="faq-question" type="button" data-faq-button aria-expanded="false">旋转会改变原文件吗？<span class="faq-icon" aria-hidden="true"></span></button><div class="faq-panel"><p>不会。工具会生成新的 PDF，原文件不会被修改。</p></div></div>
+            <div class="faq-item"><button class="faq-question" type="button" data-faq-button aria-expanded="false">拖拽排序在手机上好用吗？<span class="faq-icon" aria-hidden="true"></span></button><div class="faq-panel"><p>桌面端拖拽更精确。手机上也可以使用上移、下移按钮调整顺序。</p></div></div>
+            <div class="faq-item"><button class="faq-question" type="button" data-faq-button aria-expanded="false">为什么没有真实缩略图？<span class="faq-icon" aria-hidden="true"></span></button><div class="faq-panel"><p>MVP 优先保持轻量和隐私，本地以页面编号卡片展示。后续可增加缩略图渲染。</p></div></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-slate-200 bg-white">
+      <div class="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:px-6 md:grid-cols-[1fr_auto] lg:px-8">
+        <div><a href="index.html" class="flex items-center gap-3"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 2h8l4 4v16H6z" fill="currentColor" opacity=".14"></path><path d="M14 2v5h5" fill="none" stroke="currentColor" stroke-width="1.8"></path><path d="M8.5 12h7M8.5 15h7M8.5 18h4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path></svg></span><span class="text-lg font-semibold text-slate-950">pdftool.work</span></a><p class="mt-4 max-w-xl text-sm leading-6 text-slate-500">免费在线 PDF 工具站，面向日常办公、学习资料整理和轻量文档处理场景。</p></div>
+        <div class="grid gap-2 text-sm text-slate-600 sm:grid-cols-2 sm:gap-x-8"><a class="footer-link" href="merge.html">PDF合并</a><a class="footer-link" href="split.html">PDF分割</a><a class="footer-link" href="manage.html">页面管理</a><a class="footer-link" href="compress.html">PDF压缩</a><a class="footer-link" href="about.html">关于我们</a><a class="footer-link" href="privacy.html">隐私政策</a></div>
+      </div>
+      <div class="border-t border-slate-100 px-4 py-5 text-center text-sm text-slate-500">© <span data-current-year>2026</span> pdftool.work. 保留所有权利。</div>
+    </footer>
+    <script src="assets/vendor/pdf-lib.min.js" defer></script>
+    <script src="assets/js/site.js" defer></script>
+    <script src="assets/js/manage.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>免费PDF分割器 - 按页码拆分 PDF | pdftool.work</title>
+    <meta name="description" content="pdftool.work 免费PDF分割器支持按页码范围拆分 PDF，文件仅在浏览器本地处理，不上传服务器。" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://pdftool.work/split.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="pdftool.work" />
+    <meta property="og:title" content="免费PDF分割器 - pdftool.work" />
+    <meta property="og:description" content="上传一个 PDF，输入页码范围，在浏览器本地拆分并下载结果。" />
+    <meta property="og:url" content="https://pdftool.work/split.html" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="stylesheet" href="assets/css/tailwind.min.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <!--
+      AdSense 全站脚本位置：
+      审核通过后取消注释，并替换 ca-pub-XXXXXXXXXXXXXXXX。
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+    -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "PDF 分割会上传文件吗？", "acceptedAnswer": { "@type": "Answer", "text": "不会。本站 PDF 分割在浏览器本地完成，文件不会上传到服务器。" } },
+          { "@type": "Question", "name": "页码范围怎么写？", "acceptedAnswer": { "@type": "Answer", "text": "可以输入 1-3,5,8-10 这样的格式，每段范围会生成一个独立 PDF。" } },
+          { "@type": "Question", "name": "可以把每一页单独拆开吗？", "acceptedAnswer": { "@type": "Answer", "text": "可以。勾选按每页拆分后，工具会为每一页生成单独的 PDF 下载项。" } },
+          { "@type": "Question", "name": "大文件分割慢怎么办？", "acceptedAnswer": { "@type": "Answer", "text": "大文件依赖设备性能，建议使用电脑浏览器并保持页面打开。" } }
+        ]
+      }
+    </script>
+  </head>
+  <body class="bg-white text-slate-900 antialiased">
+    <a class="skip-link" href="#main">跳过导航</a>
+    <header class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/95 backdrop-blur">
+      <nav class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8" aria-label="主导航">
+        <a href="index.html" class="flex items-center gap-3" aria-label="pdftool.work 首页">
+          <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 2h8l4 4v16H6z" fill="currentColor" opacity=".14"></path><path d="M14 2v5h5" fill="none" stroke="currentColor" stroke-width="1.8"></path><path d="M8.5 12h7M8.5 15h7M8.5 18h4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path></svg></span>
+          <span class="text-lg font-semibold tracking-normal text-slate-950">pdftool.work</span>
+        </a>
+        <div class="hidden items-center gap-1 lg:flex">
+          <a class="nav-link" data-nav-link href="index.html">首页</a>
+          <a class="nav-link" data-nav-link href="merge.html">PDF合并</a>
+          <a class="nav-link" data-nav-link href="split.html">PDF分割</a>
+          <a class="nav-link" data-nav-link href="manage.html">页面管理</a>
+          <a class="nav-link" data-nav-link href="compress.html">PDF压缩</a>
+          <a class="nav-link" data-nav-link href="about.html">关于我们</a>
+          <a class="nav-link" data-nav-link href="privacy.html">隐私政策</a>
+        </div>
+        <div class="hidden items-center gap-3 lg:flex">
+          <a class="btn btn-secondary" href="index.html#tools">查看工具</a>
+          <a class="btn btn-primary" href="#split-tool">开始分割</a>
+        </div>
+        <button class="icon-button lg:hidden" type="button" data-menu-toggle aria-label="打开导航菜单" aria-expanded="false" aria-controls="mobile-menu">
+          <svg class="h-5 w-5 menu-open" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg>
+          <svg class="hidden h-5 w-5 menu-close" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg>
+        </button>
+      </nav>
+      <div id="mobile-menu" class="hidden border-t border-slate-200 bg-white px-4 py-4 shadow-soft lg:hidden" data-mobile-menu>
+        <div class="mx-auto grid max-w-7xl gap-2">
+          <a class="mobile-nav-link" data-nav-link href="index.html">首页</a>
+          <a class="mobile-nav-link" data-nav-link href="merge.html">PDF合并</a>
+          <a class="mobile-nav-link" data-nav-link href="split.html">PDF分割</a>
+          <a class="mobile-nav-link" data-nav-link href="manage.html">页面管理</a>
+          <a class="mobile-nav-link" data-nav-link href="compress.html">PDF压缩</a>
+          <a class="mobile-nav-link" data-nav-link href="about.html">关于我们</a>
+          <a class="mobile-nav-link" data-nav-link href="privacy.html">隐私政策</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="border-b border-slate-100" data-ad-container>
+        <div class="mx-auto max-w-7xl px-4 py-3 sm:px-6 lg:px-8" aria-label="顶部横幅广告位">
+          <!-- AdSense 顶部横幅广告位：responsive ad unit，替换 client 和 slot 后启用。 -->
+          <ins class="adsbygoogle ad-unit" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="3000000001" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        </div>
+      </section>
+
+      <section class="hero-surface">
+        <div class="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 lg:grid-cols-[1fr_.72fr] lg:px-8 lg:py-16">
+          <div>
+            <h1 class="max-w-4xl text-4xl font-semibold leading-tight tracking-normal text-slate-950 sm:text-5xl">免费PDF分割器：按页码范围拆分 PDF</h1>
+            <p class="mt-5 max-w-3xl text-lg leading-8 text-slate-600">上传一个 PDF，输入需要保留的页码范围，或将每一页拆成独立文件。所有操作都在浏览器本地完成，适合从长文档中提取章节、附件或指定页面。</p>
+            <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+              <a class="btn btn-primary btn-lg" href="#split-tool">上传 PDF 分割</a>
+              <a class="btn btn-quiet btn-lg" href="privacy.html">查看隐私政策</a>
+            </div>
+          </div>
+          <div class="notice-card self-start">
+            <h2 class="text-lg font-extrabold text-slate-950">页码示例</h2>
+            <p class="mt-3 text-sm leading-7 text-slate-600">输入 <strong>1-3,5,8-10</strong> 会生成 3 个结果：第 1-3 页、第 5 页、第 8-10 页。</p>
+            <ul class="aside-list mt-4">
+              <li>页码从 1 开始计算。</li>
+              <li>每个逗号分隔的范围会单独导出。</li>
+              <li>不确定页数时，先上传文件查看总页数。</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="split-tool" class="section">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="tool-layout">
+            <div class="tool-panel">
+              <div class="tool-panel-header">
+                <div class="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                  <div>
+                    <h2 class="text-2xl font-bold tracking-normal text-slate-950">PDF 分割器</h2>
+                    <p class="mt-2 text-sm leading-6 text-slate-600">选择一个 PDF，按范围拆分或每页拆分。</p>
+                  </div>
+                  <button class="btn btn-secondary" type="button" data-clear-file disabled>清空文件</button>
+                </div>
+              </div>
+              <div class="tool-panel-body">
+                <div class="drop-zone" data-drop-zone role="button" tabindex="0" aria-label="拖拽 PDF 文件到这里，或点击选择文件">
+                  <span class="drop-zone-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 15V4m0 0 4 4m-4-4-4 4M5 15v3a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+                  <div>
+                    <p class="text-lg font-extrabold text-slate-950">拖拽一个 PDF 到这里</p>
+                    <p class="mt-2 text-sm leading-6 text-slate-600">或点击选择文件，分割前会先读取总页数。</p>
+                  </div>
+                  <button class="btn btn-primary" type="button" data-select-file>选择 PDF 文件</button>
+                  <input class="hidden" type="file" accept="application/pdf,.pdf" data-file-input />
+                </div>
+
+                <div class="mt-5 hidden status-banner info" data-file-info></div>
+                <div class="mt-5 hidden status-banner warning" data-large-file-tip>已检测到较大的 PDF 文件。分割会占用更多内存，请保持页面打开。</div>
+
+                <div class="form-grid mt-6">
+                  <label class="choice-row text-sm font-bold text-slate-700">
+                    <input type="checkbox" data-single-pages />
+                    按每一页拆分为独立 PDF
+                  </label>
+                  <div class="form-field" data-range-field>
+                    <label class="form-label" for="split-ranges">页码范围</label>
+                    <input id="split-ranges" class="text-input" type="text" inputmode="text" value="1-3" data-range-input />
+                    <p class="form-help">格式示例：1-3,5,8-10。每段范围会生成一个独立 PDF。</p>
+                  </div>
+                </div>
+
+                <div class="mt-6 grid gap-3">
+                  <div class="flex items-center justify-between gap-4">
+                    <span class="text-sm font-bold text-slate-700" data-progress-label>等待上传 PDF</span>
+                    <span class="text-sm font-bold text-slate-500" data-progress-percent>0%</span>
+                  </div>
+                  <div class="progress-track" aria-hidden="true"><div class="progress-fill" data-progress-fill></div></div>
+                </div>
+
+                <div class="mt-5 hidden status-banner error" data-error-box></div>
+                <div class="mt-6 flex flex-col gap-3 sm:flex-row">
+                  <button class="btn btn-primary btn-lg" type="button" data-split-button disabled>开始分割 PDF</button>
+                  <button class="btn btn-quiet btn-lg" type="button" data-reset-button disabled>重新选择</button>
+                </div>
+
+                <div class="result-card mt-6" data-result-card>
+                  <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                    <div>
+                      <h3 class="text-xl font-extrabold text-slate-950">分割完成</h3>
+                      <p class="mt-2 text-sm leading-6 text-slate-600" data-result-meta>结果文件已在本地生成。</p>
+                    </div>
+                  </div>
+                  <div class="result-list mt-4" data-result-list></div>
+                  <div class="mt-4" aria-label="结果页广告位" data-ad-container>
+                    <!-- AdSense 结果页广告位：responsive ad unit，建议放在结果下载列表下方。 -->
+                    <ins class="adsbygoogle ad-unit" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="3000000003" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <aside class="tool-aside">
+              <h2 class="text-lg font-extrabold text-slate-950">操作步骤</h2>
+              <ol class="mt-4 grid gap-4">
+                <li class="step-item"><span>1</span><h3>上传 PDF</h3><p>选择一个需要拆分的 PDF 文件。</p></li>
+                <li class="step-item"><span>2</span><h3>输入范围</h3><p>填写页码范围，或选择每页单独拆分。</p></li>
+                <li class="step-item"><span>3</span><h3>下载结果</h3><p>分割完成后，逐个下载生成的 PDF。</p></li>
+              </ol>
+              <div class="mt-6 rounded-lg bg-slate-50 p-4">
+                <h3 class="font-extrabold text-slate-950">使用建议</h3>
+                <ul class="aside-list mt-3">
+                  <li>先确认总页数，再输入范围。</li>
+                  <li>页码不能超过 PDF 总页数。</li>
+                  <li>很多单页结果会占用更多浏览器内存。</li>
+                </ul>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="mx-auto max-w-7xl px-4 py-2 sm:px-6 lg:px-8" aria-label="工具操作区下方广告位" data-ad-container>
+        <!-- AdSense 工具操作区下方广告位：responsive ad unit，替换后启用。 -->
+        <ins class="adsbygoogle ad-unit" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="3000000002" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      </section>
+
+      <section class="section bg-slate-50">
+        <div class="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[.8fr_1.2fr] lg:px-8">
+          <div>
+            <h2 class="text-3xl font-semibold leading-tight tracking-normal text-slate-950 sm:text-4xl">PDF 分割常见问题</h2>
+            <p class="mt-5 text-base leading-8 text-slate-600">免费PDF分割器适合提取指定页面、拆章节或拆附件。下面是常见使用问题。</p>
+          </div>
+          <div class="faq-list">
+            <div class="faq-item is-open"><button class="faq-question" type="button" data-faq-button aria-expanded="true">PDF 分割会上传文件吗？<span class="faq-icon" aria-hidden="true"></span></button><div class="faq-panel"><p>不会。文件在浏览器本地读取和处理，不会上传到 pdftool.work 服务器。</p></div></div>
+            <div class="faq-item"><button class="faq-question" type="button" data-faq-button aria-expanded="false">页码范围怎么写？<span class="faq-icon" aria-hidden="true"></span></button><div class="faq-panel"><p>可以输入 1-3,5,8-10。每段范围会生成一个独立 PDF 文件。</p></div></div>
+            <div class="faq-item"><button class="faq-question" type="button" data-faq-button aria-expanded="false">可以每页拆分吗？<span class="faq-icon" aria-hidden="true"></span></button><div class="faq-panel"><p>可以。勾选“按每一页拆分为独立 PDF”即可。</p></div></div>
+            <div class="faq-item"><button class="faq-question" type="button" data-faq-button aria-expanded="false">加密 PDF 可以拆分吗？<span class="faq-icon" aria-hidden="true"></span></button><div class="faq-panel"><p>部分加密或损坏的 PDF 可能无法读取，请使用有权限且未损坏的文件。</p></div></div>
+            <div class="faq-item"><button class="faq-question" type="button" data-faq-button aria-expanded="false">为什么下载项很多？<span class="faq-icon" aria-hidden="true"></span></button><div class="faq-panel"><p>按每页拆分会为每一页生成一个文件。页数很多时建议改用页码范围。</p></div></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-slate-200 bg-white">
+      <div class="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:px-6 md:grid-cols-[1fr_auto] lg:px-8">
+        <div>
+          <a href="index.html" class="flex items-center gap-3"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 2h8l4 4v16H6z" fill="currentColor" opacity=".14"></path><path d="M14 2v5h5" fill="none" stroke="currentColor" stroke-width="1.8"></path><path d="M8.5 12h7M8.5 15h7M8.5 18h4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path></svg></span><span class="text-lg font-semibold text-slate-950">pdftool.work</span></a>
+          <p class="mt-4 max-w-xl text-sm leading-6 text-slate-500">免费在线 PDF 工具站，面向日常办公、学习资料整理和轻量文档处理场景。</p>
+        </div>
+        <div class="grid gap-2 text-sm text-slate-600 sm:grid-cols-2 sm:gap-x-8">
+          <a class="footer-link" href="merge.html">PDF合并</a><a class="footer-link" href="split.html">PDF分割</a><a class="footer-link" href="manage.html">页面管理</a><a class="footer-link" href="compress.html">PDF压缩</a><a class="footer-link" href="about.html">关于我们</a><a class="footer-link" href="privacy.html">隐私政策</a>
+        </div>
+      </div>
+      <div class="border-t border-slate-100 px-4 py-5 text-center text-sm text-slate-500">© <span data-current-year>2026</span> pdftool.work. 保留所有权利。</div>
+    </footer>
+    <script src="assets/vendor/pdf-lib.min.js" defer></script>
+    <script src="assets/js/site.js" defer></script>
+    <script src="assets/js/split.js" defer></script>
+  </body>
+</html>
