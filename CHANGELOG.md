@@ -10,6 +10,9 @@ The project uses `MAJOR.MINOR.PATCH.MICRO` version numbers.
 
 - Process PDFs entirely in the browser with merge, split, page-management, and compression tools.
 - Publish responsive Chinese-language pages with privacy, SEO, sitemap, robots, advertising placeholders, and Ubuntu/Nginx deployment assets.
+
+### For contributors
+
 - Verify browser behavior with Vitest and jsdom, including real in-memory PDF fixtures and GitHub Actions checks.
 - Cover successful downloads, invalid uploads, damaged documents, missing PDF runtime dependencies, page ranges, ordering, rotation, removal, and cleanup.
 
