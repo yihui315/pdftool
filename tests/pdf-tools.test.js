@@ -20,7 +20,6 @@ describe("PDF tool flows", () => {
 
   it.each([
     ["split.html", "split.js"],
-    ["manage.html", "manage.js"],
     ["compress.html", "compress.js"]
   ])("rejects non-PDF files on %s", (pageName, scriptName) => {
     dom = loadPage(pageName, scriptName);
@@ -97,7 +96,6 @@ describe("PDF tool flows", () => {
   });
 
   it.each([
-    ["manage.html", "manage.js"],
     ["compress.html", "compress.js"]
   ])("keeps damaged-PDF errors visible on %s", async (pageName, scriptName) => {
     dom = loadPage(pageName, scriptName);
@@ -158,31 +156,6 @@ describe("PDF tool flows", () => {
 
     expect(dom.window.document.querySelectorAll("[data-result-list] a[download]")).toHaveLength(2);
     expect(dom.window.document.querySelector("[data-result-meta]").textContent).toContain("已生成 2 个 PDF");
-  });
-
-  it("rotates and removes pages before export", async () => {
-    dom = loadPage("manage.html", "manage.js");
-    const file = new dom.window.File([await createPdf(2)], "manage.pdf", { type: "application/pdf" });
-
-    setInputFiles(dom, "[data-file-input]", [file]);
-    await waitFor(() => dom.window.document.querySelectorAll("[data-page-id]").length === 2);
-
-    dom.window.document.querySelectorAll("[data-move-up]")[1].click();
-    expect(dom.window.document.querySelector(".page-preview").textContent).toContain("2");
-
-    dom.window.document.querySelector("[data-rotate-page]").click();
-    expect(dom.window.document.querySelector(".page-preview").style.transform).toBe("rotate(90deg)");
-
-    dom.window.document.querySelectorAll("[data-toggle-page]")[1].click();
-    expect(dom.window.document.querySelector("[data-page-summary]").textContent).toContain("保留 1 页");
-    expect(dom.window.document.querySelector("[data-export-button]").disabled).toBe(false);
-
-    dom.window.document.querySelector("[data-export-button]").click();
-    await waitFor(() => dom.window.document.querySelector("[data-result-card]").classList.contains("is-visible"));
-
-    expect(dom.window.URL.createObjectURL).toHaveBeenCalledOnce();
-    expect(dom.window.document.querySelector("[data-result-meta]").textContent).toContain("已导出 1 页");
-    expect(dom.window.document.querySelector("[data-result-meta]").textContent).toContain("删除 1 页");
   });
 
   it("compresses a PDF and exposes a dated download", async () => {

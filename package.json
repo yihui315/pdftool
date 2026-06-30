@@ -9,7 +9,7 @@
     "test:browser": "playwright test",
     "test:browser:headed": "playwright test --headed",
     "test:watch": "vitest",
-    "build": "npm run build:css && node scripts/copy-vendor.mjs",
+    "build": "npm run build:css && node scripts/copy-vendor.mjs && node scripts/verify-release.mjs",
     "build:css": "tailwindcss -i ./src/tailwind.css -o ./assets/css/tailwind.min.css --minify",
     "watch:css": "tailwindcss -i ./src/tailwind.css -o ./assets/css/tailwind.min.css --watch",
     "serve": "python -m http.server 8080",

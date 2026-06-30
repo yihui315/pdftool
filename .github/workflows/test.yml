@@ -14,5 +14,7 @@ jobs:
           node-version: 24
           cache: npm
       - run: npm ci
-      - run: npm test
+      - run: npx playwright install --with-deps chromium msedge
       - run: npm run build
+      - run: npm run test:unit
+      - run: npm run test:browser
