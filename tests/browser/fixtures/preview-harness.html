@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head><meta charset="utf-8"><title>Preview harness</title></head>
+  <body>
+    <div id="canvases"></div>
+    <script src="../../../assets/vendor/pdf-lib.min.js"></script>
+    <script type="module">
+      import { createPdfPreview, createThumbnailQueue } from "../../../assets/js/pdf-preview.js";
+
+      async function createPdf(pageCount = 14) {
+        const pdf = await window.PDFLib.PDFDocument.create();
+        for (let index = 0; index < pageCount; index += 1) {
+          const page = pdf.addPage([320, 240]);
+          page.drawRectangle({
+            x: 0,
+            y: 0,
+            width: 320,
+            height: 240,
+            color: window.PDFLib.rgb((index % 3) / 2, ((index + 1) % 3) / 2, ((index + 2) % 3) / 2)
+          });
+          page.drawText(`PAGE-${index + 1}`, { x: 30, y: 100, size: 28, color: window.PDFLib.rgb(0, 0, 0) });
+        }
+        return (await pdf.save()).buffer;
+      }
+
+      window.previewHarness = {
+        async open(pageCount = 14) {
+          const session = await createPdfPreview(await createPdf(pageCount));
+          const queue = createThumbnailQueue(session);
+          const canvases = [];
+          for (let index = 0; index < pageCount; index += 1) {
+            const canvas = document.createElement("canvas");
+            canvas.dataset.page = String(index + 1);
+            document.querySelector("#canvases").append(canvas);
+            canvases.push(canvas);
+          }
+          this.session = session;
+          this.queue = queue;
+          this.canvases = canvases;
+          return session.pageCount;
+        },
+        async renderAll() {
+          await Promise.all(this.canvases.map((canvas, index) => this.queue.request({
+            key: `page-${index + 1}`,
+            pageNumber: index + 1,
+            canvas,
+            maxWidth: 180,
+            maxHeight: 240
+          })));
+          return this.queue.getMetrics();
+        },
+        firstPixels() {
+          const canvas = this.canvases[13];
+          const data = canvas.getContext("2d").getImageData(0, 0, canvas.width, canvas.height).data;
+          return { width: canvas.width, height: canvas.height, nonBlank: data.some((value, index) => index % 4 !== 3 && value < 245) };
+        },
+        async destroy() {
+          await this.queue.destroy();
+          await this.session.destroy();
+          return this.canvases.every((canvas) => canvas.width === 0 && canvas.height === 0);
+        }
+      };
+    </script>
+  </body>
+</html>
