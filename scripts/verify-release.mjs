@@ -8,6 +8,7 @@ const requiredFiles = [
   "manage.html",
   "privacy.html",
   "sitemap.xml",
+  "assets/favicon.svg",
   "assets/css/tailwind.min.css",
   "assets/css/styles.css",
   "assets/js/upload-ready.js",
