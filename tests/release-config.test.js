@@ -33,4 +33,10 @@ describe("release configuration", () => {
     expect(workflow).toContain("npm run test:unit");
     expect(workflow).toContain("npm run test:browser");
   });
+  it("uses system Chrome locally while CI keeps the installed Chromium runtime", async () => {
+    const config = await source("playwright.config.js");
+    expect(config).toContain('process.env.CI && process.env.PLAYWRIGHT_USE_SYSTEM_CHROME !== "1"');
+    expect(config).toContain('{ channel: "chrome" }');
+  });
+
 });

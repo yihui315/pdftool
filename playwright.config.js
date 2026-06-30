@@ -17,7 +17,7 @@ export default defineConfig({
       name: "chromium",
       use: {
         ...devices["Desktop Chrome"],
-        ...(process.env.PLAYWRIGHT_USE_SYSTEM_CHROME === "1" ? { channel: "chrome" } : {})
+        ...(process.env.CI && process.env.PLAYWRIGHT_USE_SYSTEM_CHROME !== "1" ? {} : { channel: "chrome" })
       }
     },
     { name: "edge", use: { ...devices["Desktop Edge"], channel: "msedge" } }
