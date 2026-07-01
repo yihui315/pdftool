@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="zh-CN" data-privacy-proof="verified">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PDF压缩到指定大小 - 材料上传助手 | pdftool.work</title>
+    <meta name="description" content="将 PDF 压缩到 200KB、500KB、1MB 或自定义上限。文件内容仅在浏览器本地处理，结果下载前可逐页检查。" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://pdftool.work/upload-ready.html" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="pdftool.work" />
+    <meta property="og:title" content="PDF压缩到指定大小 - 材料上传助手" />
+    <meta property="og:description" content="在浏览器本地把 PDF 处理到所选大小上限，并检查实际结果。" />
+    <meta property="og:url" content="https://pdftool.work/upload-ready.html" />
+    <link rel="stylesheet" href="assets/css/tailwind.min.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <!-- AdSense 全站脚本：已使用本站发布商 ID。 -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2913395948188969" crossorigin="anonymous"></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "PDF 文件会上传到服务器吗？", "acceptedAnswer": { "@type": "Answer", "text": "不会。PDF 文件内容、文件名和派生数据仅在浏览器本地处理。" } },
+          { "@type": "Question", "name": "为什么结果要保留 1% 余量？", "acceptedAnswer": { "@type": "Answer", "text": "工具按所选上限的 99% 作为安全目标，减少门户换算或显示差异带来的风险。" } },
+          { "@type": "Question", "name": "压缩后一定清晰吗？", "acceptedAnswer": { "@type": "Answer", "text": "工具不承诺自动判断清晰度。若页面被转为图片，下载前需要由你逐页检查并确认可读。" } },
+          { "@type": "Question", "name": "为什么有些 PDF 无法达到目标？", "acceptedAnswer": { "@type": "Answer", "text": "在质量下限内没有候选文件满足所选大小时，工具会保留原文件并建议调整目标。" } }
+        ]
+      }
+    </script>
+  </head>
+  <body class="bg-white text-slate-900 antialiased">
+    <a class="skip-link" href="#main">跳过导航</a>
+    <header class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/95 backdrop-blur">
+      <nav class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8" aria-label="主导航">
+        <a href="index.html" class="flex items-center gap-3" aria-label="pdftool.work 首页">
+          <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 2h8l4 4v16H6z" fill="currentColor" opacity=".14"></path><path d="M14 2v5h5" fill="none" stroke="currentColor" stroke-width="1.8"></path><path d="M8.5 12h7M8.5 15h7M8.5 18h4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path></svg></span>
+          <span class="text-lg font-semibold text-slate-950">pdftool.work</span>
+        </a>
+        <div class="hidden items-center gap-1 xl:flex">
+          <a class="nav-link" data-nav-link href="upload-ready.html">材料上传助手</a>
+          <a class="nav-link" data-nav-link href="merge.html">PDF合并</a>
+          <a class="nav-link" data-nav-link href="split.html">PDF分割</a>
+          <a class="nav-link" data-nav-link href="manage.html">页面管理</a>
+          <a class="nav-link" data-nav-link href="compress.html">普通压缩</a>
+          <a class="nav-link" data-nav-link href="privacy.html">隐私政策</a>
+        </div>
+        <button class="icon-button xl:hidden" type="button" data-menu-toggle aria-label="打开导航菜单" aria-expanded="false" aria-controls="mobile-menu">
+          <svg class="h-5 w-5 menu-open" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg>
+          <svg class="hidden h-5 w-5 menu-close" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg>
+        </button>
+      </nav>
+      <div id="mobile-menu" class="hidden border-t border-slate-200 bg-white px-4 py-4 lg:hidden" data-mobile-menu>
+        <div class="mx-auto grid max-w-7xl gap-2"><a class="mobile-nav-link" data-nav-link href="upload-ready.html">材料上传助手</a><a class="mobile-nav-link" data-nav-link href="merge.html">PDF合并</a><a class="mobile-nav-link" data-nav-link href="split.html">PDF分割</a><a class="mobile-nav-link" data-nav-link href="manage.html">页面管理</a><a class="mobile-nav-link" data-nav-link href="compress.html">普通压缩</a><a class="mobile-nav-link" data-nav-link href="privacy.html">隐私政策</a></div>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="upload-ready-intro">
+        <div class="mx-auto max-w-[960px] px-4 pt-12 pb-8 sm:px-6 lg:pt-16">
+          <p class="task-kicker">材料上传助手</p>
+          <h1>将 PDF 压到门户要求大小</h1>
+          <p class="mt-4 max-w-3xl text-lg leading-8 text-slate-600">选择大小上限，工具会在本地检查、优化并验证结果。若页面需要转为图片，下载前由你逐页确认清晰度。</p>
+          <div class="privacy-proof mt-6" data-privacy-proof-label>
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 10V8a5 5 0 0 1 10 0v2M5 10h14v11H5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path></svg>
+            <strong>PDF 文件数据上传量：0 B</strong>
+            <span>文件内容、文件名和派生数据不会上传；页面仍会加载静态资源。</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="pb-14" aria-label="PDF 指定大小处理工具">
+        <div class="mx-auto max-w-[960px] px-4 sm:px-6">
+          <div class="compatibility-notice hidden" data-mobile-notice>
+            <h2>请在桌面浏览器使用材料上传助手</h2>
+            <p>首版支持桌面版 Chrome 和 Microsoft Edge。当前设备仍可使用轻量工具，PDF 尚未被读取。</p>
+            <div class="mt-5 flex flex-wrap gap-3"><a class="btn btn-primary" href="compress.html">打开普通压缩</a><a class="btn btn-secondary" href="index.html#tools">查看基础工具</a></div>
+          </div>
+
+          <div class="upload-ready-workspace" data-workspace data-supported-flow>
+            <div data-idle-view>
+              <div class="workspace-section">
+                <div class="workspace-heading"><span>1</span><div><h2>选择文件大小上限</h2><p>按门户标注的十进制大小选择，结果会额外保留 1% 余量。</p></div></div>
+                <div class="target-segments" role="radiogroup" aria-label="文件大小上限">
+                  <label><input type="radio" name="target" value="200000" data-target-radio /><span>200 KB</span></label>
+                  <label><input type="radio" name="target" value="500000" data-target-radio checked /><span>500 KB</span></label>
+                  <label><input type="radio" name="target" value="1000000" data-target-radio /><span>1 MB</span></label>
+                  <label><input type="radio" name="target" value="custom" data-target-radio /><span>自定义</span></label>
+                </div>
+                <div class="custom-target hidden" data-custom-target>
+                  <label for="custom-target-value">自定义上限</label>
+                  <input id="custom-target-value" class="text-input" inputmode="decimal" value="2" data-custom-value />
+                  <div class="unit-segments" role="radiogroup" aria-label="自定义大小单位"><label><input type="radio" name="custom-unit" value="KB" /><span>KB</span></label><label><input type="radio" name="custom-unit" value="MB" checked /><span>MB</span></label></div>
+                  <p class="form-help" data-target-error>支持 100 KB 到 20 MB，最多两位小数。</p>
+                </div>
+              </div>
+
+              <div class="workspace-section border-t border-slate-200">
+                <div class="workspace-heading"><span>2</span><div><h2>选择一个 PDF</h2><p>支持普通、未加密且不含签名、表单或附件的 PDF。</p></div></div>
+                <div class="drop-zone upload-ready-drop" data-drop-zone role="button" tabindex="0" aria-label="拖拽 PDF 到这里，或选择文件">
+                  <span class="drop-zone-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 15V4m0 0 4 4m-4-4-4 4M5 15v3a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+                  <div><p class="text-lg font-bold text-slate-950">拖拽 PDF 到这里</p><p class="mt-1 text-base leading-6 text-slate-600">或从电脑选择一个文件，最大处理范围由页数和浏览器内存共同决定。</p></div>
+                  <button class="btn btn-secondary" type="button" data-select-file>选择 PDF</button>
+                  <input class="sr-only" type="file" accept="application/pdf,.pdf" data-file-input />
+                </div>
+                <div class="selected-file hidden" data-selected-file>
+                  <div class="min-w-0"><strong class="selected-file-name" data-selected-name></strong><span data-selected-size></span></div>
+                  <button class="icon-button" type="button" data-remove-file aria-label="移除所选文件" title="移除文件"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m7 7 10 10M17 7 7 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg></button>
+                </div>
+              </div>
+
+              <div class="workspace-action border-t border-slate-200">
+                <p data-ready-hint>选择 PDF 后即可开始。处理期间文件和目标会被锁定。</p>
+                <button class="btn btn-primary btn-lg" type="button" data-start-button disabled>检查并压缩</button>
+              </div>
+            </div>
+
+            <div class="hidden workspace-state" data-processing-view aria-live="polite">
+              <div class="processing-summary"><div><p class="task-kicker">正在本地处理</p><h2 data-processing-title>正在解析 PDF</h2><p data-processing-summary></p></div><span class="elapsed-time" data-elapsed>0 秒</span></div>
+              <ol class="stage-list" aria-label="处理阶段"><li data-stage="parsing">解析</li><li data-stage="structural">结构优化</li><li data-stage="rasterizing">页面压缩</li><li data-stage="validating">结果核验</li></ol>
+              <div class="progress-track mt-6" aria-hidden="true"><div class="progress-fill"></div></div>
+              <div class="mt-6 flex items-center justify-between gap-4"><p class="text-base text-slate-600" data-progress-detail>正在准备本地处理组件…</p><button class="btn btn-secondary" type="button" data-cancel-button>取消</button></div>
+            </div>
+
+            <div class="hidden workspace-state" data-error-view>
+              <div class="state-icon error" aria-hidden="true">!</div><h2 tabindex="-1" data-error-heading>处理未完成</h2><p data-error-message></p>
+              <div class="mt-6 flex flex-wrap gap-3"><button class="btn btn-primary" type="button" data-retry-button>重新开始</button><button class="btn btn-secondary" type="button" data-copy-diagnostic>复制本地诊断</button></div>
+              <p class="mt-3 text-sm text-slate-500" data-copy-status aria-live="polite"></p>
+            </div>
+
+            <div class="hidden workspace-state result-state" data-result-view>
+              <div class="result-summary"><div><p class="task-kicker">结果已通过大小校验</p><h2 tabindex="-1" data-result-heading>大小符合所选上限</h2><p data-result-copy></p></div><div class="result-size"><span>结果大小</span><strong data-result-size></strong></div></div>
+              <dl class="result-metrics"><div><dt>原文件</dt><dd data-original-size></dd></div><div><dt>处理方式</dt><dd data-result-method></dd></div><div><dt>安全余量</dt><dd data-result-margin></dd></div></dl>
+
+              <div class="preview-review hidden" data-preview-review>
+                <div class="preview-toolbar">
+                  <div class="preview-toggle" role="radiogroup" aria-label="预览文件"><label><input type="radio" name="preview-source" value="original" checked /><span>原文件</span></label><label><input type="radio" name="preview-source" value="result" /><span>处理结果</span></label></div>
+                  <div class="preview-controls"><button class="icon-button" type="button" data-prev-page aria-label="上一页" title="上一页">←</button><span data-page-indicator>1 / 1</span><button class="icon-button" type="button" data-next-page aria-label="下一页" title="下一页">→</button><select class="select-input" aria-label="预览缩放" data-preview-zoom><option value="0.5">50%</option><option value="1" selected>100%</option><option value="1.5">150%</option></select></div>
+                </div>
+                <div class="preview-canvas-wrap"><canvas data-preview-canvas aria-label="PDF 页面预览">当前浏览器无法显示画布预览。</canvas><div class="hidden preview-error" data-preview-error><p>这一页无法预览，请重试；原文件仍可用。</p><button class="btn btn-secondary" type="button" data-retry-preview>重试预览</button></div></div>
+                <label class="readability-check"><input type="checkbox" data-readability-confirm /><span><strong>我已检查所有页面，文字和图片仍可读</strong><small>栅格化会把页面转为图片，可能影响复制文字、搜索和辅助技术。</small></span></label>
+              </div>
+
+              <div class="download-row"><p data-download-reason>结果已经可以下载，原文件未被修改。</p><a class="btn btn-primary btn-lg" role="link" href="#" data-download-link>下载大小符合文件</a></div>
+              <!-- AdSense 结果页广告位：responsive ad unit，仅放在完整结果与下载动作之后。 -->
+              <div class="mt-6" data-ad-container><ins class="adsbygoogle ad-unit" style="display:block" data-ad-client="ca-pub-2913395948188969" data-ad-slot="6363231932" data-ad-format="auto" data-full-width-responsive="true"></ins></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- AdSense 工具操作区下方广告位：responsive ad unit，不插入处理流程。 -->
+      <section class="mx-auto max-w-[960px] px-4 pb-8 sm:px-6" aria-label="工具操作区下方广告位" data-ad-container><ins class="adsbygoogle ad-unit" style="display:block" data-ad-client="ca-pub-2913395948188969" data-ad-slot="6363231932" data-ad-format="auto" data-full-width-responsive="true"></ins></section>
+
+      <section class="upload-ready-info-band">
+        <div class="mx-auto grid max-w-[960px] gap-8 px-4 py-12 sm:px-6 md:grid-cols-2">
+          <div><h2>你看到的“符合”只指文件大小</h2><p>本站不判断具体门户是否接受文件，也不承诺自动识别页面可读性。结果会显示实际字节数；若采用页面压缩，必须由你检查并确认。</p></div>
+          <div><h2>文件始终留在这台设备</h2><p>PDF 内容、文件名、页面图像、哈希和诊断不会发送到 pdftool.work。广告和静态资源可能产生普通网络请求，详见<a href="privacy.html">隐私政策</a>。</p></div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="mx-auto grid max-w-[960px] gap-10 px-4 sm:px-6 md:grid-cols-[.7fr_1.3fr]">
+          <div><h2 class="text-3xl font-semibold text-slate-950">常见问题</h2><p class="mt-4 text-base leading-7 text-slate-600">关于大小换算、清晰度与支持范围。</p></div>
+          <div class="faq-list">
+            <div class="faq-item is-open"><button class="faq-question" type="button" data-faq-button aria-expanded="true">PDF 文件会上传到服务器吗？<span class="faq-icon" aria-hidden="true"></span></button><div class="faq-panel"><p>不会。PDF 文件内容、文件名和派生数据仅在浏览器本地处理。页面仍需加载本站静态资源，启用广告后也会有普通广告请求。</p></div></div>
+            <div class="faq-item"><button class="faq-question" type="button" data-faq-button aria-expanded="false">KB 和 MB 如何换算？<span class="faq-icon" aria-hidden="true"></span></button><div class="faq-panel"><p>本工具使用门户常见的十进制单位：1 KB = 1000 B，1 MB = 1,000,000 B，并按上限的 99% 生成安全目标。</p></div></div>
+            <div class="faq-item"><button class="faq-question" type="button" data-faq-button aria-expanded="false">压缩后一定清晰吗？<span class="faq-icon" aria-hidden="true"></span></button><div class="faq-panel"><p>不一定。结构优化通常不改变页面外观；若需要转为图片，下载前必须由你逐页检查文字和图片是否可读。</p></div></div>
+            <div class="faq-item"><button class="faq-question" type="button" data-faq-button aria-expanded="false">为什么有些 PDF 无法达到目标？<span class="faq-icon" aria-hidden="true"></span></button><div class="faq-panel"><p>图片很多、页数较多或目标过小时，所有可确认质量的候选都可能超限。此时工具不会提供不完整结果，可调整大小后重试。</p></div></div>
+            <div class="faq-item"><button class="faq-question" type="button" data-faq-button aria-expanded="false">哪些 PDF 暂不支持？<span class="faq-icon" aria-hidden="true"></span></button><div class="faq-panel"><p>首版不处理加密、数字签名、表单、XFA、附件、脚本或多媒体 PDF，以避免破坏签名或交互内容。</p></div></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-slate-200 bg-white">
+      <div class="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:px-6 md:grid-cols-[1fr_auto] lg:px-8"><div><a href="index.html" class="flex items-center gap-3"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 2h8l4 4v16H6z" fill="currentColor" opacity=".14"></path><path d="M14 2v5h5" fill="none" stroke="currentColor" stroke-width="1.8"></path><path d="M8.5 12h7M8.5 15h7M8.5 18h4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path></svg></span><span class="text-lg font-semibold text-slate-950">pdftool.work</span></a><p class="mt-4 max-w-xl text-sm leading-6 text-slate-500">浏览器本地 PDF 工具，帮助你整理和准备日常材料。</p></div><div class="grid gap-2 text-sm text-slate-600 sm:grid-cols-2 sm:gap-x-8"><a class="footer-link" href="upload-ready.html">材料上传助手</a><a class="footer-link" href="merge.html">PDF合并</a><a class="footer-link" href="split.html">PDF分割</a><a class="footer-link" href="manage.html">页面管理</a><a class="footer-link" href="about.html">关于我们</a><a class="footer-link" href="privacy.html">隐私政策</a></div></div>
+      <div class="border-t border-slate-100 px-4 py-5 text-center text-sm text-slate-500">© <span data-current-year>2026</span> pdftool.work. 保留所有权利。</div>
+    </footer>
+    <script src="assets/js/site.js" defer></script>
+    <script type="module" src="assets/js/upload-ready.js"></script>
+  </body>
+</html>

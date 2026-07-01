@@ -25,7 +25,10 @@ describe("shared site interactions", () => {
   });
 
   it("hides placeholder advertising containers", () => {
-    dom = loadPage("index.html", "site.js");
+    dom = loadPage("index.html", "site.js", {
+      transformHtml: (html) =>
+        html.replaceAll(/ca-pub-\d+/g, "ca-pub-XXXXXXXXXXXXXXXX")
+    });
     const placeholders = dom.window.document.querySelectorAll(
       '.adsbygoogle[data-ad-client*="XXXXXXXXXXXXXXXX"]'
     );
@@ -33,6 +36,18 @@ describe("shared site interactions", () => {
     expect(placeholders.length).toBeGreaterThan(0);
     placeholders.forEach((slot) => {
       expect(slot.closest("[data-ad-container]").classList.contains("hidden")).toBe(true);
+    });
+  });
+
+  it("keeps configured advertising containers available", () => {
+    dom = loadPage("index.html", "site.js");
+    const configured = dom.window.document.querySelectorAll(
+      '.adsbygoogle:not([data-ad-client*="XXXXXXXXXXXXXXXX"])'
+    );
+
+    expect(configured.length).toBeGreaterThan(0);
+    configured.forEach((slot) => {
+      expect(slot.closest("[data-ad-container]").classList.contains("hidden")).toBe(false);
     });
   });
 });

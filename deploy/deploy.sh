@@ -14,10 +14,12 @@ IDENTITY_FILE=""
 # 解析参数
 SKIP_BUILD=false
 SKIP_HEALTH=false
+EMERGENCY_SKIP_TESTS=false
 while [[ $# -gt 0 ]]; do
   case $1 in
     --skip-build) SKIP_BUILD=true; shift ;;
     --skip-health) SKIP_HEALTH=true; shift ;;
+    --emergency-skip-tests) EMERGENCY_SKIP_TESTS=true; shift ;;
     --identity) IDENTITY_FILE="$2"; shift 2 ;;
     *) echo "未知参数: $1"; exit 1 ;;
   esac
@@ -34,13 +36,22 @@ echo "   服务器: $SERVER"
 if [[ "$SKIP_BUILD" == "false" ]]; then
   echo ""
   echo "🔨 运行 npm build..."
+  npm ci --no-audit --no-fund
   npm run build
   echo "✅ 构建完成"
+fi
+
+if [[ "$EMERGENCY_SKIP_TESTS" == "true" ]]; then
+  echo "⚠️  紧急模式：已跳过单元测试和浏览器测试"
+else
+  npm run test:unit
+  PLAYWRIGHT_USE_SYSTEM_CHROME=1 npm run test:browser
 fi
 
 # 要部署的文件
 DEPLOY_FILES=(
   "index.html"
+  "upload-ready.html"
   "merge.html"
   "split.html"
   "manage.html"
@@ -63,7 +74,19 @@ REQUIRED_FILES=(
   "${DEPLOY_FILES[@]}"
   "assets/css/tailwind.min.css"
   "assets/css/styles.css"
+  "assets/js/upload-ready.js"
+  "assets/js/upload-ready-worker.mjs"
+  "assets/js/upload-ready-processing.mjs"
+  "assets/js/pdf-preview.js"
+  "assets/js/pdf-worker-entry.mjs"
   "assets/vendor/pdf-lib.min.js"
+  "assets/vendor/pdf-lib.esm.min.js"
+  "assets/vendor/pdfjs/pdf.mjs"
+  "assets/vendor/pdfjs/pdf.worker.mjs"
+  "assets/vendor/pdfjs/cmaps/Adobe-GB1-UCS2.bcmap"
+  "assets/vendor/pdfjs/standard_fonts/LiberationSans-Regular.ttf"
+  "assets/vendor/pdfjs/wasm/openjpeg.wasm"
+  "assets/vendor/pdfjs/iccs/CGATS001Compat-v2-micro.icc"
 )
 
 # 检查文件

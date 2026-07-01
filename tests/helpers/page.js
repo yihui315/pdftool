@@ -15,8 +15,9 @@ function adaptDocument(document) {
   return document;
 }
 
-export function loadPage(pageName, scriptName) {
-  const html = readFileSync(resolve(projectRoot, pageName), "utf8");
+export function loadPage(pageName, scriptName, options = {}) {
+  const { transformHtml = (value) => value } = options;
+  const html = transformHtml(readFileSync(resolve(projectRoot, pageName), "utf8"));
   const script = readFileSync(resolve(projectRoot, "assets/js", scriptName), "utf8");
   const dom = new JSDOM(html, {
     pretendToBeVisual: true,

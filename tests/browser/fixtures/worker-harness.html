@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head><meta charset="utf-8"><title>Worker harness</title></head>
+  <body>
+    <canvas id="preview" width="64" height="64"></canvas>
+    <script src="../../../assets/vendor/pdf-lib.min.js"></script>
+    <script type="module">
+      import { MAIN_MESSAGE_TYPES, PROTOCOL_VERSION, validateWorkerMessage } from "../../../assets/js/pdf-protocol.mjs";
+
+      const events = [];
+      const worker = new Worker("../../../assets/js/upload-ready-worker.mjs", { type: "module" });
+      worker.addEventListener("message", (event) => {
+        events.push(event.data);
+        window.dispatchEvent(new CustomEvent("worker-event", { detail: event.data }));
+      });
+      worker.addEventListener("error", (event) => {
+        events.push({ type: "HARNESS_ERROR", message: event.message });
+      });
+
+      window.workerHarness = {
+        events,
+        validateWorkerMessage,
+        async createPdf() {
+          const document = await window.PDFLib.PDFDocument.create();
+          const page = document.addPage([320, 240]);
+          page.drawText("FOUNDATION-ONE-PAGE", { x: 24, y: 180, size: 18 });
+          return (await document.save()).buffer;
+        },
+        async createStructuralPdf() {
+          const document = await window.PDFLib.PDFDocument.create();
+          const font = await document.embedFont(window.PDFLib.StandardFonts.Helvetica);
+          for (let pageIndex = 0; pageIndex < 100; pageIndex += 1) {
+            const page = document.addPage([595, 842]);
+            for (let line = 0; line < 20; line += 1) {
+              page.drawText(`Application material ${pageIndex + 1}-${line + 1}`, {
+                x: 40,
+                y: 800 - line * 30,
+                size: 12,
+                font
+              });
+            }
+          }
+          return (await document.save({ useObjectStreams: false })).buffer;
+        },
+        async createImagePdf() {
+          const canvas = document.createElement("canvas");
+          canvas.width = 700;
+          canvas.height = 900;
+          const context = canvas.getContext("2d");
+          const pixels = context.createImageData(canvas.width, canvas.height);
+          let seed = 123456789;
+          for (let index = 0; index < pixels.data.length; index += 4) {
+            seed = (seed * 1664525 + 1013904223) >>> 0;
+            pixels.data[index] = seed & 255;
+            pixels.data[index + 1] = (seed >>> 8) & 255;
+            pixels.data[index + 2] = (seed >>> 16) & 255;
+            pixels.data[index + 3] = 255;
+          }
+          context.putImageData(pixels, 0, 0);
+          const pngBytes = await (await fetch(canvas.toDataURL("image/png"))).arrayBuffer();
+          const pdfDocument = await window.PDFLib.PDFDocument.create();
+          const image = await pdfDocument.embedPng(pngBytes);
+          const page = pdfDocument.addPage([700, 900]);
+          page.drawImage(image, { x: 0, y: 0, width: 700, height: 900 });
+          return (await pdfDocument.save({ useObjectStreams: false })).buffer;
+        },
+        bootstrap() {
+          worker.postMessage({ type: MAIN_MESSAGE_TYPES.BOOTSTRAP, protocolVersion: PROTOCOL_VERSION });
+        },
+        start(runId, sourceBuffer, targetBytes) {
+          worker.postMessage({ type: MAIN_MESSAGE_TYPES.START, protocolVersion: PROTOCOL_VERSION, runId, sourceBuffer, targetBytes }, [sourceBuffer]);
+          return sourceBuffer.byteLength;
+        },
+        cancel(runId) {
+          worker.postMessage({ type: MAIN_MESSAGE_TYPES.CANCEL, protocolVersion: PROTOCOL_VERSION, runId });
+        },
+        terminate() { worker.terminate(); }
+      };
+    </script>
+  </body>
+</html>
