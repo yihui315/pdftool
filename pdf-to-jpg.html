@@ -1,0 +1,542 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PDF转图片工具 - 将PDF页面导出为JPG/PNG | pdftool.work</title>
+    <meta name="description" content="pdftool.work PDF转图片工具，可将PDF每一页导出为高清JPG或PNG图片。完全在浏览器本地处理，文件不上传服务器，支持批量导出。" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://pdftool.work/pdf-to-jpg.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="pdftool.work" />
+    <meta property="og:title" content="PDF转图片工具 - pdftool.work" />
+    <meta property="og:description" content="将PDF每一页导出为高清JPG或PNG图片，完全在浏览器本地处理。" />
+    <meta property="og:url" content="https://pdftool.work/pdf-to-jpg.html" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="stylesheet" href="assets/css/tailwind.min.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2913395948188969" crossorigin="anonymous"></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "PDF 转图片会上传文件吗？", "acceptedAnswer": { "@type": "Answer", "text": "不会。PDF 转图片全过程在浏览器本地完成，文件不会上传到 pdftool.work 服务器。" } },
+          { "@type": "Question", "name": "支持 PNG 输出吗？", "acceptedAnswer": { "@type": "Answer", "text": "支持。工具默认导出 JPG 图片，也支持 PNG 格式，可根据需要选择。" } },
+          { "@type": "Question", "name": "支持批量导出所有页面吗？", "acceptedAnswer": { "@type": "Answer", "text": "支持。PDF 有多少页就会生成多少张图片，可一键下载全部。" } },
+          { "@type": "Question", "name": "导出的图片清晰度如何？", "acceptedAnswer": { "@type": "Answer", "text": "默认按 2 倍分辨率渲染，保证文字和图片清晰度。可根据需要选择标准或高质量。" } }
+        ]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "如何将 PDF 转换为图片",
+        "description": "免费在线 PDF 转图片工具的使用步骤，将 PDF 每页导出为 JPG 或 PNG 格式。",
+        "step": [
+          {"@type": "HowToStep", "name": "上传 PDF 文件", "text": "点击上传按钮或拖拽 PDF 文件到上传区。" },
+          {"@type": "HowToStep", "name": "选择输出格式", "text": "选择输出为 JPG 或 PNG 格式。" },
+          {"@type": "HowToStep", "name": "点击转换按钮", "text": "点击「转换为图片」，浏览器本地渲染 PDF 每一页。" },
+          {"@type": "HowToStep", "name": "下载图片", "text": "预览每页对应的图片，可单独下载或一键打包下载全部。" }
+        ]
+      }
+    </script>
+  </head>
+  <body class="bg-white text-slate-900 antialiased">
+    <a class="skip-link" href="#main">跳过导航</a>
+    <header class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/95 backdrop-blur">
+      <nav class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8" aria-label="主导航">
+        <a href="index.html" class="flex items-center gap-3" aria-label="pdftool.work 首页">
+          <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 2h8l4 4v16H6z" fill="currentColor" opacity=".14"></path><path d="M14 2v5h5" fill="none" stroke="currentColor" stroke-width="1.8"></path><path d="M8.5 12h7M8.5 15h7M8.5 18h4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path></svg></span>
+          <span class="text-lg font-semibold tracking-normal text-slate-950">pdftool.work</span>
+        </a>
+        <div class="hidden items-center gap-1 xl:flex">
+          <a class="nav-link" data-nav-link href="index.html">首页</a>
+          <a class="nav-link" data-nav-link href="merge.html">PDF合并</a>
+          <a class="nav-link" data-nav-link href="split.html">PDF分割</a>
+          <a class="nav-link" data-nav-link href="manage.html">页面管理</a>
+          <a class="nav-link" data-nav-link href="compress.html">PDF压缩</a>
+          <a class="nav-link text-indigo-600 font-semibold" data-nav-link href="pdf-to-jpg.html">PDF转图片</a>
+          <a class="nav-link" data-nav-link href="jpg-to-pdf.html">图片转PDF</a>
+          <a class="nav-link" data-nav-link href="pdf-rotate.html">PDF旋转</a>
+          <a class="nav-link" data-nav-link href="pdf-unlock.html">PDF解锁</a>
+          <a class="nav-link" data-nav-link href="about.html">关于我们</a>
+          <a class="nav-link" data-nav-link href="privacy.html">隐私政策</a>
+        </div>
+        <button class="icon-button xl:hidden" type="button" data-menu-toggle aria-label="打开导航菜单" aria-expanded="false" aria-controls="mobile-menu"><svg class="h-5 w-5 menu-open" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg><svg class="hidden h-5 w-5 menu-close" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg></button>
+      </nav>
+      <div id="mobile-menu" class="hidden border-t border-slate-200 bg-white px-4 py-4 shadow-soft xl:hidden" data-mobile-menu><div class="mx-auto grid max-w-7xl gap-2"><a class="mobile-nav-link" data-nav-link href="index.html">首页</a><a class="mobile-nav-link" data-nav-link href="merge.html">PDF合并</a><a class="mobile-nav-link" data-nav-link href="split.html">PDF分割</a><a class="mobile-nav-link" data-nav-link href="manage.html">页面管理</a><a class="mobile-nav-link" data-nav-link href="compress.html">PDF压缩</a><a class="mobile-nav-link text-indigo-600 font-semibold" data-nav-link href="pdf-to-jpg.html">PDF转图片</a><a class="mobile-nav-link" data-nav-link href="jpg-to-pdf.html">图片转PDF</a><a class="mobile-nav-link" data-nav-link href="pdf-rotate.html">PDF旋转</a><a class="mobile-nav-link" data-nav-link href="pdf-unlock.html">PDF解锁</a><a class="mobile-nav-link" data-nav-link href="about.html">关于我们</a><a class="mobile-nav-link" data-nav-link href="privacy.html">隐私政策</a></div></div>
+    </header>
+
+    <main id="main">
+      <section class="border-b border-slate-100" data-ad-container>
+        <div class="mx-auto max-w-7xl px-4 py-3 sm:px-6 lg:px-8" aria-label="顶部广告位">
+          <ins class="adsbygoogle ad-unit" style="display: block" data-ad-client="ca-pub-2913395948188969" data-ad-slot="6363231932" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        </div>
+      </section>
+
+      <section class="hero-surface">
+        <div class="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 lg:grid-cols-[1fr_.72fr] lg:px-8 lg:py-16">
+          <div>
+            <h1 class="max-w-4xl text-4xl font-semibold leading-tight tracking-normal text-slate-950 sm:text-5xl">
+              PDF转图片工具：把 PDF 每一页导出为 JPG
+            </h1>
+            <p class="mt-5 max-w-3xl text-lg leading-8 text-slate-600">
+              上传 PDF，选择输出格式，浏览器本地将每一页渲染为高清图片。整个过程不使用服务器，适合需要提取 PDF 内容做图片素材的场景。
+            </p>
+            <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+              <a class="btn btn-primary btn-lg" href="#convert-tool">
+                上传 PDF 开始
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 15V4m0 0 4 4m-4-4-4 4M5 15v3a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              </a>
+              <a class="btn btn-quiet btn-lg" href="privacy.html">文件隐私说明</a>
+            </div>
+          </div>
+          <div class="notice-card self-start">
+            <h2 class="text-lg font-extrabold text-slate-950">本地处理承诺</h2>
+            <p class="mt-3 text-sm leading-7 text-slate-600">
+              PDF 文件只会被当前浏览器读取，用于渲染图片。本站不会把文件上传到服务器。
+            </p>
+            <dl class="mt-5 grid gap-3">
+              <div class="flex items-center justify-between rounded-lg bg-slate-50 px-3 py-2">
+                <dt class="text-sm text-slate-500">处理方式</dt>
+                <dd class="text-sm font-bold text-slate-900">浏览器本地</dd>
+              </div>
+              <div class="flex items-center justify-between rounded-lg bg-slate-50 px-3 py-2">
+                <dt class="text-sm text-slate-500">输出格式</dt>
+                <dd class="text-sm font-bold text-slate-900">JPG / PNG</dd>
+              </div>
+              <div class="flex items-center justify-between rounded-lg bg-slate-50 px-3 py-2">
+                <dt class="text-sm text-slate-500">分辨率</dt>
+                <dd class="text-sm font-bold text-slate-900">2x 清晰度</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-slate-50 border-b border-slate-200">
+        <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+          <div class="mx-auto max-w-3xl">
+            <h2 class="text-2xl font-bold text-slate-950 mb-8 text-center">如何使用 PDF 转图片工具</h2>
+            <div class="grid gap-6 sm:grid-cols-2">
+              <div class="flex gap-4">
+                <div class="flex-shrink-0 w-8 h-8 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold text-sm">1</div>
+                <div>
+                  <h3 class="font-semibold text-slate-950">上传 PDF 文件</h3>
+                  <p class="mt-1 text-sm text-slate-600">点击上传按钮或拖拽 PDF 文件到上传区。</p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <div class="flex-shrink-0 w-8 h-8 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold text-sm">2</div>
+                <div>
+                  <h3 class="font-semibold text-slate-950">选择输出格式</h3>
+                  <p class="mt-1 text-sm text-slate-600">选择输出为 JPG 或 PNG 格式。</p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <div class="flex-shrink-0 w-8 h-8 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold text-sm">3</div>
+                <div>
+                  <h3 class="font-semibold text-slate-950">点击转换按钮</h3>
+                  <p class="mt-1 text-sm text-slate-600">点击「转换为图片」，浏览器本地渲染 PDF 每一页。</p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <div class="flex-shrink-0 w-8 h-8 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold text-sm">4</div>
+                <div>
+                  <h3 class="font-semibold text-slate-950">下载图片</h3>
+                  <p class="mt-1 text-sm text-slate-600">预览每页对应的图片，可单独下载或打包下载全部。</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="convert-tool" class="section">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="tool-layout">
+            <div class="tool-panel">
+              <div class="tool-panel-header">
+                <div class="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                  <div>
+                    <h2 class="text-2xl font-bold tracking-normal text-slate-950">PDF 转图片</h2>
+                    <p class="mt-2 text-sm leading-6 text-slate-600">上传 PDF，选择格式，点击转换后会显示每一页的图片预览。</p>
+                  </div>
+                  <button class="btn btn-secondary" type="button" data-clear-file disabled>清空</button>
+                </div>
+              </div>
+
+              <div class="tool-panel-body">
+                <div class="drop-zone" data-drop-zone role="button" tabindex="0" aria-label="拖拽 PDF 文件到这里，或点击选择文件">
+                  <span class="drop-zone-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none"><path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2 1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                  </span>
+                  <div>
+                    <p class="text-lg font-extrabold text-slate-950">拖拽 PDF 到这里</p>
+                    <p class="mt-2 text-sm leading-6 text-slate-600">或点击选择文件，支持 PDF 文档。</p>
+                  </div>
+                  <button class="btn btn-primary" type="button" data-select-files>选择 PDF 文件</button>
+                  <input class="hidden" type="file" accept="application/pdf,.pdf" data-file-input />
+                </div>
+
+                <div class="mt-5 flex gap-4 items-center">
+                  <label class="text-sm font-medium text-slate-700">输出格式：</label>
+                  <select id="output-format" class="btn btn-secondary text-sm">
+                    <option value="jpeg">JPG</option>
+                    <option value="png">PNG</option>
+                  </select>
+                  <label class="text-sm font-medium text-slate-700 ml-4">图片质量：</label>
+                  <select id="output-quality" class="btn btn-secondary text-sm">
+                    <option value="0.8">标准</option>
+                    <option value="0.95" selected>高质量</option>
+                  </select>
+                </div>
+
+                <div class="status-banner info mt-4" data-file-name style="display:none">
+                  <span class="font-semibold">已选文件：</span> <span data-display-name></span>
+                </div>
+
+                <div class="mt-5" id="page-count-display" style="display:none">
+                  <span class="text-sm text-slate-600">共 <span id="page-count" class="font-bold text-slate-900"></span> 页</span>
+                </div>
+
+                <div class="mt-6" id="preview-area" style="display:none">
+                  <h3 class="mb-3 text-base font-extrabold text-slate-950">图片预览</h3>
+                  <div id="image-grid" class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3"></div>
+                  <div class="mt-6 flex gap-3 flex-wrap">
+                    <button class="btn btn-primary" type="button" id="download-all" disabled>打包下载全部</button>
+                  </div>
+                </div>
+
+                <div class="mt-6 flex justify-center" id="loading-indicator" style="display:none">
+                  <div class="flex items-center gap-3 text-slate-500">
+                    <svg class="animate-spin h-5 w-5" viewBox="0 0 24 24" fill="none"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path></svg>
+                    <span id="loading-text">正在渲染第 1 页...</span>
+                  </div>
+                </div>
+
+                <div class="mt-6" id="action-area" style="display:none">
+                  <button class="btn btn-primary btn-lg w-full sm:w-auto" type="button" id="convert-btn" disabled>
+                    转换为图片
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="notice-panel">
+              <h3 class="text-base font-extrabold text-slate-950 mb-3">注意事项</h3>
+              <ul class="aside-list">
+                <li>PDF 转图片在浏览器本地处理，不上传文件。</li>
+                <li>每个 PDF 页面会生成一张对应图片。</li>
+                <li>支持有密码保护的 PDF 解锁后转换。</li>
+                <li>大文件建议在电脑浏览器中完成。</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-slate-50 border-b border-slate-200">
+        <div class="mx-auto max-w-7xl px-4 py-3 sm:px-6 lg:px-8" aria-label="工具操作区下方广告位">
+          <ins class="adsbygoogle ad-unit" style="display: block" data-ad-client="ca-pub-2913395948188969" data-ad-slot="6363231932" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="mx-auto max-w-3xl">
+          <h2 class="text-3xl font-semibold leading-tight tracking-normal text-slate-950 sm:text-4xl">PDF转图片常见问题</h2>
+          <p class="mt-5 text-base leading-8 text-slate-600">
+            关于免费 PDF 转图片工具的常见疑问。隐私相关细节也可以查看隐私政策页。
+          </p>
+          <div class="faq-list mt-8">
+            <div class="faq-item is-open">
+              <button class="faq-question" type="button" data-faq-button aria-expanded="true">
+                PDF 转图片时文件会上传到服务器吗？
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-panel">
+                <p>不会。PDF 转图片全过程在浏览器本地完成，文件不会上传到 pdftool.work 服务器。</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" type="button" data-faq-button aria-expanded="false">
+                支持 PNG 输出吗？
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-panel">
+                <p>支持。工具默认导出 JPG 图片，也支持 PNG 格式，可根据需要选择。</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" type="button" data-faq-button aria-expanded="false">
+                导出的图片清晰度如何？
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-panel">
+                <p>默认按 2 倍分辨率渲染，保证文字和图片清晰度。可根据需要选择标准或高质量。</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" type="button" data-faq-button aria-expanded="false">
+                支持批量导出所有页面吗？
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-panel">
+                <p>支持。PDF 有多少页就会生成多少张图片，可一键下载全部打包文件。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-slate-50 border-t border-slate-200">
+        <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+          <h2 class="text-2xl font-bold text-slate-950 mb-8 text-center">其他免费 PDF 工具</h2>
+          <div class="grid gap-6 sm:grid-cols-3">
+            <a href="merge.html" class="group flex flex-col items-center gap-3 rounded-xl border border-slate-200 bg-white p-6 text-center transition-shadow hover:shadow-md">
+              <span class="text-3xl">📎</span>
+              <span class="font-semibold text-slate-950">PDF 合并</span>
+              <span class="text-sm text-slate-500">多个 PDF 合并成一个</span>
+            </a>
+            <a href="split.html" class="group flex flex-col items-center gap-3 rounded-xl border border-slate-200 bg-white p-6 text-center transition-shadow hover:shadow-md">
+              <span class="text-3xl">✂️</span>
+              <span class="font-semibold text-slate-950">PDF 分割</span>
+              <span class="text-sm text-slate-500">按页码拆分 PDF</span>
+            </a>
+            <a href="jpg-to-pdf.html" class="group flex flex-col items-center gap-3 rounded-xl border border-slate-200 bg-white p-6 text-center transition-shadow hover:shadow-md">
+              <span class="text-3xl">🖼️</span>
+              <span class="font-semibold text-slate-950">图片转PDF</span>
+              <span class="text-sm text-slate-500">JPG/PNG 图片转 PDF</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-slate-200 bg-white">
+      <div class="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:px-6 md:grid-cols-[1fr_auto] lg:px-8">
+        <div>
+          <a href="index.html" class="flex items-center gap-3">
+            <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 2h8l4 4v16H6z" fill="currentColor" opacity=".14"></path><path d="M14 2v5h5" fill="none" stroke="currentColor" stroke-width="1.8"></path><path d="M8.5 12h7M8.5 15h7M8.5 18h4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path></svg></span>
+            <span class="text-lg font-semibold text-slate-950">pdftool.work</span>
+          </a>
+          <p class="mt-4 max-w-xl text-sm leading-6 text-slate-500">免费在线 PDF 工具站，面向日常办公、学习资料整理和轻量文档处理场景。</p>
+        </div>
+        <div class="grid gap-2 text-sm text-slate-600 sm:grid-cols-2 sm:gap-x-8">
+          <a class="footer-link" href="merge.html">PDF合并</a>
+          <a class="footer-link" href="split.html">PDF分割</a>
+          <a class="footer-link" href="manage.html">页面管理</a>
+          <a class="footer-link" href="compress.html">PDF压缩</a>
+          <a class="footer-link" href="pdf-to-jpg.html">PDF转图片</a>
+          <a class="footer-link" href="jpg-to-pdf.html">图片转PDF</a>
+          <a class="footer-link" href="pdf-rotate.html">PDF旋转</a>
+          <a class="footer-link" href="pdf-unlock.html">PDF解锁</a>
+          <a class="footer-link" href="about.html">关于我们</a>
+          <a class="footer-link" href="privacy.html">隐私政策</a>
+        </div>
+      </div>
+      <div class="border-t border-slate-100 px-4 py-5 text-center text-sm text-slate-500">
+        <span>© <span data-current-year>2026</span> pdftool.work. 保留所有权利。</span>
+      </div>
+    </footer>
+
+    <script src="assets/vendor/pdf-lib.min.js" defer></script>
+    <script src="assets/js/site.js" defer></script>
+    <script type="module">
+    import "./assets/js/pdfjs-polyfills.mjs";
+    import * as pdfjsLib from "./assets/vendor/pdfjs/pdf.mjs";
+    pdfjsLib.GlobalWorkerOptions.workerSrc = new URL("assets/js/pdf-worker-entry.mjs", window.location.href).href;
+
+    (function() {
+      'use strict';
+
+      var fileInput = document.querySelector('[data-file-input]');
+      var dropZone = document.querySelector('[data-drop-zone]');
+      var clearBtn = document.querySelector('[data-clear-file]');
+      var fileNameBanner = document.querySelector('[data-file-name]');
+      var displayName = document.querySelector('[data-display-name]');
+      var pageCountDisplay = document.getElementById('page-count-display');
+      var pageCountEl = document.getElementById('page-count');
+      var previewArea = document.getElementById('preview-area');
+      var imageGrid = document.getElementById('image-grid');
+      var actionArea = document.getElementById('action-area');
+      var convertBtn = document.getElementById('convert-btn');
+      var loadingIndicator = document.getElementById('loading-indicator');
+      var loadingText = document.getElementById('loading-text');
+      var downloadAllBtn = document.getElementById('download-all');
+      var outputFormat = document.getElementById('output-format');
+      var outputQuality = document.getElementById('output-quality');
+
+      var currentPdf = null;
+      var currentImages = [];
+      var totalPages = 0;
+
+      function clearImages() {
+        currentImages.forEach(function(image) { URL.revokeObjectURL(image.url); });
+        currentImages = [];
+      }
+
+      function showFileBanner(name) {
+        fileNameBanner.style.display = 'block';
+        displayName.textContent = name;
+      }
+
+      function hideFileBanner() {
+        fileNameBanner.style.display = 'none';
+      }
+
+      function enable(btn) { btn && (btn.disabled = false); }
+      function disable(btn) { btn && (btn.disabled = true); }
+
+      function handleFile(file) {
+        if (!file || file.type !== 'application/pdf') return;
+        if (currentPdf) void currentPdf.destroy().catch(function() {});
+        currentPdf = null;
+        clearImages();
+        showFileBanner(file.name);
+        enable(clearBtn);
+
+        var reader = new FileReader();
+        reader.onload = function(e) {
+          var typedarray = new Uint8Array(e.target.result);
+          var pdfJsBaseUrl = new URL("assets/vendor/pdfjs/", window.location.href);
+          pdfjsLib.getDocument({
+            data: typedarray,
+            cMapUrl: new URL("cmaps/", pdfJsBaseUrl).href,
+            cMapPacked: true,
+            standardFontDataUrl: new URL("standard_fonts/", pdfJsBaseUrl).href,
+            wasmUrl: new URL("wasm/", pdfJsBaseUrl).href,
+            iccUrl: new URL("iccs/", pdfJsBaseUrl).href,
+            useWorkerFetch: false,
+            isImageDecoderSupported: false,
+            isEvalSupported: false
+          }).promise.then(function(pdf) {
+            currentPdf = pdf;
+            totalPages = pdf.numPages;
+            pageCountEl.textContent = totalPages;
+            pageCountDisplay.style.display = 'block';
+            actionArea.style.display = 'block';
+            enable(convertBtn);
+            previewArea.style.display = 'none';
+            currentImages = [];
+          }).catch(function(err) {
+            alert('无法读取 PDF：' + err.message);
+          });
+        };
+        reader.readAsArrayBuffer(file);
+      }
+
+      fileInput.addEventListener('change', function(e) {
+        if (e.target.files[0]) handleFile(e.target.files[0]);
+      });
+
+      dropZone.addEventListener('click', function(e) {
+        if (e.target !== dropZone.querySelector('button')) fileInput.click();
+      });
+
+      dropZone.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') fileInput.click();
+      });
+
+      clearBtn.addEventListener('click', function() {
+        if (currentPdf) void currentPdf.destroy().catch(function() {});
+        currentPdf = null;
+        clearImages();
+        totalPages = 0;
+        fileInput.value = '';
+        hideFileBanner();
+        pageCountDisplay.style.display = 'none';
+        previewArea.style.display = 'none';
+        actionArea.style.display = 'none';
+        disable(clearBtn);
+        disable(convertBtn);
+        disable(downloadAllBtn);
+      });
+
+      convertBtn.addEventListener('click', function() {
+        if (!currentPdf) return;
+        var scale = outputQuality.value === '0.95' ? 2 : 1;
+        var format = outputFormat.value;
+        var mimeType = format === 'png' ? 'image/png' : 'image/jpeg';
+        var quality = format === 'png' ? undefined : parseFloat(outputQuality.value);
+
+        imageGrid.innerHTML = '';
+        previewArea.style.display = 'block';
+        actionArea.style.display = 'none';
+        loadingIndicator.style.display = 'flex';
+        disable(convertBtn);
+        disable(downloadAllBtn);
+        clearImages();
+
+        var rendered = 0;
+
+        for (var i = 1; i <= totalPages; i++) {
+          (function(pageNum) {
+            currentPdf.getPage(pageNum).then(function(page) {
+              var viewport = page.getViewport({scale: scale});
+              var canvas = document.createElement('canvas');
+              var ctx = canvas.getContext('2d');
+              canvas.width = viewport.width;
+              canvas.height = viewport.height;
+
+              page.render({canvasContext: ctx, viewport: viewport}).promise.then(function() {
+                canvas.toBlob(function(blob) {
+                  var url = URL.createObjectURL(blob);
+                  currentImages.push({page: pageNum, url: url, name: 'page-' + pageNum + '.' + format});
+
+                  var card = document.createElement('div');
+                  card.className = 'border border-slate-200 rounded-lg overflow-hidden bg-white';
+                  card.innerHTML = '<div class="p-2 bg-slate-50 text-center text-sm font-semibold text-slate-600">第 ' + pageNum + ' 页</div><img src="' + url + '" class="w-full" alt="Page ' + pageNum + '"/><div class="p-2 text-center"><a href="' + url + '" download="page-' + pageNum + '.' + format + '" class="btn btn-secondary text-sm">下载</a></div>';
+                  imageGrid.appendChild(card);
+
+                  rendered++;
+                  loadingText.textContent = '正在渲染第 ' + Math.min(rendered + 1, totalPages) + ' 页...';
+
+                  if (rendered === totalPages) {
+                    loadingIndicator.style.display = 'none';
+                    enable(downloadAllBtn);
+                  }
+                }, mimeType, quality);
+              });
+            });
+          })(i);
+        }
+      });
+
+      downloadAllBtn.addEventListener('click', function() {
+        if (currentImages.length === 0) return;
+        // Simple approach: download each in sequence
+        currentImages.forEach(function(img, idx) {
+          setTimeout(function() {
+            var a = document.createElement('a');
+            a.href = img.url;
+            a.download = img.name;
+            a.click();
+          }, idx * 300);
+        });
+      });
+
+      // Drag and drop
+      dropZone.addEventListener('dragover', function(e) {
+        e.preventDefault();
+        dropZone.classList.add('drop-zone-hover');
+      });
+      dropZone.addEventListener('dragleave', function() {
+        dropZone.classList.remove('drop-zone-hover');
+      });
+      dropZone.addEventListener('drop', function(e) {
+        e.preventDefault();
+        dropZone.classList.remove('drop-zone-hover');
+        if (e.dataTransfer.files[0]) handleFile(e.dataTransfer.files[0]);
+      });
+
+      window.addEventListener('beforeunload', function() {
+        if (currentPdf) void currentPdf.destroy().catch(function() {});
+        clearImages();
+      });
+    })();
+    </script>
+  </body>
+</html>

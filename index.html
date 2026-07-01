@@ -112,17 +112,21 @@
           <span class="text-lg font-semibold tracking-normal text-slate-950">pdftool.work</span>
         </a>
 
-        <div class="hidden items-center gap-1 lg:flex">
+        <div class="hidden items-center gap-1 xl:flex">
           <a class="nav-link" data-nav-link href="index.html">首页</a><a class="nav-link" data-nav-link href="upload-ready.html">材料上传助手</a>
           <a class="nav-link" data-nav-link href="merge.html">PDF合并</a>
           <a class="nav-link" data-nav-link href="split.html">PDF分割</a>
           <a class="nav-link" data-nav-link href="manage.html">页面管理</a>
           <a class="nav-link" data-nav-link href="compress.html">PDF压缩</a>
+          <a class="nav-link" data-nav-link href="pdf-to-jpg.html">PDF转图片</a>
+          <a class="nav-link" data-nav-link href="jpg-to-pdf.html">图片转PDF</a>
+          <a class="nav-link" data-nav-link href="pdf-rotate.html">PDF旋转</a>
+          <a class="nav-link" data-nav-link href="pdf-unlock.html">PDF解锁</a>
           <a class="nav-link" data-nav-link href="about.html">关于我们</a>
           <a class="nav-link" data-nav-link href="privacy.html">隐私政策</a>
         </div>
 
-        <div class="hidden items-center gap-3 lg:flex">
+        <div class="hidden items-center gap-3 xl:flex">
           <a class="btn btn-secondary" href="#tools">查看工具</a>
           <a class="btn btn-primary" href="merge.html">
             开始合并
@@ -133,7 +137,7 @@
         </div>
 
         <button
-          class="icon-button lg:hidden"
+          class="icon-button xl:hidden"
           type="button"
           data-menu-toggle
           aria-label="打开导航菜单"
@@ -149,14 +153,14 @@
         </button>
       </nav>
 
-      <div id="mobile-menu" class="hidden border-t border-slate-200 bg-white px-4 py-4 shadow-soft lg:hidden" data-mobile-menu>
+      <div id="mobile-menu" class="hidden border-t border-slate-200 bg-white px-4 py-4 shadow-soft xl:hidden" data-mobile-menu>
         <div class="mx-auto grid max-w-7xl gap-2">
           <a class="mobile-nav-link" data-nav-link href="index.html">首页</a><a class="mobile-nav-link" data-nav-link href="upload-ready.html">材料上传助手</a>
           <a class="mobile-nav-link" data-nav-link href="merge.html">PDF合并</a>
           <a class="mobile-nav-link" data-nav-link href="split.html">PDF分割</a>
           <a class="mobile-nav-link" data-nav-link href="manage.html">页面管理</a>
           <a class="mobile-nav-link" data-nav-link href="compress.html">PDF压缩</a>
-          <a class="mobile-nav-link" data-nav-link href="about.html">关于我们</a>
+          <a class="mobile-nav-link" data-nav-link href="pdf-to-jpg.html">PDF转图片</a><a class="mobile-nav-link" data-nav-link href="jpg-to-pdf.html">图片转PDF</a><a class="mobile-nav-link" data-nav-link href="pdf-rotate.html">PDF旋转</a><a class="mobile-nav-link" data-nav-link href="pdf-unlock.html">PDF解锁</a><a class="mobile-nav-link" data-nav-link href="about.html">关于我们</a>
           <a class="mobile-nav-link" data-nav-link href="privacy.html">隐私政策</a>
         </div>
       </div>
@@ -342,6 +346,50 @@
               </span>
               <h3>PDF 压缩</h3>
               <p>PDF压缩工具 在线，优先减少冗余结构并保留可读性。</p>
+              <span class="tool-link">进入工具</span>
+            </a>
+
+            <a class="tool-card" href="pdf-to-jpg.html">
+              <span class="tool-icon bg-purple-50 text-purple-600">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2 1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </span>
+              <h3>PDF 转图片</h3>
+              <p>将 PDF 每页导出为 JPG 或 PNG 图片，完全本地处理。</p>
+              <span class="tool-link">进入工具</span>
+            </a>
+
+            <a class="tool-card" href="jpg-to-pdf.html">
+              <span class="tool-icon bg-green-50 text-green-600">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2 1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </span>
+              <h3>图片转 PDF</h3>
+              <p>将 JPG、PNG 等图片批量合并为一个 PDF 文件。</p>
+              <span class="tool-link">进入工具</span>
+            </a>
+
+            <a class="tool-card" href="pdf-rotate.html">
+              <span class="tool-icon bg-orange-50 text-orange-600">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </span>
+              <h3>PDF 旋转</h3>
+              <p>批量旋转 PDF 每一页的角度，90°/180°/270° 任意选。</p>
+              <span class="tool-link">进入工具</span>
+            </a>
+
+            <a class="tool-card" href="pdf-unlock.html">
+              <span class="tool-icon bg-red-50 text-red-600">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M8 11V7a4 4 0 018 0m-4 8h.01M12 19a7 7 0 100-14 7 7 0 000 14z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </span>
+              <h3>PDF 解锁</h3>
+              <p>移除 PDF 打开密码，生成无密码版本，方便分享和打印。</p>
               <span class="tool-link">进入工具</span>
             </a>
           </div>
@@ -541,6 +589,10 @@
           <a class="footer-link" href="split.html">PDF分割</a>
           <a class="footer-link" href="manage.html">页面管理</a>
           <a class="footer-link" href="compress.html">PDF压缩</a>
+          <a class="footer-link" href="pdf-to-jpg.html">PDF转图片</a>
+          <a class="footer-link" href="jpg-to-pdf.html">图片转PDF</a>
+          <a class="footer-link" href="pdf-rotate.html">PDF旋转</a>
+          <a class="footer-link" href="pdf-unlock.html">PDF解锁</a>
           <a class="footer-link" href="about.html">关于我们</a>
           <a class="footer-link" href="privacy.html">隐私政策</a>
         </div>

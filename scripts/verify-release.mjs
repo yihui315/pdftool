@@ -2,11 +2,25 @@ import { readdir, readFile, stat } from "node:fs/promises";
 import path from "node:path";
 
 const root = path.resolve(import.meta.dirname, "..");
-const requiredFiles = [
+const publicPages = [
   "index.html",
   "upload-ready.html",
+  "merge.html",
+  "split.html",
   "manage.html",
+  "compress.html",
+  "pdf-to-jpg.html",
+  "jpg-to-pdf.html",
+  "pdf-rotate.html",
+  "pdf-unlock.html",
+  "about.html",
   "privacy.html",
+  "blog-merge-pdf.html",
+  "blog-pdf-tips.html",
+  "blog-jpg-to-pdf.html"
+];
+const requiredFiles = [
+  ...publicPages,
   "sitemap.xml",
   "assets/favicon.svg",
   "assets/css/tailwind.min.css",
@@ -45,6 +59,12 @@ if (!assistant.includes('data-privacy-proof="verified"')) {
 }
 if (/https?:\/\/[^"']*(?:pdfjs|pdf-lib)/iu.test(assistant)) {
   throw new Error("Runtime PDF dependencies must use first-party paths.");
+}
+for (const page of publicPages) {
+  const html = await readFile(path.join(root, page), "utf8");
+  if (/https?:\/\/[^"']*(?:pdf(?:\.min)?\.js|pdfjs|pdf-lib)/iu.test(html)) {
+    throw new Error(`Remote PDF runtime found in ${page}; production dependencies must be first-party.`);
+  }
 }
 
 console.log(`Verified ${requiredFiles.length} release files and ${requiredDirectories.length} asset directories.`);
