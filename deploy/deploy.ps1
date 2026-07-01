@@ -41,6 +41,8 @@ $deployFiles = @(
   "split.html",
   "manage.html",
   "compress.html",
+  "pdf-to-jpg.html",
+  "jpg-to-pdf.html",
   "about.html",
   "privacy.html",
   "sitemap.xml",
