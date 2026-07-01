@@ -31,34 +31,35 @@ server {
     }
 
     # Module workers must never fall back to text/plain when nosniff is active.
-    location ~* .mjs$ {
+    location ~* \.mjs$ {
         default_type application/javascript;
         expires 7d;
         try_files $uri =404;
     }
 
-    location ~* .wasm$ {
+    location ~* \.wasm$ {
         default_type application/wasm;
         expires 7d;
         try_files $uri =404;
     }
 
-    location ~* .bcmap$ {
+    location ~* \.bcmap$ {
         default_type application/octet-stream;
         expires 7d;
         try_files $uri =404;
     }
 
-    location ~* .(?:ttf|pfb)$ {
+    location ~* \.(?:ttf|pfb)$ {
         default_type font/ttf;
         expires 7d;
         try_files $uri =404;
     }
 
-    location ~* .icc$ {
+    location ~* \.icc$ {
         default_type application/vnd.iccprofile;
         expires 7d;
         try_files $uri =404;
+    }
 
     # Asset names are not content-hashed yet, so keep the cache window bounded.
     location ~* \.(?:css|js|png|jpe?g|gif|webp|svg|ico|woff2?)$ {

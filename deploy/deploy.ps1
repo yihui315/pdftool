@@ -127,8 +127,8 @@ if ($LASTEXITCODE -ne 0) { throw "Asset upload failed." }
 
 $activateCommand = @"
 set -eu
-find '$remoteRelease' -type d -exec chmod 755 {} ;
-find '$remoteRelease' -type f -exec chmod 644 {} ;
+find '$remoteRelease' -type d -exec chmod 755 {} \;
+find '$remoteRelease' -type f -exec chmod 644 {} \;
 ln -sfn '$remoteRelease' '$RemoteRoot/current.next'
 mv -Tf '$RemoteRoot/current.next' '$RemoteRoot/current'
 nginx -t

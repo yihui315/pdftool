@@ -31,6 +31,7 @@ let draggedId = null;
 let downloadUrl = "";
 let isProcessing = false;
 let documentSequence = 0;
+let loadSequence = 0;
 let previewSession = null;
 let thumbnailQueue = null;
 let observer = null;
@@ -251,6 +252,7 @@ function isPdf(file) {
 }
 
 async function loadFile(file) {
+  const loadId = ++loadSequence;
   clearError();
   clearDownload();
   if (!isPdf(file)) {
@@ -258,13 +260,21 @@ async function loadFile(file) {
     return;
   }
   await teardownPreview();
+  if (loadId !== loadSequence) return;
   cardMap.clear();
   pageGrid.replaceChildren();
   currentFile = file;
   documentSequence += 1;
   setProgress(10, "正在读取 PDF 页面");
+  let nextPreviewSession = null;
   try {
-    previewSession = await createPdfPreview(file);
+    nextPreviewSession = await createPdfPreview(file);
+    if (loadId !== loadSequence) {
+      await nextPreviewSession.destroy();
+      return;
+    }
+    previewSession = nextPreviewSession;
+    nextPreviewSession = null;
     pages = createManagedPages(`document-${documentSequence}`, previewSession.pageCount);
     thumbnailsAllowed = shouldRenderThumbnails({ inputBytes: file.size, pageCount: pages.length });
     if (thumbnailsAllowed) {
@@ -285,6 +295,8 @@ async function loadFile(file) {
     for (const entry of cardMap.values()) observer.observe(entry.card);
     setProgress(0, "可以管理页面");
   } catch {
+    await nextPreviewSession?.destroy();
+    if (loadId !== loadSequence) return;
     await resetState(false);
     showError("无法打开该 PDF。文件可能已损坏、加密或格式不正确。");
     setProgress(0, "读取失败");
@@ -360,6 +372,7 @@ async function exportPdf() {
 }
 
 async function resetState(clearInput = true) {
+  loadSequence += 1;
   await teardownPreview();
   currentFile = null;
   pages = [];

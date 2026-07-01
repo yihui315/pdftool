@@ -48,4 +48,3 @@ if (/https?:\/\/[^"']*(?:pdfjs|pdf-lib)/iu.test(assistant)) {
 }
 
 console.log(`Verified ${requiredFiles.length} release files and ${requiredDirectories.length} asset directories.`);
-

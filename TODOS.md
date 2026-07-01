@@ -16,17 +16,17 @@
 
 ## Monetization
 
-### Activate AdSense after account approval
+### Verify AdSense approval and serving
 
-**What:** Replace the placeholder publisher and ad-slot IDs, enable the AdSense loader, and publish the authorized `ads.txt` record.
+**What:** Confirm in the AdSense dashboard that `pdftool.work`, publisher `pub-2913395948188969`, and responsive ad unit `6363231932` are approved and serving normally.
 
-**Why:** Placeholder mode intentionally hides every ad container, so the site cannot earn advertising revenue until approval details are installed.
+**Why:** The production IDs and `ads.txt` record are now present in the repository, but code configuration alone does not prove that Google has approved the site or is serving paid impressions.
 
-**Context:** Follow the checklist in `README.md`. Keep placeholder mode enabled until Google approves the account and supplies the real publisher and responsive ad-unit IDs.
+**Context:** Follow the verification checklist in `README.md`, confirm consent requirements for target regions, and never click the site's own ads. Placeholder handling remains only as a defensive fallback in `site.js` and `styles.css`.
 
 **Effort:** S
 **Priority:** P1
-**Depends on:** Google AdSense approval and publisher credentials
+**Depends on:** Access to the Google AdSense dashboard
 
 ## Product Expansion
 

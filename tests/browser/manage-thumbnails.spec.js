@@ -53,6 +53,36 @@ test("keeps page nodes stable while rendering real identity-bound thumbnails", a
   await expect(page.getByRole("link", { name: "下载新 PDF" })).toBeVisible({ timeout: 15_000 });
 });
 
+test("keeps the newest PDF when file parsing finishes out of order", async ({ page }) => {
+  await page.goto("/manage.html");
+  await page.waitForFunction(() => !!window.PDFLib);
+  await page.evaluate(async () => {
+    const slow = await window.PDFLib.PDFDocument.create();
+    for (let index = 0; index < 100; index += 1) {
+      slow.addPage([320 + index, 240]);
+    }
+    const fast = await window.PDFLib.PDFDocument.create();
+    fast.addPage([320, 240]);
+
+    const input = document.querySelector("[data-file-input]");
+    for (const [bytes, name] of [
+      [await slow.save(), "旧文件-100页.pdf"],
+      [await fast.save(), "新文件-1页.pdf"]
+    ]) {
+      const transfer = new DataTransfer();
+      transfer.items.add(new File([bytes], name, { type: "application/pdf" }));
+      input.files = transfer.files;
+      input.dispatchEvent(new Event("change", { bubbles: true }));
+    }
+  });
+
+  await expect(page.locator("[data-file-info]")).toContainText("新文件-1页.pdf");
+  await expect(page.locator("[data-page-id]")).toHaveCount(1);
+  await page.waitForTimeout(1_000);
+  await expect(page.locator("[data-file-info]")).toContainText("新文件-1页.pdf");
+  await expect(page.locator("[data-page-id]")).toHaveCount(1);
+});
+
 async function windowToggle(page, accessibleName) {
   await page.locator("[data-page-id]").nth(1).getByRole("button", { name: accessibleName }).click();
 }
