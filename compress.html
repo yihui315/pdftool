@@ -4,6 +4,14 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>PDF压缩工具 在线 - 浏览器本地安全压缩 | pdftool.work</title>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3GQPKP7FYH"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-3GQPKP7FYH');
+    </script>
     <meta name="description" content="pdftool.work PDF压缩工具 在线运行，使用 pdf-lib.js 在浏览器本地优化 PDF 结构，文件不会上传服务器。" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://pdftool.work/compress.html" />
@@ -16,10 +24,7 @@
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="stylesheet" href="assets/css/tailwind.min.css" />
     <link rel="stylesheet" href="assets/css/styles.css" />
-    <!--
-      AdSense 全站脚本位置：审核通过后替换 ca-pub-XXXXXXXXXXXXXXXX 并取消注释。
-      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
-    -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2913395948188969" crossorigin="anonymous"></script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -29,6 +34,20 @@
           { "@type": "Question", "name": "为什么有些 PDF 压缩不明显？", "acceptedAnswer": { "@type": "Answer", "text": "浏览器端安全压缩主要优化 PDF 结构，不会破坏性降低图片质量，因此图片型 PDF 的体积变化可能较小。" } },
           { "@type": "Question", "name": "压缩后会影响清晰度吗？", "acceptedAnswer": { "@type": "Answer", "text": "本站 MVP 压缩不主动重采样图片，通常不会明显降低页面清晰度。" } },
           { "@type": "Question", "name": "可以批量压缩吗？", "acceptedAnswer": { "@type": "Answer", "text": "当前页面一次处理一个 PDF，建议大文件逐个处理以降低浏览器内存压力。" } }
+        ]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "如何压缩 PDF 文件",
+        "description": "免费在线 PDF 压缩工具的使用步骤，在浏览器本地安全优化 PDF 结构。",
+        "step": [
+          {"@type": "HowToStep", "name": "上传 PDF 文件", "text": "点击上传按钮选择要压缩的 PDF 文件。"},
+          {"@type": "HowToStep", "name": "浏览器自动压缩", "text": "pdf-lib.js 在本地优化 PDF 结构，文件不会上传到服务器。"},
+          {"@type": "HowToStep", "name": "查看压缩效果", "text": "压缩完成后显示原文件与压缩后文件的体积对比。"},
+          {"@type": "HowToStep", "name": "下载压缩结果", "text": "点击下载按钮保存压缩后的 PDF 到本地设备。"}
         ]
       }
     </script>
@@ -46,7 +65,7 @@
     </header>
 
     <main id="main">
-      <section class="border-b border-slate-100" data-ad-container><div class="mx-auto max-w-7xl px-4 py-3 sm:px-6 lg:px-8" aria-label="顶部横幅广告位"><!-- AdSense 顶部横幅广告位：responsive ad unit，替换后启用。 --><ins class="adsbygoogle ad-unit" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="5000000001" data-ad-format="auto" data-full-width-responsive="true"></ins></div></section>
+      <section class="border-b border-slate-100" data-ad-container><div class="mx-auto max-w-7xl px-4 py-3 sm:px-6 lg:px-8" aria-label="顶部横幅广告位"><!-- AdSense 顶部横幅广告位：responsive ad unit，替换后启用。 --><ins class="adsbygoogle ad-unit" style="display:block" data-ad-client="ca-pub-2913395948188969" data-ad-slot="6363231932" data-ad-format="auto" data-full-width-responsive="true"></ins></div></section>
 
       <section class="hero-surface">
         <div class="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 lg:grid-cols-[1fr_.72fr] lg:px-8 lg:py-16">
@@ -59,6 +78,44 @@
             <h2 class="text-lg font-extrabold text-slate-950">压缩方式说明</h2>
             <p class="mt-3 text-sm leading-7 text-slate-600">MVP 版本采用安全结构优化，不主动重采样图片。因此文字型或结构冗余的 PDF 更可能变小，纯扫描图片 PDF 的压缩效果可能有限。</p>
             <ul class="aside-list mt-4"><li>优先保留清晰度。</li><li>不上传文件到服务器。</li><li>结果可能因 PDF 结构而不同。</li></ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-slate-50 border-b border-slate-200">
+        <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+          <div class="mx-auto max-w-3xl">
+            <h2 class="text-2xl font-bold text-slate-950 mb-8 text-center">如何使用 PDF 压缩工具</h2>
+            <div class="grid gap-6 sm:grid-cols-2">
+              <div class="flex gap-4">
+                <div class="flex-shrink-0 w-8 h-8 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold text-sm">1</div>
+                <div>
+                  <h3 class="font-semibold text-slate-950">上传 PDF 文件</h3>
+                  <p class="mt-1 text-sm text-slate-600">点击上传按钮选择要压缩的 PDF 文件。</p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <div class="flex-shrink-0 w-8 h-8 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold text-sm">2</div>
+                <div>
+                  <h3 class="font-semibold text-slate-950">浏览器自动压缩</h3>
+                  <p class="mt-1 text-sm text-slate-600">pdf-lib.js 在本地优化 PDF 结构，文件不会上传到服务器。</p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <div class="flex-shrink-0 w-8 h-8 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold text-sm">3</div>
+                <div>
+                  <h3 class="font-semibold text-slate-950">查看压缩效果</h3>
+                  <p class="mt-1 text-sm text-slate-600">压缩完成后显示原文件与压缩后文件的体积对比。</p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <div class="flex-shrink-0 w-8 h-8 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold text-sm">4</div>
+                <div>
+                  <h3 class="font-semibold text-slate-950">下载压缩结果</h3>
+                  <p class="mt-1 text-sm text-slate-600">点击下载按钮保存压缩后的 PDF 到本地设备。</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -99,7 +156,7 @@
                     <a class="btn btn-primary" href="#" download="pdftool-compressed.pdf" data-download-link>下载压缩 PDF</a>
                   </div>
                   <div class="mt-4 hidden status-banner warning" data-compress-note></div>
-                  <div class="mt-4" aria-label="结果页广告位" data-ad-container><!-- AdSense 结果页广告位：responsive ad unit，替换后启用。 --><ins class="adsbygoogle ad-unit" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="5000000003" data-ad-format="auto" data-full-width-responsive="true"></ins></div>
+                  <div class="mt-4" aria-label="结果页广告位" data-ad-container><!-- AdSense 结果页广告位：responsive ad unit，替换后启用。 --><ins class="adsbygoogle ad-unit" style="display:block" data-ad-client="ca-pub-2913395948188969" data-ad-slot="6363231932" data-ad-format="auto" data-full-width-responsive="true"></ins></div>
                 </div>
               </div>
             </div>
@@ -113,7 +170,7 @@
         </div>
       </section>
 
-      <section class="mx-auto max-w-7xl px-4 py-2 sm:px-6 lg:px-8" aria-label="工具操作区下方广告位" data-ad-container><!-- AdSense 工具操作区下方广告位：responsive ad unit，替换后启用。 --><ins class="adsbygoogle ad-unit" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="5000000002" data-ad-format="auto" data-full-width-responsive="true"></ins></section>
+      <section class="mx-auto max-w-7xl px-4 py-2 sm:px-6 lg:px-8" aria-label="工具操作区下方广告位" data-ad-container><!-- AdSense 工具操作区下方广告位：responsive ad unit，替换后启用。 --><ins class="adsbygoogle ad-unit" style="display:block" data-ad-client="ca-pub-2913395948188969" data-ad-slot="6363231932" data-ad-format="auto" data-full-width-responsive="true"></ins></section>
 
       <section class="section bg-slate-50">
         <div class="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[.8fr_1.2fr] lg:px-8">
