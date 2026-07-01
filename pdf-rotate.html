@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PDF旋转工具 - 在线批量旋转PDF页面角度 | pdftool.work</title>
+    <meta name="description" content="pdftool.work PDF旋转工具，可批量旋转 PDF 每一页的角度（90°/180°/270°）。完全在浏览器本地处理，文件不上传服务器，支持多页同时旋转。" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://pdftool.work/pdf-rotate.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="pdftool.work" />
+    <meta property="og:title" content="PDF旋转工具 - pdftool.work" />
+    <meta property="og:description" content="批量旋转 PDF 每一页的角度，90°/180°/270° 完全在浏览器本地处理。" />
+    <meta property="og:url" content="https://pdftool.work/pdf-rotate.html" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="stylesheet" href="assets/css/tailwind.min.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2913395948188969" crossorigin="anonymous"></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "PDF 旋转会上传文件吗？", "acceptedAnswer": { "@type": "Answer", "text": "不会。PDF 旋转全过程在浏览器本地完成，文件不会上传到 pdftool.work 服务器。" } },
+          { "@type": "Question", "name": "可以旋转 PDF 的某一页吗？", "acceptedAnswer": { "@type": "Answer", "text": "可以。点击对应页面卡片的旋转按钮，每次旋转 90°，只影响选中的页面。" } },
+          { "@@type": "Question", "name": "支持批量旋转所有页面吗？", "acceptedAnswer": { "@type": "Answer", "text": "支持。点击「全选旋转」按钮可以一次性将所有页面旋转 90°。" } },
+          { "@type": "Question", "name": "旋转后会影响 PDF 清晰度吗？", "acceptedAnswer": { "@type": "Answer", "text": "不会。旋转操作仅改变页面方向，不重新渲染内容，清晰度保持不变。" } }
+        ]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "如何旋转 PDF 页面",
+        "description": "免费在线 PDF 旋转工具的使用步骤，批量旋转 PDF 每一页的角度。",
+        "step": [
+          {"@type": "HowToStep", "name": "上传 PDF 文件", "text": "点击上传按钮或拖拽 PDF 文件到上传区。" },
+          {"@type": "HowToStep", "name": "预览并选择页面", "text": "上传后显示每一页的缩略图，点击要旋转的页面。" },
+          {"@type": "HowToStep", "name": "点击旋转按钮", "text": "点击页面卡片的旋转按钮，每次旋转 90°，或使用全选旋转。" },
+          {"@type": "HowToStep", "name": "下载旋转结果", "text": "确认旋转角度后点击导出，下载旋转后的 PDF 文件。" }
+        ]
+      }
+    </script>
+  </head>
+  <body class="bg-white text-slate-900 antialiased">
+    <a class="skip-link" href="#main">跳过导航</a>
+    <header class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/95 backdrop-blur">
+      <nav class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8" aria-label="主导航">
+        <a href="index.html" class="flex items-center gap-3" aria-label="pdftool.work 首页">
+          <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 2h8l4 4v16H6z" fill="currentColor" opacity=".14"></path><path d="M14 2v5h5" fill="none" stroke="currentColor" stroke-width="1.8"></path><path d="M8.5 12h7M8.5 15h7M8.5 18h4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path></svg></span>
+          <span class="text-lg font-semibold tracking-normal text-slate-950">pdftool.work</span>
+        </a>
+        <div class="hidden items-center gap-1 lg:flex">
+          <a class="nav-link" data-nav-link href="index.html">首页</a>
+          <a class="nav-link" data-nav-link href="merge.html">PDF合并</a>
+          <a class="nav-link" data-nav-link href="split.html">PDF分割</a>
+          <a class="nav-link" data-nav-link href="manage.html">页面管理</a>
+          <a class="nav-link" data-nav-link href="compress.html">PDF压缩</a>
+          <a class="nav-link" data-nav-link href="pdf-to-jpg.html">PDF转图片</a>
+          <a class="nav-link" data-nav-link href="jpg-to-pdf.html">图片转PDF</a>
+          <a class="nav-link text-indigo-600 font-semibold" data-nav-link href="pdf-rotate.html">PDF旋转</a>
+          <a class="nav-link" data-nav-link href="about.html">关于我们</a>
+          <a class="nav-link" data-nav-link href="privacy.html">隐私政策</a>
+        </div>
+        <button class="icon-button lg:hidden" type="button" data-menu-toggle aria-label="打开导航菜单" aria-expanded="false" aria-controls="mobile-menu"><svg class="h-5 w-5 menu-open" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg><svg class="hidden h-5 w-5 menu-close" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg></button>
+      </nav>
+      <div id="mobile-menu" class="hidden border-t border-slate-200 bg-white px-4 py-4 shadow-soft lg:hidden" data-mobile-menu><div class="mx-auto grid max-w-7xl gap-2"><a class="mobile-nav-link" data-nav-link href="index.html">首页</a><a class="mobile-nav-link" data-nav-link href="merge.html">PDF合并</a><a class="mobile-nav-link" data-nav-link href="split.html">PDF分割</a><a class="mobile-nav-link" data-nav-link href="manage.html">页面管理</a><a class="mobile-nav-link" data-nav-link href="compress.html">PDF压缩</a><a class="mobile-nav-link" data-nav-link href="pdf-to-jpg.html">PDF转图片</a><a class="mobile-nav-link" data-nav-link href="jpg-to-pdf.html">图片转PDF</a><a class="mobile-nav-link text-indigo-600 font-semibold" data-nav-link href="pdf-rotate.html">PDF旋转</a><a class="mobile-nav-link" data-nav-link href="about.html">关于我们</a><a class="mobile-nav-link" data-nav-link href="privacy.html">隐私政策</a></div></div>
+    </header>
+
+    <main id="main">
+      <section class="border-b border-slate-100" data-ad-container>
+        <div class="mx-auto max-w-7xl px-4 py-3 sm:px-6 lg:px-8" aria-label="顶部广告位">
+          <ins class="adsbygoogle ad-unit" style="display: block" data-ad-client="ca-pub-2913395948188969" data-ad-slot="6363231932" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        </div>
+      </section>
+
+      <section class="hero-surface">
+        <div class="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 lg:grid-cols-[1fr_.72fr] lg:px-8 lg:py-16">
+          <div>
+            <h1 class="max-w-4xl text-4xl font-semibold leading-tight tracking-normal text-slate-950 sm:text-5xl">
+              PDF旋转工具：批量旋转 PDF 每一页的角度
+            </h1>
+            <p class="mt-5 max-w-3xl text-lg leading-8 text-slate-600">
+              上传 PDF 后点击每一页的旋转按钮，每次旋转 90°。也可以一键全选旋转，快速修正扫描件方向。所有操作在浏览器本地完成，文件不会上传到服务器。
+            </p>
+            <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+              <a class="btn btn-primary btn-lg" href="#rotate-tool">
+                上传 PDF 开始
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 15V4m0 0 4 4m-4-4-4 4M5 15v3a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              </a>
+              <a class="btn btn-quiet btn-lg" href="privacy.html">文件隐私说明</a>
+            </div>
+          </div>
+          <div class="notice-card self-start">
+            <h2 class="text-lg font-extrabold text-slate-950">本地处理承诺</h2>
+            <p class="mt-3 text-sm leading-7 text-slate-600">
+              PDF 文件只会被当前浏览器读取，用于旋转页面方向。本站不会把文件上传到服务器。
+            </p>
+            <dl class="mt-5 grid gap-3">
+              <div class="flex items-center justify-between rounded-lg bg-slate-50 px-3 py-2">
+                <dt class="text-sm text-slate-500">处理方式</dt>
+                <dd class="text-sm font-bold text-slate-900">浏览器本地</dd>
+              </div>
+              <div class="flex items-center justify-between rounded-lg bg-slate-50 px-3 py-2">
+                <dt class="text-sm text-slate-500">旋转角度</dt>
+                <dd class="text-sm font-bold text-slate-900">90° / 180° / 270°</dd>
+              </div>
+              <div class="flex items-center justify-between rounded-lg bg-slate-50 px-3 py-2">
+                <dt class="text-sm text-slate-500">影响范围</dt>
+                <dd class="text-sm font-bold text-slate-900">可单页或批量</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-slate-50 border-b border-slate-200">
+        <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+          <div class="mx-auto max-w-3xl">
+            <h2 class="text-2xl font-bold text-slate-950 mb-8 text-center">如何使用 PDF 旋转工具</h2>
+            <div class="grid gap-6 sm:grid-cols-2">
+              <div class="flex gap-4">
+                <div class="flex-shrink-0 w-8 h-8 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold text-sm">1</div>
+                <div>
+                  <h3 class="font-semibold text-slate-950">上传 PDF 文件</h3>
+                  <p class="mt-1 text-sm text-slate-600">点击上传按钮或拖拽 PDF 文件到上传区。</p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <div class="flex-shrink-0 w-8 h-8 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold text-sm">2</div>
+                <div>
+                  <h3 class="font-semibold text-slate-950">预览每一页</h3>
+                  <p class="mt-1 text-sm text-slate-600">上传后显示每一页的缩略图，点击要旋转的页面。</p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <div class="flex-shrink-0 w-8 h-8 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold text-sm">3</div>
+                <div>
+                  <h3 class="font-semibold text-slate-950">点击旋转按钮</h3>
+                  <p class="mt-1 text-sm text-slate-600">点击页面卡片的旋转按钮，每次旋转 90°，可多次点击达到 180° 或 270°。</p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <div class="flex-shrink-0 w-8 h-8 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold text-sm">4</div>
+                <div>
+                  <h3 class="font-semibold text-slate-950">下载旋转结果</h3>
+                  <p class="mt-1 text-sm text-slate-600">确认旋转角度后点击导出，下载旋转后的 PDF 文件。</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="rotate-tool" class="section">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="tool-layout">
+            <div class="tool-panel">
+              <div class="tool-panel-header">
+                <div class="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                  <div>
+                    <h2 class="text-2xl font-bold tracking-normal text-slate-950">PDF 旋转器</h2>
+                    <p class="mt-2 text-sm leading-6 text-slate-600">上传 PDF 后点击每一页的旋转按钮，每次旋转 90°。</p>
+                  </div>
+                  <div class="flex gap-2">
+                    <button class="btn btn-secondary" type="button" id="rotate-all-btn" disabled>全选旋转 90°</button>
+                    <button class="btn btn-secondary" type="button" id="clear-btn" disabled>清空</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="tool-panel-body">
+                <div class="drop-zone" id="drop-zone" role="button" tabindex="0" aria-label="拖拽 PDF 文件到这里，或点击选择文件">
+                  <span class="drop-zone-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none"><path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                  </span>
+                  <div>
+                    <p class="text-lg font-extrabold text-slate-950">拖拽 PDF 到这里</p>
+                    <p class="mt-2 text-sm leading-6 text-slate-600">或点击选择文件，支持扫描件和拍照转 PDF</p>
+                  </div>
+                  <button class="btn btn-primary" type="button" id="select-btn">选择 PDF 文件</button>
+                  <input class="hidden" type="file" id="file-input" accept="application/pdf,.pdf" />
+                </div>
+
+                <div class="mt-4 status-banner info" id="file-banner" style="display:none">
+                  <span class="font-semibold">已选文件：</span> <span id="file-name"></span>
+                  <span class="ml-4">共 <span id="page-count" class="font-bold">0</span> 页</span>
+                </div>
+
+                <div id="preview-area" class="mt-6" style="display:none">
+                  <h3 class="mb-3 text-base font-extrabold text-slate-950">点击卡片下方的旋转按钮，每次旋转 90°</h3>
+                  <div id="page-grid" class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"></div>
+                  <div class="mt-6 flex gap-3">
+                    <button class="btn btn-primary btn-lg" type="button" id="export-btn" disabled>导出旋转后的 PDF</button>
+                  </div>
+                </div>
+
+                <div class="mt-6 flex justify-center" id="loading-indicator" style="display:none">
+                  <div class="flex items-center gap-3 text-slate-500">
+                    <svg class="animate-spin h-5 w-5" viewBox="0 0 24 24" fill="none"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path></svg>
+                    <span id="loading-text">正在处理...</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="notice-panel">
+              <h3 class="text-base font-extrabold text-slate-950 mb-3">适用场景</h3>
+              <ul class="aside-list">
+                <li>修正扫描件方向颠倒的问题。</li>
+                <li>将横向 PDF 页面转为纵向阅读。</li>
+                <li>批量旋转多页文档角度。</li>
+                <li>所有操作本地完成，不上传文件。</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-slate-50 border-b border-slate-200">
+        <div class="mx-auto max-w-7xl px-4 py-3 sm:px-6 lg:px-8" aria-label="工具操作区下方广告位">
+          <ins class="adsbygoogle ad-unit" style="display: block" data-ad-client="ca-pub-2913395948188969" data-ad-slot="6363231932" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="mx-auto max-w-3xl">
+          <h2 class="text-3xl font-semibold leading-tight tracking-normal text-slate-950 sm:text-4xl">PDF旋转常见问题</h2>
+          <p class="mt-5 text-base leading-8 text-slate-600">
+            关于免费 PDF 旋转工具的常见疑问。隐私相关细节也可以查看隐私政策页。
+          </p>
+          <div class="faq-list mt-8">
+            <div class="faq-item is-open">
+              <button class="faq-question" type="button" data-faq-button aria-expanded="true">
+                PDF 旋转时文件会上传到服务器吗？
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-panel">
+                <p>不会。PDF 旋转全过程在浏览器本地完成，文件不会上传到 pdftool.work 服务器。</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" type="button" data-faq-button aria-expanded="false">
+                可以只旋转某一页吗？
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-panel">
+                <p>可以。点击对应页面卡片的旋转按钮，只影响选中的页面，其他页面保持不变。</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" type="button" data-faq-button aria-expanded="false">
+                旋转 180° 怎么做？
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-panel">
+                <p>点击两次旋转按钮即为 180°，三次为 270°，四次回到原位。</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" type="button" data-faq-button aria-expanded="false">
+                旋转后清晰度会受影响吗？
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-panel">
+                <p>不会。旋转操作仅改变页面方向，不重新渲染内容，清晰度完全保持不变。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-slate-50 border-t border-slate-200">
+        <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+          <h2 class="text-2xl font-bold text-slate-950 mb-8 text-center">其他免费 PDF 工具</h2>
+          <div class="grid gap-6 sm:grid-cols-3">
+            <a href="merge.html" class="group flex flex-col items-center gap-3 rounded-xl border border-slate-200 bg-white p-6 text-center transition-shadow hover:shadow-md">
+              <span class="text-3xl">📎</span>
+              <span class="font-semibold text-slate-950">PDF 合并</span>
+              <span class="text-sm text-slate-500">多个 PDF 合并成一个</span>
+            </a>
+            <a href="manage.html" class="group flex flex-col items-center gap-3 rounded-xl border border-slate-200 bg-white p-6 text-center transition-shadow hover:shadow-md">
+              <span class="text-3xl">📄</span>
+              <span class="font-semibold text-slate-950">页面管理</span>
+              <span class="text-sm text-slate-500">删除、旋转、调整顺序</span>
+            </a>
+            <a href="compress.html" class="group flex flex-col items-center gap-3 rounded-xl border border-slate-200 bg-white p-6 text-center transition-shadow hover:shadow-md">
+              <span class="text-3xl">📦</span>
+              <span class="font-semibold text-slate-950">PDF 压缩</span>
+              <span class="text-sm text-slate-500">安全压缩体积</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-slate-200 bg-white">
+      <div class="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:px-6 md:grid-cols-[1fr_auto] lg:px-8">
+        <div>
+          <a href="index.html" class="flex items-center gap-3">
+            <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 2h8l4 4v16H6z" fill="currentColor" opacity=".14"></path><path d="M14 2v5h5" fill="none" stroke="currentColor" stroke-width="1.8"></path><path d="M8.5 12h7M8.5 15h7M8.5 18h4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path></svg></span>
+            <span class="text-lg font-semibold text-slate-950">pdftool.work</span>
+          </a>
+          <p class="mt-4 max-w-xl text-sm leading-6 text-slate-500">免费在线 PDF 工具站，面向日常办公、学习资料整理和轻量文档处理场景。</p>
+        </div>
+        <div class="grid gap-2 text-sm text-slate-600 sm:grid-cols-2 sm:gap-x-8">
+          <a class="footer-link" href="merge.html">PDF合并</a>
+          <a class="footer-link" href="split.html">PDF分割</a>
+          <a class="footer-link" href="manage.html">页面管理</a>
+          <a class="footer-link" href="compress.html">PDF压缩</a>
+          <a class="footer-link" href="pdf-to-jpg.html">PDF转图片</a>
+          <a class="footer-link" href="jpg-to-pdf.html">图片转PDF</a>
+          <a class="footer-link" href="pdf-rotate.html">PDF旋转</a>
+          <a class="footer-link" href="about.html">关于我们</a>
+        </div>
+      </div>
+      <div class="border-t border-slate-100 px-4 py-5 text-center text-sm text-slate-500">
+        <span>© <span data-current-year>2026</span> pdftool.work. 保留所有权利。</span>
+      </div>
+    </footer>
+
+    <script src="assets/vendor/pdf-lib.min.js" defer></script>
+    <script src="assets/js/site.js" defer></script>
+    <script>
+    (function() {
+      'use strict';
+
+      var fileInput = document.getElementById('file-input');
+      var dropZone = document.getElementById('drop-zone');
+      var selectBtn = document.getElementById('select-btn');
+      var clearBtn = document.getElementById('clear-btn');
+      var rotateAllBtn = document.getElementById('rotate-all-btn');
+      var fileBanner = document.getElementById('file-banner');
+      var fileNameEl = document.getElementById('file-name');
+      var pageCountEl = document.getElementById('page-count');
+      var previewArea = document.getElementById('preview-area');
+      var pageGrid = document.getElementById('page-grid');
+      var exportBtn = document.getElementById('export-btn');
+      var loadingIndicator = document.getElementById('loading-indicator');
+      var loadingText = document.getElementById('loading-text');
+
+      var pdfDoc = null;
+      var pages = []; // {pageIndex, rotation: 0|90|180|270}
+
+      function renderPages() {
+        pageGrid.innerHTML = '';
+        pages.forEach(function(p, idx) {
+          var card = document.createElement('div');
+          card.className = 'border border-slate-200 rounded-lg overflow-hidden bg-white';
+          card.innerHTML = '<div class="p-2 bg-slate-50 text-center text-sm font-semibold text-slate-600 flex items-center justify-between"><span>第 ' + (idx+1) + ' 页</span><span class="text-xs text-slate-400">' + p.rotation + '°</span></div><div class="p-3 flex items-center justify-center bg-slate-100" style="min-height:160px"><div class="text-6xl text-slate-300" style="transform:rotate(' + p.rotation + 'deg)">📄</div></div><div class="p-2 text-center"><button class="btn btn-secondary text-xs rotate-btn" data-idx="' + idx + '">旋转 90°</button></div>';
+          pageGrid.appendChild(card);
+        });
+
+        pageGrid.querySelectorAll('.rotate-btn').forEach(function(btn) {
+          btn.addEventListener('click', function() {
+            var idx = parseInt(this.dataset.idx);
+            pages[idx].rotation = (pages[idx].rotation + 90) % 360;
+            renderPages();
+          });
+        });
+      }
+
+      function updateUI() {
+        var hasFile = pdfDoc !== null;
+        fileBanner.style.display = hasFile ? 'block' : 'none';
+        previewArea.style.display = hasFile ? 'block' : 'none';
+        clearBtn.disabled = !hasFile;
+        rotateAllBtn.disabled = !hasFile;
+        exportBtn.disabled = !hasFile;
+      }
+
+      fileInput.addEventListener('change', async function(e) {
+        if (!e.target.files[0]) return;
+        var file = e.target.files[0];
+        fileNameEl.textContent = file.name;
+        loadingText.textContent = '正在读取 PDF...';
+        loadingIndicator.style.display = 'flex';
+
+        try {
+          var arrayBuffer = await file.arrayBuffer();
+          pdfDoc = await PDFLib.PDFDocument.load(arrayBuffer);
+          var total = pdfDoc.getPageCount();
+          pageCountEl.textContent = total;
+          pages = [];
+          for (var i = 0; i < total; i++) {
+            var originalRotation = pdfDoc.getPage(i).getRotation().angle;
+            var angle = originalRotation || 0;
+            // pdf-lib rotations are in degrees
+            pages.push({pageIndex: i, rotation: angle});
+          }
+          renderPages();
+          updateUI();
+        } catch(err) {
+          alert('无法读取 PDF：' + err.message);
+        } finally {
+          loadingIndicator.style.display = 'none';
+        }
+      });
+
+      selectBtn.addEventListener('click', function() { fileInput.click(); });
+      dropZone.addEventListener('click', function(e) { if (e.target !== selectBtn) fileInput.click(); });
+      dropZone.addEventListener('keydown', function(e) { if (e.key === 'Enter' || e.key === ' ') fileInput.click(); });
+
+      clearBtn.addEventListener('click', function() {
+        pdfDoc = null;
+        pages = [];
+        fileInput.value = '';
+        pageGrid.innerHTML = '';
+        updateUI();
+      });
+
+      rotateAllBtn.addEventListener('click', function() {
+        pages.forEach(function(p) {
+          p.rotation = (p.rotation + 90) % 360;
+        });
+        renderPages();
+      });
+
+      exportBtn.addEventListener('click', async function() {
+        if (!pdfDoc) return;
+        loadingText.textContent = '正在应用旋转...';
+        loadingIndicator.style.display = 'flex';
+        exportBtn.disabled = true;
+
+        try {
+          // Reload to reset
+          var newPdf = await PDFLib.PDFDocument.create();
+          var oldPdf = pdfDoc;
+          var total = oldPdf.getPageCount();
+
+          for (var i = 0; i < total; i++) {
+            var oldPage = oldPdf.getPage(i);
+            var [copiedPage] = await newPdf.copyPages(oldPdf, [i]);
+            var rot = pages[i].rotation;
+            if (rot === 90 || rot === 270) {
+              copiedPage.setRotation(PDFLib.degrees(rot));
+            } else if (rot === 180) {
+              copiedPage.setRotation(PDFLib.degrees(180));
+            }
+            newPdf.addPage(copiedPage);
+          }
+
+          var pdfBytes = await newPdf.save();
+          var blob = new Blob([pdfBytes], {type: 'application/pdf'});
+          var url = URL.createObjectURL(blob);
+          var a = document.createElement('a');
+          a.href = url;
+          a.download = 'rotated.pdf';
+          a.click();
+
+          loadingIndicator.style.display = 'none';
+          exportBtn.disabled = false;
+        } catch(err) {
+          loadingIndicator.style.display = 'none';
+          alert('导出失败：' + err.message);
+          exportBtn.disabled = false;
+        }
+      });
+
+      // Drag and drop
+      dropZone.addEventListener('dragover', function(e) { e.preventDefault(); dropZone.classList.add('drop-zone-hover'); });
+      dropZone.addEventListener('dragleave', function() { dropZone.classList.remove('drop-zone-hover'); });
+      dropZone.addEventListener('drop', async function(e) {
+        e.preventDefault();
+        dropZone.classList.remove('drop-zone-hover');
+        if (e.dataTransfer.files[0] && e.dataTransfer.files[0].type === 'application/pdf') {
+          var dt = new DataTransfer();
+          dt.items.add(e.dataTransfer.files[0]);
+          fileInput.files = dt.files;
+          fileInput.dispatchEvent(new Event('change'));
+        }
+      });
+    })();
+    </script>
+  </body>
+</html>

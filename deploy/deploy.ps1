@@ -43,11 +43,16 @@ $deployFiles = @(
   "compress.html",
   "pdf-to-jpg.html",
   "jpg-to-pdf.html",
+  "pdf-rotate.html",
+  "pdf-unlock.html",
   "about.html",
   "privacy.html",
   "sitemap.xml",
   "robots.txt",
-  "ads.txt"
+  "ads.txt",
+  "blog-merge-pdf.html",
+  "blog-pdf-tips.html",
+  "blog-jpg-to-pdf.html"
 )
 
 $requiredFiles = $deployFiles + @(
