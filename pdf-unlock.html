@@ -1,0 +1,649 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>在线PDF解锁工具 - 移除PDF打开密码 | pdftool.work</title>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3GQPKP7FYH"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-3GQPKP7FYH');
+    </script>
+    <meta
+      name="description"
+      content="使用 pdftool.work 在线PDF解锁工具，移除 PDF 的打开密码。文件仅在浏览器本地处理，无需上传服务器，安全快捷。"
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://pdftool.work/pdf-unlock.html" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="pdftool.work" />
+    <meta property="og:title" content="在线PDF解锁工具 - 移除PDF打开密码 | pdftool.work" />
+    <meta property="og:description" content="上传受密码保护的 PDF，输入密码后在浏览器本地解密，下载无密码的 PDF 文件。" />
+    <meta property="og:url" content="https://pdftool.work/pdf-unlock.html" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="stylesheet" href="assets/css/tailwind.min.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2913395948188969" crossorigin="anonymous"></script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "pdftool.work PDF 解锁器",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Web",
+        "url": "https://pdftool.work/pdf-unlock.html",
+        "description": "免费在线 PDF 解锁工具，移除 PDF 打开密码，文件仅在浏览器本地处理。",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "如何移除 PDF 打开密码",
+        "description": "免费在线 PDF 解锁工具的使用步骤，通过浏览器本地处理移除 PDF 文件的打开密码。",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "name": "上传受密码保护的 PDF",
+            "text": "点击上传按钮或直接拖拽受密码保护的 PDF 文件到上传区。"
+          },
+          {
+            "@type": "HowToStep",
+            "name": "输入 PDF 密码",
+            "text": "在密码输入框中输入该 PDF 的打开密码。"
+          },
+          {
+            "@type": "HowToStep",
+            "name": "点击解锁按钮",
+            "text": "确认密码后点击「解锁 PDF」，浏览器会在本地尝解开密码保护，整个过程不涉及服务器上传。"
+          },
+          {
+            "@type": "HowToStep",
+            "name": "下载无密码 PDF",
+            "text": "处理完成后自动生成预览，点击下载即可保存已移除密码的 PDF 文件到本地。"
+          }
+        ]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "PDF 解锁时文件会上传到服务器吗？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "不会。PDF 解锁在浏览器本地使用 pdf-lib.js 完成，文件不会上传到 pdftool.work 服务器。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "任何受密码保护的 PDF 都能解锁吗？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "可以使用打开密码解锁的 PDF 可以处理。如果 PDF 使用了强加密或权限密码保护（不允许打印、复制等），当前工具可能无法处理。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "解锁后的 PDF 还会有密码吗？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "不会。解锁成功后，生成的新 PDF 文件不包含任何打开密码，可以直接用任何 PDF 阅读器打开。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "我忘记了 PDF 密码，这个工具能破解吗？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "不能。本工具需要正确的打开密码才能解密 PDF，无法绕过或破解未知密码。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "解锁大文件 PDF 需要多长时间？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "处理时间取决于 PDF 大小和页数，通常在几秒内完成。处理时请保持页面打开，不要刷新。"
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+
+  <body class="bg-white text-slate-900 antialiased">
+    <a class="skip-link" href="#main">跳过导航</a>
+
+    <header class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/95 backdrop-blur">
+      <nav class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8" aria-label="主导航">
+        <a href="index.html" class="flex items-center gap-3" aria-label="pdftool.work 首页">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" role="img">
+              <path d="M6 2h8l4 4v16H6z" fill="currentColor" opacity=".14"></path>
+              <path d="M14 2v5h5" fill="none" stroke="currentColor" stroke-width="1.8"></path>
+              <path d="M8.5 12h7M8.5 15h7M8.5 18h4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
+            </svg>
+          </span>
+          <span class="text-lg font-semibold tracking-normal text-slate-950">pdftool.work</span>
+        </a>
+
+        <div class="hidden items-center gap-1 lg:flex">
+          <a class="nav-link" data-nav-link href="index.html">首页</a>
+          <a class="nav-link" data-nav-link href="merge.html">PDF合并</a>
+          <a class="nav-link" data-nav-link href="split.html">PDF分割</a>
+          <a class="nav-link" data-nav-link href="manage.html">页面管理</a>
+          <a class="nav-link" data-nav-link href="compress.html">PDF压缩</a>
+          <a class="nav-link" data-nav-link href="pdf-to-jpg.html">PDF转图片</a>
+          <a class="nav-link" data-nav-link href="jpg-to-pdf.html">图片转PDF</a>
+          <a class="nav-link" data-nav-link href="about.html">关于我们</a>
+          <a class="nav-link" data-nav-link href="privacy.html">隐私政策</a>
+        </div>
+
+        <div class="hidden items-center gap-3 lg:flex">
+          <a class="btn btn-secondary" href="index.html#tools">查看工具</a>
+          <a class="btn btn-primary" href="#unlock-tool">
+            开始解锁
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </a>
+        </div>
+
+        <button
+          class="icon-button lg:hidden"
+          type="button"
+          data-menu-toggle
+          aria-label="打开导航菜单"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <svg class="h-5 w-5 menu-open" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+          </svg>
+          <svg class="hidden h-5 w-5 menu-close" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+          </svg>
+        </button>
+      </nav>
+
+      <div id="mobile-menu" class="hidden border-t border-slate-200 bg-white px-4 py-4 shadow-soft lg:hidden" data-mobile-menu>
+        <div class="mx-auto grid max-w-7xl gap-2">
+          <a class="mobile-nav-link" data-nav-link href="index.html">首页</a>
+          <a class="mobile-nav-link" data-nav-link href="merge.html">PDF合并</a>
+          <a class="mobile-nav-link" data-nav-link href="split.html">PDF分割</a>
+          <a class="mobile-nav-link" data-nav-link href="manage.html">页面管理</a>
+          <a class="mobile-nav-link" data-nav-link href="compress.html">PDF压缩</a>
+          <a class="mobile-nav-link" data-nav-link href="pdf-to-jpg.html">PDF转图片</a>
+          <a class="mobile-nav-link" data-nav-link href="jpg-to-pdf.html">图片转PDF</a>
+          <a class="mobile-nav-link" data-nav-link href="about.html">关于我们</a>
+          <a class="mobile-nav-link" data-nav-link href="privacy.html">隐私政策</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="border-b border-slate-100" data-ad-container>
+        <div class="mx-auto max-w-7xl px-4 py-3 sm:px-6 lg:px-8" aria-label="顶部横幅广告位">
+          <ins
+            class="adsbygoogle ad-unit"
+            style="display: block"
+            data-ad-client="ca-pub-2913395948188969"
+            data-ad-slot="6363231932"
+            data-ad-format="auto"
+            data-full-width-responsive="true"
+          ></ins>
+        </div>
+      </section>
+
+      <section class="hero-surface">
+        <div class="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 lg:grid-cols-[1fr_.72fr] lg:px-8 lg:py-16">
+          <div>
+            <h1 class="max-w-4xl text-4xl font-semibold leading-tight tracking-normal text-slate-950 sm:text-5xl">
+              在线PDF解锁工具：移除 PDF 打开密码
+            </h1>
+            <p class="mt-5 max-w-3xl text-lg leading-8 text-slate-600">
+              上传受密码保护的 PDF，输入打开密码后在浏览器本地解密。整个过程使用 pdf-lib.js 在你的设备上完成，不上传服务器。适合处理同事发来的加密合同、公司扫描件等。
+            </p>
+            <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+              <a class="btn btn-primary btn-lg" href="#unlock-tool">
+                上传 PDF 开始
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M12 15V4m0 0 4 4m-4-4-4 4M5 15v3a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </a>
+              <a class="btn btn-quiet btn-lg" href="privacy.html">文件隐私说明</a>
+            </div>
+          </div>
+
+          <div class="notice-card self-start">
+            <h2 class="text-lg font-extrabold text-slate-950">本地处理承诺</h2>
+            <p class="mt-3 text-sm leading-7 text-slate-600">
+              PDF 文件只会被当前浏览器读取用于解密。本站不会把文件上传到服务器，也不会存储你的密码或文件。
+            </p>
+            <dl class="mt-5 grid gap-3">
+              <div class="flex items-center justify-between rounded-lg bg-slate-50 px-3 py-2">
+                <dt class="text-sm text-slate-500">处理方式</dt>
+                <dd class="text-sm font-bold text-slate-900">浏览器本地</dd>
+              </div>
+              <div class="flex items-center justify-between rounded-lg bg-slate-50 px-3 py-2">
+                <dt class="text-sm text-slate-500">输入文件</dt>
+                <dd class="text-sm font-bold text-slate-900">受密码保护 PDF</dd>
+              </div>
+              <div class="flex items-center justify-between rounded-lg bg-slate-50 px-3 py-2">
+                <dt class="text-sm text-slate-500">输出格式</dt>
+                <dd class="text-sm font-bold text-slate-900">无密码 PDF</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-slate-50 border-b border-slate-200">
+        <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+          <div class="mx-auto max-w-3xl">
+            <h2 class="text-2xl font-bold text-slate-950 mb-8 text-center">如何使用 PDF 解锁工具</h2>
+            <div class="grid gap-6 sm:grid-cols-2">
+              <div class="flex gap-4">
+                <div class="flex-shrink-0 w-8 h-8 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold text-sm">1</div>
+                <div>
+                  <h3 class="font-semibold text-slate-950">上传受保护的 PDF</h3>
+                  <p class="mt-1 text-sm text-slate-600">点击上传按钮或直接拖拽受密码保护的 PDF 文件到上传区。</p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <div class="flex-shrink-0 w-8 h-8 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold text-sm">2</div>
+                <div>
+                  <h3 class="font-semibold text-slate-950">输入 PDF 密码</h3>
+                  <p class="mt-1 text-sm text-slate-600">在密码输入框中输入该 PDF 的打开密码（不是权限密码）。</p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <div class="flex-shrink-0 w-8 h-8 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold text-sm">3</div>
+                <div>
+                  <h3 class="font-semibold text-slate-950">点击解锁按钮</h3>
+                  <p class="mt-1 text-sm text-slate-600">确认密码后点击「解锁 PDF」，浏览器会在本地解密，整个过程不涉及服务器上传。</p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <div class="flex-shrink-0 w-8 h-8 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold text-sm">4</div>
+                <div>
+                  <h3 class="font-semibold text-slate-950">下载无密码 PDF</h3>
+                  <p class="mt-1 text-sm text-slate-600">处理完成后点击下载，即可保存已移除密码的 PDF 文件到本地。</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="unlock-tool" class="section">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="tool-layout">
+            <div class="tool-panel">
+              <div class="tool-panel-header">
+                <div class="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                  <div>
+                    <h2 class="text-2xl font-bold tracking-normal text-slate-950">PDF 解锁器</h2>
+                    <p class="mt-2 text-sm leading-6 text-slate-600">上传受密码保护的 PDF，输入密码后在本地解密并下载无密码版本。</p>
+                  </div>
+                  <button class="btn btn-secondary" type="button" data-clear-files disabled>重置</button>
+                </div>
+              </div>
+
+              <div class="tool-panel-body">
+                <div
+                  class="drop-zone"
+                  data-drop-zone
+                  role="button"
+                  tabindex="0"
+                  aria-label="拖拽 PDF 文件到这里，或点击选择文件"
+                >
+                  <span class="drop-zone-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none">
+                      <path d="M12 15V4m0 0 4 4m-4-4-4 4M5 15v3a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                  </span>
+                  <div>
+                    <p class="text-lg font-extrabold text-slate-950">拖拽受密码保护的 PDF 到这里</p>
+                    <p class="mt-2 text-sm leading-6 text-slate-600">或点击选择文件，仅支持 PDF 格式。</p>
+                  </div>
+                  <button class="btn btn-primary" type="button" data-select-files>选择 PDF 文件</button>
+                  <input class="hidden" type="file" accept="application/pdf,.pdf" data-file-input />
+                </div>
+
+                <div class="mt-5 hidden status-banner info" data-large-file-tip>
+                  已检测到较大的 PDF 文件。处理会占用更多内存，请保持页面打开，建议在电脑浏览器中完成。
+                </div>
+
+                <div class="mt-6">
+                  <div class="mb-3 flex items-center justify-between gap-3">
+                    <h3 class="text-base font-extrabold text-slate-950">已选文件</h3>
+                    <span class="text-sm font-semibold text-slate-500" data-file-summary>尚未选择文件</span>
+                  </div>
+                  <div class="file-list" data-file-list>
+                    <div class="rounded-lg border border-dashed border-slate-300 p-5 text-center text-sm leading-6 text-slate-500">
+                      选择 PDF 后，文件信息会显示在这里。
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mt-6">
+                  <label for="pdf-password" class="block text-sm font-extrabold text-slate-950 mb-2">PDF 打开密码</label>
+                  <div class="relative">
+                    <input
+                      id="pdf-password"
+                      type="password"
+                      class="w-full rounded-lg border border-slate-300 px-4 py-3 pr-12 text-sm text-slate-900 placeholder-slate-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
+                      placeholder="请输入 PDF 的打开密码"
+                      data-password-input
+                      autocomplete="off"
+                    />
+                    <button
+                      type="button"
+                      class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600"
+                      data-toggle-password-visibility
+                      aria-label="切换密码可见性"
+                    >
+                      <svg class="h-5 w-5 eye-open" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" stroke="currentColor" stroke-width="2"/>
+                        <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+                      </svg>
+                      <svg class="hidden h-5 w-5 eye-closed" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M9.88 9.88a3 3 0 1 0 4.24 4.24M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61M2 2l20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                      </svg>
+                    </button>
+                  </div>
+                  <p class="mt-2 text-xs text-slate-500">请输入该 PDF 打开时需要的密码。工具无法破解未知密码。</p>
+                </div>
+
+                <div class="mt-6 grid gap-3">
+                  <div class="flex items-center justify-between gap-4">
+                    <span class="text-sm font-bold text-slate-700" data-progress-label>等待上传 PDF</span>
+                    <span class="text-sm font-bold text-slate-500" data-progress-percent>0%</span>
+                  </div>
+                  <div class="progress-track" aria-hidden="true">
+                    <div class="progress-fill" data-progress-fill></div>
+                  </div>
+                </div>
+
+                <div class="mt-5 hidden status-banner error" data-error-box></div>
+
+                <div class="mt-6 flex flex-col gap-3 sm:flex-row">
+                  <button class="btn btn-primary btn-lg" type="button" data-unlock-button disabled>
+                    解锁 PDF
+                    <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <path d="M7 11V7a5 5 0 0 1 9.9-1M5 11h14v10H5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                  </button>
+                  <button class="btn btn-quiet btn-lg" type="button" data-demo-reset disabled>重新选择</button>
+                </div>
+
+                <div class="result-card mt-6" data-result-card>
+                  <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                    <div>
+                      <h3 class="text-xl font-extrabold text-slate-950">解锁完成</h3>
+                      <p class="mt-2 text-sm leading-6 text-slate-600" data-result-meta>无密码 PDF 已在本地生成。</p>
+                    </div>
+                    <a class="btn btn-primary" href="#" download="pdftool-unlocked.pdf" data-download-link>
+                      下载解锁 PDF
+                      <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg>
+                    </a>
+                  </div>
+
+                  <div class="mt-4" aria-label="结果页广告位" data-ad-container>
+                    <ins
+                      class="adsbygoogle ad-unit"
+                      style="display: block"
+                      data-ad-client="ca-pub-2913395948188969"
+                      data-ad-slot="6363231932"
+                      data-ad-format="auto"
+                      data-full-width-responsive="true"
+                    ></ins>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <aside class="tool-aside">
+              <h2 class="text-lg font-extrabold text-slate-950">操作步骤</h2>
+              <ol class="mt-4 grid gap-4">
+                <li class="step-item">
+                  <span>1</span>
+                  <h3>上传 PDF</h3>
+                  <p>点击选择或拖拽受密码保护的 PDF 文件。</p>
+                </li>
+                <li class="step-item">
+                  <span>2</span>
+                  <h3>输入密码</h3>
+                  <p>在密码框中输入该 PDF 的打开密码。</p>
+                </li>
+                <li class="step-item">
+                  <span>3</span>
+                  <h3>解锁下载</h3>
+                  <p>点击解锁按钮，完成后下载无密码 PDF 文件。</p>
+                </li>
+              </ol>
+
+              <div class="mt-6 rounded-lg bg-slate-50 p-4">
+                <h3 class="font-extrabold text-slate-950">注意事项</h3>
+                <ul class="aside-list mt-3">
+                  <li>需要正确的打开密码才能解密。</li>
+                  <li>权限密码（限制打印/复制）暂不支持移除。</li>
+                  <li>处理时请保持页面打开。</li>
+                </ul>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="mx-auto max-w-7xl px-4 py-2 sm:px-6 lg:px-8" aria-label="工具操作区下方广告位" data-ad-container>
+        <ins
+          class="adsbygoogle ad-unit"
+          style="display: block"
+          data-ad-client="ca-pub-2913395948188969"
+          data-ad-slot="6363231932"
+          data-ad-format="auto"
+          data-full-width-responsive="true"
+        ></ins>
+      </section>
+
+      <section class="section bg-slate-50">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="section-heading">
+            <h2>适合这些解锁场景</h2>
+            <p>当你需要分享已加密的 PDF，但接收方没有密码时，这个工具可以快速移除密码保护。</p>
+          </div>
+          <div class="mt-10 grid gap-5 md:grid-cols-3">
+            <div class="benefit-item">
+              <span class="benefit-icon text-primary">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M7 11V7a5 5 0 0 1 9.9-1M5 11h14v10H5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </span>
+              <h3>同事共享的合同</h3>
+              <p>同事发来的加密 PDF 文件，输入密码后在本地解锁，方便分享给其他人。</p>
+            </div>
+            <div class="benefit-item">
+              <span class="benefit-icon text-cyan-600">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M9 12h6M9 16h6M17 21H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5.586a1 1 0 0 1 .707.293l5.414 5.414a1 1 0 0 1 .293.707V19a2 2 0 0 1-2 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <h3>公司内部扫描件</h3>
+              <p>公司扫描仪生成的加密 PDF，解锁后可以合并到其他文档或进行进一步处理。</p>
+            </div>
+            <div class="benefit-item">
+              <span class="benefit-icon text-emerald-600">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <h3>批量处理需求</h3>
+              <p>需要批量移除多个 PDF 密码时，可以在浏览器中逐个处理，无需安装软件。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[.8fr_1.2fr] lg:px-8">
+          <div>
+            <h2 class="text-3xl font-semibold leading-tight tracking-normal text-slate-950 sm:text-4xl">PDF 解锁常见问题</h2>
+            <p class="mt-5 text-base leading-8 text-slate-600">
+              这里整理了使用 PDF 解锁工具时最常见的疑问。隐私相关细节也可以查看隐私政策页。
+            </p>
+          </div>
+          <div class="faq-list">
+            <div class="faq-item is-open">
+              <button class="faq-question" type="button" data-faq-button aria-expanded="true">
+                PDF 解锁时文件会上传到服务器吗？
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-panel">
+                <p>不会。PDF 解锁过程在浏览器本地运行，文件不会上传到 pdftool.work 服务器。</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" type="button" data-faq-button aria-expanded="false">
+                任何受密码保护的 PDF 都能解锁吗？
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-panel">
+                <p>可以使用打开密码解锁的 PDF 可以处理。如果 PDF 使用了强加密或权限密码保护，当前工具可能无法处理。</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" type="button" data-faq-button aria-expanded="false">
+                解锁后的 PDF 还会有密码吗？
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-panel">
+                <p>不会。解锁成功后，生成的新 PDF 文件不包含任何打开密码，可以直接用任何 PDF 阅读器打开。</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" type="button" data-faq-button aria-expanded="false">
+                我忘记了 PDF 密码，这个工具能破解吗？
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-panel">
+                <p>不能。本工具需要正确的打开密码才能解密 PDF，无法绕过或破解未知密码。</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" type="button" data-faq-button aria-expanded="false">
+                解锁大文件 PDF 需要多长时间？
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-panel">
+                <p>处理时间取决于 PDF 大小和页数，通常在几秒内完成。处理时请保持页面打开，不要刷新。</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" type="button" data-faq-button aria-expanded="false">
+                权限密码（限制打印/复制）和打开密码有什么区别？
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-panel">
+                <p>打开密码要求输入密码才能查看 PDF 内容；权限密码则允许打开但不允打印或复制等操作。本工具目前只支持移除打开密码。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-slate-50 border-t border-slate-200">
+        <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+          <h2 class="text-2xl font-bold text-slate-950 mb-8 text-center">其他免费 PDF 工具</h2>
+          <div class="grid gap-6 sm:grid-cols-3">
+            <a href="merge.html" class="group flex flex-col items-center gap-3 rounded-xl border border-slate-200 bg-white p-6 text-center transition-shadow hover:shadow-md">
+              <span class="text-3xl">📑</span>
+              <span class="font-semibold text-slate-950">PDF合并</span>
+              <span class="text-sm text-slate-500">多个 PDF 合并成一个</span>
+            </a>
+            <a href="split.html" class="group flex flex-col items-center gap-3 rounded-xl border border-slate-200 bg-white p-6 text-center transition-shadow hover:shadow-md">
+              <span class="text-3xl">✂️</span>
+              <span class="font-semibold text-slate-950">PDF分割</span>
+              <span class="text-sm text-slate-500">按页码拆分 PDF</span>
+            </a>
+            <a href="manage.html" class="group flex flex-col items-center gap-3 rounded-xl border border-slate-200 bg-white p-6 text-center transition-shadow hover:shadow-md">
+              <span class="text-3xl">📄</span>
+              <span class="font-semibold text-slate-950">页面管理</span>
+              <span class="text-sm text-slate-500">删除、旋转、调整顺序</span>
+            </a>
+            <a href="compress.html" class="group flex flex-col items-center gap-3 rounded-xl border border-slate-200 bg-white p-6 text-center transition-shadow hover:shadow-md">
+              <span class="text-3xl">📦</span>
+              <span class="font-semibold text-slate-950">PDF压缩</span>
+              <span class="text-sm text-slate-500">安全压缩体积</span>
+            </a>
+            <a href="pdf-to-jpg.html" class="group flex flex-col items-center gap-3 rounded-xl border border-slate-200 bg-white p-6 text-center transition-shadow hover:shadow-md">
+              <span class="text-3xl">🖼️</span>
+              <span class="font-semibold text-slate-950">PDF转图片</span>
+              <span class="text-sm text-slate-500">PDF 导出为图片</span>
+            </a>
+            <a href="jpg-to-pdf.html" class="group flex flex-col items-center gap-3 rounded-xl border border-slate-200 bg-white p-6 text-center transition-shadow hover:shadow-md">
+              <span class="text-3xl">📷</span>
+              <span class="font-semibold text-slate-950">图片转PDF</span>
+              <span class="text-sm text-slate-500">图片批量转 PDF</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-slate-200 bg-white">
+      <div class="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:px-6 md:grid-cols-[1fr_auto] lg:px-8">
+        <div>
+          <a href="index.html" class="flex items-center gap-3">
+            <span class="brand-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M6 2h8l4 4v16H6z" fill="currentColor" opacity=".14"></path>
+                <path d="M14 2v5h5" fill="none" stroke="currentColor" stroke-width="1.8"></path>
+                <path d="M8.5 12h7M8.5 15h7M8.5 18h4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
+              </svg>
+            </span>
+            <span class="text-lg font-semibold text-slate-950">pdftool.work</span>
+          </a>
+          <p class="mt-4 max-w-xl text-sm leading-6 text-slate-500">
+            免费在线 PDF 工具站，面向日常办公、学习资料整理和轻量文档处理场景。
+          </p>
+        </div>
+        <div class="grid gap-2 text-sm text-slate-600 sm:grid-cols-2 sm:gap-x-8">
+          <a class="footer-link" href="merge.html">PDF合并</a>
+          <a class="footer-link" href="split.html">PDF分割</a>
+          <a class="footer-link" href="manage.html">页面管理</a>
+          <a class="footer-link" href="compress.html">PDF压缩</a>
+          <a class="footer-link" href="pdf-to-jpg.html">PDF转图片</a>
+          <a class="footer-link" href="jpg-to-pdf.html">图片转PDF</a>
+          <a class="footer-link" href="about.html">关于我们</a>
+          <a class="footer-link" href="privacy.html">隐私政策</a>
+        </div>
+      </div>
+      <div class="border-t border-slate-100 px-4 py-5 text-center text-sm text-slate-500">
+        <span>© <span data-current-year>2026</span> pdftool.work. 保留所有权利。</span>
+      </div>
+    </footer>
+
+    <script src="assets/vendor/pdf-lib.min.js" defer></script>
+    <script src="assets/js/site.js" defer></script>
+    <script src="assets/js/unlock.js" defer></script>
+  </body>
+</html>
