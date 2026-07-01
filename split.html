@@ -36,6 +36,20 @@
         ]
       }
     </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "如何分割 PDF 文件",
+        "description": "免费在线 PDF 分割工具的使用步骤，按页码范围将一个 PDF 拆分为多个文件。",
+        "step": [
+          {"@type": "HowToStep", "name": "上传 PDF 文件", "text": "点击上传按钮选择 PDF 文件，工具会在浏览器中直接读取文件。"},
+          {"@type": "HowToStep", "name": "输入页码范围", "text": "输入页码或范围，如 1-3,5,8-10，支持同时分割成多个 PDF。"},
+          {"@type": "HowToStep", "name": "点击分割按钮", "text": "确认页码后点击「分割 PDF」，浏览器本地处理，无需上传服务器。"},
+          {"@type": "HowToStep", "name": "下载分割结果", "text": "处理完成后分别预览和下载各个分割后的 PDF 文件。"}
+        ]
+      }
+    </script>
   </head>
   <body class="bg-white text-slate-900 antialiased">
     <a class="skip-link" href="#main">跳过导航</a>
@@ -102,6 +116,44 @@
               <li>每个逗号分隔的范围会单独导出。</li>
               <li>不确定页数时，先上传文件查看总页数。</li>
             </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-slate-50 border-b border-slate-200">
+        <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+          <div class="mx-auto max-w-3xl">
+            <h2 class="text-2xl font-bold text-slate-950 mb-8 text-center">如何使用 PDF 分割工具</h2>
+            <div class="grid gap-6 sm:grid-cols-2">
+              <div class="flex gap-4">
+                <div class="flex-shrink-0 w-8 h-8 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold text-sm">1</div>
+                <div>
+                  <h3 class="font-semibold text-slate-950">上传 PDF 文件</h3>
+                  <p class="mt-1 text-sm text-slate-600">点击上传按钮选择 PDF 文件，工具会在浏览器中直接读取文件。</p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <div class="flex-shrink-0 w-8 h-8 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold text-sm">2</div>
+                <div>
+                  <h3 class="font-semibold text-slate-950">输入页码范围</h3>
+                  <p class="mt-1 text-sm text-slate-600">输入页码或范围，如 1-3,5,8-10，支持同时分割成多个 PDF。</p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <div class="flex-shrink-0 w-8 h-8 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold text-sm">3</div>
+                <div>
+                  <h3 class="font-semibold text-slate-950">点击分割按钮</h3>
+                  <p class="mt-1 text-sm text-slate-600">确认页码后点击「分割 PDF」，浏览器本地处理，无需上传服务器。</p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <div class="flex-shrink-0 w-8 h-8 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold text-sm">4</div>
+                <div>
+                  <h3 class="font-semibold text-slate-950">下载分割结果</h3>
+                  <p class="mt-1 text-sm text-slate-600">处理完成后分别预览和下载各个分割后的 PDF 文件。</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
