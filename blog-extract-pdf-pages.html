@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3GQPKP7FYH"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-3GQPKP7FYH');
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+    <link rel="preconnect" href="https://www.google-analytics.com" crossorigin />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+
+    <title>如何只提取 PDF 的某几页？按页码范围提取方法 | pdftool.work</title>
+    <meta name="description" content="详细介绍如何从 PDF 中提取指定的某几页或某一页，包括按页码范围提取的方法。使用 pdftool.work 在线工具，无需安装软件，浏览器本地完成。" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://pdftool.work/blog-extract-pdf-pages.html" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="pdftool.work" />
+    <meta property="og:title" content="如何只提取 PDF 的某几页？按页码范围提取方法" />
+    <meta property="og:description" content="从 PDF 中提取指定页面和页码范围的完整教程，介绍多种提取方法和实用技巧。" />
+    <meta property="og:url" content="https://pdftool.work/blog-extract-pdf-pages.html" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="stylesheet" href="assets/css/tailwind.min.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2913395948188969" crossorigin="anonymous"></script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "如何只提取 PDF 的某几页？按页码范围提取方法",
+      "description": "从 PDF 中提取指定页面和页码范围的完整教程，介绍多种提取方法和实用技巧。",
+      "inLanguage": "zh-CN",
+      "url": "https://pdftool.work/blog-extract-pdf-pages.html",
+      "publisher": {
+        "@type": "Organization",
+        "name": "pdftool.work",
+        "url": "https://pdftool.work/"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "如何从 PDF 中提取单独的一页？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "使用 pdftool.work 的 <a href=\"split.html\">PDF 分割工具</a>，上传 PDF 后选择要提取的页面编号（支持多选），点击提取即可获得只包含所选页面的新 PDF 文件。也可以按页码范围提取，如「3-5」表示提取第3到第5页。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "PDF 提取页面可以按范围批量提取吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "可以。在 pdftool.work 的分割工具中，可以指定多个页码范围，如「1-3, 5, 7-9」表示提取第1至3页、第5页和第7至9页。工具会生成一个包含所有指定页面的新 PDF 文件。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "提取 PDF 页面需要安装软件吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "不需要。使用 pdftool.work 的在线分割工具，在浏览器中即可完成页面提取。文件全程在浏览器本地处理，不需要安装任何软件或上传到服务器。完全免费，无需注册。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "提取后的 PDF 画质会下降吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "不会。页面提取只是将原 PDF 中的指定页面复制到一个新的 PDF 文件中，不涉及任何重新编码或压缩处理。每个页面的内容、分辨率、色彩都完整保留，与原文件完全一致。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "有密码保护的 PDF 可以提取页面吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "有密码的 PDF 需要先解锁才能提取页面。使用 pdftool.work 的 <a href=\"pdf-unlock.html\">PDF 解锁工具</a>输入密码解除保护后，再使用分割工具提取页面。如果忘记密码，则无法进行任何操作。"
+          }
+        }
+      ]
+    }
+    </script>
+  </head>
+
+  <body class="bg-white text-slate-900 antialiased">
+    <a class="skip-link" href="#main">跳过导航</a>
+
+    <header class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/95 backdrop-blur">
+      <nav class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8" aria-label="主导航">
+        <a href="index.html" class="flex items-center gap-3" aria-label="pdftool.work 首页">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" role="img">
+              <path d="M6 2h8l4 4v16H6z" fill="currentColor" opacity=".14"></path>
+              <path d="M14 2v5h5" fill="none" stroke="currentColor" stroke-width="1.8"></path>
+              <path d="M8.5 12h7M8.5 15h7M8.5 18h4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
+            </svg>
+          </span>
+          <span class="text-lg font-semibold tracking-normal text-slate-950">pdftool.work</span>
+        </a>
+
+        <div class="hidden items-center gap-1 xl:flex">
+          <a class="nav-link" data-nav-link href="index.html">首页</a>
+          <a class="nav-link" data-nav-link href="merge.html">PDF合并</a>
+          <a class="nav-link" data-nav-link href="split.html">PDF分割</a>
+          <a class="nav-link" data-nav-link href="manage.html">页面管理</a>
+          <a class="nav-link" data-nav-link href="compress.html">PDF压缩</a>
+          <a class="nav-link" data-nav-link href="pdf-to-jpg.html">PDF转图片</a>
+          <a class="nav-link" data-nav-link href="jpg-to-pdf.html">图片转PDF</a>
+          <a class="nav-link" data-nav-link href="pdf-rotate.html">PDF旋转</a>
+          <a class="nav-link" data-nav-link href="pdf-unlock.html">PDF解锁</a>
+          <a class="nav-link" data-nav-link href="blog.html">PDF教程</a><a class="nav-link" data-nav-link href="services.html">服务合作</a><a class="nav-link" data-nav-link href="about.html">关于我们</a>
+          <a class="nav-link" data-nav-link href="privacy.html">隐私政策</a>
+        </div>
+
+        <div class="hidden items-center gap-3 xl:flex">
+          <a class="btn btn-secondary" href="#tools">查看工具</a>
+          <a class="btn btn-primary" href="split.html">
+            开始分割
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </a>
+        </div>
+
+        <button class="icon-button xl:hidden" type="button" data-menu-toggle aria-label="打开导航菜单" aria-expanded="false" aria-controls="mobile-menu">
+          <svg class="h-5 w-5 menu-open" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+          </svg>
+          <svg class="hidden h-5 w-5 menu-close" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+          </svg>
+        </button>
+      </nav>
+
+      <div id="mobile-menu" class="hidden border-t border-slate-200 bg-white px-4 py-4 shadow-soft xl:hidden" data-mobile-menu>
+        <div class="mx-auto grid max-w-7xl gap-2">
+          <a class="mobile-nav-link" data-nav-link href="index.html">首页</a>
+          <a class="mobile-nav-link" data-nav-link href="merge.html">PDF合并</a>
+          <a class="mobile-nav-link" data-nav-link href="split.html">PDF分割</a>
+          <a class="mobile-nav-link" data-nav-link href="manage.html">页面管理</a>
+          <a class="mobile-nav-link" data-nav-link href="compress.html">PDF压缩</a>
+          <a class="mobile-nav-link" data-nav-link href="pdf-to-jpg.html">PDF转图片</a>
+          <a class="mobile-nav-link" data-nav-link href="jpg-to-pdf.html">图片转PDF</a><a class="mobile-nav-link" data-nav-link href="pdf-rotate.html">PDF旋转</a><a class="mobile-nav-link" data-nav-link href="pdf-unlock.html">PDF解锁</a><a class="mobile-nav-link" data-nav-link href="about.html">关于我们</a>
+          <a class="mobile-nav-link" data-nav-link href="privacy.html">隐私政策</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="border-b border-slate-100" data-ad-container>
+        <div class="mx-auto max-w-7xl px-4 py-3 sm:px-6 lg:px-8" aria-label="顶部广告位">
+          <ins class="adsbygoogle ad-unit" style="display: block" data-ad-client="ca-pub-2913395948188969" data-ad-slot="6363231932" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        </div>
+      </section>
+
+      <article class="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
+        <header class="mb-10">
+          <p class="text-sm font-medium text-primary mb-3">PDF分割教程</p>
+          <h1 class="text-3xl font-semibold leading-tight tracking-normal text-slate-950 sm:text-4xl lg:text-5xl">
+            如何只提取 PDF 的某几页？按页码范围提取方法
+          </h1>
+          <p class="mt-5 text-base text-slate-500">更新于 2026 年 7 月 · 阅读时间约 8 分钟</p>
+        </header>
+
+        <div class="prose">
+          <p class="text-lg leading-8 text-slate-700">
+            在处理 PDF 文档时，我们经常只需要其中的某几页内容：比如从一份长报告中引用某个数据页面，从一本电子书中提取某几章内容，或者从合同文件中单独保存签章页。<strong>PDF 提取页面</strong>（也叫 PDF 分割或 PDF 截取）就是解决这类需求的核心技能。本文将详细介绍如何从 PDF 中提取指定的单页或页面范围，并推荐免费易用的在线工具。
+          </p>
+
+          <h2>什么时候需要提取 PDF 页面？</h2>
+
+          <h3>报告或论文引用</h3>
+          <p>
+            在撰写论文或报告时，经常需要引用其他文档中的某几页内容。传统的做法是打印后复印，但通过 PDF 页面提取，可以直接将需要的页面从原文件中分离出来，插入到自己的文档中。使用 pdftool.work 的 <a href="split.html">PDF 分割工具</a>可以快速提取指定页面，整个过程不超过一分钟。
+          </p>
+
+          <h3>合同签章页单独存档</h3>
+          <p>
+            签订合同时，有些企业只接受单独的签章页 PDF。通过页面提取功能，可以从完整的合同文件中将签章页单独提取出来，再发送给合作方，既规范又方便后续归档管理。
+          </p>
+
+          <h3>电子书章节提取</h3>
+          <p>
+            很多 PDF 电子书的章节分布在不同的文件中，或者一本完整的书打包成了一个超大的 PDF。对于后者，可以通过页面提取功能将感兴趣的章节分别提取为独立的文件，方便在电子书阅读器上阅读。
+          </p>
+
+          <h3>扫描件去重整理</h3>
+          <p>
+            扫描文件时，偶尔会不小心扫重某些页面。通过页面提取功能，可以将重复页面从最终文件中移除，生成一份干净的扫描件。如果扫描件整体顺序混乱，还可以结合 <a href="manage.html">PDF 页面管理工具</a>调整页面顺序，<a href="merge.html">合并工具</a>将多个文件拼接为完整文档。
+          </p>
+
+          <h2>如何使用 pdftool.work 提取 PDF 指定页面？</h2>
+
+          <p>
+            pdftool.work 提供免费在线 PDF 分割（提取）工具，操作简便，文件全程在浏览器本地处理，不会上传到服务器。以下是具体操作步骤：
+          </p>
+
+          <h3>第一步：进入 PDF 分割工具</h3>
+          <p>
+            在浏览器中打开 <a href="split.html">pdftool.work PDF 分割工具</a>，点击上传按钮，选择需要处理的 PDF 文件。也可以直接将文件拖入上传区域。
+          </p>
+
+          <h3>第二步：选择要提取的页面</h3>
+          <p>
+            上传后，工具会显示 PDF 的缩略图预览，每个页面都有对应的编号。可以通过以下方式选择要提取的页面：
+          </p>
+          <ul>
+            <li><strong>单选：</strong>点击某个页面缩略图，将其选中（高亮显示）。</li>
+            <li><strong>多选：</strong>按住 Ctrl（Windows）或 Command（Mac）键点击多个页面，可同时选中不连续的多个页面。</li>
+            <li><strong>按范围：</strong>在工具提供的输入框中输入页码范围，如「1-5」（提取第1到5页）或「1,3,5」（提取第1、3、5页），支持混合写法如「1-3, 5, 7-9」。</li>
+          </ul>
+
+          <h3>第三步：确认并下载</h3>
+          <p>
+            确认选中的页面无误后，点击「提取」或「分割」按钮。浏览器会在本地处理文件，生成一个新的 PDF 文件，只包含所选的页面。完成后点击「下载」将文件保存到本地。
+          </p>
+
+          <h2>页面提取的几种常见场景与操作方式</h2>
+
+          <h3>提取 PDF 的第一页</h3>
+          <p>
+            有时需要从 PDF 中提取封面或首页单独保存。在分割工具中选择第 1 页，或在页码输入框中输入「1」，点击提取即可。这是最高频的页面提取操作之一。
+          </p>
+
+          <h3>提取 PDF 的最后几页</h3>
+          <p>
+            如果一份 PDF 有 50 页，需要提取最后 5 页（46-50），可以在页码输入框中输入「46-50」。系统会智能识别并生成包含这 5 页的新 PDF。
+          </p>
+
+          <h3>提取不连续的多个页面</h3>
+          <p>
+            如果需要提取第 2、5、8、12 页这四个不连续的页面，输入「2,5,8,12」即可。工具会按页码从小到大的顺序自动排列，生成包含这四页的 PDF 文件。
+          </p>
+
+          <h3>提取多个范围</h3>
+          <p>
+            有时需要从一份很长的 PDF 中提取多个章节，比如第 3-7 页和第 15-20 页。输入「3-7, 15-20」即可一次性完成两个范围的提取，无需分多次操作。
+          </p>
+
+          <h2>提取后重新组合：分割 + 合并的组合用法</h2>
+
+          <p>
+            页面提取（分割）功能不仅可以单独使用，还可以与 <a href="merge.html">PDF 合并工具</a>配合，实现更复杂的工作流程：
+          </p>
+
+          <h3>示例：从多份合同中各取几页组成新文件</h3>
+          <p>
+            假设你有多份合同文件 A.pdf、B.pdf 和 C.pdf，需要从 A 取第 1-2 页，从 B 取第 3-5 页，从 C 取第 1 页，合并为一份新的合同文件。操作步骤是：
+          </p>
+          <ol>
+            <li>使用分割工具分别从 A、B、C 提取所需页面，生成 A1.pdf、A2.pdf、B1.pdf、C1.pdf。</li>
+            <li>使用合并工具，将 A1.pdf、A2.pdf、B1.pdf、C1.pdf 按顺序合并为一个文件。</li>
+            <li>下载最终合并结果。</li>
+          </ol>
+
+          <p>
+            如果在分割后发现页面顺序需要调整，可以先通过 <a href="manage.html">页面管理工具</a>调整顺序，再进行合并。
+          </p>
+
+          <h2>提取 PDF 页面的常见问题</h2>
+
+          <h3>提取页面会改变原文件吗？</h3>
+          <p>
+            不会。页面提取是创建一个新的 PDF 文件，原文件保持不变。你可以在任何时候重新提取其他页面，而不影响原始 PDF。
+          </p>
+
+          <h3>提取的页面画质会下降吗？</h3>
+          <p>
+            不会。页面提取只是将原 PDF 中的指定页面复制到新文件中，不涉及任何重新编码或压缩。每个页面的内容、分辨率、色彩都完整保留，与原文件完全一致。
+          </p>
+
+          <h3>受保护的 PDF 能提取页面吗？</h3>
+          <p>
+            有密码保护的 PDF 需要先解除保护才能提取。如果知道密码，先使用 <a href="pdf-unlock.html">PDF 解锁工具</a>去除保护；如果没有密码或忘记了密码，则无法进行任何操作，这也是 PDF 安全机制的一部分。
+          </p>
+
+          <h3>提取的页数有上限吗？</h3>
+          <p>
+            没有严格上限，主要取决于浏览器和设备的内存性能。如果 PDF 文件非常大（几百 MB），建议分批提取或使用桌面端处理。pdftool.work 的分割工具支持大多数常见大小的 PDF 文件。
+          </p>
+
+          <h2>PDF 页面提取技巧与最佳实践</h2>
+
+          <ul>
+            <li><strong>先预览再提取：</strong>如果不确定需要的页面编号，可以先用 <a href="pdf-to-jpg.html">PDF 转图片工具</a>将 PDF 转换为图片预览，确认每个页面的大致内容后再进行提取，避免提取错误。</li>
+            <li><strong>保留原始文件：</strong>提取操作不会修改原文件，但建议在重要工作前备份原始 PDF，以防后续需要重新处理。</li>
+            <li><strong>批量提取多段内容：</strong>如果需要从同一份 PDF 中提取多个不连续的章节，可以一次性输入所有页码范围（如「1-5, 10-15, 20-22」），无需多次操作。</li>
+            <li><strong>提取后压缩：</strong>如果提取后的 PDF 仍需进一步处理（如需要压缩体积或调整页面尺寸），可以在 pdftool.work 中直接切换到对应工具继续处理，无需重新上传文件。</li>
+          </ul>
+
+          <h2>总结</h2>
+
+          <p>
+            PDF 页面提取是一项非常实用的技能，无论是提取合同签章页、整理报告数据还是归档电子书籍，都能派上用场。使用 pdftool.work 的免费在线分割工具，无需安装任何软件，在浏览器中即可完成页面提取操作，支持单选、多选和按范围提取等多种方式。如果提取后发现还需要其他处理（如合并其他文件、压缩体积），pdftool.work 也提供了完整的 PDF 处理工具链，满足你的各种需求。
+          </p>
+
+          <p>
+            此外，pdftool.work 还提供 <a href="merge.html">PDF 合并</a>、<a href="manage.html">PDF 页面管理</a>、<a href="compress.html">PDF 压缩</a>等免费工具，欢迎体验。
+          </p>
+        </div>
+
+        <div class="mt-12 flex flex-col items-center gap-4 rounded-2xl bg-primary/5 p-8 text-center">
+          <h3 class="text-xl font-semibold text-slate-950">需要提取 PDF 页面？</h3>
+          <p class="text-slate-600">免费在线分割，无需注册，浏览器本地处理，安全快速。</p>
+          <a class="btn btn-primary btn-lg" href="split.html">
+            立即使用 PDF 分割工具
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </a>
+        </div>
+      </article>
+
+      <section class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8" aria-label="文章底部广告位" data-ad-container>
+        <ins class="adsbygoogle ad-unit" style="display: block" data-ad-client="ca-pub-2913395948188969" data-ad-slot="6363231932" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      </section>
+    </main>
+
+    <footer class="border-t border-slate-200 bg-white">
+      <div class="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:px-6 md:grid-cols-[1fr_auto] lg:px-8">
+        <div>
+          <a href="index.html" class="flex items-center gap-3">
+            <span class="brand-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M6 2h8l4 4v16H6z" fill="currentColor" opacity=".14"></path>
+                <path d="M14 2v5h5" fill="none" stroke="currentColor" stroke-width="1.8"></path>
+                <path d="M8.5 12h7M8.5 15h7M8.5 18h4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
+              </svg>
+            </span>
+            <span class="text-lg font-semibold text-slate-950">pdftool.work</span>
+          </a>
+          <p class="mt-4 max-w-xl text-sm leading-6 text-slate-500">
+            免费在线 PDF 工具站，面向日常办公、学习资料整理和轻量文档处理场景。
+          </p>
+        </div>
+        <div class="grid gap-2 text-sm text-slate-600 sm:grid-cols-2 sm:gap-x-8">
+          <a class="footer-link" href="merge.html">PDF合并</a>
+          <a class="footer-link" href="split.html">PDF分割</a>
+          <a class="footer-link" href="manage.html">页面管理</a>
+          <a class="footer-link" href="compress.html">PDF压缩</a>
+          <a class="footer-link" href="pdf-to-jpg.html">PDF转图片</a>
+          <a class="footer-link" href="jpg-to-pdf.html">图片转PDF</a>
+          <a class="footer-link" href="pdf-rotate.html">PDF旋转</a>
+          <a class="footer-link" href="pdf-unlock.html">PDF解锁</a>
+          <a class="footer-link" href="about.html">关于我们</a>
+          <a class="footer-link" href="services.html">服务合作</a><a class="footer-link" href="privacy.html">隐私政策</a>
+        </div>
+      </div>
+      <div class="border-t border-slate-100 px-4 py-5 text-center text-sm text-slate-500">
+        <span>© <span data-current-year>2026</span> pdftool.work. 保留所有权利。</span>
+      </div>
+    </footer>
+
+    <script src="assets/js/site.js" defer></script>
+  </body>
+</html>
