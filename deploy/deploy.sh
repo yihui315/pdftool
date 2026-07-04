@@ -146,6 +146,11 @@ DEPLOY_FILES=(
   "seo-tools-pdf压缩工具.html"
   "seo-tools-pdf合并工具.html"
   "seo-tools-pdf旋转在线.html"
+  "guide-pdf-too-large-complete.html"
+  "guide-visa-pdf-handling.html"
+  "guide-resume-pdf-optimization.html"
+  "guide-pdf-compress-methods.html"
+  "guide-pdf-merge-split.html"
   "seo-tools-pdf转jpg在线.html"
 )
 
