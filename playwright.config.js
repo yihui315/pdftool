@@ -28,7 +28,7 @@ export default defineConfig({
   webServer: {
     command: `python -m http.server ${testServerPort} --bind 127.0.0.1`,
     url: testServerURL,
-    reuseExistingServer: !process.env.CI,
+    reuseExistingServer: process.env.PLAYWRIGHT_REUSE_SERVER === "1",
     timeout: 20_000
   }
 });

@@ -1,4 +1,5 @@
 import { expect, test } from "@playwright/test";
+import playwrightConfig from "../../playwright.config.js";
 
 const CORE_ROUTES = [
   "/", "/pdf-tools.html", "/upload-ready.html", "/merge.html", "/split.html",
@@ -6,6 +7,65 @@ const CORE_ROUTES = [
   "/pdf-rotate.html", "/pdf-unlock.html", "/about.html", "/privacy.html"
 ];
 const VIEWPORT_WIDTHS = [320, 375, 768, 1024, 1280];
+
+async function readHeaderLayout(page) {
+  return page.evaluate(() => {
+    const nav = document.querySelector("header nav");
+    const mobileMenu = document.querySelector("[data-mobile-menu]");
+    const mobileToggle = document.querySelector("[data-menu-toggle]");
+    const mobileEnglishLinks = Array.from(mobileMenu.querySelectorAll("a[href^='/en']"));
+    const navBounds = nav.getBoundingClientRect();
+    const menuBounds = mobileMenu.getBoundingClientRect();
+    const isVisible = (element) => {
+      const style = getComputedStyle(element);
+      const bounds = element.getBoundingClientRect();
+      return style.display !== "none" && style.visibility !== "hidden" && bounds.width > 0 && bounds.height > 0;
+    };
+    const visibleMobileLinks = Array.from(mobileMenu.querySelectorAll("a")).filter(isVisible);
+
+    return {
+      documentOverflow: document.documentElement.scrollWidth > document.documentElement.clientWidth,
+      navOverflow: nav.scrollWidth > nav.clientWidth,
+      navLeft: navBounds.left,
+      navRight: navBounds.right,
+      viewport: window.innerWidth,
+      mobileToggleVisible: isVisible(mobileToggle),
+      desktopEnglishLinks: nav.querySelectorAll("a[href^='/en']").length,
+      mobileEnglishLinks: mobileEnglishLinks.length,
+      styledMobileEnglishLinks: mobileEnglishLinks.filter((link) => link.hasAttribute("style")).length,
+      mobileMenuVisible: isVisible(mobileMenu),
+      mobileMenuOverflow: mobileMenu.scrollWidth > mobileMenu.clientWidth,
+      mobileMenuLeft: menuBounds.left,
+      mobileMenuRight: menuBounds.right,
+      visibleMobileLinks: visibleMobileLinks.length,
+      mobileLinkOverflow: visibleMobileLinks.some((link) => {
+        const bounds = link.getBoundingClientRect();
+        return link.scrollWidth > link.clientWidth || bounds.left < 0 || bounds.right > window.innerWidth;
+      }),
+      visibleDesktopNavLinks: Array.from(nav.querySelectorAll("[data-nav-link]")).filter(isVisible).length
+    };
+  });
+}
+
+function expectHeaderWithinViewport(layout, label) {
+  expect(layout.documentOverflow, label).toBe(false);
+  expect(layout.navOverflow, label).toBe(false);
+  expect(layout.navLeft, label).toBeGreaterThanOrEqual(0);
+  expect(layout.navRight, label).toBeLessThanOrEqual(layout.viewport);
+}
+
+function expectOpenMobileMenuWithinViewport(layout, label) {
+  expect(layout.mobileMenuVisible, label).toBe(true);
+  expect(layout.mobileMenuOverflow, label).toBe(false);
+  expect(layout.mobileMenuLeft, label).toBeGreaterThanOrEqual(0);
+  expect(layout.mobileMenuRight, label).toBeLessThanOrEqual(layout.viewport);
+  expect(layout.visibleMobileLinks, label).toBeGreaterThan(0);
+  expect(layout.mobileLinkOverflow, label).toBe(false);
+}
+
+test("requires explicit opt-in before reusing the test server", () => {
+  expect(playwrightConfig.webServer.reuseExistingServer).toBe(process.env.PLAYWRIGHT_REUSE_SERVER === "1");
+});
 
 test("serves every public route and production PDF asset from first-party paths", async ({ request }) => {
   const routes = [
@@ -44,46 +104,33 @@ test("keeps the responsive header inside the viewport", async ({ page }) => {
     await page.setViewportSize({ width, height: 800 });
     for (const route of CORE_ROUTES) {
       await page.goto(route, { waitUntil: "domcontentloaded" });
-      const layout = await page.evaluate(() => {
-        const nav = document.querySelector("header nav");
-        const bounds = nav.getBoundingClientRect();
-        const mobileToggle = document.querySelector("[data-menu-toggle]");
-        const mobileEnglishLinks = Array.from(document.querySelectorAll("[data-mobile-menu] a[href^='/en']"));
-        return {
-          documentOverflow: document.documentElement.scrollWidth > document.documentElement.clientWidth,
-          navOverflow: nav.scrollWidth > nav.clientWidth,
-          left: bounds.left,
-          right: bounds.right,
-          viewport: window.innerWidth,
-          mobileToggleVisible: getComputedStyle(mobileToggle).display !== "none",
-          desktopEnglishLinks: nav.querySelectorAll("a[href^='/en']").length,
-          mobileEnglishLinks: mobileEnglishLinks.length,
-          styledMobileEnglishLinks: mobileEnglishLinks.filter((link) => link.hasAttribute("style")).length
-        };
-      });
-      expect(layout.documentOverflow, `${width}px ${route}`).toBe(false);
-      expect(layout.navOverflow, `${width}px ${route}`).toBe(false);
-      expect(layout.left, `${width}px ${route}`).toBeGreaterThanOrEqual(0);
-      expect(layout.right, `${width}px ${route}`).toBeLessThanOrEqual(layout.viewport);
-      expect(layout.mobileToggleVisible, `${width}px ${route}`).toBe(true);
-      expect(layout.desktopEnglishLinks, `${width}px ${route}`).toBe(0);
-      expect(layout.mobileEnglishLinks, `${width}px ${route}`).toBe(1);
-      expect(layout.styledMobileEnglishLinks, `${width}px ${route}`).toBe(0);
-      await page.locator("[data-menu-toggle]").click();
-      await expect(page.locator("[data-mobile-menu]"), `${width}px ${route} mobile menu`).toBeVisible();
+      const label = `${width}px ${route}`;
+      const layout = await readHeaderLayout(page);
+      expectHeaderWithinViewport(layout, label);
+      expect(layout.mobileToggleVisible, label).toBe(true);
+      expect(layout.desktopEnglishLinks, label).toBe(0);
+      expect(layout.mobileEnglishLinks, label).toBe(1);
+      expect(layout.styledMobileEnglishLinks, label).toBe(0);
+
+      const toggle = page.locator("[data-menu-toggle]");
+      const mobileMenu = page.locator("[data-mobile-menu]");
+      await toggle.click();
+      await expect(toggle, `${label} expanded toggle`).toHaveAttribute("aria-expanded", "true");
+      await expect(mobileMenu, `${label} mobile menu`).toBeVisible();
+      expectOpenMobileMenuWithinViewport(await readHeaderLayout(page), `${label} open mobile menu`);
+      await toggle.click();
+      await expect(toggle, `${label} collapsed toggle`).toHaveAttribute("aria-expanded", "false");
+      await expect(mobileMenu, `${label} mobile menu`).toBeHidden();
     }
   }
 
   await page.setViewportSize({ width: 1536, height: 800 });
-  await page.goto("/", { waitUntil: "domcontentloaded" });
-  const desktopLayout = await page.evaluate(() => {
-    const desktopNav = Array.from(document.querySelectorAll("header nav > div"))
-      .find((element) => element.classList.contains("2xl:flex") && element.classList.contains("gap-1"));
-    return {
-      desktopNavVisible: getComputedStyle(desktopNav).display !== "none",
-      mobileToggleVisible: getComputedStyle(document.querySelector("[data-menu-toggle]")).display !== "none"
-    };
-  });
-  expect(desktopLayout.desktopNavVisible, "1536px desktop navigation").toBe(true);
-  expect(desktopLayout.mobileToggleVisible, "1536px mobile navigation toggle").toBe(false);
+  for (const route of CORE_ROUTES) {
+    await page.goto(route, { waitUntil: "domcontentloaded" });
+    const label = `1536px ${route}`;
+    const layout = await readHeaderLayout(page);
+    expectHeaderWithinViewport(layout, label);
+    expect(layout.visibleDesktopNavLinks, `${label} visible desktop navigation links`).toBeGreaterThan(0);
+    expect(layout.mobileToggleVisible, `${label} mobile navigation toggle`).toBe(false);
+  }
 });
