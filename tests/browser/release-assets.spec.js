@@ -13,7 +13,9 @@ async function readHeaderLayout(page) {
     const nav = document.querySelector("header nav");
     const mobileMenu = document.querySelector("[data-mobile-menu]");
     const mobileToggle = document.querySelector("[data-menu-toggle]");
+    const mobileLinks = Array.from(mobileMenu.querySelectorAll("a"));
     const mobileEnglishLinks = Array.from(mobileMenu.querySelectorAll("a[href^='/en']"));
+    const desktopNavLinks = Array.from(nav.querySelectorAll("[data-nav-link]"));
     const navBounds = nav.getBoundingClientRect();
     const menuBounds = mobileMenu.getBoundingClientRect();
     const isVisible = (element) => {
@@ -21,7 +23,7 @@ async function readHeaderLayout(page) {
       const bounds = element.getBoundingClientRect();
       return style.display !== "none" && style.visibility !== "hidden" && bounds.width > 0 && bounds.height > 0;
     };
-    const visibleMobileLinks = Array.from(mobileMenu.querySelectorAll("a")).filter(isVisible);
+    const visibleMobileLinks = mobileLinks.filter(isVisible);
 
     return {
       documentOverflow: document.documentElement.scrollWidth > document.documentElement.clientWidth,
@@ -32,17 +34,20 @@ async function readHeaderLayout(page) {
       mobileToggleVisible: isVisible(mobileToggle),
       desktopEnglishLinks: nav.querySelectorAll("a[href^='/en']").length,
       mobileEnglishLinks: mobileEnglishLinks.length,
+      visibleMobileEnglishLinks: mobileEnglishLinks.filter(isVisible).length,
       styledMobileEnglishLinks: mobileEnglishLinks.filter((link) => link.hasAttribute("style")).length,
       mobileMenuVisible: isVisible(mobileMenu),
       mobileMenuOverflow: mobileMenu.scrollWidth > mobileMenu.clientWidth,
       mobileMenuLeft: menuBounds.left,
       mobileMenuRight: menuBounds.right,
+      totalMobileLinks: mobileLinks.length,
       visibleMobileLinks: visibleMobileLinks.length,
       mobileLinkOverflow: visibleMobileLinks.some((link) => {
         const bounds = link.getBoundingClientRect();
         return link.scrollWidth > link.clientWidth || bounds.left < 0 || bounds.right > window.innerWidth;
       }),
-      visibleDesktopNavLinks: Array.from(nav.querySelectorAll("[data-nav-link]")).filter(isVisible).length
+      totalDesktopNavLinks: desktopNavLinks.length,
+      visibleDesktopNavLinks: desktopNavLinks.filter(isVisible).length
     };
   });
 }
@@ -59,7 +64,10 @@ function expectOpenMobileMenuWithinViewport(layout, label) {
   expect(layout.mobileMenuOverflow, label).toBe(false);
   expect(layout.mobileMenuLeft, label).toBeGreaterThanOrEqual(0);
   expect(layout.mobileMenuRight, label).toBeLessThanOrEqual(layout.viewport);
-  expect(layout.visibleMobileLinks, label).toBeGreaterThan(0);
+  expect(layout.totalMobileLinks, label).toBeGreaterThan(0);
+  expect(layout.visibleMobileLinks, label).toBe(layout.totalMobileLinks);
+  expect(layout.visibleMobileEnglishLinks, label).toBe(1);
+  expect(layout.visibleMobileEnglishLinks, label).toBe(layout.mobileEnglishLinks);
   expect(layout.mobileLinkOverflow, label).toBe(false);
 }
 
@@ -130,7 +138,9 @@ test("keeps the responsive header inside the viewport", async ({ page }) => {
     const label = `1536px ${route}`;
     const layout = await readHeaderLayout(page);
     expectHeaderWithinViewport(layout, label);
-    expect(layout.visibleDesktopNavLinks, `${label} visible desktop navigation links`).toBeGreaterThan(0);
+    expect(layout.totalDesktopNavLinks, `${label} desktop navigation links`).toBeGreaterThan(0);
+    expect(layout.visibleDesktopNavLinks, `${label} visible desktop navigation links`).toBe(layout.totalDesktopNavLinks);
     expect(layout.mobileToggleVisible, `${label} mobile navigation toggle`).toBe(false);
+    expect(layout.mobileMenuVisible, `${label} mobile navigation menu`).toBe(false);
   }
 });
