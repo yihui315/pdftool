@@ -1,259 +1,374 @@
 #!/usr/bin/env python3
-"""Generate SEO landing pages for high-intent keywords."""
-import os
+"""
+V3 SEO Page Generator
+自动读取 keywords.json，生成SEO落地页，更新sitemap
+用法: python3 scripts/generate_seo_pages.py
+"""
+import os, json, re
+from datetime import date
 
-BASE = "compress-pdf-to-200kb.html"
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+SEO_DIR = BASE_DIR
+KEYWORDS_FILE = os.path.join(SEO_DIR, "seo", "keywords.json")
+SITEMAP_FILE = os.path.join(BASE_DIR, "sitemap.xml")
 
-PAGES = [
-    {
-        "filename": "compress-pdf-to-300kb.html",
-        "title": "PDF 压缩到 300KB 免费在线工具 - pdftool.work",
-        "description": "使用 pdftool.work 免费在线 PDF 压缩工具，将 PDF 压缩到 300KB 以内。文件仅在浏览器本地处理，无需上传服务器，快速、安全、免费。",
-        "h1": "PDF 压缩到 300KB",
-        "hero": "想把 PDF 压到 300KB 以内？pdftool.work 提供免费的在线 PDF 压缩工具，全程在浏览器本地处理，不上传服务器，快速将大文件压缩到 300KB 以下。",
-        "schema_name": "pdftool.work PDF 压缩到 300KB 工具",
-        "schema_desc": "免费在线 PDF 压缩工具，将 PDF 文件压缩到 300KB 以内，浏览器本地处理。",
-        "howto_step2": "选择压缩到 300KB 选项，工具会自动计算最优压缩参数。",
-        "faq_q1": "PDF 压缩到 300KB 后会不会不清楚？",
-        "faq_a1": "对于文字为主的 PDF，300KB 通常能保持良好清晰度。扫描件因含高清图片，信息量大，300KB 压缩可能会有画质损失，建议根据实际效果调整压缩比例。",
-        "faq_q2": "PDF 压缩到 300KB 会不会失败？",
-        "faq_a2": "如果 PDF 包含大量高清图片，压缩到 300KB 可能导致图片质量严重下降或文件损坏。这时可以尝试压缩到 500KB 或 1MB，在文件大小和画质之间找到平衡。",
-        "breadcrumb3": "PDF 压缩到 300KB",
-        "canonical": "https://pdftool.work/compress-pdf-to-300kb.html",
-        "og_title": "PDF 压缩到 300KB 免费在线工具 - pdftool.work",
-        "og_desc": "免费在线 PDF 压缩工具，将 PDF 文件压缩到 300KB 以内，浏览器本地处理，不上传服务器。",
-        "url_slug": "compress-pdf-to-300kb.html",
-    },
-    {
-        "filename": "compress-pdf-to-800kb.html",
-        "title": "PDF 压缩到 800KB 免费在线工具 - pdftool.work",
-        "description": "使用 pdftool.work 免费在线 PDF 压缩工具，将 PDF 压缩到 800KB 以内。文件仅在浏览器本地处理，无需上传服务器，快速、安全、免费。",
-        "h1": "PDF 压缩到 800KB",
-        "hero": "需要把 PDF 压到 800KB 以下？pdftool.work 提供免费在线 PDF 压缩工具，全程浏览器本地处理，不上传服务器，轻松将文件压缩到 800KB 以内。",
-        "schema_name": "pdftool.work PDF 压缩到 800KB 工具",
-        "schema_desc": "免费在线 PDF 压缩工具，将 PDF 文件压缩到 800KB 以内，浏览器本地处理。",
-        "howto_step2": "选择压缩到 800KB 选项，工具会自动计算最优压缩参数。",
-        "faq_q1": "PDF 压缩到 800KB 够用吗？",
-        "faq_a1": "800KB 是比较宽松的压缩目标，大多数文字为主的 PDF 都能轻松达到这个大小，同时保持良好的可读性。对于扫描件，800KB 可以较好地平衡文件大小和画质。",
-        "faq_q2": "为什么有些 PDF 压缩不到 800KB？",
-        "faq_a2": "PDF 压缩下限取决于文件内容。高清扫描件包含大量图片信息，每个图片都需要一定数据量存储，压缩到 800KB 以下可能需要降低图片分辨率或进行 OCR 识别。",
-        "breadcrumb3": "PDF 压缩到 800KB",
-        "canonical": "https://pdftool.work/compress-pdf-to-800kb.html",
-        "og_title": "PDF 压缩到 800KB 免费在线工具 - pdftool.work",
-        "og_desc": "免费在线 PDF 压缩工具，将 PDF 文件压缩到 800KB 以内，浏览器本地处理，不上传服务器。",
-        "url_slug": "compress-pdf-to-800kb.html",
-    },
-    {
-        "filename": "compress-pdf-to-2mb.html",
-        "title": "PDF 压缩到 2MB 免费在线工具 - pdftool.work",
-        "description": "使用 pdftool.work 免费在线 PDF 压缩工具，将 PDF 压缩到 2MB 以内。文件仅在浏览器本地处理，无需上传服务器，快速、安全、免费。",
-        "h1": "PDF 压缩到 2MB",
-        "hero": "想把 PDF 压缩到 2MB 以下？许多邮件系统和上传平台限制 2MB，pdftool.work 帮助您快速将大文件压缩到 2MB 以内，全程浏览器本地处理，不上传服务器。",
-        "schema_name": "pdftool.work PDF 压缩到 2MB 工具",
-        "schema_desc": "免费在线 PDF 压缩工具，将 PDF 文件压缩到 2MB 以内，浏览器本地处理。",
-        "howto_step2": "选择压缩到 2MB 选项，工具会自动计算最优压缩参数。",
-        "faq_q1": "PDF 压缩到 2MB 会不会丢失内容？",
-        "faq_a1": "2MB 是相对宽松的压缩目标，大多数 PDF 压缩到 2MB 以下不会丢失任何页面内容，只会优化内部数据结构或降低图片分辨率，文字内容完全不受影响。",
-        "faq_q2": "2MB 的 PDF 压缩后文件会变小多少？",
-        "faq_a2": "这取决于原文件类型。文字为主的 PDF 通常能压缩到原来的 20-50%，扫描件因含大量图片，压缩效果因原始图片质量而异，通常可以压缩到原来的 30-70%。",
-        "breadcrumb3": "PDF 压缩到 2MB",
-        "canonical": "https://pdftool.work/compress-pdf-to-2mb.html",
-        "og_title": "PDF 压缩到 2MB 免费在线工具 - pdftool.work",
-        "og_desc": "免费在线 PDF 压缩工具，将 PDF 文件压缩到 2MB 以内，浏览器本地处理，不上传服务器。",
-        "url_slug": "compress-pdf-to-2mb.html",
-    },
-    {
-        "filename": "pdf-for-exam-registration-too-large.html",
-        "title": "考试报名材料 PDF 太大？快速压缩到指定大小 - pdftool.work",
-        "description": "考试报名网站要求 PDF 在特定大小以内？pdftool.work 提供免费在线 PDF 压缩工具，全程浏览器本地处理，不上传服务器，帮助您快速将报名材料压缩到要求大小。",
-        "h1": "考试报名材料 PDF 太大？",
-        "hero": "各种考试报名网站（考研、公务员、职业资格等）通常要求上传 PDF 在 1MB-5MB 以内。pdftool.work 帮您将报名材料 PDF 快速压缩到要求大小，全程浏览器本地处理，不上传服务器。",
-        "schema_name": "pdftool.work 考试报名材料 PDF 压缩工具",
-        "schema_desc": "免费在线 PDF 压缩工具，帮助将考试报名材料 PDF 压缩到要求大小，浏览器本地处理。",
-        "howto_step2": "根据报名网站要求，选择压缩目标大小（1MB、2MB 或 5MB），工具自动计算最优参数。",
-        "faq_q1": "不同考试报名网站的 PDF 大小要求一样吗？",
-        "faq_a1": "不一样。考研、公务员、职业资格考试等不同考试的报名网站对 PDF 大小要求不同，常见范围在 1MB 到 10MB 之间。请先查看报名网站的具体要求，再选择对应的压缩目标。",
-        "faq_q2": "压缩后会影响报名材料的清晰度吗？",
-        "faq_a2": "文字为主的报名材料（成绩单、证书扫描等）压缩到 2-5MB 通常能保持良好清晰度。如果原始文件是高清扫描件，可能需要适当降低压缩目标以保证可读性。",
-        "breadcrumb3": "报名材料 PDF 压缩",
-        "canonical": "https://pdftool.work/pdf-for-exam-registration-too-large.html",
-        "og_title": "考试报名材料 PDF 太大？快速压缩工具 - pdftool.work",
-        "og_desc": "免费在线 PDF 压缩工具，帮助将考试报名材料压缩到要求大小，浏览器本地处理，不上传服务器。",
-        "url_slug": "pdf-for-exam-registration-too-large.html",
-    },
-    {
-        "filename": "compress-pdf-for-pay-slip.html",
-        "title": "工资条 PDF 压缩 - 免费在线工具 - pdftool.work",
-        "description": "工资条 PDF 太大无法发送？使用 pdftool.work 免费在线 PDF 压缩工具，快速将工资条 PDF 压缩变小，全程浏览器本地处理，不上传服务器，安全私密。",
-        "h1": "工资条 PDF 压缩",
-        "hero": "工资条 PDF 太大发不出去？无论是银行要求还是公司系统上传，pdftool.work 帮您将工资条 PDF 快速压缩，全程浏览器本地处理，不上传服务器，工资明细隐私安全。",
-        "schema_name": "pdftool.work 工资条 PDF 压缩工具",
-        "schema_desc": "免费在线 PDF 压缩工具，将工资条 PDF 压缩变小，浏览器本地处理，不上传服务器。",
-        "howto_step2": "上传工资条 PDF，选择合适的压缩目标（通常 200KB-500KB 足够），工具自动完成压缩。",
-        "faq_q1": "工资条 PDF 压缩后内容会不会丢失？",
-        "faq_a1": "工资条 PDF 通常以文字和简单表格为主，压缩到 200KB-500KB 完全不会丢失任何内容，只是优化 PDF 内部数据结构，不影响可读性。",
-        "faq_q2": "工资条隐私安全吗？",
-        "faq_a2": "完全安全。pdftool.work 的压缩过程在浏览器本地完成，文件不会上传到任何服务器。您可以放心压缩工资条等包含个人隐私信息的 PDF。",
-        "breadcrumb3": "工资条 PDF 压缩",
-        "canonical": "https://pdftool.work/compress-pdf-for-pay-slip.html",
-        "og_title": "工资条 PDF 压缩 - 免费在线工具 - pdftool.work",
-        "og_desc": "免费在线 PDF 压缩工具，快速将工资条 PDF 压缩变小，浏览器本地处理，不上传服务器。",
-        "url_slug": "compress-pdf-for-pay-slip.html",
-    },
-    {
-        "filename": "compress-pdf-for-thesis.html",
-        "title": "论文 PDF 太大怎么压缩 - 免费在线工具 - pdftool.work",
-        "description": "毕业论文 PDF 太大无法上传？使用 pdftool.work 免费在线 PDF 压缩工具，将论文 PDF 压缩到要求大小，全程浏览器本地处理，不上传服务器，论文内容完整保留。",
-        "h1": "论文 PDF 太大怎么压缩",
-        "hero": "毕业论文、项目报告 PDF 太大，上传被限制？pdftool.work 帮您将论文章 PDF 快速压缩到要求大小，优先保留文字和图表清晰度，全程浏览器本地处理，不上传服务器。",
-        "schema_name": "pdftool.work 论文 PDF 压缩工具",
-        "schema_desc": "免费在线 PDF 压缩工具，将论文章 PDF 压缩到要求大小，浏览器本地处理。",
-        "howto_step2": "根据学校或系统要求，选择压缩目标（通常 5MB-20MB），工具自动平衡文件大小和图表清晰度。",
-        "faq_q1": "论文 PDF 压缩后图表会不清楚吗？",
-        "faq_a1": "pdftool.work 优先使用结构优化压缩，对图表清晰度影响较小。对于图片较多的论文章节，如果压缩后仍超过目标大小，会适当降低图片分辨率。建议压缩后检查图表是否可读。",
-        "faq_q2": "学校要求 PDF 不能超过特定大小怎么办？",
-        "faq_a2": "先了解学校的具体要求（常见 5MB、10MB、20MB），然后在 pdftool.work 中选择对应压缩目标。如果仍超限，可以尝试分章节压缩或降低图片 DPI 后再提交。",
-        "breadcrumb3": "论文 PDF 压缩",
-        "canonical": "https://pdftool.work/compress-pdf-for-thesis.html",
-        "og_title": "论文 PDF 太大怎么压缩 - 免费在线工具 - pdftool.work",
-        "og_desc": "免费在线 PDF 压缩工具，将论文 PDF 压缩到要求大小，浏览器本地处理，不上传服务器。",
-        "url_slug": "compress-pdf-for-thesis.html",
-    },
-    {
-        "filename": "compress-pdf-for-contract.html",
-        "title": "合同 PDF 太大怎么压缩 - 免费在线工具 - pdftool.work",
-        "description": "合同 PDF 太大无法发送或上传？使用 pdftool.work 免费在线 PDF 压缩工具，快速将合同 PDF 压缩变小，全程浏览器本地处理，不上传服务器，合同内容完整保留。",
-        "h1": "合同 PDF 太大怎么压缩",
-        "hero": "合同 PDF 太大发不出去、上传被拒？pdftool.work 帮您将各种合同协议 PDF 快速压缩，全程浏览器本地处理，不上传服务器，商业机密隐私安全。",
-        "schema_name": "pdftool.work 合同 PDF 压缩工具",
-        "schema_desc": "免费在线 PDF 压缩工具，将合同 PDF 压缩变小，浏览器本地处理，不上传服务器。",
-        "howto_step2": "上传合同 PDF，选择合适的压缩目标（根据对方系统要求，通常 1MB-5MB），工具自动完成压缩。",
-        "faq_q1": "合同 PDF 压缩后有法律效力吗？",
-        "faq_a1": "PDF 压缩只是优化文件数据存储方式，不改变任何文字、签章或附件内容，压缩后的 PDF 保留完整法律效力。",
-        "faq_q2": "压缩合同 PDF 安全吗？",
-        "faq_a2": "完全安全。pdftool.work 的压缩过程在浏览器本地完成，文件不会上传到任何服务器，合同内容的商业机密和个人隐私得到充分保护。",
-        "breadcrumb3": "合同 PDF 压缩",
-        "canonical": "https://pdftool.work/compress-pdf-for-contract.html",
-        "og_title": "合同 PDF 太大怎么压缩 - 免费在线工具 - pdftool.work",
-        "og_desc": "免费在线 PDF 压缩工具，快速将合同 PDF 压缩变小，浏览器本地处理，不上传服务器。",
-        "url_slug": "compress-pdf-for-contract.html",
-    },
-    {
-        "filename": "compress-pdf-for-certificate.html",
-        "title": "证书 PDF 压缩 - 免费在线工具 - pdftool.work",
-        "description": "证书 PDF 太大无法上传？使用 pdftool.work 免费在线 PDF 压缩工具，将证书（毕业证、资格证等）PDF 快速压缩变小，全程浏览器本地处理，不上传服务器。",
-        "h1": "证书 PDF 压缩",
-        "hero": "毕业证、资格证、技能证书 PDF 太大，上传被拒？pdftool.work 帮您将各类证书 PDF 快速压缩，全程浏览器本地处理，不上传服务器，证书信息完整保留。",
-        "schema_name": "pdftool.work 证书 PDF 压缩工具",
-        "schema_desc": "免费在线 PDF 压缩工具，将证书 PDF 压缩变小，浏览器本地处理，不上传服务器。",
-        "howto_step2": "上传证书 PDF，选择合适的压缩目标（通常 200KB-1MB 足够），工具自动完成压缩。",
-        "faq_q1": "证书 PDF 压缩后学校或单位会认可吗？",
-        "faq_a1": "只要压缩后的 PDF 内容完整、清晰可读，大多数学校和用人单位都接受。pdftool.work 优先保证文字和照片清晰度，压缩后的证书通常完全满足要求。",
-        "faq_q2": "证书 PDF 压缩到多大合适？",
-        "faq_a2": "这取决于上传要求。常见证书 PDF 压缩目标：网上报名系统 1-3MB、邮件发送 2-5MB、微信传输 500KB-2MB。建议先了解具体要求再压缩。",
-        "breadcrumb3": "证书 PDF 压缩",
-        "canonical": "https://pdftool.work/compress-pdf-for-certificate.html",
-        "og_title": "证书 PDF 压缩 - 免费在线工具 - pdftool.work",
-        "og_desc": "免费在线 PDF 压缩工具，将证书 PDF 快速压缩变小，浏览器本地处理，不上传服务器。",
-        "url_slug": "compress-pdf-for-certificate.html",
-    },
-    {
-        "filename": "compress-scanned-pdf-to-1mb.html",
-        "title": "扫描件 PDF 压缩到 1MB - 免费在线工具 - pdftool.work",
-        "description": "扫描件 PDF 太大无法上传？使用 pdftool.work 免费在线 PDF 压缩工具，将扫描件 PDF 压缩到 1MB 以内，全程浏览器本地处理，不上传服务器。",
-        "h1": "扫描件 PDF 压缩到 1MB",
-        "hero": "扫描件 PDF 太大，上传被拒？pdftool.work 帮您将扫描件 PDF 压缩到 1MB 以内，全程浏览器本地处理，不上传服务器，在文件大小和清晰度之间找到最佳平衡。",
-        "schema_name": "pdftool.work 扫描件 PDF 压缩到 1MB 工具",
-        "schema_desc": "免费在线 PDF 压缩工具，将扫描件 PDF 压缩到 1MB 以内，浏览器本地处理。",
-        "howto_step2": "选择压缩到 1MB 选项，工具会对图片进行智能压缩，在保持可读性的前提下尽可能减小文件体积。",
-        "faq_q1": "扫描件 PDF 压缩到 1MB 后会看不清吗？",
-        "faq_a1": "这取决于原文件的清晰度和扫描质量。对于 300DPI 以上的中高清晰度扫描件，压缩到 1MB 通常能保持良好的可读性。如果原文件是低分辨率扫描，1MB 压缩可能导致文字模糊。",
-        "faq_q2": "扫描件 PDF 怎样才能压得更小？",
-        "faq_a2": "压缩效果取决于原始分辨率。建议将扫描 DPI 设置在 150-200 范围内，可获得清晰且体积适中的 PDF。如果已有大文件扫描件，可以适当降低图片质量来减少体积。",
-        "breadcrumb3": "扫描件 PDF 压缩到 1MB",
-        "canonical": "https://pdftool.work/compress-scanned-pdf-to-1mb.html",
-        "og_title": "扫描件 PDF 压缩到 1MB - 免费在线工具 - pdftool.work",
-        "og_desc": "免费在线 PDF 压缩工具，将扫描件 PDF 压缩到 1MB 以内，浏览器本地处理，不上传服务器。",
-        "url_slug": "compress-scanned-pdf-to-1mb.html",
-    },
-    {
-        "filename": "compress-pdf-for-receipt.html",
-        "title": "收据发票 PDF 太大怎么压缩 - 免费在线工具 - pdftool.work",
-        "description": "收据发票 PDF 太大无法报销提交？使用 pdftool.work 免费在线 PDF 压缩工具，快速将收据发票 PDF 压缩变小，全程浏览器本地处理，不上传服务器。",
-        "h1": "收据发票 PDF 太大怎么压缩",
-        "hero": "报销用的收据发票 PDF 太大，上传系统被拒？pdftool.work 帮您将收据发票 PDF 快速压缩，全程浏览器本地处理，不上传服务器，发票明细完整保留。",
-        "schema_name": "pdftool.work 收据发票 PDF 压缩工具",
-        "schema_desc": "免费在线 PDF 压缩工具，将收据发票 PDF 压缩变小，浏览器本地处理，不上传服务器。",
-        "howto_step2": "上传收据发票 PDF，选择合适的压缩目标（通常 200KB-500KB 足够），工具自动完成压缩。",
-        "faq_q1": "发票 PDF 压缩后报销会受影响吗？",
-        "faq_a1": "只要压缩后的发票 PDF 清晰可读、金额、日期、发票代码等信息完整，财务部门都会接受。pdftool.work 优先保证文字清晰度，压缩后的发票完全满足报销要求。",
-        "faq_q2": "收据 PDF 压缩到多大合适？",
-        "faq_a2": "大多数报销系统的收据 PDF 建议压缩到 200KB-1MB 之间，这样既能保证清晰度，又能满足上传大小限制。",
-        "breadcrumb3": "收据发票 PDF 压缩",
-        "canonical": "https://pdftool.work/compress-pdf-for-receipt.html",
-        "og_title": "收据发票 PDF 太大怎么压缩 - 免费在线工具 - pdftool.work",
-        "og_desc": "免费在线 PDF 压缩工具，快速将收据发票 PDF 压缩变小，浏览器本地处理，不上传服务器。",
-        "url_slug": "compress-pdf-for-receipt.html",
-    },
-]
+# 参考模板
+TEMPLATE_FILE = os.path.join(BASE_DIR, "pdf-too-large-upload-failed.html")
+
+NAV = '''<header class="bg-white shadow-soft sticky top-0 z-50">
+<nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" aria-label="主导航">
+<div class="flex h-16 items-center justify-between">
+<a class="flex items-center gap-2 text-xl font-semibold text-primary" href="index.html">
+<svg class="h-8 w-8" viewBox="0 0 24 24" fill="none"><path d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+pdftool.work
+</a>
+<div class="hidden xl:flex items-center gap-1">
+<a class="mobile-nav-link" href="upload-ready.html">材料上传助手</a>
+<a class="mobile-nav-link" href="merge.html">PDF合并</a>
+<a class="mobile-nav-link" href="split.html">PDF分割</a>
+<a class="mobile-nav-link" href="manage.html">页面管理</a>
+<a class="mobile-nav-link" href="compress.html">PDF压缩</a>
+<a class="mobile-nav-link" href="pdf-to-jpg.html">PDF转图片</a>
+<a class="mobile-nav-link" href="jpg-to-pdf.html">图片转PDF</a>
+<a class="mobile-nav-link" href="pdf-rotate.html">PDF旋转</a>
+<a class="mobile-nav-link" href="pdf-unlock.html">PDF解锁</a>
+<a class="mobile-nav-link" href="about.html">关于我们</a>
+</div>
+<button class="xl:hidden p-2 rounded-lg hover:bg-slate-100" aria-label="打开导航菜单" data-menu-toggle aria-expanded="false" aria-controls="mobile-menu">
+<svg class="h-5 w-5 menu-open" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+<svg class="hidden h-5 w-5 menu-close" viewBox="0 0 24 24" fill="none"><path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+</button>
+</div>
+<div id="mobile-menu" class="hidden border-t border-slate-200 bg-white px-4 py-4 shadow-soft xl:hidden">
+<div class="mx-auto grid max-w-7xl gap-2">
+<a class="mobile-nav-link" href="index.html">首页</a>
+<a class="mobile-nav-link" href="upload-ready.html">材料上传助手</a>
+<a class="mobile-nav-link" href="merge.html">PDF合并</a>
+<a class="mobile-nav-link" href="split.html">PDF分割</a>
+<a class="mobile-nav-link" href="manage.html">页面管理</a>
+<a class="mobile-nav-link" href="compress.html">PDF压缩</a>
+<a class="mobile-nav-link" href="pdf-to-jpg.html">PDF转图片</a>
+<a class="mobile-nav-link" href="jpg-to-pdf.html">图片转PDF</a>
+<a class="mobile-nav-link" href="pdf-rotate.html">PDF旋转</a>
+<a class="mobile-nav-link" href="pdf-unlock.html">PDF解锁</a>
+<a class="mobile-nav-link" href="about.html">关于我们</a>
+</div>
+</div>
+</nav>
+</header>'''
+
+FOOTER = '''<footer class="bg-slate-950 text-slate-400 py-12 mt-auto">
+<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+<div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+<div>
+<div class="flex items-center gap-2 text-white font-semibold mb-4">
+<svg class="h-6 w-6" viewBox="0 0 24 24" fill="none"><path d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+pdftool.work
+</div>
+<p class="text-sm">免费在线PDF工具，无需上传，保护隐私。</p>
+</div>
+<div>
+<h3 class="text-white font-semibold mb-4">工具</h3>
+<ul class="space-y-2 text-sm">
+<li><a class="hover:text-white transition-colors" href="upload-ready.html">材料上传助手</a></li>
+<li><a class="hover:text-white transition-colors" href="merge.html">PDF合并</a></li>
+<li><a class="hover:text-white transition-colors" href="compress.html">PDF压缩</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-white font-semibold mb-4">资源</h3>
+<ul class="space-y-2 text-sm">
+<li><a class="hover:text-white transition-colors" href="blog.html">PDF教程</a></li>
+<li><a class="hover:text-white transition-colors" href="pdf-tools.html">工具箱</a></li>
+<li><a class="hover:text-white transition-colors" href="services.html">人工服务</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-white font-semibold mb-4">关于</h3>
+<ul class="space-y-2 text-sm">
+<li><a class="hover:text-white transition-colors" href="about.html">关于我们</a></li>
+<li><a class="hover:text-white transition-colors" href="privacy.html">隐私政策</a></li>
+</ul>
+</div>
+</div>
+<div class="border-t border-slate-800 mt-8 pt-8 text-sm text-center">
+<p>© 2026 pdftool.work — 免费在线PDF工具</p>
+</div>
+</div>
+</footer>'''
+
+JS = '''<script src="assets/js/upload-ready.js" type="module"></script>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+var menuToggle=document.querySelector('[data-menu-toggle]');
+var mobileMenu=document.getElementById('mobile-menu');
+if(menuToggle&&mobileMenu){
+menuToggle.addEventListener('click',function(){
+var isOpen=mobileMenu.classList.toggle('hidden');
+menuToggle.querySelectorAll('svg').forEach(function(s){s.classList.toggle('hidden');});
+menuToggle.setAttribute('aria-expanded',!isOpen);
+});
+}
+[].forEach.call(document.querySelectorAll('.FAQItem'),function(item){
+var q=item.querySelector('.faq-q');
+var a=item.querySelector('.faq-a');
+if(q&&a){q.addEventListener('click',function(){a.classList.toggle('hidden');});q.style.cursor='pointer';}
+});
+});
+</script>
+</body>
+</html>'''
 
 
-def replace(html, key, value):
-    return html.replace(f"{{{{{key}}}}}", value)
+def slugify(text):
+    """中文关键词转URL slug"""
+    # 移除非中文内容，转拼音或直接用拼音+数字组合
+    text = re.sub(r'[^\w\u4e00-\u9fff]+', '-', text)
+    text = re.sub(r'-+', '-', text).strip('-')
+    return text[:40] + '.html'
 
 
-def generate_page(template, page):
-    html = template
-    # Text replacements
-    replacements = [
-        ("title", page["title"]),
-        ("description", page["description"]),
-        ("h1", page["h1"]),
-        ("schema_name", page["schema_name"]),
-        ("schema_desc", page["schema_desc"]),
-        ("howto_step2", page["howto_step2"]),
-        ("faq_q1", page["faq_q1"]),
-        ("faq_a1", page["faq_a1"]),
-        ("faq_q2", page["faq_q2"]),
-        ("faq_a2", page["faq_a2"]),
-        ("breadcrumb3", page["breadcrumb3"]),
-        ("canonical", page["canonical"]),
-        ("og_title", page["og_title"]),
-        ("og_desc", page["og_desc"]),
+def generate_faq_block(faqs):
+    """生成FAQ HTML块"""
+    items = []
+    for i, (q, a) in enumerate(faqs, 1):
+        items.append(f'''<div class="card FAQItem">
+<h3 class="faq-q text-lg font-medium">{q}</h3>
+<div class="faq-a text-slate-600 text-sm leading-relaxed hidden">{a}</div>
+</div>''')
+    return '\n'.join(items)
+
+
+def generate_page(keyword, category, out_filename):
+    """为一个关键词生成SEO页面"""
+    today = date.today().isoformat()
+
+    faqs = [
+        (f"{keyword}是什么？", f"{keyword}是指PDF文件在日常使用中遇到的常见问题。pdftool.work提供免费在线工具，帮助用户快速解决这类问题，无需下载软件，浏览器即可处理。"),
+        (f"如何解决{keyword}？", f"访问pdftool.work，使用免费在线工具处理。只需上传文件，系统会自动分析并提供最佳解决方案，全程在浏览器本地完成，文件不会上传到服务器。"),
+        (f"{keyword}会影响文件质量吗？", f"pdftool.work采用智能压缩算法，在保证可读性的前提下减小文件体积。压缩后的PDF文字清晰、排版完整，满足大多数使用场景的需求。"),
+        (f"手机能处理{keyword}吗？", f"可以。在手机浏览器打开pdftool.work即可使用所有功能，无需下载App。整个处理过程在本地完成，不消耗手机存储空间。"),
+        (f"处理需要收费吗？", f"pdftool.work完全免费使用，不限文件大小和使用次数。如果自动工具无法满足需求，还可以选择人工处理服务（¥29起）。"),
     ]
-    for key, value in replacements:
-        html = html.replace(f"{{{{{key}}}}}", value)
-    
-    # Special: update breadcrumb url
-    html = html.replace(
-        f'href="{template_url(template)}"',
-        f'href="{page["canonical"]}"'
-    )
+
+    title = f"{keyword}？免费在线解决方案 | pdftool.work"
+    description = f"免费在线处理{keyword}，无需上传软件。pdftool.work提供浏览器端PDF处理工具，支持多种场景，隐私安全，操作简单。"
+
+    html = f'''<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3GQPKP7FYH"></script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}
+gtag('js',new Date());gtag('config','G-3GQPKP7FYH');
+</script>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<link rel="preconnect" href="https://www.googletagmanager.com" crossorigin/>
+<link rel="preconnect" href="https://www.google-analytics.com" crossorigin/>
+<title>{title}</title>
+<meta name="description" content="{description}"/>
+<meta name="robots" content="index,follow"/>
+<link rel="canonical" href="https://pdftool.work/{out_filename}"/>
+<meta property="og:type" content="article"/>
+<meta property="og:title" content="{title}"/>
+<meta property="og:description" content="{description}"/>
+<meta property="og:url" content="https://pdftool.work/{out_filename}"/>
+<link rel="stylesheet" href="assets/css/tailwind.min.css"/>
+<link rel="stylesheet" href="assets/css/styles.css"/>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2913395948188969" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {{"@type":"Question","name":"{faqs[0][0]}","acceptedAnswer":{{"@type":"Answer","text":"{faqs[0][1]}"}}}},
+    {{"@type":"Question","name":"{faqs[1][0]}","acceptedAnswer":{{"@type":"Answer","text":"{faqs[1][1]}"}}}},
+    {{"@type":"Question","name":"{faqs[2][0]}","acceptedAnswer":{{"@type":"Answer","text":"{faqs[2][1]}"}}}},
+    {{"@type":"Question","name":"{faqs[3][0]}","acceptedAnswer":{{"@type":"Answer","text":"{faqs[3][1]}"}}}},
+    {{"@type":"Question","name":"{faqs[4][0]}","acceptedAnswer":{{"@type":"Answer","text":"{faqs[4][1]}"}}}}
+  ]
+}}
+</script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans">
+{NAV}
+<main id="main">
+<section class="border-b border-slate-100" data-ad-container>
+<div class="mx-auto max-w-7xl px-4 py-3 sm:px-6 lg:px-8" aria-label="顶部广告位">
+<ins class="adsbygoogle ad-unit" style="display:block" data-ad-client="ca-pub-2913395948188969" data-ad-slot="6363231932" data-ad-format="auto" data-full-width-responsive="true"></ins>
+</div>
+</section>
+<section class="hero-surface">
+<div class="mx-auto max-w-7xl px-4 pb-16 pt-14 sm:px-6 sm:pb-20 sm:pt-20 lg:px-8 lg:pb-24 lg:pt-20">
+<div class="max-w-3xl">
+<h1 class="text-4xl font-semibold leading-tight tracking-normal text-slate-950 sm:text-5xl lg:text-5xl">
+{keyword}？
+</h1>
+<p class="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
+免费在线处理{keyword}问题。pdftool.work提供无需上传的浏览器端工具，快速、安全、免费，帮助您解决日常工作和生活中的PDF难题。
+</p>
+<div class="mt-8 flex flex-col gap-3 sm:flex-row">
+<a class="btn btn-primary btn-lg" href="upload-ready.html">
+免费处理{keyword.split('太')[-1] if '太' in keyword else keyword}
+<svg class="h-5 w-5" viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</a>
+<a class="btn btn-quiet btn-lg" href="compress.html">
+查看所有工具
+</a>
+</div>
+</div>
+</div>
+</section>
+<section class="section">
+<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+<div class="section-heading">
+<h2>为什么会出现这个问题？</h2>
+<p>了解{keyword}的常见原因</p>
+</div>
+<div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+<div class="card">
+<h3 class="font-semibold text-lg mb-2">📄 文件体积过大</h3>
+<p class="text-slate-600 text-sm">PDF包含高清图片、扫描件或嵌入字体，导致文件体积过大，超出平台限制。</p>
+</div>
+<div class="card">
+<h3 class="font-semibold text-lg mb-2">🖼️ 图片分辨率过高</h3>
+<p class="text-slate-600 text-sm">直接从扫描仪或高清相机生成的PDF，每个页面占用大量存储空间。</p>
+</div>
+<div class="card">
+<h3 class="font-semibold text-lg mb-2">🔤 字体嵌入重复</h3>
+<p class="text-slate-600 text-sm">PDF中重复嵌入相同字体，或者使用了体积较大的中文字体包。</p>
+</div>
+</div>
+</div>
+</section>
+<section class="bg-white py-16">
+<div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-10">
+<h2 class="text-3xl font-semibold text-slate-950">如何快速解决？</h2>
+<p class="mt-4 text-lg text-slate-600">只需3步，轻松搞定</p>
+</div>
+<div class="grid gap-8 md:grid-cols-3">
+<div class="text-center">
+<div class="text-4xl mb-4">📤</div>
+<h3 class="text-xl font-semibold mb-2">上传文件</h3>
+<p class="text-slate-600 text-sm">点击按钮上传PDF文件，浏览器本地处理，无需等待上传。</p>
+</div>
+<div class="text-center">
+<div class="text-4xl mb-4">⚡</div>
+<h3 class="text-xl font-semibold mb-2">自动处理</h3>
+<p class="text-slate-600 text-sm">系统智能分析文件内容，自动选择最佳处理方案。</p>
+</div>
+<div class="text-center">
+<div class="text-4xl mb-4">✅</div>
+<h3 class="text-xl font-semibold mb-2">下载使用</h3>
+<p class="text-slate-600 text-sm">处理完成后直接下载，立即可用，无需注册账号。</p>
+</div>
+</div>
+<div class="mt-8 text-center">
+<a href="upload-ready.html" class="btn btn-primary">立即开始处理 →</a>
+</div>
+</div>
+</section>
+<section class="section">
+<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+<div class="section-heading">
+<h2>推荐工具</h2>
+<p>根据您的需求选择合适的工具</p>
+</div>
+<div class="mt-10 grid gap-6 sm:grid-cols-3">
+<a href="upload-ready.html" class="card hover:shadow-card-hover transition-shadow cursor-pointer block">
+<h3 class="font-semibold text-lg">📄 材料上传助手</h3>
+<p class="text-slate-600 text-sm mt-2">智能压缩到指定大小，适合上传限制场景</p>
+<span class="tool-link mt-3">立即使用 →</span>
+</a>
+<a href="compress.html" class="card hover:shadow-card-hover transition-shadow cursor-pointer block">
+<h3 class="font-semibold text-lg">🗜️ PDF压缩工具</h3>
+<p class="text-slate-600 text-sm mt-2">多种压缩级别可选，平衡文件大小和画质</p>
+<span class="tool-link mt-3">立即使用 →</span>
+</a>
+<a href="services.html" class="card hover:shadow-card-hover transition-shadow cursor-pointer block">
+<h3 class="font-semibold text-lg">💼 人工处理服务</h3>
+<p class="text-slate-600 text-sm mt-2">自动工具无法处理？专业人员帮您解决</p>
+<span class="tool-link mt-3">了解详情 →</span>
+</a>
+</div>
+</div>
+</section>
+<section class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8" aria-label="广告位" data-ad-container>
+<ins class="adsbygoogle ad-unit" style="display:block" data-ad-client="ca-pub-2913395948188969" data-ad-slot="6363231932" data-ad-format="auto" data-full-width-responsive="true"></ins>
+</section>
+<section class="section bg-slate-50">
+<div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+<div class="section-heading"><h2>常见问题</h2></div>
+<div class="mt-8 space-y-4">
+{generate_faq_block(faqs)}
+</div>
+</div>
+</section>
+<div class="mt-8 p-4 bg-slate-50 rounded-lg">
+<p class="text-sm text-slate-600 mb-2">相关工具：</p>
+<div class="flex flex-wrap gap-3">
+<a href="upload-ready.html" class="text-primary hover:underline text-sm">📄 PDF太大无法上传？</a>
+<a href="compress.html" class="text-primary hover:underline text-sm">🗜️ 压缩PDF文件</a>
+<a href="pdf-tools.html" class="text-primary hover:underline text-sm">🧰 更多PDF工具</a>
+<a href="services.html" class="text-primary hover:underline text-sm">💼 人工处理服务</a>
+</div>
+</div>
+</main>
+{FOOTER}
+{JS}'''
+
     return html
 
 
-def template_url(template_path):
-    """Extract the canonical-like URL from the template path."""
-    # compress-pdf-to-200kb.html -> https://pdftool.work/compress-pdf-to-200kb.html
-    name = os.path.basename(template_path)
-    return f"https://pdftool.work/{name}"
-
-
 def main():
-    base_path = os.path.join(os.path.dirname(__file__), "..", BASE)
-    with open(base_path, "r", encoding="utf-8") as f:
-        template = f.read()
+    with open(KEYWORDS_FILE, 'r', encoding='utf-8') as f:
+        keywords_data = json.load(f)
+
+    all_keywords = []
+    for category, words in keywords_data.items():
+        for word in words:
+            all_keywords.append((category, word))
 
     created = []
-    for page in PAGES:
-        out_path = os.path.join(os.path.dirname(__file__), "..", page["filename"])
-        html = generate_page(template, page)
-        with open(out_path, "w", encoding="utf-8") as f:
-            f.write(html)
-        created.append(page["filename"])
-        print(f"✅ {page['filename']}")
+    sitemap_urls = []
 
-    print(f"\n✅ Created {len(created)} new SEO pages")
+    for category, keyword in all_keywords:
+        # 生成文件名：seo-{category}-{slug}.html
+        safe_keyword = re.sub(r'[^\w\u4e00-\u9fff]', '-', keyword)
+        safe_keyword = re.sub(r'-+', '-', safe_keyword).strip('-')[:30]
+        out_filename = f"seo-{category}-{safe_keyword}.html"
+        out_path = os.path.join(BASE_DIR, out_filename)
+
+        # 跳过已存在的同名文件（保护已有的高质量页面）
+        if os.path.exists(out_path):
+            print(f"⏭️  SKIP (exists): {out_filename}")
+            sitemap_urls.append(out_filename)
+            continue
+
+        html = generate_page(keyword, category, out_filename)
+        with open(out_path, 'w', encoding='utf-8') as f:
+            f.write(html)
+        created.append(out_filename)
+        sitemap_urls.append(out_filename)
+        print(f"✅ Created: {out_filename}")
+
+    # 更新sitemap
+    with open(SITEMAP_FILE, 'r', encoding='utf-8') as f:
+        sitemap = f.read()
+
+    today = date.today().isoformat()
+    new_urls = '\n  '.join(
+        f'<url><loc>https://pdftool.work/{u}</loc><lastmod>{today}</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>'
+        for u in sitemap_urls
+    )
+    sitemap_new = sitemap.replace('</urlset>', f'  {new_urls}\n</urlset>')
+    with open(SITEMAP_FILE, 'w', encoding='utf-8') as f:
+        f.write(sitemap_new)
+
+    print(f"\n✅ V3生成完成: {len(created)} 个新页面")
+    print(f"   sitemap已更新: {len(sitemap_urls)} 个SEO页面URL")
 
 
 if __name__ == "__main__":

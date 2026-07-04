@@ -113,6 +113,7 @@ DEPLOY_FILES=(
   "blog-phone-to-pdf.html"
   "blog-pdf-page-size.html"
   "pdf-tools.html"
+  "seo-*.html"
 )
 
 REQUIRED_FILES=(
