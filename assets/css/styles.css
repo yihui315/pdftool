@@ -873,12 +873,14 @@ body {
 }
 
 @media (min-width: 1024px) {
-  [data-menu-toggle] {
-    display: none;
-  }
-
   .tool-layout {
     grid-template-columns: minmax(0, 1fr) 22rem;
+  }
+}
+
+@media (min-width: 1536px) {
+  [data-menu-toggle] {
+    display: none;
   }
 }
 

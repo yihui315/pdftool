@@ -1,5 +1,8 @@
 import { defineConfig, devices } from "@playwright/test";
 
+const testServerPort = process.env.PLAYWRIGHT_TEST_PORT || "4173";
+const testServerURL = `http://127.0.0.1:${testServerPort}`;
+
 export default defineConfig({
   testDir: "./tests/browser",
   fullyParallel: false,
@@ -7,7 +10,7 @@ export default defineConfig({
   timeout: 45_000,
   expect: { timeout: 8_000 },
   use: {
-    baseURL: "http://127.0.0.1:8080",
+    baseURL: testServerURL,
     viewport: { width: 1280, height: 720 },
     trace: "retain-on-failure",
     screenshot: "only-on-failure"
@@ -23,8 +26,8 @@ export default defineConfig({
     { name: "edge", use: { ...devices["Desktop Edge"], channel: "msedge" } }
   ],
   webServer: {
-    command: "npm run serve",
-    url: "http://127.0.0.1:8080",
+    command: `python -m http.server ${testServerPort} --bind 127.0.0.1`,
+    url: testServerURL,
     reuseExistingServer: !process.env.CI,
     timeout: 20_000
   }
