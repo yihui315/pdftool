@@ -318,6 +318,8 @@ DEPLOY_FILES=(
   "seo-tools-pdf合并工具.html"
   "seo-tools-pdf旋转在线.html"
   "seo-tools-pdf转jpg在线.html"
+  "ai/"
+  "data/"
 )
 
 REQUIRED_FILES=(
