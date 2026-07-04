@@ -168,12 +168,12 @@ echo "🚀 上传到服务器: $REMOTE_RELEASE"
 # 创建远程目录
 ssh "${SSH_ARGS[@]}" "$TARGET" "mkdir -p '$REMOTE_RELEASE'"
 
-# 上传文件
+# 上传文件 - 使用tar方式避免SCP大文件列表问题
 echo "   上传 HTML 和配置文件..."
-scp "${SCP_ARGS[@]}" "${DEPLOY_FILES[@]}" "${TARGET}:${REMOTE_RELEASE}/"
+tar cf - "${DEPLOY_FILES[@]}" | ssh "${SSH_ARGS[@]}" "$TARGET" "cd '$REMOTE_RELEASE' && tar xf -"
 
 echo "   上传 assets 目录..."
-scp "${SCP_ARGS[@]}" -r assets "${TARGET}:${REMOTE_RELEASE}/"
+tar cf - assets | ssh "${SSH_ARGS[@]}" "$TARGET" "cd '$REMOTE_RELEASE' && tar xf -"
 
 # 激活发布
 echo ""
