@@ -11,6 +11,7 @@ import { execSync } from 'child_process';
 import { existsSync, readFileSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
+import { scanHtmlFiles, getPageConfig, generateSitemapXml } from './sitemap-builder.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const BASE = join(__dirname, '..');
@@ -18,6 +19,22 @@ const SERVER = 'root@154.217.241.238';
 const SSH_PASS = 'Tw599999999';
 const SITE_DIR = '/var/www/pdftool.work';
 const TIMESTAMP = new Date().toISOString().replace(/[-:T]/g, '').slice(0, 14);
+
+/**
+ * Generate and save sitemap.xml
+ */
+function generateSitemap() {
+  console.log('🗺️  Generating sitemap.xml...');
+  const htmlFiles = scanHtmlFiles(BASE);
+  console.log(`   Found ${htmlFiles.length} HTML files`);
+  
+  const sitemapXml = generateSitemapXml(htmlFiles);
+  const outputPath = join(BASE, 'sitemap.xml');
+  const { writeFileSync } = require('fs');
+  writeFileSync(outputPath, sitemapXml, 'utf-8');
+  console.log(`   ✅ sitemap.xml updated (${htmlFiles.length} URLs)`);
+  return outputPath;
+}
 
 function sh(cmd, opts = {}) {
   try {
@@ -68,6 +85,11 @@ function main() {
     sh('git push origin main', { timeout: 30000 });
     console.log('✅ Pushed to origin/main');
   }
+  
+  // Step 2.5: Generate sitemap.xml
+  console.log('\n2️⃣🔄 Generating sitemap...');
+  const sitemapPath = generateSitemap();
+  console.log('✅ Sitemap generated');
   
   // Step 3: Create release directory on server
   console.log('\n3️⃣ Server: creating release directory...');
