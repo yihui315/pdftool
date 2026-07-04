@@ -60,7 +60,11 @@ const elements = {
   previewZoom: document.querySelector("[data-preview-zoom]"),
   readability: document.querySelector("[data-readability-confirm]"),
   downloadReason: document.querySelector("[data-download-reason]"),
-  download: document.querySelector("[data-download-link]")
+  download: document.querySelector("[data-download-link]"),
+  analysisSize: document.getElementById("analysis-size"),
+  analysisPages: document.getElementById("analysis-pages"),
+  analysisType: document.getElementById("analysis-type"),
+  analysisTip: document.getElementById("analysis-tip")
 };
 
 const stageOrder = ["parsing", "structural", "rasterizing", "validating", "cleanup"];
@@ -165,6 +169,7 @@ function setFile(file) {
   elements.selectedSize.textContent = `${formatDecimalBytes(file.size)} · 原文件保持不变`;
   elements.selectedFile.classList.remove("hidden");
   elements.dropZone.classList.add("hidden");
+  updateFileAnalysis(file);
   updateStartState();
 }
 
@@ -175,7 +180,32 @@ function clearFile() {
   elements.selectedSize.textContent = "";
   elements.selectedFile.classList.add("hidden");
   elements.dropZone.classList.remove("hidden");
+  if (elements.analysisSize) elements.analysisSize.textContent = "—";
+  if (elements.analysisPages) elements.analysisPages.textContent = "—";
+  if (elements.analysisType) elements.analysisType.textContent = "—";
+  if (elements.analysisTip) elements.analysisTip.querySelector("p").textContent = "👆 上传PDF文件后，系统将自动分析并给出推荐";
   updateStartState();
+}
+
+function updateFileAnalysis(file, resultBytes) {
+  if (!elements.analysisSize || !elements.analysisPages || !elements.analysisType || !elements.analysisTip) return;
+  const size = resultBytes != null ? resultBytes : file.size;
+  elements.analysisSize.textContent = formatDecimalBytes(size);
+  const estimatedPages = Math.max(1, Math.round(size / 200000));
+  elements.analysisPages.textContent = `~${estimatedPages}`;
+  if (resultBytes != null) {
+    elements.analysisType.textContent = "✅ 压缩成功";
+    elements.analysisTip.querySelector("p").textContent = `🎉 压缩完成！文件从 ${formatDecimalBytes(file.size)} 减小到 ${formatDecimalBytes(resultBytes)}`;
+  } else {
+    const isLikelyScan = file.size > 2 * 1024 * 1024;
+    elements.analysisType.textContent = isLikelyScan ? "📷 扫描件" : "📄 文档型";
+    let tip = "";
+    if (file.size < 200_000) tip = "💡 文件较小，普通压缩即可满足需求";
+    else if (file.size < 500_000) tip = "💡 文件中等大小，建议选择 200KB 或 500KB 目标";
+    else if (file.size < 2 * 1024 * 1024) tip = "💡 文件较大，建议选择 500KB 或 1MB 目标";
+    else tip = "💡 检测到大文件，可能是扫描件，建议选择 1MB 目标以保证清晰度";
+    elements.analysisTip.querySelector("p").textContent = tip;
+  }
 }
 
 function setProgress(message) {
@@ -346,6 +376,7 @@ async function showResult(message) {
   }
   elements.downloadReason.textContent = message.method === "raster" ? "确认所有页面可读后，下载按钮才会启用。" : "结果已经可以下载，原文件未被修改。";
   elements.progressTrack.style.setProperty("--progress", "100%");
+  updateFileAnalysis(currentFile, message.finalBytes);
   showOnly(elements.result);
   requestAnimationFrame(() => elements.resultHeading.focus());
 }

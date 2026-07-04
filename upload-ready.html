@@ -91,6 +91,28 @@
         </div>
       </section>
 
+      <section class="bg-amber-50 border border-amber-200 rounded-xl p-6 mb-8" id="file-analysis">
+        <h2 class="text-xl font-semibold text-slate-950 mb-3">📊 PDF文件分析</h2>
+        <p class="text-slate-600 text-sm mb-4">上传文件后，系统会自动分析并推荐最佳压缩方案</p>
+        <div class="grid gap-4 sm:grid-cols-3">
+          <div class="bg-white rounded-lg p-4 text-center">
+            <p class="text-2xl font-bold text-primary" id="analysis-size">—</p>
+            <p class="text-xs text-slate-500 mt-1">文件大小</p>
+          </div>
+          <div class="bg-white rounded-lg p-4 text-center">
+            <p class="text-2xl font-bold text-primary" id="analysis-pages">—</p>
+            <p class="text-xs text-slate-500 mt-1">预估页数</p>
+          </div>
+          <div class="bg-white rounded-lg p-4 text-center">
+            <p class="text-2xl font-bold text-amber-600" id="analysis-type">—</p>
+            <p class="text-xs text-slate-500 mt-1">文件类型</p>
+          </div>
+        </div>
+        <div class="mt-4 p-3 bg-white rounded-lg" id="analysis-tip">
+          <p class="text-sm text-slate-600">👆 上传PDF文件后，系统将自动分析并给出推荐</p>
+        </div>
+      </section>
+
       <section class="pb-14" aria-label="PDF 指定大小处理工具">
         <div class="mx-auto max-w-[960px] px-4 sm:px-6">
           <div class="compatibility-notice hidden" data-mobile-notice>
