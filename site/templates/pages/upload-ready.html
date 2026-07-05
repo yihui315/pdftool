@@ -6,10 +6,17 @@
   </div>
 </section>
 
+<section class="editorial-section hidden" data-mobile-notice>
+  <div class="editorial-container">
+    <div class="editorial-paper-card">
+      <p class="rounded-lg bg-amber-50 p-3 text-sm text-amber-800" data-i18n="mobileNotice"></p>
+    </div>
+  </div>
+</section>
+
 <section class="editorial-section" data-supported-flow>
   <div class="editorial-container editorial-two-column" data-workspace>
     <div class="editorial-paper-card" data-idle-view>
-      <p class="hidden rounded-lg bg-amber-50 p-3 text-sm text-amber-800" data-mobile-notice data-i18n="mobileNotice"></p>
       <input class="sr-only" type="file" accept="application/pdf" data-file-input>
       <div class="drop-zone" role="button" tabindex="0" data-drop-zone>
         <h2 class="editorial-card-title" data-i18n="dropTitle"></h2>
@@ -81,6 +88,10 @@
       </dl>
       <div class="mt-6" data-preview-review>
         <h3 data-i18n="previewTitle"></h3>
+        <div class="mt-3 flex flex-wrap items-center gap-3 text-sm font-semibold">
+          <label class="inline-flex items-center gap-2"><input type="radio" name="preview-source" value="original" checked> <span data-i18n="previewOriginal"></span></label>
+          <label class="inline-flex items-center gap-2"><input type="radio" name="preview-source" value="result"> <span data-i18n="previewResult"></span></label>
+        </div>
         <canvas class="mt-3 w-full rounded-lg border border-slate-200 bg-white" data-preview-canvas></canvas>
         <p class="mt-2 hidden text-sm text-red-700" data-preview-error></p>
         <button class="editorial-button editorial-button-secondary mt-3" type="button" data-retry-preview data-i18n="retryPreview"></button>

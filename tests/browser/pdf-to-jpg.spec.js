@@ -19,7 +19,7 @@ test("converts a PDF with the self-hosted PDF.js runtime and downloads the resul
   await expect(image).toHaveCount(1);
   await expect(image).toHaveAttribute("src", /^blob:/);
 
-  const downloadButton = page.getByRole("button", { name: "打包下载全部" });
+  const downloadButton = page.getByRole("button", { name: "下载全部图片" });
   await expect(downloadButton).toBeEnabled();
   const downloadPromise = page.waitForEvent("download");
   await downloadButton.click();

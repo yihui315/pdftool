@@ -45,6 +45,8 @@
     "methodLabel": "处理方式",
     "marginLabel": "大小余量",
     "previewTitle": "预览结果",
+    "previewOriginal": "原文件",
+    "previewResult": "处理结果",
     "retryPreview": "重试预览",
     "previousPage": "上一页",
     "pageIndicator": "第 1 页",

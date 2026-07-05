@@ -25,6 +25,10 @@ import { loadLocaleContent } from "../site/lib/content.mjs";
 import { DEFAULT_ORIGIN, absoluteUrl } from "../site/lib/paths.mjs";
 import { renderFragment } from "../site/lib/render-fragment.mjs";
 import { generateSitemapXml } from "../site/lib/sitemap.mjs";
+import {
+  landingStructuredData,
+  renderLandingPage
+} from "../site/templates/landing.mjs";
 import { renderLayout } from "../site/templates/layout.mjs";
 import { copyVendor } from "./copy-vendor.mjs";
 import { verifyRelease } from "./verify-release.mjs";
@@ -32,6 +36,7 @@ import { verifyRelease } from "./verify-release.mjs";
 const execFileAsync = promisify(execFile);
 const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const defaultRoutes = Object.freeze([...CORE_ROUTES, ...LANDING_ROUTES]);
+const landingRouteKeys = new Set(LANDING_ROUTES.map(({ key }) => key));
 
 function toPosix(relativePath) {
   return relativePath.split(path.sep).join("/");
@@ -176,23 +181,38 @@ async function readTemplateFragment(route) {
   });
 }
 
-async function renderRouteFragment(route, page) {
-  const template = await readTemplateFragment(route);
-  if (template) return renderFragment(template, page.strings);
+async function renderRoutePage({ route, page, locale, common }) {
+  if (landingRouteKeys.has(route.key)) {
+    return {
+      fragment: renderLandingPage({ locale: locale.code, common, page }),
+      structuredData: landingStructuredData({ locale: locale.code, page })
+    };
+  }
 
-  return renderFragment(
-    [
-      '<section class="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">',
-      '<h1 class="text-4xl font-extrabold tracking-tight text-slate-950" data-i18n="buildPageH1"></h1>',
-      '<p class="mt-4 text-lg text-slate-700" data-i18n="buildPageLead"></p>',
-      "</section>"
-    ].join(""),
-    {
-      ...page.strings,
-      buildPageH1: page.h1,
-      buildPageLead: page.lead
-    }
-  );
+  const template = await readTemplateFragment(route);
+  if (template) {
+    return {
+      fragment: renderFragment(template, page.strings),
+      structuredData: undefined
+    };
+  }
+
+  return {
+    fragment: renderFragment(
+      [
+        '<section class="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">',
+        '<h1 class="text-4xl font-extrabold tracking-tight text-slate-950" data-i18n="buildPageH1"></h1>',
+        '<p class="mt-4 text-lg text-slate-700" data-i18n="buildPageLead"></p>',
+        "</section>"
+      ].join(""),
+      {
+        ...page.strings,
+        buildPageH1: page.h1,
+        buildPageLead: page.lead
+      }
+    ),
+    structuredData: undefined
+  };
 }
 
 function alternatesFor(route, locales) {
@@ -253,14 +273,20 @@ async function renderRoutes({ stagingDir, routes, locales, contentByLocale }) {
       }
 
       const relativePath = outputPath(locale.code, route.key);
-      const fragment = await renderRouteFragment(route, page);
+      const { fragment, structuredData } = await renderRoutePage({
+        route,
+        page,
+        locale,
+        common: content.common
+      });
       const html = renderLayout({
         locale: locale.code,
         routeKey: route.key,
         common: content.common,
         page,
         runtime: content.runtime,
-        fragment
+        fragment,
+        structuredData
       });
       await writeInside(stagingDir, relativePath, html);
 

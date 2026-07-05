@@ -45,6 +45,8 @@
     "methodLabel": "Method",
     "marginLabel": "Size margin",
     "previewTitle": "Result preview",
+    "previewOriginal": "Original",
+    "previewResult": "Result",
     "retryPreview": "Retry preview",
     "previousPage": "Previous page",
     "pageIndicator": "Page 1",

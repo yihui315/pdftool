@@ -1,6 +1,6 @@
 import { defineConfig, devices } from "@playwright/test";
 
-const testServerPort = process.env.PLAYWRIGHT_TEST_PORT || "4173";
+const testServerPort = "8080";
 const testServerURL = `http://127.0.0.1:${testServerPort}`;
 
 export default defineConfig({
@@ -26,7 +26,7 @@ export default defineConfig({
     { name: "edge", use: { ...devices["Desktop Edge"], channel: "msedge" } }
   ],
   webServer: {
-    command: `python -m http.server ${testServerPort} --bind 127.0.0.1`,
+    command: "npm run serve",
     url: testServerURL,
     reuseExistingServer: process.env.PLAYWRIGHT_REUSE_SERVER === "1",
     timeout: 20_000

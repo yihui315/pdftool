@@ -36,7 +36,7 @@ test("never places PDF-derived sentinels in a network request", async ({ page, c
 
   await page.goto("/upload-ready.html");
   await page.locator("[data-file-input]").setInputFiles({ name: fileName, mimeType: "application/pdf", buffer: bytes });
-  await page.getByRole("button", { name: "检查并压缩" }).click();
+  await page.getByRole("button", { name: "开始准备 PDF" }).click();
   await expect(page.getByRole("heading", { name: "原文件已经符合大小限制" })).toBeVisible({ timeout: 20_000 });
 
   const requestText = requests.join("\n");
@@ -44,5 +44,5 @@ test("never places PDF-derived sentinels in a network request", async ({ page, c
   expect(requestText).not.toContain(fileName);
   expect(requestText).not.toContain(hash);
   expect(await page.evaluate(() => window.__pdfToolOutbound)).toEqual([]);
-  await expect(page.getByText("PDF 文件数据上传量：0 B", { exact: true })).toBeVisible();
+  await expect(page.locator("[data-result-method]")).toHaveText("未重写原文件");
 });

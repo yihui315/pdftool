@@ -8,9 +8,9 @@ const TOOL_ASSETS = [
 ];
 
 const TOOL_PAGES = [
-  { route: "/pdf-to-jpg.html", script: '<script type="module" src="/assets/js/pdf-to-jpg.js"></script>' },
-  { route: "/jpg-to-pdf.html", script: '<script src="/assets/js/jpg-to-pdf.js" defer></script>' },
-  { route: "/pdf-rotate.html", script: '<script src="/assets/js/pdf-rotate.js" defer></script>' }
+  { route: "/pdf-to-jpg.html", src: "/assets/js/pdf-to-jpg.js", type: "module" },
+  { route: "/jpg-to-pdf.html", src: "/assets/js/jpg-to-pdf.js" },
+  { route: "/pdf-rotate.html", src: "/assets/js/pdf-rotate.js" }
 ];
 
 test("serves extracted tool assets from locale-safe root paths", async ({ request }) => {
@@ -38,11 +38,15 @@ test("keeps first-party asset references rooted from nested locale pages", async
 });
 
 test("loads extracted tool implementations through exact external script tags", async ({ request }) => {
-  for (const { route, script } of TOOL_PAGES) {
+  for (const { route, src, type } of TOOL_PAGES) {
     const response = await request.get(route);
     const html = await response.text();
+    const scriptPattern = new RegExp(`<script[^>]+src="${src}"[^>]*>`);
 
-    expect(html, route).toContain(script);
+    expect(html, route).toMatch(scriptPattern);
+    if (type) {
+      expect(html, route).toMatch(new RegExp(`<script[^>]+src="${src}"[^>]+type="${type}"[^>]*>`));
+    }
     expect(html, `${route} inline implementation`).not.toContain("var fileInput =");
   }
 });

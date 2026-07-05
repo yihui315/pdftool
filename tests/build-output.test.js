@@ -5,7 +5,12 @@ import path from "node:path";
 import { afterEach, describe, expect, test } from "vitest";
 import { JSDOM } from "jsdom";
 import { getLocale } from "../site/config/locales.mjs";
-import { getRoute } from "../site/config/routes.mjs";
+import {
+  LANDING_ROUTES,
+  canonicalPath,
+  getRoute,
+  outputPath
+} from "../site/config/routes.mjs";
 import { buildSite } from "../scripts/build-site.mjs";
 
 const tempRoots = [];
@@ -29,6 +34,7 @@ const navigation = Object.freeze({
 const runtimeMessages = Object.freeze({
   "file.reading": "Reading {filename}"
 });
+const landingLocaleCodes = Object.freeze(["en", "es", "pt-BR", "ja", "id"]);
 
 async function tempRoot() {
   const directory = await mkdtemp(path.join(os.tmpdir(), "pdftool-build-"));
@@ -197,5 +203,53 @@ describe("atomic multilingual release builds", () => {
     ).rejects.toThrow(/unsupported locale|locale identity mismatch/i);
 
     await expect(readFile(marker, "utf8")).resolves.toBe("previous release\n");
+  });
+
+  test("builds localized landing guides with visible sections and FAQ JSON-LD", async () => {
+    const root = await tempRoot();
+    const outDir = path.join(root, "dist");
+
+    const manifest = await buildSite({ outDir });
+
+    expect(manifest.routes).toHaveLength(98);
+    expect(manifest.routes.filter(({ key }) =>
+      LANDING_ROUTES.some((route) => route.key === key)
+    )).toHaveLength(20);
+
+    for (const locale of landingLocaleCodes) {
+      for (const route of LANDING_ROUTES) {
+        const relativePath = outputPath(locale, route.key);
+        expect(manifest.files).toContain(relativePath);
+
+        const html = await readFile(path.join(outDir, relativePath), "utf8");
+        const document = new JSDOM(html).window.document;
+
+        expect(document.querySelector("h1")?.textContent?.trim()).toBeTruthy();
+        expect(
+          document.querySelector('[data-landing-section="limitations"]')?.textContent
+        ).toMatch(/\S/u);
+        expect(
+          document.querySelector('[data-landing-section="privacy"]')?.textContent
+        ).toMatch(/\S/u);
+
+        const primaryHref = document
+          .querySelector("[data-landing-primary-cta]")
+          ?.getAttribute("href");
+        expect([canonicalPath(locale, "compress"), canonicalPath(locale, "uploadReady")]).toContain(
+          primaryHref
+        );
+
+        const visibleQuestions = [
+          ...document.querySelectorAll("[data-landing-faq-question]")
+        ].map((node) => node.textContent.trim());
+        expect(visibleQuestions).toHaveLength(3);
+
+        const jsonLd = JSON.parse(
+          document.querySelector('script[type="application/ld+json"]').textContent
+        );
+        expect(jsonLd["@type"]).toBe("FAQPage");
+        expect(jsonLd.mainEntity.map((entry) => entry.name)).toEqual(visibleQuestions);
+      }
+    }
   });
 });

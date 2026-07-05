@@ -45,6 +45,8 @@
     "methodLabel": "Método",
     "marginLabel": "Margem de tamanho",
     "previewTitle": "Prévia do resultado",
+    "previewOriginal": "Original",
+    "previewResult": "Resultado",
     "retryPreview": "Tentar prévia novamente",
     "previousPage": "Página anterior",
     "pageIndicator": "Página 1",

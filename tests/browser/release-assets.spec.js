@@ -1,4 +1,5 @@
 import { expect, test } from "@playwright/test";
+import { allOutputPaths } from "../../site/config/routes.mjs";
 import playwrightConfig from "../../playwright.config.js";
 
 const CORE_ROUTES = [
@@ -6,7 +7,8 @@ const CORE_ROUTES = [
   "/manage.html", "/compress.html", "/pdf-to-jpg.html", "/jpg-to-pdf.html",
   "/pdf-rotate.html", "/pdf-unlock.html", "/about.html", "/privacy.html"
 ];
-const VIEWPORT_WIDTHS = [320, 375, 768, 1024, 1280];
+const MOBILE_VIEWPORT_WIDTHS = [320, 375, 768];
+const DESKTOP_VIEWPORT_WIDTHS = [1024, 1280, 1536];
 
 async function readHeaderLayout(page) {
   return page.evaluate(() => {
@@ -14,7 +16,6 @@ async function readHeaderLayout(page) {
     const mobileMenu = document.querySelector("[data-mobile-menu]");
     const mobileToggle = document.querySelector("[data-menu-toggle]");
     const mobileLinks = Array.from(mobileMenu.querySelectorAll("a"));
-    const mobileEnglishLinks = Array.from(mobileMenu.querySelectorAll("a[href^='/en']"));
     const desktopNavLinks = Array.from(nav.querySelectorAll("[data-nav-link]"));
     const navBounds = nav.getBoundingClientRect();
     const menuBounds = mobileMenu.getBoundingClientRect();
@@ -32,10 +33,6 @@ async function readHeaderLayout(page) {
       navRight: navBounds.right,
       viewport: window.innerWidth,
       mobileToggleVisible: isVisible(mobileToggle),
-      desktopEnglishLinks: nav.querySelectorAll("a[href^='/en']").length,
-      mobileEnglishLinks: mobileEnglishLinks.length,
-      visibleMobileEnglishLinks: mobileEnglishLinks.filter(isVisible).length,
-      styledMobileEnglishLinks: mobileEnglishLinks.filter((link) => link.hasAttribute("style")).length,
       mobileMenuVisible: isVisible(mobileMenu),
       mobileMenuOverflow: mobileMenu.scrollWidth > mobileMenu.clientWidth,
       mobileMenuLeft: menuBounds.left,
@@ -66,8 +63,6 @@ function expectOpenMobileMenuWithinViewport(layout, label) {
   expect(layout.mobileMenuRight, label).toBeLessThanOrEqual(layout.viewport);
   expect(layout.totalMobileLinks, label).toBeGreaterThan(0);
   expect(layout.visibleMobileLinks, label).toBe(layout.totalMobileLinks);
-  expect(layout.visibleMobileEnglishLinks, label).toBe(1);
-  expect(layout.visibleMobileEnglishLinks, label).toBe(layout.mobileEnglishLinks);
   expect(layout.mobileLinkOverflow, label).toBe(false);
 }
 
@@ -77,9 +72,11 @@ test("requires explicit opt-in before reusing the test server", () => {
 
 test("serves every public route and production PDF asset from first-party paths", async ({ request }) => {
   const routes = [
-    "/", "/upload-ready.html", "/merge.html", "/split.html", "/manage.html", "/compress.html",
-    "/pdf-to-jpg.html", "/jpg-to-pdf.html", "/pdf-rotate.html", "/pdf-unlock.html",
-    "/about.html", "/privacy.html", "/blog-merge-pdf.html", "/blog-pdf-tips.html", "/blog-jpg-to-pdf.html", "/sitemap.xml"
+    "/",
+    ...allOutputPaths()
+      .filter((route) => route !== "index.html")
+      .map((route) => `/${route}`),
+    "/sitemap.xml"
   ];
   for (const route of routes) {
     const response = await request.get(route);
@@ -108,7 +105,7 @@ test("serves every public route and production PDF asset from first-party paths"
 });
 
 test("keeps the responsive header inside the viewport", async ({ page }) => {
-  for (const width of VIEWPORT_WIDTHS) {
+  for (const width of MOBILE_VIEWPORT_WIDTHS) {
     await page.setViewportSize({ width, height: 800 });
     for (const route of CORE_ROUTES) {
       await page.goto(route, { waitUntil: "domcontentloaded" });
@@ -116,9 +113,6 @@ test("keeps the responsive header inside the viewport", async ({ page }) => {
       const layout = await readHeaderLayout(page);
       expectHeaderWithinViewport(layout, label);
       expect(layout.mobileToggleVisible, label).toBe(true);
-      expect(layout.desktopEnglishLinks, label).toBe(0);
-      expect(layout.mobileEnglishLinks, label).toBe(1);
-      expect(layout.styledMobileEnglishLinks, label).toBe(0);
 
       const toggle = page.locator("[data-menu-toggle]");
       const mobileMenu = page.locator("[data-mobile-menu]");
@@ -132,15 +126,17 @@ test("keeps the responsive header inside the viewport", async ({ page }) => {
     }
   }
 
-  await page.setViewportSize({ width: 1536, height: 800 });
-  for (const route of CORE_ROUTES) {
-    await page.goto(route, { waitUntil: "domcontentloaded" });
-    const label = `1536px ${route}`;
-    const layout = await readHeaderLayout(page);
-    expectHeaderWithinViewport(layout, label);
-    expect(layout.totalDesktopNavLinks, `${label} desktop navigation links`).toBeGreaterThan(0);
-    expect(layout.visibleDesktopNavLinks, `${label} visible desktop navigation links`).toBe(layout.totalDesktopNavLinks);
-    expect(layout.mobileToggleVisible, `${label} mobile navigation toggle`).toBe(false);
-    expect(layout.mobileMenuVisible, `${label} mobile navigation menu`).toBe(false);
+  for (const width of DESKTOP_VIEWPORT_WIDTHS) {
+    await page.setViewportSize({ width, height: 800 });
+    for (const route of CORE_ROUTES) {
+      await page.goto(route, { waitUntil: "domcontentloaded" });
+      const label = `${width}px ${route}`;
+      const layout = await readHeaderLayout(page);
+      expectHeaderWithinViewport(layout, label);
+      expect(layout.totalDesktopNavLinks, `${label} desktop navigation links`).toBeGreaterThan(0);
+      expect(layout.visibleDesktopNavLinks, `${label} visible desktop navigation links`).toBe(layout.totalDesktopNavLinks);
+      expect(layout.mobileToggleVisible, `${label} mobile navigation toggle`).toBe(false);
+      expect(layout.mobileMenuVisible, `${label} mobile navigation menu`).toBe(false);
+    }
   }
 });

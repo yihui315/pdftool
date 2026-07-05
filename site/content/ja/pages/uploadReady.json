@@ -45,6 +45,8 @@
     "methodLabel": "方法",
     "marginLabel": "サイズ余裕",
     "previewTitle": "結果プレビュー",
+    "previewOriginal": "元ファイル",
+    "previewResult": "処理結果",
     "retryPreview": "プレビューを再試行",
     "previousPage": "前のページ",
     "pageIndicator": "1 ページ目",

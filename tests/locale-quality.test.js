@@ -3,7 +3,11 @@ import os from "node:os";
 import path from "node:path";
 import { describe, expect, test } from "vitest";
 import { getLocale } from "../site/config/locales.mjs";
-import { CORE_ROUTES, canonicalPath } from "../site/config/routes.mjs";
+import {
+  CORE_ROUTES,
+  LANDING_ROUTES,
+  canonicalPath
+} from "../site/config/routes.mjs";
 import { loadLocaleContent } from "../site/lib/content.mjs";
 import { buildSite } from "../scripts/build-site.mjs";
 
@@ -242,5 +246,61 @@ describe("localized content quality gates", () => {
     } finally {
       await rm(outDir, { recursive: true, force: true });
     }
+  });
+
+  test("localized landing guides are complete, distinct, and claim-safe", async () => {
+    const english = await loadContent("en");
+    const allTitleH1Pairs = new Set();
+
+    for (const locale of ["en", "es", "pt-BR", "ja", "id"]) {
+      const content = await loadContent(locale);
+      const titles = new Set();
+      const descriptions = new Set();
+      const h1s = new Set();
+
+      for (const { key } of LANDING_ROUTES) {
+        const page = content.pages[key];
+        expect(page, `missing ${locale} landing page: ${key}`).toBeDefined();
+        expect(["compress", "uploadReady"]).toContain(page.strings.primaryToolRoute);
+
+        titles.add(page.seo.title);
+        descriptions.add(page.seo.description);
+        h1s.add(page.h1);
+        allTitleH1Pairs.add(`${locale}\u0000${page.seo.title}\u0000${page.h1}`);
+
+        expect(page.strings.limitationsTitle).toMatch(/\S/u);
+        expect(page.strings.limitationsText).toMatch(/\S/u);
+        expect(page.strings.privacyTitle).toMatch(/\S/u);
+        expect(page.strings.privacyText).toMatch(/\S/u);
+        expect(page.strings.faqOneQuestion).toMatch(/\S/u);
+        expect(page.strings.faqOneAnswer).toMatch(/\S/u);
+        expect(page.strings.primaryCta).toMatch(/\S/u);
+
+        if (locale !== "en") {
+          expect(page.h1).not.toBe(english.pages[key].h1);
+          expect(page.lead).not.toBe(english.pages[key].lead);
+          expect(page.strings.faqOneQuestion).not.toBe(
+            english.pages[key].strings.faqOneQuestion
+          );
+        }
+      }
+
+      expect(titles.size, `${locale} duplicate landing titles`).toBe(
+        LANDING_ROUTES.length
+      );
+      expect(descriptions.size, `${locale} duplicate landing descriptions`).toBe(
+        LANDING_ROUTES.length
+      );
+      expect(h1s.size, `${locale} duplicate landing H1s`).toBe(
+        LANDING_ROUTES.length
+      );
+
+      const serialized = JSON.stringify(content.pages);
+      expect(serialized).not.toMatch(
+        /no file size limits|files of any size|up to 90%|API access|batch processing feature|complete privacy and security|most operations complete in under 10 seconds/i
+      );
+    }
+
+    expect(allTitleH1Pairs.size).toBe(20);
   });
 });

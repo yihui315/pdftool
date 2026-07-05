@@ -1,7 +1,14 @@
+import { readFile } from "node:fs/promises";
+import path from "node:path";
 import { expect, test } from "@playwright/test";
 
+const fixturePath = path.resolve("tests/browser/fixtures/preview-harness.html");
+
 test("renders nonblank pages with bounded thumbnail concurrency and LRU cleanup", async ({ page }) => {
-  await page.goto("/tests/browser/fixtures/preview-harness.html");
+  await page.goto("/");
+  await page.setContent(await readFile(fixturePath, "utf8"), {
+    waitUntil: "domcontentloaded"
+  });
   await page.waitForFunction(() => !!window.previewHarness);
   expect(await page.evaluate(() => window.previewHarness.open())).toBe(14);
 
