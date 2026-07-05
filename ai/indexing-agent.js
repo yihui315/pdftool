@@ -7,13 +7,24 @@
  * 用法: node ai/indexing-agent.js
  */
 
-import { execSync } from 'child_process';
+import { readFileSync } from 'fs';
 import https from 'https';
 import http from 'http';
+import { join, dirname } from 'path';
+import { fileURLToPath } from 'url';
 
-const INDEXNOW_KEY = 'dd6db5fc7e2544aaaefa32499509634b';
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const BASE = join(__dirname, '..');
+
+const INDEXNOW_KEY = process.env.INDEXNOW_KEY;
 const INDEXNOW_HOST = 'pdftool.work';
 const SITEMAP_URL = 'https://pdftool.work/sitemap.xml';
+
+if (!INDEXNOW_KEY) {
+  console.error('❌ INDEXNOW_KEY environment variable is not set.');
+  console.error('   Please set it before running: export INDEXNOW_KEY="your-key"');
+  process.exit(1);
+}
 
 function httpGet(url, timeout = 10000) {
   return new Promise((resolve, reject) => {
@@ -74,8 +85,7 @@ async function main() {
   } catch(e) {
     console.log(`⚠️  Fetch sitemap failed: ${e.message}, using local file`);
     try {
-      const { readFileSync } = await import('fs');
-      sitemapBody = readFileSync('/Users/yihui/openclaw/workspace/pdftool/sitemap.xml', 'utf-8');
+      sitemapBody = readFileSync(join(BASE, 'sitemap.xml'), 'utf-8');
     } catch(e2) {
       console.log('❌ Cannot get sitemap at all');
       process.exit(1);

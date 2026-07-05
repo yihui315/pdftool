@@ -17,6 +17,9 @@ const DATA_DIR = join(BASE, 'data');
 const KEYWORDS_FILE = join(DATA_DIR, 'top_keywords.json');
 const SEO_KEYWORDS_FILE = join(BASE, 'seo', 'keywords.json');
 
+// 缓存已存在的关键词列表（避免重复读文件）
+let _cachedExistingKeywords = null;
+
 // ─── 评分权重 ───────────────────────────────────────
 const INTENT_WEIGHTS = {
   // 高商业意图 (money keywords)
@@ -87,8 +90,12 @@ const SUGGEST_PATTERNS = [
   ['pdf', 'to', 'jpg', 'online'],       ['jpg', 'to', 'pdf', 'online'],
 ];
 
-// ─── 从现有keywords.json加载 ────────────────────────
+// ─── 从现有keywords.json加载（带缓存）──────────────
 function loadExistingKeywords() {
+  if (_cachedExistingKeywords !== null) {
+    return _cachedExistingKeywords;
+  }
+  
   const existing = [];
   if (existsSync(SEO_KEYWORDS_FILE)) {
     try {
@@ -102,6 +109,8 @@ function loadExistingKeywords() {
       console.log('⚠️  读取keywords.json失败:', e.message);
     }
   }
+  
+  _cachedExistingKeywords = existing;
   return existing;
 }
 
@@ -139,9 +148,8 @@ function scoreKeyword(keyword, category) {
   if (wordCount > 8) score -= 2;
   if (wordCount < 2) score -= 1;
   
-  // 已存在惩罚（避免重复）
-  const existing = loadExistingKeywords();
-  const alreadyExists = existing.some(e => e.word === keyword);
+  // 已存在惩罚（避免重复）- 使用缓存
+  const alreadyExists = loadExistingKeywords().some(e => e.word === keyword);
   if (alreadyExists) score -= 10;
   
   return Math.max(1, Math.min(score, 15)); // 1-15分
