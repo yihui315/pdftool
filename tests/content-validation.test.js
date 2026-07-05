@@ -76,8 +76,7 @@ function spanishCommon() {
 }
 
 const ENGLISH_RUNTIME = {
-  complete: "Complete",
-  reading: "Reading {filename}: {size}"
+  "file.reading": "Reading {filename}"
 };
 
 async function withSpanishLocale(runtime, assertion) {
@@ -162,8 +161,7 @@ describe("locale content loading", () => {
   test("loads a non-English locale with English runtime parity", async () => {
     await withSpanishLocale(
       {
-        complete: "Completado",
-        reading: "Leyendo {filename}: {size}"
+        "file.reading": "Leyendo {filename}"
       },
       async (directory) => {
         await expect(
@@ -178,7 +176,7 @@ describe("locale content loading", () => {
 
   test("rejects a missing runtime key through the locale loader", async () => {
     await withSpanishLocale(
-      { reading: "Leyendo {filename}: {size}" },
+      {},
       async (directory) => {
         await expect(
           loadLocaleContent(directory, {
@@ -186,7 +184,7 @@ describe("locale content loading", () => {
             englishRuntime: ENGLISH_RUNTIME
           })
         ).rejects.toThrow(
-          /runtime\.complete is missing; required by the English reference/
+          /runtime\.file\.reading is missing; required by the runtime key registry/
         );
       }
     );
@@ -194,28 +192,28 @@ describe("locale content loading", () => {
 
   test("rejects an extra runtime key through the locale loader", async () => {
     await withSpanishLocale(
-      { ...ENGLISH_RUNTIME, surprise: "Sorpresa" },
+      { ...ENGLISH_RUNTIME, "file.extra": "Sorpresa" },
       async (directory) => {
         await expect(
           loadLocaleContent(directory, {
             expectedLocale: "es",
             englishRuntime: ENGLISH_RUNTIME
           })
-        ).rejects.toThrow(/runtime\.surprise.*unknown/i);
+        ).rejects.toThrow(/runtime\.file\.extra.*unknown/i);
       }
     );
   });
 
   test("rejects a runtime token mismatch through the locale loader", async () => {
     await withSpanishLocale(
-      { complete: "Completado", reading: "Leyendo {file}: {size}" },
+      { "file.reading": "Leyendo {file}" },
       async (directory) => {
         await expect(
           loadLocaleContent(directory, {
             expectedLocale: "es",
             englishRuntime: ENGLISH_RUNTIME
           })
-        ).rejects.toThrow(/runtime\.reading.*token mismatch/i);
+        ).rejects.toThrow(/runtime\.file\.reading.*token mismatch/i);
       }
     );
   });
@@ -281,7 +279,7 @@ describe("common content validation", () => {
 
 describe("runtime content validation", () => {
   test("accepts a genuine cross-realm plain object", () => {
-    const runtime = runInNewContext('({ reading: "Reading {filename}" })');
+    const runtime = runInNewContext('({ "file.reading": "Reading {filename}" })');
 
     expect(() => validateRuntime(runtime)).not.toThrow();
   });
@@ -289,14 +287,14 @@ describe("runtime content validation", () => {
   test("rejects non-plain objects and unsafe prototype chains", () => {
     class RuntimeDictionary {
       constructor() {
-        this.reading = "Reading";
+        this["file.reading"] = "Reading {filename}";
       }
     }
 
     expect(() => validateRuntime(new Date())).toThrow(/plain object/i);
     expect(() => validateRuntime(new Map())).toThrow(/plain object/i);
     expect(() => validateRuntime(new RuntimeDictionary())).toThrow(/plain object/i);
-    expect(() => validateRuntime(Object.create({ reading: "Reading" }))).toThrow(
+    expect(() => validateRuntime(Object.create({ "file.reading": "Reading" }))).toThrow(
       /plain object/i
     );
   });
@@ -306,21 +304,25 @@ describe("runtime content validation", () => {
       constructor: { value: Object }
     });
     const runtime = Object.create(forgedPrototype);
-    runtime.reading = "Reading";
+    runtime["file.reading"] = "Reading {filename}";
 
     expect(() => validateRuntime(runtime)).toThrow(/plain object/i);
   });
 
   test("requires a plain flat object", () => {
     expect(() => validateRuntime([])).toThrow(/runtime.*plain object/i);
-    expect(() => validateRuntime({ reading: { label: "Reading" } })).toThrow(
-      /runtime\.reading/
+    expect(() => validateRuntime({ "file.reading": { label: "Reading" } })).toThrow(
+      /runtime\.file\.reading/
     );
   });
 
   test("rejects non-string and empty runtime values", () => {
-    expect(() => validateRuntime({ reading: 42 })).toThrow(/runtime\.reading/);
-    expect(() => validateRuntime({ reading: "  " })).toThrow(/runtime\.reading/);
+    expect(() => validateRuntime({ "file.reading": 42 })).toThrow(
+      /runtime\.file\.reading/
+    );
+    expect(() => validateRuntime({ "file.reading": "  " })).toThrow(
+      /runtime\.file\.reading/
+    );
   });
 
   test("rejects unsafe runtime keys", () => {
@@ -330,13 +332,13 @@ describe("runtime content validation", () => {
   });
 
   test("rejects symbol keys", () => {
-    const symbolRuntime = { reading: "Reading" };
+    const symbolRuntime = { "file.reading": "Reading {filename}" };
     symbolRuntime[Symbol("secret")] = "hidden";
     expect(() => validateRuntime(symbolRuntime)).toThrow(/runtime.*symbol key/i);
   });
 
   test("rejects non-enumerable properties", () => {
-    const hiddenRuntime = { reading: "Reading" };
+    const hiddenRuntime = { "file.reading": "Reading {filename}" };
     Object.defineProperty(hiddenRuntime, "hidden", { value: "secret" });
     expect(() => validateRuntime(hiddenRuntime)).toThrow(
       /runtime\.hidden.*non-enumerable/i
@@ -345,7 +347,7 @@ describe("runtime content validation", () => {
 
   test("rejects accessors without invoking them", () => {
     let invoked = false;
-    const runtime = { reading: "Reading" };
+    const runtime = { "file.reading": "Reading {filename}" };
     Object.defineProperty(runtime, "danger", {
       enumerable: true,
       get() {
@@ -361,28 +363,28 @@ describe("runtime content validation", () => {
   test("rejects a missing reference key", () => {
     expect(() =>
       assertRuntimeParity(
-        { reading: "Reading {filename}" },
-        { reading: "Reading {filename}", complete: "Complete" }
+        {},
+        ENGLISH_RUNTIME
       )
-    ).toThrow(/runtime\.complete is missing; required by the English reference/);
+    ).toThrow(/runtime\.file\.reading is missing; required by the runtime key registry/);
   });
 
   test("rejects an extra reference key", () => {
     expect(() =>
       assertRuntimeParity(
-        { reading: "Reading {filename}", surprise: "Surprise" },
-        { reading: "Reading {filename}" }
+        { ...ENGLISH_RUNTIME, "file.extra": "Surprise" },
+        ENGLISH_RUNTIME
       )
-    ).toThrow(/runtime\.surprise.*unknown/i);
+    ).toThrow(/runtime\.file\.extra.*unknown/i);
   });
 
   test("enforces interpolation token parity", () => {
     expect(() =>
       assertRuntimeParity(
-        { reading: "Reading {file}" },
-        { reading: "Reading {filename}" }
+        { "file.reading": "Reading {file}" },
+        ENGLISH_RUNTIME
       )
-    ).toThrow(/runtime\.reading.*token mismatch/i);
+    ).toThrow(/runtime\.file\.reading.*token mismatch/i);
   });
 });
 

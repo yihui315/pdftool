@@ -2,12 +2,14 @@ import { readFile, readdir } from "node:fs/promises";
 import path from "node:path";
 import { CORE_ROUTES, getRoute } from "../config/routes.mjs";
 import { getLocale } from "../config/locales.mjs";
+import { RUNTIME_KEYS } from "../config/runtime-keys.mjs";
 
 const UNSAFE_OBJECT_KEYS = new Set(["__proto__", "constructor", "prototype"]);
 const TOKEN_PATTERN = /\{([A-Za-z0-9_]+)\}/g;
 const OBJECT_TAG = "[object Object]";
 const NATIVE_OBJECT_SOURCE = Function.prototype.toString.call(Object);
 const NATIVE_ARRAY_SOURCE = Function.prototype.toString.call(Array);
+const RUNTIME_KEY_SET = new Set(RUNTIME_KEYS);
 
 function isPlainObject(value) {
   if (value === null || typeof value !== "object") {
@@ -233,8 +235,20 @@ export function validateCommon(common, expectedLocale) {
 export function validateRuntime(runtime, fieldPath = "runtime") {
   assertSafeJsonData(runtime, fieldPath);
   requirePlainObject(runtime, fieldPath);
+
+  for (const key of RUNTIME_KEYS) {
+    if (!Object.hasOwn(runtime, key)) {
+      throw new Error(
+        `${fieldPath}.${key} is missing; required by the runtime key registry`
+      );
+    }
+  }
+
   for (const [key, value] of Object.entries(runtime)) {
     assertSafeKey(key, propertyPath(fieldPath, key));
+    if (!RUNTIME_KEY_SET.has(key)) {
+      throw new Error(`${fieldPath}.${key} is unknown in the runtime key registry`);
+    }
     requireString(value, `${fieldPath}.${key}`);
     try {
       interpolationTokens(value);
@@ -251,7 +265,7 @@ export function assertRuntimeParity(runtime, englishRuntime) {
   validateRuntime(englishRuntime, "englishRuntime");
 
   const runtimeKeys = Object.keys(runtime);
-  const referenceKeys = Object.keys(englishRuntime);
+  const referenceKeys = RUNTIME_KEYS;
   for (const key of referenceKeys) {
     if (!Object.hasOwn(runtime, key)) {
       throw new Error(`runtime.${key} is missing; required by the English reference`);

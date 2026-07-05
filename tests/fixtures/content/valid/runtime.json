@@ -1,4 +1,3 @@
 {
-  "complete": "Complete",
-  "reading": "Reading {filename}: {size}"
+  "file.reading": "Reading {filename}"
 }

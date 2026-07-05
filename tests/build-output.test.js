@@ -51,7 +51,9 @@ async function writeEnglishHomeFixture(contentRoot, { locale = "en" } = {}) {
       privacy: "Privacy"
     }
   });
-  await writeJson(path.join(contentRoot, "en", "runtime.json"), {});
+  await writeJson(path.join(contentRoot, "en", "runtime.json"), {
+    "file.reading": "Reading {filename}"
+  });
   await writeJson(path.join(contentRoot, "en", "pages", "home.json"), {
     seo: {
       title: "Free PDF tools",
