@@ -1,0 +1,35 @@
+{
+  "seo": {
+    "title": "隐私政策 - PDFTool.work",
+    "description": "PDFTool.work 隐私政策说明浏览器本地 PDF 处理、网站统计、广告请求和大文件处理边界。"
+  },
+  "h1": "隐私政策",
+  "lead": "了解 PDFTool.work 如何处理文件内容、网站请求、广告与统计。",
+  "strings": {
+    "heroEyebrow": "隐私",
+    "heroTitle": "隐私政策",
+    "heroLead": "本政策说明 PDFTool.work 的浏览器本地 PDF 处理方式，以及网站运行中可能出现的统计、广告和普通网络请求。",
+    "lastUpdated": "最后更新日期：2026 年 7 月 5 日",
+    "localTitle": "1. 文件处理方式",
+    "localIntro": "当你在工具中选择 PDF 时，文件内容由当前浏览器读取，并在你的设备上生成处理结果。PDFTool.work 的工具设计不需要把所选 PDF 内容发送到本站服务器。",
+    "localDownload": "处理结果通常以浏览器下载链接的方式临时生成。刷新页面、关闭标签页或重新选择文件后，结果链接可能失效。",
+    "dataTitle": "2. 网站可能处理的信息",
+    "dataIntro": "为了让网站正常运行、排查问题和支持免费服务，服务器或第三方服务可能处理以下非文件内容信息：",
+    "dataLogItem": "基础访问日志，例如 IP 地址、请求路径、浏览器类型、访问时间和状态码。",
+    "dataPerformanceItem": "页面性能和错误信息，例如脚本加载失败、浏览器能力或处理阶段。",
+    "dataAdsItem": "广告与统计服务所需的 Cookie、设备信息或普通网页请求数据，具体取决于服务配置和适用规则。",
+    "adsTitle": "3. Google Analytics 与 Google AdSense",
+    "adsText": "网站可能加载 Google Analytics 和 Google AdSense 资源，用于了解访问情况并支持免费运营。相关服务可能接收普通网页请求信息，但不需要读取你在 PDF 工具中选择的文件内容。",
+    "limitsTitle": "4. 浏览器内存与 PDF 结构限制",
+    "limitsText": "较大的扫描件、图片型 PDF、加密文件或结构复杂的 PDF 可能占用更多浏览器内存，也可能导致处理失败。建议在桌面浏览器中处理重要文件，并在提交前复核结果。",
+    "contactTitle": "5. 联系方式",
+    "contactText": "如果你对隐私政策、广告配置或文件处理方式有疑问，可以发送邮件至 privacy@pdftool.work。",
+    "adLabel": "广告位",
+    "faqEyebrow": "常见问题",
+    "faqTitle": "隐私与文件处理",
+    "faqUploadQuestion": "所选 PDF 内容会离开我的设备吗？",
+    "faqUploadAnswer": "工具设计为由浏览器本地读取和处理所选 PDF 内容。页面仍会请求网站静态资源、统计资源和广告资源。",
+    "faqAnalyticsQuestion": "统计或广告请求会读取 PDF 内容吗？",
+    "faqAnalyticsAnswer": "不会。统计和广告请求属于普通网页资源请求，不需要访问你在工具中选择的 PDF 文件内容。"
+  }
+}

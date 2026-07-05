@@ -1,9 +1,107 @@
+import { mkdtemp, readFile, rm } from "node:fs/promises";
+import os from "node:os";
+import path from "node:path";
 import { JSDOM } from "jsdom";
-import { describe, expect, test } from "vitest";
+import { afterEach, describe, expect, test } from "vitest";
+import { getLocale } from "../site/config/locales.mjs";
+import { getRoute } from "../site/config/routes.mjs";
 import { escapeHtml, safeJson } from "../site/lib/html.mjs";
 import { absoluteUrl, assetUrl } from "../site/lib/paths.mjs";
 import { renderFragment } from "../site/lib/render-fragment.mjs";
 import { renderLayout } from "../site/templates/layout.mjs";
+import { buildSite } from "../scripts/build-site.mjs";
+
+const repoRoot = path.resolve(import.meta.dirname, "..");
+const tempRoots = [];
+
+const sharedInfoRoutes = Object.freeze(["home", "tools", "about", "privacy"]);
+const sharedInfoPages = Object.freeze([
+  Object.freeze({
+    file: "index.html",
+    lang: "zh-CN",
+    h1: "免费在线 PDF 工具"
+  }),
+  Object.freeze({
+    file: "en/index.html",
+    lang: "en",
+    h1: "Free online PDF tools"
+  }),
+  Object.freeze({
+    file: "pdf-tools.html",
+    lang: "zh-CN",
+    h1: "PDF 工具箱"
+  }),
+  Object.freeze({
+    file: "en/pdf-tools.html",
+    lang: "en",
+    h1: "PDF tools"
+  }),
+  Object.freeze({
+    file: "about.html",
+    lang: "zh-CN",
+    h1: "关于 PDFTool.work"
+  }),
+  Object.freeze({
+    file: "en/about.html",
+    lang: "en",
+    h1: "About PDFTool.work"
+  }),
+  Object.freeze({
+    file: "privacy.html",
+    lang: "zh-CN",
+    h1: "隐私政策"
+  }),
+  Object.freeze({
+    file: "en/privacy.html",
+    lang: "en",
+    h1: "Privacy Policy"
+  })
+]);
+
+const unsupportedEnglishClaims = Object.freeze([
+  "no file size limits",
+  "files of any size",
+  "up to 90%",
+  "api access",
+  "batch processing feature",
+  "complete privacy and security",
+  "most operations complete in under 10 seconds"
+]);
+
+async function tempRoot() {
+  const directory = await mkdtemp(path.join(os.tmpdir(), "pdftool-render-"));
+  tempRoots.push(directory);
+  return directory;
+}
+
+async function renderSharedInfoPages() {
+  const outDir = await tempRoot();
+  const contentRoot = path.join(repoRoot, "site", "content");
+
+  await readFile(path.join(contentRoot, "zh-CN", "common.json"), "utf8");
+  await buildSite({
+    routes: sharedInfoRoutes.map((routeKey) => getRoute(routeKey)),
+    locales: ["zh-CN", "en"].map((locale) => getLocale(locale)),
+    contentRoot,
+    outDir
+  });
+
+  return Object.fromEntries(
+    await Promise.all(
+      sharedInfoPages.map(async ({ file }) => [
+        file,
+        new JSDOM(await readFile(path.join(outDir, file), "utf8"))
+      ])
+    )
+  );
+}
+
+afterEach(async () => {
+  await Promise.all(
+    tempRoots.map((directory) => rm(directory, { recursive: true, force: true }))
+  );
+  tempRoots.length = 0;
+});
 
 function englishCommon() {
   return {
@@ -186,5 +284,25 @@ describe("shared localized page layout", () => {
     ];
     expect(jsonLdScripts).toHaveLength(1);
     expect(() => JSON.parse(jsonLdScripts[0].textContent)).not.toThrow();
+  });
+
+  test("renders shared Chinese and English informational pages with safe localized metadata", async () => {
+    const pages = await renderSharedInfoPages();
+
+    for (const { file, lang, h1 } of sharedInfoPages) {
+      const document = pages[file].window.document;
+      expect(document.documentElement.getAttribute("lang")).toBe(lang);
+      expect(document.querySelector("h1")?.textContent.trim()).toBe(h1);
+      expect(document.querySelectorAll("[data-language-menu-root]")).toHaveLength(1);
+      expect(document.querySelectorAll('link[rel="canonical"]')).toHaveLength(1);
+      expect(document.querySelectorAll("a[data-language-option][style]")).toHaveLength(0);
+
+      if (lang === "en") {
+        const pageText = document.body.textContent.toLowerCase().replace(/\s+/gu, " ");
+        for (const claim of unsupportedEnglishClaims) {
+          expect(pageText).not.toContain(claim);
+        }
+      }
+    }
   });
 });

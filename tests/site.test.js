@@ -50,4 +50,30 @@ describe("shared site interactions", () => {
       expect(slot.closest("[data-ad-container]").classList.contains("hidden")).toBe(false);
     });
   });
+
+  it("preserves generated language menu hooks without inline option styles", () => {
+    dom = loadPage("index.html", "site.js", {
+      transformHtml: (html) =>
+        html.replace(
+          "</body>",
+          [
+            '<div data-language-menu-root>',
+            '<button type="button" aria-expanded="false" aria-controls="test-language-menu" data-language-toggle>Language</button>',
+            '<ul id="test-language-menu" data-language-menu hidden>',
+            '<li><a href="/" data-language-option>简体中文</a></li>',
+            '<li><a href="/en/" data-language-option>English</a></li>',
+            "</ul>",
+            "</div>",
+            "</body>"
+          ].join("")
+        )
+    });
+    const { document } = dom.window;
+    const toggle = document.querySelector("[data-language-toggle]");
+    const menu = document.querySelector("[data-language-menu]");
+
+    expect(menu.hidden).toBe(true);
+    expect(document.querySelectorAll("a[data-language-option][style]")).toHaveLength(0);
+    expect(toggle.getAttribute("aria-expanded")).toBe("false");
+  });
 });

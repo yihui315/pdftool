@@ -1,0 +1,35 @@
+{
+  "seo": {
+    "title": "Privacy Policy - PDFTool.work",
+    "description": "PDFTool.work explains browser-based PDF processing, local file contents, analytics, advertising requests, and browser memory limits."
+  },
+  "h1": "Privacy Policy",
+  "lead": "Understand how PDFTool.work handles file contents, website requests, advertising, and analytics.",
+  "strings": {
+    "heroEyebrow": "Privacy",
+    "heroTitle": "Privacy Policy",
+    "heroLead": "This policy explains PDFTool.work browser-based PDF processing and the ordinary analytics, advertising, and network requests that may occur while the site runs.",
+    "lastUpdated": "Last updated: July 5, 2026",
+    "localTitle": "1. How file processing works",
+    "localIntro": "When you choose a PDF in a tool, the file contents are read by your browser so the page can create a result on your device. PDFTool.work is designed not to receive the selected PDF contents for these tool operations.",
+    "localDownload": "Results are usually created as temporary browser download links. If you refresh the page, close the tab, or choose another file, the result link may no longer be available.",
+    "dataTitle": "2. Information the website may process",
+    "dataIntro": "To keep the site running, troubleshoot problems, and support the free service, servers or third-party services may process non-file-content information such as:",
+    "dataLogItem": "Basic access logs, such as IP address, request path, browser type, visit time, and status code.",
+    "dataPerformanceItem": "Page performance and error information, such as script loading failures, browser capability, or processing stage.",
+    "dataAdsItem": "Cookies, device information, or ordinary web request data needed by analytics and advertising services, depending on configuration and applicable rules.",
+    "adsTitle": "3. Google Analytics and Google AdSense",
+    "adsText": "The site may load Google Analytics and Google AdSense resources to understand visits and support free operation. Those services may receive ordinary web request information, but they do not need to read the local file contents selected in a PDF tool.",
+    "limitsTitle": "4. Browser memory and PDF structure limits",
+    "limitsText": "Large scans, image-heavy PDFs, encrypted files, or complex PDF structures can use more browser memory and may fail to process. Use a desktop browser for important files and review the result before submitting it.",
+    "contactTitle": "5. Contact",
+    "contactText": "If you have questions about this policy, advertising configuration, or file processing, email privacy@pdftool.work.",
+    "adLabel": "Advertisement",
+    "faqEyebrow": "FAQ",
+    "faqTitle": "Privacy and file handling",
+    "faqUploadQuestion": "Do selected PDF contents leave my device?",
+    "faqUploadAnswer": "The tools are designed for the browser to read and process the selected PDF contents locally. The page may still request site assets, analytics resources, and advertising resources.",
+    "faqAnalyticsQuestion": "Do analytics or ads read my PDF contents?",
+    "faqAnalyticsAnswer": "No. Analytics and advertising requests are ordinary web resource requests and do not need access to the PDF file contents selected in a tool."
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "seo": {
+    "title": "关于 PDFTool.work - 浏览器本地 PDF 工具",
+    "description": "了解 PDFTool.work：一个面向日常办公、学习材料和上传准备的浏览器本地 PDF 工具站。"
+  },
+  "h1": "关于 PDFTool.work",
+  "lead": "我们希望常见 PDF 操作更清楚、更轻量，并尽量在浏览器本地完成。",
+  "strings": {
+    "heroEyebrow": "关于我们",
+    "heroTitle": "关于 PDFTool.work",
+    "heroLead": "PDFTool.work 面向日常办公、学习材料、报名申请和轻量文档整理。我们的重点是把常见 PDF 操作做得清楚、可理解、可快速完成。",
+    "missionEyebrow": "设计原则",
+    "missionTitle": "为真实的临时 PDF 任务而设计",
+    "missionLead": "很多用户只是需要把材料压小、合并几份文件、删掉空白页或把图片整理成 PDF。我们围绕这些高频任务建设工具。",
+    "principleClarityTitle": "清楚",
+    "principleClarityText": "每个工具都尽量给出明确入口、状态提示和处理后的复核建议。",
+    "principleLocalTitle": "本地优先",
+    "principleLocalText": "工具优先让浏览器读取所选 PDF 内容并生成结果，减少不必要的服务器上传流程。",
+    "principleHonestTitle": "诚实说明边界",
+    "principleHonestText": "压缩效果、处理速度和稳定性会受到设备内存、浏览器能力和 PDF 结构影响。",
+    "adLabel": "广告位",
+    "operationsTitle": "网站运营说明",
+    "operationsIntro": "PDFTool.work 以静态页面、前端脚本和本地化内容为基础。我们会继续补充多语言页面和更清楚的工具说明。",
+    "operationsToolsTitle": "当前工具范围",
+    "operationsToolsText": "网站提供材料上传准备、PDF 压缩、合并、拆分、页面管理、PDF 转图片、图片转 PDF、旋转和解锁等常见功能。",
+    "operationsAdsTitle": "广告与统计",
+    "operationsAdsText": "为了支持免费工具维护，页面可能加载 Google Analytics 和 Google AdSense 等资源。相关请求不需要读取你在工具中选择的 PDF 内容。",
+    "operationsContactTitle": "联系",
+    "operationsContactText": "如果你发现页面说明不清楚、工具行为异常或有合作需求，可以通过 contact@pdftool.work 联系我们。",
+    "faqEyebrow": "常见问题",
+    "faqTitle": "关于 PDFTool.work",
+    "faqWhatQuestion": "PDFTool.work 是什么？",
+    "faqWhatAnswer": "它是一个浏览器本地 PDF 工具站，帮助用户完成合并、拆分、压缩、页面整理和格式转换等常见任务。",
+    "faqContactQuestion": "如何反馈问题？",
+    "faqContactAnswer": "请尽量说明使用的浏览器、工具页面、文件类型和出现的问题，再发送到 contact@pdftool.work。"
+  }
+}

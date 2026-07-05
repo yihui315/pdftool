@@ -1,0 +1,27 @@
+{
+  "locale": "en",
+  "navigation": {
+    "home": "Home",
+    "tools": "PDF tools",
+    "uploadReady": "Upload prep",
+    "merge": "Merge PDF",
+    "split": "Split PDF",
+    "manage": "Manage pages",
+    "compress": "Compress PDF",
+    "pdfToJpg": "PDF to JPG",
+    "jpgToPdf": "JPG to PDF",
+    "rotate": "Rotate PDF",
+    "unlock": "Unlock PDF",
+    "about": "About",
+    "privacy": "Privacy"
+  },
+  "languageMenu": {
+    "label": "Language",
+    "currentLanguage": "English"
+  },
+  "footer": {
+    "tagline": "Browser-based PDF tools for everyday documents and upload prep.",
+    "copyright": "© PDFTool.work",
+    "privacy": "Privacy Policy"
+  }
+}

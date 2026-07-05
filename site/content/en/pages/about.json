@@ -1,0 +1,37 @@
+{
+  "seo": {
+    "title": "About PDFTool.work - Browser-based PDF tools",
+    "description": "Learn about PDFTool.work, a browser-based PDF utility site for everyday documents, study material, and upload preparation."
+  },
+  "h1": "About PDFTool.work",
+  "lead": "We make common PDF tasks clearer, lighter, and practical for browser-based work.",
+  "strings": {
+    "heroEyebrow": "About us",
+    "heroTitle": "About PDFTool.work",
+    "heroLead": "PDFTool.work is built for everyday office work, study material, application packets, and lightweight document cleanup. The goal is to make common PDF operations clear, understandable, and quick to start.",
+    "missionEyebrow": "Principles",
+    "missionTitle": "Designed for real one-off PDF tasks",
+    "missionLead": "Many people only need to shrink a document, combine a few files, remove blank pages, or turn images into a PDF. The site is organized around those high-frequency jobs.",
+    "principleClarityTitle": "Clarity",
+    "principleClarityText": "Each tool aims to provide a clear entry point, visible status, and reminders to review the result.",
+    "principleLocalTitle": "Local-first",
+    "principleLocalText": "Tools prioritize browser-side reading of selected PDF contents and result generation, reducing unnecessary server upload flows.",
+    "principleHonestTitle": "Honest limits",
+    "principleHonestText": "Compression results, processing time, and stability can depend on device memory, browser capability, and PDF structure.",
+    "adLabel": "Advertisement",
+    "operationsTitle": "How the site operates",
+    "operationsIntro": "PDFTool.work is based on static pages, frontend scripts, and localized content. We will continue improving multilingual pages and clearer tool guidance.",
+    "operationsToolsTitle": "Current tool scope",
+    "operationsToolsText": "The site includes upload preparation, PDF compression, merging, splitting, page management, PDF-to-image conversion, image-to-PDF conversion, rotation, and unlocking.",
+    "operationsAdsTitle": "Ads and analytics",
+    "operationsAdsText": "To support maintenance of the free tools, pages may load resources such as Google Analytics and Google AdSense. Those requests do not need to read the PDF contents selected inside a tool.",
+    "operationsContactTitle": "Contact",
+    "operationsContactText": "If a page is unclear, a tool behaves unexpectedly, or you want to discuss cooperation, contact us at contact@pdftool.work.",
+    "faqEyebrow": "FAQ",
+    "faqTitle": "About PDFTool.work",
+    "faqWhatQuestion": "What is PDFTool.work?",
+    "faqWhatAnswer": "It is a browser-based PDF utility site for common tasks such as merging, splitting, compressing, organizing pages, and converting formats.",
+    "faqContactQuestion": "How can I report an issue?",
+    "faqContactAnswer": "Please include your browser, the tool page, the file type, and what happened, then email contact@pdftool.work."
+  }
+}
