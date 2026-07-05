@@ -109,7 +109,7 @@ function getPageConfig(filename) {
 function scanHtmlFiles(dir) {
   const files = [];
   
-  function scan(currentDir) {
+  function scan(currentDir, baseRelative = '') {
     try {
       const entries = readdirSync(currentDir);
       for (const entry of entries) {
@@ -119,14 +119,18 @@ function scanHtmlFiles(dir) {
         if (stat.isDirectory()) {
           // 跳过特定目录
           if (entry === 'node_modules' || entry === '.git' || entry === 'tests' || 
-              entry === 'test-results' || entry === 'src' || entry === 'docs') {
+              entry === 'test-results' || entry === 'src' || entry === 'docs' ||
+              entry === 'ai' || entry === 'scripts' || entry === 'deploy') {
             continue;
           }
-          scan(fullPath);
+          const newRelative = baseRelative ? `${baseRelative}/${entry}` : entry;
+          scan(fullPath, newRelative);
         } else if (extname(entry) === '.html') {
+          const relativePath = baseRelative ? `${baseRelative}/${entry}` : entry;
           files.push({
             path: fullPath,
             name: entry,
+            relativePath: relativePath,
             mtime: stat.mtime
           });
         }
@@ -161,7 +165,7 @@ function generateSitemapXml(pages, baseUrl = 'https://pdftool.work') {
   
   for (const page of pages) {
     const config = getPageConfig(page.name);
-    const relativePath = page.path.replace(BASE + '/', '');
+    const relativePath = page.relativePath || page.path.replace(BASE + '/', '');
     const url = relativePath === 'index.html' 
       ? baseUrl + '/' 
       : baseUrl + '/' + relativePath;

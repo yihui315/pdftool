@@ -16,9 +16,16 @@ import { scanHtmlFiles, getPageConfig, generateSitemapXml } from './sitemap-buil
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const BASE = join(__dirname, '..');
 const SERVER = 'root@154.217.241.238';
-const SSH_PASS = 'Tw599999999';
 const SITE_DIR = '/var/www/pdftool.work';
 const TIMESTAMP = new Date().toISOString().replace(/[-:T]/g, '').slice(0, 14);
+
+// SSH password from environment variable (required)
+const SSH_PASS = process.env.SSH_PASS;
+if (!SSH_PASS) {
+  console.error('❌ SSH_PASS environment variable is not set.');
+  console.error('   Please set it before running: export SSH_PASS="your-password"');
+  process.exit(1);
+}
 
 /**
  * Generate and save sitemap.xml
