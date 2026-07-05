@@ -1,0 +1,33 @@
+{
+  "seo": {
+    "title": "Juntar PDF - Ferramenta grátis para combinar PDFs",
+    "description": "Junte vários arquivos PDF no navegador, altere a ordem e crie um único PDF para inscrições, anexos ou material de estudo."
+  },
+  "h1": "Juntar PDF",
+  "lead": "Selecione vários PDFs, organize a ordem no navegador e crie um arquivo combinado.",
+  "strings": {
+    "heroEyebrow": "Juntar PDF",
+    "heroTitle": "Juntar PDF",
+    "heroLead": "Combine vários PDFs em um arquivo na ordem que você precisa. O conteúdo selecionado é lido pelo navegador atual para organização leve de documentos.",
+    "dropTitle": "Adicione arquivos PDF",
+    "dropLead": "Arraste pelo menos dois PDFs aqui ou escolha arquivos com o botão.",
+    "chooseButton": "Escolher PDFs",
+    "emptySummary": "Nenhum arquivo adicionado",
+    "emptyList": "Os PDFs adicionados aparecerão aqui. Você pode arrastar para reordenar ou usar os botões de movimento.",
+    "largeFileTip": "PDFs grandes podem usar mais memória do navegador. Feche outras abas pesadas antes de processar arquivos importantes.",
+    "optionsTitle": "Revise a ordem e crie o resultado",
+    "optionsLead": "Confirme a ordem dos arquivos antes de juntar e depois abra o resultado para conferir páginas e conteúdo.",
+    "progressReady": "Aguardando PDFs",
+    "primaryButton": "Juntar PDFs",
+    "clearButton": "Limpar",
+    "resetButton": "Redefinir",
+    "resultTitle": "Junção concluída",
+    "resultLead": "O resultado gerado aparecerá aqui.",
+    "downloadButton": "Baixar PDF combinado",
+    "faqTitle": "Perguntas sobre juntar PDF",
+    "faqOneQuestion": "Os arquivos são enviados para um servidor?",
+    "faqOneAnswer": "A ferramenta é projetada para que o navegador leia o conteúdo dos PDFs selecionados e crie o resultado. A página ainda pode carregar ativos do site, análises ou solicitações de publicidade.",
+    "faqTwoQuestion": "O que devo verificar depois de juntar?",
+    "faqTwoAnswer": "Antes de enviar o arquivo, abra novamente o resultado e confira ordem, número de páginas, orientação e requisitos da plataforma de destino."
+  }
+}

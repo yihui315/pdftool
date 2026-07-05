@@ -1,0 +1,23 @@
+{
+  "seo": {
+    "title": "JPG para PDF - Combinar imagens em um PDF",
+    "description": "Combine JPG, PNG e outras imagens em um único PDF no navegador para fotos, digitalizações ou capturas de tela."
+  },
+  "h1": "JPG para PDF",
+  "lead": "Reúna fotos, digitalizações ou capturas de tela em um arquivo PDF.",
+  "strings": {
+    "heroEyebrow": "Conversão de formato",
+    "heroTitle": "JPG para PDF",
+    "heroLead": "Escolha várias imagens, ajuste a ordem e crie um PDF no navegador.",
+    "dropTitle": "Escolha imagens",
+    "dropLead": "Arraste imagens aqui ou escolha arquivos de imagem locais com o botão.",
+    "chooseButton": "Escolher imagens",
+    "fileCountLabel": "Quantidade de imagens",
+    "clearButton": "Limpar",
+    "optionsTitle": "Ordenar e criar PDF",
+    "primaryButton": "Criar PDF",
+    "loadingLabel": "Processando",
+    "resultTitle": "PDF criado",
+    "downloadButton": "Baixar PDF"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "seo": {
+    "title": "Girar PDF - Corrigir orientação de páginas PDF",
+    "description": "Gire páginas PDF no navegador para corrigir páginas de lado, invertidas ou digitalizadas com orientação incorreta."
+  },
+  "h1": "Girar PDF",
+  "lead": "Ajuste a orientação das páginas PDF e exporte o arquivo corrigido.",
+  "strings": {
+    "heroEyebrow": "Orientação de páginas",
+    "heroTitle": "Girar PDF",
+    "heroLead": "Corrija páginas PDF de lado, invertidas ou digitalizadas com orientação incorreta.",
+    "dropTitle": "Escolha um arquivo PDF",
+    "dropLead": "Arraste um PDF aqui ou escolha um arquivo local com o botão.",
+    "chooseButton": "Escolher PDF",
+    "pageCountLabel": "Páginas",
+    "clearButton": "Limpar",
+    "loadingLabel": "Processando",
+    "optionsTitle": "Girar páginas",
+    "rotateAllButton": "Girar tudo 90°",
+    "primaryButton": "Exportar PDF"
+  }
+}

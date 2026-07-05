@@ -1,0 +1,28 @@
+{
+  "seo": {
+    "title": "Dividir PDF - Extrair páginas de PDF online",
+    "description": "Divida um PDF por intervalo de páginas no navegador, extraia somente as páginas necessárias e evite enviar material extra."
+  },
+  "h1": "Dividir PDF",
+  "lead": "Extraia intervalos de páginas de um PDF e crie um ou mais arquivos de resultado.",
+  "strings": {
+    "heroEyebrow": "Dividir PDF",
+    "heroTitle": "Dividir PDF",
+    "heroLead": "Envie um PDF, escolha dividir página por página ou informe intervalos. Útil quando você só precisa enviar parte do material.",
+    "dropTitle": "Escolha um PDF para dividir",
+    "dropLead": "Arraste um PDF aqui ou escolha um arquivo local com o botão.",
+    "chooseButton": "Escolher PDF",
+    "largeFileTip": "Arquivos grandes ou digitalizados podem usar mais memória do navegador.",
+    "optionsTitle": "Escolha como dividir",
+    "optionsLead": "Informe intervalos como 1-3,5,8-10 ou crie um PDF por página.",
+    "singlePagesLabel": "Criar um PDF por página",
+    "rangeLabel": "Intervalos de páginas",
+    "rangePlaceholder": "Exemplo: 1-3,5,8-10",
+    "progressReady": "Aguardando PDF",
+    "primaryButton": "Dividir PDF",
+    "clearButton": "Limpar",
+    "resetButton": "Redefinir",
+    "resultTitle": "Resultados da divisão",
+    "resultLead": "Os PDFs gerados aparecerão aqui."
+  }
+}

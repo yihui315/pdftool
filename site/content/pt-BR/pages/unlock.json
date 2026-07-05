@@ -1,0 +1,30 @@
+{
+  "seo": {
+    "title": "Desbloquear PDF - Remover restrições de abertura com senha",
+    "description": "Quando você tem permissão e a senha, tente ler um PDF protegido no navegador e criar uma cópia desbloqueada."
+  },
+  "h1": "Desbloquear PDF",
+  "lead": "Quando você tem permissão e a senha, tente remover restrições de abertura de um PDF.",
+  "strings": {
+    "heroEyebrow": "Desbloquear PDF",
+    "heroTitle": "Desbloquear PDF",
+    "heroLead": "Use esta ferramenta somente se você tiver autorização para lidar com o arquivo e souber a senha. Alguns PDFs com criptografia forte podem não funcionar no navegador.",
+    "dropTitle": "Escolha um PDF protegido",
+    "dropLead": "Arraste um PDF aqui ou escolha um arquivo local com o botão.",
+    "chooseButton": "Escolher PDF",
+    "emptySummary": "Nenhum arquivo selecionado",
+    "emptyList": "As informações do arquivo aparecerão aqui depois que você escolher um PDF.",
+    "largeFileTip": "PDFs criptografados grandes podem precisar de mais memória.",
+    "optionsTitle": "Digite a senha de abertura",
+    "passwordLabel": "Senha do PDF",
+    "passwordPlaceholder": "Digite a senha que você tem permissão para usar",
+    "togglePassword": "Mostrar ou ocultar senha",
+    "progressReady": "Aguardando PDF",
+    "primaryButton": "Desbloquear PDF",
+    "clearButton": "Limpar",
+    "resetButton": "Redefinir",
+    "resultTitle": "Desbloqueio concluído",
+    "resultLead": "A cópia desbloqueada aparecerá aqui.",
+    "downloadButton": "Baixar PDF desbloqueado"
+  }
+}

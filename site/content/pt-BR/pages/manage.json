@@ -1,0 +1,25 @@
+{
+  "seo": {
+    "title": "Gerenciar páginas PDF - Excluir, ordenar e girar páginas",
+    "description": "Gerencie páginas PDF no navegador: exclua páginas extras, altere a ordem, gire páginas e exporte um novo arquivo."
+  },
+  "h1": "Gerenciar páginas PDF",
+  "lead": "Exclua, reordene e gire páginas PDF para limpar digitalizações e documentos de várias páginas.",
+  "strings": {
+    "heroEyebrow": "Gerenciamento de páginas",
+    "heroTitle": "Gerenciar páginas PDF",
+    "heroLead": "Envie um PDF, remova páginas, altere a ordem, gire páginas e exporte o resultado limpo.",
+    "dropTitle": "Escolha um arquivo PDF",
+    "dropLead": "Arraste um PDF aqui ou escolha um arquivo local com o botão.",
+    "chooseButton": "Escolher PDF",
+    "largeFileTip": "Para controlar a memória do navegador, arquivos grandes podem usar marcadores numerados em vez de miniaturas.",
+    "progressReady": "Aguardando PDF",
+    "emptySummary": "Nenhum arquivo enviado",
+    "primaryButton": "Exportar PDF",
+    "clearButton": "Limpar",
+    "resetButton": "Redefinir",
+    "resultTitle": "Exportação concluída",
+    "resultLead": "O PDF gerenciado aparecerá aqui.",
+    "downloadButton": "Baixar PDF gerenciado"
+  }
+}
