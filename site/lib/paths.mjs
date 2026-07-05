@@ -62,21 +62,16 @@ export function assetUrl(path) {
   return normalizePublicPath(path, "Asset path");
 }
 
-/** Return an absolute URL on the production origin unless one is already given. */
+/** Return an absolute URL on the production origin from a first-party path. */
 export function absoluteUrl(path, origin = DEFAULT_ORIGIN) {
-  if (typeof path !== "string" && !(path instanceof URL)) {
-    throw new Error("URL path must be a string or URL");
+  if (typeof path !== "string") {
+    throw new Error("URL path must be a string");
   }
 
-  const value = String(path).trim();
+  const value = path.trim();
   if (value === "") throw new Error("URL path must not be empty");
-  if (value.startsWith("//")) throw new Error("Protocol-relative URLs are unsupported");
-  if (EXTERNAL_URL_PATTERN.test(value)) {
-    const url = new URL(value);
-    if (url.protocol !== "https:" && url.protocol !== "http:") {
-      throw new Error(`Unsupported absolute URL protocol: ${url.protocol}`);
-    }
-    return url.href;
+  if (value.startsWith("//") || EXTERNAL_URL_PATTERN.test(value)) {
+    throw new Error("URL path must be a first-party root-relative path");
   }
 
   return new URL(normalizePublicPath(value, "URL path"), normalizedOrigin(origin)).href;

@@ -134,6 +134,7 @@ function renderScripts(routeKey) {
   const route = getRoute(routeKey);
   return [
     `<script src="${assetUrl("assets/js/site.js")}" defer></script>`,
+    `<script src="${assetUrl("assets/js/i18n.js")}" defer></script>`,
     ...route.scripts.map((script) => {
       const type = script.type === "module" ? ' type="module"' : "";
       return `<script src="${assetUrl(script.src)}"${type} defer></script>`;

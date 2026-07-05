@@ -1,7 +1,7 @@
 import { JSDOM } from "jsdom";
 import { describe, expect, test } from "vitest";
 import { escapeHtml, safeJson } from "../site/lib/html.mjs";
-import { assetUrl } from "../site/lib/paths.mjs";
+import { absoluteUrl, assetUrl } from "../site/lib/paths.mjs";
 import { renderFragment } from "../site/lib/render-fragment.mjs";
 import { renderLayout } from "../site/templates/layout.mjs";
 
@@ -57,6 +57,10 @@ describe("safe HTML rendering primitives", () => {
   test("escapes text content and normalizes asset URLs", () => {
     expect(escapeHtml(`<script>&"`)).toBe("&lt;script&gt;&amp;&quot;");
     expect(assetUrl("assets/js/site.js")).toBe("/assets/js/site.js");
+    expect(absoluteUrl("/en/")).toBe("https://pdftool.work/en/");
+    expect(() => absoluteUrl("https://example.com/en/")).toThrow(
+      /first-party|root-relative|protocol/i
+    );
   });
 
   test("renders only declared fragment translations", () => {
@@ -141,6 +145,11 @@ describe("shared localized page layout", () => {
     expect(document.querySelector('link[rel="icon"]').getAttribute("href")).toBe(
       "/assets/favicon.svg"
     );
+    expect(
+      [...document.querySelectorAll("script[src]")].map((script) =>
+        script.getAttribute("src")
+      )
+    ).toContain("/assets/js/i18n.js");
 
     const jsonLdScripts = [
       ...document.querySelectorAll('script[type="application/ld+json"]')
