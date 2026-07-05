@@ -10,9 +10,7 @@ function escapeXml(value) {
 }
 
 function absoluteFirstPartyUrl(pathOrUrl, origin) {
-  const value = String(pathOrUrl);
-  if (/^[a-z][a-z0-9+.-]*:/iu.test(value)) return new URL(value).href;
-  return absoluteUrl(value, origin);
+  return absoluteUrl(String(pathOrUrl), origin);
 }
 
 export function sitemapUrl({ loc, path, alternates = [] }, { origin = DEFAULT_ORIGIN } = {}) {

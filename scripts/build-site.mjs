@@ -97,6 +97,30 @@ function stagingDirFor(outDir) {
   return resolve(parent, name === "dist" ? "dist.next" : `${name}.next`);
 }
 
+export function assertSafeOutputRoot(outDir) {
+  if (typeof outDir !== "string" || outDir.trim() === "") {
+    throw new Error("Unsafe output root: output directory is required.");
+  }
+
+  const outputRoot = resolve(outDir);
+  const filesystemRoot = path.parse(outputRoot).root;
+  if (outputRoot === filesystemRoot) {
+    throw new Error(`Unsafe output root: ${outputRoot} is a filesystem root.`);
+  }
+
+  const projectFromOutput = path.relative(outputRoot, projectRoot);
+  const outputContainsProject =
+    projectFromOutput === "" ||
+    (!projectFromOutput.startsWith("..") && !path.isAbsolute(projectFromOutput));
+  if (outputContainsProject) {
+    throw new Error(
+      `Unsafe output root: ${outputRoot} must not be the project root or its ancestor.`
+    );
+  }
+
+  return outputRoot;
+}
+
 async function existingDirectory(filename) {
   const details = await stat(filename).catch(() => null);
   return details?.isDirectory() ? filename : null;
@@ -340,20 +364,45 @@ async function replaceDirectoryAtomic(stagingDir, outDir) {
   await rm(backup, { recursive: true, force: true });
 }
 
-function parseCliOptions(argv) {
+function requiredCliValue(argv, index, optionName) {
+  const value = argv[index + 1];
+  if (value === undefined || value.trim() === "" || value.startsWith("--")) {
+    throw new Error(`${optionName} requires a non-empty value.`);
+  }
+  return value;
+}
+
+function requiredAssignmentValue(argument, optionName) {
+  const value = argument.slice(`${optionName}=`.length);
+  if (value.trim() === "") {
+    throw new Error(`${optionName} requires a non-empty value.`);
+  }
+  return value;
+}
+
+export function parseBuildSiteCliOptions(argv) {
   const options = {};
   for (let index = 0; index < argv.length; index += 1) {
     const argument = argv[index];
     if (argument === "--out") {
-      options.outDir = resolve(projectRoot, argv[index + 1] ?? "");
+      options.outDir = resolve(projectRoot, requiredCliValue(argv, index, "--out"));
       index += 1;
     } else if (argument.startsWith("--out=")) {
-      options.outDir = resolve(projectRoot, argument.slice("--out=".length));
+      options.outDir = resolve(
+        projectRoot,
+        requiredAssignmentValue(argument, "--out")
+      );
     } else if (argument === "--content") {
-      options.contentRoot = resolve(projectRoot, argv[index + 1] ?? "");
+      options.contentRoot = resolve(
+        projectRoot,
+        requiredCliValue(argv, index, "--content")
+      );
       index += 1;
     } else if (argument.startsWith("--content=")) {
-      options.contentRoot = resolve(projectRoot, argument.slice("--content=".length));
+      options.contentRoot = resolve(
+        projectRoot,
+        requiredAssignmentValue(argument, "--content")
+      );
     }
   }
   return options;
@@ -368,7 +417,7 @@ export async function buildSite({
 } = {}) {
   const normalizedRoutes = normalizeRoutes(routes);
   const normalizedLocales = normalizeLocales(locales);
-  const outputRoot = resolve(outDir);
+  const outputRoot = assertSafeOutputRoot(outDir);
   const stagingDir = stagingDirFor(outputRoot);
 
   await rm(stagingDir, { recursive: true, force: true });
@@ -403,7 +452,7 @@ export async function buildSite({
 }
 
 if (resolve(process.argv[1] ?? "") === fileURLToPath(import.meta.url)) {
-  const manifest = await buildSite(parseCliOptions(process.argv.slice(2)));
+  const manifest = await buildSite(parseBuildSiteCliOptions(process.argv.slice(2)));
   console.log(
     `Built ${manifest.routes.length} routes and ${manifest.files.length} files into dist/.`
   );
