@@ -5,13 +5,25 @@ import { getLocale } from "../config/locales.mjs";
 
 const UNSAFE_OBJECT_KEYS = new Set(["__proto__", "constructor", "prototype"]);
 const TOKEN_PATTERN = /\{([A-Za-z0-9_]+)\}/g;
+const OBJECT_TAG = "[object Object]";
+const NATIVE_OBJECT_SOURCE = Function.prototype.toString.call(Object);
 
 function isPlainObject(value) {
-  if (value === null || typeof value !== "object" || Array.isArray(value)) {
+  if (value === null || typeof value !== "object") {
     return false;
   }
+  if (Object.prototype.toString.call(value) !== OBJECT_TAG) return false;
+
   const prototype = Object.getPrototypeOf(value);
-  return prototype === Object.prototype || prototype === null;
+  if (prototype === null) return true;
+  if (Object.getPrototypeOf(prototype) !== null) return false;
+  if (!Object.prototype.hasOwnProperty.call(prototype, "constructor")) return false;
+
+  const constructor = prototype.constructor;
+  return (
+    typeof constructor === "function" &&
+    Function.prototype.toString.call(constructor) === NATIVE_OBJECT_SOURCE
+  );
 }
 
 function requirePlainObject(value, fieldPath) {
@@ -81,8 +93,18 @@ export function interpolationTokens(message) {
 
 /** Require translated text to retain exactly the reference interpolation set. */
 export function assertTokenParity(reference, translation, fieldPath) {
-  const referenceTokens = interpolationTokens(reference);
-  const translationTokens = interpolationTokens(translation);
+  let referenceTokens;
+  let translationTokens;
+  try {
+    referenceTokens = interpolationTokens(reference);
+  } catch (error) {
+    throw new Error(`${fieldPath} reference: ${error.message}`, { cause: error });
+  }
+  try {
+    translationTokens = interpolationTokens(translation);
+  } catch (error) {
+    throw new Error(`${fieldPath} candidate: ${error.message}`, { cause: error });
+  }
   if (JSON.stringify(referenceTokens) !== JSON.stringify(translationTokens)) {
     throw new Error(
       `${fieldPath} token mismatch: expected ${referenceTokens.join(", ") || "none"}; ` +

@@ -2,6 +2,7 @@ import { mkdtemp, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { runInNewContext } from "node:vm";
 import { describe, expect, test } from "vitest";
 import {
   assertRuntimeParity,
@@ -92,6 +93,18 @@ describe("locale content loading", () => {
     }
   });
 
+  test("names common.json when the locale directory is incomplete", async () => {
+    const directory = await mkdtemp(path.join(tmpdir(), "content-missing-common-"));
+
+    try {
+      await expect(
+        loadLocaleContent(directory, { expectedLocale: "en" })
+      ).rejects.toThrow(/common\.json/);
+    } finally {
+      await rm(directory, { recursive: true, force: true });
+    }
+  });
+
   test("returns deeply immutable locale content", async () => {
     const content = await loadLocaleFixture("valid");
 
@@ -140,6 +153,27 @@ describe("common content validation", () => {
 });
 
 describe("runtime content validation", () => {
+  test("accepts a genuine cross-realm plain object", () => {
+    const runtime = runInNewContext('({ reading: "Reading {filename}" })');
+
+    expect(() => validateRuntime(runtime)).not.toThrow();
+  });
+
+  test("rejects non-plain objects and unsafe prototype chains", () => {
+    class RuntimeDictionary {
+      constructor() {
+        this.reading = "Reading";
+      }
+    }
+
+    expect(() => validateRuntime(new Date())).toThrow(/plain object/i);
+    expect(() => validateRuntime(new Map())).toThrow(/plain object/i);
+    expect(() => validateRuntime(new RuntimeDictionary())).toThrow(/plain object/i);
+    expect(() => validateRuntime(Object.create({ reading: "Reading" }))).toThrow(
+      /plain object/i
+    );
+  });
+
   test("requires a plain flat object", () => {
     expect(() => validateRuntime([])).toThrow(/runtime.*plain object/i);
     expect(() => validateRuntime({ reading: { label: "Reading" } })).toThrow(
@@ -245,5 +279,17 @@ describe("interpolation tokens", () => {
     expect(() =>
       assertTokenParity("{filename}", "{file}", "runtime.reading")
     ).toThrow(/runtime\.reading.*token mismatch/i);
+  });
+
+  test("reports the supplied path for malformed reference interpolation", () => {
+    expect(() =>
+      assertTokenParity("Reading {filename", "Reading {filename}", "runtime.reading")
+    ).toThrow(/runtime\.reading.*malformed interpolation/i);
+  });
+
+  test("reports the supplied path for malformed candidate interpolation", () => {
+    expect(() =>
+      assertTokenParity("Reading {filename}", "Reading {filename", "runtime.reading")
+    ).toThrow(/runtime\.reading.*malformed interpolation/i);
   });
 });
