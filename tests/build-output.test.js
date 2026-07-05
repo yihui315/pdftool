@@ -1,3 +1,4 @@
+import { execFileSync } from "node:child_process";
 import { mkdtemp, mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
@@ -7,6 +8,7 @@ import { getRoute } from "../site/config/routes.mjs";
 import { buildSite } from "../scripts/build-site.mjs";
 
 const tempRoots = [];
+const repoRoot = path.resolve(import.meta.dirname, "..");
 
 const navigation = Object.freeze({
   home: "Home",
@@ -68,6 +70,18 @@ function sitemapLocs(xml) {
   return [...xml.matchAll(/<loc>(.*?)<\/loc>/gu)].map((match) => match[1]);
 }
 
+function currentGitCommit() {
+  return execFileSync("git", ["rev-parse", "HEAD"], {
+    cwd: repoRoot,
+    encoding: "utf8"
+  }).trim();
+}
+
+function expectUtcIsoTimestamp(value) {
+  expect(value).toMatch(/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z$/u);
+  expect(new Date(value).toISOString()).toBe(value);
+}
+
 describe("atomic multilingual release builds", () => {
   afterEach(async () => {
     await Promise.all(tempRoots.map((directory) => rm(directory, { recursive: true, force: true })));
@@ -90,9 +104,17 @@ describe("atomic multilingual release builds", () => {
     expect(manifest.routes).toHaveLength(1);
     expect(manifest.files).toContain("en/index.html");
     expect(manifest.files).toContain("assets/vendor/pdfjs/pdf.worker.mjs");
+    expect(manifest.gitCommit).toBe(currentGitCommit());
+    expectUtcIsoTimestamp(manifest.buildTimeUtc);
 
     const sitemap = await readFile(path.join(outDir, "sitemap.xml"), "utf8");
     expect(sitemapLocs(sitemap)).toHaveLength(1);
+
+    const diskManifest = JSON.parse(
+      await readFile(path.join(outDir, "release-manifest.json"), "utf8")
+    );
+    expect(diskManifest.gitCommit).toBe(manifest.gitCommit);
+    expect(diskManifest.buildTimeUtc).toBe(manifest.buildTimeUtc);
   });
 
   test("leaves the previous output untouched when locale validation fails", async () => {
