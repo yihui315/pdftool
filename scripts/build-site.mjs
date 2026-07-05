@@ -259,6 +259,7 @@ async function renderRoutes({ stagingDir, routes, locales, contentByLocale }) {
         routeKey: route.key,
         common: content.common,
         page,
+        runtime: content.runtime,
         fragment
       });
       await writeInside(stagingDir, relativePath, html);

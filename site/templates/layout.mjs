@@ -5,14 +5,14 @@ import {
   canonicalPath,
   getRoute
 } from "../config/routes.mjs";
-import { escapeAttribute, escapeHtml } from "../lib/html.mjs";
+import { escapeAttribute, escapeHtml, safeJson } from "../lib/html.mjs";
 import { assetUrl } from "../lib/paths.mjs";
 import { renderSeoHead } from "../lib/seo.mjs";
 
 const ANALYTICS_ID = "G-3GQPKP7FYH";
 const ADSENSE_CLIENT = "ca-pub-2913395948188969";
 
-function requireLayoutInput({ locale, routeKey, common, page, fragment }) {
+function requireLayoutInput({ locale, routeKey, common, page, runtime, fragment }) {
   if (typeof locale !== "string") throw new Error("Layout locale is required");
   if (typeof routeKey !== "string") throw new Error("Layout routeKey is required");
   getLocale(locale);
@@ -27,6 +27,9 @@ function requireLayoutInput({ locale, routeKey, common, page, fragment }) {
   }
   if (page === null || typeof page !== "object") {
     throw new Error("Layout page content is required");
+  }
+  if (runtime === null || typeof runtime !== "object" || Array.isArray(runtime)) {
+    throw new Error("Layout runtime content is required");
   }
   if (typeof fragment !== "string") {
     throw new Error("Layout fragment must be rendered HTML");
@@ -130,9 +133,17 @@ function renderFooter({ locale, common }) {
   ].join("\n");
 }
 
-function renderScripts(routeKey) {
+function renderRuntimePayload({ locale, runtime }) {
+  return `<script id="runtime-i18n" type="application/json">${safeJson({
+    locale,
+    messages: runtime
+  })}</script>`;
+}
+
+function renderScripts(routeKey, { locale, runtime }) {
   const route = getRoute(routeKey);
   return [
+    renderRuntimePayload({ locale, runtime }),
     `<script src="${assetUrl("assets/js/site.js")}" defer></script>`,
     `<script src="${assetUrl("assets/js/i18n.js")}" defer></script>`,
     ...route.scripts.map((script) => {
@@ -147,11 +158,12 @@ export function renderLayout({
   routeKey,
   common,
   page,
+  runtime,
   fragment,
   origin,
   structuredData
 }) {
-  requireLayoutInput({ locale, routeKey, common, page, fragment });
+  requireLayoutInput({ locale, routeKey, common, page, runtime, fragment });
   const localeConfig = getLocale(locale);
   const desktopNavigation = renderNavigationLinks({ locale, common });
   const mobileNavigation = renderNavigationLinks({ locale, common, mobile: true });
@@ -183,7 +195,7 @@ export function renderLayout({
     fragment,
     "</main>",
     renderFooter({ locale, common }),
-    renderScripts(routeKey),
+    renderScripts(routeKey, { locale, runtime }),
     "</body>",
     "</html>"
   ].join("\n");

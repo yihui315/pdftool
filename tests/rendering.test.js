@@ -53,6 +53,12 @@ function englishPage() {
   };
 }
 
+function englishRuntime() {
+  return {
+    "file.reading": "Reading </script> {filename}"
+  };
+}
+
 describe("safe HTML rendering primitives", () => {
   test("escapes text content and normalizes asset URLs", () => {
     expect(escapeHtml(`<script>&"`)).toBe("&lt;script&gt;&amp;&quot;");
@@ -90,6 +96,7 @@ describe("safe HTML rendering primitives", () => {
 describe("shared localized page layout", () => {
   test("renders an English page with safe SEO, assets, and one h1", () => {
     const page = englishPage();
+    const runtime = englishRuntime();
     const fragment = renderFragment(
       [
         '<section class="editorial-hero">',
@@ -106,6 +113,7 @@ describe("shared localized page layout", () => {
       routeKey: "home",
       common: englishCommon(),
       page,
+      runtime,
       fragment
     });
     const dom = new JSDOM(html);
@@ -150,6 +158,28 @@ describe("shared localized page layout", () => {
         script.getAttribute("src")
       )
     ).toContain("/assets/js/i18n.js");
+
+    const runtimeScriptMatch = html.match(
+      /<script id="runtime-i18n" type="application\/json">(?<json>[\s\S]*?)<\/script>/u
+    );
+    expect(runtimeScriptMatch?.groups?.json).toBeDefined();
+    expect(runtimeScriptMatch.groups.json).not.toContain("</script>");
+    expect(JSON.parse(runtimeScriptMatch.groups.json)).toEqual({
+      locale: "en",
+      messages: runtime
+    });
+    expect(html.indexOf('id="runtime-i18n"')).toBeLessThan(
+      html.indexOf("/assets/js/i18n.js")
+    );
+
+    const runtimeScript = document.querySelector(
+      'script#runtime-i18n[type="application/json"]'
+    );
+    expect(runtimeScript).not.toBeNull();
+    expect(JSON.parse(runtimeScript.textContent)).toEqual({
+      locale: "en",
+      messages: runtime
+    });
 
     const jsonLdScripts = [
       ...document.querySelectorAll('script[type="application/ld+json"]')

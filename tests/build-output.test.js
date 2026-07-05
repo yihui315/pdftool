@@ -3,6 +3,7 @@ import { mkdtemp, mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
 import { afterEach, describe, expect, test } from "vitest";
+import { JSDOM } from "jsdom";
 import { getLocale } from "../site/config/locales.mjs";
 import { getRoute } from "../site/config/routes.mjs";
 import { buildSite } from "../scripts/build-site.mjs";
@@ -24,6 +25,9 @@ const navigation = Object.freeze({
   unlock: "Unlock PDF",
   about: "About",
   privacy: "Privacy"
+});
+const runtimeMessages = Object.freeze({
+  "file.reading": "Reading {filename}"
 });
 
 async function tempRoot() {
@@ -51,9 +55,7 @@ async function writeEnglishHomeFixture(contentRoot, { locale = "en" } = {}) {
       privacy: "Privacy"
     }
   });
-  await writeJson(path.join(contentRoot, "en", "runtime.json"), {
-    "file.reading": "Reading {filename}"
-  });
+  await writeJson(path.join(contentRoot, "en", "runtime.json"), runtimeMessages);
   await writeJson(path.join(contentRoot, "en", "pages", "home.json"), {
     seo: {
       title: "Free PDF tools",
@@ -111,6 +113,17 @@ describe("atomic multilingual release builds", () => {
 
     const sitemap = await readFile(path.join(outDir, "sitemap.xml"), "utf8");
     expect(sitemapLocs(sitemap)).toHaveLength(1);
+
+    const html = await readFile(path.join(outDir, "en", "index.html"), "utf8");
+    const document = new JSDOM(html).window.document;
+    const runtimeScript = document.querySelector(
+      'script#runtime-i18n[type="application/json"]'
+    );
+    expect(runtimeScript).not.toBeNull();
+    expect(JSON.parse(runtimeScript.textContent)).toEqual({
+      locale: "en",
+      messages: runtimeMessages
+    });
 
     const diskManifest = JSON.parse(
       await readFile(path.join(outDir, "release-manifest.json"), "utf8")
