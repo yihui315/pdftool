@@ -8,7 +8,7 @@
  */
 
 import { execSync } from 'child_process';
-import { existsSync, readFileSync } from 'fs';
+import { existsSync, readFileSync, writeFileSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { scanHtmlFiles, getPageConfig, generateSitemapXml } from './sitemap-builder.js';
@@ -37,7 +37,6 @@ function generateSitemap() {
   
   const sitemapXml = generateSitemapXml(htmlFiles);
   const outputPath = join(BASE, 'sitemap.xml');
-  const { writeFileSync } = require('fs');
   writeFileSync(outputPath, sitemapXml, 'utf-8');
   console.log(`   ✅ sitemap.xml updated (${htmlFiles.length} URLs)`);
   return outputPath;
@@ -150,7 +149,7 @@ function main() {
   const results = [];
   for (const path of ['/', 'upload-ready.html', 'compress.html', 'seo-action-pdf-compress-online.html']) {
     try {
-      const res = require('child_process').execSync(`curl -so /dev/null -w "%{http_code}" "https://pdftool.work/${path}"`, { timeout: 10000, encoding: 'utf-8' });
+      const res = execSync(`curl -so /dev/null -w "%{http_code}" "https://pdftool.work/${path}"`, { timeout: 10000, encoding: 'utf-8' });
       results.push(`${res} ${path}`);
     } catch(e) {
       results.push(`ERR ${path}`);
