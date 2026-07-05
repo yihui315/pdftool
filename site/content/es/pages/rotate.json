@@ -1,0 +1,22 @@
+{
+  "seo": {
+    "title": "Rotar PDF - Corregir orientación de páginas PDF",
+    "description": "Rota páginas PDF en tu navegador para corregir páginas de lado, invertidas o escaneadas con orientación incorrecta."
+  },
+  "h1": "Rotar PDF",
+  "lead": "Ajusta la orientación de páginas PDF y exporta el archivo corregido.",
+  "strings": {
+    "heroEyebrow": "Orientación de páginas",
+    "heroTitle": "Rotar PDF",
+    "heroLead": "Corrige páginas PDF de lado, invertidas o escaneadas con orientación incorrecta.",
+    "dropTitle": "Elige un archivo PDF",
+    "dropLead": "Arrastra un PDF aquí o elige un archivo local con el botón.",
+    "chooseButton": "Elegir PDF",
+    "pageCountLabel": "Páginas",
+    "clearButton": "Limpiar",
+    "loadingLabel": "Procesando",
+    "optionsTitle": "Rotar páginas",
+    "rotateAllButton": "Rotar todo 90°",
+    "primaryButton": "Exportar PDF"
+  }
+}

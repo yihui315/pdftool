@@ -1,0 +1,25 @@
+{
+  "seo": {
+    "title": "Gestionar páginas PDF - Eliminar, ordenar y rotar páginas",
+    "description": "Gestiona páginas PDF en tu navegador: elimina páginas extra, cambia el orden, rota páginas y exporta un nuevo archivo."
+  },
+  "h1": "Gestionar páginas PDF",
+  "lead": "Elimina, reordena y rota páginas PDF para limpiar escaneos y documentos de varias páginas.",
+  "strings": {
+    "heroEyebrow": "Gestión de páginas",
+    "heroTitle": "Gestionar páginas PDF",
+    "heroLead": "Sube un PDF, elimina páginas, cambia el orden, rota páginas y exporta el resultado limpio.",
+    "dropTitle": "Elige un archivo PDF",
+    "dropLead": "Arrastra un PDF aquí o elige un archivo local con el botón.",
+    "chooseButton": "Elegir PDF",
+    "largeFileTip": "Para controlar la memoria del navegador, los archivos grandes pueden usar marcadores numerados en lugar de miniaturas.",
+    "progressReady": "Esperando PDF",
+    "emptySummary": "Aún no se ha subido ningún archivo",
+    "primaryButton": "Exportar PDF",
+    "clearButton": "Limpiar",
+    "resetButton": "Restablecer",
+    "resultTitle": "Exportación completa",
+    "resultLead": "El PDF gestionado aparecerá aquí.",
+    "downloadButton": "Descargar PDF gestionado"
+  }
+}
