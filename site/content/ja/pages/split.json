@@ -1,0 +1,28 @@
+{
+  "seo": {
+    "title": "PDFを分割 - PDF ページをオンラインで抽出",
+    "description": "PDF をブラウザでページ範囲ごとに分割し、必要なページだけを抽出して不要な資料を減らします。"
+  },
+  "h1": "PDFを分割",
+  "lead": "PDF からページ範囲を抽出し、1 つまたは複数の結果ファイルを作成します。",
+  "strings": {
+    "heroEyebrow": "PDF 分割",
+    "heroTitle": "PDFを分割",
+    "heroLead": "1 つの PDF を読み込み、1 ページずつ分割するか、ページ範囲を入力します。選んだ資料だけを提出したいときに便利です。",
+    "dropTitle": "分割する PDF を選択",
+    "dropLead": "PDF をここにドロップするか、ボタンからローカルファイルを選んでください。",
+    "chooseButton": "PDF を選択",
+    "largeFileTip": "大きいファイルやスキャン PDF は、ブラウザメモリを多く使うことがあります。",
+    "optionsTitle": "分割設定を選択",
+    "optionsLead": "1-3,5,8-10 のようなページ範囲を入力するか、各ページを個別の PDF に分割します。",
+    "singlePagesLabel": "1 ページごとに PDF を作成",
+    "rangeLabel": "ページ範囲",
+    "rangePlaceholder": "例: 1-3,5,8-10",
+    "progressReady": "PDF を待機中",
+    "primaryButton": "PDFを分割",
+    "clearButton": "クリア",
+    "resetButton": "リセット",
+    "resultTitle": "分割結果",
+    "resultLead": "作成された PDF がここに表示されます。"
+  }
+}

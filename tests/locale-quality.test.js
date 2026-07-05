@@ -27,6 +27,15 @@ function faqValues(page) {
     .map(([, value]) => value);
 }
 
+function stringValues(value) {
+  if (typeof value === "string") return [value];
+  if (Array.isArray(value)) return value.flatMap(stringValues);
+  if (value && typeof value === "object") {
+    return Object.values(value).flatMap(stringValues);
+  }
+  return [];
+}
+
 describe("localized content quality gates", () => {
   test("Spanish core content is complete, localized, and claim-safe", async () => {
     const english = await loadContent("en");
@@ -115,6 +124,66 @@ describe("localized content quality gates", () => {
       );
       expect(manifest.routes.find(({ key }) => key === "home").canonicalPath).toBe(
         "/pt-br/"
+      );
+    } finally {
+      await rm(outDir, { recursive: true, force: true });
+    }
+  });
+
+  test("Japanese core content is complete, localized, and UI-safe", async () => {
+    const english = await loadContent("en");
+    const japanese = await loadContent("ja");
+    const japaneseLocale = getLocale("ja");
+
+    expect(japanese.common.navigation.tools).toBe("すべてのツール");
+    expect(japanese.pages.privacy.h1).toBe("プライバシー");
+    expect(japanese.pages.merge.strings.primaryButton).toBe("PDFを結合");
+    expect(japanese.runtime["file.reading"]).not.toBe(english.runtime["file.reading"]);
+    expect(japaneseLocale.hrefLang).toBe("ja");
+    expect(japaneseLocale.dir).toBe("ltr");
+
+    for (const { key } of CORE_ROUTES) {
+      expect(japanese.pages[key], `missing Japanese page: ${key}`).toBeDefined();
+      expect(japanese.pages[key].h1).not.toBe(english.pages[key].h1);
+      expect(japanese.pages[key].lead).not.toBe(english.pages[key].lead);
+
+      const primaryButton = japanese.pages[key].strings.primaryButton;
+      if (primaryButton !== undefined) {
+        expect(primaryButton.trim(), `empty Japanese primary button: ${key}`).not.toBe("");
+        expect(primaryButton).not.toBe(english.pages[key].strings.primaryButton);
+      }
+
+      const japaneseFaq = faqValues(japanese.pages[key]);
+      const englishFaq = faqValues(english.pages[key]);
+      if (japaneseFaq.length || englishFaq.length) {
+        expect(japaneseFaq).not.toEqual(englishFaq);
+      }
+    }
+
+    const unexpectedTokens = stringValues(japanese).filter((value) =>
+      /\{(?!filename\})[^}]+\}/.test(value)
+    );
+    expect(unexpectedTokens).toEqual([]);
+
+    const serialized = JSON.stringify(japanese);
+    expect(serialized).not.toMatch(
+      /no file size limits|files of any size|up to 90%|API access|batch processing feature|complete privacy and security|most operations complete in under 10 seconds/i
+    );
+  });
+
+  test("Japanese core routes render with the ja prefix", async () => {
+    const outDir = await mkdtemp(path.join(os.tmpdir(), "pdftool-ja-"));
+    try {
+      const manifest = await buildSite({
+        routes: CORE_ROUTES,
+        locales: [getLocale("ja")],
+        contentRoot,
+        outDir
+      });
+      expect(manifest.routes).toHaveLength(13);
+      expect(manifest.routes.map(({ file }) => file)).toContain("ja/merge-pdf.html");
+      expect(manifest.routes.find(({ key }) => key === "home").canonicalPath).toBe(
+        "/ja/"
       );
     } finally {
       await rm(outDir, { recursive: true, force: true });

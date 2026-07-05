@@ -1,0 +1,29 @@
+{
+  "seo": {
+    "title": "PDFを圧縮 - 無料オンライン PDF サイズ縮小",
+    "description": "ブラウザで PDF 構造の最適化を試し、ファイルサイズを小さくします。結果は PDF 内容、画像、内部構造によって変わります。"
+  },
+  "h1": "PDFを圧縮",
+  "lead": "ブラウザで安全な PDF 構造最適化を試し、読みやすさとページ数を確認します。",
+  "strings": {
+    "heroEyebrow": "PDF 圧縮",
+    "heroTitle": "PDFを圧縮",
+    "heroLead": "アップロードする PDF が大きすぎる可能性がある場合に役立ちます。結果は元ファイル、画像内容、PDF 構造によって変わります。",
+    "dropTitle": "PDF ファイルを選択",
+    "dropLead": "PDF をここにドロップするか、ボタンからローカルファイルを選んでください。",
+    "chooseButton": "PDF を選択",
+    "largeFileTip": "大きなスキャンファイルはより多くのメモリを必要とし、サイズがあまり小さくならない場合があります。",
+    "optionsTitle": "最適化モードを選択",
+    "optionsLead": "標準モードは構造を最適化しますが、固定の圧縮率は約束しません。",
+    "modeLabel": "最適化モード",
+    "modeStructural": "安全な構造最適化",
+    "modeClean": "メタデータを整理して構造を最適化",
+    "progressReady": "PDF を待機中",
+    "primaryButton": "PDFを圧縮",
+    "clearButton": "クリア",
+    "resetButton": "リセット",
+    "resultTitle": "圧縮結果",
+    "resultLead": "結果が作成されるとサイズの変化が表示されます。",
+    "downloadButton": "圧縮済み PDF をダウンロード"
+  }
+}

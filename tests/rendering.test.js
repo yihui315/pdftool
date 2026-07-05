@@ -140,7 +140,7 @@ const sharedInfoPages = Object.freeze([
   Object.freeze({
     file: "ja/privacy.html",
     lang: "ja",
-    h1: "プライバシーポリシー"
+    h1: "プライバシー"
   }),
   Object.freeze({
     file: "id/privacy.html",
