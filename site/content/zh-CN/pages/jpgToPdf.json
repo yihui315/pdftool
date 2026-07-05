@@ -1,0 +1,23 @@
+{
+  "seo": {
+    "title": "JPG 转 PDF - 在线图片合成 PDF",
+    "description": "在浏览器中把 JPG、PNG 等图片整理成一个 PDF，适合照片、扫描件和截图材料。"
+  },
+  "h1": "JPG 转 PDF",
+  "lead": "把照片、扫描件或截图整理成一个 PDF 文件。",
+  "strings": {
+    "heroEyebrow": "格式转换",
+    "heroTitle": "JPG 转 PDF",
+    "heroLead": "选择多张图片，调整顺序后在浏览器中生成 PDF。",
+    "dropTitle": "选择图片",
+    "dropLead": "拖放图片，或点击按钮选择本地图片文件。",
+    "chooseButton": "选择图片",
+    "fileCountLabel": "图片数量",
+    "clearButton": "清空",
+    "optionsTitle": "排序并生成 PDF",
+    "primaryButton": "生成 PDF",
+    "loadingLabel": "处理中",
+    "resultTitle": "PDF 已生成",
+    "downloadButton": "下载 PDF"
+  }
+}

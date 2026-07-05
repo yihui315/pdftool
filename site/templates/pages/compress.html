@@ -1,0 +1,41 @@
+<section class="editorial-hero editorial-hero-compact">
+  <div class="editorial-container">
+    <p class="editorial-kicker" data-i18n="heroEyebrow"></p>
+    <h1 class="editorial-title" data-i18n="heroTitle"></h1>
+    <p class="editorial-lead" data-i18n="heroLead"></p>
+  </div>
+</section>
+
+<section class="editorial-section">
+  <div class="editorial-container editorial-two-column">
+    <div class="editorial-paper-card">
+      <input class="sr-only" type="file" accept="application/pdf" data-file-input>
+      <div class="drop-zone" role="button" tabindex="0" data-drop-zone>
+        <h2 class="editorial-card-title" data-i18n="dropTitle"></h2>
+        <p class="editorial-card-lead" data-i18n="dropLead"></p>
+        <button class="editorial-button editorial-button-primary" type="button" data-select-file data-i18n="chooseButton"></button>
+      </div>
+      <p class="mt-4 hidden rounded-lg bg-slate-50 p-3 text-sm text-slate-700" data-file-info></p>
+      <p class="mt-4 hidden rounded-lg bg-amber-50 p-3 text-sm text-amber-800" data-large-file-tip data-i18n="largeFileTip"></p>
+    </div>
+    <div class="editorial-paper-card">
+      <h2 class="editorial-card-title" data-i18n="optionsTitle"></h2>
+      <p class="editorial-card-lead" data-i18n="optionsLead"></p>
+      <label class="mt-4 block text-sm font-semibold"><span data-i18n="modeLabel"></span><select class="mt-2 w-full rounded-lg border border-slate-300 px-3 py-2" data-compress-mode><option value="copy" data-i18n="modeStructural"></option><option value="clean" data-i18n="modeClean"></option></select></label>
+      <div class="progress-track mt-5"><span data-progress-fill></span></div>
+      <div class="mt-2 flex justify-between text-sm font-semibold text-slate-600"><span data-progress-label data-i18n="progressReady"></span><span data-progress-percent>0%</span></div>
+      <p class="mt-4 hidden rounded-lg bg-red-50 p-3 text-sm text-red-700" data-error-box></p>
+      <p class="mt-4 hidden rounded-lg bg-amber-50 p-3 text-sm text-amber-800" data-compress-note></p>
+      <div class="editorial-actions">
+        <button class="editorial-button editorial-button-primary" type="button" disabled data-compress-button data-i18n="primaryButton"></button>
+        <button class="editorial-button editorial-button-secondary" type="button" disabled data-clear-file data-i18n="clearButton"></button>
+        <button class="editorial-button editorial-button-secondary" type="button" disabled data-reset-button data-i18n="resetButton"></button>
+      </div>
+      <article class="editorial-paper-card mt-6" data-result-card>
+        <h3 data-i18n="resultTitle"></h3>
+        <p data-result-meta data-i18n="resultLead"></p>
+        <a class="editorial-button editorial-button-primary mt-4" href="#" download data-download-link data-i18n="downloadButton"></a>
+      </article>
+    </div>
+  </div>
+</section>

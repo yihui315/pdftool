@@ -1,0 +1,35 @@
+<section class="editorial-hero editorial-hero-compact">
+  <div class="editorial-container">
+    <p class="editorial-kicker" data-i18n="heroEyebrow"></p>
+    <h1 class="editorial-title" data-i18n="heroTitle"></h1>
+    <p class="editorial-lead" data-i18n="heroLead"></p>
+  </div>
+</section>
+
+<section class="editorial-section">
+  <div class="editorial-container editorial-two-column">
+    <div class="editorial-paper-card">
+      <input class="sr-only" type="file" accept="application/pdf" data-file-input>
+      <div class="drop-zone" role="button" tabindex="0" data-drop-zone>
+        <h2 class="editorial-card-title" data-i18n="dropTitle"></h2>
+        <p class="editorial-card-lead" data-i18n="dropLead"></p>
+        <button class="editorial-button editorial-button-primary" type="button" data-i18n="chooseButton"></button>
+      </div>
+      <div class="mt-4 hidden rounded-lg bg-slate-50 p-4" data-file-name>
+        <strong data-display-name></strong>
+        <button class="ml-3 text-sm font-semibold text-red-700" type="button" disabled data-clear-file data-i18n="clearButton"></button>
+      </div>
+      <p id="page-count-display" class="mt-4 text-sm text-slate-600"><span data-i18n="pageCountLabel"></span> <strong id="page-count">0</strong></p>
+    </div>
+    <div class="editorial-paper-card">
+      <h2 class="editorial-card-title" data-i18n="optionsTitle"></h2>
+      <label class="mt-4 block text-sm font-semibold"><span data-i18n="formatLabel"></span><select class="mt-2 w-full rounded-lg border border-slate-300 px-3 py-2" id="output-format"><option value="jpg">JPG</option><option value="png">PNG</option></select></label>
+      <label class="mt-4 block text-sm font-semibold"><span data-i18n="qualityLabel"></span><select class="mt-2 w-full rounded-lg border border-slate-300 px-3 py-2" id="output-quality"><option value="0.85">85%</option><option value="0.95">95%</option></select></label>
+      <button class="editorial-button editorial-button-primary mt-5" type="button" disabled id="convert-btn" data-i18n="primaryButton"></button>
+      <button class="editorial-button editorial-button-secondary mt-5" type="button" disabled id="download-all" data-i18n="downloadAllButton"></button>
+      <div class="mt-4 hidden items-center gap-3 text-sm text-slate-600" id="loading-indicator"><span data-i18n="loadingLabel"></span><span id="loading-text"></span></div>
+      <div class="mt-6" id="action-area"></div>
+      <div class="mt-6" id="preview-area"><div class="editorial-card-grid" id="image-grid"></div></div>
+    </div>
+  </div>
+</section>

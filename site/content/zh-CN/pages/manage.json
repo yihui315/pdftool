@@ -1,0 +1,25 @@
+{
+  "seo": {
+    "title": "管理 PDF 页面 - 删除、排序和旋转 PDF 页面",
+    "description": "在浏览器中管理 PDF 页面，删除多余页、调整顺序并旋转页面后导出新文件。"
+  },
+  "h1": "管理 PDF 页面",
+  "lead": "删除、排序和旋转 PDF 页面，适合整理扫描件和多页材料。",
+  "strings": {
+    "heroEyebrow": "页面管理",
+    "heroTitle": "管理 PDF 页面",
+    "heroLead": "上传 PDF 后，可以删除、重新排序或旋转页面，再导出整理后的结果。",
+    "dropTitle": "选择 PDF 文件",
+    "dropLead": "拖放 PDF，或点击按钮选择本地文件。",
+    "chooseButton": "选择 PDF",
+    "largeFileTip": "为控制浏览器内存，大文件可能只显示编号占位。",
+    "progressReady": "等待上传 PDF",
+    "emptySummary": "尚未上传文件",
+    "primaryButton": "导出 PDF",
+    "clearButton": "清空",
+    "resetButton": "重置",
+    "resultTitle": "导出完成",
+    "resultLead": "整理后的 PDF 会在这里显示。",
+    "downloadButton": "下载整理后的 PDF"
+  }
+}

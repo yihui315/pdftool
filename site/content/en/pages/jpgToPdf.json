@@ -1,0 +1,23 @@
+{
+  "seo": {
+    "title": "JPG to PDF - Combine images into a PDF",
+    "description": "Combine JPG, PNG, and other images into one PDF in your browser for photos, scans, or screenshots."
+  },
+  "h1": "JPG to PDF",
+  "lead": "Collect photos, scans, or screenshots into a PDF file.",
+  "strings": {
+    "heroEyebrow": "Format conversion",
+    "heroTitle": "JPG to PDF",
+    "heroLead": "Choose several images, adjust their order, and create a PDF in the browser.",
+    "dropTitle": "Choose images",
+    "dropLead": "Drop images here, or choose local image files with the button.",
+    "chooseButton": "Choose images",
+    "fileCountLabel": "Image count",
+    "clearButton": "Clear",
+    "optionsTitle": "Order and create PDF",
+    "primaryButton": "Create PDF",
+    "loadingLabel": "Processing",
+    "resultTitle": "PDF created",
+    "downloadButton": "Download PDF"
+  }
+}

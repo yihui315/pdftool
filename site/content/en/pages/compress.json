@@ -1,0 +1,29 @@
+{
+  "seo": {
+    "title": "Compress PDF - Free online PDF size reducer",
+    "description": "Try to optimize PDF structure and reduce file size in your browser. Results depend on PDF content, images, and internal structure."
+  },
+  "h1": "Compress PDF",
+  "lead": "Try safe PDF structure optimization in your browser, then review readability and page count.",
+  "strings": {
+    "heroEyebrow": "PDF compression",
+    "heroTitle": "Compress PDF",
+    "heroLead": "Useful before uploading a PDF that may be too large. Results depend on the original file, image content, and PDF structure.",
+    "dropTitle": "Choose a PDF file",
+    "dropLead": "Drop a PDF here, or choose a local file with the button.",
+    "chooseButton": "Choose PDF",
+    "largeFileTip": "Large scanned files may need more memory and may not become much smaller.",
+    "optionsTitle": "Choose optimization mode",
+    "optionsLead": "The default mode performs structural optimization and does not promise a fixed compression ratio.",
+    "modeLabel": "Optimization mode",
+    "modeStructural": "Safe structural optimization",
+    "modeClean": "Clean metadata and optimize structure",
+    "progressReady": "Waiting for PDF",
+    "primaryButton": "Compress PDF",
+    "clearButton": "Clear",
+    "resetButton": "Reset",
+    "resultTitle": "Compression result",
+    "resultLead": "The size change will appear after the result is created.",
+    "downloadButton": "Download compressed PDF"
+  }
+}

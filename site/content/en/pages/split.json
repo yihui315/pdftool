@@ -1,0 +1,28 @@
+{
+  "seo": {
+    "title": "Split PDF - Extract PDF pages online",
+    "description": "Split a PDF by page range in your browser, extract only the pages you need, and reduce unnecessary material."
+  },
+  "h1": "Split PDF",
+  "lead": "Extract page ranges from a PDF and create one or more result files.",
+  "strings": {
+    "heroEyebrow": "PDF split",
+    "heroTitle": "Split PDF",
+    "heroLead": "Upload one PDF, choose single-page splitting or enter page ranges. Useful when you only need to submit selected material.",
+    "dropTitle": "Choose a PDF to split",
+    "dropLead": "Drop a PDF here, or choose a local file with the button.",
+    "chooseButton": "Choose PDF",
+    "largeFileTip": "Large files or scans may use more browser memory.",
+    "optionsTitle": "Choose split settings",
+    "optionsLead": "Enter page ranges such as 1-3,5,8-10, or split every page into its own PDF.",
+    "singlePagesLabel": "Create one PDF per page",
+    "rangeLabel": "Page ranges",
+    "rangePlaceholder": "Example: 1-3,5,8-10",
+    "progressReady": "Waiting for PDF",
+    "primaryButton": "Split PDF",
+    "clearButton": "Clear",
+    "resetButton": "Reset",
+    "resultTitle": "Split results",
+    "resultLead": "Generated PDFs will appear here."
+  }
+}

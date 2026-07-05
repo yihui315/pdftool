@@ -15,6 +15,17 @@ const repoRoot = path.resolve(import.meta.dirname, "..");
 const tempRoots = [];
 
 const sharedInfoRoutes = Object.freeze(["home", "tools", "about", "privacy"]);
+const bilingualToolRoutes = Object.freeze([
+  "uploadReady",
+  "merge",
+  "split",
+  "manage",
+  "compress",
+  "pdfToJpg",
+  "jpgToPdf",
+  "rotate",
+  "unlock"
+]);
 const sharedInfoPages = Object.freeze([
   Object.freeze({
     file: "index.html",
@@ -138,6 +149,225 @@ const sharedInfoPages = Object.freeze([
   })
 ]);
 
+const bilingualToolPages = Object.freeze([
+  Object.freeze({ route: "uploadReady", file: "upload-ready.html", lang: "zh-CN", h1: "PDF 上传准备工具" }),
+  Object.freeze({ route: "uploadReady", file: "en/upload-ready.html", lang: "en", h1: "PDF upload preparation" }),
+  Object.freeze({ route: "merge", file: "merge.html", lang: "zh-CN", h1: "合并 PDF" }),
+  Object.freeze({ route: "merge", file: "en/merge-pdf.html", lang: "en", h1: "Merge PDF" }),
+  Object.freeze({ route: "split", file: "split.html", lang: "zh-CN", h1: "拆分 PDF" }),
+  Object.freeze({ route: "split", file: "en/split-pdf.html", lang: "en", h1: "Split PDF" }),
+  Object.freeze({ route: "manage", file: "manage.html", lang: "zh-CN", h1: "管理 PDF 页面" }),
+  Object.freeze({ route: "manage", file: "en/manage-pdf.html", lang: "en", h1: "Manage PDF pages" }),
+  Object.freeze({ route: "compress", file: "compress.html", lang: "zh-CN", h1: "压缩 PDF" }),
+  Object.freeze({ route: "compress", file: "en/compress-pdf.html", lang: "en", h1: "Compress PDF" }),
+  Object.freeze({ route: "pdfToJpg", file: "pdf-to-jpg.html", lang: "zh-CN", h1: "PDF 转 JPG" }),
+  Object.freeze({ route: "pdfToJpg", file: "en/pdf-to-jpg.html", lang: "en", h1: "PDF to JPG" }),
+  Object.freeze({ route: "jpgToPdf", file: "jpg-to-pdf.html", lang: "zh-CN", h1: "JPG 转 PDF" }),
+  Object.freeze({ route: "jpgToPdf", file: "en/jpg-to-pdf.html", lang: "en", h1: "JPG to PDF" }),
+  Object.freeze({ route: "rotate", file: "pdf-rotate.html", lang: "zh-CN", h1: "旋转 PDF" }),
+  Object.freeze({ route: "rotate", file: "en/rotate-pdf.html", lang: "en", h1: "Rotate PDF" }),
+  Object.freeze({ route: "unlock", file: "pdf-unlock.html", lang: "zh-CN", h1: "解锁 PDF" }),
+  Object.freeze({ route: "unlock", file: "en/unlock-pdf.html", lang: "en", h1: "Unlock PDF" })
+]);
+
+const toolHookSelectors = Object.freeze({
+  uploadReady: Object.freeze([
+    "[data-supported-flow]",
+    "[data-workspace]",
+    "[data-idle-view]",
+    "[data-processing-view]",
+    "[data-error-view]",
+    "[data-result-view]",
+    "[data-file-input]",
+    "[data-select-file]",
+    "[data-drop-zone]",
+    "[data-selected-file]",
+    "[data-selected-name]",
+    "[data-selected-size]",
+    "[data-remove-file]",
+    "[data-start-button]",
+    "[data-ready-hint]",
+    "[data-custom-target]",
+    "[data-custom-value]",
+    "[data-target-error]",
+    "[data-processing-title]",
+    "[data-processing-summary]",
+    "[data-progress-detail]",
+    "[data-elapsed]",
+    "[data-cancel-button]",
+    "[data-error-heading]",
+    "[data-error-message]",
+    "[data-retry-button]",
+    "[data-copy-diagnostic]",
+    "[data-copy-status]",
+    "[data-result-heading]",
+    "[data-result-copy]",
+    "[data-result-size]",
+    "[data-original-size]",
+    "[data-result-method]",
+    "[data-result-margin]",
+    "[data-preview-review]",
+    "[data-preview-canvas]",
+    "[data-preview-error]",
+    "[data-retry-preview]",
+    "[data-prev-page]",
+    "[data-next-page]",
+    "[data-page-indicator]",
+    "[data-preview-zoom]",
+    "[data-readability-confirm]",
+    "[data-download-reason]",
+    "[data-download-link]",
+    "#analysis-size",
+    "#analysis-pages",
+    "#analysis-type",
+    "#analysis-tip"
+  ]),
+  merge: Object.freeze([
+    "[data-file-input]",
+    "[data-select-files]",
+    "[data-drop-zone]",
+    "[data-file-list]",
+    "[data-file-summary]",
+    "[data-clear-files]",
+    "[data-merge-button]",
+    "[data-demo-reset]",
+    "[data-progress-fill]",
+    "[data-progress-label]",
+    "[data-progress-percent]",
+    "[data-error-box]",
+    "[data-large-file-tip]",
+    "[data-result-card]",
+    "[data-result-meta]",
+    "[data-download-link]"
+  ]),
+  split: Object.freeze([
+    "[data-file-input]",
+    "[data-select-file]",
+    "[data-drop-zone]",
+    "[data-clear-file]",
+    "[data-reset-button]",
+    "[data-split-button]",
+    "[data-single-pages]",
+    "[data-range-field]",
+    "[data-range-input]",
+    "[data-file-info]",
+    "[data-large-file-tip]",
+    "[data-error-box]",
+    "[data-progress-fill]",
+    "[data-progress-label]",
+    "[data-progress-percent]",
+    "[data-result-card]",
+    "[data-result-meta]",
+    "[data-result-list]"
+  ]),
+  manage: Object.freeze([
+    "[data-file-input]",
+    "[data-select-file]",
+    "[data-drop-zone]",
+    "[data-clear-file]",
+    "[data-reset-button]",
+    "[data-export-button]",
+    "[data-page-grid]",
+    "[data-page-summary]",
+    "[data-file-info]",
+    "[data-large-file-tip]",
+    "[data-error-box]",
+    "[data-progress-label]",
+    "[data-progress-percent]",
+    ".progress-track",
+    "[data-result-card]",
+    "[data-result-meta]",
+    "[data-download-link]"
+  ]),
+  compress: Object.freeze([
+    "[data-file-input]",
+    "[data-select-file]",
+    "[data-drop-zone]",
+    "[data-clear-file]",
+    "[data-reset-button]",
+    "[data-compress-button]",
+    "[data-compress-mode]",
+    "[data-file-info]",
+    "[data-large-file-tip]",
+    "[data-error-box]",
+    "[data-progress-fill]",
+    "[data-progress-label]",
+    "[data-progress-percent]",
+    "[data-result-card]",
+    "[data-result-meta]",
+    "[data-compress-note]",
+    "[data-download-link]"
+  ]),
+  pdfToJpg: Object.freeze([
+    "[data-file-input]",
+    "[data-drop-zone]",
+    "[data-clear-file]",
+    "[data-file-name]",
+    "[data-display-name]",
+    "#page-count-display",
+    "#page-count",
+    "#preview-area",
+    "#image-grid",
+    "#action-area",
+    "#convert-btn",
+    "#loading-indicator",
+    "#loading-text",
+    "#download-all",
+    "#output-format",
+    "#output-quality"
+  ]),
+  jpgToPdf: Object.freeze([
+    "#file-input",
+    "#drop-zone",
+    "#select-btn",
+    "#clear-btn",
+    "#file-banner",
+    "#file-count",
+    "#preview-area",
+    "#sortable-list",
+    "#convert-btn",
+    "#loading-indicator",
+    "#loading-text",
+    "#result-area",
+    "#download-btn"
+  ]),
+  rotate: Object.freeze([
+    "#file-input",
+    "#drop-zone",
+    "#select-btn",
+    "#clear-btn",
+    "#rotate-all-btn",
+    "#file-banner",
+    "#file-name",
+    "#page-count",
+    "#preview-area",
+    "#page-grid",
+    "#export-btn",
+    "#loading-indicator",
+    "#loading-text"
+  ]),
+  unlock: Object.freeze([
+    "[data-drop-zone]",
+    "[data-file-input]",
+    "[data-select-files]",
+    "[data-file-list]",
+    "[data-file-summary]",
+    "[data-clear-files]",
+    "[data-password-input]",
+    "[data-toggle-password-visibility]",
+    "[data-unlock-button]",
+    "[data-demo-reset]",
+    "[data-progress-fill]",
+    "[data-progress-percent]",
+    "[data-progress-label]",
+    "[data-error-box]",
+    "[data-result-card]",
+    "[data-download-link]",
+    "[data-result-meta]",
+    "[data-large-file-tip]"
+  ])
+});
+
 const unsupportedEnglishClaims = Object.freeze([
   "no file size limits",
   "files of any size",
@@ -171,6 +401,27 @@ async function renderSharedInfoPages() {
   return Object.fromEntries(
     await Promise.all(
       sharedInfoPages.map(async ({ file }) => [
+        file,
+        new JSDOM(await readFile(path.join(outDir, file), "utf8"))
+      ])
+    )
+  );
+}
+
+async function renderBilingualToolPages() {
+  const outDir = await tempRoot();
+  const contentRoot = path.join(repoRoot, "site", "content");
+
+  await buildSite({
+    routes: bilingualToolRoutes.map((routeKey) => getRoute(routeKey)),
+    locales: ["zh-CN", "en"].map((locale) => getLocale(locale)),
+    contentRoot,
+    outDir
+  });
+
+  return Object.fromEntries(
+    await Promise.all(
+      bilingualToolPages.map(async ({ file }) => [
         file,
         new JSDOM(await readFile(path.join(outDir, file), "utf8"))
       ])
@@ -384,6 +635,37 @@ describe("shared localized page layout", () => {
         for (const claim of unsupportedEnglishClaims) {
           expect(pageText).not.toContain(claim);
         }
+      }
+    }
+  });
+
+  test("renders bilingual PDF tool pages with scripts and required hooks", async () => {
+    const pages = await renderBilingualToolPages();
+
+    for (const { route, file, lang, h1 } of bilingualToolPages) {
+      const document = pages[file].window.document;
+      expect(document.documentElement.getAttribute("lang")).toBe(lang);
+      expect(document.querySelector("h1")?.textContent.trim()).toBe(h1);
+      expect(document.querySelectorAll('link[rel="canonical"]')).toHaveLength(1);
+
+      const scriptSources = [...document.querySelectorAll("script[src]")].map(
+        (script) => script.getAttribute("src")
+      );
+      for (const script of getRoute(route).scripts) {
+        expect(scriptSources, `${file} missing ${script.src}`).toContain(script.src);
+      }
+
+      for (const selector of toolHookSelectors[route]) {
+        expect(document.querySelector(selector), `${file} missing ${selector}`).not.toBeNull();
+      }
+
+      if (lang === "en") {
+        const mainText = document.querySelector("main")?.textContent ?? "";
+        const runtimeText =
+          document.querySelector('script#runtime-i18n[type="application/json"]')
+            ?.textContent ?? "";
+        expect(mainText).not.toMatch(/[\u4e00-\u9fff]/u);
+        expect(runtimeText).not.toMatch(/[\u4e00-\u9fff]/u);
       }
     }
   });

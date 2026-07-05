@@ -1,0 +1,25 @@
+{
+  "seo": {
+    "title": "Manage PDF pages - Delete, reorder, and rotate pages",
+    "description": "Manage PDF pages in your browser, remove extra pages, reorder, rotate, and export a new file."
+  },
+  "h1": "Manage PDF pages",
+  "lead": "Delete, reorder, and rotate PDF pages for scans and multi-page document cleanup.",
+  "strings": {
+    "heroEyebrow": "Page management",
+    "heroTitle": "Manage PDF pages",
+    "heroLead": "Upload a PDF, remove pages, change order, rotate pages, and export the cleaned result.",
+    "dropTitle": "Choose a PDF file",
+    "dropLead": "Drop a PDF here, or choose a local file with the button.",
+    "chooseButton": "Choose PDF",
+    "largeFileTip": "To control browser memory, large files may use numbered placeholders instead of thumbnails.",
+    "progressReady": "Waiting for PDF",
+    "emptySummary": "No file uploaded yet",
+    "primaryButton": "Export PDF",
+    "clearButton": "Clear",
+    "resetButton": "Reset",
+    "resultTitle": "Export complete",
+    "resultLead": "The managed PDF will appear here.",
+    "downloadButton": "Download managed PDF"
+  }
+}

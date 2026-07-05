@@ -1,0 +1,99 @@
+<section class="editorial-hero editorial-hero-compact">
+  <div class="editorial-container">
+    <p class="editorial-kicker" data-i18n="heroEyebrow"></p>
+    <h1 class="editorial-title" data-i18n="heroTitle"></h1>
+    <p class="editorial-lead" data-i18n="heroLead"></p>
+  </div>
+</section>
+
+<section class="editorial-section" data-supported-flow>
+  <div class="editorial-container editorial-two-column" data-workspace>
+    <div class="editorial-paper-card" data-idle-view>
+      <p class="hidden rounded-lg bg-amber-50 p-3 text-sm text-amber-800" data-mobile-notice data-i18n="mobileNotice"></p>
+      <input class="sr-only" type="file" accept="application/pdf" data-file-input>
+      <div class="drop-zone" role="button" tabindex="0" data-drop-zone>
+        <h2 class="editorial-card-title" data-i18n="dropTitle"></h2>
+        <p class="editorial-card-lead" data-i18n="dropLead"></p>
+        <button class="editorial-button editorial-button-primary" type="button" data-select-file data-i18n="chooseButton"></button>
+      </div>
+      <div class="mt-4 hidden rounded-lg bg-slate-50 p-4" data-selected-file>
+        <strong data-selected-name></strong>
+        <p class="text-sm text-slate-600" data-selected-size></p>
+        <button class="mt-3 text-sm font-semibold text-red-700" type="button" data-remove-file data-i18n="removeFile"></button>
+      </div>
+      <div class="mt-6">
+        <h2 class="editorial-card-title" data-i18n="targetTitle"></h2>
+        <label class="mt-3 flex items-center gap-2 text-sm font-semibold"><input type="radio" name="target-size" value="200000" data-target-radio> <span data-i18n="targetSmall"></span></label>
+        <label class="mt-3 flex items-center gap-2 text-sm font-semibold"><input type="radio" name="target-size" value="500000" checked data-target-radio> <span data-i18n="targetMedium"></span></label>
+        <label class="mt-3 flex items-center gap-2 text-sm font-semibold"><input type="radio" name="target-size" value="1000000" data-target-radio> <span data-i18n="targetLarge"></span></label>
+        <div class="mt-3" data-custom-target>
+          <label class="text-sm font-semibold"><input type="radio" name="target-size" value="custom" data-target-radio> <span data-i18n="targetCustom"></span></label>
+          <div class="mt-2 flex gap-2">
+            <input class="w-full rounded-lg border border-slate-300 px-3 py-2" type="text" inputmode="decimal" data-custom-value data-i18n-attr="placeholder:customPlaceholder">
+            <label class="rounded-lg border border-slate-300 px-3 py-2 text-sm"><input type="radio" name="custom-unit" value="KB"> KB</label>
+            <label class="rounded-lg border border-slate-300 px-3 py-2 text-sm"><input type="radio" name="custom-unit" value="MB" checked> MB</label>
+          </div>
+        </div>
+        <p class="mt-2 text-sm text-slate-600" data-target-error></p>
+      </div>
+      <div class="mt-6 grid gap-3 sm:grid-cols-4">
+        <div class="editorial-paper-card"><span data-i18n="analysisSizeLabel"></span><strong id="analysis-size">—</strong></div>
+        <div class="editorial-paper-card"><span data-i18n="analysisPagesLabel"></span><strong id="analysis-pages">—</strong></div>
+        <div class="editorial-paper-card"><span data-i18n="analysisTypeLabel"></span><strong id="analysis-type">—</strong></div>
+        <div class="editorial-paper-card" id="analysis-tip"><p data-i18n="analysisTip"></p></div>
+      </div>
+      <button class="editorial-button editorial-button-primary mt-6" type="button" disabled data-start-button data-i18n="primaryButton"></button>
+      <p class="mt-3 text-sm text-slate-600" data-ready-hint data-i18n="readyHint"></p>
+    </div>
+
+    <div class="editorial-paper-card hidden" data-processing-view>
+      <h2 data-processing-title data-i18n="processingTitle"></h2>
+      <p data-processing-summary data-i18n="processingSummary"></p>
+      <div class="progress-track mt-5"><span></span></div>
+      <p class="mt-2 text-sm font-semibold text-slate-600" data-progress-detail data-i18n="progressDetail"></p>
+      <p class="mt-2 text-sm text-slate-500" data-elapsed>0s</p>
+      <div class="mt-4 grid gap-2">
+        <span data-stage="parsing" data-i18n="stageParsing"></span>
+        <span data-stage="structural" data-i18n="stageStructural"></span>
+        <span data-stage="rasterizing" data-i18n="stageRasterizing"></span>
+        <span data-stage="validating" data-i18n="stageValidating"></span>
+        <span data-stage="cleanup" data-i18n="stageCleanup"></span>
+      </div>
+      <button class="editorial-button editorial-button-secondary mt-6" type="button" data-cancel-button data-i18n="cancelButton"></button>
+    </div>
+
+    <div class="editorial-paper-card hidden" data-error-view>
+      <h2 data-error-heading data-i18n="errorHeading"></h2>
+      <p data-error-message></p>
+      <button class="editorial-button editorial-button-primary mt-4" type="button" data-retry-button data-i18n="retryButton"></button>
+      <button class="editorial-button editorial-button-secondary mt-4" type="button" data-copy-diagnostic data-i18n="copyDiagnostic"></button>
+      <p class="mt-2 text-sm text-slate-500" data-copy-status></p>
+    </div>
+
+    <div class="editorial-paper-card hidden" data-result-view>
+      <h2 data-result-heading data-i18n="resultHeading"></h2>
+      <p data-result-copy data-i18n="resultCopy"></p>
+      <dl class="mt-4 grid gap-3 sm:grid-cols-2">
+        <div><dt data-i18n="resultSizeLabel"></dt><dd data-result-size></dd></div>
+        <div><dt data-i18n="originalSizeLabel"></dt><dd data-original-size></dd></div>
+        <div><dt data-i18n="methodLabel"></dt><dd data-result-method></dd></div>
+        <div><dt data-i18n="marginLabel"></dt><dd data-result-margin></dd></div>
+      </dl>
+      <div class="mt-6" data-preview-review>
+        <h3 data-i18n="previewTitle"></h3>
+        <canvas class="mt-3 w-full rounded-lg border border-slate-200 bg-white" data-preview-canvas></canvas>
+        <p class="mt-2 hidden text-sm text-red-700" data-preview-error></p>
+        <button class="editorial-button editorial-button-secondary mt-3" type="button" data-retry-preview data-i18n="retryPreview"></button>
+        <div class="mt-3 flex flex-wrap items-center gap-2">
+          <button type="button" class="editorial-button editorial-button-secondary" data-prev-page data-i18n="previousPage"></button>
+          <span data-page-indicator data-i18n="pageIndicator"></span>
+          <button type="button" class="editorial-button editorial-button-secondary" data-next-page data-i18n="nextPage"></button>
+          <input type="range" min="50" max="150" value="100" data-preview-zoom data-i18n-attr="aria-label:previewZoom">
+        </div>
+      </div>
+      <label class="mt-4 flex items-center gap-2 text-sm font-semibold"><input type="checkbox" data-readability-confirm> <span data-i18n="readabilityLabel"></span></label>
+      <p class="mt-3 text-sm text-slate-600" data-download-reason></p>
+      <a class="editorial-button editorial-button-primary mt-4" href="#" aria-disabled="true" data-download-link data-i18n="downloadButton"></a>
+    </div>
+  </div>
+</section>
