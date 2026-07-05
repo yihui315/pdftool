@@ -7,7 +7,7 @@
  * 3. 输出报告到 reports/adsense-policy-report.json
  */
 
-import { readFileSync, writeFileSync, existsSync, readdirSync, mkdirSync } from 'fs';
+import { readFileSync, writeFileSync, existsSync, readdirSync, mkdirSync, statSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
@@ -49,7 +49,7 @@ function scanHtmlFiles(dir, files = []) {
     for (const entry of entries) {
       const fullPath = join(dir, entry);
       try {
-        const stat = readFileSync.statSync(fullPath);
+        const stat = statSync(fullPath);
         if (stat.isDirectory() && !['node_modules', '.git', 'tests', 'ai', 'src', 'docs'].includes(entry)) {
           scanHtmlFiles(fullPath, files);
         } else if (entry.endsWith('.html')) {

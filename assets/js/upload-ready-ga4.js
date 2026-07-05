@@ -35,10 +35,10 @@
   }
   
   // 1. 目标大小选择
-  document.querySelectorAll('[data-target-size]').forEach(function(el) {
-    bindEvent(el, 'click', function() {
+  document.querySelectorAll('[data-target-radio]').forEach(function(el) {
+    bindEvent(el, 'change', function() {
       safeTrackEvent('target_size_select', {
-        target_size: el.getAttribute('data-target-size')
+        target_size: el.value
       });
     });
   });
@@ -64,7 +64,7 @@
   }
   
   // 3. 开始处理 (当用户点击处理按钮时)
-  var processBtn = document.querySelector('[data-action="process"]');
+  var processBtn = document.querySelector('[data-start-button]');
   if (processBtn) {
     bindEvent(processBtn, 'click', function() {
       safeTrackEvent('pdf_process_start', {});
