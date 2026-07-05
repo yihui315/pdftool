@@ -22,6 +22,7 @@ function isPlainObject(value) {
   const constructor = prototype.constructor;
   return (
     typeof constructor === "function" &&
+    constructor.prototype === prototype &&
     Function.prototype.toString.call(constructor) === NATIVE_OBJECT_SOURCE
   );
 }

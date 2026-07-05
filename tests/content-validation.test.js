@@ -174,6 +174,16 @@ describe("runtime content validation", () => {
     );
   });
 
+  test("rejects a forged null-rooted Object prototype", () => {
+    const forgedPrototype = Object.create(null, {
+      constructor: { value: Object }
+    });
+    const runtime = Object.create(forgedPrototype);
+    runtime.reading = "Reading";
+
+    expect(() => validateRuntime(runtime)).toThrow(/plain object/i);
+  });
+
   test("requires a plain flat object", () => {
     expect(() => validateRuntime([])).toThrow(/runtime.*plain object/i);
     expect(() => validateRuntime({ reading: { label: "Reading" } })).toThrow(
