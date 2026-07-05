@@ -145,7 +145,7 @@ const sharedInfoPages = Object.freeze([
   Object.freeze({
     file: "id/privacy.html",
     lang: "id",
-    h1: "Kebijakan Privasi"
+    h1: "Privasi"
   })
 ]);
 

@@ -1,0 +1,29 @@
+{
+  "seo": {
+    "title": "Kompres PDF - Perkecil ukuran PDF online gratis",
+    "description": "Coba optimalkan struktur PDF dan kompres PDF di browser. Hasil bergantung pada isi PDF, gambar, dan struktur internal."
+  },
+  "h1": "Kompres PDF",
+  "lead": "Coba optimasi struktur PDF yang aman di browser, lalu tinjau keterbacaan dan jumlah halaman.",
+  "strings": {
+    "heroEyebrow": "Kompresi PDF",
+    "heroTitle": "Kompres PDF",
+    "heroLead": "Berguna sebelum mengunggah PDF yang mungkin terlalu besar. Hasil bergantung pada file asli, isi gambar, dan struktur PDF.",
+    "dropTitle": "Pilih file PDF",
+    "dropLead": "Jatuhkan PDF di sini, atau pilih file lokal dengan tombol.",
+    "chooseButton": "Pilih PDF",
+    "largeFileTip": "File pindai besar dapat membutuhkan lebih banyak memori dan mungkin tidak menjadi jauh lebih kecil.",
+    "optionsTitle": "Pilih mode optimasi",
+    "optionsLead": "Mode bawaan mengoptimalkan struktur dan tidak menjanjikan rasio kompresi tertentu.",
+    "modeLabel": "Mode optimasi",
+    "modeStructural": "Optimasi struktur aman",
+    "modeClean": "Bersihkan metadata dan optimalkan struktur",
+    "progressReady": "Menunggu PDF",
+    "primaryButton": "Kompres PDF",
+    "clearButton": "Bersihkan",
+    "resetButton": "Reset",
+    "resultTitle": "Hasil kompresi",
+    "resultLead": "Perubahan ukuran akan muncul setelah hasil dibuat.",
+    "downloadButton": "Unduh PDF terkompresi"
+  }
+}

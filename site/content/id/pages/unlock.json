@@ -1,0 +1,30 @@
+{
+  "seo": {
+    "title": "Buka kunci PDF - Hapus batas pembukaan PDF dengan kata sandi",
+    "description": "Jika Anda memiliki izin dan kata sandi, coba baca PDF terlindungi di browser dan buat salinan yang tidak terkunci."
+  },
+  "h1": "Buka kunci PDF",
+  "lead": "Jika Anda memiliki izin dan kata sandi, coba hapus batas pembukaan PDF.",
+  "strings": {
+    "heroEyebrow": "Buka kunci PDF",
+    "heroTitle": "Buka kunci PDF",
+    "heroLead": "Gunakan hanya jika Anda berwenang menangani file dan mengetahui kata sandinya. Beberapa PDF dengan enkripsi kuat mungkin tidak berfungsi di browser.",
+    "dropTitle": "Pilih PDF terlindungi",
+    "dropLead": "Jatuhkan PDF di sini, atau pilih file lokal dengan tombol.",
+    "chooseButton": "Pilih PDF",
+    "emptySummary": "Belum ada file yang dipilih",
+    "emptyList": "Informasi file akan muncul di sini setelah Anda memilih PDF.",
+    "largeFileTip": "PDF terenkripsi besar dapat membutuhkan lebih banyak memori.",
+    "optionsTitle": "Masukkan kata sandi pembuka",
+    "passwordLabel": "Kata sandi PDF",
+    "passwordPlaceholder": "Masukkan kata sandi yang boleh Anda gunakan",
+    "togglePassword": "Tampilkan atau sembunyikan kata sandi",
+    "progressReady": "Menunggu PDF",
+    "primaryButton": "Buka kunci PDF",
+    "clearButton": "Bersihkan",
+    "resetButton": "Reset",
+    "resultTitle": "Buka kunci selesai",
+    "resultLead": "Salinan yang tidak terkunci akan muncul di sini.",
+    "downloadButton": "Unduh PDF yang tidak terkunci"
+  }
+}

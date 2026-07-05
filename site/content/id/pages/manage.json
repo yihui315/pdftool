@@ -1,0 +1,25 @@
+{
+  "seo": {
+    "title": "Kelola halaman PDF - Hapus, urutkan, dan putar halaman",
+    "description": "Kelola halaman PDF di browser, hapus halaman tambahan, ubah urutan, putar, dan ekspor file baru."
+  },
+  "h1": "Kelola halaman PDF",
+  "lead": "Hapus, urutkan, dan putar halaman PDF untuk membersihkan hasil pindai dan dokumen multi-halaman.",
+  "strings": {
+    "heroEyebrow": "Pengelolaan halaman",
+    "heroTitle": "Kelola halaman PDF",
+    "heroLead": "Unggah PDF, hapus halaman, ubah urutan, putar halaman, lalu ekspor hasil yang sudah dirapikan.",
+    "dropTitle": "Pilih file PDF",
+    "dropLead": "Jatuhkan PDF di sini, atau pilih file lokal dengan tombol.",
+    "chooseButton": "Pilih PDF",
+    "largeFileTip": "Untuk mengendalikan memori browser, file besar dapat memakai placeholder bernomor sebagai pengganti thumbnail.",
+    "progressReady": "Menunggu PDF",
+    "emptySummary": "Belum ada file yang diunggah",
+    "primaryButton": "Ekspor PDF",
+    "clearButton": "Bersihkan",
+    "resetButton": "Reset",
+    "resultTitle": "Ekspor selesai",
+    "resultLead": "PDF yang sudah dikelola akan muncul di sini.",
+    "downloadButton": "Unduh PDF yang dikelola"
+  }
+}

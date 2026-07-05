@@ -189,4 +189,58 @@ describe("localized content quality gates", () => {
       await rm(outDir, { recursive: true, force: true });
     }
   });
+
+  test("Indonesian core content is complete, localized, and claim-safe", async () => {
+    const english = await loadContent("en");
+    const indonesian = await loadContent("id");
+
+    expect(indonesian.common.navigation.tools).toBe("Semua alat");
+    expect(indonesian.common.languageMenu.currentLanguage).toBe("Bahasa Indonesia");
+    expect(indonesian.pages.privacy.h1).toBe("Privasi");
+    expect(indonesian.pages.merge.strings.primaryButton).toBe("Gabungkan PDF");
+    expect(indonesian.runtime["file.reading"]).not.toBe(english.runtime["file.reading"]);
+    expect(getLocale("id").hrefLang).toBe("id");
+
+    for (const { key } of CORE_ROUTES) {
+      expect(indonesian.pages[key], `missing Indonesian page: ${key}`).toBeDefined();
+      expect(indonesian.pages[key].h1).not.toBe(english.pages[key].h1);
+      expect(indonesian.pages[key].lead).not.toBe(english.pages[key].lead);
+
+      const primaryButton = indonesian.pages[key].strings.primaryButton;
+      if (primaryButton !== undefined) {
+        expect(primaryButton.trim(), `empty Indonesian primary button: ${key}`).not.toBe("");
+        expect(primaryButton).not.toBe(english.pages[key].strings.primaryButton);
+      }
+
+      const indonesianFaq = faqValues(indonesian.pages[key]);
+      const englishFaq = faqValues(english.pages[key]);
+      if (indonesianFaq.length || englishFaq.length) {
+        expect(indonesianFaq).not.toEqual(englishFaq);
+      }
+    }
+
+    const serialized = JSON.stringify(indonesian);
+    expect(serialized).not.toMatch(
+      /no file size limits|files of any size|up to 90%|API access|batch processing feature|complete privacy and security|most operations complete in under 10 seconds/i
+    );
+  });
+
+  test("Indonesian core routes render with the id prefix", async () => {
+    const outDir = await mkdtemp(path.join(os.tmpdir(), "pdftool-id-"));
+    try {
+      const manifest = await buildSite({
+        routes: CORE_ROUTES,
+        locales: [getLocale("id")],
+        contentRoot,
+        outDir
+      });
+      expect(manifest.routes).toHaveLength(13);
+      expect(manifest.routes.map(({ file }) => file)).toContain("id/merge-pdf.html");
+      expect(manifest.routes.find(({ key }) => key === "home").canonicalPath).toBe(
+        "/id/"
+      );
+    } finally {
+      await rm(outDir, { recursive: true, force: true });
+    }
+  });
 });
