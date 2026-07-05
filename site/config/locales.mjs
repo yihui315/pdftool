@@ -13,7 +13,19 @@ export const LOCALES = Object.freeze([
   Object.freeze({ code: "id", prefix: "id", hrefLang: "id", label: "Bahasa Indonesia", dir: "ltr" })
 ]);
 
-export const LOCALE_BY_CODE = new Map(LOCALES.map((locale) => [locale.code, locale]));
+const localeByCode = new Map(LOCALES.map((locale) => [locale.code, locale]));
+
+export const LOCALE_BY_CODE = Object.freeze({
+  get size() {
+    return localeByCode.size;
+  },
+  get: localeByCode.get.bind(localeByCode),
+  has: localeByCode.has.bind(localeByCode),
+  entries: localeByCode.entries.bind(localeByCode),
+  values: localeByCode.values.bind(localeByCode),
+  keys: localeByCode.keys.bind(localeByCode),
+  [Symbol.iterator]: localeByCode[Symbol.iterator].bind(localeByCode)
+});
 
 export function getLocale(code) {
   const locale = LOCALE_BY_CODE.get(code);

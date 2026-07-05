@@ -1,5 +1,5 @@
 import { describe, expect, test } from "vitest";
-import { LOCALES, getLocale } from "../site/config/locales.mjs";
+import { LOCALES, LOCALE_BY_CODE, getLocale } from "../site/config/locales.mjs";
 import {
   CORE_ROUTES,
   LANDING_ROUTES,
@@ -73,6 +73,40 @@ describe("locale registry", () => {
     }).toThrow(TypeError);
     expect(getLocale("zh-CN").prefix).toBe("");
   });
+
+  test("exposes locale lookup without registry mutation capabilities", () => {
+    const english = getLocale("en");
+
+    expect(Object.isFrozen(LOCALE_BY_CODE)).toBe(true);
+    expect(LOCALE_BY_CODE.size).toBe(6);
+    expect(LOCALE_BY_CODE.has("en")).toBe(true);
+    expect(LOCALE_BY_CODE.get("en")).toBe(english);
+    expect([...LOCALE_BY_CODE.keys()]).toEqual(LOCALES.map(({ code }) => code));
+    expect([...LOCALE_BY_CODE.values()]).toEqual(LOCALES);
+    expect([...LOCALE_BY_CODE.entries()]).toEqual(
+      LOCALES.map((locale) => [locale.code, locale])
+    );
+    expect([...LOCALE_BY_CODE]).toEqual([...LOCALE_BY_CODE.entries()]);
+
+    expect(() => LOCALE_BY_CODE.set("fr", { code: "fr" })).toThrow(TypeError);
+    expect(() => LOCALE_BY_CODE.delete("en")).toThrow(TypeError);
+    expect(() => LOCALE_BY_CODE.clear()).toThrow(TypeError);
+    expect(() => {
+      LOCALE_BY_CODE.get = () => ({ code: "fr" });
+    }).toThrow(TypeError);
+
+    expect(LOCALES.map(({ code }) => code)).toEqual([
+      "zh-CN",
+      "en",
+      "es",
+      "pt-BR",
+      "ja",
+      "id"
+    ]);
+    expect(LOCALE_BY_CODE.size).toBe(6);
+    expect(getLocale("en")).toBe(english);
+    expect(() => getLocale("fr")).toThrow("Unsupported locale: fr");
+  });
 });
 
 describe("route registry", () => {
@@ -132,6 +166,48 @@ describe("route registry", () => {
       expect(script.src).toMatch(/^\/assets\/[^\\]+$/);
       expect(["classic", "module"]).toContain(script.type);
     }
+  });
+
+  test("records the exact production script dependencies for every core route", () => {
+    expect(Object.fromEntries(CORE_ROUTES.map(({ key, scripts }) => [key, scripts]))).toEqual({
+      home: [],
+      tools: [],
+      uploadReady: [{ src: "/assets/js/upload-ready.js", type: "module" }],
+      merge: [
+        { src: "/assets/vendor/pdf-lib.min.js", type: "classic" },
+        { src: "/assets/js/merge.js", type: "classic" }
+      ],
+      split: [
+        { src: "/assets/vendor/pdf-lib.min.js", type: "classic" },
+        { src: "/assets/js/split.js", type: "classic" }
+      ],
+      manage: [
+        { src: "/assets/vendor/pdf-lib.min.js", type: "classic" },
+        { src: "/assets/js/manage.js", type: "module" }
+      ],
+      compress: [
+        { src: "/assets/vendor/pdf-lib.min.js", type: "classic" },
+        { src: "/assets/js/compress.js", type: "classic" }
+      ],
+      pdfToJpg: [
+        { src: "/assets/vendor/pdf-lib.min.js", type: "classic" },
+        { src: "/assets/js/pdf-to-jpg.js", type: "module" }
+      ],
+      jpgToPdf: [
+        { src: "/assets/vendor/pdf-lib.min.js", type: "classic" },
+        { src: "/assets/js/jpg-to-pdf.js", type: "classic" }
+      ],
+      rotate: [
+        { src: "/assets/vendor/pdf-lib.min.js", type: "classic" },
+        { src: "/assets/js/pdf-rotate.js", type: "classic" }
+      ],
+      unlock: [
+        { src: "/assets/vendor/pdf-lib.min.js", type: "classic" },
+        { src: "/assets/js/unlock.js", type: "classic" }
+      ],
+      about: [],
+      privacy: []
+    });
   });
 
   test("supports every core route in all locales and landing routes outside Chinese", () => {

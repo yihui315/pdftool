@@ -89,7 +89,7 @@ export const CORE_ROUTES = Object.freeze([
     "pdf-to-jpg.html",
     "pdf-to-jpg.html",
     "pdf-to-jpg.html",
-    [routeScript("/assets/js/pdf-to-jpg.js", "module")]
+    [PDF_LIB, routeScript("/assets/js/pdf-to-jpg.js", "module")]
   ),
   coreRoute(
     "jpgToPdf",
