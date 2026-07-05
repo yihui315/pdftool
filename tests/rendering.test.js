@@ -27,6 +27,26 @@ const sharedInfoPages = Object.freeze([
     h1: "Free online PDF tools"
   }),
   Object.freeze({
+    file: "es/index.html",
+    lang: "es",
+    h1: "Herramientas PDF gratis en línea"
+  }),
+  Object.freeze({
+    file: "pt-br/index.html",
+    lang: "pt-BR",
+    h1: "Ferramentas PDF online grátis"
+  }),
+  Object.freeze({
+    file: "ja/index.html",
+    lang: "ja",
+    h1: "無料オンライン PDF ツール"
+  }),
+  Object.freeze({
+    file: "id/index.html",
+    lang: "id",
+    h1: "Alat PDF online gratis"
+  }),
+  Object.freeze({
     file: "pdf-tools.html",
     lang: "zh-CN",
     h1: "PDF 工具箱"
@@ -35,6 +55,26 @@ const sharedInfoPages = Object.freeze([
     file: "en/pdf-tools.html",
     lang: "en",
     h1: "PDF tools"
+  }),
+  Object.freeze({
+    file: "es/pdf-tools.html",
+    lang: "es",
+    h1: "Herramientas PDF"
+  }),
+  Object.freeze({
+    file: "pt-br/pdf-tools.html",
+    lang: "pt-BR",
+    h1: "Ferramentas PDF"
+  }),
+  Object.freeze({
+    file: "ja/pdf-tools.html",
+    lang: "ja",
+    h1: "PDF ツール"
+  }),
+  Object.freeze({
+    file: "id/pdf-tools.html",
+    lang: "id",
+    h1: "Alat PDF"
   }),
   Object.freeze({
     file: "about.html",
@@ -47,6 +87,26 @@ const sharedInfoPages = Object.freeze([
     h1: "About PDFTool.work"
   }),
   Object.freeze({
+    file: "es/about.html",
+    lang: "es",
+    h1: "Acerca de PDFTool.work"
+  }),
+  Object.freeze({
+    file: "pt-br/about.html",
+    lang: "pt-BR",
+    h1: "Sobre o PDFTool.work"
+  }),
+  Object.freeze({
+    file: "ja/about.html",
+    lang: "ja",
+    h1: "PDFTool.work について"
+  }),
+  Object.freeze({
+    file: "id/about.html",
+    lang: "id",
+    h1: "Tentang PDFTool.work"
+  }),
+  Object.freeze({
     file: "privacy.html",
     lang: "zh-CN",
     h1: "隐私政策"
@@ -55,6 +115,26 @@ const sharedInfoPages = Object.freeze([
     file: "en/privacy.html",
     lang: "en",
     h1: "Privacy Policy"
+  }),
+  Object.freeze({
+    file: "es/privacy.html",
+    lang: "es",
+    h1: "Política de privacidad"
+  }),
+  Object.freeze({
+    file: "pt-br/privacy.html",
+    lang: "pt-BR",
+    h1: "Política de privacidade"
+  }),
+  Object.freeze({
+    file: "ja/privacy.html",
+    lang: "ja",
+    h1: "プライバシーポリシー"
+  }),
+  Object.freeze({
+    file: "id/privacy.html",
+    lang: "id",
+    h1: "Kebijakan Privasi"
   })
 ]);
 
@@ -81,7 +161,9 @@ async function renderSharedInfoPages() {
   await readFile(path.join(contentRoot, "zh-CN", "common.json"), "utf8");
   await buildSite({
     routes: sharedInfoRoutes.map((routeKey) => getRoute(routeKey)),
-    locales: ["zh-CN", "en"].map((locale) => getLocale(locale)),
+    locales: ["zh-CN", "en", "es", "pt-BR", "ja", "id"].map((locale) =>
+      getLocale(locale)
+    ),
     contentRoot,
     outDir
   });
@@ -286,7 +368,7 @@ describe("shared localized page layout", () => {
     expect(() => JSON.parse(jsonLdScripts[0].textContent)).not.toThrow();
   });
 
-  test("renders shared Chinese and English informational pages with safe localized metadata", async () => {
+  test("renders shared multilingual informational pages with safe localized metadata", async () => {
     const pages = await renderSharedInfoPages();
 
     for (const { file, lang, h1 } of sharedInfoPages) {

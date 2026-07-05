@@ -1,0 +1,27 @@
+{
+  "locale": "pt-BR",
+  "navigation": {
+    "home": "Início",
+    "tools": "Ferramentas PDF",
+    "uploadReady": "Preparar envio",
+    "merge": "Juntar PDF",
+    "split": "Dividir PDF",
+    "manage": "Gerenciar páginas",
+    "compress": "Comprimir PDF",
+    "pdfToJpg": "PDF para JPG",
+    "jpgToPdf": "JPG para PDF",
+    "rotate": "Girar PDF",
+    "unlock": "Desbloquear PDF",
+    "about": "Sobre",
+    "privacy": "Privacidade"
+  },
+  "languageMenu": {
+    "label": "Idioma",
+    "currentLanguage": "Português (Brasil)"
+  },
+  "footer": {
+    "tagline": "Ferramentas PDF no navegador para documentos do dia a dia e preparação de envios.",
+    "copyright": "© PDFTool.work",
+    "privacy": "Política de privacidade"
+  }
+}

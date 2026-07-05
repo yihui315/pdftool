@@ -1,0 +1,37 @@
+{
+  "seo": {
+    "title": "Sobre o PDFTool.work - Ferramentas PDF no navegador",
+    "description": "Conheça o PDFTool.work, um site de utilidades PDF no navegador para documentos diários, materiais de estudo e preparação de envios."
+  },
+  "h1": "Sobre o PDFTool.work",
+  "lead": "Tornamos tarefas comuns de PDF mais claras, leves e práticas para trabalhar no navegador.",
+  "strings": {
+    "heroEyebrow": "Sobre nós",
+    "heroTitle": "Sobre o PDFTool.work",
+    "heroLead": "PDFTool.work é feito para trabalho de escritório diário, materiais de estudo, pacotes de inscrição e limpeza leve de documentos. O objetivo é tornar operações comuns de PDF claras, compreensíveis e rápidas de iniciar.",
+    "missionEyebrow": "Princípios",
+    "missionTitle": "Projetado para tarefas reais e pontuais de PDF",
+    "missionLead": "Muita gente só precisa reduzir um documento, combinar alguns arquivos, remover páginas em branco ou transformar imagens em PDF. O site é organizado em torno desses trabalhos frequentes.",
+    "principleClarityTitle": "Clareza",
+    "principleClarityText": "Cada ferramenta busca oferecer entrada clara, status visível e lembretes para revisar o resultado.",
+    "principleLocalTitle": "Local em primeiro lugar",
+    "principleLocalText": "As ferramentas priorizam a leitura do conteúdo PDF selecionado e a geração de resultados no navegador, reduzindo fluxos desnecessários de envio ao servidor.",
+    "principleHonestTitle": "Limites honestos",
+    "principleHonestText": "Resultados de compressão, tempo de processamento e estabilidade podem depender da memória do dispositivo, da capacidade do navegador e da estrutura do PDF.",
+    "adLabel": "Publicidade",
+    "operationsTitle": "Como o site opera",
+    "operationsIntro": "PDFTool.work é baseado em páginas estáticas, scripts frontend e conteúdo localizado. Continuaremos melhorando páginas multilíngues e orientações mais claras para as ferramentas.",
+    "operationsToolsTitle": "Escopo atual das ferramentas",
+    "operationsToolsText": "O site inclui preparação de envios, compressão de PDF, junção, divisão, gerenciamento de páginas, conversão de PDF para imagem, conversão de imagem para PDF, rotação e desbloqueio.",
+    "operationsAdsTitle": "Anúncios e análise",
+    "operationsAdsText": "Para apoiar a manutenção das ferramentas gratuitas, as páginas podem carregar recursos como Google Analytics e Google AdSense. Essas solicitações não precisam ler o conteúdo do PDF selecionado dentro de uma ferramenta.",
+    "operationsContactTitle": "Contato",
+    "operationsContactText": "Se uma página não estiver clara, uma ferramenta se comportar de modo inesperado ou você quiser conversar sobre cooperação, entre em contato pelo e-mail contact@pdftool.work.",
+    "faqEyebrow": "FAQ",
+    "faqTitle": "Sobre o PDFTool.work",
+    "faqWhatQuestion": "O que é o PDFTool.work?",
+    "faqWhatAnswer": "É um site de utilidades PDF baseadas no navegador para tarefas comuns como juntar, dividir, comprimir, organizar páginas e converter formatos.",
+    "faqContactQuestion": "Como posso relatar um problema?",
+    "faqContactAnswer": "Inclua seu navegador, a página da ferramenta, o tipo de arquivo e o que aconteceu; depois envie para contact@pdftool.work."
+  }
+}

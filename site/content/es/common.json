@@ -1,0 +1,27 @@
+{
+  "locale": "es",
+  "navigation": {
+    "home": "Inicio",
+    "tools": "Herramientas PDF",
+    "uploadReady": "Preparar subida",
+    "merge": "Unir PDF",
+    "split": "Dividir PDF",
+    "manage": "Gestionar páginas",
+    "compress": "Comprimir PDF",
+    "pdfToJpg": "PDF a JPG",
+    "jpgToPdf": "JPG a PDF",
+    "rotate": "Rotar PDF",
+    "unlock": "Desbloquear PDF",
+    "about": "Acerca de",
+    "privacy": "Privacidad"
+  },
+  "languageMenu": {
+    "label": "Idioma",
+    "currentLanguage": "Español"
+  },
+  "footer": {
+    "tagline": "Herramientas PDF basadas en el navegador para documentos diarios y preparación de cargas.",
+    "copyright": "© PDFTool.work",
+    "privacy": "Política de privacidad"
+  }
+}

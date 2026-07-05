@@ -1,0 +1,35 @@
+{
+  "seo": {
+    "title": "Política de privacidade - PDFTool.work",
+    "description": "PDFTool.work explica o processamento PDF no navegador, conteúdo de arquivos locais, análises, solicitações de publicidade e limites de memória do navegador."
+  },
+  "h1": "Política de privacidade",
+  "lead": "Entenda como o PDFTool.work lida com conteúdo de arquivos, solicitações do site, publicidade e análises.",
+  "strings": {
+    "heroEyebrow": "Privacidade",
+    "heroTitle": "Política de privacidade",
+    "heroLead": "Esta política explica o processamento PDF baseado no navegador do PDFTool.work e as solicitações normais de análise, publicidade e rede que podem ocorrer enquanto o site funciona.",
+    "lastUpdated": "Última atualização: 5 de julho de 2026",
+    "localTitle": "1. Como funciona o processamento de arquivos",
+    "localIntro": "Quando você escolhe um PDF em uma ferramenta, o conteúdo do arquivo é lido pelo navegador para que a página possa criar um resultado no seu dispositivo. O PDFTool.work é projetado para não receber o conteúdo do PDF selecionado nessas operações.",
+    "localDownload": "Os resultados geralmente são criados como links temporários de download do navegador. Se você atualizar a página, fechar a aba ou escolher outro arquivo, o link do resultado pode não estar mais disponível.",
+    "dataTitle": "2. Informações que o site pode processar",
+    "dataIntro": "Para manter o site funcionando, solucionar problemas e sustentar o serviço gratuito, servidores ou serviços de terceiros podem processar informações que não são conteúdo de arquivo, como:",
+    "dataLogItem": "Registros básicos de acesso, como endereço IP, caminho solicitado, tipo de navegador, horário da visita e código de status.",
+    "dataPerformanceItem": "Informações de desempenho e erro da página, como falhas de carregamento de script, capacidade do navegador ou etapa de processamento.",
+    "dataAdsItem": "Cookies, informações do dispositivo ou dados normais de solicitações web necessários para serviços de análise e publicidade, conforme a configuração e regras aplicáveis.",
+    "adsTitle": "3. Google Analytics e Google AdSense",
+    "adsText": "O site pode carregar recursos do Google Analytics e do Google AdSense para entender visitas e apoiar a operação gratuita. Esses serviços podem receber informações normais de solicitações web, mas não precisam ler o conteúdo do arquivo local selecionado em uma ferramenta PDF.",
+    "limitsTitle": "4. Limites de memória do navegador e estrutura do PDF",
+    "limitsText": "Digitalizações grandes, PDFs com muitas imagens, arquivos criptografados ou estruturas PDF complexas podem usar mais memória do navegador e falhar. Use um navegador de desktop para arquivos importantes e revise o resultado antes de enviá-lo.",
+    "contactTitle": "5. Contato",
+    "contactText": "Se tiver dúvidas sobre esta política, configuração de publicidade ou processamento de arquivos, envie e-mail para privacy@pdftool.work.",
+    "adLabel": "Publicidade",
+    "faqEyebrow": "FAQ",
+    "faqTitle": "Privacidade e tratamento de arquivos",
+    "faqUploadQuestion": "O conteúdo do PDF selecionado sai do meu dispositivo?",
+    "faqUploadAnswer": "As ferramentas são projetadas para que o navegador leia e processe localmente o conteúdo do PDF selecionado. A página ainda pode solicitar ativos do site, recursos de análise e recursos de publicidade.",
+    "faqAnalyticsQuestion": "Análises ou anúncios leem o conteúdo do meu PDF?",
+    "faqAnalyticsAnswer": "Não. Solicitações de análise e publicidade são solicitações web comuns e não precisam acessar o conteúdo do arquivo PDF selecionado em uma ferramenta."
+  }
+}
