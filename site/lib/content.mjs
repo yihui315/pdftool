@@ -7,6 +7,7 @@ const UNSAFE_OBJECT_KEYS = new Set(["__proto__", "constructor", "prototype"]);
 const TOKEN_PATTERN = /\{([A-Za-z0-9_]+)\}/g;
 const OBJECT_TAG = "[object Object]";
 const NATIVE_OBJECT_SOURCE = Function.prototype.toString.call(Object);
+const NATIVE_ARRAY_SOURCE = Function.prototype.toString.call(Array);
 
 function isPlainObject(value) {
   if (value === null || typeof value !== "object") {
@@ -27,6 +28,21 @@ function isPlainObject(value) {
   );
 }
 
+function isOrdinaryArray(value) {
+  if (!Array.isArray(value)) return false;
+
+  const prototype = Object.getPrototypeOf(value);
+  if (!Array.isArray(prototype)) return false;
+  if (!Object.prototype.hasOwnProperty.call(prototype, "constructor")) return false;
+
+  const constructor = prototype.constructor;
+  return (
+    typeof constructor === "function" &&
+    constructor.prototype === prototype &&
+    Function.prototype.toString.call(constructor) === NATIVE_ARRAY_SOURCE
+  );
+}
+
 function requirePlainObject(value, fieldPath) {
   if (!isPlainObject(value)) {
     throw new Error(`${fieldPath} must be a plain object`);
@@ -41,10 +57,74 @@ function requireString(value, fieldPath) {
   return value;
 }
 
-function assertSafeKey(key, fieldPath) {
+function assertSafeKey(key, keyPath) {
   if (UNSAFE_OBJECT_KEYS.has(key)) {
-    throw new Error(`${fieldPath}.${key} is an unsafe object key`);
+    throw new Error(`${keyPath} is an unsafe object key`);
   }
+}
+
+function isArrayIndexKey(key) {
+  if (typeof key !== "string" || key.trim() === "") return false;
+  const index = Number(key);
+  return (
+    Number.isInteger(index) &&
+    index >= 0 &&
+    index < 2 ** 32 - 1 &&
+    String(index) === key
+  );
+}
+
+function propertyPath(parentPath, key, parentIsArray = false) {
+  if (typeof key === "symbol") {
+    return `${parentPath}.${String(key)}`;
+  }
+  if (parentIsArray && isArrayIndexKey(key)) {
+    return `${parentPath}[${key}]`;
+  }
+  return `${parentPath}.${key}`;
+}
+
+function assertSafeJsonData(value, fieldPath, ancestors = new WeakSet()) {
+  if (value === null || typeof value !== "object") {
+    return value;
+  }
+
+  const parentIsArray = Array.isArray(value);
+  if (parentIsArray) {
+    if (!isOrdinaryArray(value)) {
+      throw new Error(`${fieldPath} must be an ordinary array`);
+    }
+  } else {
+    requirePlainObject(value, fieldPath);
+  }
+
+  if (ancestors.has(value)) {
+    throw new Error(`${fieldPath} contains a cycle`);
+  }
+  ancestors.add(value);
+
+  for (const key of Reflect.ownKeys(value)) {
+    if (parentIsArray && key === "length") continue;
+
+    const keyPath = propertyPath(fieldPath, key, parentIsArray);
+    if (typeof key === "symbol") {
+      throw new Error(`${fieldPath} has a symbol key: ${String(key)}`);
+    }
+    assertSafeKey(key, keyPath);
+
+    const descriptor = Object.getOwnPropertyDescriptor(value, key);
+    if (!descriptor.enumerable) {
+      throw new Error(`${keyPath} is a non-enumerable property`);
+    }
+    if (!("value" in descriptor)) {
+      throw new Error(`${keyPath} is an accessor property`);
+    }
+
+    assertSafeJsonData(descriptor.value, keyPath, ancestors);
+  }
+
+  ancestors.delete(value);
+  return value;
 }
 
 function deepFreeze(value) {
@@ -116,6 +196,7 @@ export function assertTokenParity(reference, translation, fieldPath) {
 
 /** Validate the shared strings needed by the site layout. */
 export function validateCommon(common, expectedLocale) {
+  assertSafeJsonData(common, "common");
   requirePlainObject(common, "common");
   const locale = requireString(common.locale, "common.locale");
   try {
@@ -150,9 +231,10 @@ export function validateCommon(common, expectedLocale) {
 
 /** Validate one flat runtime translation dictionary. */
 export function validateRuntime(runtime, fieldPath = "runtime") {
+  assertSafeJsonData(runtime, fieldPath);
   requirePlainObject(runtime, fieldPath);
   for (const [key, value] of Object.entries(runtime)) {
-    assertSafeKey(key, fieldPath);
+    assertSafeKey(key, propertyPath(fieldPath, key));
     requireString(value, `${fieldPath}.${key}`);
     try {
       interpolationTokens(value);
@@ -172,7 +254,7 @@ export function assertRuntimeParity(runtime, englishRuntime) {
   const referenceKeys = Object.keys(englishRuntime);
   for (const key of referenceKeys) {
     if (!Object.hasOwn(runtime, key)) {
-      throw new Error(`runtime.${key} is missing from the English reference key set`);
+      throw new Error(`runtime.${key} is missing; required by the English reference`);
     }
   }
   for (const key of runtimeKeys) {
@@ -201,6 +283,7 @@ export function validatePage(routeKey, page, locale) {
     }
   }
 
+  assertSafeJsonData(page, routeKey);
   requirePlainObject(page, routeKey);
   requirePlainObject(page.seo, `${routeKey}.seo`);
   requireString(page.seo.title, `${routeKey}.seo.title`);
@@ -209,7 +292,7 @@ export function validatePage(routeKey, page, locale) {
   requireString(page.lead, `${routeKey}.lead`);
   requirePlainObject(page.strings, `${routeKey}.strings`);
   for (const [key, value] of Object.entries(page.strings)) {
-    assertSafeKey(key, `${routeKey}.strings`);
+    assertSafeKey(key, propertyPath(`${routeKey}.strings`, key));
     requireString(value, `${routeKey}.strings.${key}`);
   }
   return page;
