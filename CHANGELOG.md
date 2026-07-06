@@ -11,6 +11,7 @@
 ### Changed
 - 将 V6/V7 AI SEO、AdSense 合规页、博客和既有高意图静态页面纳入 `dist/` 白名单复制及 sitemap，避免两套生成系统在发布阶段互相覆盖。
 - 本地服务、Playwright 和 CI 统一验证生成后的 `dist/`，并保留 main 分支的 SEO、AdSense 检查与 sitemap 提交脚本。
+- PowerShell 与 Bash 部署脚本统一只发布经过 manifest 哈希验证的 `dist/`，记录构建 commit，并在激活或线上健康检查失败时回滚。
 - 将 PDF 工具运行时资源改为根路径和第一方静态资源，确保嵌套语言页面可安全加载 PDF.js、pdf-lib 和 worker。
 
 ### Fixed

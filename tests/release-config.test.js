@@ -13,6 +13,24 @@ async function source(path) {
 }
 
 describe("release configuration", () => {
+  it("deploys only the verified immutable dist artifact", async () => {
+    const powershell = await source("deploy/deploy.ps1");
+    const bash = await source("deploy/deploy.sh");
+
+    for (const deploy of [powershell, bash]) {
+      expect(deploy).toContain("dist/release-manifest.json");
+      expect(deploy).toContain("npm run verify:release");
+      expect(deploy).toContain(".release-commit");
+      expect(deploy).toContain("previousRelease");
+      expect(deploy).not.toContain("git add .");
+      expect(deploy).not.toContain("git push origin main");
+    }
+
+    expect(powershell).toContain('tar -C "dist" -cf');
+    expect(powershell).not.toContain("$deployFiles");
+    expect(bash).toContain("tar -C dist -cf - .");
+    expect(bash).not.toContain("find . -maxdepth 1 -name '*.html'");
+  });
   it("blocks deployment on build and browser gates unless an explicit emergency switch is used", async () => {
     const deploy = await source("deploy/deploy.ps1");
     expect(deploy).toContain("[switch]$EmergencySkipTests");
