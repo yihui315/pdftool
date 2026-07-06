@@ -76,6 +76,9 @@ test("serves every public route and production PDF asset from first-party paths"
     ...allOutputPaths()
       .filter((route) => route !== "index.html")
       .map((route) => `/${route}`),
+    "/terms.html",
+    "/contact.html",
+    "/seo-action-contract-pdf-compress-1mb.html",
     "/sitemap.xml"
   ];
   for (const route of routes) {

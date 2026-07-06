@@ -127,10 +127,14 @@ function sitemapLocs(xml) {
 }
 
 function currentGitCommit() {
-  return execFileSync("git", ["rev-parse", "HEAD"], {
-    cwd: repoRoot,
-    encoding: "utf8"
-  }).trim();
+  return execFileSync(
+    "git",
+    ["-c", `safe.directory=${repoRoot}`, "rev-parse", "HEAD"],
+    {
+      cwd: repoRoot,
+      encoding: "utf8"
+    }
+  ).trim();
 }
 
 function expectUtcIsoTimestamp(value) {
@@ -215,6 +219,29 @@ describe("atomic multilingual release builds", () => {
     expect(manifest.routes.filter(({ key }) =>
       LANDING_ROUTES.some((route) => route.key === key)
     )).toHaveLength(20);
+    expect(manifest.staticPages).toEqual(
+      expect.arrayContaining([
+        "terms.html",
+        "contact.html",
+        "seo-action-contract-pdf-compress-1mb.html"
+      ])
+    );
+    expect(manifest.files).toEqual(
+      expect.arrayContaining([
+        "terms.html",
+        "contact.html",
+        "seo-action-contract-pdf-compress-1mb.html"
+      ])
+    );
+
+    const sitemap = await readFile(path.join(outDir, "sitemap.xml"), "utf8");
+    expect(sitemapLocs(sitemap)).toEqual(
+      expect.arrayContaining([
+        "https://pdftool.work/terms.html",
+        "https://pdftool.work/contact.html",
+        "https://pdftool.work/seo-action-contract-pdf-compress-1mb.html"
+      ])
+    );
 
     for (const locale of landingLocaleCodes) {
       for (const route of LANDING_ROUTES) {

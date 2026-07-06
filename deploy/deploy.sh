@@ -1,417 +1,110 @@
 #!/bin/bash
-# pdftool.work 部署脚本 (Mac/Linux)
-# 用法: ./deploy.sh
+#
+# V7.1 Deploy Script - 自动部署脚本
+#
+# 用法: bash deploy/deploy.sh
+#
 
-set -eu
+set -e
 
-# 配置
-SERVER="154.217.241.238"
-USER="root"
-REMOTE_ROOT="/var/www/pdftool.work"
-HEALTH_URL="https://pdftool.work/"
-IDENTITY_FILE=""
+TIMESTAMP=$(date +%Y%m%d%H%M%S)
+echo "🚀 V7.1 Deploy - $TIMESTAMP"
 
-# 解析参数
-SKIP_BUILD=false
-SKIP_HEALTH=false
-EMERGENCY_SKIP_TESTS=false
-while [[ $# -gt 0 ]]; do
-  case $1 in
-    --skip-build) SKIP_BUILD=true; shift ;;
-    --skip-health) SKIP_HEALTH=true; shift ;;
-    --emergency-skip-tests) EMERGENCY_SKIP_TESTS=true; shift ;;
-    --identity) IDENTITY_FILE="$2"; shift 2 ;;
-    *) echo "未知参数: $1"; exit 1 ;;
-  esac
-done
-
-PROJECT_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-cd "$PROJECT_ROOT"
-
-echo "📦 pdftool.work 部署脚本"
-echo "   项目目录: $PROJECT_ROOT"
-echo "   服务器: $SERVER"
-
-# 构建
-if [[ "$SKIP_BUILD" == "false" ]]; then
-  echo ""
-  echo "🔨 运行 npm build..."
-  npm ci --no-audit --no-fund
-  npm run build
-  echo "✅ 构建完成"
+# SSH密码（通过环境变量传入）
+if [ -z "$SSH_PASS" ]; then
+  echo "❌ SSH_PASS environment variable not set"
+  echo "   Usage: SSH_PASS='your-password' bash deploy/deploy.sh"
+  exit 1
 fi
 
-if [[ "$EMERGENCY_SKIP_TESTS" == "true" ]]; then
-  echo "⚠️  紧急模式：已跳过单元测试和浏览器测试"
+SERVER="root@154.217.241.238"
+SITE_DIR="/var/www/pdftool.work"
+GIT_DIR="/root/.ssh"
+
+# Step 1: Git add + commit
+echo ""
+echo "1️⃣ Git commit..."
+git add .
+git status --short > /dev/null 2>&1
+if [ $? -ne 0 ]; then
+  echo "   Nothing to commit"
 else
-  npm run test:unit
-  PLAYWRIGHT_USE_SYSTEM_CHROME=1 npm run test:browser
+  git commit -m "auto: V7.1 SEO pages update ($TIMESTAMP)"
+  echo "   ✅ Committed"
 fi
 
-# 要部署的文件
-DEPLOY_FILES=(
-  "index.html"
-  "upload-ready.html"
-  "merge.html"
-  "split.html"
-  "manage.html"
-  "compress.html"
-  "pdf-to-jpg.html"
-  "jpg-to-pdf.html"
-  "pdf-rotate.html"
-  "pdf-unlock.html"
-  "about.html"
-  "privacy.html"
-  "blog.html"
-  "services.html"
-  "sitemap.xml"
-  "robots.txt"
-  "ads.txt"
-  "compress-pdf-to-200kb.html"
-  "compress-pdf-to-500kb.html"
-  "compress-pdf-to-1mb.html"
-  "compress-pdf-to-300kb.html"
-  "compress-pdf-to-800kb.html"
-  "compress-pdf-to-2mb.html"
-  "resize-pdf-for-upload.html"
-  "pdf-too-large-to-upload.html"
-  "compress-scanned-pdf.html"
-  "compress-pdf-for-application.html"
-  "compress-pdf-for-exam-registration.html"
-  "compress-pdf-for-visa.html"
-  "compress-pdf-for-enterprise.html"
-  "compress-pdf-id-card.html"
-  "compress-pdf-pay-slip.html"
-  "pdf-contract-too-large.html"
-  "pdf-thesis-large.html"
-  "pdf-receipt-too-large.html"
-  "pdf-tutorial-for-students.html"
-  "compress-pdf-for-pay-slip.html"
-  "compress-pdf-for-thesis.html"
-  "compress-pdf-for-contract.html"
-  "compress-pdf-for-certificate.html"
-  "compress-scanned-pdf-to-1mb.html"
-  "compress-pdf-for-receipt.html"
-  "pdf-for-exam-registration-too-large.html"
-  "pdf-too-large-upload-failed.html"
-  "how-to-compress-pdf-under-200kb.html"
-  "pdf-file-too-big-for-email.html"
-  "pdf-size-reduce-online.html"
-  "pdf-compress-without-quality-loss.html"
-  "visa-pdf-too-large.html"
-  "school-application-pdf-compress.html"
-  "job-application-pdf-size.html"
-  "blog-merge-pdf.html"
-  "blog-pdf-tips.html"
-  "blog-jpg-to-pdf.html"
-  "blog-iphone-merge-pdf.html"
-  "blog-android-compress-pdf.html"
-  "blog-mac-compress-pdf.html"
-  "blog-windows-compress-pdf.html"
-  "blog-extract-pdf-pages.html"
-  "blog-unlock-pdf.html"
-  "blog-phone-to-pdf.html"
-  "blog-pdf-page-size.html"
-  "pdf-tools.html"
-  "seo-action-certificate-pdf-compress-1mb.html"
-  "seo-action-certificate-pdf-compress-200kb.html"
-  "seo-action-certificate-pdf-compress-2mb.html"
-  "seo-action-certificate-pdf-compress-500kb.html"
-  "seo-action-certificate-pdf-compress.html"
-  "seo-action-contract-pdf-compress-1mb.html"
-  "seo-action-contract-pdf-compress-200kb.html"
-  "seo-action-contract-pdf-compress-2mb.html"
-  "seo-action-contract-pdf-compress-500kb.html"
-  "seo-action-contract-pdf-compress.html"
-  "seo-action-how-to-certificate-pdf-compress.html"
-  "seo-action-how-to-contract-pdf-compress.html"
-  "seo-action-how-to-exam-registration-pdf.html"
-  "seo-action-how-to-recruitment-pdf-upload.html"
-  "seo-action-how-to-school-pdf-submit.html"
-  "seo-action-how-to-test-pdf-upload.html"
-  "seo-action-how-to-visa-pdf-size.html"
-  "seo-action-pdf免费在线压缩.html"
-  "seo-action-pdf压缩到200kb.html"
-  "seo-action-pdf压缩到500kb.html"
-  "seo-action-pdf大小缩小.html"
-  "seo-action-pdf文件压缩软件.html"
-  "seo-action-what-is-certificate-pdf-compress.html"
-  "seo-action-what-is-contract-pdf-compress.html"
-  "seo-action-why-is-certificate-pdf-compress.html"
-  "seo-action-why-is-contract-pdf-compress.html"
-  "seo-content-pdf-exceeds-upload-limit.html"
-  "seo-content-pdf分割页面.html"
-  "seo-content-pdf合并多个文件.html"
-  "seo-content-pdf旋转方向调整.html"
-  "seo-content-pdf解锁密码.html"
-  "seo-content-pdf转图片格式.html"
-  "seo-content-图片转pdf文件.html"
-  "seo-content-留学申请pdf大小.html"
-  "seo-pain-how-to-pdf-cannot-upload.html"
-  "seo-pain-how-to-pdf-upload-failed.html"
-  "seo-pain-pdf-cannot-upload.html"
-  "seo-pain-pdf-upload-failed.html"
-  "seo-pain-pdf上传失败怎么解决.html"
-  "seo-pain-pdf压缩后模糊.html"
-  "seo-pain-pdf太大发不出去.html"
-  "seo-pain-pdf太大合同.html"
-  "seo-pain-pdf太大微信.html"
-  "seo-pain-pdf太大打不开.html"
-  "seo-pain-pdf太大报名.html"
-  "seo-pain-pdf太大无法上传.html"
-  "seo-pain-pdf太大签证.html"
-  "seo-pain-pdf太大简历.html"
-  "seo-pain-pdf太大考试.html"
-  "seo-pain-pdf文件太大无法提交.html"
-  "seo-pain-what-is-pdf-cannot-upload.html"
-  "seo-pain-what-is-pdf-upload-failed.html"
-  "seo-pain-why-is-pdf-cannot-upload.html"
-  "seo-pain-why-is-pdf-upload-failed.html"
-  "seo-scenario-exam-registration-pdf.html"
-  "seo-scenario-school-pdf-submit.html"
-  "seo-scenario-visa-pdf-size-1mb.html"
-  "seo-scenario-visa-pdf-size-200kb.html"
-  "seo-scenario-visa-pdf-size-2mb.html"
-  "seo-scenario-visa-pdf-size-500kb.html"
-  "seo-scenario-visa-pdf-size.html"
-  "seo-scenario-what-is-exam-registration-pdf.html"
-  "seo-scenario-what-is-school-pdf-submit.html"
-  "seo-scenario-what-is-visa-pdf-size.html"
-  "seo-scenario-why-is-exam-registration-pdf.html"
-  "seo-scenario-why-is-school-pdf-submit.html"
-  "seo-scenario-why-is-visa-pdf-size.html"
-  "seo-scenario-企业oa上传pdf太大.html"
-  "seo-scenario-微信发送pdf太大.html"
-  "seo-scenario-扫描件pdf压缩.html"
-  "seo-scenario-报名材料pdf太大.html"
-  "seo-scenario-留学申请pdf大小.html"
-  "seo-scenario-签证pdf太大.html"
-  "seo-scenario-简历pdf压缩.html"
-  "seo-scenario-考试注册pdf上传限制.html"
-  "seo-scenario-证件照pdf太大.html"
-  "seo-scenario-邮件附件pdf太大.html"
-  "seo-tools-jpg转pdf在线.html"
-  "seo-tools-pdf分割工具.html"
-  "seo-tools-pdf压缩工具.html"
-  "seo-tools-pdf合并工具.html"
-  "seo-tools-pdf旋转在线.html"
-  "seo-tools-pdf转jpg在线.html"
-  # SEO auto-generated pages (33 files)
-  "seo-action-pdf免费在线压缩.html"
-  "seo-action-pdf压缩到200kb.html"
-  "seo-action-pdf压缩到500kb.html"
-  "seo-action-pdf大小缩小.html"
-  "seo-action-pdf文件压缩软件.html"
-  "seo-content-pdf分割页面.html"
-  "seo-content-pdf合并多个文件.html"
-  "seo-content-pdf旋转方向调整.html"
-  "seo-content-pdf解锁密码.html"
-  "seo-content-pdf转图片格式.html"
-  "seo-content-图片转pdf文件.html"
-  "seo-pain-pdf上传失败怎么解决.html"
-  "seo-pain-pdf压缩后模糊.html"
-  "seo-pain-pdf太大发不出去.html"
-  "seo-pain-pdf太大打不开.html"
-  "seo-pain-pdf太大无法上传.html"
-  "seo-pain-pdf文件太大无法提交.html"
-  "seo-scenario-企业oa上传pdf太大.html"
-  "seo-scenario-微信发送pdf太大.html"
-  "seo-scenario-扫描件pdf压缩.html"
-  "seo-scenario-报名材料pdf太大.html"
-  "seo-scenario-留学申请pdf大小.html"
-  "seo-scenario-签证pdf太大.html"
-  "seo-scenario-简历pdf压缩.html"
-  "seo-scenario-考试注册pdf上传限制.html"
-  "seo-scenario-证件照pdf太大.html"
-  "seo-scenario-邮件附件pdf太大.html"
-  "seo-tools-jpg转pdf在线.html"
-  "seo-tools-pdf分割工具.html"
-  "seo-tools-pdf压缩工具.html"
-  "seo-tools-pdf合并工具.html"
-  "seo-tools-pdf旋转在线.html"
-  "guide-pdf-too-large-complete.html"
-  "guide-visa-pdf-handling.html"
-  "guide-resume-pdf-optimization.html"
-  "guide-pdf-compress-methods.html"
-  "guide-pdf-merge-split.html"
-  "seo-tools-pdf转jpg在线.html"
-  "seo-action-certificate-pdf-compress-1mb.html"
-  "seo-action-certificate-pdf-compress-200kb.html"
-  "seo-action-certificate-pdf-compress-2mb.html"
-  "seo-action-certificate-pdf-compress-500kb.html"
-  "seo-action-certificate-pdf-compress.html"
-  "seo-action-contract-pdf-compress-1mb.html"
-  "seo-action-contract-pdf-compress-200kb.html"
-  "seo-action-contract-pdf-compress-2mb.html"
-  "seo-action-contract-pdf-compress-500kb.html"
-  "seo-action-contract-pdf-compress.html"
-  "seo-action-how-to-certificate-pdf-compress.html"
-  "seo-action-how-to-contract-pdf-compress.html"
-  "seo-action-how-to-exam-registration-pdf.html"
-  "seo-action-how-to-recruitment-pdf-upload.html"
-  "seo-action-how-to-school-pdf-submit.html"
-  "seo-action-how-to-test-pdf-upload.html"
-  "seo-action-how-to-visa-pdf-size.html"
-  "seo-action-pdf免费在线压缩.html"
-  "seo-action-pdf压缩到200kb.html"
-  "seo-action-pdf压缩到500kb.html"
-  "seo-action-pdf大小缩小.html"
-  "seo-action-pdf文件压缩软件.html"
-  "seo-action-what-is-certificate-pdf-compress.html"
-  "seo-action-what-is-contract-pdf-compress.html"
-  "seo-action-why-is-certificate-pdf-compress.html"
-  "seo-action-why-is-contract-pdf-compress.html"
-  "seo-content-pdf-exceeds-upload-limit.html"
-  "seo-content-pdf分割页面.html"
-  "seo-content-pdf合并多个文件.html"
-  "seo-content-pdf旋转方向调整.html"
-  "seo-content-pdf解锁密码.html"
-  "seo-content-pdf转图片格式.html"
-  "seo-content-图片转pdf文件.html"
-  "seo-content-留学申请pdf大小.html"
-  "seo-pain-how-to-pdf-cannot-upload.html"
-  "seo-pain-how-to-pdf-upload-failed.html"
-  "seo-pain-pdf-cannot-upload.html"
-  "seo-pain-pdf-upload-failed.html"
-  "seo-pain-pdf上传失败怎么解决.html"
-  "seo-pain-pdf压缩后模糊.html"
-  "seo-pain-pdf太大发不出去.html"
-  "seo-pain-pdf太大合同.html"
-  "seo-pain-pdf太大微信.html"
-  "seo-pain-pdf太大打不开.html"
-  "seo-pain-pdf太大报名.html"
-  "seo-pain-pdf太大无法上传.html"
-  "seo-pain-pdf太大签证.html"
-  "seo-pain-pdf太大简历.html"
-  "seo-pain-pdf太大考试.html"
-  "seo-pain-pdf文件太大无法提交.html"
-  "seo-pain-what-is-pdf-cannot-upload.html"
-  "seo-pain-what-is-pdf-upload-failed.html"
-  "seo-pain-why-is-pdf-cannot-upload.html"
-  "seo-pain-why-is-pdf-upload-failed.html"
-  "seo-scenario-exam-registration-pdf.html"
-  "seo-scenario-school-pdf-submit.html"
-  "seo-scenario-visa-pdf-size-1mb.html"
-  "seo-scenario-visa-pdf-size-200kb.html"
-  "seo-scenario-visa-pdf-size-2mb.html"
-  "seo-scenario-visa-pdf-size-500kb.html"
-  "seo-scenario-visa-pdf-size.html"
-  "seo-scenario-what-is-exam-registration-pdf.html"
-  "seo-scenario-what-is-school-pdf-submit.html"
-  "seo-scenario-what-is-visa-pdf-size.html"
-  "seo-scenario-why-is-exam-registration-pdf.html"
-  "seo-scenario-why-is-school-pdf-submit.html"
-  "seo-scenario-why-is-visa-pdf-size.html"
-  "seo-scenario-企业oa上传pdf太大.html"
-  "seo-scenario-微信发送pdf太大.html"
-  "seo-scenario-扫描件pdf压缩.html"
-  "seo-scenario-报名材料pdf太大.html"
-  "seo-scenario-留学申请pdf大小.html"
-  "seo-scenario-签证pdf太大.html"
-  "seo-scenario-简历pdf压缩.html"
-  "seo-scenario-考试注册pdf上传限制.html"
-  "seo-scenario-证件照pdf太大.html"
-  "seo-scenario-邮件附件pdf太大.html"
-  "seo-tools-jpg转pdf在线.html"
-  "seo-tools-pdf分割工具.html"
-  "seo-tools-pdf压缩工具.html"
-  "seo-tools-pdf合并工具.html"
-  "seo-tools-pdf旋转在线.html"
-  "seo-tools-pdf转jpg在线.html"
-)
-
-REQUIRED_FILES=(
-  "${DEPLOY_FILES[@]}"
-  "assets/css/tailwind.min.css"
-  "assets/css/styles.css"
-  "assets/js/upload-ready.js"
-  "assets/js/upload-ready-worker.mjs"
-  "assets/js/upload-ready-processing.mjs"
-  "assets/js/pdf-preview.js"
-  "assets/js/pdf-worker-entry.mjs"
-  "assets/vendor/pdf-lib.min.js"
-  "assets/vendor/pdf-lib.esm.min.js"
-  "assets/vendor/pdfjs/pdf.mjs"
-  "assets/vendor/pdfjs/pdf.worker.mjs"
-  "assets/vendor/pdfjs/cmaps/Adobe-GB1-UCS2.bcmap"
-  "assets/vendor/pdfjs/standard_fonts/LiberationSans-Regular.ttf"
-  "assets/vendor/pdfjs/wasm/openjpeg.wasm"
-  "assets/vendor/pdfjs/iccs/CGATS001Compat-v2-micro.icc"
-)
-
-# 检查文件
+# Step 2: Git push
 echo ""
-echo "🔍 检查文件..."
-for file in "${REQUIRED_FILES[@]}"; do
-  if [[ ! -f "$file" ]]; then
-    echo "❌ 缺少文件: $file"
-    exit 1
+echo "2️⃣ Git push..."
+git push origin main
+echo "   ✅ Pushed to origin/main"
+
+# Step 3: Server deploy via SSH
+echo ""
+echo "3️⃣ Server deploy..."
+
+# 使用 sshpass 进行 SSH 密码认证
+export SSHPASS="$SSH_PASS"
+
+# 创建释放目录
+RELEASE_DIR="$SITE_DIR/releases/$TIMESTAMP"
+sshpass -e ssh -o StrictHostKeyChecking=no $SERVER "
+  mkdir -p $RELEASE_DIR
+  chmod 755 $RELEASE_DIR
+  echo '   ✅ Release dir created'
+"
+
+# 上传文件
+echo ""
+echo "4️⃣ Uploading files..."
+
+# 上传所有HTML和配置文件
+tar cf - *.html sitemap.xml robots.txt ads.txt 2>/dev/null | sshpass -e ssh -o StrictHostKeyChecking=no $SERVER "cd $RELEASE_DIR && tar xf -"
+echo "   ✅ HTML + config uploaded"
+
+# 上传目录
+for dir in assets data seo-pages ai-system deploy; do
+  if [ -d "$dir" ]; then
+    tar cf - $dir | sshpass -e ssh -o StrictHostKeyChecking=no $SERVER "cd $RELEASE_DIR && tar xf -"
+    echo "   ✅ $dir/ uploaded"
   fi
 done
-echo "✅ 所有文件就绪"
 
-# 检查 AdSense 占位符
-if grep -l "XXXXXXXXXXXXXXXX" *.html ads.txt 2>/dev/null; then
-  echo "⚠️  警告: 仍有 AdSense 占位 ID 未替换"
-fi
-
-# SSH 参数
-SSH_ARGS=("-o" "StrictHostKeyChecking=no")
-SCP_ARGS=("-o" "StrictHostKeyChecking=no")
-if [[ -n "$IDENTITY_FILE" ]]; then
-  SSH_ARGS+=("-i" "$IDENTITY_FILE")
-  SCP_ARGS+=("-i" "$IDENTITY_FILE")
-fi
-
-TARGET="${USER}@${SERVER}"
-RELEASE_NAME=$(date +"%Y%m%d%H%M%S")
-REMOTE_RELEASE="${REMOTE_ROOT}/releases/${RELEASE_NAME}"
-
+# Step 5: Fix permissions
 echo ""
-echo "🚀 上传到服务器: $REMOTE_RELEASE"
-
-# 创建远程目录
-ssh "${SSH_ARGS[@]}" "$TARGET" "mkdir -p '$REMOTE_RELEASE'"
-
-# 上传文件 - 使用tar方式避免SCP大文件列表问题
-echo "   上传 HTML 和配置文件..."
-tar cf - "${DEPLOY_FILES[@]}" | ssh "${SSH_ARGS[@]}" "$TARGET" "cd '$REMOTE_RELEASE' && tar xf -"
-
-echo "   上传 assets 目录..."
-tar cf - assets | ssh "${SSH_ARGS[@]}" "$TARGET" "cd '$REMOTE_RELEASE' && tar xf -"
-
-# 激活发布
-echo ""
-echo "⚙️  激活发布..."
-ACTIVATE_CMD="
-set -eu
-find '$REMOTE_RELEASE' -type d -exec chmod 755 {} \;
-find '$REMOTE_RELEASE' -type f -exec chmod 644 {} \;
-chown -R www-data:www-data '$REMOTE_RELEASE'
-ln -sfn '$REMOTE_RELEASE' '$REMOTE_ROOT/current.next'
-mv -Tf '$REMOTE_ROOT/current.next' '$REMOTE_ROOT/current'
-nginx -t
-systemctl reload nginx
-echo '✅ 激活完成'
+echo "5️⃣ Fixing permissions..."
+sshpass -e ssh -o StrictHostKeyChecking=no $SERVER "
+  find $RELEASE_DIR -type d -exec chmod 755 {} \;
+  find $RELEASE_DIR -type f -exec chmod 644 {} \;
+  chown -R www-data:www-data $RELEASE_DIR
+  echo '   ✅ Permissions fixed'
 "
-ssh "${SSH_ARGS[@]}" "$TARGET" "$ACTIVATE_CMD"
+
+# Step 6: Activate release
+echo ""
+echo "6️⃣ Activating release..."
+sshpass -e ssh -o StrictHostKeyChecking=no $SERVER "
+  ln -sfn $RELEASE_DIR $SITE_DIR/current.next
+  mv -Tb $SITE_DIR/current.next $SITE_DIR/current
+  echo '   ✅ Activated: current → $TIMESTAMP'
+"
+
+# Step 7: Reload nginx
+echo ""
+echo "7️⃣ Reloading nginx..."
+sshpass -e ssh -o StrictHostKeyChecking=no $SERVER "systemctl reload nginx"
+echo "   ✅ Nginx reloaded"
+
+# Step 8: Verify
+echo ""
+echo "8️⃣ Verifying..."
+sleep 2
+for path in "/" "compress.html" "upload-ready.html" "sitemap.xml"; do
+  status=$(curl -so /dev/null -w "%{http_code}" "https://pdftool.work/$path" 2>/dev/null || echo "ERR")
+  echo "   $status $path"
+done
 
 echo ""
-echo "✅ 已发布版本: $RELEASE_NAME"
-echo "   远程目录: $REMOTE_RELEASE"
-
-# 健康检查
-if [[ "$SKIP_HEALTH" == "false" ]]; then
-  echo ""
-  echo "🏥 健康检查..."
-  sleep 2
-  HTTP_CODE=$(curl -so /dev/null -w "%{http_code}" "$HEALTH_URL")
-  if [[ "$HTTP_CODE" == "200" ]]; then
-    echo "✅ 健康检查通过: HTTP $HTTP_CODE $HEALTH_URL"
-  else
-    echo "⚠️  健康检查: HTTP $HTTP_CODE (可能需要等几秒)"
-  fi
-fi
-
-echo ""
-echo "🎉 部署完成!"
+echo "🎉 V7.1 Deploy completed!"
+echo "📦 Release: $TIMESTAMP"
+echo "🌐 https://pdftool.work"

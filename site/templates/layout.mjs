@@ -117,6 +117,14 @@ function renderHead({ locale, routeKey, page, origin, structuredData }) {
   ].join("\n");
 }
 
+function renderComplianceLinks(locale) {
+  if (locale !== "zh-CN") return "";
+  return [
+    '<a class="hover:text-red-700" href="/terms.html">服务条款</a>',
+    '<a class="hover:text-red-700" href="/contact.html">联系我们</a>'
+  ].join("\n");
+}
+
 function renderFooter({ locale, common }) {
   return [
     '<footer class="border-t border-slate-200 bg-white">',
@@ -127,6 +135,7 @@ function renderFooter({ locale, common }) {
     `<a class="hover:text-red-700" href="${escapeAttribute(
       canonicalPath(locale, "privacy")
     )}">${escapeHtml(common.footer.privacy)}</a>`,
+    renderComplianceLinks(locale),
     "</div>",
     "</div>",
     "</footer>"

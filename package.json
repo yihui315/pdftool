@@ -14,7 +14,15 @@
     "verify:release": "node scripts/verify-release.mjs dist",
     "watch:css": "tailwindcss -i ./src/tailwind.css -o ./assets/css/tailwind.min.css --watch",
     "serve": "python -m http.server 8080 --directory dist",
-    "serve:test": "python -m http.server 4173 --bind 127.0.0.1"
+    "serve:test": "python -m http.server 4173 --bind 127.0.0.1",
+    "submit:sitemap": "node scripts/submit-sitemap.mjs",
+    "check:adsense": "node scripts/check-adsense-policy.mjs",
+    "v7:verify": "npm run check:adsense && npm run build",
+    "seo:audit": "node ai-system/seo-audit.js",
+    "seo:draft": "node ai-system/page-drafter.js",
+    "seo:gate": "node ai-system/quality-gate.js",
+    "seo:sitemap": "node ai-system/sitemap-safe-builder.js",
+    "seo:all": "npm run seo:audit && npm run seo:draft && npm run seo:gate && npm run seo:sitemap"
   },
   "dependencies": {
     "pdf-lib": "1.17.1",

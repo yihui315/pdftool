@@ -35,6 +35,7 @@ import { verifyRelease } from "./verify-release.mjs";
 
 const execFileAsync = promisify(execFile);
 const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..");
+const defaultContentRoot = path.join(projectRoot, "site/content");
 const defaultRoutes = Object.freeze([...CORE_ROUTES, ...LANDING_ROUTES]);
 const landingRouteKeys = new Set(LANDING_ROUTES.map(({ key }) => key));
 
@@ -248,6 +249,27 @@ async function copyStaticAssets(stagingDir) {
   );
 }
 
+async function copyLegacyStaticPages(stagingDir, generatedFiles) {
+  const entries = await readdir(projectRoot, { withFileTypes: true });
+  const pages = entries
+    .filter(
+      (entry) =>
+        entry.isFile() &&
+        entry.name.endsWith(".html") &&
+        !generatedFiles.has(entry.name)
+    )
+    .map((entry) => entry.name)
+    .sort((left, right) => left.localeCompare(right));
+
+  for (const page of pages) {
+    await cp(path.join(projectRoot, page), path.join(stagingDir, page), {
+      force: true
+    });
+  }
+
+  return Object.freeze(pages);
+}
+
 function robotsTxt({ origin = DEFAULT_ORIGIN } = {}) {
   return [
     "User-agent: *",
@@ -338,7 +360,7 @@ async function fileDetails(root, files) {
 
 async function gitCommit() {
   try {
-    const { stdout } = await execFileAsync("git", ["rev-parse", "HEAD"], {
+    const { stdout } = await execFileAsync("git", ["-c", `safe.directory=${projectRoot}`, "rev-parse", "HEAD"], {
       cwd: projectRoot
     });
     return stdout.trim();
@@ -347,7 +369,7 @@ async function gitCommit() {
   }
 }
 
-async function writeManifest({ stagingDir, routes }) {
+async function writeManifest({ stagingDir, routes, staticPages }) {
   const files = (await listFiles(stagingDir)).filter(
     (file) => file !== "release-manifest.json"
   );
@@ -355,6 +377,7 @@ async function writeManifest({ stagingDir, routes }) {
     buildTimeUtc: new Date().toISOString(),
     gitCommit: await gitCommit(),
     routes,
+    staticPages,
     files,
     fileDetails: await fileDetails(stagingDir, files)
   });
@@ -438,7 +461,7 @@ export function parseBuildSiteCliOptions(argv) {
 export async function buildSite({
   routes = defaultRoutes,
   locales = LOCALES,
-  contentRoot = path.join(projectRoot, "site/content"),
+  contentRoot = defaultContentRoot,
   outDir = path.join(projectRoot, "dist"),
   origin = DEFAULT_ORIGIN
 } = {}) {
@@ -459,20 +482,38 @@ export async function buildSite({
     contentByLocale
   });
 
+  const isFullProductionBuild =
+    resolve(contentRoot) === resolve(defaultContentRoot) &&
+    normalizedRoutes.length === defaultRoutes.length &&
+    normalizedLocales.length === LOCALES.length;
+  const staticPages = isFullProductionBuild
+    ? await copyLegacyStaticPages(
+        stagingDir,
+        new Set(renderedRoutes.map(({ file }) => file))
+      )
+    : Object.freeze([]);
+
   await writeInside(stagingDir, "robots.txt", robotsTxt({ origin }));
   await writeInside(
     stagingDir,
     "sitemap.xml",
     generateSitemapXml(
-      renderedRoutes.map((route) => ({
-        path: route.canonicalPath,
-        alternates: route.alternates
-      })),
+      [
+        ...renderedRoutes.map((route) => ({
+          path: route.canonicalPath,
+          alternates: route.alternates
+        })),
+        ...staticPages.map((file) => ({ path: `/${file}`, alternates: [] }))
+      ],
       { origin }
     )
   );
 
-  const manifest = await writeManifest({ stagingDir, routes: renderedRoutes });
+  const manifest = await writeManifest({
+    stagingDir,
+    routes: renderedRoutes,
+    staticPages
+  });
   await verifyRelease(stagingDir);
   await replaceDirectoryAtomic(stagingDir, outputRoot);
   return manifest;

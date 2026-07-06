@@ -1,5 +1,28 @@
 # Changelog
 
+## [1.2.0] - 2026-07-05
+
+### Added
+- **AI System V6** - 完整 AI SEO 自动化系统:
+  - `ai/keyword-engine.js` - AI 关键词发现与评分
+  - `ai/page-generator.js` - 差异化 SEO 页面生成
+  - `ai/sitemap-builder.js` - 自动 sitemap 生成
+  - `ai/indexing-agent.js` - IndexNow 批量索引提交
+  - `ai/auto-deploy.js` - Git → 服务器自动部署
+
+### Security
+- 修复 `auto-deploy.js` SSH 密码硬编码问题，改用环境变量 `SSH_PASS`
+
+### Testing
+- 添加 AI System 单元测试:
+  - `tests/ai/auto-deploy-security.test.js` - 安全测试
+  - `tests/ai/keyword-engine.test.js` - 关键词引擎测试
+  - `tests/ai/page-generator.test.js` - 页面生成测试
+
+### Infrastructure
+- GA4 跟踪代码已部署到全部 150 个页面
+- SEO 系统支持 5 种内容类别差异化生成
+
 ## [1.1.0] - 2026-07-01
 
 ### Added

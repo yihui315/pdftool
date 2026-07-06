@@ -46,6 +46,8 @@ const generatedRequiredFiles = Object.freeze([
   ...sharedRequiredFiles
 ]);
 
+const policyRequiredFiles = Object.freeze(["terms.html", "contact.html"]);
+
 const requiredDirectories = Object.freeze([
   "assets/vendor/pdfjs/cmaps",
   "assets/vendor/pdfjs/standard_fonts",
@@ -150,8 +152,21 @@ export async function verifyRelease(releaseRoot = projectRoot) {
     await assertNonEmptyDirectory(root, relative);
   }
 
+  let additionalCheckedFiles = 0;
   if (generatedRelease) {
-    await verifyGeneratedManifest(root);
+    const manifest = await verifyGeneratedManifest(root);
+    const staticPages = Array.isArray(manifest.staticPages)
+      ? manifest.staticPages
+      : [];
+    if (staticPages.length > 0) {
+      for (const relative of policyRequiredFiles) {
+        if (!staticPages.includes(relative)) {
+          throw new Error(`Release manifest is missing policy page: ${relative}`);
+        }
+        await assertNonEmptyFile(root, relative);
+        additionalCheckedFiles += 1;
+      }
+    }
     await assertNoRemotePdfRuntime(root, await listHtmlFiles(root));
   } else {
     const assistant = await readFile(path.join(root, "upload-ready.html"), "utf8");
@@ -166,7 +181,7 @@ export async function verifyRelease(releaseRoot = projectRoot) {
 
   return {
     root,
-    checkedFiles: requiredFiles.length,
+    checkedFiles: requiredFiles.length + additionalCheckedFiles,
     checkedDirectories: requiredDirectories.length
   };
 }

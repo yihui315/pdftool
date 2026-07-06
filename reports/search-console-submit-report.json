@@ -1,0 +1,9 @@
+{
+  "timestamp": "2026-07-05T12:00:00.000Z",
+  "sitemap_url": "https://pdftool.work/sitemap.xml",
+  "search_console_site": "https://pdftool.work/",
+  "status": "skipped",
+  "message": "Missing Search Console credentials",
+  "credentials_available": false,
+  "manual_submit_url": "https://search.google.com/search-console/sitemaps"
+}
