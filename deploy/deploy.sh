@@ -58,17 +58,30 @@ sshpass -e ssh -o StrictHostKeyChecking=no $SERVER "
 echo ""
 echo "4️⃣ Uploading files..."
 
-# 上传所有HTML和配置文件
-tar cf - *.html sitemap.xml robots.txt ads.txt 2>/dev/null | sshpass -e ssh -o StrictHostKeyChecking=no $SERVER "cd $RELEASE_DIR && tar xf -"
-echo "   ✅ HTML + config uploaded"
+# 上传所有HTML和配置文件（包括根目录所有子目录的HTML）
+# 用 find 找出所有 .html 和配置文件，确保不遗漏
+tar cf - \
+  $(find . -maxdepth 1 -name '*.html' -o -name 'sitemap.xml' -o -name 'robots.txt' -o -name 'ads.txt' -o -name 'VERSION' -o -name 'CHANGELOG.md' -o -name 'README.md' -o -name 'CLAUDE.md' -o -name 'TODOS.md' 2>/dev/null) \
+  2>/dev/null | sshpass -e ssh -o StrictHostKeyChecking=no $SERVER "cd $RELEASE_DIR && tar xf -"
+echo "   ✅ Root files uploaded"
 
-# 上传目录
-for dir in assets data seo-pages ai-system deploy; do
-  if [ -d "$dir" ]; then
+# 上传所有子目录（排除 node_modules）
+for dir in assets data seo en src scripts tests docs ai ai-system deploy reports tasks; do
+  if [ -d "$dir" ] && [ "$dir" != "node_modules" ]; then
     tar cf - $dir | sshpass -e ssh -o StrictHostKeyChecking=no $SERVER "cd $RELEASE_DIR && tar xf -"
     echo "   ✅ $dir/ uploaded"
   fi
 done
+
+# 验证：确保关键文件存在再激活
+echo "   🔍 Pre-flight check..."
+FILE_COUNT=$(sshpass -e ssh -o StrictHostKeyChecking=no $SERVER "ls $RELEASE_DIR/*.html 2>/dev/null | wc -l")
+if [ "$FILE_COUNT" -lt 50 ]; then
+  echo "   ❌ WARNING: Only $FILE_COUNT HTML files found! Aborting activation."
+  echo "   Run this to inspect: sshpass -p '\$SSH_PASS' ssh root@154.217.241.238 ls $RELEASE_DIR/"
+  exit 1
+fi
+echo "   ✅ Pre-flight passed ($FILE_COUNT HTML files)"
 
 # Step 5: Fix permissions
 echo ""
