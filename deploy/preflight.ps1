@@ -86,7 +86,9 @@ Add-Result "PDF.js support assets" ($emptyDirectories.Count -eq 0) $(if ($emptyD
 
 $nginxText = Get-Content -LiteralPath "deploy/nginx/pdftool.work" -Raw
 foreach ($extension in @("mjs", "wasm", "bcmap", "ttf", "icc")) {
-  Add-Result "Nginx MIME: .$extension" ($nginxText -match "\.$extension") "Explicit production MIME/cache location"
+  $hasDirectLocation = $nginxText -match "\.$extension"
+  $hasGroupedLocation = $nginxText -match "\(\?:[^\)]*\b$extension\b[^\)]*\)"
+  Add-Result "Nginx MIME: .$extension" ($hasDirectLocation -or $hasGroupedLocation) "Explicit production MIME/cache location"
 }
 
 $sitemapText = Get-Content -LiteralPath "sitemap.xml" -Raw
