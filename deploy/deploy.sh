@@ -25,8 +25,7 @@ GIT_DIR="/root/.ssh"
 echo ""
 echo "1️⃣ Git commit..."
 git add .
-git status --short > /dev/null 2>&1
-if [ $? -ne 0 ]; then
+if git diff --cached --quiet; then
   echo "   Nothing to commit"
 else
   git commit -m "auto: V7.1 SEO pages update ($TIMESTAMP)"
