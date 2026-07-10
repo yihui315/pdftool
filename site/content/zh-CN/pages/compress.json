@@ -1,0 +1,29 @@
+{
+  "seo": {
+    "title": "压缩 PDF - 免费在线减小 PDF 体积",
+    "description": "在浏览器中尝试优化 PDF 结构并减小文件体积。处理效果取决于 PDF 内容、图片和内部结构。"
+  },
+  "h1": "压缩 PDF",
+  "lead": "在浏览器中尝试安全优化 PDF 结构，处理后请复核清晰度和页数。",
+  "strings": {
+    "heroEyebrow": "PDF 压缩",
+    "heroTitle": "压缩 PDF",
+    "heroLead": "适合上传前尝试减小 PDF 体积。结果取决于原文件内容、图片数量和 PDF 结构。",
+    "dropTitle": "选择 PDF 文件",
+    "dropLead": "拖放 PDF，或点击按钮选择本地文件。",
+    "chooseButton": "选择 PDF",
+    "largeFileTip": "大型扫描件可能需要更多内存，也可能无法明显变小。",
+    "optionsTitle": "选择优化方式",
+    "optionsLead": "默认进行结构优化，不承诺固定压缩比例。",
+    "modeLabel": "优化模式",
+    "modeStructural": "安全结构优化",
+    "modeClean": "清理元数据并优化结构",
+    "progressReady": "等待上传 PDF",
+    "primaryButton": "压缩 PDF",
+    "clearButton": "清空",
+    "resetButton": "重置",
+    "resultTitle": "压缩结果",
+    "resultLead": "结果生成后会显示大小变化。",
+    "downloadButton": "下载压缩后的 PDF"
+  }
+}

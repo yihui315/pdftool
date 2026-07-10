@@ -1,6 +1,6 @@
 /**
  * V7-Safe Page Drafter
- * 
+ *
  * 只生成 drafts/seo/*.html，不直接发布到根目录
  */
 
@@ -28,7 +28,7 @@ function slugify(str) {
 function generatePage(keyword) {
   const slug = slugify(keyword);
   const filename = `${slug}.html`;
-  
+
   const template = `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -117,13 +117,13 @@ footer { text-align: center; padding: 20px; color: #666; font-size: 0.9rem; }
 </footer>
 </body>
 </html>`;
-  
+
   return { filename, content: template };
 }
 
 function main() {
   console.log('📝 V7-Safe Page Drafter Started\n');
-  
+
   // 读取关键词
   let keywords = [];
   if (existsSync(KEYWORD_SEEDS_FILE)) {
@@ -134,27 +134,27 @@ function main() {
       console.log('⚠️  Error reading keyword-seeds.json:', e.message);
     }
   }
-  
+
   if (keywords.length === 0) {
     console.log('⚠️  No keywords found in keyword-seeds.json');
     console.log('💡 Add keywords to data/keyword-seeds.json');
     return;
   }
-  
+
   console.log(`📦 Found ${keywords.length} keywords\n`);
-  
+
   let created = 0;
   for (const keyword of keywords) {
     const { filename, content } = generatePage(keyword);
     const filepath = join(DRAFTS_DIR, filename);
-    
+
     if (!existsSync(filepath)) {
       writeFileSync(filepath, content);
       created++;
       console.log(`   + ${filename}`);
     }
   }
-  
+
   console.log(`\n✅ Drafts generated: ${created} new pages`);
   console.log(`📁 Output: drafts/seo/`);
   console.log('\n💡 Next: Run quality-gate.js to review and publish');

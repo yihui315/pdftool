@@ -1,0 +1,39 @@
+<section class="editorial-hero editorial-hero-compact">
+  <div class="editorial-container">
+    <p class="editorial-kicker" data-i18n="heroEyebrow"></p>
+    <h1 class="editorial-title" data-i18n="heroTitle"></h1>
+    <p class="editorial-lead" data-i18n="heroLead"></p>
+  </div>
+</section>
+
+<section class="editorial-section">
+  <div class="editorial-container">
+    <div class="editorial-paper-card">
+      <input class="sr-only" type="file" accept="application/pdf" data-file-input>
+      <div class="drop-zone" role="button" tabindex="0" data-drop-zone>
+        <h2 class="editorial-card-title" data-i18n="dropTitle"></h2>
+        <p class="editorial-card-lead" data-i18n="dropLead"></p>
+        <button class="editorial-button editorial-button-primary" type="button" data-select-file data-i18n="chooseButton"></button>
+      </div>
+      <p class="mt-4 hidden rounded-lg bg-slate-50 p-3 text-sm text-slate-700" data-file-info></p>
+      <p class="mt-4 hidden rounded-lg bg-amber-50 p-3 text-sm text-amber-800" data-large-file-tip data-i18n="largeFileTip"></p>
+      <div class="mt-5 grid gap-2">
+        <div class="progress-track"><span></span></div>
+        <div class="flex justify-between text-sm font-semibold text-slate-600"><span data-progress-label data-i18n="progressReady"></span><span data-progress-percent>0%</span></div>
+      </div>
+      <p class="mt-4 hidden rounded-lg bg-red-50 p-3 text-sm text-red-700" data-error-box></p>
+      <p class="mt-4 text-sm font-semibold text-slate-600" data-page-summary data-i18n="emptySummary"></p>
+      <div class="mt-4 editorial-card-grid" data-page-grid></div>
+      <div class="editorial-actions">
+        <button class="editorial-button editorial-button-primary" type="button" disabled data-export-button data-i18n="primaryButton"></button>
+        <button class="editorial-button editorial-button-secondary" type="button" disabled data-clear-file data-i18n="clearButton"></button>
+        <button class="editorial-button editorial-button-secondary" type="button" disabled data-reset-button data-i18n="resetButton"></button>
+      </div>
+      <article class="editorial-paper-card mt-6" data-result-card>
+        <h3 data-i18n="resultTitle"></h3>
+        <p data-result-meta data-i18n="resultLead"></p>
+        <a class="editorial-button editorial-button-primary mt-4" href="#" download data-download-link data-i18n="downloadButton"></a>
+      </article>
+    </div>
+  </div>
+</section>

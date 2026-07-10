@@ -1,0 +1,30 @@
+{
+  "seo": {
+    "title": "PDFロック解除 - パスワードで開封制限を解除",
+    "description": "権限とパスワードがある場合、保護された PDF をブラウザで読み取り、ロック解除済みのコピー作成を試します。"
+  },
+  "h1": "PDFロック解除",
+  "lead": "権限とパスワードがある場合に、PDF の開封制限を解除できるか試します。",
+  "strings": {
+    "heroEyebrow": "PDF ロック解除",
+    "heroTitle": "PDFロック解除",
+    "heroLead": "ファイルを扱う権限があり、パスワードを知っている場合だけ使用してください。強く暗号化された PDF はブラウザで処理できないことがあります。",
+    "dropTitle": "保護された PDF を選択",
+    "dropLead": "PDF をここにドロップするか、ボタンからローカルファイルを選んでください。",
+    "chooseButton": "PDF を選択",
+    "emptySummary": "まだファイルが選択されていません",
+    "emptyList": "PDF を選択すると、ファイル情報がここに表示されます。",
+    "largeFileTip": "大きい暗号化 PDF はより多くのメモリを必要とする場合があります。",
+    "optionsTitle": "開封パスワードを入力",
+    "passwordLabel": "PDF パスワード",
+    "passwordPlaceholder": "使用を許可されているパスワードを入力",
+    "togglePassword": "パスワードの表示を切り替え",
+    "progressReady": "PDF を待機中",
+    "primaryButton": "PDFロックを解除",
+    "clearButton": "クリア",
+    "resetButton": "リセット",
+    "resultTitle": "ロック解除が完了しました",
+    "resultLead": "ロック解除済みコピーがここに表示されます。",
+    "downloadButton": "ロック解除済み PDF をダウンロード"
+  }
+}

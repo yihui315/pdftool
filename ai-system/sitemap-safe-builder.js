@@ -1,6 +1,6 @@
 /**
  * V7-Safe Sitemap Builder
- * 
+ *
  * 只读取 published 页面，不读取 drafts 页面
  */
 
@@ -50,10 +50,10 @@ function getChangefreq(filename) {
 
 function main() {
   console.log('🗺️  V7-Safe Sitemap Builder Started\n');
-  
+
   const urls = [];
   const baseUrl = 'https://pdftool.work';
-  
+
   // 添加核心页面
   for (const page of CORE_PAGES) {
     const filepath = join(BASE, page);
@@ -68,12 +68,12 @@ function main() {
       });
     }
   }
-  
+
   // 添加 published SEO 页面
   if (existsSync(PUBLISHED_DIR)) {
     const publishedFiles = readdirSync(PUBLISHED_DIR).filter(f => f.endsWith('.html'));
     console.log(`📦 Found ${publishedFiles.length} published SEO pages`);
-    
+
     for (const file of publishedFiles) {
       const filepath = join(PUBLISHED_DIR, file);
       const stat = statSync(filepath);
@@ -87,13 +87,13 @@ function main() {
   } else {
     console.log('⚠️  published/seo/ directory not found');
   }
-  
+
   // 生成 sitemap
   const xmlLines = [
     '<?xml version="1.0" encoding="UTF-8"?>',
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
   ];
-  
+
   for (const url of urls) {
     xmlLines.push('  <url>');
     xmlLines.push(`    <loc>${escapeXml(url.loc)}</loc>`);
@@ -102,20 +102,20 @@ function main() {
     xmlLines.push(`    <priority>${url.priority}</priority>`);
     xmlLines.push('  </url>');
   }
-  
+
   xmlLines.push('</urlset>');
-  
+
   const sitemap = xmlLines.join('\n');
   const sitemapPath = join(BASE, 'sitemap.xml');
   writeFileSync(sitemapPath, sitemap, 'utf-8');
-  
+
   console.log(`\n✅ Sitemap generated: ${urls.length} URLs`);
   console.log(`📁 Output: sitemap.xml`);
-  
+
   // 统计
   const byPriority = { '0.9': 0, '0.8': 0, '0.6': 0, '0.5': 0 };
   for (const u of urls) byPriority[u.priority]++;
-  
+
   console.log('\n📊 Priority distribution:');
   console.log(`   Priority 0.9: ${byPriority['0.9']} pages`);
   console.log(`   Priority 0.8: ${byPriority['0.8']} pages`);

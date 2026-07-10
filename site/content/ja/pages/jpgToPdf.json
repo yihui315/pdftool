@@ -1,0 +1,23 @@
+{
+  "seo": {
+    "title": "JPGからPDFへ - 画像を PDF にまとめる",
+    "description": "JPG、PNG、その他の画像をブラウザで 1 つの PDF にまとめ、写真、スキャン、スクリーンショットに使えます。"
+  },
+  "h1": "JPGからPDFへ",
+  "lead": "写真、スキャン、スクリーンショットを 1 つの PDF ファイルにまとめます。",
+  "strings": {
+    "heroEyebrow": "形式変換",
+    "heroTitle": "JPGからPDFへ",
+    "heroLead": "複数の画像を選択し、順番を調整して、ブラウザで PDF を作成します。",
+    "dropTitle": "画像を選択",
+    "dropLead": "画像をここにドロップするか、ボタンからローカル画像ファイルを選んでください。",
+    "chooseButton": "画像を選択",
+    "fileCountLabel": "画像数",
+    "clearButton": "クリア",
+    "optionsTitle": "順番を整えて PDF を作成",
+    "primaryButton": "PDFを作成",
+    "loadingLabel": "処理中",
+    "resultTitle": "PDF が作成されました",
+    "downloadButton": "PDF をダウンロード"
+  }
+}

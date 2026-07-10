@@ -1,0 +1,27 @@
+{
+  "locale": "zh-CN",
+  "navigation": {
+    "home": "首页",
+    "tools": "PDF 工具",
+    "uploadReady": "上传准备",
+    "merge": "合并 PDF",
+    "split": "拆分 PDF",
+    "manage": "页面管理",
+    "compress": "压缩 PDF",
+    "pdfToJpg": "PDF 转图片",
+    "jpgToPdf": "图片转 PDF",
+    "rotate": "旋转 PDF",
+    "unlock": "解锁 PDF",
+    "about": "关于",
+    "privacy": "隐私"
+  },
+  "languageMenu": {
+    "label": "语言",
+    "currentLanguage": "简体中文"
+  },
+  "footer": {
+    "tagline": "浏览器本地 PDF 工具，适合日常办公、学习材料和轻量文件整理。",
+    "copyright": "© PDFTool.work",
+    "privacy": "隐私政策"
+  }
+}

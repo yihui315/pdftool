@@ -1,7 +1,14 @@
+import { readFile } from "node:fs/promises";
+import path from "node:path";
 import { expect, test } from "@playwright/test";
 
+const fixturePath = path.resolve("tests/browser/fixtures/worker-harness.html");
+
 async function bootstrap(page) {
-  await page.goto("/tests/browser/fixtures/worker-harness.html");
+  await page.goto("/");
+  await page.setContent(await readFile(fixturePath, "utf8"), {
+    waitUntil: "domcontentloaded"
+  });
   await page.waitForFunction(() => !!window.workerHarness);
   await page.evaluate(() => window.workerHarness.bootstrap());
   await expect.poll(() => page.evaluate(() => window.workerHarness.events.some((event) => event.type === "READY"))).toBe(true);

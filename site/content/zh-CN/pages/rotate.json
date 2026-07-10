@@ -1,0 +1,22 @@
+{
+  "seo": {
+    "title": "旋转 PDF - 在线调整 PDF 页面方向",
+    "description": "在浏览器中旋转 PDF 页面，修正横向、倒置或扫描方向错误的页面。"
+  },
+  "h1": "旋转 PDF",
+  "lead": "调整 PDF 页面方向，导出修正后的文件。",
+  "strings": {
+    "heroEyebrow": "页面方向",
+    "heroTitle": "旋转 PDF",
+    "heroLead": "修正横向、倒置或扫描方向错误的 PDF 页面。",
+    "dropTitle": "选择 PDF 文件",
+    "dropLead": "拖放 PDF，或点击按钮选择本地文件。",
+    "chooseButton": "选择 PDF",
+    "pageCountLabel": "页数",
+    "clearButton": "清空",
+    "loadingLabel": "处理中",
+    "optionsTitle": "旋转页面",
+    "rotateAllButton": "全部旋转 90°",
+    "primaryButton": "导出 PDF"
+  }
+}

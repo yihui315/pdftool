@@ -1,6 +1,6 @@
 /**
  * V7.1 Page Generator - 简化版SEO页面生成器
- * 
+ *
  * 用法: node ai-system/page-generator.js
  */
 
@@ -31,7 +31,7 @@ function slugify(str) {
 // SEO页面模板
 function pageTemplate(keyword) {
   const today = new Date().toISOString().split('T')[0];
-  
+
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -159,34 +159,34 @@ document.querySelectorAll('.faq details').forEach(detail => {
 // 主程序
 function main() {
   log('Starting page generator...');
-  
+
   const keywords = loadKeywords();
   const outputDir = path.join(__dirname, '..', 'seo-pages', 'auto');
-  
+
   // 确保输出目录存在
   if (!fs.existsSync(outputDir)) {
     fs.mkdirSync(outputDir, { recursive: true });
   }
-  
+
   // 统计
   let created = 0;
   let skipped = 0;
-  
+
   keywords.forEach(keyword => {
     const filename = `${keyword.slug}.html`;
     const filepath = path.join(outputDir, filename);
-    
+
     // 检查是否已存在
     if (fs.existsSync(filepath)) {
       skipped++;
       return;
     }
-    
+
     // 生成页面
     fs.writeFileSync(filepath, pageTemplate(keyword));
     created++;
   });
-  
+
   success(`Pages generated: ${created} new, ${skipped} skipped`);
   console.log(`📁 Output: seo-pages/auto/ (${keywords.length} keywords)`);
 }

@@ -1,0 +1,35 @@
+{
+  "seo": {
+    "title": "Kebijakan Privasi - PDFTool.work",
+    "description": "PDFTool.work menjelaskan pemrosesan PDF berbasis browser, isi file lokal, analitik, permintaan iklan, dan batas memori browser."
+  },
+  "h1": "Privasi",
+  "lead": "Pahami bagaimana PDFTool.work menangani isi file, permintaan situs, iklan, dan analitik.",
+  "strings": {
+    "heroEyebrow": "Privasi",
+    "heroTitle": "Privasi",
+    "heroLead": "Kebijakan ini menjelaskan pemrosesan PDF berbasis browser di PDFTool.work serta permintaan analitik, iklan, dan jaringan biasa yang dapat terjadi saat situs berjalan.",
+    "lastUpdated": "Terakhir diperbarui: 5 Juli 2026",
+    "localTitle": "1. Cara kerja pemrosesan file",
+    "localIntro": "Saat Anda memilih PDF di alat, isi file dibaca oleh browser agar halaman dapat membuat hasil di perangkat Anda. PDFTool.work dirancang agar tidak menerima isi PDF yang dipilih untuk operasi alat ini.",
+    "localDownload": "Hasil biasanya dibuat sebagai tautan unduhan sementara di browser. Jika Anda menyegarkan halaman, menutup tab, atau memilih file lain, tautan hasil mungkin tidak lagi tersedia.",
+    "dataTitle": "2. Informasi yang mungkin diproses situs",
+    "dataIntro": "Untuk menjaga situs tetap berjalan, memecahkan masalah, dan mendukung layanan gratis, server atau layanan pihak ketiga dapat memproses informasi non-isi-file seperti:",
+    "dataLogItem": "Log akses dasar, seperti alamat IP, jalur permintaan, jenis browser, waktu kunjungan, dan kode status.",
+    "dataPerformanceItem": "Informasi kinerja dan kesalahan halaman, seperti kegagalan pemuatan skrip, kemampuan browser, atau tahap pemrosesan.",
+    "dataAdsItem": "Cookie, informasi perangkat, atau data permintaan web biasa yang diperlukan oleh layanan analitik dan iklan, bergantung pada konfigurasi dan aturan yang berlaku.",
+    "adsTitle": "3. Google Analytics dan Google AdSense",
+    "adsText": "Situs dapat memuat sumber daya Google Analytics dan Google AdSense untuk memahami kunjungan dan mendukung operasi gratis. Layanan tersebut dapat menerima informasi permintaan web biasa, tetapi tidak perlu membaca isi file lokal yang dipilih di alat PDF.",
+    "limitsTitle": "4. Batas memori browser dan struktur PDF",
+    "limitsText": "Pindaian besar, PDF dengan banyak gambar, file terenkripsi, atau struktur PDF kompleks dapat memakai lebih banyak memori browser dan mungkin gagal diproses. Gunakan browser desktop untuk file penting dan tinjau hasil sebelum mengirimkannya.",
+    "contactTitle": "5. Kontak",
+    "contactText": "Jika Anda memiliki pertanyaan tentang kebijakan ini, konfigurasi iklan, atau pemrosesan file, kirim email ke privacy@pdftool.work.",
+    "adLabel": "Iklan",
+    "faqEyebrow": "FAQ",
+    "faqTitle": "Privasi dan penanganan file",
+    "faqUploadQuestion": "Apakah isi PDF yang dipilih meninggalkan perangkat saya?",
+    "faqUploadAnswer": "Alat dirancang agar browser membaca dan memproses isi PDF yang dipilih secara lokal. Halaman masih dapat meminta aset situs, sumber daya analitik, dan sumber daya iklan.",
+    "faqAnalyticsQuestion": "Apakah analitik atau iklan membaca isi PDF saya?",
+    "faqAnalyticsAnswer": "Tidak. Permintaan analitik dan iklan adalah permintaan sumber daya web biasa dan tidak perlu mengakses isi file PDF yang dipilih di alat."
+  }
+}

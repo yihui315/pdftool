@@ -15,14 +15,19 @@ $projectRoot = Split-Path -Parent $PSScriptRoot
 $releaseName = Get-Date -Format "yyyyMMddHHmmss"
 $remoteRelease = "$RemoteRoot/releases/$releaseName"
 $target = "$User@$Server"
+$manifestPath = "dist/release-manifest.json"
 
 Set-Location $projectRoot
 
-foreach ($command in @("ssh", "scp", "npm")) {
+foreach ($command in @("ssh", "scp", "npm", "node", "git", "tar")) {
   if (-not (Get-Command $command -ErrorAction SilentlyContinue)) {
     throw "Required command not found: $command"
   }
 }
+
+$workingTree = (& git status --porcelain --untracked-files=normal) -join "`n"
+if ($LASTEXITCODE -ne 0) { throw "Unable to inspect the Git working tree." }
+if ($workingTree) { throw "Working tree must be clean before deployment." }
 
 if (-not $SkipBuild) {
   npm ci --no-audit --no-fund
@@ -30,6 +35,9 @@ if (-not $SkipBuild) {
   npm run build
   if ($LASTEXITCODE -ne 0) { throw "Production build failed." }
 }
+
+npm run verify:release
+if ($LASTEXITCODE -ne 0) { throw "Release artifact verification failed." }
 
 if ($EmergencySkipTests) {
   Write-Warning "EMERGENCY OVERRIDE: unit and browser release gates were skipped."
@@ -51,66 +59,29 @@ if ($EmergencySkipTests) {
   }
 }
 
-$deployFiles = @(
-  "index.html",
-  "upload-ready.html",
-  "merge.html",
-  "split.html",
-  "manage.html",
-  "compress.html",
-  "pdf-to-jpg.html",
-  "jpg-to-pdf.html",
-  "pdf-rotate.html",
-  "pdf-unlock.html",
-  "about.html",
-  "privacy.html",
-  "sitemap.xml",
-  "robots.txt",
-  "ads.txt",
-  "blog-merge-pdf.html",
-  "blog-pdf-tips.html",
-  "blog-jpg-to-pdf.html"
-)
-
-$requiredFiles = $deployFiles + @(
-  "assets/css/tailwind.min.css",
-  "assets/css/styles.css",
-  "assets/js/upload-ready.js",
-  "assets/js/upload-ready-worker.mjs",
-  "assets/js/upload-ready-processing.mjs",
-  "assets/js/pdf-preview.js",
-  "assets/js/pdf-worker-entry.mjs",
-  "assets/vendor/pdf-lib.min.js",
-  "assets/vendor/pdf-lib.esm.min.js",
-  "assets/vendor/pdfjs/pdf.mjs",
-  "assets/vendor/pdfjs/pdf.worker.mjs",
-  "assets/vendor/pdfjs/cmaps/Adobe-GB1-UCS2.bcmap",
-  "assets/vendor/pdfjs/standard_fonts/LiberationSans-Regular.ttf",
-  "assets/vendor/pdfjs/wasm/openjpeg.wasm",
-  "assets/vendor/pdfjs/iccs/CGATS001Compat-v2-micro.icc"
-)
-
-foreach ($file in $requiredFiles) {
-  if (-not (Test-Path -LiteralPath $file -PathType Leaf)) {
-    throw "Missing release file: $file"
-  }
+if (-not (Test-Path -LiteralPath $manifestPath -PathType Leaf)) {
+  throw "Missing $manifestPath"
+}
+$manifest = Get-Content -LiteralPath $manifestPath -Raw | ConvertFrom-Json
+$expectedCommit = [string]$manifest.gitCommit
+$headCommit = ((& git rev-parse HEAD) -join "").Trim()
+if ($LASTEXITCODE -ne 0) { throw "Unable to read HEAD commit." }
+if (-not $expectedCommit -or $expectedCommit -ne $headCommit) {
+  throw "Manifest commit $expectedCommit does not match HEAD $headCommit."
+}
+if (-not $manifest.files -or -not $manifest.fileDetails) {
+  throw "$manifestPath is missing files or fileDetails."
 }
 
-foreach ($directory in @(
-  "assets/vendor/pdfjs/cmaps",
-  "assets/vendor/pdfjs/standard_fonts",
-  "assets/vendor/pdfjs/wasm",
-  "assets/vendor/pdfjs/iccs"
-)) {
-  if (-not (Test-Path -LiteralPath $directory -PathType Container) -or
-      @(Get-ChildItem -LiteralPath $directory -File).Count -eq 0) {
-    throw "Missing or empty release directory: $directory"
-  }
-}
+$expectedFileCount = @($manifest.files).Count + 1
+$tempRoot = [IO.Path]::GetTempPath()
+$archivePath = Join-Path $tempRoot "pdftool-$releaseName.tar"
+$checksumPath = Join-Path $tempRoot "pdftool-$releaseName.sha256"
+$checksumLines = @($manifest.fileDetails | ForEach-Object { "$($_.sha256)  $($_.path)" })
+[IO.File]::WriteAllLines($checksumPath, $checksumLines, [Text.UTF8Encoding]::new($false))
 
-if (Select-String -Path @("*.html", "ads.txt") -Pattern "XXXXXXXXXXXXXXXX" -Quiet) {
-  Write-Warning "AdSense placeholder IDs are still active; ad containers remain hidden."
-}
+tar -C "dist" -cf $archivePath "."
+if ($LASTEXITCODE -ne 0) { throw "Unable to archive the verified dist artifact." }
 
 $sshArgs = @()
 $scpArgs = @()
@@ -124,34 +95,62 @@ $previousOutput = & ssh @sshArgs $target "readlink -f '$RemoteRoot/current' 2>/d
 if ($LASTEXITCODE -ne 0) { throw "Unable to inspect the current remote release." }
 $previousRelease = ($previousOutput -join "").Trim()
 
-& ssh @sshArgs $target "mkdir -p '$remoteRelease'"
-if ($LASTEXITCODE -ne 0) { throw "Unable to create the remote release directory." }
+function Restore-PreviousRelease {
+  if (-not $previousRelease) { return }
+  & ssh @sshArgs $target "set -eu; ln -sfn '$previousRelease' '$RemoteRoot/current.next'; mv -Tf '$RemoteRoot/current.next' '$RemoteRoot/current'; nginx -t; systemctl reload nginx"
+  if ($LASTEXITCODE -ne 0) { throw "Automatic rollback failed." }
+  Write-Warning "Restored $previousRelease."
+}
 
-& scp @scpArgs @deployFiles "$($target):$remoteRelease/"
-if ($LASTEXITCODE -ne 0) { throw "Page upload failed." }
-& scp @scpArgs -r "assets" "$($target):$remoteRelease/"
-if ($LASTEXITCODE -ne 0) { throw "Asset upload failed." }
+try {
+  & ssh @sshArgs $target "mkdir -p '$remoteRelease' && chmod 755 '$remoteRelease'"
+  if ($LASTEXITCODE -ne 0) { throw "Unable to create the remote release directory." }
 
-$activateCommand = @"
+  & scp @scpArgs $archivePath "$($target):$remoteRelease/release.tar"
+  if ($LASTEXITCODE -ne 0) { throw "Release archive upload failed." }
+  & scp @scpArgs $checksumPath "$($target):$remoteRelease/release.sha256"
+  if ($LASTEXITCODE -ne 0) { throw "Release checksum upload failed." }
+
+  & ssh @sshArgs $target "set -eu; cd '$remoteRelease'; tar xf release.tar; rm release.tar"
+  if ($LASTEXITCODE -ne 0) { throw "Remote release extraction failed." }
+
+  $remoteCountOutput = & ssh @sshArgs $target "find '$remoteRelease' -type f ! -name 'release.sha256' | wc -l"
+  if ($LASTEXITCODE -ne 0) { throw "Unable to count remote release files." }
+  $remoteFileCount = [int](($remoteCountOutput -join "").Trim())
+  if ($remoteFileCount -ne $expectedFileCount) {
+    throw "Remote artifact count mismatch: expected $expectedFileCount, found $remoteFileCount."
+  }
+
+  & ssh @sshArgs $target "set -eu; cd '$remoteRelease'; sha256sum -c release.sha256; rm release.sha256; printf '%s\n' '$expectedCommit' > .release-commit"
+  if ($LASTEXITCODE -ne 0) { throw "Remote manifest hash verification failed." }
+
+  $remoteCommit = ((& ssh @sshArgs $target "cat '$remoteRelease/.release-commit'") -join "").Trim()
+  if ($LASTEXITCODE -ne 0 -or $remoteCommit -ne $expectedCommit) {
+    throw "Remote release commit marker mismatch."
+  }
+
+  $activateCommand = @"
 set -eu
 find '$remoteRelease' -type d -exec chmod 755 {} \;
 find '$remoteRelease' -type f -exec chmod 644 {} \;
+nginx -t
 ln -sfn '$remoteRelease' '$RemoteRoot/current.next'
 mv -Tf '$RemoteRoot/current.next' '$RemoteRoot/current'
-nginx -t
 systemctl reload nginx
 "@
 
-& ssh @sshArgs $target $activateCommand
-if ($LASTEXITCODE -ne 0) {
-  if ($previousRelease) {
-    & ssh @sshArgs $target "ln -sfn '$previousRelease' '$RemoteRoot/current.next' && mv -Tf '$RemoteRoot/current.next' '$RemoteRoot/current' && nginx -t && systemctl reload nginx"
+  & ssh @sshArgs $target $activateCommand
+  if ($LASTEXITCODE -ne 0) {
+    Restore-PreviousRelease
+    throw "Remote activation failed; rollback attempted."
   }
-  throw "Remote activation failed; rollback attempted."
+} finally {
+  Remove-Item -LiteralPath $archivePath, $checksumPath -Force -ErrorAction SilentlyContinue
 }
 
 Write-Host "Activated release: $releaseName" -ForegroundColor Green
 Write-Host "Remote directory: $remoteRelease"
+Write-Host "Commit: $expectedCommit"
 
 if ($SkipHealthCheck) {
   Write-Warning "EMERGENCY OVERRIDE: post-deploy smoke checks were skipped."
@@ -163,10 +162,21 @@ $healthUri = [Uri]$HealthUrl
 $origin = "$($healthUri.Scheme)://$($healthUri.Authority)"
 $smokeChecks = @(
   @{ Path = "/"; Type = "text/html" },
+  @{ Path = "/en/"; Type = "text/html" },
+  @{ Path = "/es/"; Type = "text/html" },
+  @{ Path = "/pt-br/"; Type = "text/html" },
+  @{ Path = "/ja/"; Type = "text/html" },
+  @{ Path = "/id/"; Type = "text/html" },
   @{ Path = "/upload-ready.html"; Type = "text/html" },
-  @{ Path = "/assets/js/upload-ready-worker.mjs"; Type = "javascript" },
-  @{ Path = "/assets/js/pdf-preview.js"; Type = "javascript" },
-  @{ Path = "/assets/vendor/pdfjs/pdf.mjs"; Type = "javascript" },
+  @{ Path = "/en/compress-pdf.html"; Type = "text/html" },
+  @{ Path = "/es/compress-pdf.html"; Type = "text/html" },
+  @{ Path = "/pt-br/compress-pdf.html"; Type = "text/html" },
+  @{ Path = "/ja/compress-pdf.html"; Type = "text/html" },
+  @{ Path = "/id/compress-pdf.html"; Type = "text/html" },
+  @{ Path = "/sitemap.xml"; Type = "xml" },
+  @{ Path = "/robots.txt"; Type = "text/plain" },
+  @{ Path = "/ads.txt"; Type = "text/plain" },
+  @{ Path = "/assets/js/i18n.js"; Type = "javascript" },
   @{ Path = "/assets/vendor/pdfjs/pdf.worker.mjs"; Type = "javascript" },
   @{ Path = "/assets/vendor/pdfjs/cmaps/Adobe-GB1-UCS2.bcmap"; Type = "octet-stream" },
   @{ Path = "/assets/vendor/pdfjs/standard_fonts/LiberationSans-Regular.ttf"; Type = "font" },
@@ -189,14 +199,14 @@ foreach ($check in $smokeChecks) {
   }
 }
 
+$activeCommit = ((& ssh @sshArgs $target "cat '$RemoteRoot/current/.release-commit' 2>/dev/null || true") -join "").Trim()
+if ($LASTEXITCODE -ne 0 -or $activeCommit -ne $expectedCommit) {
+  $smokeFailures.Add("Active release commit marker does not match $expectedCommit")
+}
+
 if ($smokeFailures.Count -gt 0) {
   Write-Warning ($smokeFailures -join [Environment]::NewLine)
-  if ($previousRelease) {
-    $rollbackCommand = "set -eu; ln -sfn '$previousRelease' '$RemoteRoot/current.next'; mv -Tf '$RemoteRoot/current.next' '$RemoteRoot/current'; nginx -t; systemctl reload nginx"
-    & ssh @sshArgs $target $rollbackCommand
-    if ($LASTEXITCODE -ne 0) { throw "Smoke failed and automatic rollback also failed." }
-    Write-Warning "Smoke failed; restored $previousRelease."
-  }
+  Restore-PreviousRelease
   throw "Post-deploy smoke checks failed."
 }
 

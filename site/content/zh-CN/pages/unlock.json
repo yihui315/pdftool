@@ -1,0 +1,30 @@
+{
+  "seo": {
+    "title": "解锁 PDF - 使用密码移除 PDF 打开限制",
+    "description": "在你拥有权限和密码的前提下，尝试在浏览器中读取受保护 PDF 并生成无密码副本。"
+  },
+  "h1": "解锁 PDF",
+  "lead": "在拥有权限和密码时，尝试移除 PDF 打开限制。",
+  "strings": {
+    "heroEyebrow": "PDF 解锁",
+    "heroTitle": "解锁 PDF",
+    "heroLead": "仅在你有权处理该文件并知道密码时使用。部分强加密 PDF 可能无法在浏览器中处理。",
+    "dropTitle": "选择受保护的 PDF",
+    "dropLead": "拖放 PDF，或点击按钮选择本地文件。",
+    "chooseButton": "选择 PDF",
+    "emptySummary": "尚未选择文件",
+    "emptyList": "选择 PDF 后，文件信息会显示在这里。",
+    "largeFileTip": "较大的加密 PDF 可能需要更多内存。",
+    "optionsTitle": "输入打开密码",
+    "passwordLabel": "PDF 密码",
+    "passwordPlaceholder": "输入你拥有权限使用的密码",
+    "togglePassword": "显示或隐藏密码",
+    "progressReady": "等待上传 PDF",
+    "primaryButton": "解锁 PDF",
+    "clearButton": "清空",
+    "resetButton": "重置",
+    "resultTitle": "解锁完成",
+    "resultLead": "生成的无密码副本会在这里显示。",
+    "downloadButton": "下载解锁后的 PDF"
+  }
+}

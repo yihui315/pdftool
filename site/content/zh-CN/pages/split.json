@@ -1,0 +1,28 @@
+{
+  "seo": {
+    "title": "拆分 PDF - 在线提取 PDF 页面",
+    "description": "在浏览器中按页码范围拆分 PDF，提取需要的页面，减少不必要的材料提交。"
+  },
+  "h1": "拆分 PDF",
+  "lead": "按页码范围提取 PDF 页面，生成一个或多个结果文件。",
+  "strings": {
+    "heroEyebrow": "PDF 拆分",
+    "heroTitle": "拆分 PDF",
+    "heroLead": "上传一个 PDF，选择单页拆分或输入页码范围。适合只提交必要材料。",
+    "dropTitle": "选择要拆分的 PDF",
+    "dropLead": "拖放 PDF，或点击按钮选择本地文件。",
+    "chooseButton": "选择 PDF",
+    "largeFileTip": "大文件或扫描件可能占用更多浏览器内存。",
+    "optionsTitle": "选择拆分方式",
+    "optionsLead": "输入页码范围，例如 1-3,5,8-10，或勾选按单页拆分。",
+    "singlePagesLabel": "每页生成一个 PDF",
+    "rangeLabel": "页码范围",
+    "rangePlaceholder": "例如：1-3,5,8-10",
+    "progressReady": "等待上传 PDF",
+    "primaryButton": "拆分 PDF",
+    "clearButton": "清空",
+    "resetButton": "重置",
+    "resultTitle": "拆分结果",
+    "resultLead": "生成的 PDF 会显示在这里。"
+  }
+}

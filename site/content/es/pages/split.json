@@ -1,0 +1,28 @@
+{
+  "seo": {
+    "title": "Dividir PDF - Extraer páginas de PDF en línea",
+    "description": "Divide un PDF por rango de páginas en tu navegador, extrae solo las páginas necesarias y evita enviar material adicional."
+  },
+  "h1": "Dividir PDF",
+  "lead": "Extrae rangos de páginas de un PDF y crea uno o varios archivos de resultado.",
+  "strings": {
+    "heroEyebrow": "Dividir PDF",
+    "heroTitle": "Dividir PDF",
+    "heroLead": "Sube un PDF, elige división por páginas individuales o introduce rangos. Es útil cuando solo necesitas enviar parte del material.",
+    "dropTitle": "Elige un PDF para dividir",
+    "dropLead": "Arrastra un PDF aquí o elige un archivo local con el botón.",
+    "chooseButton": "Elegir PDF",
+    "largeFileTip": "Los archivos grandes o escaneados pueden usar más memoria del navegador.",
+    "optionsTitle": "Elige cómo dividir",
+    "optionsLead": "Introduce rangos como 1-3,5,8-10 o crea un PDF por cada página.",
+    "singlePagesLabel": "Crear un PDF por página",
+    "rangeLabel": "Rangos de páginas",
+    "rangePlaceholder": "Ejemplo: 1-3,5,8-10",
+    "progressReady": "Esperando PDF",
+    "primaryButton": "Dividir PDF",
+    "clearButton": "Limpiar",
+    "resetButton": "Restablecer",
+    "resultTitle": "Resultados de división",
+    "resultLead": "Los PDF generados aparecerán aquí."
+  }
+}

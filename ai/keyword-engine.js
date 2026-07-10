@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 /**
  * V6 Keyword Engine - AI-powered keyword discovery & scoring
- * 
+ *
  * Phase 1: 从多渠道获取关键词 → 评分 → 输出 top_keywords.json
- * 
+ *
  * 用法: node ai/keyword-engine.js
  */
 
@@ -95,7 +95,7 @@ function loadExistingKeywords() {
   if (_cachedExistingKeywords !== null) {
     return _cachedExistingKeywords;
   }
-  
+
   const existing = [];
   if (existsSync(SEO_KEYWORDS_FILE)) {
     try {
@@ -109,7 +109,7 @@ function loadExistingKeywords() {
       console.log('⚠️  读取keywords.json失败:', e.message);
     }
   }
-  
+
   _cachedExistingKeywords = existing;
   return existing;
 }
@@ -118,18 +118,18 @@ function loadExistingKeywords() {
 function scoreKeyword(keyword, category) {
   const lower = keyword.toLowerCase();
   let score = 0;
-  
+
   // 类别基础分
   const catWeight = CATEGORY_WEIGHTS[category] || 2;
   score += catWeight;
-  
+
   // 意图词匹配
   for (const [intent, weight] of Object.entries(INTENT_WEIGHTS)) {
     if (lower.includes(intent)) {
       score += weight;
     }
   }
-  
+
   // 中文关键词检测
   const chineseMatch = lower.match(/[\u4e00-\u9fff]+/g);
   if (chineseMatch) {
@@ -142,16 +142,16 @@ function scoreKeyword(keyword, category) {
     // 中文额外分数
     score += 2;
   }
-  
+
   // 长度惩罚（太长或太短）
   const wordCount = lower.split(/\s+/).length;
   if (wordCount > 8) score -= 2;
   if (wordCount < 2) score -= 1;
-  
+
   // 已存在惩罚（避免重复）- 使用缓存
   const alreadyExists = loadExistingKeywords().some(e => e.word === keyword);
   if (alreadyExists) score -= 10;
-  
+
   return Math.max(1, Math.min(score, 15)); // 1-15分
 }
 
@@ -162,14 +162,14 @@ function generateSuggestions() {
     // 直接组合
     const kw = pattern.join(' ');
     suggestions.push(kw);
-    
+
     // 加上数字后缀（容量）
     if (pattern.includes('compress') || pattern.includes('reduce') || pattern.includes('size')) {
       for (const size of ['200kb', '500kb', '1mb', '2mb']) {
         suggestions.push(`${kw} ${size}`);
       }
     }
-    
+
     // 加 how/why/what
     if (pattern.length <= 3) {
       suggestions.push(`how to ${kw}`);
@@ -177,7 +177,7 @@ function generateSuggestions() {
       suggestions.push(`what is ${kw}`);
     }
   }
-  
+
   // 中文扩展
   const chinesePatterns = [
     ['PDF', '太大', '上传'], ['PDF', '压缩', '免费'], ['PDF', '合并', '在线'],
@@ -190,25 +190,25 @@ function generateSuggestions() {
     suggestions.push(p.join(''));
     suggestions.push(p.slice(0,2).join('')); // 前2个
   }
-  
+
   return [...new Set(suggestions)]; // 去重
 }
 
 // ─── 主程序 ────────────────────────────────────────
 function main() {
   console.log('🔍 V6 Keyword Engine - Phase 1\n');
-  
+
   // 1. 加载现有词
   const existing = loadExistingKeywords();
   console.log(`📦 已有关键词: ${existing.length}个`);
-  
+
   // 2. 生成新候选词
   const suggestions = generateSuggestions();
   console.log(`💡 生成候选词: ${suggestions.length}个`);
-  
+
   // 3. 对所有词评分
   const allKeywords = [];
-  
+
   // 添加现有词
   for (const { word, category } of existing) {
     allKeywords.push({
@@ -218,7 +218,7 @@ function main() {
       source: 'existing'
     });
   }
-  
+
   // 添加新候选词
   for (const keyword of suggestions) {
     // 推断类别
@@ -228,7 +228,7 @@ function main() {
     else if (/compress|reduce|how.*to/.test(lower)) category = 'action';
     else if (/visa|job|resume|school|university|contract|certificate|exam|wechat|email/.test(lower)) category = 'scenario';
     else if (/merge|split|rotate|convert|unlock/.test(lower)) category = 'tools';
-    
+
     allKeywords.push({
       keyword,
       category,
@@ -236,10 +236,10 @@ function main() {
       source: 'ai-generated'
     });
   }
-  
+
   // 4. 排序去重
   allKeywords.sort((a, b) => b.score - a.score);
-  
+
   const seen = new Set();
   const unique = allKeywords.filter(k => {
     const key = k.keyword.toLowerCase().trim();
@@ -247,20 +247,20 @@ function main() {
     seen.add(key);
     return true;
   });
-  
+
   // 5. 取Top 50
   const top50 = unique.slice(0, 50);
-  
+
   // 6. 分类统计
   const byCategory = {};
   for (const k of top50) {
     if (!byCategory[k.category]) byCategory[k.category] = [];
     byCategory[k.category].push(k);
   }
-  
+
   // 7. 保存
   writeFileSync(KEYWORDS_FILE, JSON.stringify(top50, null, 2), 'utf-8');
-  
+
   // 8. 输出报告
   console.log(`\n✅ 生成 top_keywords.json (${top50.length}个高价值关键词)\n`);
   console.log('📊 分数分布:');
@@ -268,12 +268,12 @@ function main() {
     const avg = (items.reduce((s, i) => s + i.score, 0) / items.length).toFixed(1);
     console.log(`  ${cat}: ${items.length}个 (平均分 ${avg})`);
   }
-  
+
   console.log('\n🏆 Top 20 关键词:');
   top50.slice(0, 20).forEach((k, i) => {
     console.log(`  ${i+1}. [${k.score}分] ${k.keyword} (${k.source})`);
   });
-  
+
   return top50;
 }
 

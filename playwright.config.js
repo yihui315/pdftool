@@ -1,5 +1,8 @@
 import { defineConfig, devices } from "@playwright/test";
 
+const testServerPort = "8080";
+const testServerURL = `http://127.0.0.1:${testServerPort}`;
+
 export default defineConfig({
   testDir: "./tests/browser",
   fullyParallel: false,
@@ -7,7 +10,7 @@ export default defineConfig({
   timeout: 45_000,
   expect: { timeout: 8_000 },
   use: {
-    baseURL: "http://127.0.0.1:8080",
+    baseURL: testServerURL,
     viewport: { width: 1280, height: 720 },
     trace: "retain-on-failure",
     screenshot: "only-on-failure"
@@ -24,8 +27,8 @@ export default defineConfig({
   ],
   webServer: {
     command: "npm run serve",
-    url: "http://127.0.0.1:8080",
-    reuseExistingServer: !process.env.CI,
+    url: testServerURL,
+    reuseExistingServer: process.env.PLAYWRIGHT_REUSE_SERVER === "1",
     timeout: 20_000
   }
 });

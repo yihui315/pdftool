@@ -1,0 +1,33 @@
+{
+  "seo": {
+    "title": "Gabungkan PDF - Penggabung PDF online gratis",
+    "description": "Gabungkan beberapa file PDF di browser, atur urutannya, dan buat satu PDF untuk aplikasi, lampiran, atau materi belajar."
+  },
+  "h1": "Gabungkan PDF",
+  "lead": "Pilih beberapa PDF, atur urutannya di browser, lalu buat satu file gabungan.",
+  "strings": {
+    "heroEyebrow": "Penggabungan PDF",
+    "heroTitle": "Gabungkan PDF",
+    "heroLead": "Satukan beberapa PDF menjadi satu file sesuai urutan yang Anda butuhkan. Isi file yang dipilih dibaca oleh browser saat ini untuk pembersihan dokumen ringan.",
+    "dropTitle": "Tambahkan file PDF",
+    "dropLead": "Jatuhkan setidaknya dua PDF di sini, atau pilih file dengan tombol.",
+    "chooseButton": "Pilih PDF",
+    "emptySummary": "Belum ada file yang ditambahkan",
+    "emptyList": "PDF yang ditambahkan akan muncul di sini. Anda dapat menyeret untuk mengurutkan ulang atau memakai tombol pindah.",
+    "largeFileTip": "PDF besar dapat memakai lebih banyak memori browser. Tutup tab berat lain sebelum memproses file penting.",
+    "optionsTitle": "Tinjau urutan dan buat hasil",
+    "optionsLead": "Pastikan urutan file sebelum menggabungkan, lalu buka hasil untuk memeriksa jumlah halaman dan isi.",
+    "progressReady": "Menunggu PDF",
+    "primaryButton": "Gabungkan PDF",
+    "clearButton": "Bersihkan",
+    "resetButton": "Reset",
+    "resultTitle": "Penggabungan selesai",
+    "resultLead": "Hasil yang dibuat akan muncul di sini.",
+    "downloadButton": "Unduh PDF gabungan",
+    "faqTitle": "FAQ gabungkan PDF",
+    "faqOneQuestion": "Apakah file diunggah ke server?",
+    "faqOneAnswer": "Alat ini dirancang agar browser membaca isi PDF yang dipilih dan membuat hasilnya. Halaman masih dapat memuat aset situs, analitik, atau permintaan iklan.",
+    "faqTwoQuestion": "Apa yang perlu saya periksa setelah menggabungkan?",
+    "faqTwoAnswer": "Sebelum mengirim file, buka kembali hasilnya dan periksa urutan, jumlah halaman, orientasi, serta persyaratan platform tujuan."
+  }
+}

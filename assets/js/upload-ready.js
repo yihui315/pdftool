@@ -228,7 +228,7 @@ function setProgress(message) {
 function initializeWorker() {
   terminateWorker();
   try {
-    worker = new Worker("assets/js/upload-ready-worker.mjs", { type: "module" });
+    worker = new Worker("/assets/js/upload-ready-worker.mjs", { type: "module" });
   } catch {
     showError("WORKER_START_FAILED", "bootstrap");
     return;

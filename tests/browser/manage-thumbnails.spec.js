@@ -49,8 +49,8 @@ test("keeps page nodes stable while rendering real identity-bound thumbnails", a
   await windowToggle(page, "恢复页面");
   await expect(page.locator("[data-page-id]").nth(1)).not.toHaveClass(/is-removed/);
 
-  await page.getByRole("button", { name: "导出新 PDF" }).click();
-  await expect(page.getByRole("link", { name: "下载新 PDF" })).toBeVisible({ timeout: 15_000 });
+  await page.getByRole("button", { name: "导出 PDF" }).click();
+  await expect(page.getByRole("link", { name: "下载整理后的 PDF" })).toBeVisible({ timeout: 15_000 });
 });
 
 test("keeps the newest PDF when file parsing finishes out of order", async ({ page }) => {

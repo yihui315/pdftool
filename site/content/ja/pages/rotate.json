@@ -1,0 +1,22 @@
+{
+  "seo": {
+    "title": "PDFを回転 - PDF ページの向きをオンラインで修正",
+    "description": "横向き、逆さま、または誤った向きでスキャンされた PDF ページをブラウザで回転します。"
+  },
+  "h1": "PDFを回転",
+  "lead": "PDF ページの向きを調整し、修正したファイルを書き出します。",
+  "strings": {
+    "heroEyebrow": "ページの向き",
+    "heroTitle": "PDFを回転",
+    "heroLead": "横向き、逆さま、または誤った向きでスキャンされた PDF ページを修正します。",
+    "dropTitle": "PDF ファイルを選択",
+    "dropLead": "PDF をここにドロップするか、ボタンからローカルファイルを選んでください。",
+    "chooseButton": "PDF を選択",
+    "pageCountLabel": "ページ数",
+    "clearButton": "クリア",
+    "loadingLabel": "処理中",
+    "optionsTitle": "ページを回転",
+    "rotateAllButton": "すべてを 90° 回転",
+    "primaryButton": "PDFを書き出す"
+  }
+}

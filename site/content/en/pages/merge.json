@@ -1,0 +1,33 @@
+{
+  "seo": {
+    "title": "Merge PDF - Free online PDF combiner",
+    "description": "Merge multiple PDF files in your browser, reorder them, and create one PDF for applications, attachments, or study material."
+  },
+  "h1": "Merge PDF",
+  "lead": "Select multiple PDFs, reorder them in the browser, and create one combined file.",
+  "strings": {
+    "heroEyebrow": "PDF merge",
+    "heroTitle": "Merge PDF",
+    "heroLead": "Combine multiple PDFs into one file in the order you need. Selected file contents are read by the current browser for lightweight document cleanup.",
+    "dropTitle": "Add PDF files",
+    "dropLead": "Drop at least two PDFs here, or choose files with the button.",
+    "chooseButton": "Choose PDFs",
+    "emptySummary": "No files added yet",
+    "emptyList": "Added PDFs will appear here. You can drag to reorder or use move buttons.",
+    "largeFileTip": "Large PDFs may use more browser memory. Close other heavy tabs before processing important files.",
+    "optionsTitle": "Review order and build the result",
+    "optionsLead": "Confirm the file order before merging, then open the result to check page count and content.",
+    "progressReady": "Waiting for PDFs",
+    "primaryButton": "Merge PDF",
+    "clearButton": "Clear",
+    "resetButton": "Reset",
+    "resultTitle": "Merge complete",
+    "resultLead": "The generated result will appear here.",
+    "downloadButton": "Download merged PDF",
+    "faqTitle": "Merge PDF FAQ",
+    "faqOneQuestion": "Are files uploaded to a server?",
+    "faqOneAnswer": "The tool is designed for the browser to read selected PDF contents and create the result. The page may still load site assets, analytics, or advertising requests.",
+    "faqTwoQuestion": "What should I check after merging?",
+    "faqTwoAnswer": "Before submitting the file, reopen the result and check order, page count, orientation, and target-platform requirements."
+  }
+}

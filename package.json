@@ -1,6 +1,6 @@
 {
   "name": "pdftool-work",
-  "version": "1.0.0.0",
+  "version": "1.3.0.0",
   "private": true,
   "description": "pdftool.work static client-side PDF tools",
   "scripts": {
@@ -9,10 +9,11 @@
     "test:browser": "playwright test",
     "test:browser:headed": "playwright test --headed",
     "test:watch": "vitest",
-    "build": "npm run build:css && node scripts/copy-vendor.mjs && node scripts/verify-release.mjs",
+    "build": "npm run build:css && node scripts/build-site.mjs",
     "build:css": "tailwindcss -i ./src/tailwind.css -o ./assets/css/tailwind.min.css --minify",
+    "verify:release": "node scripts/verify-release.mjs dist",
     "watch:css": "tailwindcss -i ./src/tailwind.css -o ./assets/css/tailwind.min.css --watch",
-    "serve": "python -m http.server 8080",
+    "serve": "python -m http.server 8080 --directory dist",
     "serve:test": "python -m http.server 4173 --bind 127.0.0.1",
     "submit:sitemap": "node scripts/submit-sitemap.mjs",
     "check:adsense": "node scripts/check-adsense-policy.mjs",

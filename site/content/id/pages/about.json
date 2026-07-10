@@ -1,0 +1,37 @@
+{
+  "seo": {
+    "title": "Tentang PDFTool.work - Alat PDF berbasis browser",
+    "description": "Pelajari PDFTool.work, situs utilitas PDF berbasis browser untuk dokumen harian, materi belajar, dan persiapan unggahan."
+  },
+  "h1": "Tentang PDFTool.work",
+  "lead": "Kami membuat tugas PDF umum lebih jelas, ringan, dan praktis untuk pekerjaan berbasis browser.",
+  "strings": {
+    "heroEyebrow": "Tentang kami",
+    "heroTitle": "Tentang PDFTool.work",
+    "heroLead": "PDFTool.work dibuat untuk pekerjaan kantor harian, materi belajar, berkas aplikasi, dan pembersihan dokumen ringan. Tujuannya adalah membuat operasi PDF umum jelas, mudah dipahami, dan cepat dimulai.",
+    "missionEyebrow": "Prinsip",
+    "missionTitle": "Dirancang untuk tugas PDF nyata yang sekali pakai",
+    "missionLead": "Banyak orang hanya perlu mengecilkan dokumen, menggabungkan beberapa file, menghapus halaman kosong, atau mengubah gambar menjadi PDF. Situs ini diatur di sekitar pekerjaan berfrekuensi tinggi tersebut.",
+    "principleClarityTitle": "Kejelasan",
+    "principleClarityText": "Setiap alat berupaya menyediakan titik masuk yang jelas, status yang terlihat, dan pengingat untuk meninjau hasil.",
+    "principleLocalTitle": "Mengutamakan lokal",
+    "principleLocalText": "Alat memprioritaskan pembacaan isi PDF yang dipilih dan pembuatan hasil di sisi browser, sehingga mengurangi alur unggahan server yang tidak perlu.",
+    "principleHonestTitle": "Batas yang jujur",
+    "principleHonestText": "Hasil kompresi, waktu pemrosesan, dan stabilitas dapat bergantung pada memori perangkat, kemampuan browser, dan struktur PDF.",
+    "adLabel": "Iklan",
+    "operationsTitle": "Cara situs beroperasi",
+    "operationsIntro": "PDFTool.work berbasis halaman statis, skrip frontend, dan konten terlokalisasi. Kami akan terus meningkatkan halaman multibahasa dan panduan alat yang lebih jelas.",
+    "operationsToolsTitle": "Cakupan alat saat ini",
+    "operationsToolsText": "Situs mencakup persiapan unggahan, kompresi PDF, penggabungan, pemisahan, pengelolaan halaman, konversi PDF ke gambar, konversi gambar ke PDF, rotasi, dan pembukaan kunci.",
+    "operationsAdsTitle": "Iklan dan analitik",
+    "operationsAdsText": "Untuk mendukung pemeliharaan alat gratis, halaman dapat memuat sumber daya seperti Google Analytics dan Google AdSense. Permintaan tersebut tidak perlu membaca isi PDF yang dipilih di dalam alat.",
+    "operationsContactTitle": "Kontak",
+    "operationsContactText": "Jika halaman tidak jelas, alat berperilaku tidak terduga, atau Anda ingin membahas kerja sama, hubungi kami di contact@pdftool.work.",
+    "faqEyebrow": "FAQ",
+    "faqTitle": "Tentang PDFTool.work",
+    "faqWhatQuestion": "Apa itu PDFTool.work?",
+    "faqWhatAnswer": "Ini adalah situs utilitas PDF berbasis browser untuk tugas umum seperti menggabungkan, memisahkan, mengompres, mengatur halaman, dan mengonversi format.",
+    "faqContactQuestion": "Bagaimana cara melaporkan masalah?",
+    "faqContactAnswer": "Sertakan browser, halaman alat, jenis file, dan apa yang terjadi, lalu kirim email ke contact@pdftool.work."
+  }
+}

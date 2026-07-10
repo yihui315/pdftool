@@ -1,6 +1,6 @@
 /**
  * V7-Safe Keyword Source
- * 
+ *
  * 关键词来源 - 第一阶段只读取 keyword-seeds.json
  * 后续可接入 Search Console 查询词
  */
@@ -24,7 +24,7 @@ function loadKeywordSeeds() {
       'school application pdf too big'
     ];
   }
-  
+
   try {
     const data = JSON.parse(readFileSync(KEYWORD_SEEDS_FILE, 'utf-8'));
     return Array.isArray(data) ? data : data.keywords || [];

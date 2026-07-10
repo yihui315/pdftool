@@ -1,0 +1,22 @@
+{
+  "seo": {
+    "title": "Rotate PDF - Fix PDF page orientation online",
+    "description": "Rotate PDF pages in your browser to fix sideways, upside-down, or incorrectly scanned pages."
+  },
+  "h1": "Rotate PDF",
+  "lead": "Adjust PDF page orientation and export the corrected file.",
+  "strings": {
+    "heroEyebrow": "Page orientation",
+    "heroTitle": "Rotate PDF",
+    "heroLead": "Fix sideways, upside-down, or incorrectly scanned PDF pages.",
+    "dropTitle": "Choose a PDF file",
+    "dropLead": "Drop a PDF here, or choose a local file with the button.",
+    "chooseButton": "Choose PDF",
+    "pageCountLabel": "Pages",
+    "clearButton": "Clear",
+    "loadingLabel": "Processing",
+    "optionsTitle": "Rotate pages",
+    "rotateAllButton": "Rotate all 90°",
+    "primaryButton": "Export PDF"
+  }
+}

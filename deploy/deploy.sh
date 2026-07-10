@@ -1,122 +1,165 @@
-#!/bin/bash
-#
-# V7.1 Deploy Script - 自动部署脚本
-#
-# 用法: bash deploy/deploy.sh
-#
+#!/usr/bin/env bash
+# Deploy the verified immutable dist/ artifact to the production release directory.
 
-set -e
+set -euo pipefail
 
 TIMESTAMP=$(date +%Y%m%d%H%M%S)
-echo "🚀 V7.1 Deploy - $TIMESTAMP"
-
-# SSH密码（通过环境变量传入）
-if [ -z "$SSH_PASS" ]; then
-  echo "❌ SSH_PASS environment variable not set"
-  echo "   Usage: SSH_PASS='your-password' bash deploy/deploy.sh"
-  exit 1
-fi
-
-SERVER="root@154.217.241.238"
-SITE_DIR="/var/www/pdftool.work"
-GIT_DIR="/root/.ssh"
-
-# Step 1: Git add + commit
-echo ""
-echo "1️⃣ Git commit..."
-git add .
-if git diff --cached --quiet; then
-  echo "   Nothing to commit"
-else
-  git commit -m "auto: V7.1 SEO pages update ($TIMESTAMP)"
-  echo "   ✅ Committed"
-fi
-
-# Step 2: Git push
-echo ""
-echo "2️⃣ Git push..."
-git push origin main
-echo "   ✅ Pushed to origin/main"
-
-# Step 3: Server deploy via SSH
-echo ""
-echo "3️⃣ Server deploy..."
-
-# 使用 sshpass 进行 SSH 密码认证
-export SSHPASS="$SSH_PASS"
-
-# 创建释放目录
+SERVER=${SERVER:-root@154.217.241.238}
+SITE_DIR=${SITE_DIR:-/var/www/pdftool.work}
+HEALTH_ORIGIN=${HEALTH_ORIGIN:-https://pdftool.work}
 RELEASE_DIR="$SITE_DIR/releases/$TIMESTAMP"
-sshpass -e ssh -o StrictHostKeyChecking=no $SERVER "
-  mkdir -p $RELEASE_DIR
-  chmod 755 $RELEASE_DIR
-  echo '   ✅ Release dir created'
-"
+MANIFEST="dist/release-manifest.json"
 
-# 上传文件
-echo ""
-echo "4️⃣ Uploading files..."
-
-# 上传所有HTML和配置文件（包括根目录所有子目录的HTML）
-# 用 find 找出所有 .html 和配置文件，确保不遗漏
-tar cf - \
-  $(find . -maxdepth 1 -name '*.html' -o -name 'sitemap.xml' -o -name 'robots.txt' -o -name 'ads.txt' -o -name 'VERSION' -o -name 'CHANGELOG.md' -o -name 'README.md' -o -name 'CLAUDE.md' -o -name 'TODOS.md' 2>/dev/null) \
-  2>/dev/null | sshpass -e ssh -o StrictHostKeyChecking=no $SERVER "cd $RELEASE_DIR && tar xf -"
-echo "   ✅ Root files uploaded"
-
-# 上传所有子目录（排除 node_modules）
-for dir in assets data seo en src scripts tests docs ai ai-system deploy reports tasks; do
-  if [ -d "$dir" ] && [ "$dir" != "node_modules" ]; then
-    tar cf - $dir | sshpass -e ssh -o StrictHostKeyChecking=no $SERVER "cd $RELEASE_DIR && tar xf -"
-    echo "   ✅ $dir/ uploaded"
+for command in npm node git tar ssh sshpass curl; do
+  if ! command -v "$command" >/dev/null 2>&1; then
+    echo "Required command not found: $command" >&2
+    exit 1
   fi
 done
 
-# 验证：确保关键文件存在再激活
-echo "   🔍 Pre-flight check..."
-FILE_COUNT=$(sshpass -e ssh -o StrictHostKeyChecking=no $SERVER "ls $RELEASE_DIR/*.html 2>/dev/null | wc -l")
-if [ "$FILE_COUNT" -lt 50 ]; then
-  echo "   ❌ WARNING: Only $FILE_COUNT HTML files found! Aborting activation."
-  echo "   Run this to inspect: sshpass -p '\$SSH_PASS' ssh root@154.217.241.238 ls $RELEASE_DIR/"
+if [ -z "${SSH_PASS:-}" ]; then
+  echo "SSH_PASS environment variable not set." >&2
+  echo "Usage: SSH_PASS='your-password' bash deploy/deploy.sh" >&2
   exit 1
 fi
-echo "   ✅ Pre-flight passed ($FILE_COUNT HTML files)"
 
-# Step 5: Fix permissions
-echo ""
-echo "5️⃣ Fixing permissions..."
-sshpass -e ssh -o StrictHostKeyChecking=no $SERVER "
-  find $RELEASE_DIR -type d -exec chmod 755 {} \;
-  find $RELEASE_DIR -type f -exec chmod 644 {} \;
-  chown -R www-data:www-data $RELEASE_DIR
-  echo '   ✅ Permissions fixed'
-"
+if [ -n "$(git status --porcelain --untracked-files=normal)" ]; then
+  echo "Working tree must be clean before deployment." >&2
+  exit 1
+fi
 
-# Step 6: Activate release
-echo ""
-echo "6️⃣ Activating release..."
-sshpass -e ssh -o StrictHostKeyChecking=no $SERVER "
-  ln -sfn $RELEASE_DIR $SITE_DIR/current.next
-  mv -Tb $SITE_DIR/current.next $SITE_DIR/current
-  echo '   ✅ Activated: current → $TIMESTAMP'
-"
+echo "Building release $TIMESTAMP..."
+npm ci --no-audit --no-fund
+npm run build
+npm run verify:release
 
-# Step 7: Reload nginx
-echo ""
-echo "7️⃣ Reloading nginx..."
-sshpass -e ssh -o StrictHostKeyChecking=no $SERVER "systemctl reload nginx"
-echo "   ✅ Nginx reloaded"
+if [ "${EMERGENCY_SKIP_TESTS:-0}" = "1" ]; then
+  echo "WARNING: EMERGENCY_SKIP_TESTS=1; unit and browser gates were skipped." >&2
+else
+  npm run test:unit
+  npm run test:browser
+fi
 
-# Step 8: Verify
-echo ""
-echo "8️⃣ Verifying..."
+if [ ! -f "$MANIFEST" ]; then
+  echo "Missing $MANIFEST" >&2
+  exit 1
+fi
+
+HEAD_COMMIT=$(git rev-parse HEAD)
+EXPECTED_COMMIT=$(node -e "const m=require('./$MANIFEST'); process.stdout.write(m.gitCommit || '')")
+if [ "$EXPECTED_COMMIT" != "$HEAD_COMMIT" ]; then
+  echo "Manifest commit $EXPECTED_COMMIT does not match HEAD $HEAD_COMMIT." >&2
+  exit 1
+fi
+
+EXPECTED_FILE_COUNT=$(node -e "const m=require('./$MANIFEST'); process.stdout.write(String(m.files.length + 1))")
+CHECKSUM_FILE=$(mktemp)
+cleanup() {
+  rm -f "$CHECKSUM_FILE"
+}
+trap cleanup EXIT
+node -e "const m=require('./$MANIFEST'); for (const f of m.fileDetails) console.log(f.sha256 + '  ' + f.path)" > "$CHECKSUM_FILE"
+
+export SSHPASS="$SSH_PASS"
+SSH=(sshpass -e ssh -o StrictHostKeyChecking=no "$SERVER")
+previousRelease=$("${SSH[@]}" "readlink -f '$SITE_DIR/current' 2>/dev/null || true")
+
+rollback() {
+  if [ -n "$previousRelease" ]; then
+    "${SSH[@]}" "set -eu; ln -sfn '$previousRelease' '$SITE_DIR/current.next'; mv -Tf '$SITE_DIR/current.next' '$SITE_DIR/current'; nginx -t; systemctl reload nginx"
+    echo "Rolled back to $previousRelease" >&2
+  fi
+}
+
+"${SSH[@]}" "mkdir -p '$RELEASE_DIR' && chmod 755 '$RELEASE_DIR'"
+
+echo "Uploading verified dist/ artifact..."
+tar -C dist -cf - . | "${SSH[@]}" "cd '$RELEASE_DIR' && tar xf -"
+
+REMOTE_FILE_COUNT=$("${SSH[@]}" "find '$RELEASE_DIR' -type f | wc -l" | tr -d '[:space:]')
+if [ "$REMOTE_FILE_COUNT" != "$EXPECTED_FILE_COUNT" ]; then
+  echo "Remote artifact count mismatch: expected $EXPECTED_FILE_COUNT, found $REMOTE_FILE_COUNT." >&2
+  exit 1
+fi
+
+"${SSH[@]}" "cd '$RELEASE_DIR' && sha256sum -c -" < "$CHECKSUM_FILE"
+"${SSH[@]}" "printf '%s\n' '$EXPECTED_COMMIT' > '$RELEASE_DIR/.release-commit'"
+REMOTE_COMMIT=$("${SSH[@]}" "cat '$RELEASE_DIR/.release-commit'")
+if [ "$REMOTE_COMMIT" != "$EXPECTED_COMMIT" ]; then
+  echo "Remote release commit marker mismatch." >&2
+  exit 1
+fi
+
+activateCommand="set -eu
+find '$RELEASE_DIR' -type d -exec chmod 755 {} \;
+find '$RELEASE_DIR' -type f -exec chmod 644 {} \;
+nginx -t
+ln -sfn '$RELEASE_DIR' '$SITE_DIR/current.next'
+mv -Tf '$SITE_DIR/current.next' '$SITE_DIR/current'
+systemctl reload nginx"
+if ! "${SSH[@]}" "$activateCommand"; then
+  rollback
+  echo "Remote activation failed." >&2
+  exit 1
+fi
+
+echo "Activated $RELEASE_DIR"
+
+if [ "${EMERGENCY_SKIP_HEALTH:-0}" = "1" ]; then
+  echo "WARNING: EMERGENCY_SKIP_HEALTH=1; post-deploy smoke checks were skipped." >&2
+  exit 0
+fi
+
 sleep 2
-for path in "/" "compress.html" "upload-ready.html" "sitemap.xml"; do
-  status=$(curl -so /dev/null -w "%{http_code}" "https://pdftool.work/$path" 2>/dev/null || echo "ERR")
-  echo "   $status $path"
+smokeChecks=(
+  "/|text/html"
+  "/en/|text/html"
+  "/es/|text/html"
+  "/pt-br/|text/html"
+  "/ja/|text/html"
+  "/id/|text/html"
+  "/compress.html|text/html"
+  "/en/compress-pdf.html|text/html"
+  "/es/compress-pdf.html|text/html"
+  "/pt-br/compress-pdf.html|text/html"
+  "/ja/compress-pdf.html|text/html"
+  "/id/compress-pdf.html|text/html"
+  "/sitemap.xml|xml"
+  "/robots.txt|text/plain"
+  "/ads.txt|text/plain"
+  "/assets/js/i18n.js|javascript"
+  "/assets/vendor/pdfjs/pdf.worker.mjs|javascript"
+  "/assets/vendor/pdfjs/cmaps/Adobe-GB1-UCS2.bcmap|octet-stream"
+  "/assets/vendor/pdfjs/standard_fonts/LiberationSans-Regular.ttf|font"
+  "/assets/vendor/pdfjs/wasm/openjpeg.wasm|application/wasm"
+)
+smokeFailed=0
+for check in "${smokeChecks[@]}"; do
+  path=${check%%|*}
+  expected=${check#*|}
+  response=$(curl -sS -o /dev/null -w "%{http_code}|%{content_type}" "$HEALTH_ORIGIN$path" || true)
+  status=${response%%|*}
+  contentType=${response#*|}
+  if [ "$status" != "200" ] || [[ ! "$contentType" =~ $expected ]]; then
+    echo "Smoke failed: $path -> $response (expected 200 and $expected)" >&2
+    smokeFailed=1
+  else
+    echo "Smoke OK: $path [$contentType]"
+  fi
 done
 
-echo ""
-echo "🎉 V7.1 Deploy completed!"
-echo "📦 Release: $TIMESTAMP"
-echo "🌐 https://pdftool.work"
+ACTIVE_COMMIT=$("${SSH[@]}" "cat '$SITE_DIR/current/.release-commit' 2>/dev/null || true")
+if [ "$ACTIVE_COMMIT" != "$EXPECTED_COMMIT" ]; then
+  echo "Active release commit marker mismatch." >&2
+  smokeFailed=1
+fi
+
+if [ "$smokeFailed" -ne 0 ]; then
+  rollback
+  echo "Post-deploy smoke checks failed." >&2
+  exit 1
+fi
+
+echo "Release smoke checks passed."
+echo "Release: $TIMESTAMP"
+echo "Commit: $EXPECTED_COMMIT"

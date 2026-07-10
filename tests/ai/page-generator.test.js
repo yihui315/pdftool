@@ -37,7 +37,7 @@ describe('page-generator.js 单元测试', () => {
 
     it('应生成 SEO 友好的 HTML 页面', () => {
       const content = readFileSync(PAGE_GEN_PATH, 'utf-8');
-      
+
       // 应包含 SEO 元素
       expect(content).toContain('<title>');
       expect(content).toContain('<meta name="description"');

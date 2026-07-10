@@ -1,0 +1,22 @@
+{
+  "seo": {
+    "title": "Putar PDF - Perbaiki orientasi halaman PDF online",
+    "description": "Putar halaman PDF di browser untuk memperbaiki halaman yang miring, terbalik, atau salah orientasi saat dipindai."
+  },
+  "h1": "Putar PDF",
+  "lead": "Sesuaikan orientasi halaman PDF dan ekspor file yang sudah diperbaiki.",
+  "strings": {
+    "heroEyebrow": "Orientasi halaman",
+    "heroTitle": "Putar PDF",
+    "heroLead": "Perbaiki halaman PDF yang miring, terbalik, atau salah orientasi saat dipindai.",
+    "dropTitle": "Pilih file PDF",
+    "dropLead": "Jatuhkan PDF di sini, atau pilih file lokal dengan tombol.",
+    "chooseButton": "Pilih PDF",
+    "pageCountLabel": "Halaman",
+    "clearButton": "Bersihkan",
+    "loadingLabel": "Memproses",
+    "optionsTitle": "Putar halaman",
+    "rotateAllButton": "Putar semua 90°",
+    "primaryButton": "Ekspor PDF"
+  }
+}

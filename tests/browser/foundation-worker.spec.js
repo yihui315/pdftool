@@ -1,8 +1,19 @@
+import { readFile } from "node:fs/promises";
+import path from "node:path";
 import { expect, test } from "@playwright/test";
 
-test("boots the production module worker and returns a validated one-page result", async ({ page }) => {
-  await page.goto("/tests/browser/fixtures/worker-harness.html");
+const fixturePath = path.resolve("tests/browser/fixtures/worker-harness.html");
+
+async function loadWorkerHarness(page) {
+  await page.goto("/");
+  await page.setContent(await readFile(fixturePath, "utf8"), {
+    waitUntil: "domcontentloaded"
+  });
   await page.waitForFunction(() => !!window.workerHarness);
+}
+
+test("boots the production module worker and returns a validated one-page result", async ({ page }) => {
+  await loadWorkerHarness(page);
   await page.evaluate(() => window.workerHarness.bootstrap());
   await expect.poll(() => page.evaluate(() => window.workerHarness.events.some((event) => event.type === "READY"))).toBe(true);
 
@@ -25,8 +36,7 @@ test("boots the production module worker and returns a validated one-page result
 });
 
 test("acknowledges cancellation and does not publish a stale result", async ({ page }) => {
-  await page.goto("/tests/browser/fixtures/worker-harness.html");
-  await page.waitForFunction(() => !!window.workerHarness);
+  await loadWorkerHarness(page);
   await page.evaluate(() => window.workerHarness.bootstrap());
   await expect.poll(() => page.evaluate(() => window.workerHarness.events.some((event) => event.type === "READY"))).toBe(true);
 

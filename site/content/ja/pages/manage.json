@@ -1,0 +1,25 @@
+{
+  "seo": {
+    "title": "PDF ページを管理 - 削除、並べ替え、回転",
+    "description": "ブラウザで PDF ページを管理し、余分なページの削除、並べ替え、回転を行って新しいファイルを書き出します。"
+  },
+  "h1": "PDF ページを管理",
+  "lead": "スキャンや複数ページ文書を整理するため、PDF ページの削除、並べ替え、回転を行います。",
+  "strings": {
+    "heroEyebrow": "ページ管理",
+    "heroTitle": "PDF ページを管理",
+    "heroLead": "PDF を読み込み、ページを削除し、順番を変え、ページを回転して、整理した結果を書き出します。",
+    "dropTitle": "PDF ファイルを選択",
+    "dropLead": "PDF をここにドロップするか、ボタンからローカルファイルを選んでください。",
+    "chooseButton": "PDF を選択",
+    "largeFileTip": "ブラウザメモリを抑えるため、大きいファイルではサムネイルの代わりに番号付きプレースホルダーを使う場合があります。",
+    "progressReady": "PDF を待機中",
+    "emptySummary": "まだファイルがアップロードされていません",
+    "primaryButton": "PDFを書き出す",
+    "clearButton": "クリア",
+    "resetButton": "リセット",
+    "resultTitle": "書き出しが完了しました",
+    "resultLead": "管理済み PDF がここに表示されます。",
+    "downloadButton": "管理済み PDF をダウンロード"
+  }
+}

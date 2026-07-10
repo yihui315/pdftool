@@ -1,0 +1,29 @@
+{
+  "seo": {
+    "title": "Comprimir PDF - Reducir tamaño de PDF en línea",
+    "description": "Intenta optimizar la estructura de un PDF y reducir su tamaño en tu navegador. El resultado depende del contenido, las imágenes y la estructura interna."
+  },
+  "h1": "Comprimir PDF",
+  "lead": "Prueba una optimización segura de la estructura del PDF en tu navegador y revisa legibilidad y páginas después.",
+  "strings": {
+    "heroEyebrow": "Compresión PDF",
+    "heroTitle": "Comprimir PDF",
+    "heroLead": "Útil antes de subir un PDF que puede ser demasiado grande. El resultado depende del archivo original, las imágenes y la estructura del PDF.",
+    "dropTitle": "Elige un archivo PDF",
+    "dropLead": "Arrastra un PDF aquí o elige un archivo local con el botón.",
+    "chooseButton": "Elegir PDF",
+    "largeFileTip": "Los escaneos grandes pueden necesitar más memoria y quizá no se reduzcan mucho.",
+    "optionsTitle": "Elige el modo de optimización",
+    "optionsLead": "El modo predeterminado optimiza la estructura y no promete una proporción fija de reducción.",
+    "modeLabel": "Modo de optimización",
+    "modeStructural": "Optimización estructural segura",
+    "modeClean": "Limpiar metadatos y optimizar estructura",
+    "progressReady": "Esperando PDF",
+    "primaryButton": "Comprimir PDF",
+    "clearButton": "Limpiar",
+    "resetButton": "Restablecer",
+    "resultTitle": "Resultado de compresión",
+    "resultLead": "El cambio de tamaño aparecerá cuando se cree el resultado.",
+    "downloadButton": "Descargar PDF comprimido"
+  }
+}

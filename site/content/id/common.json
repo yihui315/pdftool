@@ -1,0 +1,27 @@
+{
+  "locale": "id",
+  "navigation": {
+    "home": "Beranda",
+    "tools": "Semua alat",
+    "uploadReady": "Siapkan unggahan",
+    "merge": "Gabungkan PDF",
+    "split": "Pisahkan PDF",
+    "manage": "Kelola halaman",
+    "compress": "Kompres PDF",
+    "pdfToJpg": "PDF ke JPG",
+    "jpgToPdf": "JPG ke PDF",
+    "rotate": "Putar PDF",
+    "unlock": "Buka kunci PDF",
+    "about": "Tentang",
+    "privacy": "Privasi"
+  },
+  "languageMenu": {
+    "label": "Bahasa",
+    "currentLanguage": "Bahasa Indonesia"
+  },
+  "footer": {
+    "tagline": "Alat PDF berbasis browser untuk dokumen harian dan persiapan unggahan.",
+    "copyright": "© PDFTool.work",
+    "privacy": "Kebijakan Privasi"
+  }
+}

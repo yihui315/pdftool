@@ -1,0 +1,33 @@
+{
+  "seo": {
+    "title": "Combinar PDF - Herramienta gratuita para unir PDF",
+    "description": "Combina varios archivos PDF en tu navegador, cambia el orden y crea un solo PDF para solicitudes, adjuntos o material de estudio."
+  },
+  "h1": "Combinar PDF",
+  "lead": "Selecciona varios PDF, ordénalos en el navegador y crea un archivo combinado.",
+  "strings": {
+    "heroEyebrow": "Combinar PDF",
+    "heroTitle": "Combinar PDF",
+    "heroLead": "Une varios PDF en un solo archivo con el orden que necesitas. El contenido seleccionado se lee en el navegador actual para una organización ligera de documentos.",
+    "dropTitle": "Añade archivos PDF",
+    "dropLead": "Arrastra al menos dos PDF aquí o elige archivos con el botón.",
+    "chooseButton": "Elegir PDF",
+    "emptySummary": "Aún no hay archivos",
+    "emptyList": "Los PDF añadidos aparecerán aquí. Puedes arrastrar para cambiar el orden o usar los botones de movimiento.",
+    "largeFileTip": "Los PDF grandes pueden usar más memoria del navegador. Cierra otras pestañas pesadas antes de procesar archivos importantes.",
+    "optionsTitle": "Revisa el orden y crea el resultado",
+    "optionsLead": "Confirma el orden de los archivos antes de combinarlos y luego abre el resultado para revisar páginas y contenido.",
+    "progressReady": "Esperando PDF",
+    "primaryButton": "Combinar PDF",
+    "clearButton": "Limpiar",
+    "resetButton": "Restablecer",
+    "resultTitle": "Combinación completa",
+    "resultLead": "El resultado generado aparecerá aquí.",
+    "downloadButton": "Descargar PDF combinado",
+    "faqTitle": "Preguntas sobre combinar PDF",
+    "faqOneQuestion": "¿Los archivos se suben a un servidor?",
+    "faqOneAnswer": "La herramienta está diseñada para que el navegador lea el contenido de los PDF seleccionados y cree el resultado. La página puede seguir cargando activos del sitio, analítica o solicitudes publicitarias.",
+    "faqTwoQuestion": "¿Qué debo revisar después de combinar?",
+    "faqTwoAnswer": "Antes de enviar el archivo, vuelve a abrir el resultado y revisa orden, número de páginas, orientación y requisitos de la plataforma destino."
+  }
+}

@@ -1,6 +1,6 @@
 /**
  * V7-Safe AdSense Policy Checker
- * 
+ *
  * 功能:
  * 1. 扫描所有 HTML 页面
  * 2. 检查违规内容
@@ -85,7 +85,7 @@ function checkPage(filePath) {
   const issues = [];
   const content = readFileSync(filePath, 'utf-8');
   const relativePath = filePath.replace(BASE + '/', '');
-  
+
   // 检查违规短语
   for (const phrase of FORBIDDEN_PHRASES) {
     if (content.includes(phrase)) {
@@ -96,7 +96,6 @@ function checkPage(filePath) {
       });
     }
   }
-  
   // 检查误导性广告标签：只检测广告容器内的误导性标题
   // 正常正文中的"相关工具"等词汇不受影响
   const adLabelMatches = content.match(/<(?:div|p|span|h[1-6])[^>]*class="[^"]*ad[^"]*"[^>]*>.*?<\/(?:div|p|span|h[1-6])>/gi) || [];
@@ -112,7 +111,7 @@ function checkPage(filePath) {
       });
     }
   }
-  
+
   // 检查广告附近是否有交互元素（只检测真实按钮，不检测普通文字）
   const adContainerPattern = /<ins[^>]*class="[^"]*adsbygoogle[^"]*"[^>]*>.*?<\/ins>/gs;
   let adMatch;
@@ -135,7 +134,7 @@ function checkPage(filePath) {
       }
     }
   }
-  
+
   // 检查自动刷新广告
   if (/auto-refresh.*ads|ads.*auto-refresh/i.test(content)) {
     issues.push({
@@ -143,7 +142,7 @@ function checkPage(filePath) {
       file: relativePath
     });
   }
-  
+
   return issues;
 }
 

@@ -1,0 +1,28 @@
+{
+  "seo": {
+    "title": "Pisahkan PDF - Ekstrak halaman PDF online",
+    "description": "Pisahkan PDF berdasarkan rentang halaman di browser, ambil hanya halaman yang dibutuhkan, dan kurangi materi yang tidak perlu."
+  },
+  "h1": "Pisahkan PDF",
+  "lead": "Ekstrak rentang halaman dari PDF dan buat satu atau beberapa file hasil.",
+  "strings": {
+    "heroEyebrow": "Pemisahan PDF",
+    "heroTitle": "Pisahkan PDF",
+    "heroLead": "Unggah satu PDF, pilih pemisahan per halaman, atau masukkan rentang halaman. Berguna saat Anda hanya perlu mengirim materi tertentu.",
+    "dropTitle": "Pilih PDF untuk dipisahkan",
+    "dropLead": "Jatuhkan PDF di sini, atau pilih file lokal dengan tombol.",
+    "chooseButton": "Pilih PDF",
+    "largeFileTip": "File besar atau hasil pindai dapat memakai lebih banyak memori browser.",
+    "optionsTitle": "Pilih pengaturan pemisahan",
+    "optionsLead": "Masukkan rentang halaman seperti 1-3,5,8-10, atau pisahkan setiap halaman menjadi PDF tersendiri.",
+    "singlePagesLabel": "Buat satu PDF per halaman",
+    "rangeLabel": "Rentang halaman",
+    "rangePlaceholder": "Contoh: 1-3,5,8-10",
+    "progressReady": "Menunggu PDF",
+    "primaryButton": "Pisahkan PDF",
+    "clearButton": "Bersihkan",
+    "resetButton": "Reset",
+    "resultTitle": "Hasil pemisahan",
+    "resultLead": "PDF yang dibuat akan muncul di sini."
+  }
+}

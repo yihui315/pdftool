@@ -1,0 +1,27 @@
+{
+  "locale": "ja",
+  "navigation": {
+    "home": "ホーム",
+    "tools": "すべてのツール",
+    "uploadReady": "アップロード準備",
+    "merge": "PDF 結合",
+    "split": "PDF 分割",
+    "manage": "ページ管理",
+    "compress": "PDF 圧縮",
+    "pdfToJpg": "PDF から JPG",
+    "jpgToPdf": "JPG から PDF",
+    "rotate": "PDF 回転",
+    "unlock": "PDF ロック解除",
+    "about": "概要",
+    "privacy": "プライバシー"
+  },
+  "languageMenu": {
+    "label": "言語",
+    "currentLanguage": "日本語"
+  },
+  "footer": {
+    "tagline": "日常文書とアップロード準備のためのブラウザベース PDF ツール。",
+    "copyright": "© PDFTool.work",
+    "privacy": "プライバシーポリシー"
+  }
+}

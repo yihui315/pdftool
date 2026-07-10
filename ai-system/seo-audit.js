@@ -1,6 +1,6 @@
 /**
  * V7-Safe SEO Page Audit
- * 
+ *
  * 审计所有 SEO 页面并生成质量报告
  */
 
@@ -75,7 +75,7 @@ function contentHash(content) {
 function auditPage(file) {
   const content = readFileSync(file.path, 'utf-8');
   const relativePath = file.path.replace(BASE + '/', '');
-  
+
   // 提取元素
   const titleMatch = content.match(/<title>(.*?)<\/title>/i);
   const h1Match = content.match(/<h1[^>]*>(.*?)<\/h1>/i);
@@ -83,12 +83,12 @@ function auditPage(file) {
   const uploadReadyLink = content.includes('upload-ready.html') || content.includes('upload-ready');
   const servicesLink = content.includes('services.html') || content.includes('services');
   const privacyLink = content.includes('privacy.html') || content.includes('privacy');
-  
+
   // 计算正文词数
   const bodyMatch = content.match(/<body[^>]*>(.*?)<\/body>/is);
   const bodyText = bodyMatch ? bodyMatch[1].replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ') : '';
   const wordCount = bodyText.trim().split(/\s+/).length;
-  
+
   // 简单评分
   let score = 0;
   if (titleMatch) score += SCORING.unique_title;
@@ -98,7 +98,7 @@ function auditPage(file) {
   if (uploadReadyLink) score += SCORING.upload_ready_link;
   if (servicesLink) score += SCORING.services_link;
   if (privacyLink) score += SCORING.privacy_link;
-  
+
   return {
     url: relativePath,
     title: titleMatch ? titleMatch[1].trim() : '',
@@ -119,18 +119,18 @@ function auditPage(file) {
 // 主程序
 function main() {
   console.log('📊 SEO Page Audit Started\n');
-  
+
   const htmlFiles = scanHtmlFiles(BASE);
   console.log(`🔍 Found ${htmlFiles.length} SEO pages\n`);
-  
+
   const auditResults = htmlFiles.map(auditPage);
-  
+
   // 统计
   const stats = { keep: 0, merge: 0, noindex: 0, delete: 0 };
   for (const r of auditResults) {
     stats[r.decision]++;
   }
-  
+
   console.log('📝 Processing pages...');
   console.log(`\n🎉 Audit Complete!`);
   console.log(`   Total pages: ${auditResults.length}`);
@@ -138,16 +138,16 @@ function main() {
   console.log(`   Merge (50-69): ${stats.merge}`);
   console.log(`   Noindex (30-49): ${stats.noindex}`);
   console.log(`   Delete (<30): ${stats.delete}`);
-  
+
   // 保存报告
   if (!existsSync(REPORT_DIR)) {
     mkdirSync(REPORT_DIR, { recursive: true });
   }
-  
+
   const reportPath = join(REPORT_DIR, 'seo-page-audit.json');
   writeFileSync(reportPath, JSON.stringify(auditResults, null, 2));
   console.log(`\n📁 Report saved: ${reportPath}`);
-  
+
   return auditResults;
 }
 

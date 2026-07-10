@@ -1,0 +1,33 @@
+{
+  "seo": {
+    "title": "PDFを結合 - 無料オンライン PDF 結合ツール",
+    "description": "複数の PDF をブラウザで並べ替えて 1 つにまとめ、申請書類、添付資料、学習資料に使えるファイルを作成します。"
+  },
+  "h1": "PDFを結合",
+  "lead": "複数の PDF を選択し、ブラウザ上で順番を調整して 1 つのファイルにまとめます。",
+  "strings": {
+    "heroEyebrow": "PDF 結合",
+    "heroTitle": "PDFを結合",
+    "heroLead": "必要な順番で複数の PDF を 1 つのファイルにまとめます。選択したファイル内容は、軽い文書整理のため現在のブラウザで読み取られます。",
+    "dropTitle": "PDF ファイルを追加",
+    "dropLead": "少なくとも 2 つの PDF をここにドロップするか、ボタンからファイルを選んでください。",
+    "chooseButton": "PDF を選択",
+    "emptySummary": "まだファイルが追加されていません",
+    "emptyList": "追加した PDF がここに表示されます。ドラッグまたは移動ボタンで順番を変更できます。",
+    "largeFileTip": "大きい PDF はブラウザメモリを多く使うことがあります。重要なファイルを処理する前に、重いタブを閉じてください。",
+    "optionsTitle": "順番を確認して結果を作成",
+    "optionsLead": "結合前にファイルの順番を確認し、作成後はページ数と内容を開いて確認してください。",
+    "progressReady": "PDF を待機中",
+    "primaryButton": "PDFを結合",
+    "clearButton": "クリア",
+    "resetButton": "リセット",
+    "resultTitle": "結合が完了しました",
+    "resultLead": "作成された結果がここに表示されます。",
+    "downloadButton": "結合済み PDF をダウンロード",
+    "faqTitle": "PDF 結合 FAQ",
+    "faqOneQuestion": "ファイルはサーバーへアップロードされますか？",
+    "faqOneAnswer": "このツールは、選択した PDF 内容をブラウザが読み取り、結果を作成する設計です。ページはサイトアセット、解析、広告リクエストを読み込む場合があります。",
+    "faqTwoQuestion": "結合後に何を確認すべきですか？",
+    "faqTwoAnswer": "提出前に結果を開き直し、順番、ページ数、向き、提出先の要件を確認してください。"
+  }
+}

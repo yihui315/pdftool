@@ -1,10 +1,7 @@
 import { expect, test } from "@playwright/test";
 import { PDFDocument } from "pdf-lib";
 
-test.skip("converts a PDF with the self-hosted PDF.js runtime and downloads the result", async ({ page }) => {
-  // Skipped: relies on PDF.js browser rendering which is flaky in CI headless mode.
-  // The pdf-to-jpg feature works correctly in production; this test needs a
-  // pre-built fixture PDF with actual raster content to be stable.
+test("converts a PDF with the self-hosted PDF.js runtime and downloads the result", async ({ page }) => {
   const document = await PDFDocument.create();
   const pdfPage = document.addPage([320, 240]);
   pdfPage.drawText("FIRST-PARTY-PDFJS", { x: 30, y: 150, size: 18 });
@@ -22,7 +19,7 @@ test.skip("converts a PDF with the self-hosted PDF.js runtime and downloads the 
   await expect(image).toHaveCount(1);
   await expect(image).toHaveAttribute("src", /^blob:/);
 
-  const downloadButton = page.getByRole("button", { name: "打包下载全部" });
+  const downloadButton = page.getByRole("button", { name: "下载全部图片" });
   await expect(downloadButton).toBeEnabled();
   const downloadPromise = page.waitForEvent("download");
   await downloadButton.click();

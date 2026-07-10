@@ -1,0 +1,24 @@
+{
+  "seo": {
+    "title": "PDF 转 JPG - 在线导出 PDF 页面图片",
+    "description": "在浏览器中把 PDF 页面导出为 JPG 或 PNG 图片，用于预览、截图和轻量分享。"
+  },
+  "h1": "PDF 转 JPG",
+  "lead": "把 PDF 页面导出为图片，适合预览、截图或轻量分享。",
+  "strings": {
+    "heroEyebrow": "格式转换",
+    "heroTitle": "PDF 转 JPG",
+    "heroLead": "选择 PDF 后，在浏览器中把页面渲染为 JPG 或 PNG 图片。",
+    "dropTitle": "选择 PDF 文件",
+    "dropLead": "拖放 PDF，或点击按钮选择本地文件。",
+    "chooseButton": "选择 PDF",
+    "clearButton": "清空",
+    "pageCountLabel": "页数",
+    "optionsTitle": "导出设置",
+    "formatLabel": "图片格式",
+    "qualityLabel": "图片质量",
+    "primaryButton": "转换为图片",
+    "downloadAllButton": "下载全部图片",
+    "loadingLabel": "处理中"
+  }
+}

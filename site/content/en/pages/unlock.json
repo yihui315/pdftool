@@ -1,0 +1,30 @@
+{
+  "seo": {
+    "title": "Unlock PDF - Remove PDF opening restrictions with a password",
+    "description": "When you have permission and the password, try to read a protected PDF in your browser and create an unlocked copy."
+  },
+  "h1": "Unlock PDF",
+  "lead": "When you have permission and the password, try to remove PDF opening restrictions.",
+  "strings": {
+    "heroEyebrow": "PDF unlock",
+    "heroTitle": "Unlock PDF",
+    "heroLead": "Use this only when you are allowed to handle the file and know the password. Some strongly encrypted PDFs may not work in the browser.",
+    "dropTitle": "Choose a protected PDF",
+    "dropLead": "Drop a PDF here, or choose a local file with the button.",
+    "chooseButton": "Choose PDF",
+    "emptySummary": "No file selected yet",
+    "emptyList": "File information will appear here after you choose a PDF.",
+    "largeFileTip": "Large encrypted PDFs may need more memory.",
+    "optionsTitle": "Enter the opening password",
+    "passwordLabel": "PDF password",
+    "passwordPlaceholder": "Enter the password you are allowed to use",
+    "togglePassword": "Show or hide password",
+    "progressReady": "Waiting for PDF",
+    "primaryButton": "Unlock PDF",
+    "clearButton": "Clear",
+    "resetButton": "Reset",
+    "resultTitle": "Unlock complete",
+    "resultLead": "The unlocked copy will appear here.",
+    "downloadButton": "Download unlocked PDF"
+  }
+}

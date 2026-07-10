@@ -1,0 +1,23 @@
+{
+  "seo": {
+    "title": "JPG ke PDF - Gabungkan gambar menjadi PDF",
+    "description": "Gabungkan JPG, PNG, dan gambar lain menjadi satu PDF di browser untuk foto, pindaian, atau tangkapan layar."
+  },
+  "h1": "JPG ke PDF",
+  "lead": "Kumpulkan foto, pindaian, atau tangkapan layar menjadi file PDF.",
+  "strings": {
+    "heroEyebrow": "Konversi format",
+    "heroTitle": "JPG ke PDF",
+    "heroLead": "Pilih beberapa gambar, atur urutannya, lalu buat PDF di browser.",
+    "dropTitle": "Pilih gambar",
+    "dropLead": "Jatuhkan gambar di sini, atau pilih file gambar lokal dengan tombol.",
+    "chooseButton": "Pilih gambar",
+    "fileCountLabel": "Jumlah gambar",
+    "clearButton": "Bersihkan",
+    "optionsTitle": "Atur urutan dan buat PDF",
+    "primaryButton": "Buat PDF",
+    "loadingLabel": "Memproses",
+    "resultTitle": "PDF dibuat",
+    "downloadButton": "Unduh PDF"
+  }
+}

@@ -21,17 +21,17 @@ describe('keyword-engine.js 单元测试', () => {
 
     it('应有评分权重定义', () => {
       const content = readFileSync(KEYWORD_ENGINE_PATH, 'utf-8');
-      
+
       // 检查意图权重
       expect(content).toContain('INTENT_WEIGHTS');
-      
+
       // 检查类别权重
       expect(content).toContain('CATEGORY_WEIGHTS');
     });
 
     it('应包含高价值关键词场景', () => {
       const content = readFileSync(KEYWORD_ENGINE_PATH, 'utf-8');
-      
+
       // 签证、简历等高商业意图关键词
       const highValueKeywords = ['visa', 'resume', 'contract', 'certificate', 'exam'];
       for (const kw of highValueKeywords) {
@@ -41,10 +41,10 @@ describe('keyword-engine.js 单元测试', () => {
 
     it('应生成 top_keywords.json 输出', () => {
       const content = readFileSync(KEYWORD_ENGINE_PATH, 'utf-8');
-      
+
       // 输出文件路径
       expect(content).toContain('top_keywords.json');
-      
+
       // 应该是 JSON 格式
       expect(content).toContain('JSON.stringify');
     });
@@ -53,7 +53,7 @@ describe('keyword-engine.js 单元测试', () => {
   describe('关键词分类', () => {
     it('应区分 pain/action/scenario/tools/content 类别', () => {
       const content = readFileSync(KEYWORD_ENGINE_PATH, 'utf-8');
-      
+
       const categories = ['pain', 'action', 'scenario', 'tools', 'content'];
       for (const cat of categories) {
         expect(content).toContain(cat);

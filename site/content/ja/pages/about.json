@@ -1,0 +1,37 @@
+{
+  "seo": {
+    "title": "PDFTool.work について - ブラウザベース PDF ツール",
+    "description": "日常文書、学習資料、アップロード準備に使えるブラウザベース PDF ユーティリティサイト、PDFTool.work について説明します。"
+  },
+  "h1": "PDFTool.work について",
+  "lead": "よくある PDF 作業を、ブラウザ上でより明確、軽量、実用的にします。",
+  "strings": {
+    "heroEyebrow": "私たちについて",
+    "heroTitle": "PDFTool.work について",
+    "heroLead": "PDFTool.work は、日常のオフィス作業、学習資料、申請書類、軽量な文書整理のために作られています。よくある PDF 操作を、わかりやすく、理解しやすく、すぐ始められる形にすることが目標です。",
+    "missionEyebrow": "原則",
+    "missionTitle": "現実の一回限りの PDF 作業のために設計",
+    "missionLead": "多くの人は、文書を小さくする、いくつかのファイルをまとめる、空白ページを削除する、画像を PDF にする、といった作業だけが必要です。サイトはこうした頻度の高い作業を中心に構成されています。",
+    "principleClarityTitle": "明確さ",
+    "principleClarityText": "各ツールは、明確な入口、見える状態表示、結果確認のリマインダーを提供することを目指します。",
+    "principleLocalTitle": "ローカル優先",
+    "principleLocalText": "ツールは、選択した PDF 内容のブラウザ側読み取りと結果生成を優先し、不要なサーバーアップロードの流れを減らします。",
+    "principleHonestTitle": "正直な制限説明",
+    "principleHonestText": "圧縮結果、処理時間、安定性は、端末メモリ、ブラウザ能力、PDF 構造に左右されることがあります。",
+    "adLabel": "広告",
+    "operationsTitle": "サイトの運営方法",
+    "operationsIntro": "PDFTool.work は静的ページ、フロントエンドスクリプト、ローカライズされたコンテンツに基づいています。多言語ページとより明確なツール案内を継続的に改善します。",
+    "operationsToolsTitle": "現在のツール範囲",
+    "operationsToolsText": "サイトにはアップロード準備、PDF 圧縮、結合、分割、ページ管理、PDF から画像、画像から PDF、回転、ロック解除が含まれます。",
+    "operationsAdsTitle": "広告と解析",
+    "operationsAdsText": "無料ツールの保守を支えるため、ページは Google Analytics や Google AdSense などのリソースを読み込む場合があります。これらのリクエストは、ツール内で選択した PDF 内容を読む必要はありません。",
+    "operationsContactTitle": "お問い合わせ",
+    "operationsContactText": "ページがわかりにくい、ツールが予期せず動作する、または協業について相談したい場合は contact@pdftool.work までご連絡ください。",
+    "faqEyebrow": "FAQ",
+    "faqTitle": "PDFTool.work について",
+    "faqWhatQuestion": "PDFTool.work とは何ですか？",
+    "faqWhatAnswer": "結合、分割、圧縮、ページ整理、形式変換などの一般的な作業に使える、ブラウザベースの PDF ユーティリティサイトです。",
+    "faqContactQuestion": "問題を報告するには？",
+    "faqContactAnswer": "使用ブラウザ、ツールページ、ファイル種類、発生した内容を添えて contact@pdftool.work までお送りください。"
+  }
+}

@@ -1,0 +1,34 @@
+<section class="editorial-hero editorial-hero-compact">
+  <div class="editorial-container">
+    <p class="editorial-kicker" data-i18n="heroEyebrow"></p>
+    <h1 class="editorial-title" data-i18n="heroTitle"></h1>
+    <p class="editorial-lead" data-i18n="heroLead"></p>
+  </div>
+</section>
+
+<section class="editorial-section">
+  <div class="editorial-container editorial-two-column">
+    <div class="editorial-paper-card">
+      <input class="sr-only" type="file" accept="image/*" multiple id="file-input">
+      <div class="drop-zone" id="drop-zone" role="button" tabindex="0">
+        <h2 class="editorial-card-title" data-i18n="dropTitle"></h2>
+        <p class="editorial-card-lead" data-i18n="dropLead"></p>
+        <button class="editorial-button editorial-button-primary" type="button" id="select-btn" data-i18n="chooseButton"></button>
+      </div>
+      <div class="mt-4 rounded-lg bg-slate-50 p-4" id="file-banner">
+        <span data-i18n="fileCountLabel"></span> <strong id="file-count">0</strong>
+        <button class="ml-3 text-sm font-semibold text-red-700" type="button" disabled id="clear-btn" data-i18n="clearButton"></button>
+      </div>
+    </div>
+    <div class="editorial-paper-card">
+      <h2 class="editorial-card-title" data-i18n="optionsTitle"></h2>
+      <div class="mt-4 editorial-card-grid" id="preview-area"><div id="sortable-list"></div></div>
+      <button class="editorial-button editorial-button-primary mt-5" type="button" disabled id="convert-btn" data-i18n="primaryButton"></button>
+      <div class="mt-4 hidden items-center gap-3 text-sm text-slate-600" id="loading-indicator"><span data-i18n="loadingLabel"></span><span id="loading-text"></span></div>
+      <article class="editorial-paper-card mt-6" id="result-area">
+        <h3 data-i18n="resultTitle"></h3>
+        <button class="editorial-button editorial-button-primary mt-4" type="button" id="download-btn" data-i18n="downloadButton"></button>
+      </article>
+    </div>
+  </div>
+</section>

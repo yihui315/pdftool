@@ -1,0 +1,24 @@
+{
+  "seo": {
+    "title": "PDF to JPG - Export PDF pages as images",
+    "description": "Export PDF pages as JPG or PNG images in your browser for previews, screenshots, and lightweight sharing."
+  },
+  "h1": "PDF to JPG",
+  "lead": "Export PDF pages as images for previews, screenshots, or lightweight sharing.",
+  "strings": {
+    "heroEyebrow": "Format conversion",
+    "heroTitle": "PDF to JPG",
+    "heroLead": "Choose a PDF and render its pages as JPG or PNG images in the browser.",
+    "dropTitle": "Choose a PDF file",
+    "dropLead": "Drop a PDF here, or choose a local file with the button.",
+    "chooseButton": "Choose PDF",
+    "clearButton": "Clear",
+    "pageCountLabel": "Pages",
+    "optionsTitle": "Export settings",
+    "formatLabel": "Image format",
+    "qualityLabel": "Image quality",
+    "primaryButton": "Convert to images",
+    "downloadAllButton": "Download all images",
+    "loadingLabel": "Processing"
+  }
+}

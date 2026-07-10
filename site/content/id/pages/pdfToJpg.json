@@ -1,0 +1,24 @@
+{
+  "seo": {
+    "title": "PDF ke JPG - Ekspor halaman PDF sebagai gambar",
+    "description": "Ekspor halaman PDF sebagai gambar JPG atau PNG di browser untuk pratinjau, tangkapan layar, dan berbagi ringan."
+  },
+  "h1": "PDF ke JPG",
+  "lead": "Ekspor halaman PDF sebagai gambar untuk pratinjau, tangkapan layar, atau berbagi ringan.",
+  "strings": {
+    "heroEyebrow": "Konversi format",
+    "heroTitle": "PDF ke JPG",
+    "heroLead": "Pilih PDF dan render halamannya sebagai gambar JPG atau PNG di browser.",
+    "dropTitle": "Pilih file PDF",
+    "dropLead": "Jatuhkan PDF di sini, atau pilih file lokal dengan tombol.",
+    "chooseButton": "Pilih PDF",
+    "clearButton": "Bersihkan",
+    "pageCountLabel": "Halaman",
+    "optionsTitle": "Pengaturan ekspor",
+    "formatLabel": "Format gambar",
+    "qualityLabel": "Kualitas gambar",
+    "primaryButton": "Konversi ke gambar",
+    "downloadAllButton": "Unduh semua gambar",
+    "loadingLabel": "Memproses"
+  }
+}

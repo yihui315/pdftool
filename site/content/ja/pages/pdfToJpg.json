@@ -1,0 +1,24 @@
+{
+  "seo": {
+    "title": "PDFからJPGへ - PDF ページを画像として書き出し",
+    "description": "PDF ページをブラウザで JPG または PNG 画像として書き出し、プレビュー、スクリーンショット、軽い共有に使えます。"
+  },
+  "h1": "PDFからJPGへ",
+  "lead": "PDF ページを画像として書き出し、プレビュー、スクリーンショット、軽い共有に使えます。",
+  "strings": {
+    "heroEyebrow": "形式変換",
+    "heroTitle": "PDFからJPGへ",
+    "heroLead": "PDF を選択し、ブラウザでページを JPG または PNG 画像として描画します。",
+    "dropTitle": "PDF ファイルを選択",
+    "dropLead": "PDF をここにドロップするか、ボタンからローカルファイルを選んでください。",
+    "chooseButton": "PDF を選択",
+    "clearButton": "クリア",
+    "pageCountLabel": "ページ数",
+    "optionsTitle": "書き出し設定",
+    "formatLabel": "画像形式",
+    "qualityLabel": "画像品質",
+    "primaryButton": "画像へ変換",
+    "downloadAllButton": "すべての画像をダウンロード",
+    "loadingLabel": "処理中"
+  }
+}

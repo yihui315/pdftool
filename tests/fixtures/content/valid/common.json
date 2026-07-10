@@ -1,0 +1,27 @@
+{
+  "locale": "en",
+  "navigation": {
+    "home": "Home",
+    "tools": "Tools",
+    "uploadReady": "Upload Ready",
+    "merge": "Merge PDF",
+    "split": "Split PDF",
+    "manage": "Manage PDF",
+    "compress": "Compress PDF",
+    "pdfToJpg": "PDF to JPG",
+    "jpgToPdf": "JPG to PDF",
+    "rotate": "Rotate PDF",
+    "unlock": "Unlock PDF",
+    "about": "About",
+    "privacy": "Privacy"
+  },
+  "languageMenu": {
+    "label": "Choose language",
+    "currentLanguage": "English"
+  },
+  "footer": {
+    "tagline": "Private browser-based PDF tools.",
+    "copyright": "Copyright PDFTool.work",
+    "privacy": "Privacy"
+  }
+}
