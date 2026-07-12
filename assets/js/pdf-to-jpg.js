@@ -1,6 +1,11 @@
-await import("/assets/js/pdfjs-polyfills.mjs");
-const pdfjsLib = await import("/assets/vendor/pdfjs/pdf.mjs");
-pdfjsLib.GlobalWorkerOptions.workerSrc = "/assets/js/pdf-worker-entry.mjs";
+const pdfjsRuntime = import("/assets/js/pdfjs-polyfills.mjs")
+  .then(function() {
+    return import("/assets/vendor/pdfjs/pdf.mjs");
+  })
+  .then(function(pdfjsLib) {
+    pdfjsLib.GlobalWorkerOptions.workerSrc = "/assets/js/pdf-worker-entry.mjs";
+    return pdfjsLib;
+  });
 
 (function() {
   'use strict';
@@ -55,17 +60,19 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = "/assets/js/pdf-worker-entry.mjs";
     reader.onload = function(e) {
       var typedarray = new Uint8Array(e.target.result);
       var pdfJsBaseUrl = new URL("/assets/vendor/pdfjs/", window.location.href);
-      pdfjsLib.getDocument({
-        data: typedarray,
-        cMapUrl: new URL("cmaps/", pdfJsBaseUrl).href,
-        cMapPacked: true,
-        standardFontDataUrl: new URL("standard_fonts/", pdfJsBaseUrl).href,
-        wasmUrl: new URL("wasm/", pdfJsBaseUrl).href,
-        iccUrl: new URL("iccs/", pdfJsBaseUrl).href,
-        useWorkerFetch: false,
-        isImageDecoderSupported: false,
-        isEvalSupported: false
-      }).promise.then(function(pdf) {
+      pdfjsRuntime.then(function(pdfjsLib) {
+        return pdfjsLib.getDocument({
+          data: typedarray,
+          cMapUrl: new URL("cmaps/", pdfJsBaseUrl).href,
+          cMapPacked: true,
+          standardFontDataUrl: new URL("standard_fonts/", pdfJsBaseUrl).href,
+          wasmUrl: new URL("wasm/", pdfJsBaseUrl).href,
+          iccUrl: new URL("iccs/", pdfJsBaseUrl).href,
+          useWorkerFetch: false,
+          isImageDecoderSupported: false,
+          isEvalSupported: false
+        }).promise;
+      }).then(function(pdf) {
         currentPdf = pdf;
         totalPages = pdf.numPages;
         pageCountEl.textContent = totalPages;
@@ -84,6 +91,7 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = "/assets/js/pdf-worker-entry.mjs";
   fileInput.addEventListener('change', function(e) {
     if (e.target.files[0]) handleFile(e.target.files[0]);
   });
+  if (fileInput.files[0]) handleFile(fileInput.files[0]);
 
   dropZone.addEventListener('click', function(e) {
     if (e.target !== dropZone.querySelector('button')) fileInput.click();
