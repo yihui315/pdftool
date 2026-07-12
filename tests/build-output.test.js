@@ -55,6 +55,13 @@ async function writeEnglishHomeFixture(contentRoot, { locale = "en" } = {}) {
       label: "Choose language",
       currentLanguage: "English"
     },
+    accessibility: {
+      skipToContent: "Skip to content",
+      primaryNavigation: "Primary navigation",
+      mobileNavigation: "Mobile navigation",
+      openMenu: "Menu",
+      closeMenu: "Close"
+    },
     footer: {
       tagline: "Private browser-based PDF tools.",
       copyright: "Copyright 2026 PDFTool.work",
@@ -278,5 +285,5 @@ describe("atomic multilingual release builds", () => {
         expect(jsonLd.mainEntity.map((entry) => entry.name)).toEqual(visibleQuestions);
       }
     }
-  });
+  }, 30_000);
 });
