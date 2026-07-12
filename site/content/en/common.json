@@ -19,6 +19,13 @@
     "label": "Language",
     "currentLanguage": "English"
   },
+  "accessibility": {
+    "skipToContent": "Skip to content",
+    "primaryNavigation": "Primary navigation",
+    "mobileNavigation": "Mobile navigation",
+    "openMenu": "Menu",
+    "closeMenu": "Close"
+  },
   "footer": {
     "tagline": "Browser-based PDF tools for everyday documents and upload prep.",
     "copyright": "© PDFTool.work",

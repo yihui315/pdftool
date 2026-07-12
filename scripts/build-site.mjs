@@ -236,10 +236,17 @@ async function writeInside(outputRoot, relativePath, data) {
   await writeFile(target, data);
 }
 
+export function shouldCopyProjectAsset(source, assetsRoot) {
+  const relative = path.relative(resolve(assetsRoot), resolve(source));
+  return relative !== "vendor" && !relative.startsWith(`vendor${path.sep}`);
+}
+
 async function copyStaticAssets(stagingDir) {
+  const assetsRoot = path.join(projectRoot, "assets");
   await cp(path.join(projectRoot, "assets"), path.join(stagingDir, "assets"), {
     recursive: true,
-    force: true
+    force: true,
+    filter: (source) => shouldCopyProjectAsset(source, assetsRoot)
   });
   await copyVendor({ outRoot: stagingDir });
   await writeInside(

@@ -61,6 +61,18 @@ describe("release configuration", () => {
     expect(workflow).toContain("npm run test:unit");
     expect(workflow).toContain("npm run test:browser");
   });
+  it("makes npm test self-contained by building the browser release first", async () => {
+    const packageJson = JSON.parse(await source("package.json"));
+    const testScript = packageJson.scripts.test;
+
+    expect(testScript).toContain("npm run build");
+    expect(testScript.indexOf("npm run build")).toBeLessThan(
+      testScript.indexOf("npm run test:unit")
+    );
+    expect(testScript.indexOf("npm run test:unit")).toBeLessThan(
+      testScript.indexOf("npm run test:browser")
+    );
+  });
   it("uses system Chrome locally while CI keeps the installed Chromium runtime", async () => {
     const config = await source("playwright.config.js");
     expect(config).toContain('process.env.CI && process.env.PLAYWRIGHT_USE_SYSTEM_CHROME !== "1"');

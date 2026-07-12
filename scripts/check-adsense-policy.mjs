@@ -8,12 +8,17 @@
  */
 
 import { readFileSync, writeFileSync, existsSync, readdirSync, mkdirSync, statSync } from 'fs';
-import { join, dirname } from 'path';
+import { join, dirname, relative, resolve } from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const BASE = join(__dirname, '..');
 const REPORTS_DIR = join(BASE, 'reports');
+const DIST = join(BASE, 'dist');
+const SCAN_ROOT = existsSync(join(DIST, 'release-manifest.json')) ? DIST : BASE;
+const REPORT_PATH = process.env.ADSENSE_REPORT_PATH
+  ? resolve(process.env.ADSENSE_REPORT_PATH)
+  : join(REPORTS_DIR, 'adsense-policy-report.json');
 
 // 违规短语（禁止在广告位附近出现）
 const FORBIDDEN_PHRASES = [
@@ -84,7 +89,7 @@ function scanHtmlFiles(dir, files = []) {
 function checkPage(filePath) {
   const issues = [];
   const content = readFileSync(filePath, 'utf-8');
-  const relativePath = filePath.replace(BASE + '/', '');
+  const relativePath = relative(SCAN_ROOT, filePath).replaceAll('\\', '/');
 
   // 检查违规短语
   for (const phrase of FORBIDDEN_PHRASES) {
@@ -147,7 +152,7 @@ function checkPage(filePath) {
 }
 
 // 执行扫描
-const htmlFiles = scanHtmlFiles(BASE);
+const htmlFiles = scanHtmlFiles(SCAN_ROOT);
 report.total_pages_checked = htmlFiles.length;
 
 for (const file of htmlFiles) {
@@ -175,11 +180,11 @@ if (report.violations.length > 0) {
 }
 
 // 确保 reports 目录存在
-if (!existsSync(REPORTS_DIR)) {
-  mkdirSync(REPORTS_DIR, { recursive: true });
+const reportDirectory = dirname(REPORT_PATH);
+if (!existsSync(reportDirectory)) {
+  mkdirSync(reportDirectory, { recursive: true });
 }
 
 // 写入报告
-const reportPath = join(REPORTS_DIR, 'adsense-policy-report.json');
-writeFileSync(reportPath, JSON.stringify(report, null, 2));
-console.log('\n📁 Report saved:', reportPath);
+writeFileSync(REPORT_PATH, JSON.stringify(report, null, 2));
+console.log('\n📁 Report saved:', REPORT_PATH);

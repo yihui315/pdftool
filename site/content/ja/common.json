@@ -19,6 +19,13 @@
     "label": "言語",
     "currentLanguage": "日本語"
   },
+  "accessibility": {
+    "skipToContent": "メインコンテンツへ移動",
+    "primaryNavigation": "メインナビゲーション",
+    "mobileNavigation": "モバイルナビゲーション",
+    "openMenu": "メニュー",
+    "closeMenu": "閉じる"
+  },
   "footer": {
     "tagline": "日常文書とアップロード準備のためのブラウザベース PDF ツール。",
     "copyright": "© PDFTool.work",

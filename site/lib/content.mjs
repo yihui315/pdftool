@@ -224,6 +224,17 @@ export function validateCommon(common, expectedLocale) {
     "common.languageMenu.currentLanguage"
   );
 
+  requirePlainObject(common.accessibility, "common.accessibility");
+  for (const key of [
+    "skipToContent",
+    "primaryNavigation",
+    "mobileNavigation",
+    "openMenu",
+    "closeMenu"
+  ]) {
+    requireString(common.accessibility[key], `common.accessibility.${key}`);
+  }
+
   requirePlainObject(common.footer, "common.footer");
   requireString(common.footer.tagline, "common.footer.tagline");
   requireString(common.footer.copyright, "common.footer.copyright");
