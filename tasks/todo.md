@@ -2,16 +2,16 @@
 
 ## Task 1: 修复 auto-deploy.js SSH 密码暴露问题
 
-**Description:** 将 auto-deploy.js 中硬编码的 SSH 密码 `Tw599999999` 改为从环境变量 `process.env.SSH_PASS` 读取，增强安全性。
+**Description:** 将 auto-deploy.js 中已移除的硬编码 SSH 凭据改为从环境变量 `process.env.SSH_PASS` 读取，增强安全性。
 
 **Acceptance criteria:**
-- [ ] 代码中不再包含字符串 `Tw599999999`
+- [ ] 代码中不再包含旧 SSH 凭据
 - [ ] 使用 `process.env.SSH_PASS` 读取密码
 - [ ] 当环境变量未设置时，输出友好错误提示
 - [ ] 现有功能不受影响（测试通过）
 
 **Verification:**
-- [ ] `grep -r "Tw599999999" ai/` 返回空
+- [ ] 对 `ai/` 执行密钥扫描不再发现旧 SSH 凭据
 - [ ] `node ai/auto-deploy.js` 提示环境变量未设置（不直接暴露密码）
 - [ ] 现有测试全部通过
 

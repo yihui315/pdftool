@@ -20,6 +20,8 @@ https://pdftool.work/compress-pdf-to-500kb.html
 https://pdftool.work/compress-pdf-to-1mb.html
 ```
 
+多语言页面使用 `/en/`、`/es/`、`/pt-br/`、`/ja/` 和 `/id/` 路径。构建会为等价页面输出 reciprocal hreflang 和 canonical；提交时优先从 sitemap 选择每种语言的首页与核心工具页，不要手工复制中文 canonical。
+
 ### Step 3: 提交新增高意图页面
 每次新增 SEO 页面后：
 1. 确认 sitemap.xml 已包含该 URL
