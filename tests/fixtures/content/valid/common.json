@@ -19,6 +19,13 @@
     "label": "Choose language",
     "currentLanguage": "English"
   },
+  "accessibility": {
+    "skipToContent": "Skip to content",
+    "primaryNavigation": "Primary navigation",
+    "mobileNavigation": "Mobile navigation",
+    "openMenu": "Menu",
+    "closeMenu": "Close"
+  },
   "footer": {
     "tagline": "Private browser-based PDF tools.",
     "copyright": "Copyright PDFTool.work",

@@ -378,6 +378,15 @@ const unsupportedEnglishClaims = Object.freeze([
   "most operations complete in under 10 seconds"
 ]);
 
+const localizedShell = Object.freeze({
+  "zh-CN": Object.freeze({ skip: "跳到主要内容", primary: "主导航", mobile: "移动导航", open: "菜单", close: "关闭" }),
+  en: Object.freeze({ skip: "Skip to content", primary: "Primary navigation", mobile: "Mobile navigation", open: "Menu", close: "Close" }),
+  es: Object.freeze({ skip: "Saltar al contenido", primary: "Navegación principal", mobile: "Navegación móvil", open: "Menú", close: "Cerrar" }),
+  "pt-BR": Object.freeze({ skip: "Pular para o conteúdo", primary: "Navegação principal", mobile: "Navegação móvel", open: "Menu", close: "Fechar" }),
+  ja: Object.freeze({ skip: "メインコンテンツへ移動", primary: "メインナビゲーション", mobile: "モバイルナビゲーション", open: "メニュー", close: "閉じる" }),
+  id: Object.freeze({ skip: "Lewati ke konten", primary: "Navigasi utama", mobile: "Navigasi seluler", open: "Menu", close: "Tutup" })
+});
+
 async function tempRoot() {
   const directory = await mkdtemp(path.join(os.tmpdir(), "pdftool-render-"));
   tempRoots.push(directory);
@@ -457,6 +466,13 @@ function englishCommon() {
     languageMenu: {
       label: "Choose language",
       currentLanguage: "English"
+    },
+    accessibility: {
+      skipToContent: "Skip to content",
+      primaryNavigation: "Primary navigation",
+      mobileNavigation: "Mobile navigation",
+      openMenu: "Menu",
+      closeMenu: "Close"
     },
     footer: {
       tagline: "Private browser-based PDF tools.",
@@ -624,8 +640,14 @@ describe("shared localized page layout", () => {
 
     for (const { file, lang, h1 } of sharedInfoPages) {
       const document = pages[file].window.document;
+      const shell = localizedShell[lang];
       expect(document.documentElement.getAttribute("lang")).toBe(lang);
       expect(document.querySelector("h1")?.textContent.trim()).toBe(h1);
+      expect(document.querySelector('a[href="#main-content"]')?.textContent.trim()).toBe(shell.skip);
+      expect(document.querySelector('nav[data-primary-navigation]')?.getAttribute("aria-label")).toBe(shell.primary);
+      expect(document.querySelector('nav[data-mobile-menu]')?.getAttribute("aria-label")).toBe(shell.mobile);
+      expect(document.querySelector("[data-menu-toggle] .menu-open")?.textContent).toBe(shell.open);
+      expect(document.querySelector("[data-menu-toggle] .menu-close")?.textContent).toBe(shell.close);
       expect(document.querySelectorAll("[data-language-menu-root]")).toHaveLength(1);
       expect(document.querySelectorAll('link[rel="canonical"]')).toHaveLength(1);
       expect(document.querySelectorAll("a[data-language-option][style]")).toHaveLength(0);

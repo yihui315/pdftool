@@ -13,6 +13,14 @@ const TOOL_PAGES = [
   { route: "/pdf-rotate.html", src: "/assets/js/pdf-rotate.js" }
 ];
 
+const LOCALIZED_HOMES = [
+  { route: "/en/", locale: "en", language: "English" },
+  { route: "/es/", locale: "es", language: "Español" },
+  { route: "/pt-br/", locale: "pt-BR", language: "Português (Brasil)" },
+  { route: "/ja/", locale: "ja", language: "日本語" },
+  { route: "/id/", locale: "id", language: "Bahasa Indonesia" }
+];
+
 test("serves extracted tool assets from locale-safe root paths", async ({ request }) => {
   for (const asset of TOOL_ASSETS) {
     const response = await request.get(asset);
@@ -53,7 +61,7 @@ test("loads extracted tool implementations through exact external script tags", 
 
 test("roots PDF.js resources and the upload-ready worker for nested locale execution", async ({ request, baseURL }) => {
   const pdfToJpg = await (await request.get("/assets/js/pdf-to-jpg.js")).text();
-  expect(pdfToJpg).toContain('await import("/assets/js/pdfjs-polyfills.mjs");');
+  expect(pdfToJpg).toContain('import("/assets/js/pdfjs-polyfills.mjs")');
   expect(pdfToJpg).toContain('pdfjsLib.GlobalWorkerOptions.workerSrc = "/assets/js/pdf-worker-entry.mjs";');
   expect(pdfToJpg).toContain('new URL("/assets/vendor/pdfjs/", window.location.href)');
 
@@ -61,4 +69,19 @@ test("roots PDF.js resources and the upload-ready worker for nested locale execu
   const workerPath = uploadReady.match(/new Worker\("([^"]+)", \{ type: "module" \}\)/)?.[1];
   expect(workerPath).toBe("/assets/js/upload-ready-worker.mjs");
   expect(new URL(workerPath, `${baseURL}/zh-cn/tools/upload-ready.html`).pathname).toBe(workerPath);
+});
+
+test("keeps every growth locale bound to its own URL and runtime", async ({ page }) => {
+  await page.goto("/");
+  await page.evaluate(() => localStorage.setItem("pdf-tool-locale", "zh-CN"));
+
+  for (const { route, locale, language } of LOCALIZED_HOMES) {
+    await page.goto(route);
+    await expect(page.locator("html")).toHaveAttribute("lang", locale);
+    await expect(page.locator("h1")).not.toBeEmpty();
+    await expect(page.locator("[data-language-toggle]")).toContainText(language);
+    await expect
+      .poll(() => page.evaluate(() => window.PDFToolI18n?.locale))
+      .toBe(locale);
+  }
 });

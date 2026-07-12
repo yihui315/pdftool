@@ -186,19 +186,29 @@ export function renderLayout({
     renderHead({ locale, routeKey, page, origin, structuredData }),
     "</head>",
     '<body class="bg-[#f8f3ea] text-slate-950 antialiased">',
-    '<a class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:m-4 focus:rounded-full focus:bg-white focus:px-4 focus:py-2 focus:text-slate-950" href="#main-content">Skip to content</a>',
+    `<a class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:m-4 focus:rounded-full focus:bg-white focus:px-4 focus:py-2 focus:text-slate-950" href="#main-content">${escapeHtml(
+      common.accessibility.skipToContent
+    )}</a>`,
     '<header class="sticky top-0 z-50 border-b border-slate-200 bg-[#f8f3ea]/95 backdrop-blur">',
     '<div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">',
     `<a class="text-lg font-extrabold tracking-tight text-slate-950" href="${escapeAttribute(
       canonicalPath(locale, "home")
     )}">PDFTool.work</a>`,
-    `<nav class="hidden flex-wrap items-center gap-1 lg:flex" aria-label="Primary">${desktopNavigation}</nav>`,
+    `<nav class="hidden flex-wrap items-center gap-1 lg:flex" aria-label="${escapeAttribute(
+      common.accessibility.primaryNavigation
+    )}" data-primary-navigation>${desktopNavigation}</nav>`,
     '<div class="flex items-center gap-2">',
     renderLanguageMenu({ routeKey, common }),
-    '<button class="inline-flex rounded-full border border-slate-200 px-3 py-2 text-sm font-medium text-slate-700 lg:hidden" type="button" aria-expanded="false" aria-controls="mobile-menu" data-menu-toggle><span class="menu-open">Menu</span><span class="menu-close hidden">Close</span></button>',
+    `<button class="inline-flex rounded-full border border-slate-200 px-3 py-2 text-sm font-medium text-slate-700 lg:hidden" type="button" aria-expanded="false" aria-controls="mobile-menu" data-menu-toggle><span class="menu-open">${escapeHtml(
+      common.accessibility.openMenu
+    )}</span><span class="menu-close hidden">${escapeHtml(
+      common.accessibility.closeMenu
+    )}</span></button>`,
     "</div>",
     "</div>",
-    `<nav id="mobile-menu" class="hidden border-t border-slate-200 bg-white px-4 py-3 lg:hidden" aria-label="Mobile" data-mobile-menu>${mobileNavigation}</nav>`,
+    `<nav id="mobile-menu" class="hidden border-t border-slate-200 bg-white px-4 py-3 lg:hidden" aria-label="${escapeAttribute(
+      common.accessibility.mobileNavigation
+    )}" data-mobile-menu>${mobileNavigation}</nav>`,
     "</header>",
     '<main id="main-content" tabindex="-1">',
     fragment,

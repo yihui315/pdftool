@@ -19,6 +19,13 @@
     "label": "Idioma",
     "currentLanguage": "Español"
   },
+  "accessibility": {
+    "skipToContent": "Saltar al contenido",
+    "primaryNavigation": "Navegación principal",
+    "mobileNavigation": "Navegación móvil",
+    "openMenu": "Menú",
+    "closeMenu": "Cerrar"
+  },
   "footer": {
     "tagline": "Herramientas PDF basadas en el navegador para documentos diarios y preparación de cargas.",
     "copyright": "© PDFTool.work",

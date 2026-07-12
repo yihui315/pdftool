@@ -19,6 +19,13 @@
     "label": "Idioma",
     "currentLanguage": "Português (Brasil)"
   },
+  "accessibility": {
+    "skipToContent": "Pular para o conteúdo",
+    "primaryNavigation": "Navegação principal",
+    "mobileNavigation": "Navegação móvel",
+    "openMenu": "Menu",
+    "closeMenu": "Fechar"
+  },
   "footer": {
     "tagline": "Ferramentas PDF no navegador para documentos do dia a dia e preparação de envios.",
     "copyright": "© PDFTool.work",

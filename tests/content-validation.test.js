@@ -46,6 +46,13 @@ function validCommon() {
       label: "Choose language",
       currentLanguage: "English"
     },
+    accessibility: {
+      skipToContent: "Skip to content",
+      primaryNavigation: "Primary navigation",
+      mobileNavigation: "Mobile navigation",
+      openMenu: "Menu",
+      closeMenu: "Close"
+    },
     footer: {
       tagline: "Private browser-based PDF tools.",
       copyright: "Copyright PDFTool.work",
@@ -235,6 +242,15 @@ describe("common content validation", () => {
 
     expect(() => validateCommon(common, "en")).toThrow(
       /common\.languageMenu\.currentLanguage/
+    );
+  });
+
+  test("requires every shared accessibility label", () => {
+    const common = validCommon();
+    delete common.accessibility.mobileNavigation;
+
+    expect(() => validateCommon(common, "en")).toThrow(
+      /common\.accessibility\.mobileNavigation/
     );
   });
 

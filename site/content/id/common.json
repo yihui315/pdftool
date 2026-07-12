@@ -19,6 +19,13 @@
     "label": "Bahasa",
     "currentLanguage": "Bahasa Indonesia"
   },
+  "accessibility": {
+    "skipToContent": "Lewati ke konten",
+    "primaryNavigation": "Navigasi utama",
+    "mobileNavigation": "Navigasi seluler",
+    "openMenu": "Menu",
+    "closeMenu": "Tutup"
+  },
   "footer": {
     "tagline": "Alat PDF berbasis browser untuk dokumen harian dan persiapan unggahan.",
     "copyright": "© PDFTool.work",
