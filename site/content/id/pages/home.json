@@ -48,6 +48,8 @@
     "faqLocalQuestion": "Apakah PDFTool.work mengunggah PDF saya ke servernya?",
     "faqLocalAnswer": "Alat dirancang agar browser membaca dan memproses isi PDF yang dipilih secara lokal. Halaman itu sendiri masih dapat meminta aset statis, skrip analitik, atau sumber daya iklan.",
     "faqLargeQuestion": "Bagaimana jika file besar gagal?",
-    "faqLargeAnswer": "Gunakan browser desktop, tutup tab yang berat di memori, dan periksa apakah PDF adalah pindaian besar atau memiliki struktur internal yang kompleks."
+    "faqLargeAnswer": "Gunakan browser desktop, tutup tab yang berat di memori, dan periksa apakah PDF adalah pindaian besar atau memiliki struktur internal yang kompleks.",
+    "faqAdsQuestion": "Mengapa ada ruang iklan di halaman ini?",
+    "faqAdsAnswer": "Ruang iklan membantu mendukung pemeliharaan alat gratis. Permintaan iklan dan analitik tidak digunakan untuk membaca konten PDF yang Anda pilih di alat."
   }
 }

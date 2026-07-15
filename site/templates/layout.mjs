@@ -149,10 +149,26 @@ function renderRuntimePayload({ locale, runtime }) {
   })}</script>`;
 }
 
+function renderAdFillDetection() {
+  return `\n<script>
+/**
+ * Ad fill detection: CSS :has() hides placeholder, MutationObserver fires GA event.
+ */
+(function(){var s=document.querySelector('.editorial-ad-slot');if(!s)return;
+var r=0;
+function f(){if(r)return;r=1;
+if(typeof window.dataLayer!=='undefined'){window.dataLayer.push({event:'ad_fill',ad_client:'${escapeAttribute(ADSENSE_CLIENT)}',page_path:window.location.pathname});}}
+var c=0,i=setInterval(function(){c++;var e=s.querySelector('iframe');if(e||c>60){clearInterval(i);if(e)f();}},500);
+var o=new MutationObserver(function(m){for(var t=0;t<m.length;t++){var a=m[t];if(a.target===s||s.contains(a.target)){var e=s.querySelector('iframe');if(e){f();o.disconnect();clearInterval(i);break;}}}});
+o.observe(s,{childList:true,subtree:true,attributes:true,attributeFilter:['data-adsbygoogle-status','style']});})();
+</script>`;
+}
+
 function renderScripts(routeKey, { locale, runtime }) {
   const route = getRoute(routeKey);
   return [
     renderRuntimePayload({ locale, runtime }),
+    renderAdFillDetection(),
     `<script src="${assetUrl("assets/js/site.js")}" defer></script>`,
     `<script src="${assetUrl("assets/js/i18n.js")}" defer></script>`,
     ...route.scripts.map((script) => {

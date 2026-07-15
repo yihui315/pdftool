@@ -48,6 +48,8 @@
     "faqLocalQuestion": "O PDFTool.work envia meu PDF para o servidor?",
     "faqLocalAnswer": "As ferramentas são projetadas para o navegador ler e processar localmente o conteúdo do PDF selecionado. A página em si ainda pode solicitar ativos estáticos, scripts de análise ou recursos de publicidade.",
     "faqLargeQuestion": "E se um arquivo grande falhar?",
-    "faqLargeAnswer": "Use um navegador de desktop, feche abas que consomem muita memória e verifique se o PDF é uma digitalização grande ou tem estrutura interna complexa."
+    "faqLargeAnswer": "Use um navegador de desktop, feche abas que consomem muita memória e verifique se o PDF é uma digitalização grande ou tem estrutura interna complexa.",
+    "faqAdsQuestion": "Por que ha espacos de anuncio na pagina?",
+    "faqAdsAnswer": "Os espacos de anuncio ajudam a manter a ferramenta gratuita. As solicitacoes de anuncio e analise nao leem o conteudo dos PDF que voce seleciona."
   }
 }

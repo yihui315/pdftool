@@ -48,6 +48,8 @@
     "faqLocalQuestion": "Does PDFTool.work upload my PDF to its server?",
     "faqLocalAnswer": "The tools are designed for the browser to read and process the selected PDF contents locally. The page itself may still request static assets, analytics scripts, or advertising resources.",
     "faqLargeQuestion": "What if a large file fails?",
-    "faqLargeAnswer": "Use a desktop browser, close memory-heavy tabs, and check whether the PDF is a large scan or has a complex internal structure."
+    "faqLargeAnswer": "Use a desktop browser, close memory-heavy tabs, and check whether the PDF is a large scan or has a complex internal structure.",
+    "faqAdsQuestion": "Why are there ad slots on the page?",
+    "faqAdsAnswer": "Ad slots help support the ongoing maintenance of free tools. Ad and analytics requests are not used to read the PDF content you select in the tools."
   }
 }
