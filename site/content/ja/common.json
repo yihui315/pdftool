@@ -32,17 +32,15 @@
     "message": "このサイトでは、基本分析とGoogle AdSenseの広告パーソナライゼーションのためにCookieを使用します。",
     "acceptAll": "すべて許可",
     "rejectAll": "すべて拒否",
-    "details": "設定を管理"
+    "details": "設定を管理",
+    "text": "このサイトでは Google AdSense を使用して広告を表示しています。「同意する」を選択すると分析/広告 Cookie を許可し、「拒否する」を選択すると必要な Cookie のみを使用します。",
+    "accept": "同意する",
+    "reject": "拒否する",
+    "learnMore": "詳細を見る"
   },
   "footer": {
     "tagline": "日常文書とアップロード準備のためのブラウザベース PDF ツール。",
     "copyright": "© PDFTool.work",
     "privacy": "プライバシーポリシー"
-  },
-  "consent": {
-    "text": "このサイトでは Google AdSense を使用して広告を表示しています。「同意する」を選択すると分析/広告 Cookie を許可し、「拒否する」を選択すると必要な Cookie のみを使用します。",
-    "accept": "同意する",
-    "reject": "拒否する",
-    "learnMore": "詳細を見る"
   }
 }

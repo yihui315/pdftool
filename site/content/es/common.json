@@ -32,17 +32,15 @@
     "message": "Este sitio utiliza cookies para análisis básicos y personalización de anuncios de Google AdSense.",
     "acceptAll": "Aceptar todo",
     "rejectAll": "Rechazar todo",
-    "details": "Gestionar configuración"
+    "details": "Gestionar configuración",
+    "text": "Este sitio utiliza Google AdSense para mostrar anuncios. Elija 'Aceptar' para permitir cookies de análisis/publicidad, o 'Rechazar' para usar solo cookies esenciales.",
+    "accept": "Aceptar todo",
+    "reject": "Rechazar todo",
+    "learnMore": "Más información"
   },
   "footer": {
     "tagline": "Herramientas PDF basadas en el navegador para documentos diarios y preparación de cargas.",
     "copyright": "© PDFTool.work",
     "privacy": "Política de privacidad"
-  },
-  "consent": {
-    "text": "Este sitio utiliza Google AdSense para mostrar anuncios. Elija 'Aceptar' para permitir cookies de análisis/publicidad, o 'Rechazar' para usar solo cookies esenciales.",
-    "accept": "Aceptar todo",
-    "reject": "Rechazar todo",
-    "learnMore": "Más información"
   }
 }

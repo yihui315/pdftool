@@ -32,17 +32,15 @@
     "message": "Situs ini menggunakan cookie untuk analisis dasar dan personalisasi iklan Google AdSense.",
     "acceptAll": "Terima semua",
     "rejectAll": "Tolak semua",
-    "details": "Kelola pengaturan"
+    "details": "Kelola pengaturan",
+    "text": "Situs ini menggunakan Google AdSense untuk menampilkan iklan. Pilih 'Terima' untuk mengizinkan cookie analitik/iklan, atau 'Tolak' untuk hanya menggunakan cookie esensial.",
+    "accept": "Terima Semua",
+    "reject": "Tolak Semua",
+    "learnMore": "Pelajari Lebih Lanjut"
   },
   "footer": {
     "tagline": "Alat PDF berbasis browser untuk dokumen harian dan persiapan unggahan.",
     "copyright": "© PDFTool.work",
     "privacy": "Kebijakan Privasi"
-  },
-  "consent": {
-    "text": "Situs ini menggunakan Google AdSense untuk menampilkan iklan. Pilih 'Terima' untuk mengizinkan cookie analitik/iklan, atau 'Tolak' untuk hanya menggunakan cookie esensial.",
-    "accept": "Terima Semua",
-    "reject": "Tolak Semua",
-    "learnMore": "Pelajari Lebih Lanjut"
   }
 }

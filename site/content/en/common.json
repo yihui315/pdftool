@@ -32,17 +32,15 @@
     "message": "This site uses cookies for basic analytics and ad personalization by Google AdSense.",
     "acceptAll": "Accept All",
     "rejectAll": "Reject All",
-    "details": "Manage settings"
+    "details": "Manage settings",
+    "text": "This site uses Google AdSense to display ads. Choose 'Accept' to allow analytics/ad cookies, or 'Reject' to use only essential cookies.",
+    "accept": "Accept All",
+    "reject": "Reject All",
+    "learnMore": "Learn More"
   },
   "footer": {
     "tagline": "Browser-based PDF tools for everyday documents and upload prep.",
     "copyright": "© PDFTool.work",
     "privacy": "Privacy Policy"
-  },
-  "consent": {
-    "text": "This site uses Google AdSense to display ads. Choose 'Accept' to allow analytics/ad cookies, or 'Reject' to use only essential cookies.",
-    "accept": "Accept All",
-    "reject": "Reject All",
-    "learnMore": "Learn More"
   }
 }
