@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="ja" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+<link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+<link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://www.google-analytics.com">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/css/tailwind.min.css">
+<link rel="stylesheet" href="/assets/css/styles.css">
+<title>読みやすさを確認しながらPDFを圧縮 - ブラウザガイド</title>
+<meta name="description" content="PDF サイズをブラウザで減らし、読みやすさ、ページ数、実用上の制限を確認します。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="読みやすさを確認しながらPDFを圧縮 - ブラウザガイド">
+<meta property="og:description" content="PDF サイズをブラウザで減らし、読みやすさ、ページ数、実用上の制限を確認します。">
+<meta property="og:url" content="https://pdftool.work/ja/compress-pdf-without-quality-loss.html">
+<link rel="canonical" href="https://pdftool.work/ja/compress-pdf-without-quality-loss.html">
+<link rel="alternate" hreflang="en" href="https://pdftool.work/en/compress-pdf-without-quality-loss.html">
+<link rel="alternate" hreflang="es" href="https://pdftool.work/es/compress-pdf-without-quality-loss.html">
+<link rel="alternate" hreflang="pt-BR" href="https://pdftool.work/pt-br/compress-pdf-without-quality-loss.html">
+<link rel="alternate" hreflang="ja" href="https://pdftool.work/ja/compress-pdf-without-quality-loss.html">
+<link rel="alternate" hreflang="id" href="https://pdftool.work/id/compress-pdf-without-quality-loss.html">
+<link rel="alternate" hreflang="x-default" href="https://pdftool.work/en/compress-pdf-without-quality-loss.html">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","inLanguage":"ja","mainEntity":[{"@type":"Question","name":"圧縮は劣化なしでできますか？","acceptedAnswer":{"@type":"Answer","text":"構造整理で見た目の変化が少なく小さくなる場合がありますが、PDF はさまざまなので必ず結果を確認してください。"}},{"@type":"Question","name":"どの PDF が読みやすさを保ちやすいですか？","acceptedAnswer":{"@type":"Answer","text":"テキスト主体の PDF や元文書から書き出したファイルは、写真中心のスキャンより扱いやすいことが多いです。"}},{"@type":"Question","name":"結果が悪く見える場合は？","acceptedAnswer":{"@type":"Answer","text":"元ファイルを使い、元文書の画像サイズを下げるか、不要ページを削除してから再試行してください。"}}]}</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3GQPKP7FYH"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-3GQPKP7FYH');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2913395948188969" crossorigin="anonymous"></script>
+</head>
+<body class="bg-[#f8f3ea] text-slate-950 antialiased">
+<a class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:m-4 focus:rounded-full focus:bg-white focus:px-4 focus:py-2 focus:text-slate-950" href="#main-content">メインコンテンツへ移動</a>
+<header class="sticky top-0 z-50 border-b border-slate-200 bg-[#f8f3ea]/95 backdrop-blur">
+<div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
+<a class="text-lg font-extrabold tracking-tight text-slate-950" href="/ja/">PDFTool.work</a>
+<nav class="hidden flex-wrap items-center gap-1 lg:flex" aria-label="メインナビゲーション" data-primary-navigation><a class="rounded-full px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/" data-nav-link>ホーム</a>
+<a class="rounded-full px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/pdf-tools.html" data-nav-link>すべてのツール</a>
+<a class="rounded-full px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/upload-ready.html" data-nav-link>アップロード準備</a>
+<a class="rounded-full px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/merge-pdf.html" data-nav-link>PDF 結合</a>
+<a class="rounded-full px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/split-pdf.html" data-nav-link>PDF 分割</a>
+<a class="rounded-full px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/manage-pdf.html" data-nav-link>ページ管理</a>
+<a class="rounded-full px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/compress-pdf.html" data-nav-link>PDF 圧縮</a>
+<a class="rounded-full px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/pdf-to-jpg.html" data-nav-link>PDF から JPG</a>
+<a class="rounded-full px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/jpg-to-pdf.html" data-nav-link>JPG から PDF</a>
+<a class="rounded-full px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/rotate-pdf.html" data-nav-link>PDF 回転</a>
+<a class="rounded-full px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/unlock-pdf.html" data-nav-link>PDF ロック解除</a>
+<a class="rounded-full px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/about.html" data-nav-link>概要</a>
+<a class="rounded-full px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/privacy.html" data-nav-link>プライバシー</a></nav>
+<div class="flex items-center gap-2">
+<div class="relative" data-language-menu-root>
+<button class="inline-flex items-center gap-2 rounded-full border border-slate-200 px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" type="button" aria-expanded="false" aria-controls="language-menu" data-language-toggle>言語: <span>日本語</span></button>
+<ul id="language-menu" class="absolute right-0 z-50 mt-2 min-w-48 rounded-2xl border border-slate-200 bg-white p-2 shadow-soft" data-language-menu hidden>
+<li><a class="block rounded-lg px-3 py-2 text-sm text-slate-700 hover:bg-slate-100" href="/en/compress-pdf-without-quality-loss.html" lang="en" dir="ltr" data-language-option>English</a></li>
+<li><a class="block rounded-lg px-3 py-2 text-sm text-slate-700 hover:bg-slate-100" href="/es/compress-pdf-without-quality-loss.html" lang="es" dir="ltr" data-language-option>Español</a></li>
+<li><a class="block rounded-lg px-3 py-2 text-sm text-slate-700 hover:bg-slate-100" href="/pt-br/compress-pdf-without-quality-loss.html" lang="pt-BR" dir="ltr" data-language-option>Português (Brasil)</a></li>
+<li><a class="block rounded-lg px-3 py-2 text-sm text-slate-700 hover:bg-slate-100" href="/ja/compress-pdf-without-quality-loss.html" lang="ja" dir="ltr" data-language-option>日本語</a></li>
+<li><a class="block rounded-lg px-3 py-2 text-sm text-slate-700 hover:bg-slate-100" href="/id/compress-pdf-without-quality-loss.html" lang="id" dir="ltr" data-language-option>Bahasa Indonesia</a></li>
+</ul>
+</div>
+<button class="inline-flex rounded-full border border-slate-200 px-3 py-2 text-sm font-medium text-slate-700 lg:hidden" type="button" aria-expanded="false" aria-controls="mobile-menu" data-menu-toggle><span class="menu-open">メニュー</span><span class="menu-close hidden">閉じる</span></button>
+</div>
+</div>
+<nav id="mobile-menu" class="hidden border-t border-slate-200 bg-white px-4 py-3 lg:hidden" aria-label="モバイルナビゲーション" data-mobile-menu><a class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/" data-nav-link>ホーム</a>
+<a class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/pdf-tools.html" data-nav-link>すべてのツール</a>
+<a class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/upload-ready.html" data-nav-link>アップロード準備</a>
+<a class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/merge-pdf.html" data-nav-link>PDF 結合</a>
+<a class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/split-pdf.html" data-nav-link>PDF 分割</a>
+<a class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/manage-pdf.html" data-nav-link>ページ管理</a>
+<a class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/compress-pdf.html" data-nav-link>PDF 圧縮</a>
+<a class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/pdf-to-jpg.html" data-nav-link>PDF から JPG</a>
+<a class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/jpg-to-pdf.html" data-nav-link>JPG から PDF</a>
+<a class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/rotate-pdf.html" data-nav-link>PDF 回転</a>
+<a class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/unlock-pdf.html" data-nav-link>PDF ロック解除</a>
+<a class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/about.html" data-nav-link>概要</a>
+<a class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/privacy.html" data-nav-link>プライバシー</a></nav>
+</header>
+<main id="main-content" tabindex="-1">
+<section class="editorial-hero editorial-hero-compact">
+<div class="editorial-container">
+<nav class="mb-6 flex flex-wrap items-center gap-2 text-sm text-slate-600" aria-label="パンくず">
+<a class="hover:text-red-700" href="/ja/">ホーム</a>
+<span aria-hidden="true">/</span>
+<span aria-current="page">読みやすさを確認しながらPDFを圧縮</span>
+</nav>
+<p class="editorial-kicker">品質確認付き圧縮</p>
+<h1 class="editorial-title">読みやすさを確認しながらPDFを圧縮</h1>
+<p class="editorial-lead">日常的な PDF を小さくしつつ、フォーム、学習資料、添付に使える結果か確認します。</p>
+</div>
+</section>
+<section class="editorial-section pt-0" data-landing-section="cta">
+<div class="editorial-container editorial-two-column">
+<div>
+<p class="editorial-kicker">慎重に開始</p>
+<h2>確認を省かずサイズを減らす</h2>
+<p>圧縮は、最終 PDF が読める場合にだけ役立ちます。ツールを使った後、送信前に結果を確認してください。</p>
+</div>
+<div class="editorial-paper-card">
+<h3>圧縮ツールを開く</h3>
+<p>まず構造整理を試し、結果をダウンロードしてページごとに確認します。</p>
+<a class="inline-flex rounded-full bg-red-700 px-5 py-3 text-sm font-semibold text-white shadow-soft hover:bg-red-800" href="/ja/compress-pdf.html" data-landing-primary-cta>PDFを圧縮</a>
+</div>
+</div>
+</section>
+<section class="editorial-section editorial-section-muted" data-landing-section="steps">
+<div class="editorial-container">
+<div class="editorial-section-heading">
+<p class="editorial-kicker">確認フロー</p>
+<h2>読みやすさを手順に含める</h2>
+<p>圧縮結果は自動的な完成版ではなく、確認が必要な出力として扱います。</p>
+</div>
+<div class="editorial-card-grid">
+<article class="editorial-paper-card">
+<h3>適切なファイルを選ぶ</h3>
+<p>再保存されたスクリーンショットやスマホスキャンではなく、可能なら元の PDF を使ってください。</p>
+</article>
+<article class="editorial-paper-card">
+<h3>安全な最適化を使う</h3>
+<p>ブラウザツールを実行し、出力が許容できるまで元ファイルは残しておきます。</p>
+</article>
+<article class="editorial-paper-card">
+<h3>結果を点検</h3>
+<p>小さい文字、署名、表、印影を拡大して確認してから共有します。</p>
+</article>
+</div>
+</div>
+</section>
+<section class="editorial-section" data-landing-section="limitations">
+<div class="editorial-container editorial-two-column">
+<div>
+<p class="editorial-kicker">正直な制限</p>
+<h2>読みやすさは元の PDF に左右されます</h2>
+<p>テキスト主体の PDF は、低解像度スキャンより圧縮後も読みやすい傾向があります。一部のファイルは元データ側の調整が必要です。</p>
+</div>
+<ul class="editorial-stack">
+<li class="editorial-paper-card">元のスキャンがぼやけている場合、圧縮で細部は復元できません。</li>
+<li class="editorial-paper-card">画像が中心の文書では、サイズ削減と鮮明さがトレードオフになる場合があります。</li>
+<li class="editorial-paper-card">厳しいサイズ上限がある場合、ページ削除や元データからの再書き出しが必要です。</li>
+</ul>
+</div>
+</section>
+<section class="editorial-section editorial-section-muted" data-landing-section="privacy">
+<div class="editorial-container editorial-two-column">
+<div>
+<p class="editorial-kicker">プライバシー</p>
+<h2>ブラウザ内処理を確認</h2>
+<p>ファイル内容はツール操作のためブラウザで読み取られます。通常のサイトアセット、解析、広告リクエストは読み込まれる場合があります。</p>
+</div>
+<div class="editorial-stack">
+<article class="editorial-paper-card">
+<h3>アカウント不要</h3>
+<p>このツールは、ログインなしの一回限りの文書整理を想定しています。</p>
+</article>
+<article class="editorial-paper-card">
+<h3>社内ルールを確認</h3>
+<p>規制対象または機密情報を含む PDF では、ブラウザツール利用が許可されているか確認してください。</p>
+</article>
+</div>
+</div>
+</section>
+<section class="editorial-section" data-landing-section="related">
+<div class="editorial-container">
+<div class="editorial-section-heading">
+<p class="editorial-kicker">関連ツール</p>
+<h2>より扱いやすい PDF を準備</h2>
+<p>読みやすさは、ページ順、余分なページ、提出要件にも影響されます。</p>
+</div>
+<div class="editorial-card-grid editorial-card-grid-wide">
+<a class="editorial-tool-card" href="/ja/compress-pdf.html">
+<span class="editorial-tool-mark" aria-hidden="true"></span>
+<h3>PDFを圧縮</h3>
+<p>確認ステップを残したままサイズを減らします。</p>
+<span class="editorial-card-link">ツールを開く</span>
+</a>
+<a class="editorial-tool-card" href="/ja/upload-ready.html">
+<span class="editorial-tool-mark" aria-hidden="true"></span>
+<h3>PDF アップロード準備</h3>
+<p>送信前にファイルサイズとプレビューを確認します。</p>
+<span class="editorial-card-link">ツールを開く</span>
+</a>
+<a class="editorial-tool-card" href="/ja/manage-pdf.html">
+<span class="editorial-tool-mark" aria-hidden="true"></span>
+<h3>PDF ページを管理</h3>
+<p>含める必要のないページを削除します。</p>
+<span class="editorial-card-link">ツールを開く</span>
+</a>
+</div>
+</div>
+</section>
+<section class="editorial-section editorial-section-muted" data-landing-section="faq">
+<div class="editorial-container">
+<div class="editorial-section-heading">
+<p class="editorial-kicker">FAQ</p>
+<h2>読みやすい圧縮について</h2>
+</div>
+<div class="editorial-stack">
+<article class="editorial-paper-card">
+<h3 data-landing-faq-question>圧縮は劣化なしでできますか？</h3>
+<p>構造整理で見た目の変化が少なく小さくなる場合がありますが、PDF はさまざまなので必ず結果を確認してください。</p>
+</article>
+<article class="editorial-paper-card">
+<h3 data-landing-faq-question>どの PDF が読みやすさを保ちやすいですか？</h3>
+<p>テキスト主体の PDF や元文書から書き出したファイルは、写真中心のスキャンより扱いやすいことが多いです。</p>
+</article>
+<article class="editorial-paper-card">
+<h3 data-landing-faq-question>結果が悪く見える場合は？</h3>
+<p>元ファイルを使い、元文書の画像サイズを下げるか、不要ページを削除してから再試行してください。</p>
+</article>
+</div>
+</div>
+</section>
+</main>
+<footer class="border-t border-slate-200 bg-white">
+<div class="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-8 text-sm text-slate-600 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
+<p>日常文書とアップロード準備のためのブラウザベース PDF ツール。</p>
+<div class="flex flex-wrap items-center gap-4">
+<p>© PDFTool.work <span data-current-year></span></p>
+<a class="hover:text-red-700" href="/ja/privacy.html">プライバシーポリシー</a>
+
+</div>
+</div>
+</footer>
+<script id="runtime-i18n" type="application/json">{"locale":"ja","messages":{"file.reading":"{filename} を読み込み中"}}</script>
+
+<script>
+/**
+ * Ad fill detection: CSS :has() hides placeholder, MutationObserver fires GA event.
+ */
+(function(){var s=document.querySelector('.editorial-ad-slot');if(!s)return;
+var r=0;
+function f(){if(r)return;r=1;
+if(typeof window.dataLayer!=='undefined'){window.dataLayer.push({event:'ad_fill',ad_client:'ca-pub-2913395948188969',page_path:window.location.pathname});}}
+var c=0,i=setInterval(function(){c++;var e=s.querySelector('iframe');if(e||c>60){clearInterval(i);if(e)f();}},500);
+var o=new MutationObserver(function(m){for(var t=0;t<m.length;t++){var a=m[t];if(a.target===s||s.contains(a.target)){var e=s.querySelector('iframe');if(e){f();o.disconnect();clearInterval(i);break;}}}});
+o.observe(s,{childList:true,subtree:true,attributes:true,attributeFilter:['data-adsbygoogle-status','style']});})();
+</script>
+<script src="/assets/js/site.js" defer></script>
+<script src="/assets/js/i18n.js" defer></script>
+</body>
+</html>

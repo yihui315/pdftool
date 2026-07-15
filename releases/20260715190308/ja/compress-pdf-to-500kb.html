@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="ja" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+<link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+<link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://www.google-analytics.com">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/css/tailwind.min.css">
+<link rel="stylesheet" href="/assets/css/styles.css">
+<title>PDFを500 KBに圧縮 - オンライン提出用ガイド</title>
+<meta name="description" content="申請フォームが 500 KB 前後の PDF を求めるとき、ブラウザで圧縮を試し、品質と制限を確認します。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="PDFを500 KBに圧縮 - オンライン提出用ガイド">
+<meta property="og:description" content="申請フォームが 500 KB 前後の PDF を求めるとき、ブラウザで圧縮を試し、品質と制限を確認します。">
+<meta property="og:url" content="https://pdftool.work/ja/compress-pdf-to-500kb.html">
+<link rel="canonical" href="https://pdftool.work/ja/compress-pdf-to-500kb.html">
+<link rel="alternate" hreflang="en" href="https://pdftool.work/en/compress-pdf-to-500kb.html">
+<link rel="alternate" hreflang="es" href="https://pdftool.work/es/compress-pdf-to-500kb.html">
+<link rel="alternate" hreflang="pt-BR" href="https://pdftool.work/pt-br/compress-pdf-to-500kb.html">
+<link rel="alternate" hreflang="ja" href="https://pdftool.work/ja/compress-pdf-to-500kb.html">
+<link rel="alternate" hreflang="id" href="https://pdftool.work/id/compress-pdf-to-500kb.html">
+<link rel="alternate" hreflang="x-default" href="https://pdftool.work/en/compress-pdf-to-500kb.html">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","inLanguage":"ja","mainEntity":[{"@type":"Question","name":"一部の PDF で 500 KB が難しいのはなぜですか？","acceptedAnswer":{"@type":"Answer","text":"写真、スキャン、埋め込みフォント、多数のページにより、最適化後も目標を超えることがあります。"}},{"@type":"Question","name":"元文書の編集を置き換えられますか？","acceptedAnswer":{"@type":"Answer","text":"いいえ。結果がまだ大きい場合、元文書の画像を小さくして書き出す方が効果的なことがあります。"}},{"@type":"Question","name":"申請フォームに使えますか？","acceptedAnswer":{"@type":"Answer","text":"準備ステップとして使えますが、結果を開き、提出先が受け付けることを確認してください。"}}]}</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3GQPKP7FYH"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-3GQPKP7FYH');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2913395948188969" crossorigin="anonymous"></script>
+</head>
+<body class="bg-[#f8f3ea] text-slate-950 antialiased">
+<a class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:m-4 focus:rounded-full focus:bg-white focus:px-4 focus:py-2 focus:text-slate-950" href="#main-content">メインコンテンツへ移動</a>
+<header class="sticky top-0 z-50 border-b border-slate-200 bg-[#f8f3ea]/95 backdrop-blur">
+<div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
+<a class="text-lg font-extrabold tracking-tight text-slate-950" href="/ja/">PDFTool.work</a>
+<nav class="hidden flex-wrap items-center gap-1 lg:flex" aria-label="メインナビゲーション" data-primary-navigation><a class="rounded-full px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/" data-nav-link>ホーム</a>
+<a class="rounded-full px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/pdf-tools.html" data-nav-link>すべてのツール</a>
+<a class="rounded-full px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/upload-ready.html" data-nav-link>アップロード準備</a>
+<a class="rounded-full px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/merge-pdf.html" data-nav-link>PDF 結合</a>
+<a class="rounded-full px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/split-pdf.html" data-nav-link>PDF 分割</a>
+<a class="rounded-full px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/manage-pdf.html" data-nav-link>ページ管理</a>
+<a class="rounded-full px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/compress-pdf.html" data-nav-link>PDF 圧縮</a>
+<a class="rounded-full px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/pdf-to-jpg.html" data-nav-link>PDF から JPG</a>
+<a class="rounded-full px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/jpg-to-pdf.html" data-nav-link>JPG から PDF</a>
+<a class="rounded-full px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/rotate-pdf.html" data-nav-link>PDF 回転</a>
+<a class="rounded-full px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/unlock-pdf.html" data-nav-link>PDF ロック解除</a>
+<a class="rounded-full px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/about.html" data-nav-link>概要</a>
+<a class="rounded-full px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/privacy.html" data-nav-link>プライバシー</a></nav>
+<div class="flex items-center gap-2">
+<div class="relative" data-language-menu-root>
+<button class="inline-flex items-center gap-2 rounded-full border border-slate-200 px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" type="button" aria-expanded="false" aria-controls="language-menu" data-language-toggle>言語: <span>日本語</span></button>
+<ul id="language-menu" class="absolute right-0 z-50 mt-2 min-w-48 rounded-2xl border border-slate-200 bg-white p-2 shadow-soft" data-language-menu hidden>
+<li><a class="block rounded-lg px-3 py-2 text-sm text-slate-700 hover:bg-slate-100" href="/en/compress-pdf-to-500kb.html" lang="en" dir="ltr" data-language-option>English</a></li>
+<li><a class="block rounded-lg px-3 py-2 text-sm text-slate-700 hover:bg-slate-100" href="/es/compress-pdf-to-500kb.html" lang="es" dir="ltr" data-language-option>Español</a></li>
+<li><a class="block rounded-lg px-3 py-2 text-sm text-slate-700 hover:bg-slate-100" href="/pt-br/compress-pdf-to-500kb.html" lang="pt-BR" dir="ltr" data-language-option>Português (Brasil)</a></li>
+<li><a class="block rounded-lg px-3 py-2 text-sm text-slate-700 hover:bg-slate-100" href="/ja/compress-pdf-to-500kb.html" lang="ja" dir="ltr" data-language-option>日本語</a></li>
+<li><a class="block rounded-lg px-3 py-2 text-sm text-slate-700 hover:bg-slate-100" href="/id/compress-pdf-to-500kb.html" lang="id" dir="ltr" data-language-option>Bahasa Indonesia</a></li>
+</ul>
+</div>
+<button class="inline-flex rounded-full border border-slate-200 px-3 py-2 text-sm font-medium text-slate-700 lg:hidden" type="button" aria-expanded="false" aria-controls="mobile-menu" data-menu-toggle><span class="menu-open">メニュー</span><span class="menu-close hidden">閉じる</span></button>
+</div>
+</div>
+<nav id="mobile-menu" class="hidden border-t border-slate-200 bg-white px-4 py-3 lg:hidden" aria-label="モバイルナビゲーション" data-mobile-menu><a class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/" data-nav-link>ホーム</a>
+<a class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/pdf-tools.html" data-nav-link>すべてのツール</a>
+<a class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/upload-ready.html" data-nav-link>アップロード準備</a>
+<a class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/merge-pdf.html" data-nav-link>PDF 結合</a>
+<a class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/split-pdf.html" data-nav-link>PDF 分割</a>
+<a class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/manage-pdf.html" data-nav-link>ページ管理</a>
+<a class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/compress-pdf.html" data-nav-link>PDF 圧縮</a>
+<a class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/pdf-to-jpg.html" data-nav-link>PDF から JPG</a>
+<a class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/jpg-to-pdf.html" data-nav-link>JPG から PDF</a>
+<a class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/rotate-pdf.html" data-nav-link>PDF 回転</a>
+<a class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/unlock-pdf.html" data-nav-link>PDF ロック解除</a>
+<a class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/about.html" data-nav-link>概要</a>
+<a class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/privacy.html" data-nav-link>プライバシー</a></nav>
+</header>
+<main id="main-content" tabindex="-1">
+<section class="editorial-hero editorial-hero-compact">
+<div class="editorial-container">
+<nav class="mb-6 flex flex-wrap items-center gap-2 text-sm text-slate-600" aria-label="パンくず">
+<a class="hover:text-red-700" href="/ja/">ホーム</a>
+<span aria-hidden="true">/</span>
+<span aria-current="page">PDFを500 KBに圧縮</span>
+</nav>
+<p class="editorial-kicker">小さいファイル</p>
+<h1 class="editorial-title">PDFを500 KBに圧縮</h1>
+<p class="editorial-lead">厳しいアップロード条件に合わせて PDF を小さくし、読みやすさを確認します。</p>
+</div>
+</section>
+<section class="editorial-section pt-0" data-landing-section="cta">
+<div class="editorial-container editorial-two-column">
+<div>
+<p class="editorial-kicker">圧縮ツールを開く</p>
+<h2>より小さい提出ファイルを試す</h2>
+<p>500 KB はスキャンや画像が多い PDF には厳しい条件です。まずブラウザの安全な最適化を試し、元文書の編集が必要か判断してください。</p>
+</div>
+<div class="editorial-paper-card">
+<h3>圧縮ツールを使う</h3>
+<p>ブラウザで構造最適化を実行し、結果をダウンロードして確認します。</p>
+<a class="inline-flex rounded-full bg-red-700 px-5 py-3 text-sm font-semibold text-white shadow-soft hover:bg-red-800" href="/ja/compress-pdf.html" data-landing-primary-cta>PDFを圧縮</a>
+</div>
+</div>
+</section>
+<section class="editorial-section editorial-section-muted" data-landing-section="steps">
+<div class="editorial-container">
+<div class="editorial-section-heading">
+<p class="editorial-kicker">手順</p>
+<h2>500 KB 制限向けに PDF を準備</h2>
+<p>小さい目標では、通常の添付ファイルより慎重な確認が必要です。</p>
+</div>
+<div class="editorial-card-grid">
+<article class="editorial-paper-card">
+<h3>きれいな元データから始める</h3>
+<p>可能なら、画像だらけのスキャンを圧縮する前に、元文書から新しい PDF を書き出してください。</p>
+</article>
+<article class="editorial-paper-card">
+<h3>圧縮して比較</h3>
+<p>ブラウザツールを使い、新しいサイズを 500 KB の要件と比較します。</p>
+</article>
+<article class="editorial-paper-card">
+<h3>各ページを確認</h3>
+<p>文字、署名、印影、ページ順が問題ないか確認してからアップロードします。</p>
+</article>
+</div>
+</div>
+</section>
+<section class="editorial-section" data-landing-section="limitations">
+<div class="editorial-container editorial-two-column">
+<div>
+<p class="editorial-kicker">制限</p>
+<h2>500 KB はすべての文書で達成できません</h2>
+<p>画像やページが多い PDF では、ページ削除、画像解像度の低下、元文書からの再書き出しが必要になる場合があります。</p>
+</div>
+<ul class="editorial-stack">
+<li class="editorial-paper-card">スキャンした申請書や写真入り PDF は、各ページが画像のため大きいままになりがちです。</li>
+<li class="editorial-paper-card">モバイルブラウザは、有用な結果を作る前にメモリ不足になることがあります。</li>
+<li class="editorial-paper-card">すでに小さいファイルは、最適化できる構造が少ない場合があります。</li>
+</ul>
+</div>
+</section>
+<section class="editorial-section editorial-section-muted" data-landing-section="privacy">
+<div class="editorial-container editorial-two-column">
+<div>
+<p class="editorial-kicker">プライバシー</p>
+<h2>選択したファイルはブラウザで処理されます</h2>
+<p>ブラウザが PDF を読み取り結果を作成します。サイト解析や広告は通常の Web リクエストとして読み込まれる場合があります。</p>
+</div>
+<div class="editorial-stack">
+<article class="editorial-paper-card">
+<h3>一時ダウンロード</h3>
+<p>必要な結果を保存するまでページを開いたままにしてください。</p>
+</article>
+<article class="editorial-paper-card">
+<h3>重要なアップロード</h3>
+<p>公式または機密ファイルでは、デスクトップブラウザを使い、組織のルールに従ってください。</p>
+</article>
+</div>
+</div>
+</section>
+<section class="editorial-section" data-landing-section="related">
+<div class="editorial-container">
+<div class="editorial-section-heading">
+<p class="editorial-kicker">関連ツール</p>
+<h2>再試行前に PDF を整える</h2>
+<p>圧縮だけで足りない場合は、ページ削除やアップロード目標の確認が役立ちます。</p>
+</div>
+<div class="editorial-card-grid editorial-card-grid-wide">
+<a class="editorial-tool-card" href="/ja/compress-pdf.html">
+<span class="editorial-tool-mark" aria-hidden="true"></span>
+<h3>PDFを圧縮</h3>
+<p>安全な最適化を試し、出力を確認します。</p>
+<span class="editorial-card-link">ツールを開く</span>
+</a>
+<a class="editorial-tool-card" href="/ja/upload-ready.html">
+<span class="editorial-tool-mark" aria-hidden="true"></span>
+<h3>PDF アップロード準備</h3>
+<p>目標サイズと準備メモをプレビューします。</p>
+<span class="editorial-card-link">ツールを開く</span>
+</a>
+<a class="editorial-tool-card" href="/ja/manage-pdf.html">
+<span class="editorial-tool-mark" aria-hidden="true"></span>
+<h3>PDF ページを管理</h3>
+<p>空白ページや不要ページを削除してから再圧縮します。</p>
+<span class="editorial-card-link">ツールを開く</span>
+</a>
+</div>
+</div>
+</section>
+<section class="editorial-section editorial-section-muted" data-landing-section="faq">
+<div class="editorial-container">
+<div class="editorial-section-heading">
+<p class="editorial-kicker">FAQ</p>
+<h2>PDFを500 KBに圧縮する質問</h2>
+</div>
+<div class="editorial-stack">
+<article class="editorial-paper-card">
+<h3 data-landing-faq-question>一部の PDF で 500 KB が難しいのはなぜですか？</h3>
+<p>写真、スキャン、埋め込みフォント、多数のページにより、最適化後も目標を超えることがあります。</p>
+</article>
+<article class="editorial-paper-card">
+<h3 data-landing-faq-question>元文書の編集を置き換えられますか？</h3>
+<p>いいえ。結果がまだ大きい場合、元文書の画像を小さくして書き出す方が効果的なことがあります。</p>
+</article>
+<article class="editorial-paper-card">
+<h3 data-landing-faq-question>申請フォームに使えますか？</h3>
+<p>準備ステップとして使えますが、結果を開き、提出先が受け付けることを確認してください。</p>
+</article>
+</div>
+</div>
+</section>
+</main>
+<footer class="border-t border-slate-200 bg-white">
+<div class="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-8 text-sm text-slate-600 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
+<p>日常文書とアップロード準備のためのブラウザベース PDF ツール。</p>
+<div class="flex flex-wrap items-center gap-4">
+<p>© PDFTool.work <span data-current-year></span></p>
+<a class="hover:text-red-700" href="/ja/privacy.html">プライバシーポリシー</a>
+
+</div>
+</div>
+</footer>
+<script id="runtime-i18n" type="application/json">{"locale":"ja","messages":{"file.reading":"{filename} を読み込み中"}}</script>
+
+<script>
+/**
+ * Ad fill detection: CSS :has() hides placeholder, MutationObserver fires GA event.
+ */
+(function(){var s=document.querySelector('.editorial-ad-slot');if(!s)return;
+var r=0;
+function f(){if(r)return;r=1;
+if(typeof window.dataLayer!=='undefined'){window.dataLayer.push({event:'ad_fill',ad_client:'ca-pub-2913395948188969',page_path:window.location.pathname});}}
+var c=0,i=setInterval(function(){c++;var e=s.querySelector('iframe');if(e||c>60){clearInterval(i);if(e)f();}},500);
+var o=new MutationObserver(function(m){for(var t=0;t<m.length;t++){var a=m[t];if(a.target===s||s.contains(a.target)){var e=s.querySelector('iframe');if(e){f();o.disconnect();clearInterval(i);break;}}}});
+o.observe(s,{childList:true,subtree:true,attributes:true,attributeFilter:['data-adsbygoogle-status','style']});})();
+</script>
+<script src="/assets/js/site.js" defer></script>
+<script src="/assets/js/i18n.js" defer></script>
+</body>
+</html>

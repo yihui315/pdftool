@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="ja" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+<link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+<link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://www.google-analytics.com">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/css/tailwind.min.css">
+<link rel="stylesheet" href="/assets/css/styles.css">
+<title>PDFが大きすぎてアップロードできない場合 - 送信前の準備</title>
+<meta name="description" content="PDF が申請やフォームに対して大きすぎる場合、サイズ、圧縮、ページ整理、アップロード準備をブラウザで確認します。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="PDFが大きすぎてアップロードできない場合 - 送信前の準備">
+<meta property="og:description" content="PDF が申請やフォームに対して大きすぎる場合、サイズ、圧縮、ページ整理、アップロード準備をブラウザで確認します。">
+<meta property="og:url" content="https://pdftool.work/ja/pdf-too-large-to-upload.html">
+<link rel="canonical" href="https://pdftool.work/ja/pdf-too-large-to-upload.html">
+<link rel="alternate" hreflang="en" href="https://pdftool.work/en/pdf-too-large-to-upload.html">
+<link rel="alternate" hreflang="es" href="https://pdftool.work/es/pdf-too-large-to-upload.html">
+<link rel="alternate" hreflang="pt-BR" href="https://pdftool.work/pt-br/pdf-too-large-to-upload.html">
+<link rel="alternate" hreflang="ja" href="https://pdftool.work/ja/pdf-too-large-to-upload.html">
+<link rel="alternate" hreflang="id" href="https://pdftool.work/id/pdf-too-large-to-upload.html">
+<link rel="alternate" hreflang="x-default" href="https://pdftool.work/en/pdf-too-large-to-upload.html">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","inLanguage":"ja","mainEntity":[{"@type":"Question","name":"圧縮後もアップロードに失敗するのはなぜですか？","acceptedAnswer":{"@type":"Answer","text":"提出先はサイズだけでなく、ページ数、暗号化、ファイル構造、読みやすさも確認する場合があります。"}},{"@type":"Question","name":"圧縮前にページを削除すべきですか？","acceptedAnswer":{"@type":"Answer","text":"不要ページがある場合、先に削除する方が圧縮だけより安定することがあります。"}},{"@type":"Question","name":"スマホで準備できますか？","acceptedAnswer":{"@type":"Answer","text":"小さいファイルなら動く場合がありますが、重要な PDF はメモリに余裕があるデスクトップブラウザが安心です。"}}]}</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3GQPKP7FYH"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-3GQPKP7FYH');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2913395948188969" crossorigin="anonymous"></script>
+</head>
+<body class="bg-[#f8f3ea] text-slate-950 antialiased">
+<a class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:m-4 focus:rounded-full focus:bg-white focus:px-4 focus:py-2 focus:text-slate-950" href="#main-content">メインコンテンツへ移動</a>
+<header class="sticky top-0 z-50 border-b border-slate-200 bg-[#f8f3ea]/95 backdrop-blur">
+<div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
+<a class="text-lg font-extrabold tracking-tight text-slate-950" href="/ja/">PDFTool.work</a>
+<nav class="hidden flex-wrap items-center gap-1 lg:flex" aria-label="メインナビゲーション" data-primary-navigation><a class="rounded-full px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/" data-nav-link>ホーム</a>
+<a class="rounded-full px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/pdf-tools.html" data-nav-link>すべてのツール</a>
+<a class="rounded-full px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/upload-ready.html" data-nav-link>アップロード準備</a>
+<a class="rounded-full px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/merge-pdf.html" data-nav-link>PDF 結合</a>
+<a class="rounded-full px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/split-pdf.html" data-nav-link>PDF 分割</a>
+<a class="rounded-full px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/manage-pdf.html" data-nav-link>ページ管理</a>
+<a class="rounded-full px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/compress-pdf.html" data-nav-link>PDF 圧縮</a>
+<a class="rounded-full px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/pdf-to-jpg.html" data-nav-link>PDF から JPG</a>
+<a class="rounded-full px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/jpg-to-pdf.html" data-nav-link>JPG から PDF</a>
+<a class="rounded-full px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/rotate-pdf.html" data-nav-link>PDF 回転</a>
+<a class="rounded-full px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/unlock-pdf.html" data-nav-link>PDF ロック解除</a>
+<a class="rounded-full px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/about.html" data-nav-link>概要</a>
+<a class="rounded-full px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/privacy.html" data-nav-link>プライバシー</a></nav>
+<div class="flex items-center gap-2">
+<div class="relative" data-language-menu-root>
+<button class="inline-flex items-center gap-2 rounded-full border border-slate-200 px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" type="button" aria-expanded="false" aria-controls="language-menu" data-language-toggle>言語: <span>日本語</span></button>
+<ul id="language-menu" class="absolute right-0 z-50 mt-2 min-w-48 rounded-2xl border border-slate-200 bg-white p-2 shadow-soft" data-language-menu hidden>
+<li><a class="block rounded-lg px-3 py-2 text-sm text-slate-700 hover:bg-slate-100" href="/en/pdf-too-large-to-upload.html" lang="en" dir="ltr" data-language-option>English</a></li>
+<li><a class="block rounded-lg px-3 py-2 text-sm text-slate-700 hover:bg-slate-100" href="/es/pdf-too-large-to-upload.html" lang="es" dir="ltr" data-language-option>Español</a></li>
+<li><a class="block rounded-lg px-3 py-2 text-sm text-slate-700 hover:bg-slate-100" href="/pt-br/pdf-too-large-to-upload.html" lang="pt-BR" dir="ltr" data-language-option>Português (Brasil)</a></li>
+<li><a class="block rounded-lg px-3 py-2 text-sm text-slate-700 hover:bg-slate-100" href="/ja/pdf-too-large-to-upload.html" lang="ja" dir="ltr" data-language-option>日本語</a></li>
+<li><a class="block rounded-lg px-3 py-2 text-sm text-slate-700 hover:bg-slate-100" href="/id/pdf-too-large-to-upload.html" lang="id" dir="ltr" data-language-option>Bahasa Indonesia</a></li>
+</ul>
+</div>
+<button class="inline-flex rounded-full border border-slate-200 px-3 py-2 text-sm font-medium text-slate-700 lg:hidden" type="button" aria-expanded="false" aria-controls="mobile-menu" data-menu-toggle><span class="menu-open">メニュー</span><span class="menu-close hidden">閉じる</span></button>
+</div>
+</div>
+<nav id="mobile-menu" class="hidden border-t border-slate-200 bg-white px-4 py-3 lg:hidden" aria-label="モバイルナビゲーション" data-mobile-menu><a class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/" data-nav-link>ホーム</a>
+<a class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/pdf-tools.html" data-nav-link>すべてのツール</a>
+<a class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/upload-ready.html" data-nav-link>アップロード準備</a>
+<a class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/merge-pdf.html" data-nav-link>PDF 結合</a>
+<a class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/split-pdf.html" data-nav-link>PDF 分割</a>
+<a class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/manage-pdf.html" data-nav-link>ページ管理</a>
+<a class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/compress-pdf.html" data-nav-link>PDF 圧縮</a>
+<a class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/pdf-to-jpg.html" data-nav-link>PDF から JPG</a>
+<a class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/jpg-to-pdf.html" data-nav-link>JPG から PDF</a>
+<a class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/rotate-pdf.html" data-nav-link>PDF 回転</a>
+<a class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/unlock-pdf.html" data-nav-link>PDF ロック解除</a>
+<a class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/about.html" data-nav-link>概要</a>
+<a class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" href="/ja/privacy.html" data-nav-link>プライバシー</a></nav>
+</header>
+<main id="main-content" tabindex="-1">
+<section class="editorial-hero editorial-hero-compact">
+<div class="editorial-container">
+<nav class="mb-6 flex flex-wrap items-center gap-2 text-sm text-slate-600" aria-label="パンくず">
+<a class="hover:text-red-700" href="/ja/">ホーム</a>
+<span aria-hidden="true">/</span>
+<span aria-current="page">PDFが大きすぎる</span>
+</nav>
+<p class="editorial-kicker">アップロード問題</p>
+<h1 class="editorial-title">PDFが大きすぎてアップロードできない場合</h1>
+<p class="editorial-lead">サイズを減らし、結果を確認し、提出先に合わせてファイルを準備するための簡単な手順です。</p>
+</div>
+</section>
+<section class="editorial-section pt-0" data-landing-section="cta">
+<div class="editorial-container editorial-two-column">
+<div>
+<p class="editorial-kicker">準備から開始</p>
+<h2>ファイルを変える前に要件を確認</h2>
+<p>アップロード先は、サイズ、ページ数、形式、読みやすさでファイルを拒否する場合があります。まず準備フローを使い、必要に応じて圧縮やページ整理を行います。</p>
+</div>
+<div class="editorial-paper-card">
+<h3>アップロード準備を開く</h3>
+<p>目標サイズを選び、結果をプレビューし、確認リマインダーを見ながら進めます。</p>
+<a class="inline-flex rounded-full bg-red-700 px-5 py-3 text-sm font-semibold text-white shadow-soft hover:bg-red-800" href="/ja/upload-ready.html" data-landing-primary-cta>PDFをアップロード用に準備</a>
+</div>
+</div>
+</section>
+<section class="editorial-section editorial-section-muted" data-landing-section="steps">
+<div class="editorial-container">
+<div class="editorial-section-heading">
+<p class="editorial-kicker">対処手順</p>
+<h2>PDF が大きすぎるときの進め方</h2>
+<p>原因確認から、最小限で安全な変更へ進みます。</p>
+</div>
+<div class="editorial-card-grid">
+<article class="editorial-paper-card">
+<h3>要件を確認</h3>
+<p>正確なサイズ上限と、ページ数や形式のルールがあるかを確認します。</p>
+</article>
+<article class="editorial-paper-card">
+<h3>圧縮または整理を試す</h3>
+<p>PDF を圧縮し、空白ページを削除し、向きを整えてから再試行します。</p>
+</article>
+<article class="editorial-paper-card">
+<h3>確認後にアップロード</h3>
+<p>出力を開き、読みやすさ、ページ数、最終サイズを確認します。</p>
+</article>
+</div>
+</div>
+</section>
+<section class="editorial-section" data-landing-section="limitations">
+<div class="editorial-container editorial-two-column">
+<div>
+<p class="editorial-kicker">制限</p>
+<h2>アップロード失敗の原因はサイズだけとは限りません</h2>
+<p>サイズはよくある原因ですが、ブラウザメモリ、暗号化、ページ向き、提出先ルールも送信を妨げる場合があります。</p>
+</div>
+<ul class="editorial-stack">
+<li class="editorial-paper-card">サイズ内でも、暗号化や壊れた構造で失敗することがあります。</li>
+<li class="editorial-paper-card">大きなスキャンは処理中にブラウザメモリを超える場合があります。</li>
+<li class="editorial-paper-card">提出先によっては、ファイル形式、ページ数、読める解像度が必要です。</li>
+</ul>
+</div>
+</section>
+<section class="editorial-section editorial-section-muted" data-landing-section="privacy">
+<div class="editorial-container editorial-two-column">
+<div>
+<p class="editorial-kicker">プライバシー</p>
+<h2>個人文書は慎重に扱う</h2>
+<p>選択した PDF は結果作成のためブラウザで読み取られます。ページは通常のリソース、解析、広告をリクエストする場合があります。</p>
+</div>
+<div class="editorial-stack">
+<article class="editorial-paper-card">
+<h3>元ファイルを残す</h3>
+<p>小さいアップロード用ファイルで置き換える前に、元のコピーを保存してください。</p>
+</article>
+<article class="editorial-paper-card">
+<h3>公式書類を確認</h3>
+<p>身分証、ビザ、申請書類では、送信前にすべてのページを確認してください。</p>
+</article>
+</div>
+</div>
+</section>
+<section class="editorial-section" data-landing-section="related">
+<div class="editorial-container">
+<div class="editorial-section-heading">
+<p class="editorial-kicker">関連ツール</p>
+<h2>アップロード問題向けツール</h2>
+<p>失敗理由に合わせて次のツールを選べます。</p>
+</div>
+<div class="editorial-card-grid editorial-card-grid-wide">
+<a class="editorial-tool-card" href="/ja/compress-pdf.html">
+<span class="editorial-tool-mark" aria-hidden="true"></span>
+<h3>PDFを圧縮</h3>
+<p>ファイルが上限を超える場合にサイズを減らします。</p>
+<span class="editorial-card-link">ツールを開く</span>
+</a>
+<a class="editorial-tool-card" href="/ja/upload-ready.html">
+<span class="editorial-tool-mark" aria-hidden="true"></span>
+<h3>PDF アップロード準備</h3>
+<p>目標サイズとプレビュー確認を使います。</p>
+<span class="editorial-card-link">ツールを開く</span>
+</a>
+<a class="editorial-tool-card" href="/ja/manage-pdf.html">
+<span class="editorial-tool-mark" aria-hidden="true"></span>
+<h3>PDF ページを管理</h3>
+<p>再アップロード前に余分なページや向きを修正します。</p>
+<span class="editorial-card-link">ツールを開く</span>
+</a>
+</div>
+</div>
+</section>
+<section class="editorial-section editorial-section-muted" data-landing-section="faq">
+<div class="editorial-container">
+<div class="editorial-section-heading">
+<p class="editorial-kicker">FAQ</p>
+<h2>PDF アップロードサイズの質問</h2>
+</div>
+<div class="editorial-stack">
+<article class="editorial-paper-card">
+<h3 data-landing-faq-question>圧縮後もアップロードに失敗するのはなぜですか？</h3>
+<p>提出先はサイズだけでなく、ページ数、暗号化、ファイル構造、読みやすさも確認する場合があります。</p>
+</article>
+<article class="editorial-paper-card">
+<h3 data-landing-faq-question>圧縮前にページを削除すべきですか？</h3>
+<p>不要ページがある場合、先に削除する方が圧縮だけより安定することがあります。</p>
+</article>
+<article class="editorial-paper-card">
+<h3 data-landing-faq-question>スマホで準備できますか？</h3>
+<p>小さいファイルなら動く場合がありますが、重要な PDF はメモリに余裕があるデスクトップブラウザが安心です。</p>
+</article>
+</div>
+</div>
+</section>
+</main>
+<footer class="border-t border-slate-200 bg-white">
+<div class="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-8 text-sm text-slate-600 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
+<p>日常文書とアップロード準備のためのブラウザベース PDF ツール。</p>
+<div class="flex flex-wrap items-center gap-4">
+<p>© PDFTool.work <span data-current-year></span></p>
+<a class="hover:text-red-700" href="/ja/privacy.html">プライバシーポリシー</a>
+
+</div>
+</div>
+</footer>
+<script id="runtime-i18n" type="application/json">{"locale":"ja","messages":{"file.reading":"{filename} を読み込み中"}}</script>
+<script src="/assets/js/site.js" defer></script>
+<script src="/assets/js/i18n.js" defer></script>
+</body>
+</html>

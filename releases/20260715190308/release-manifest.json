@@ -1,0 +1,6563 @@
+{
+  "buildTimeUtc": "2026-07-15T11:03:13.558Z",
+  "gitCommit": "69674151265fc02b9c1b8d550300200e60201923",
+  "routes": [
+    {
+      "locale": "zh-CN",
+      "key": "about",
+      "file": "about.html",
+      "canonicalPath": "/about.html",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/about.html"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/about.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/about.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/about.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/about.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/about.html"
+        }
+      ]
+    },
+    {
+      "locale": "zh-CN",
+      "key": "compress",
+      "file": "compress.html",
+      "canonicalPath": "/compress.html",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/compress.html"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/compress-pdf.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/compress-pdf.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/compress-pdf.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/compress-pdf.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/compress-pdf.html"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "key": "about",
+      "file": "en/about.html",
+      "canonicalPath": "/en/about.html",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/about.html"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/about.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/about.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/about.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/about.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/about.html"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "key": "compress1mb",
+      "file": "en/compress-pdf-to-1mb.html",
+      "canonicalPath": "/en/compress-pdf-to-1mb.html",
+      "alternates": [
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/compress-pdf-to-1mb.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/compress-pdf-to-1mb.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/compress-pdf-to-1mb.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/compress-pdf-to-1mb.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/compress-pdf-to-1mb.html"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "key": "compress500kb",
+      "file": "en/compress-pdf-to-500kb.html",
+      "canonicalPath": "/en/compress-pdf-to-500kb.html",
+      "alternates": [
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/compress-pdf-to-500kb.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/compress-pdf-to-500kb.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/compress-pdf-to-500kb.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/compress-pdf-to-500kb.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/compress-pdf-to-500kb.html"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "key": "compressReadable",
+      "file": "en/compress-pdf-without-quality-loss.html",
+      "canonicalPath": "/en/compress-pdf-without-quality-loss.html",
+      "alternates": [
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/compress-pdf-without-quality-loss.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/compress-pdf-without-quality-loss.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/compress-pdf-without-quality-loss.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/compress-pdf-without-quality-loss.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/compress-pdf-without-quality-loss.html"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "key": "compress",
+      "file": "en/compress-pdf.html",
+      "canonicalPath": "/en/compress-pdf.html",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/compress.html"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/compress-pdf.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/compress-pdf.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/compress-pdf.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/compress-pdf.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/compress-pdf.html"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "key": "home",
+      "file": "en/index.html",
+      "canonicalPath": "/en/",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "key": "jpgToPdf",
+      "file": "en/jpg-to-pdf.html",
+      "canonicalPath": "/en/jpg-to-pdf.html",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/jpg-to-pdf.html"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/jpg-to-pdf.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/jpg-to-pdf.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/jpg-to-pdf.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/jpg-to-pdf.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/jpg-to-pdf.html"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "key": "manage",
+      "file": "en/manage-pdf.html",
+      "canonicalPath": "/en/manage-pdf.html",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/manage.html"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/manage-pdf.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/manage-pdf.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/manage-pdf.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/manage-pdf.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/manage-pdf.html"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "key": "merge",
+      "file": "en/merge-pdf.html",
+      "canonicalPath": "/en/merge-pdf.html",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/merge.html"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/merge-pdf.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/merge-pdf.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/merge-pdf.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/merge-pdf.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/merge-pdf.html"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "key": "pdfToJpg",
+      "file": "en/pdf-to-jpg.html",
+      "canonicalPath": "/en/pdf-to-jpg.html",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/pdf-to-jpg.html"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/pdf-to-jpg.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/pdf-to-jpg.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/pdf-to-jpg.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/pdf-to-jpg.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/pdf-to-jpg.html"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "key": "tooLargeToUpload",
+      "file": "en/pdf-too-large-to-upload.html",
+      "canonicalPath": "/en/pdf-too-large-to-upload.html",
+      "alternates": [
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/pdf-too-large-to-upload.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/pdf-too-large-to-upload.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/pdf-too-large-to-upload.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/pdf-too-large-to-upload.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/pdf-too-large-to-upload.html"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "key": "tools",
+      "file": "en/pdf-tools.html",
+      "canonicalPath": "/en/pdf-tools.html",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/pdf-tools.html"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/pdf-tools.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/pdf-tools.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/pdf-tools.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/pdf-tools.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/pdf-tools.html"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "key": "privacy",
+      "file": "en/privacy.html",
+      "canonicalPath": "/en/privacy.html",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/privacy.html"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/privacy.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/privacy.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/privacy.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/privacy.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/privacy.html"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "key": "rotate",
+      "file": "en/rotate-pdf.html",
+      "canonicalPath": "/en/rotate-pdf.html",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/pdf-rotate.html"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/rotate-pdf.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/rotate-pdf.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/rotate-pdf.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/rotate-pdf.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/rotate-pdf.html"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "key": "split",
+      "file": "en/split-pdf.html",
+      "canonicalPath": "/en/split-pdf.html",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/split.html"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/split-pdf.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/split-pdf.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/split-pdf.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/split-pdf.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/split-pdf.html"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "key": "unlock",
+      "file": "en/unlock-pdf.html",
+      "canonicalPath": "/en/unlock-pdf.html",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/pdf-unlock.html"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/unlock-pdf.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/unlock-pdf.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/unlock-pdf.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/unlock-pdf.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/unlock-pdf.html"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "key": "uploadReady",
+      "file": "en/upload-ready.html",
+      "canonicalPath": "/en/upload-ready.html",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/upload-ready.html"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/upload-ready.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/upload-ready.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/upload-ready.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/upload-ready.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/upload-ready.html"
+        }
+      ]
+    },
+    {
+      "locale": "es",
+      "key": "about",
+      "file": "es/about.html",
+      "canonicalPath": "/es/about.html",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/about.html"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/about.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/about.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/about.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/about.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/about.html"
+        }
+      ]
+    },
+    {
+      "locale": "es",
+      "key": "compress1mb",
+      "file": "es/compress-pdf-to-1mb.html",
+      "canonicalPath": "/es/compress-pdf-to-1mb.html",
+      "alternates": [
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/compress-pdf-to-1mb.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/compress-pdf-to-1mb.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/compress-pdf-to-1mb.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/compress-pdf-to-1mb.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/compress-pdf-to-1mb.html"
+        }
+      ]
+    },
+    {
+      "locale": "es",
+      "key": "compress500kb",
+      "file": "es/compress-pdf-to-500kb.html",
+      "canonicalPath": "/es/compress-pdf-to-500kb.html",
+      "alternates": [
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/compress-pdf-to-500kb.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/compress-pdf-to-500kb.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/compress-pdf-to-500kb.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/compress-pdf-to-500kb.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/compress-pdf-to-500kb.html"
+        }
+      ]
+    },
+    {
+      "locale": "es",
+      "key": "compressReadable",
+      "file": "es/compress-pdf-without-quality-loss.html",
+      "canonicalPath": "/es/compress-pdf-without-quality-loss.html",
+      "alternates": [
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/compress-pdf-without-quality-loss.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/compress-pdf-without-quality-loss.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/compress-pdf-without-quality-loss.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/compress-pdf-without-quality-loss.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/compress-pdf-without-quality-loss.html"
+        }
+      ]
+    },
+    {
+      "locale": "es",
+      "key": "compress",
+      "file": "es/compress-pdf.html",
+      "canonicalPath": "/es/compress-pdf.html",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/compress.html"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/compress-pdf.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/compress-pdf.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/compress-pdf.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/compress-pdf.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/compress-pdf.html"
+        }
+      ]
+    },
+    {
+      "locale": "es",
+      "key": "home",
+      "file": "es/index.html",
+      "canonicalPath": "/es/",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/"
+        }
+      ]
+    },
+    {
+      "locale": "es",
+      "key": "jpgToPdf",
+      "file": "es/jpg-to-pdf.html",
+      "canonicalPath": "/es/jpg-to-pdf.html",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/jpg-to-pdf.html"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/jpg-to-pdf.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/jpg-to-pdf.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/jpg-to-pdf.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/jpg-to-pdf.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/jpg-to-pdf.html"
+        }
+      ]
+    },
+    {
+      "locale": "es",
+      "key": "manage",
+      "file": "es/manage-pdf.html",
+      "canonicalPath": "/es/manage-pdf.html",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/manage.html"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/manage-pdf.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/manage-pdf.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/manage-pdf.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/manage-pdf.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/manage-pdf.html"
+        }
+      ]
+    },
+    {
+      "locale": "es",
+      "key": "merge",
+      "file": "es/merge-pdf.html",
+      "canonicalPath": "/es/merge-pdf.html",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/merge.html"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/merge-pdf.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/merge-pdf.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/merge-pdf.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/merge-pdf.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/merge-pdf.html"
+        }
+      ]
+    },
+    {
+      "locale": "es",
+      "key": "pdfToJpg",
+      "file": "es/pdf-to-jpg.html",
+      "canonicalPath": "/es/pdf-to-jpg.html",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/pdf-to-jpg.html"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/pdf-to-jpg.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/pdf-to-jpg.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/pdf-to-jpg.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/pdf-to-jpg.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/pdf-to-jpg.html"
+        }
+      ]
+    },
+    {
+      "locale": "es",
+      "key": "tooLargeToUpload",
+      "file": "es/pdf-too-large-to-upload.html",
+      "canonicalPath": "/es/pdf-too-large-to-upload.html",
+      "alternates": [
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/pdf-too-large-to-upload.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/pdf-too-large-to-upload.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/pdf-too-large-to-upload.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/pdf-too-large-to-upload.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/pdf-too-large-to-upload.html"
+        }
+      ]
+    },
+    {
+      "locale": "es",
+      "key": "tools",
+      "file": "es/pdf-tools.html",
+      "canonicalPath": "/es/pdf-tools.html",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/pdf-tools.html"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/pdf-tools.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/pdf-tools.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/pdf-tools.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/pdf-tools.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/pdf-tools.html"
+        }
+      ]
+    },
+    {
+      "locale": "es",
+      "key": "privacy",
+      "file": "es/privacy.html",
+      "canonicalPath": "/es/privacy.html",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/privacy.html"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/privacy.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/privacy.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/privacy.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/privacy.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/privacy.html"
+        }
+      ]
+    },
+    {
+      "locale": "es",
+      "key": "rotate",
+      "file": "es/rotate-pdf.html",
+      "canonicalPath": "/es/rotate-pdf.html",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/pdf-rotate.html"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/rotate-pdf.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/rotate-pdf.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/rotate-pdf.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/rotate-pdf.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/rotate-pdf.html"
+        }
+      ]
+    },
+    {
+      "locale": "es",
+      "key": "split",
+      "file": "es/split-pdf.html",
+      "canonicalPath": "/es/split-pdf.html",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/split.html"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/split-pdf.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/split-pdf.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/split-pdf.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/split-pdf.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/split-pdf.html"
+        }
+      ]
+    },
+    {
+      "locale": "es",
+      "key": "unlock",
+      "file": "es/unlock-pdf.html",
+      "canonicalPath": "/es/unlock-pdf.html",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/pdf-unlock.html"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/unlock-pdf.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/unlock-pdf.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/unlock-pdf.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/unlock-pdf.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/unlock-pdf.html"
+        }
+      ]
+    },
+    {
+      "locale": "es",
+      "key": "uploadReady",
+      "file": "es/upload-ready.html",
+      "canonicalPath": "/es/upload-ready.html",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/upload-ready.html"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/upload-ready.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/upload-ready.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/upload-ready.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/upload-ready.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/upload-ready.html"
+        }
+      ]
+    },
+    {
+      "locale": "id",
+      "key": "about",
+      "file": "id/about.html",
+      "canonicalPath": "/id/about.html",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/about.html"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/about.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/about.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/about.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/about.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/about.html"
+        }
+      ]
+    },
+    {
+      "locale": "id",
+      "key": "compress1mb",
+      "file": "id/compress-pdf-to-1mb.html",
+      "canonicalPath": "/id/compress-pdf-to-1mb.html",
+      "alternates": [
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/compress-pdf-to-1mb.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/compress-pdf-to-1mb.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/compress-pdf-to-1mb.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/compress-pdf-to-1mb.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/compress-pdf-to-1mb.html"
+        }
+      ]
+    },
+    {
+      "locale": "id",
+      "key": "compress500kb",
+      "file": "id/compress-pdf-to-500kb.html",
+      "canonicalPath": "/id/compress-pdf-to-500kb.html",
+      "alternates": [
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/compress-pdf-to-500kb.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/compress-pdf-to-500kb.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/compress-pdf-to-500kb.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/compress-pdf-to-500kb.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/compress-pdf-to-500kb.html"
+        }
+      ]
+    },
+    {
+      "locale": "id",
+      "key": "compressReadable",
+      "file": "id/compress-pdf-without-quality-loss.html",
+      "canonicalPath": "/id/compress-pdf-without-quality-loss.html",
+      "alternates": [
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/compress-pdf-without-quality-loss.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/compress-pdf-without-quality-loss.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/compress-pdf-without-quality-loss.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/compress-pdf-without-quality-loss.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/compress-pdf-without-quality-loss.html"
+        }
+      ]
+    },
+    {
+      "locale": "id",
+      "key": "compress",
+      "file": "id/compress-pdf.html",
+      "canonicalPath": "/id/compress-pdf.html",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/compress.html"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/compress-pdf.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/compress-pdf.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/compress-pdf.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/compress-pdf.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/compress-pdf.html"
+        }
+      ]
+    },
+    {
+      "locale": "id",
+      "key": "home",
+      "file": "id/index.html",
+      "canonicalPath": "/id/",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/"
+        }
+      ]
+    },
+    {
+      "locale": "id",
+      "key": "jpgToPdf",
+      "file": "id/jpg-to-pdf.html",
+      "canonicalPath": "/id/jpg-to-pdf.html",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/jpg-to-pdf.html"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/jpg-to-pdf.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/jpg-to-pdf.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/jpg-to-pdf.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/jpg-to-pdf.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/jpg-to-pdf.html"
+        }
+      ]
+    },
+    {
+      "locale": "id",
+      "key": "manage",
+      "file": "id/manage-pdf.html",
+      "canonicalPath": "/id/manage-pdf.html",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/manage.html"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/manage-pdf.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/manage-pdf.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/manage-pdf.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/manage-pdf.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/manage-pdf.html"
+        }
+      ]
+    },
+    {
+      "locale": "id",
+      "key": "merge",
+      "file": "id/merge-pdf.html",
+      "canonicalPath": "/id/merge-pdf.html",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/merge.html"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/merge-pdf.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/merge-pdf.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/merge-pdf.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/merge-pdf.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/merge-pdf.html"
+        }
+      ]
+    },
+    {
+      "locale": "id",
+      "key": "pdfToJpg",
+      "file": "id/pdf-to-jpg.html",
+      "canonicalPath": "/id/pdf-to-jpg.html",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/pdf-to-jpg.html"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/pdf-to-jpg.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/pdf-to-jpg.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/pdf-to-jpg.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/pdf-to-jpg.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/pdf-to-jpg.html"
+        }
+      ]
+    },
+    {
+      "locale": "id",
+      "key": "tooLargeToUpload",
+      "file": "id/pdf-too-large-to-upload.html",
+      "canonicalPath": "/id/pdf-too-large-to-upload.html",
+      "alternates": [
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/pdf-too-large-to-upload.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/pdf-too-large-to-upload.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/pdf-too-large-to-upload.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/pdf-too-large-to-upload.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/pdf-too-large-to-upload.html"
+        }
+      ]
+    },
+    {
+      "locale": "id",
+      "key": "tools",
+      "file": "id/pdf-tools.html",
+      "canonicalPath": "/id/pdf-tools.html",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/pdf-tools.html"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/pdf-tools.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/pdf-tools.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/pdf-tools.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/pdf-tools.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/pdf-tools.html"
+        }
+      ]
+    },
+    {
+      "locale": "id",
+      "key": "privacy",
+      "file": "id/privacy.html",
+      "canonicalPath": "/id/privacy.html",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/privacy.html"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/privacy.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/privacy.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/privacy.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/privacy.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/privacy.html"
+        }
+      ]
+    },
+    {
+      "locale": "id",
+      "key": "rotate",
+      "file": "id/rotate-pdf.html",
+      "canonicalPath": "/id/rotate-pdf.html",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/pdf-rotate.html"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/rotate-pdf.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/rotate-pdf.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/rotate-pdf.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/rotate-pdf.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/rotate-pdf.html"
+        }
+      ]
+    },
+    {
+      "locale": "id",
+      "key": "split",
+      "file": "id/split-pdf.html",
+      "canonicalPath": "/id/split-pdf.html",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/split.html"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/split-pdf.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/split-pdf.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/split-pdf.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/split-pdf.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/split-pdf.html"
+        }
+      ]
+    },
+    {
+      "locale": "id",
+      "key": "unlock",
+      "file": "id/unlock-pdf.html",
+      "canonicalPath": "/id/unlock-pdf.html",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/pdf-unlock.html"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/unlock-pdf.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/unlock-pdf.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/unlock-pdf.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/unlock-pdf.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/unlock-pdf.html"
+        }
+      ]
+    },
+    {
+      "locale": "id",
+      "key": "uploadReady",
+      "file": "id/upload-ready.html",
+      "canonicalPath": "/id/upload-ready.html",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/upload-ready.html"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/upload-ready.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/upload-ready.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/upload-ready.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/upload-ready.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/upload-ready.html"
+        }
+      ]
+    },
+    {
+      "locale": "zh-CN",
+      "key": "home",
+      "file": "index.html",
+      "canonicalPath": "/",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/"
+        }
+      ]
+    },
+    {
+      "locale": "ja",
+      "key": "about",
+      "file": "ja/about.html",
+      "canonicalPath": "/ja/about.html",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/about.html"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/about.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/about.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/about.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/about.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/about.html"
+        }
+      ]
+    },
+    {
+      "locale": "ja",
+      "key": "compress1mb",
+      "file": "ja/compress-pdf-to-1mb.html",
+      "canonicalPath": "/ja/compress-pdf-to-1mb.html",
+      "alternates": [
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/compress-pdf-to-1mb.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/compress-pdf-to-1mb.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/compress-pdf-to-1mb.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/compress-pdf-to-1mb.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/compress-pdf-to-1mb.html"
+        }
+      ]
+    },
+    {
+      "locale": "ja",
+      "key": "compress500kb",
+      "file": "ja/compress-pdf-to-500kb.html",
+      "canonicalPath": "/ja/compress-pdf-to-500kb.html",
+      "alternates": [
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/compress-pdf-to-500kb.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/compress-pdf-to-500kb.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/compress-pdf-to-500kb.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/compress-pdf-to-500kb.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/compress-pdf-to-500kb.html"
+        }
+      ]
+    },
+    {
+      "locale": "ja",
+      "key": "compressReadable",
+      "file": "ja/compress-pdf-without-quality-loss.html",
+      "canonicalPath": "/ja/compress-pdf-without-quality-loss.html",
+      "alternates": [
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/compress-pdf-without-quality-loss.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/compress-pdf-without-quality-loss.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/compress-pdf-without-quality-loss.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/compress-pdf-without-quality-loss.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/compress-pdf-without-quality-loss.html"
+        }
+      ]
+    },
+    {
+      "locale": "ja",
+      "key": "compress",
+      "file": "ja/compress-pdf.html",
+      "canonicalPath": "/ja/compress-pdf.html",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/compress.html"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/compress-pdf.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/compress-pdf.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/compress-pdf.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/compress-pdf.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/compress-pdf.html"
+        }
+      ]
+    },
+    {
+      "locale": "ja",
+      "key": "home",
+      "file": "ja/index.html",
+      "canonicalPath": "/ja/",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/"
+        }
+      ]
+    },
+    {
+      "locale": "ja",
+      "key": "jpgToPdf",
+      "file": "ja/jpg-to-pdf.html",
+      "canonicalPath": "/ja/jpg-to-pdf.html",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/jpg-to-pdf.html"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/jpg-to-pdf.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/jpg-to-pdf.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/jpg-to-pdf.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/jpg-to-pdf.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/jpg-to-pdf.html"
+        }
+      ]
+    },
+    {
+      "locale": "ja",
+      "key": "manage",
+      "file": "ja/manage-pdf.html",
+      "canonicalPath": "/ja/manage-pdf.html",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/manage.html"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/manage-pdf.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/manage-pdf.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/manage-pdf.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/manage-pdf.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/manage-pdf.html"
+        }
+      ]
+    },
+    {
+      "locale": "ja",
+      "key": "merge",
+      "file": "ja/merge-pdf.html",
+      "canonicalPath": "/ja/merge-pdf.html",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/merge.html"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/merge-pdf.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/merge-pdf.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/merge-pdf.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/merge-pdf.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/merge-pdf.html"
+        }
+      ]
+    },
+    {
+      "locale": "ja",
+      "key": "pdfToJpg",
+      "file": "ja/pdf-to-jpg.html",
+      "canonicalPath": "/ja/pdf-to-jpg.html",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/pdf-to-jpg.html"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/pdf-to-jpg.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/pdf-to-jpg.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/pdf-to-jpg.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/pdf-to-jpg.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/pdf-to-jpg.html"
+        }
+      ]
+    },
+    {
+      "locale": "ja",
+      "key": "tooLargeToUpload",
+      "file": "ja/pdf-too-large-to-upload.html",
+      "canonicalPath": "/ja/pdf-too-large-to-upload.html",
+      "alternates": [
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/pdf-too-large-to-upload.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/pdf-too-large-to-upload.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/pdf-too-large-to-upload.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/pdf-too-large-to-upload.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/pdf-too-large-to-upload.html"
+        }
+      ]
+    },
+    {
+      "locale": "ja",
+      "key": "tools",
+      "file": "ja/pdf-tools.html",
+      "canonicalPath": "/ja/pdf-tools.html",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/pdf-tools.html"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/pdf-tools.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/pdf-tools.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/pdf-tools.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/pdf-tools.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/pdf-tools.html"
+        }
+      ]
+    },
+    {
+      "locale": "ja",
+      "key": "privacy",
+      "file": "ja/privacy.html",
+      "canonicalPath": "/ja/privacy.html",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/privacy.html"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/privacy.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/privacy.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/privacy.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/privacy.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/privacy.html"
+        }
+      ]
+    },
+    {
+      "locale": "ja",
+      "key": "rotate",
+      "file": "ja/rotate-pdf.html",
+      "canonicalPath": "/ja/rotate-pdf.html",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/pdf-rotate.html"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/rotate-pdf.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/rotate-pdf.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/rotate-pdf.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/rotate-pdf.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/rotate-pdf.html"
+        }
+      ]
+    },
+    {
+      "locale": "ja",
+      "key": "split",
+      "file": "ja/split-pdf.html",
+      "canonicalPath": "/ja/split-pdf.html",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/split.html"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/split-pdf.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/split-pdf.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/split-pdf.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/split-pdf.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/split-pdf.html"
+        }
+      ]
+    },
+    {
+      "locale": "ja",
+      "key": "unlock",
+      "file": "ja/unlock-pdf.html",
+      "canonicalPath": "/ja/unlock-pdf.html",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/pdf-unlock.html"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/unlock-pdf.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/unlock-pdf.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/unlock-pdf.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/unlock-pdf.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/unlock-pdf.html"
+        }
+      ]
+    },
+    {
+      "locale": "ja",
+      "key": "uploadReady",
+      "file": "ja/upload-ready.html",
+      "canonicalPath": "/ja/upload-ready.html",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/upload-ready.html"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/upload-ready.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/upload-ready.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/upload-ready.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/upload-ready.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/upload-ready.html"
+        }
+      ]
+    },
+    {
+      "locale": "zh-CN",
+      "key": "jpgToPdf",
+      "file": "jpg-to-pdf.html",
+      "canonicalPath": "/jpg-to-pdf.html",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/jpg-to-pdf.html"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/jpg-to-pdf.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/jpg-to-pdf.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/jpg-to-pdf.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/jpg-to-pdf.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/jpg-to-pdf.html"
+        }
+      ]
+    },
+    {
+      "locale": "zh-CN",
+      "key": "manage",
+      "file": "manage.html",
+      "canonicalPath": "/manage.html",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/manage.html"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/manage-pdf.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/manage-pdf.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/manage-pdf.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/manage-pdf.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/manage-pdf.html"
+        }
+      ]
+    },
+    {
+      "locale": "zh-CN",
+      "key": "merge",
+      "file": "merge.html",
+      "canonicalPath": "/merge.html",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/merge.html"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/merge-pdf.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/merge-pdf.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/merge-pdf.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/merge-pdf.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/merge-pdf.html"
+        }
+      ]
+    },
+    {
+      "locale": "zh-CN",
+      "key": "rotate",
+      "file": "pdf-rotate.html",
+      "canonicalPath": "/pdf-rotate.html",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/pdf-rotate.html"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/rotate-pdf.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/rotate-pdf.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/rotate-pdf.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/rotate-pdf.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/rotate-pdf.html"
+        }
+      ]
+    },
+    {
+      "locale": "zh-CN",
+      "key": "pdfToJpg",
+      "file": "pdf-to-jpg.html",
+      "canonicalPath": "/pdf-to-jpg.html",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/pdf-to-jpg.html"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/pdf-to-jpg.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/pdf-to-jpg.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/pdf-to-jpg.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/pdf-to-jpg.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/pdf-to-jpg.html"
+        }
+      ]
+    },
+    {
+      "locale": "zh-CN",
+      "key": "tools",
+      "file": "pdf-tools.html",
+      "canonicalPath": "/pdf-tools.html",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/pdf-tools.html"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/pdf-tools.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/pdf-tools.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/pdf-tools.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/pdf-tools.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/pdf-tools.html"
+        }
+      ]
+    },
+    {
+      "locale": "zh-CN",
+      "key": "unlock",
+      "file": "pdf-unlock.html",
+      "canonicalPath": "/pdf-unlock.html",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/pdf-unlock.html"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/unlock-pdf.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/unlock-pdf.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/unlock-pdf.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/unlock-pdf.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/unlock-pdf.html"
+        }
+      ]
+    },
+    {
+      "locale": "zh-CN",
+      "key": "privacy",
+      "file": "privacy.html",
+      "canonicalPath": "/privacy.html",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/privacy.html"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/privacy.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/privacy.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/privacy.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/privacy.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/privacy.html"
+        }
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "key": "about",
+      "file": "pt-br/about.html",
+      "canonicalPath": "/pt-br/about.html",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/about.html"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/about.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/about.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/about.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/about.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/about.html"
+        }
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "key": "compress1mb",
+      "file": "pt-br/compress-pdf-to-1mb.html",
+      "canonicalPath": "/pt-br/compress-pdf-to-1mb.html",
+      "alternates": [
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/compress-pdf-to-1mb.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/compress-pdf-to-1mb.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/compress-pdf-to-1mb.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/compress-pdf-to-1mb.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/compress-pdf-to-1mb.html"
+        }
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "key": "compress500kb",
+      "file": "pt-br/compress-pdf-to-500kb.html",
+      "canonicalPath": "/pt-br/compress-pdf-to-500kb.html",
+      "alternates": [
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/compress-pdf-to-500kb.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/compress-pdf-to-500kb.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/compress-pdf-to-500kb.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/compress-pdf-to-500kb.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/compress-pdf-to-500kb.html"
+        }
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "key": "compressReadable",
+      "file": "pt-br/compress-pdf-without-quality-loss.html",
+      "canonicalPath": "/pt-br/compress-pdf-without-quality-loss.html",
+      "alternates": [
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/compress-pdf-without-quality-loss.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/compress-pdf-without-quality-loss.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/compress-pdf-without-quality-loss.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/compress-pdf-without-quality-loss.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/compress-pdf-without-quality-loss.html"
+        }
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "key": "compress",
+      "file": "pt-br/compress-pdf.html",
+      "canonicalPath": "/pt-br/compress-pdf.html",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/compress.html"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/compress-pdf.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/compress-pdf.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/compress-pdf.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/compress-pdf.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/compress-pdf.html"
+        }
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "key": "home",
+      "file": "pt-br/index.html",
+      "canonicalPath": "/pt-br/",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/"
+        }
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "key": "jpgToPdf",
+      "file": "pt-br/jpg-to-pdf.html",
+      "canonicalPath": "/pt-br/jpg-to-pdf.html",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/jpg-to-pdf.html"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/jpg-to-pdf.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/jpg-to-pdf.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/jpg-to-pdf.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/jpg-to-pdf.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/jpg-to-pdf.html"
+        }
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "key": "manage",
+      "file": "pt-br/manage-pdf.html",
+      "canonicalPath": "/pt-br/manage-pdf.html",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/manage.html"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/manage-pdf.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/manage-pdf.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/manage-pdf.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/manage-pdf.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/manage-pdf.html"
+        }
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "key": "merge",
+      "file": "pt-br/merge-pdf.html",
+      "canonicalPath": "/pt-br/merge-pdf.html",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/merge.html"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/merge-pdf.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/merge-pdf.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/merge-pdf.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/merge-pdf.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/merge-pdf.html"
+        }
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "key": "pdfToJpg",
+      "file": "pt-br/pdf-to-jpg.html",
+      "canonicalPath": "/pt-br/pdf-to-jpg.html",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/pdf-to-jpg.html"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/pdf-to-jpg.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/pdf-to-jpg.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/pdf-to-jpg.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/pdf-to-jpg.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/pdf-to-jpg.html"
+        }
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "key": "tooLargeToUpload",
+      "file": "pt-br/pdf-too-large-to-upload.html",
+      "canonicalPath": "/pt-br/pdf-too-large-to-upload.html",
+      "alternates": [
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/pdf-too-large-to-upload.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/pdf-too-large-to-upload.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/pdf-too-large-to-upload.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/pdf-too-large-to-upload.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/pdf-too-large-to-upload.html"
+        }
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "key": "tools",
+      "file": "pt-br/pdf-tools.html",
+      "canonicalPath": "/pt-br/pdf-tools.html",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/pdf-tools.html"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/pdf-tools.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/pdf-tools.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/pdf-tools.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/pdf-tools.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/pdf-tools.html"
+        }
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "key": "privacy",
+      "file": "pt-br/privacy.html",
+      "canonicalPath": "/pt-br/privacy.html",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/privacy.html"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/privacy.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/privacy.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/privacy.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/privacy.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/privacy.html"
+        }
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "key": "rotate",
+      "file": "pt-br/rotate-pdf.html",
+      "canonicalPath": "/pt-br/rotate-pdf.html",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/pdf-rotate.html"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/rotate-pdf.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/rotate-pdf.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/rotate-pdf.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/rotate-pdf.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/rotate-pdf.html"
+        }
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "key": "split",
+      "file": "pt-br/split-pdf.html",
+      "canonicalPath": "/pt-br/split-pdf.html",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/split.html"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/split-pdf.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/split-pdf.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/split-pdf.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/split-pdf.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/split-pdf.html"
+        }
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "key": "unlock",
+      "file": "pt-br/unlock-pdf.html",
+      "canonicalPath": "/pt-br/unlock-pdf.html",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/pdf-unlock.html"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/unlock-pdf.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/unlock-pdf.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/unlock-pdf.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/unlock-pdf.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/unlock-pdf.html"
+        }
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "key": "uploadReady",
+      "file": "pt-br/upload-ready.html",
+      "canonicalPath": "/pt-br/upload-ready.html",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/upload-ready.html"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/upload-ready.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/upload-ready.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/upload-ready.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/upload-ready.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/upload-ready.html"
+        }
+      ]
+    },
+    {
+      "locale": "zh-CN",
+      "key": "split",
+      "file": "split.html",
+      "canonicalPath": "/split.html",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/split.html"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/split-pdf.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/split-pdf.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/split-pdf.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/split-pdf.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/split-pdf.html"
+        }
+      ]
+    },
+    {
+      "locale": "zh-CN",
+      "key": "uploadReady",
+      "file": "upload-ready.html",
+      "canonicalPath": "/upload-ready.html",
+      "alternates": [
+        {
+          "locale": "zh-CN",
+          "hrefLang": "zh-CN",
+          "path": "/upload-ready.html"
+        },
+        {
+          "locale": "en",
+          "hrefLang": "en",
+          "path": "/en/upload-ready.html"
+        },
+        {
+          "locale": "es",
+          "hrefLang": "es",
+          "path": "/es/upload-ready.html"
+        },
+        {
+          "locale": "pt-BR",
+          "hrefLang": "pt-BR",
+          "path": "/pt-br/upload-ready.html"
+        },
+        {
+          "locale": "ja",
+          "hrefLang": "ja",
+          "path": "/ja/upload-ready.html"
+        },
+        {
+          "locale": "id",
+          "hrefLang": "id",
+          "path": "/id/upload-ready.html"
+        }
+      ]
+    }
+  ],
+  "staticPages": [
+    "blog-android-compress-pdf.html",
+    "blog-extract-pdf-pages.html",
+    "blog-iphone-merge-pdf.html",
+    "blog-jpg-to-pdf.html",
+    "blog-mac-compress-pdf.html",
+    "blog-merge-pdf.html",
+    "blog-pdf-page-size.html",
+    "blog-pdf-tips.html",
+    "blog-phone-to-pdf.html",
+    "blog-unlock-pdf.html",
+    "blog-windows-compress-pdf.html",
+    "blog.html",
+    "compress-pdf-for-application.html",
+    "compress-pdf-for-certificate.html",
+    "compress-pdf-for-contract.html",
+    "compress-pdf-for-enterprise.html",
+    "compress-pdf-for-exam-registration.html",
+    "compress-pdf-for-pay-slip.html",
+    "compress-pdf-for-receipt.html",
+    "compress-pdf-for-thesis.html",
+    "compress-pdf-for-visa.html",
+    "compress-pdf-id-card.html",
+    "compress-pdf-pay-slip.html",
+    "compress-pdf-to-1mb.html",
+    "compress-pdf-to-200kb.html",
+    "compress-pdf-to-2mb.html",
+    "compress-pdf-to-300kb.html",
+    "compress-pdf-to-500kb.html",
+    "compress-pdf-to-800kb.html",
+    "compress-scanned-pdf-to-1mb.html",
+    "compress-scanned-pdf.html",
+    "contact.html",
+    "guide-pdf-compress-methods.html",
+    "guide-pdf-merge-split.html",
+    "guide-pdf-too-large-complete.html",
+    "guide-resume-pdf-optimization.html",
+    "guide-visa-pdf-handling.html",
+    "how-to-compress-pdf-under-200kb.html",
+    "job-application-pdf-size.html",
+    "pdf-compress-without-quality-loss.html",
+    "pdf-contract-too-large.html",
+    "pdf-file-too-big-for-email.html",
+    "pdf-for-exam-registration-too-large.html",
+    "pdf-receipt-too-large.html",
+    "pdf-size-reduce-online.html",
+    "pdf-thesis-large.html",
+    "pdf-too-large-to-upload.html",
+    "pdf-too-large-upload-failed.html",
+    "pdf-tutorial-for-students.html",
+    "resize-pdf-for-upload.html",
+    "school-application-pdf-compress.html",
+    "seo-action-certificate-pdf-compress-1mb.html",
+    "seo-action-certificate-pdf-compress-200kb.html",
+    "seo-action-certificate-pdf-compress-2mb.html",
+    "seo-action-certificate-pdf-compress-500kb.html",
+    "seo-action-certificate-pdf-compress.html",
+    "seo-action-contract-pdf-compress-1mb.html",
+    "seo-action-contract-pdf-compress-200kb.html",
+    "seo-action-contract-pdf-compress-2mb.html",
+    "seo-action-contract-pdf-compress-500kb.html",
+    "seo-action-contract-pdf-compress.html",
+    "seo-action-how-to-certificate-pdf-compress.html",
+    "seo-action-how-to-contract-pdf-compress.html",
+    "seo-action-how-to-exam-registration-pdf.html",
+    "seo-action-how-to-recruitment-pdf-upload.html",
+    "seo-action-how-to-school-pdf-submit.html",
+    "seo-action-how-to-test-pdf-upload.html",
+    "seo-action-how-to-visa-pdf-size.html",
+    "seo-action-pdf免费在线压缩.html",
+    "seo-action-pdf压缩到200kb.html",
+    "seo-action-pdf压缩到500kb.html",
+    "seo-action-pdf大小缩小.html",
+    "seo-action-pdf文件压缩软件.html",
+    "seo-action-what-is-certificate-pdf-compress.html",
+    "seo-action-what-is-contract-pdf-compress.html",
+    "seo-action-why-is-certificate-pdf-compress.html",
+    "seo-action-why-is-contract-pdf-compress.html",
+    "seo-content-pdf-exceeds-upload-limit.html",
+    "seo-content-pdf分割页面.html",
+    "seo-content-pdf合并多个文件.html",
+    "seo-content-pdf旋转方向调整.html",
+    "seo-content-pdf解锁密码.html",
+    "seo-content-pdf转图片格式.html",
+    "seo-content-图片转pdf文件.html",
+    "seo-content-留学申请pdf大小.html",
+    "seo-pain-how-to-pdf-cannot-upload.html",
+    "seo-pain-how-to-pdf-upload-failed.html",
+    "seo-pain-pdf-cannot-upload.html",
+    "seo-pain-pdf-upload-failed.html",
+    "seo-pain-pdf上传失败怎么解决.html",
+    "seo-pain-pdf压缩后模糊.html",
+    "seo-pain-pdf太大发不出去.html",
+    "seo-pain-pdf太大合同.html",
+    "seo-pain-pdf太大微信.html",
+    "seo-pain-pdf太大打不开.html",
+    "seo-pain-pdf太大报名.html",
+    "seo-pain-pdf太大无法上传.html",
+    "seo-pain-pdf太大签证.html",
+    "seo-pain-pdf太大简历.html",
+    "seo-pain-pdf太大考试.html",
+    "seo-pain-pdf文件太大无法提交.html",
+    "seo-pain-what-is-pdf-cannot-upload.html",
+    "seo-pain-what-is-pdf-upload-failed.html",
+    "seo-pain-why-is-pdf-cannot-upload.html",
+    "seo-pain-why-is-pdf-upload-failed.html",
+    "seo-scenario-exam-registration-pdf.html",
+    "seo-scenario-school-pdf-submit.html",
+    "seo-scenario-visa-pdf-size-1mb.html",
+    "seo-scenario-visa-pdf-size-200kb.html",
+    "seo-scenario-visa-pdf-size-2mb.html",
+    "seo-scenario-visa-pdf-size-500kb.html",
+    "seo-scenario-visa-pdf-size.html",
+    "seo-scenario-what-is-exam-registration-pdf.html",
+    "seo-scenario-what-is-school-pdf-submit.html",
+    "seo-scenario-what-is-visa-pdf-size.html",
+    "seo-scenario-why-is-exam-registration-pdf.html",
+    "seo-scenario-why-is-school-pdf-submit.html",
+    "seo-scenario-why-is-visa-pdf-size.html",
+    "seo-scenario-企业oa上传pdf太大.html",
+    "seo-scenario-微信发送pdf太大.html",
+    "seo-scenario-扫描件pdf压缩.html",
+    "seo-scenario-报名材料pdf太大.html",
+    "seo-scenario-留学申请pdf大小.html",
+    "seo-scenario-签证pdf太大.html",
+    "seo-scenario-简历pdf压缩.html",
+    "seo-scenario-考试注册pdf上传限制.html",
+    "seo-scenario-证件照pdf太大.html",
+    "seo-scenario-邮件附件pdf太大.html",
+    "seo-tools-jpg转pdf在线.html",
+    "seo-tools-pdf分割工具.html",
+    "seo-tools-pdf压缩工具.html",
+    "seo-tools-pdf合并工具.html",
+    "seo-tools-pdf旋转在线.html",
+    "seo-tools-pdf转jpg在线.html",
+    "services.html",
+    "terms.html",
+    "visa-pdf-too-large.html"
+  ],
+  "files": [
+    "about.html",
+    "ads.txt",
+    "assets/css/styles.css",
+    "assets/css/tailwind.min.css",
+    "assets/favicon.svg",
+    "assets/js/compress.js",
+    "assets/js/i18n.js",
+    "assets/js/jpg-to-pdf.js",
+    "assets/js/manage-state.js",
+    "assets/js/manage.js",
+    "assets/js/merge.js",
+    "assets/js/pdf-preview.js",
+    "assets/js/pdf-protocol.mjs",
+    "assets/js/pdf-rotate.js",
+    "assets/js/pdf-to-jpg.js",
+    "assets/js/pdf-worker-entry.mjs",
+    "assets/js/pdfjs-polyfills.mjs",
+    "assets/js/site.js",
+    "assets/js/split.js",
+    "assets/js/unlock.js",
+    "assets/js/upload-ready-ga4.js",
+    "assets/js/upload-ready-processing.mjs",
+    "assets/js/upload-ready-state.js",
+    "assets/js/upload-ready-worker.mjs",
+    "assets/js/upload-ready.js",
+    "assets/vendor/pdf-lib.esm.min.js",
+    "assets/vendor/pdf-lib.min.js",
+    "assets/vendor/pdfjs/cmaps/78-EUC-H.bcmap",
+    "assets/vendor/pdfjs/cmaps/78-EUC-V.bcmap",
+    "assets/vendor/pdfjs/cmaps/78-H.bcmap",
+    "assets/vendor/pdfjs/cmaps/78-RKSJ-H.bcmap",
+    "assets/vendor/pdfjs/cmaps/78-RKSJ-V.bcmap",
+    "assets/vendor/pdfjs/cmaps/78-V.bcmap",
+    "assets/vendor/pdfjs/cmaps/78ms-RKSJ-H.bcmap",
+    "assets/vendor/pdfjs/cmaps/78ms-RKSJ-V.bcmap",
+    "assets/vendor/pdfjs/cmaps/83pv-RKSJ-H.bcmap",
+    "assets/vendor/pdfjs/cmaps/90ms-RKSJ-H.bcmap",
+    "assets/vendor/pdfjs/cmaps/90ms-RKSJ-V.bcmap",
+    "assets/vendor/pdfjs/cmaps/90msp-RKSJ-H.bcmap",
+    "assets/vendor/pdfjs/cmaps/90msp-RKSJ-V.bcmap",
+    "assets/vendor/pdfjs/cmaps/90pv-RKSJ-H.bcmap",
+    "assets/vendor/pdfjs/cmaps/90pv-RKSJ-V.bcmap",
+    "assets/vendor/pdfjs/cmaps/Add-H.bcmap",
+    "assets/vendor/pdfjs/cmaps/Add-RKSJ-H.bcmap",
+    "assets/vendor/pdfjs/cmaps/Add-RKSJ-V.bcmap",
+    "assets/vendor/pdfjs/cmaps/Add-V.bcmap",
+    "assets/vendor/pdfjs/cmaps/Adobe-CNS1-0.bcmap",
+    "assets/vendor/pdfjs/cmaps/Adobe-CNS1-1.bcmap",
+    "assets/vendor/pdfjs/cmaps/Adobe-CNS1-2.bcmap",
+    "assets/vendor/pdfjs/cmaps/Adobe-CNS1-3.bcmap",
+    "assets/vendor/pdfjs/cmaps/Adobe-CNS1-4.bcmap",
+    "assets/vendor/pdfjs/cmaps/Adobe-CNS1-5.bcmap",
+    "assets/vendor/pdfjs/cmaps/Adobe-CNS1-6.bcmap",
+    "assets/vendor/pdfjs/cmaps/Adobe-CNS1-UCS2.bcmap",
+    "assets/vendor/pdfjs/cmaps/Adobe-GB1-0.bcmap",
+    "assets/vendor/pdfjs/cmaps/Adobe-GB1-1.bcmap",
+    "assets/vendor/pdfjs/cmaps/Adobe-GB1-2.bcmap",
+    "assets/vendor/pdfjs/cmaps/Adobe-GB1-3.bcmap",
+    "assets/vendor/pdfjs/cmaps/Adobe-GB1-4.bcmap",
+    "assets/vendor/pdfjs/cmaps/Adobe-GB1-5.bcmap",
+    "assets/vendor/pdfjs/cmaps/Adobe-GB1-UCS2.bcmap",
+    "assets/vendor/pdfjs/cmaps/Adobe-Japan1-0.bcmap",
+    "assets/vendor/pdfjs/cmaps/Adobe-Japan1-1.bcmap",
+    "assets/vendor/pdfjs/cmaps/Adobe-Japan1-2.bcmap",
+    "assets/vendor/pdfjs/cmaps/Adobe-Japan1-3.bcmap",
+    "assets/vendor/pdfjs/cmaps/Adobe-Japan1-4.bcmap",
+    "assets/vendor/pdfjs/cmaps/Adobe-Japan1-5.bcmap",
+    "assets/vendor/pdfjs/cmaps/Adobe-Japan1-6.bcmap",
+    "assets/vendor/pdfjs/cmaps/Adobe-Japan1-UCS2.bcmap",
+    "assets/vendor/pdfjs/cmaps/Adobe-Korea1-0.bcmap",
+    "assets/vendor/pdfjs/cmaps/Adobe-Korea1-1.bcmap",
+    "assets/vendor/pdfjs/cmaps/Adobe-Korea1-2.bcmap",
+    "assets/vendor/pdfjs/cmaps/Adobe-Korea1-UCS2.bcmap",
+    "assets/vendor/pdfjs/cmaps/B5-H.bcmap",
+    "assets/vendor/pdfjs/cmaps/B5-V.bcmap",
+    "assets/vendor/pdfjs/cmaps/B5pc-H.bcmap",
+    "assets/vendor/pdfjs/cmaps/B5pc-V.bcmap",
+    "assets/vendor/pdfjs/cmaps/CNS-EUC-H.bcmap",
+    "assets/vendor/pdfjs/cmaps/CNS-EUC-V.bcmap",
+    "assets/vendor/pdfjs/cmaps/CNS1-H.bcmap",
+    "assets/vendor/pdfjs/cmaps/CNS1-V.bcmap",
+    "assets/vendor/pdfjs/cmaps/CNS2-H.bcmap",
+    "assets/vendor/pdfjs/cmaps/CNS2-V.bcmap",
+    "assets/vendor/pdfjs/cmaps/ETen-B5-H.bcmap",
+    "assets/vendor/pdfjs/cmaps/ETen-B5-V.bcmap",
+    "assets/vendor/pdfjs/cmaps/ETenms-B5-H.bcmap",
+    "assets/vendor/pdfjs/cmaps/ETenms-B5-V.bcmap",
+    "assets/vendor/pdfjs/cmaps/ETHK-B5-H.bcmap",
+    "assets/vendor/pdfjs/cmaps/ETHK-B5-V.bcmap",
+    "assets/vendor/pdfjs/cmaps/EUC-H.bcmap",
+    "assets/vendor/pdfjs/cmaps/EUC-V.bcmap",
+    "assets/vendor/pdfjs/cmaps/Ext-H.bcmap",
+    "assets/vendor/pdfjs/cmaps/Ext-RKSJ-H.bcmap",
+    "assets/vendor/pdfjs/cmaps/Ext-RKSJ-V.bcmap",
+    "assets/vendor/pdfjs/cmaps/Ext-V.bcmap",
+    "assets/vendor/pdfjs/cmaps/GB-EUC-H.bcmap",
+    "assets/vendor/pdfjs/cmaps/GB-EUC-V.bcmap",
+    "assets/vendor/pdfjs/cmaps/GB-H.bcmap",
+    "assets/vendor/pdfjs/cmaps/GB-V.bcmap",
+    "assets/vendor/pdfjs/cmaps/GBK-EUC-H.bcmap",
+    "assets/vendor/pdfjs/cmaps/GBK-EUC-V.bcmap",
+    "assets/vendor/pdfjs/cmaps/GBK2K-H.bcmap",
+    "assets/vendor/pdfjs/cmaps/GBK2K-V.bcmap",
+    "assets/vendor/pdfjs/cmaps/GBKp-EUC-H.bcmap",
+    "assets/vendor/pdfjs/cmaps/GBKp-EUC-V.bcmap",
+    "assets/vendor/pdfjs/cmaps/GBpc-EUC-H.bcmap",
+    "assets/vendor/pdfjs/cmaps/GBpc-EUC-V.bcmap",
+    "assets/vendor/pdfjs/cmaps/GBT-EUC-H.bcmap",
+    "assets/vendor/pdfjs/cmaps/GBT-EUC-V.bcmap",
+    "assets/vendor/pdfjs/cmaps/GBT-H.bcmap",
+    "assets/vendor/pdfjs/cmaps/GBT-V.bcmap",
+    "assets/vendor/pdfjs/cmaps/GBTpc-EUC-H.bcmap",
+    "assets/vendor/pdfjs/cmaps/GBTpc-EUC-V.bcmap",
+    "assets/vendor/pdfjs/cmaps/H.bcmap",
+    "assets/vendor/pdfjs/cmaps/Hankaku.bcmap",
+    "assets/vendor/pdfjs/cmaps/Hiragana.bcmap",
+    "assets/vendor/pdfjs/cmaps/HKdla-B5-H.bcmap",
+    "assets/vendor/pdfjs/cmaps/HKdla-B5-V.bcmap",
+    "assets/vendor/pdfjs/cmaps/HKdlb-B5-H.bcmap",
+    "assets/vendor/pdfjs/cmaps/HKdlb-B5-V.bcmap",
+    "assets/vendor/pdfjs/cmaps/HKgccs-B5-H.bcmap",
+    "assets/vendor/pdfjs/cmaps/HKgccs-B5-V.bcmap",
+    "assets/vendor/pdfjs/cmaps/HKm314-B5-H.bcmap",
+    "assets/vendor/pdfjs/cmaps/HKm314-B5-V.bcmap",
+    "assets/vendor/pdfjs/cmaps/HKm471-B5-H.bcmap",
+    "assets/vendor/pdfjs/cmaps/HKm471-B5-V.bcmap",
+    "assets/vendor/pdfjs/cmaps/HKscs-B5-H.bcmap",
+    "assets/vendor/pdfjs/cmaps/HKscs-B5-V.bcmap",
+    "assets/vendor/pdfjs/cmaps/Katakana.bcmap",
+    "assets/vendor/pdfjs/cmaps/KSC-EUC-H.bcmap",
+    "assets/vendor/pdfjs/cmaps/KSC-EUC-V.bcmap",
+    "assets/vendor/pdfjs/cmaps/KSC-H.bcmap",
+    "assets/vendor/pdfjs/cmaps/KSC-Johab-H.bcmap",
+    "assets/vendor/pdfjs/cmaps/KSC-Johab-V.bcmap",
+    "assets/vendor/pdfjs/cmaps/KSC-V.bcmap",
+    "assets/vendor/pdfjs/cmaps/KSCms-UHC-H.bcmap",
+    "assets/vendor/pdfjs/cmaps/KSCms-UHC-HW-H.bcmap",
+    "assets/vendor/pdfjs/cmaps/KSCms-UHC-HW-V.bcmap",
+    "assets/vendor/pdfjs/cmaps/KSCms-UHC-V.bcmap",
+    "assets/vendor/pdfjs/cmaps/KSCpc-EUC-H.bcmap",
+    "assets/vendor/pdfjs/cmaps/KSCpc-EUC-V.bcmap",
+    "assets/vendor/pdfjs/cmaps/LICENSE",
+    "assets/vendor/pdfjs/cmaps/NWP-H.bcmap",
+    "assets/vendor/pdfjs/cmaps/NWP-V.bcmap",
+    "assets/vendor/pdfjs/cmaps/RKSJ-H.bcmap",
+    "assets/vendor/pdfjs/cmaps/RKSJ-V.bcmap",
+    "assets/vendor/pdfjs/cmaps/Roman.bcmap",
+    "assets/vendor/pdfjs/cmaps/UniCNS-UCS2-H.bcmap",
+    "assets/vendor/pdfjs/cmaps/UniCNS-UCS2-V.bcmap",
+    "assets/vendor/pdfjs/cmaps/UniCNS-UTF16-H.bcmap",
+    "assets/vendor/pdfjs/cmaps/UniCNS-UTF16-V.bcmap",
+    "assets/vendor/pdfjs/cmaps/UniCNS-UTF32-H.bcmap",
+    "assets/vendor/pdfjs/cmaps/UniCNS-UTF32-V.bcmap",
+    "assets/vendor/pdfjs/cmaps/UniCNS-UTF8-H.bcmap",
+    "assets/vendor/pdfjs/cmaps/UniCNS-UTF8-V.bcmap",
+    "assets/vendor/pdfjs/cmaps/UniGB-UCS2-H.bcmap",
+    "assets/vendor/pdfjs/cmaps/UniGB-UCS2-V.bcmap",
+    "assets/vendor/pdfjs/cmaps/UniGB-UTF16-H.bcmap",
+    "assets/vendor/pdfjs/cmaps/UniGB-UTF16-V.bcmap",
+    "assets/vendor/pdfjs/cmaps/UniGB-UTF32-H.bcmap",
+    "assets/vendor/pdfjs/cmaps/UniGB-UTF32-V.bcmap",
+    "assets/vendor/pdfjs/cmaps/UniGB-UTF8-H.bcmap",
+    "assets/vendor/pdfjs/cmaps/UniGB-UTF8-V.bcmap",
+    "assets/vendor/pdfjs/cmaps/UniJIS-UCS2-H.bcmap",
+    "assets/vendor/pdfjs/cmaps/UniJIS-UCS2-HW-H.bcmap",
+    "assets/vendor/pdfjs/cmaps/UniJIS-UCS2-HW-V.bcmap",
+    "assets/vendor/pdfjs/cmaps/UniJIS-UCS2-V.bcmap",
+    "assets/vendor/pdfjs/cmaps/UniJIS-UTF16-H.bcmap",
+    "assets/vendor/pdfjs/cmaps/UniJIS-UTF16-V.bcmap",
+    "assets/vendor/pdfjs/cmaps/UniJIS-UTF32-H.bcmap",
+    "assets/vendor/pdfjs/cmaps/UniJIS-UTF32-V.bcmap",
+    "assets/vendor/pdfjs/cmaps/UniJIS-UTF8-H.bcmap",
+    "assets/vendor/pdfjs/cmaps/UniJIS-UTF8-V.bcmap",
+    "assets/vendor/pdfjs/cmaps/UniJIS2004-UTF16-H.bcmap",
+    "assets/vendor/pdfjs/cmaps/UniJIS2004-UTF16-V.bcmap",
+    "assets/vendor/pdfjs/cmaps/UniJIS2004-UTF32-H.bcmap",
+    "assets/vendor/pdfjs/cmaps/UniJIS2004-UTF32-V.bcmap",
+    "assets/vendor/pdfjs/cmaps/UniJIS2004-UTF8-H.bcmap",
+    "assets/vendor/pdfjs/cmaps/UniJIS2004-UTF8-V.bcmap",
+    "assets/vendor/pdfjs/cmaps/UniJISPro-UCS2-HW-V.bcmap",
+    "assets/vendor/pdfjs/cmaps/UniJISPro-UCS2-V.bcmap",
+    "assets/vendor/pdfjs/cmaps/UniJISPro-UTF8-V.bcmap",
+    "assets/vendor/pdfjs/cmaps/UniJISX0213-UTF32-H.bcmap",
+    "assets/vendor/pdfjs/cmaps/UniJISX0213-UTF32-V.bcmap",
+    "assets/vendor/pdfjs/cmaps/UniJISX02132004-UTF32-H.bcmap",
+    "assets/vendor/pdfjs/cmaps/UniJISX02132004-UTF32-V.bcmap",
+    "assets/vendor/pdfjs/cmaps/UniKS-UCS2-H.bcmap",
+    "assets/vendor/pdfjs/cmaps/UniKS-UCS2-V.bcmap",
+    "assets/vendor/pdfjs/cmaps/UniKS-UTF16-H.bcmap",
+    "assets/vendor/pdfjs/cmaps/UniKS-UTF16-V.bcmap",
+    "assets/vendor/pdfjs/cmaps/UniKS-UTF32-H.bcmap",
+    "assets/vendor/pdfjs/cmaps/UniKS-UTF32-V.bcmap",
+    "assets/vendor/pdfjs/cmaps/UniKS-UTF8-H.bcmap",
+    "assets/vendor/pdfjs/cmaps/UniKS-UTF8-V.bcmap",
+    "assets/vendor/pdfjs/cmaps/V.bcmap",
+    "assets/vendor/pdfjs/cmaps/WP-Symbol.bcmap",
+    "assets/vendor/pdfjs/iccs/CGATS001Compat-v2-micro.icc",
+    "assets/vendor/pdfjs/iccs/LICENSE",
+    "assets/vendor/pdfjs/pdf.mjs",
+    "assets/vendor/pdfjs/pdf.worker.mjs",
+    "assets/vendor/pdfjs/standard_fonts/FoxitDingbats.pfb",
+    "assets/vendor/pdfjs/standard_fonts/FoxitFixed.pfb",
+    "assets/vendor/pdfjs/standard_fonts/FoxitFixedBold.pfb",
+    "assets/vendor/pdfjs/standard_fonts/FoxitFixedBoldItalic.pfb",
+    "assets/vendor/pdfjs/standard_fonts/FoxitFixedItalic.pfb",
+    "assets/vendor/pdfjs/standard_fonts/FoxitSerif.pfb",
+    "assets/vendor/pdfjs/standard_fonts/FoxitSerifBold.pfb",
+    "assets/vendor/pdfjs/standard_fonts/FoxitSerifBoldItalic.pfb",
+    "assets/vendor/pdfjs/standard_fonts/FoxitSerifItalic.pfb",
+    "assets/vendor/pdfjs/standard_fonts/FoxitSymbol.pfb",
+    "assets/vendor/pdfjs/standard_fonts/LiberationSans-Bold.ttf",
+    "assets/vendor/pdfjs/standard_fonts/LiberationSans-BoldItalic.ttf",
+    "assets/vendor/pdfjs/standard_fonts/LiberationSans-Italic.ttf",
+    "assets/vendor/pdfjs/standard_fonts/LiberationSans-Regular.ttf",
+    "assets/vendor/pdfjs/standard_fonts/LICENSE_FOXIT",
+    "assets/vendor/pdfjs/standard_fonts/LICENSE_LIBERATION",
+    "assets/vendor/pdfjs/wasm/jbig2_nowasm_fallback.js",
+    "assets/vendor/pdfjs/wasm/jbig2.wasm",
+    "assets/vendor/pdfjs/wasm/LICENSE_JBIG2",
+    "assets/vendor/pdfjs/wasm/LICENSE_OPENJPEG",
+    "assets/vendor/pdfjs/wasm/LICENSE_PDFJS_JBIG2",
+    "assets/vendor/pdfjs/wasm/LICENSE_PDFJS_OPENJPEG",
+    "assets/vendor/pdfjs/wasm/LICENSE_PDFJS_QCMS",
+    "assets/vendor/pdfjs/wasm/LICENSE_QCMS",
+    "assets/vendor/pdfjs/wasm/openjpeg_nowasm_fallback.js",
+    "assets/vendor/pdfjs/wasm/openjpeg.wasm",
+    "assets/vendor/pdfjs/wasm/qcms_bg.wasm",
+    "assets/vendor/pdfjs/wasm/quickjs-eval.js",
+    "assets/vendor/pdfjs/wasm/quickjs-eval.wasm",
+    "blog-android-compress-pdf.html",
+    "blog-extract-pdf-pages.html",
+    "blog-iphone-merge-pdf.html",
+    "blog-jpg-to-pdf.html",
+    "blog-mac-compress-pdf.html",
+    "blog-merge-pdf.html",
+    "blog-pdf-page-size.html",
+    "blog-pdf-tips.html",
+    "blog-phone-to-pdf.html",
+    "blog-unlock-pdf.html",
+    "blog-windows-compress-pdf.html",
+    "blog.html",
+    "compress-pdf-for-application.html",
+    "compress-pdf-for-certificate.html",
+    "compress-pdf-for-contract.html",
+    "compress-pdf-for-enterprise.html",
+    "compress-pdf-for-exam-registration.html",
+    "compress-pdf-for-pay-slip.html",
+    "compress-pdf-for-receipt.html",
+    "compress-pdf-for-thesis.html",
+    "compress-pdf-for-visa.html",
+    "compress-pdf-id-card.html",
+    "compress-pdf-pay-slip.html",
+    "compress-pdf-to-1mb.html",
+    "compress-pdf-to-200kb.html",
+    "compress-pdf-to-2mb.html",
+    "compress-pdf-to-300kb.html",
+    "compress-pdf-to-500kb.html",
+    "compress-pdf-to-800kb.html",
+    "compress-scanned-pdf-to-1mb.html",
+    "compress-scanned-pdf.html",
+    "compress.html",
+    "contact.html",
+    "en/about.html",
+    "en/compress-pdf-to-1mb.html",
+    "en/compress-pdf-to-500kb.html",
+    "en/compress-pdf-without-quality-loss.html",
+    "en/compress-pdf.html",
+    "en/index.html",
+    "en/jpg-to-pdf.html",
+    "en/manage-pdf.html",
+    "en/merge-pdf.html",
+    "en/pdf-to-jpg.html",
+    "en/pdf-too-large-to-upload.html",
+    "en/pdf-tools.html",
+    "en/privacy.html",
+    "en/rotate-pdf.html",
+    "en/split-pdf.html",
+    "en/unlock-pdf.html",
+    "en/upload-ready.html",
+    "es/about.html",
+    "es/compress-pdf-to-1mb.html",
+    "es/compress-pdf-to-500kb.html",
+    "es/compress-pdf-without-quality-loss.html",
+    "es/compress-pdf.html",
+    "es/index.html",
+    "es/jpg-to-pdf.html",
+    "es/manage-pdf.html",
+    "es/merge-pdf.html",
+    "es/pdf-to-jpg.html",
+    "es/pdf-too-large-to-upload.html",
+    "es/pdf-tools.html",
+    "es/privacy.html",
+    "es/rotate-pdf.html",
+    "es/split-pdf.html",
+    "es/unlock-pdf.html",
+    "es/upload-ready.html",
+    "guide-pdf-compress-methods.html",
+    "guide-pdf-merge-split.html",
+    "guide-pdf-too-large-complete.html",
+    "guide-resume-pdf-optimization.html",
+    "guide-visa-pdf-handling.html",
+    "how-to-compress-pdf-under-200kb.html",
+    "id/about.html",
+    "id/compress-pdf-to-1mb.html",
+    "id/compress-pdf-to-500kb.html",
+    "id/compress-pdf-without-quality-loss.html",
+    "id/compress-pdf.html",
+    "id/index.html",
+    "id/jpg-to-pdf.html",
+    "id/manage-pdf.html",
+    "id/merge-pdf.html",
+    "id/pdf-to-jpg.html",
+    "id/pdf-too-large-to-upload.html",
+    "id/pdf-tools.html",
+    "id/privacy.html",
+    "id/rotate-pdf.html",
+    "id/split-pdf.html",
+    "id/unlock-pdf.html",
+    "id/upload-ready.html",
+    "index.html",
+    "ja/about.html",
+    "ja/compress-pdf-to-1mb.html",
+    "ja/compress-pdf-to-500kb.html",
+    "ja/compress-pdf-without-quality-loss.html",
+    "ja/compress-pdf.html",
+    "ja/index.html",
+    "ja/jpg-to-pdf.html",
+    "ja/manage-pdf.html",
+    "ja/merge-pdf.html",
+    "ja/pdf-to-jpg.html",
+    "ja/pdf-too-large-to-upload.html",
+    "ja/pdf-tools.html",
+    "ja/privacy.html",
+    "ja/rotate-pdf.html",
+    "ja/split-pdf.html",
+    "ja/unlock-pdf.html",
+    "ja/upload-ready.html",
+    "job-application-pdf-size.html",
+    "jpg-to-pdf.html",
+    "manage.html",
+    "merge.html",
+    "pdf-compress-without-quality-loss.html",
+    "pdf-contract-too-large.html",
+    "pdf-file-too-big-for-email.html",
+    "pdf-for-exam-registration-too-large.html",
+    "pdf-receipt-too-large.html",
+    "pdf-rotate.html",
+    "pdf-size-reduce-online.html",
+    "pdf-thesis-large.html",
+    "pdf-to-jpg.html",
+    "pdf-too-large-to-upload.html",
+    "pdf-too-large-upload-failed.html",
+    "pdf-tools.html",
+    "pdf-tutorial-for-students.html",
+    "pdf-unlock.html",
+    "privacy.html",
+    "pt-br/about.html",
+    "pt-br/compress-pdf-to-1mb.html",
+    "pt-br/compress-pdf-to-500kb.html",
+    "pt-br/compress-pdf-without-quality-loss.html",
+    "pt-br/compress-pdf.html",
+    "pt-br/index.html",
+    "pt-br/jpg-to-pdf.html",
+    "pt-br/manage-pdf.html",
+    "pt-br/merge-pdf.html",
+    "pt-br/pdf-to-jpg.html",
+    "pt-br/pdf-too-large-to-upload.html",
+    "pt-br/pdf-tools.html",
+    "pt-br/privacy.html",
+    "pt-br/rotate-pdf.html",
+    "pt-br/split-pdf.html",
+    "pt-br/unlock-pdf.html",
+    "pt-br/upload-ready.html",
+    "resize-pdf-for-upload.html",
+    "robots.txt",
+    "school-application-pdf-compress.html",
+    "seo-action-certificate-pdf-compress-1mb.html",
+    "seo-action-certificate-pdf-compress-200kb.html",
+    "seo-action-certificate-pdf-compress-2mb.html",
+    "seo-action-certificate-pdf-compress-500kb.html",
+    "seo-action-certificate-pdf-compress.html",
+    "seo-action-contract-pdf-compress-1mb.html",
+    "seo-action-contract-pdf-compress-200kb.html",
+    "seo-action-contract-pdf-compress-2mb.html",
+    "seo-action-contract-pdf-compress-500kb.html",
+    "seo-action-contract-pdf-compress.html",
+    "seo-action-how-to-certificate-pdf-compress.html",
+    "seo-action-how-to-contract-pdf-compress.html",
+    "seo-action-how-to-exam-registration-pdf.html",
+    "seo-action-how-to-recruitment-pdf-upload.html",
+    "seo-action-how-to-school-pdf-submit.html",
+    "seo-action-how-to-test-pdf-upload.html",
+    "seo-action-how-to-visa-pdf-size.html",
+    "seo-action-pdf免费在线压缩.html",
+    "seo-action-pdf压缩到200kb.html",
+    "seo-action-pdf压缩到500kb.html",
+    "seo-action-pdf大小缩小.html",
+    "seo-action-pdf文件压缩软件.html",
+    "seo-action-what-is-certificate-pdf-compress.html",
+    "seo-action-what-is-contract-pdf-compress.html",
+    "seo-action-why-is-certificate-pdf-compress.html",
+    "seo-action-why-is-contract-pdf-compress.html",
+    "seo-content-pdf-exceeds-upload-limit.html",
+    "seo-content-pdf分割页面.html",
+    "seo-content-pdf合并多个文件.html",
+    "seo-content-pdf旋转方向调整.html",
+    "seo-content-pdf解锁密码.html",
+    "seo-content-pdf转图片格式.html",
+    "seo-content-图片转pdf文件.html",
+    "seo-content-留学申请pdf大小.html",
+    "seo-pain-how-to-pdf-cannot-upload.html",
+    "seo-pain-how-to-pdf-upload-failed.html",
+    "seo-pain-pdf-cannot-upload.html",
+    "seo-pain-pdf-upload-failed.html",
+    "seo-pain-pdf上传失败怎么解决.html",
+    "seo-pain-pdf压缩后模糊.html",
+    "seo-pain-pdf太大发不出去.html",
+    "seo-pain-pdf太大合同.html",
+    "seo-pain-pdf太大微信.html",
+    "seo-pain-pdf太大打不开.html",
+    "seo-pain-pdf太大报名.html",
+    "seo-pain-pdf太大无法上传.html",
+    "seo-pain-pdf太大签证.html",
+    "seo-pain-pdf太大简历.html",
+    "seo-pain-pdf太大考试.html",
+    "seo-pain-pdf文件太大无法提交.html",
+    "seo-pain-what-is-pdf-cannot-upload.html",
+    "seo-pain-what-is-pdf-upload-failed.html",
+    "seo-pain-why-is-pdf-cannot-upload.html",
+    "seo-pain-why-is-pdf-upload-failed.html",
+    "seo-scenario-exam-registration-pdf.html",
+    "seo-scenario-school-pdf-submit.html",
+    "seo-scenario-visa-pdf-size-1mb.html",
+    "seo-scenario-visa-pdf-size-200kb.html",
+    "seo-scenario-visa-pdf-size-2mb.html",
+    "seo-scenario-visa-pdf-size-500kb.html",
+    "seo-scenario-visa-pdf-size.html",
+    "seo-scenario-what-is-exam-registration-pdf.html",
+    "seo-scenario-what-is-school-pdf-submit.html",
+    "seo-scenario-what-is-visa-pdf-size.html",
+    "seo-scenario-why-is-exam-registration-pdf.html",
+    "seo-scenario-why-is-school-pdf-submit.html",
+    "seo-scenario-why-is-visa-pdf-size.html",
+    "seo-scenario-企业oa上传pdf太大.html",
+    "seo-scenario-微信发送pdf太大.html",
+    "seo-scenario-扫描件pdf压缩.html",
+    "seo-scenario-报名材料pdf太大.html",
+    "seo-scenario-留学申请pdf大小.html",
+    "seo-scenario-签证pdf太大.html",
+    "seo-scenario-简历pdf压缩.html",
+    "seo-scenario-考试注册pdf上传限制.html",
+    "seo-scenario-证件照pdf太大.html",
+    "seo-scenario-邮件附件pdf太大.html",
+    "seo-tools-jpg转pdf在线.html",
+    "seo-tools-pdf分割工具.html",
+    "seo-tools-pdf压缩工具.html",
+    "seo-tools-pdf合并工具.html",
+    "seo-tools-pdf旋转在线.html",
+    "seo-tools-pdf转jpg在线.html",
+    "services.html",
+    "sitemap.xml",
+    "split.html",
+    "terms.html",
+    "upload-ready.html",
+    "visa-pdf-too-large.html"
+  ],
+  "fileDetails": [
+    {
+      "path": "about.html",
+      "bytes": 15438,
+      "sha256": "026e6f964603ef73746d7201c6255e8db0ed0bc230301770040e77fe8c93aa44"
+    },
+    {
+      "path": "ads.txt",
+      "bytes": 58,
+      "sha256": "3c9cc7cfd320a46260dfbeb03aa19b8b602641edab1d46a77ee5e5d5dd5356af"
+    },
+    {
+      "path": "assets/css/styles.css",
+      "bytes": 36906,
+      "sha256": "739f94a96bb8a53a941a0f293208b22ce1c95af764acece3067c50af13cc35d9"
+    },
+    {
+      "path": "assets/css/tailwind.min.css",
+      "bytes": 24844,
+      "sha256": "0b4cdc1fb3fc2aff00147340c5bb7b9e01755309ba6f48a5027cb73eb066a4ec"
+    },
+    {
+      "path": "assets/favicon.svg",
+      "bytes": 387,
+      "sha256": "c42ca8360c8ae22415dd0d3e5ce8c9062170ea5a1b657317bcf01bb5403002e6"
+    },
+    {
+      "path": "assets/js/compress.js",
+      "bytes": 8421,
+      "sha256": "c3e58574fca976aba831cefe06167ab109370eeb707235072af364665ee14b47"
+    },
+    {
+      "path": "assets/js/i18n.js",
+      "bytes": 2204,
+      "sha256": "c9e9030285d5d364e8b4667463f5a97c755aa9cd65666bd26a596dc24e0d5c27"
+    },
+    {
+      "path": "assets/js/jpg-to-pdf.js",
+      "bytes": 7851,
+      "sha256": "14a275946bfd73893df70dbec028a77cc9ef64e38df4c63bb66ad3ca540b42ab"
+    },
+    {
+      "path": "assets/js/manage-state.js",
+      "bytes": 1404,
+      "sha256": "8d62c21153744739252bef1c8651744120df9950cfa5f3dd2c9dc3d51934cf7e"
+    },
+    {
+      "path": "assets/js/manage.js",
+      "bytes": 17244,
+      "sha256": "4e0a6311a80387a56664206da776eac2bc799b55fe7fdfe0207a8f75e765b32d"
+    },
+    {
+      "path": "assets/js/merge.js",
+      "bytes": 13349,
+      "sha256": "450ab5593a586d97bbac254d1c63190e9400c203091eb9fcce9459b29ef0ed5e"
+    },
+    {
+      "path": "assets/js/pdf-preview.js",
+      "bytes": 8032,
+      "sha256": "6ce8129d8568eeb6c49ecfc7e0d3f7d64987691e9ad56854b48dbf3d08be5fd0"
+    },
+    {
+      "path": "assets/js/pdf-protocol.mjs",
+      "bytes": 3738,
+      "sha256": "5867233040819262d78367ac2a303f4dc2e8985e44cd903f4e83ba4f4d57ee6e"
+    },
+    {
+      "path": "assets/js/pdf-rotate.js",
+      "bytes": 5772,
+      "sha256": "fe4134afa16add987cdd8717b20c92661fce8e76c7a007f735e7acd961ba49dc"
+    },
+    {
+      "path": "assets/js/pdf-to-jpg.js",
+      "bytes": 7319,
+      "sha256": "3c79d33c88138f2bdcc80427327b7c75bb13fba0c0b192835129490467b32500"
+    },
+    {
+      "path": "assets/js/pdf-worker-entry.mjs",
+      "bytes": 746,
+      "sha256": "36fd8c60dcc63262306df6e222984a10ffd67bad0a6b2b100d771562da1bc3b9"
+    },
+    {
+      "path": "assets/js/pdfjs-polyfills.mjs",
+      "bytes": 2191,
+      "sha256": "95a36ecd3af539cb46c85719fc772e794a270287f994047ba2e886e5b94eac92"
+    },
+    {
+      "path": "assets/js/site.js",
+      "bytes": 2849,
+      "sha256": "b5b209ed9624f32c3ba73a9dbfe61f41ed56608a58ae8b6cd175a97d504bc2d2"
+    },
+    {
+      "path": "assets/js/split.js",
+      "bytes": 9071,
+      "sha256": "b3b897daaf1e99b5f0ba6ef5b9efb2c067f3c53f698cfa2a61944c5c7bf46db5"
+    },
+    {
+      "path": "assets/js/unlock.js",
+      "bytes": 10795,
+      "sha256": "70dab030526fef62a568cda86e2ca9738a2f93441185cf4a9e676953217ac0d9"
+    },
+    {
+      "path": "assets/js/upload-ready-ga4.js",
+      "bytes": 3262,
+      "sha256": "21db965f30255227f10e45fda0d9540970d3cc6c1c4ab9be6cde5f89dd94913b"
+    },
+    {
+      "path": "assets/js/upload-ready-processing.mjs",
+      "bytes": 2494,
+      "sha256": "663054b653d2d15664bc64a28c12450cccd8cd3e4394b7ceb98ca676636d655e"
+    },
+    {
+      "path": "assets/js/upload-ready-state.js",
+      "bytes": 6137,
+      "sha256": "0ffe0661336012889a51b8ed44947cc69c5903afdefdc98dee70e406942cebb4"
+    },
+    {
+      "path": "assets/js/upload-ready-worker.mjs",
+      "bytes": 17831,
+      "sha256": "1b36d15b7e8404e387f5fdd27d7dd6a69af852b9951d12d96d5410f2bcf11970"
+    },
+    {
+      "path": "assets/js/upload-ready.js",
+      "bytes": 22406,
+      "sha256": "c66aa9851c50cd8fd7ffb4df6b17fdca26a2a68092b754fbb4b09a8da1dd7625"
+    },
+    {
+      "path": "assets/vendor/pdf-lib.esm.min.js",
+      "bytes": 523417,
+      "sha256": "72c052d97b4d5d9fa6cdbdcb7ad709f03d4ddb1122390cb3afeba4d88651d969"
+    },
+    {
+      "path": "assets/vendor/pdf-lib.min.js",
+      "bytes": 525099,
+      "sha256": "0f9a5cad07941f0826586c94e089d89b918c46e5c17cf2d5a3c6f666e3bc694f"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/78-EUC-H.bcmap",
+      "bytes": 2404,
+      "sha256": "d92a261336dc18b8c03a46eb4d462382d33f4338fa195d303256b2031434c874"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/78-EUC-V.bcmap",
+      "bytes": 173,
+      "sha256": "61670bebc4e4827b67230c054fd0d820d6e30c3584d02e386804e62bbedc032a"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/78-H.bcmap",
+      "bytes": 2379,
+      "sha256": "ece6415b853d61e1b2560165151407d35cf16e6556932b85a13ea75276b77402"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/78-RKSJ-H.bcmap",
+      "bytes": 2398,
+      "sha256": "696b1f973c97623496703809eaaa5f9b40696c77540057413f4b826a08edfa7b"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/78-RKSJ-V.bcmap",
+      "bytes": 173,
+      "sha256": "53cb6d560ab377da48cf65d6dcacb0bdb31f13fab7066c580de38c12a73a7ff9"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/78-V.bcmap",
+      "bytes": 169,
+      "sha256": "289000f02fd34872b6975503217f33abae6bee676e7d28f640473a67c8db1712"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/78ms-RKSJ-H.bcmap",
+      "bytes": 2651,
+      "sha256": "a2442595218f5f8bd8e1b42188e368587d876cfe0cc4cd87196f077c878f72e2"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/78ms-RKSJ-V.bcmap",
+      "bytes": 290,
+      "sha256": "f8ddceba96bfd9d3740bd1789ee30d1f47c78371520a8084f71f7df58f19be0b"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/83pv-RKSJ-H.bcmap",
+      "bytes": 905,
+      "sha256": "44040051ec818fe09b9703472bea72efd2759d5eeb5ff0d77c718d6bb5e6d1df"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/90ms-RKSJ-H.bcmap",
+      "bytes": 721,
+      "sha256": "c13e043e85ff715b75bb03801e8fd0fb8f3a75e4a48496faa6baaf92b5b48ba1"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/90ms-RKSJ-V.bcmap",
+      "bytes": 290,
+      "sha256": "499bb916ce1adbe4289b6e5811f4dc20eb238cdc2ffad20cf26ae56716885bab"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/90msp-RKSJ-H.bcmap",
+      "bytes": 715,
+      "sha256": "7b8b3b8bbf821702e9a4df9f3596ce292380c8c1b0925dedadbb4e4b2d80498b"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/90msp-RKSJ-V.bcmap",
+      "bytes": 291,
+      "sha256": "6296c2b5c07dca8128e96d5296d621a3268803d4fa0e5812a21e52fe2802aacb"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/90pv-RKSJ-H.bcmap",
+      "bytes": 982,
+      "sha256": "fb5103f03d3a34547e18d316e52b6d9b26e485c662999222f84d2ba54c2e4fa8"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/90pv-RKSJ-V.bcmap",
+      "bytes": 260,
+      "sha256": "7bcb5ad2ba55b9662ce379e16c2d9cc2b82d621a579807353741172e4af615c2"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/Add-H.bcmap",
+      "bytes": 2419,
+      "sha256": "a2ffab28b990998181bcca9b0e914bb2207820f100ae31d5c469444892e5ad8e"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/Add-RKSJ-H.bcmap",
+      "bytes": 2413,
+      "sha256": "b29f4b52e2465d0485856d5e69f1ba69927deb2848d8fd328c8035583b35bb7e"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/Add-RKSJ-V.bcmap",
+      "bytes": 287,
+      "sha256": "2aa2232c283a3f5d0997c2834a36cead0b79ce2657944cfeed08140c293460ff"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/Add-V.bcmap",
+      "bytes": 282,
+      "sha256": "25125d3b1be64e86b2df5b3344170b45a42bcaa0b46e43a34314ef73c166e542"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/Adobe-CNS1-0.bcmap",
+      "bytes": 317,
+      "sha256": "8c65be9d51a9f269a547dc12460707aaf4031ab67ebe8a2900f4b4cc6b3e450e"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/Adobe-CNS1-1.bcmap",
+      "bytes": 371,
+      "sha256": "73152bc1a59cc594b414ac6068be48e5512b96ae85920c40e32a99269fdb0c04"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/Adobe-CNS1-2.bcmap",
+      "bytes": 376,
+      "sha256": "a1b8d353bdef9584c820464e8f1c9e2013d64ebf433cba0aa831dddf515818c2"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/Adobe-CNS1-3.bcmap",
+      "bytes": 401,
+      "sha256": "2ffc0c75c79fafde506163d3c08c390d183251009f3fbf6ae50d1167d14b9570"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/Adobe-CNS1-4.bcmap",
+      "bytes": 405,
+      "sha256": "98a1f470c878c6b9691a4d7aef776af8ac9b55f5587c9fafa00547f3bf655716"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/Adobe-CNS1-5.bcmap",
+      "bytes": 406,
+      "sha256": "ddd6e29955eb8cb545f2ebd09c628c3bbda5023256eda1b728f743c75fb77829"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/Adobe-CNS1-6.bcmap",
+      "bytes": 406,
+      "sha256": "317bb2db71e0e5b7b0c47b75de1da915c2e22f65f0c0861507f9ca7ba238f8a2"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/Adobe-CNS1-UCS2.bcmap",
+      "bytes": 41193,
+      "sha256": "e665837f2197c6bd08cd8955ad4d6932cee2398e2e328b25b00e6bfb3bd72af9"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/Adobe-GB1-0.bcmap",
+      "bytes": 217,
+      "sha256": "8b81cce8a11d510e505704953cfa4e4ab080c1a0cab991145a3512ee433946b9"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/Adobe-GB1-1.bcmap",
+      "bytes": 250,
+      "sha256": "0426983081788ec7202703e71f1efa4b860f75b936994236010b39d89251a81e"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/Adobe-GB1-2.bcmap",
+      "bytes": 465,
+      "sha256": "e67b37a83b160ab3831306a71a605893b24454ee81ac9b6123bf2d3984d268d5"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/Adobe-GB1-3.bcmap",
+      "bytes": 470,
+      "sha256": "aa299afc3e12a28726147305f191be28c7498078c8b182ece7886ac79cd99078"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/Adobe-GB1-4.bcmap",
+      "bytes": 601,
+      "sha256": "8fbd7d74c2ddb1350c1cecce54a73fde3f5453093d4bed445283ec0033d2097f"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/Adobe-GB1-5.bcmap",
+      "bytes": 625,
+      "sha256": "c22cb2fcff24112fa31dab2111bdc51957006576d31aad5a25e67793ac01428c"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/Adobe-GB1-UCS2.bcmap",
+      "bytes": 33974,
+      "sha256": "20507620260c0c935c35afc1e70e5888aa7125d5ec7ffc03cef1959feb2c1641"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/Adobe-Japan1-0.bcmap",
+      "bytes": 225,
+      "sha256": "464f08905236f5703b1f5cf8358767c8b18e6bcc808840d081f1de2c7ab38134"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/Adobe-Japan1-1.bcmap",
+      "bytes": 226,
+      "sha256": "4c823848722187d1ffe75ae3f5f9126ccd2d7895a05fad14c919fb119e037008"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/Adobe-Japan1-2.bcmap",
+      "bytes": 233,
+      "sha256": "7810fb808e367e70429e90a9478fe6a3fdc3e214f25c7582ce9c2da6a242315c"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/Adobe-Japan1-3.bcmap",
+      "bytes": 242,
+      "sha256": "84deb1828711ad3d390c9899c38abce1bf619d65ff7bf1a326ec95acc45f08f8"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/Adobe-Japan1-4.bcmap",
+      "bytes": 337,
+      "sha256": "3f8a4f974919c2b8bae5d10175ffa2673be140481e00840542c85d48ef184067"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/Adobe-Japan1-5.bcmap",
+      "bytes": 430,
+      "sha256": "1d3ce4ff28d977f8cf37a912ae4ec811f4175c3167b1ec0b2567feec3e79e1db"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/Adobe-Japan1-6.bcmap",
+      "bytes": 485,
+      "sha256": "5609797b9401b30be72ef9645da62a87829f058c3be4b5c623383119f584b1d9"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/Adobe-Japan1-UCS2.bcmap",
+      "bytes": 40951,
+      "sha256": "66c5d0dc4964f4093e77b194023f3a0f689324028ec8330e1e1d0570bcba7c2f"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/Adobe-Korea1-0.bcmap",
+      "bytes": 241,
+      "sha256": "dfb8c3874f0e5a8c3acf597d2c12d2b63e90bc5e4f0fce990ec4c56077d80b32"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/Adobe-Korea1-1.bcmap",
+      "bytes": 386,
+      "sha256": "62f277b7b1c441c007797ae707d5c37258d029ce4661a2b911e2e1ee35e6adc1"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/Adobe-Korea1-2.bcmap",
+      "bytes": 391,
+      "sha256": "1d77068af462f96d7ad28ad7e7d43eef6423c685b479d7dc25ff5df38db0380d"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/Adobe-Korea1-UCS2.bcmap",
+      "bytes": 23293,
+      "sha256": "857b723088be97255053562bfa41bd1075a7f7910d3bab59a0645c8bbc7060ff"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/B5-H.bcmap",
+      "bytes": 1086,
+      "sha256": "718ad0ffbef4c34f8f3f31292c462e519cd567a5511fc8b346c60010d64f4ef9"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/B5-V.bcmap",
+      "bytes": 142,
+      "sha256": "b5c37383517477620ced927b6b4ffd4f4cc6230d8051b5b46a21d6768e07f7d8"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/B5pc-H.bcmap",
+      "bytes": 1099,
+      "sha256": "bab6028aead1d6149400e904ab10cfd319082d826473ed4c582c8eeed920f17e"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/B5pc-V.bcmap",
+      "bytes": 144,
+      "sha256": "41543142b9767f3b76133899fc8453282b01ad3c653acaeea42d78c5a7d08c63"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/CNS-EUC-H.bcmap",
+      "bytes": 1780,
+      "sha256": "e8f89cd61e6486b948205da46499d659ed0aed949b7095fd3c8e95ffe2b0e7a9"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/CNS-EUC-V.bcmap",
+      "bytes": 1920,
+      "sha256": "cae422bec2ac6dbe86bf921cec942bacd2d0b733ffcca5f91b3ba14e917025a0"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/CNS1-H.bcmap",
+      "bytes": 706,
+      "sha256": "e8487971ab20cd16f3de3e8ac56ec994b72b658ad113f2818239dfd5108f501a"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/CNS1-V.bcmap",
+      "bytes": 143,
+      "sha256": "42df8076aaa7574505e7304af83a3323ec032c4177d64b1309db8c043d594a8a"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/CNS2-H.bcmap",
+      "bytes": 504,
+      "sha256": "bc6024d274d440f0625c69e25f37036ef6cb6689432ceaa160d3432a2a716ca7"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/CNS2-V.bcmap",
+      "bytes": 93,
+      "sha256": "2e4f70a8afd23a121030fc2e5b5f3816e903b11e7ba8b8c09654b31c80399c38"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/ETen-B5-H.bcmap",
+      "bytes": 1125,
+      "sha256": "87ee6b3f5bfda5fe26fa35431264c7d73070d10dbbf398a75185d63ae322c18d"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/ETen-B5-V.bcmap",
+      "bytes": 158,
+      "sha256": "47dc0d2c21e3bde317947aec1675ceabc1d5460a60bf9c24334b8c407a17172c"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/ETenms-B5-H.bcmap",
+      "bytes": 101,
+      "sha256": "d5f5a73da4173b7da9a3a20e16f26f9cd5d12deb1553409919e0cec6fd37fdee"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/ETenms-B5-V.bcmap",
+      "bytes": 172,
+      "sha256": "18252fca90f472f479af1bddd60d6ab51c8e1b55dcf6845951426504934543e0"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/ETHK-B5-H.bcmap",
+      "bytes": 4426,
+      "sha256": "d2f10fa519336bc4efcc7b6deb9604b75429946b40d82e311cb3a97a1994c89a"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/ETHK-B5-V.bcmap",
+      "bytes": 158,
+      "sha256": "1fea3fd0d9f0f679f80505800851ef2e4131d81127e18c006938ffa2f4c8b247"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/EUC-H.bcmap",
+      "bytes": 578,
+      "sha256": "f9939cd57fccdc65c5d9f4c205fd497ebdbd283643308da5663801a8c1d9c595"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/EUC-V.bcmap",
+      "bytes": 170,
+      "sha256": "1283a50a706507c4436da83ede9ad7a4440be25378f2e96f6c81a430081426a3"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/Ext-H.bcmap",
+      "bytes": 2536,
+      "sha256": "4000ed4e61a1c668ef453bbd0603cfa383defa793abd46a57ed870d7f527350b"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/Ext-RKSJ-H.bcmap",
+      "bytes": 2542,
+      "sha256": "e0d2f0df337660e73813238dd4a725f11f0621b90f3273857db253d0e7694caa"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/Ext-RKSJ-V.bcmap",
+      "bytes": 218,
+      "sha256": "f617a22b6d67febb187990952006c91a9f5a4db21155d268c656252d0c21985d"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/Ext-V.bcmap",
+      "bytes": 215,
+      "sha256": "c2087fb845a9e3acea0c2922cd40e6af67e11957bec74dcd597f1285edd490ce"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/GB-EUC-H.bcmap",
+      "bytes": 549,
+      "sha256": "928bad06fd84a48f5ba7150d7716609119fb660f2aaa73eccad81ddab9b9d203"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/GB-EUC-V.bcmap",
+      "bytes": 179,
+      "sha256": "a9ad88ac2479da529b16dc48abc5952332e27bc355335f91df5729a587533324"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/GB-H.bcmap",
+      "bytes": 528,
+      "sha256": "1018c777a8910b5bb46d7d54a4aee9d51ca5cff8addb2b41c969d9101cb3fd1c"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/GB-V.bcmap",
+      "bytes": 175,
+      "sha256": "0b96789143c0bbf9f1641ae7165b3456dccd14dabffcbb0bd654d5bf6f94f863"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/GBK-EUC-H.bcmap",
+      "bytes": 14692,
+      "sha256": "2103fed28650ede096a2281104a1a8a4304dae0db414342c636867522307123b"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/GBK-EUC-V.bcmap",
+      "bytes": 180,
+      "sha256": "a7fd35dd14d9dbdb955f34e6c0630618b6620dfd09d4283b2f65a65ce77fcaea"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/GBK2K-H.bcmap",
+      "bytes": 19662,
+      "sha256": "3d919ae72af16c5cc6846ec87a4326a9f125e493c59d3628429d35c2c95fe8c4"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/GBK2K-V.bcmap",
+      "bytes": 219,
+      "sha256": "b927fdfd595c07ce9158bf2ec13f4641b2e83b01c70989dadfabd6ed7c6ac2dc"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/GBKp-EUC-H.bcmap",
+      "bytes": 14686,
+      "sha256": "d15ebd8e81fb4fe8a244f1b1e877922e03500ac69eddf5001093e502430451d2"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/GBKp-EUC-V.bcmap",
+      "bytes": 181,
+      "sha256": "fdc736d46e642625dccc8ad8c59f2c69fc7db7a13f2e799c6c6b779e707bb97a"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/GBpc-EUC-H.bcmap",
+      "bytes": 557,
+      "sha256": "3c4a4eb82f05abe51f6650985c630e180438bfdd491318f5d20d2ec29236e1c3"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/GBpc-EUC-V.bcmap",
+      "bytes": 181,
+      "sha256": "215bdfa2842705624b4cf4cd29b8e3c720f1e192365e0305c11030a424c84d7c"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/GBT-EUC-H.bcmap",
+      "bytes": 7290,
+      "sha256": "dc5f44e48a39f3367ae28665027d8ab1d8cedb5a9dcc5068a900acd6709f60f9"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/GBT-EUC-V.bcmap",
+      "bytes": 180,
+      "sha256": "a1ad24e63653b8aa388c18fa5e498f007564e43dde699a9f91ccb4645c999be8"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/GBT-H.bcmap",
+      "bytes": 7269,
+      "sha256": "8afda745a505763f3ff54c8126eeb48ef376ea9ed07d9f42ff9a22c5c547ec57"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/GBT-V.bcmap",
+      "bytes": 176,
+      "sha256": "cdc2ec5c3c7c7033290c9a8894878202f08674eb9b1ae7d36218430326768771"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/GBTpc-EUC-H.bcmap",
+      "bytes": 7298,
+      "sha256": "7b23e2f7bfdb6c918f567b7324bf858f398bd8cd5f268d74ece19a3c91bf4f32"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/GBTpc-EUC-V.bcmap",
+      "bytes": 182,
+      "sha256": "d7a1b13ead9ab511cf2cd01de6ce8b02aa8e8767e84895337d7a3b67f039f93b"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/H.bcmap",
+      "bytes": 553,
+      "sha256": "a0233e21047ec00b852125b243cbcf30abee511155b6d8159c24f944384bc9ee"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/Hankaku.bcmap",
+      "bytes": 132,
+      "sha256": "b454701f7aecd7856769016dfd04ca64280a060f2c67a2466d50b4395d24974e"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/Hiragana.bcmap",
+      "bytes": 124,
+      "sha256": "2ed669394756dd9458651cd9995ab29ab691ecb7686659003306cdf22767a414"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/HKdla-B5-H.bcmap",
+      "bytes": 2654,
+      "sha256": "5242bce18fb13ab4cc59b146a03eba36e4ce42667eeff09e10981a9d2aa4996b"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/HKdla-B5-V.bcmap",
+      "bytes": 148,
+      "sha256": "2e0537f786c0791d41a925f72bad2d4e7268aa6cbf15a1400a722672cec38e2c"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/HKdlb-B5-H.bcmap",
+      "bytes": 2414,
+      "sha256": "fdc8159984bf5dbe475c0d5dfcb621ecee4dea07c38c668bd77f4c679e23b9b3"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/HKdlb-B5-V.bcmap",
+      "bytes": 148,
+      "sha256": "b249eb9dcb915ab45057c5d4d7aa55ef88d0efbb092af6bae0b2d4705d139abf"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/HKgccs-B5-H.bcmap",
+      "bytes": 2292,
+      "sha256": "ab64c7fc5e9b2e97750cc4f269b0da14fd8649e49151b7598c8df86599bac591"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/HKgccs-B5-V.bcmap",
+      "bytes": 149,
+      "sha256": "02ebdf7cdffb5395fb21091cd58a013a18ae5388922822f9dc6292ef16b98956"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/HKm314-B5-H.bcmap",
+      "bytes": 1772,
+      "sha256": "bfd8bbde6b36a9da4c1c902c74121a30d9807a7079a00eeea218be6adc223cef"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/HKm314-B5-V.bcmap",
+      "bytes": 149,
+      "sha256": "2a64a815cfb6fdd480674a868762e3d161fda17543b20c9209978559f0667164"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/HKm471-B5-H.bcmap",
+      "bytes": 2171,
+      "sha256": "49d7c037758826b5b6c0fa329c35bbf25d3943197754e72ecd30c6fb04d745e6"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/HKm471-B5-V.bcmap",
+      "bytes": 149,
+      "sha256": "be24c109e78aa4fe3c1f27d30aab3ed0741e783fa1b6b6c2719741072b54b132"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/HKscs-B5-H.bcmap",
+      "bytes": 4437,
+      "sha256": "08599378f41d96b40537adef6e6edcc4a787bc63f5accf47c026df4905a13914"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/HKscs-B5-V.bcmap",
+      "bytes": 159,
+      "sha256": "d073542b7dad1c4cbf01c1af5f0cd13218d1281a491956e310c55702fc8705c4"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/Katakana.bcmap",
+      "bytes": 100,
+      "sha256": "3b6ca6642fbf8822da00d5e58a8aa275216d5c32dbf2bd73e934197fc9fc5c53"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/KSC-EUC-H.bcmap",
+      "bytes": 1848,
+      "sha256": "6784e16dbc5861c036c23d3e55f0d4ba0975a3e464da0ee8e49bcfff0be070c4"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/KSC-EUC-V.bcmap",
+      "bytes": 164,
+      "sha256": "fdb36bad85e9924823d49db374067988e024cf80fc894711f2c9178951cbbe95"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/KSC-H.bcmap",
+      "bytes": 1831,
+      "sha256": "c1f6d61f1d3304fd539a65ae72624fa567ecc3853bf52e283958a7a2515b3eee"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/KSC-Johab-H.bcmap",
+      "bytes": 16791,
+      "sha256": "939993d213f68db763bf156217c217ae23af082b91a0eacecf3d11eb4ff8ef8c"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/KSC-Johab-V.bcmap",
+      "bytes": 166,
+      "sha256": "5d61967aac0e666def721e8b8d0fed8f95a879a14f2e76ce516c3d11c621e519"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/KSC-V.bcmap",
+      "bytes": 160,
+      "sha256": "d7da5afd9f1fe74816d79c9325f0139a4efb6438664ebfdf9a7aa92f3034360f"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/KSCms-UHC-H.bcmap",
+      "bytes": 2787,
+      "sha256": "5b70d8f6a4fa9e2283dc649f0ff95d906d56efbee50a20e8d2faec3a8fed078e"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/KSCms-UHC-HW-H.bcmap",
+      "bytes": 2789,
+      "sha256": "a5e6ba22aceb02fdedee11bfb9ed138463d89e85b87810b9f075b469d936f8ec"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/KSCms-UHC-HW-V.bcmap",
+      "bytes": 169,
+      "sha256": "890332a6a26880d463a12f2a6ff048bf9cf7e45077cfb1ca8815b89baa7bf411"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/KSCms-UHC-V.bcmap",
+      "bytes": 166,
+      "sha256": "1631b531c9a40c8cbe24c2317dba107362e49fa6e18af620414d627c111d570c"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/KSCpc-EUC-H.bcmap",
+      "bytes": 2024,
+      "sha256": "709480682c55cedbb0124b9960d78e28febeee0df2e34607d61aac6601647ec7"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/KSCpc-EUC-V.bcmap",
+      "bytes": 166,
+      "sha256": "031707887d6fc2378a36cdb6775334fd7a236c3f95048d8436abf43fe26fc49d"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/LICENSE",
+      "bytes": 2080,
+      "sha256": "aa92ab5a472974865a96fd4a4e9c13bb41bf6fe1b309cb6b8da48bc9e19839a2"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/NWP-H.bcmap",
+      "bytes": 2765,
+      "sha256": "286c6c9e335da330928a01edc3c97a3a623f1f7f3c42762b0a7dc2f651b1a78f"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/NWP-V.bcmap",
+      "bytes": 252,
+      "sha256": "3a75fb7b59adfb172710758c425d8ac6c93fd5360a64dd4afd5dd04e60ab4b4d"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/RKSJ-H.bcmap",
+      "bytes": 534,
+      "sha256": "a70de61a22a898f693f02cc011c3e3cff2e10aaa7cddb4661e456a21ae859f78"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/RKSJ-V.bcmap",
+      "bytes": 170,
+      "sha256": "68c1a64506471a524ea5cfc3b3a9f8f70031989a6bd95427b1351f33ccf50b06"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/Roman.bcmap",
+      "bytes": 96,
+      "sha256": "1c6b3ef9d9e5cb1aa329142ce9414b90f9b6d7f9182a2a9e927378dab8f0d43f"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/UniCNS-UCS2-H.bcmap",
+      "bytes": 48280,
+      "sha256": "779428116752f34e2490a1941d24e4634c71e3c22d053b811d2090ae2fb3c704"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/UniCNS-UCS2-V.bcmap",
+      "bytes": 156,
+      "sha256": "1e5cc184b850ea44abc2df8ae5674279df668e8edf5e2a1a2ea2bd77adbd280f"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/UniCNS-UTF16-H.bcmap",
+      "bytes": 50419,
+      "sha256": "32ff139b3c7b91d6ad25f994701f3ce7b242906022c418fd73e6493fc228bfe5"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/UniCNS-UTF16-V.bcmap",
+      "bytes": 156,
+      "sha256": "278eb1e68d1a236c60ef59472cf0176ee0d45f364285e76ca12419a08d46fb9a"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/UniCNS-UTF32-H.bcmap",
+      "bytes": 52679,
+      "sha256": "bf26eb67fe19ee5ba915799e80ca72408400aa8342fdf6a244a4f44de8f97336"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/UniCNS-UTF32-V.bcmap",
+      "bytes": 160,
+      "sha256": "f7da3caf83ceb1cb37936fa10700d9ba6e9c3f72c5bc9724e3ac79bff0c0179e"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/UniCNS-UTF8-H.bcmap",
+      "bytes": 53629,
+      "sha256": "2f2a742bcd1a84a148a4a518b9eed51a8f9c6ca5ed3bc5e2e41fff97de5dc2d8"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/UniCNS-UTF8-V.bcmap",
+      "bytes": 157,
+      "sha256": "b7c3f10780a8c62dd1c8ff6c30dc1e4e23b6cdc87c3a96fcd514cc98ffd3af9d"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/UniGB-UCS2-H.bcmap",
+      "bytes": 43366,
+      "sha256": "9201569b402e81ad8860650bd86350c4fa28e5dd5971f05fcacaf40f51de18ed"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/UniGB-UCS2-V.bcmap",
+      "bytes": 193,
+      "sha256": "f10282335e4d64203bc2a653a3a47d745ec76c8ae04549f4d50180c1899be216"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/UniGB-UTF16-H.bcmap",
+      "bytes": 44086,
+      "sha256": "386fd39581245c034da016a92d23f3df1117d169f996100050b264fc09a84e35"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/UniGB-UTF16-V.bcmap",
+      "bytes": 178,
+      "sha256": "0473cfbba612b92dd9918f0ff8aee9112897c48e0ffdc0eb82da3144ed8ea84a"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/UniGB-UTF32-H.bcmap",
+      "bytes": 45738,
+      "sha256": "f48a145dc4e3ed1dca1dde7111716a72306a2a4191ab05c6bae3a5c3a961cd2f"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/UniGB-UTF32-V.bcmap",
+      "bytes": 182,
+      "sha256": "106acc49b7118bdef944e32107b4f348238f3929a0a15d3b7aab7b9101535993"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/UniGB-UTF8-H.bcmap",
+      "bytes": 46837,
+      "sha256": "f217b439c80ee5fa1bc2cf6d1defcc319f8d84483d166a00ee199e05a68588df"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/UniGB-UTF8-V.bcmap",
+      "bytes": 181,
+      "sha256": "a64df947632878eacc532fa193c735c92a383b7d66e6f8374ac193af7c64fc63"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/UniJIS-UCS2-H.bcmap",
+      "bytes": 25439,
+      "sha256": "ad2352f40870880fbf7f8ee5abadff743fbd025fbf9830b8ada472d1c5e4da0b"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/UniJIS-UCS2-HW-H.bcmap",
+      "bytes": 119,
+      "sha256": "16e87edca954177c0881c874859d6783220925d821b5cdfb8755b61ebd93f9ce"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/UniJIS-UCS2-HW-V.bcmap",
+      "bytes": 680,
+      "sha256": "1973457e2c0192819947e56068625b34fb9a72ecc8a476ce6d7eaae5f73e2e5c"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/UniJIS-UCS2-V.bcmap",
+      "bytes": 664,
+      "sha256": "42a133d8e2ce9dd6d2288018e01592d2bf2435b326d39b94ea0b6e6a44ac33d3"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/UniJIS-UTF16-H.bcmap",
+      "bytes": 39443,
+      "sha256": "f6a89c5688978548c83fcee990e205bc63c74274d5c69b49032a3bd4c49a05ee"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/UniJIS-UTF16-V.bcmap",
+      "bytes": 643,
+      "sha256": "c67126fc7c73850855186bb0d6482ac0a365057e0b58778c4ab9f234683fef53"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/UniJIS-UTF32-H.bcmap",
+      "bytes": 40539,
+      "sha256": "96195950ce0fe24443d8eb426fa6b88534ec421d7bef9046f0b2362809cfba73"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/UniJIS-UTF32-V.bcmap",
+      "bytes": 677,
+      "sha256": "ed4dafda402bdd19c4d5d8bf2ab41473c0f86f384552b4c7b963d6627daedeb1"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/UniJIS-UTF8-H.bcmap",
+      "bytes": 41695,
+      "sha256": "798fb0bf06ab0788d1f6a91c2db7de581612eef03c628f10e8f7ecd8f70ab448"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/UniJIS-UTF8-V.bcmap",
+      "bytes": 678,
+      "sha256": "1021611424f913b2df0bfdbe94bd327c04e224ec89d8e821c6501ea3d21f4265"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/UniJIS2004-UTF16-H.bcmap",
+      "bytes": 39534,
+      "sha256": "710a32d7cb43fd6bd9dbf30da5971f8c941590f74441e208d852c2be0e74cc97"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/UniJIS2004-UTF16-V.bcmap",
+      "bytes": 647,
+      "sha256": "3b149aff5c5707b57fb3215d1775852c8b1f413ec0f679ea628f25cf87fe098d"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/UniJIS2004-UTF32-H.bcmap",
+      "bytes": 40630,
+      "sha256": "8d2658e18741af7937d586a57c89729a6fec0d86121197c1f8518aa58b29cdfb"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/UniJIS2004-UTF32-V.bcmap",
+      "bytes": 681,
+      "sha256": "6dd475782f2897648a683c48b2fa015a15b8f06856760bddc8a17a63f418bacb"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/UniJIS2004-UTF8-H.bcmap",
+      "bytes": 41779,
+      "sha256": "691c614ce432b3e62486efb54e5c84c6da5afe9b51b21253bde4758feb484183"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/UniJIS2004-UTF8-V.bcmap",
+      "bytes": 682,
+      "sha256": "40a8c7ea2d46711c5f78fc9a878a7db68b1543ba5cd60ecf14f519a2deb829b7"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/UniJISPro-UCS2-HW-V.bcmap",
+      "bytes": 705,
+      "sha256": "6826f94d789d7bf1960668c1c5819c34c9585c1b23152fbc19ee81c7df08524b"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/UniJISPro-UCS2-V.bcmap",
+      "bytes": 689,
+      "sha256": "493de9fd1a08f7946065d8ab58f0c3c9fe489f5a0f109f2d05a3169b4bd5789f"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/UniJISPro-UTF8-V.bcmap",
+      "bytes": 726,
+      "sha256": "6181d382cf736c5e09492e8be9f26f31fa25b7462253f23ab16646af432cad81"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/UniJISX0213-UTF32-H.bcmap",
+      "bytes": 40517,
+      "sha256": "692044e1fb33445668632bc9fe7386805c624864be1ddeb29d65bb0c99fc630c"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/UniJISX0213-UTF32-V.bcmap",
+      "bytes": 684,
+      "sha256": "dd54e16ca7bffb3a886242549b2bf7d78a277087f7c60d2636f118c21a5b0646"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/UniJISX02132004-UTF32-H.bcmap",
+      "bytes": 40608,
+      "sha256": "f80ea5a989be30ccda5a8804baef6d3b4b044d2b339bf8b31c671b2466171cf6"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/UniJISX02132004-UTF32-V.bcmap",
+      "bytes": 688,
+      "sha256": "94c22bd99e771c5fbe0dd8dc39850570d4db0075074aca13e272813edd7cc57f"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/UniKS-UCS2-H.bcmap",
+      "bytes": 25783,
+      "sha256": "a1081396ab4adb6f4a5b6c15f896963c244c1c9bcb65ce5616d06096a1b9811c"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/UniKS-UCS2-V.bcmap",
+      "bytes": 178,
+      "sha256": "6cab547431958fbdc1d401d06ebd4dd61a73f5509a10f974df32bcbca11a2e43"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/UniKS-UTF16-H.bcmap",
+      "bytes": 26327,
+      "sha256": "42d35b396286499dfae1737a07adb3a64500df37b426580bfb1d3ea872938519"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/UniKS-UTF16-V.bcmap",
+      "bytes": 164,
+      "sha256": "5bdb7390c80dcc136cb47d41dc7460082560969c17322ee739fe3020fb642410"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/UniKS-UTF32-H.bcmap",
+      "bytes": 26451,
+      "sha256": "3a01ec51ed1b828101351e337ffb8250abe11880032e5210f881170fed2588de"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/UniKS-UTF32-V.bcmap",
+      "bytes": 168,
+      "sha256": "dfda895eceaed081af030dbbb962b49629eea817fc3c02bae15db93d0c68acd7"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/UniKS-UTF8-H.bcmap",
+      "bytes": 27790,
+      "sha256": "3fac9c65145f72d7d42157a3b9c5ed6904632184e6a0888f2b828699afd2002f"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/UniKS-UTF8-V.bcmap",
+      "bytes": 169,
+      "sha256": "9ecc6cf30dd354b9778ddba163b6cc7302b087ce9f39d1ba73472d2b75ed13ca"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/V.bcmap",
+      "bytes": 166,
+      "sha256": "b9ad1c0c09ff14bca52f9a28a9767eb857ad0e8946e64ba14c7387a7eb69866a"
+    },
+    {
+      "path": "assets/vendor/pdfjs/cmaps/WP-Symbol.bcmap",
+      "bytes": 179,
+      "sha256": "543923bead225732aba30976690ee89095a19628277b5863efecc2c728d5d7bf"
+    },
+    {
+      "path": "assets/vendor/pdfjs/iccs/CGATS001Compat-v2-micro.icc",
+      "bytes": 8464,
+      "sha256": "73e1ba37d2bad5bab2a964f40a9eed96209666efc067c3322626214bbef234a0"
+    },
+    {
+      "path": "assets/vendor/pdfjs/iccs/LICENSE",
+      "bytes": 6553,
+      "sha256": "286e4fd7b447330b2c88e23890e3cd0a9d38cb398d4a59cb247f578ccbda3213"
+    },
+    {
+      "path": "assets/vendor/pdfjs/pdf.mjs",
+      "bytes": 849976,
+      "sha256": "d7f44e075a8fa47ac165362d404de2dabf61f64f3d98c9180162c5f71f54980a"
+    },
+    {
+      "path": "assets/vendor/pdfjs/pdf.worker.mjs",
+      "bytes": 2206299,
+      "sha256": "f9ed6a050771ad74c228a1cbfc8edb3271249f2e2efa29ed4692468ecb001733"
+    },
+    {
+      "path": "assets/vendor/pdfjs/standard_fonts/FoxitDingbats.pfb",
+      "bytes": 29513,
+      "sha256": "845c752392b6c914fb989c75a08b7792b88f542d2499042ef2889f8c814a16ed"
+    },
+    {
+      "path": "assets/vendor/pdfjs/standard_fonts/FoxitFixed.pfb",
+      "bytes": 17597,
+      "sha256": "b6c8fe53f134b8b6d4578cd2d544df4cee9624c4efa8d51a560fb40ea296101b"
+    },
+    {
+      "path": "assets/vendor/pdfjs/standard_fonts/FoxitFixedBold.pfb",
+      "bytes": 18055,
+      "sha256": "f1b7159702973f54fc86254ea38bcf3712b2a736eb3a0995751e9f4bb45ad603"
+    },
+    {
+      "path": "assets/vendor/pdfjs/standard_fonts/FoxitFixedBoldItalic.pfb",
+      "bytes": 19151,
+      "sha256": "8a000945843bd31add06aee63bf9fd41b7578b4f3242a4b7cd46349ad9d24d4d"
+    },
+    {
+      "path": "assets/vendor/pdfjs/standard_fonts/FoxitFixedItalic.pfb",
+      "bytes": 18746,
+      "sha256": "5007faf8320fa1fcc08b8894b356ad976f60b992ba29ee5272578bbdebaf3876"
+    },
+    {
+      "path": "assets/vendor/pdfjs/standard_fonts/FoxitSerif.pfb",
+      "bytes": 19469,
+      "sha256": "4f57d2b9d884af8f907bf22df6019b52d86cbf6214fdbd02b1ae05472a543f35"
+    },
+    {
+      "path": "assets/vendor/pdfjs/standard_fonts/FoxitSerifBold.pfb",
+      "bytes": 19395,
+      "sha256": "0bdf4b04e964139818d51eda03d566ba999fc3ba2421b1c6c51f9dc969022e80"
+    },
+    {
+      "path": "assets/vendor/pdfjs/standard_fonts/FoxitSerifBoldItalic.pfb",
+      "bytes": 20733,
+      "sha256": "a406cac82583bf98175cb62c87ed5e95c45fbb34eece63a10b0a13e793cb2e10"
+    },
+    {
+      "path": "assets/vendor/pdfjs/standard_fonts/FoxitSerifItalic.pfb",
+      "bytes": 21227,
+      "sha256": "610ae0687198045c4db5d1a6650fd5e92536631706382eb8b72e38df578d0ae9"
+    },
+    {
+      "path": "assets/vendor/pdfjs/standard_fonts/FoxitSymbol.pfb",
+      "bytes": 16729,
+      "sha256": "47967d055530e7357088a08403115425643ec2cdfd6201ba8af0fbd7116c1539"
+    },
+    {
+      "path": "assets/vendor/pdfjs/standard_fonts/LiberationSans-Bold.ttf",
+      "bytes": 137052,
+      "sha256": "361c61b82d575c5c35fd9157fda8b0194bcfcd0d88ea8521a4fb5dd53d33dddc"
+    },
+    {
+      "path": "assets/vendor/pdfjs/standard_fonts/LiberationSans-BoldItalic.ttf",
+      "bytes": 135124,
+      "sha256": "a224075ac17495ad0a3af3bc0a419ac0704a8b3fd1095456201fb9b095fc281d"
+    },
+    {
+      "path": "assets/vendor/pdfjs/standard_fonts/LiberationSans-Italic.ttf",
+      "bytes": 162036,
+      "sha256": "832b4406dbef23628800d3aaad21048534ac84d7e3ad955be83b8172ed8ef512"
+    },
+    {
+      "path": "assets/vendor/pdfjs/standard_fonts/LiberationSans-Regular.ttf",
+      "bytes": 139512,
+      "sha256": "f8ace1f892b2bd9dc1792ba7f097fa7588f84fed48321480e04de5390828221f"
+    },
+    {
+      "path": "assets/vendor/pdfjs/standard_fonts/LICENSE_FOXIT",
+      "bytes": 1553,
+      "sha256": "b578cdd2345840ada550bd12519533812320d5f1d21cf4c1c7e1b1b0a31c98b7"
+    },
+    {
+      "path": "assets/vendor/pdfjs/standard_fonts/LICENSE_LIBERATION",
+      "bytes": 4414,
+      "sha256": "93fed46019c38bbe566b479d22148e2e8a1e85ada614accb0211c37b2c61c19b"
+    },
+    {
+      "path": "assets/vendor/pdfjs/wasm/jbig2_nowasm_fallback.js",
+      "bytes": 145703,
+      "sha256": "04c795a6657a4553a64b781ea3e85256203d913c3b71b72b85fa3ce00622f458"
+    },
+    {
+      "path": "assets/vendor/pdfjs/wasm/jbig2.wasm",
+      "bytes": 104852,
+      "sha256": "e6bee67724a7b5436fe8162638e3708cfc8d52b6342db69a49715e30ff27cfdc"
+    },
+    {
+      "path": "assets/vendor/pdfjs/wasm/LICENSE_JBIG2",
+      "bytes": 12862,
+      "sha256": "9e66b7f1b934a28b37f3bc4dac97915de1674271e79a0a88182a18ed9731b4d1"
+    },
+    {
+      "path": "assets/vendor/pdfjs/wasm/LICENSE_OPENJPEG",
+      "bytes": 2112,
+      "sha256": "a6af136f3e15038a666b61f376612a07d9a4e48cb7c01adbf3e33b3f14ab49b6"
+    },
+    {
+      "path": "assets/vendor/pdfjs/wasm/LICENSE_PDFJS_JBIG2",
+      "bytes": 555,
+      "sha256": "aad3cce09842e00e9e11ad5e8fef8cc02fbc3a3768fe2f007443b9cee37aaee5"
+    },
+    {
+      "path": "assets/vendor/pdfjs/wasm/LICENSE_PDFJS_OPENJPEG",
+      "bytes": 1285,
+      "sha256": "717fc62da03292dbb4dd0c8280bd4ce7bb8550dcf31d772bc93455fb50313425"
+    },
+    {
+      "path": "assets/vendor/pdfjs/wasm/LICENSE_PDFJS_QCMS",
+      "bytes": 1285,
+      "sha256": "eb5104ca33552be007857a28351bc408f379ddd4bfacab1226b09c6d1e9fd7c4"
+    },
+    {
+      "path": "assets/vendor/pdfjs/wasm/LICENSE_QCMS",
+      "bytes": 1121,
+      "sha256": "36d847ae882f6574ebc72f56a4f354e4f104fde4a584373496482e97d52d31bc"
+    },
+    {
+      "path": "assets/vendor/pdfjs/wasm/openjpeg_nowasm_fallback.js",
+      "bytes": 451590,
+      "sha256": "0f998419819da4491d8302222aa9e2ff2494685641aa2a6c21c3760c29f3e319"
+    },
+    {
+      "path": "assets/vendor/pdfjs/wasm/openjpeg.wasm",
+      "bytes": 252032,
+      "sha256": "004a0e62db930ba9ff2a22212f4554d0bb57a0635a8287caf70f98117cee14ba"
+    },
+    {
+      "path": "assets/vendor/pdfjs/wasm/qcms_bg.wasm",
+      "bytes": 88837,
+      "sha256": "bfdaeb649178748e54bcdaa819bcd5c5c5a4278c8eaaf5feb5a26071e1c25bfc"
+    },
+    {
+      "path": "assets/vendor/pdfjs/wasm/quickjs-eval.js",
+      "bytes": 6232,
+      "sha256": "fe7930418e869791ce892567dbd0bc4698152b7e550b5cefa553992c56ddc325"
+    },
+    {
+      "path": "assets/vendor/pdfjs/wasm/quickjs-eval.wasm",
+      "bytes": 469105,
+      "sha256": "7bcacc9f22cacf7e9b23866d2a6d1639693d40c7f144e41b7c69ed37ba9cbe8f"
+    },
+    {
+      "path": "blog-android-compress-pdf.html",
+      "bytes": 23560,
+      "sha256": "bb1e6b5a830d277d2c857a9c12ad66e8d8301bbd7214d1f33bae3aa3dbbef3fc"
+    },
+    {
+      "path": "blog-extract-pdf-pages.html",
+      "bytes": 23898,
+      "sha256": "84376a6486384252891bbdf554120a2da8ab3d1502966e8de19e8535b5536eb7"
+    },
+    {
+      "path": "blog-iphone-merge-pdf.html",
+      "bytes": 23674,
+      "sha256": "85965f5b8882a2ae17dd9fb8a817991d631c9d993c84c940a9dceb80da2bac3b"
+    },
+    {
+      "path": "blog-jpg-to-pdf.html",
+      "bytes": 23706,
+      "sha256": "a6418158878eb7fd2c0eaa717ceec9af84178936e398bcaf3d59ac503ec6cdc7"
+    },
+    {
+      "path": "blog-mac-compress-pdf.html",
+      "bytes": 24612,
+      "sha256": "8ae2ba41749b7dea068d96cb17380d492fbc2e0f9b1e9c50a7df163f0edb3be4"
+    },
+    {
+      "path": "blog-merge-pdf.html",
+      "bytes": 21788,
+      "sha256": "5274f72bf4c3b35fc76a2258e9b84ece4e24fccaaaa0fbd2f7c4f6559709a2d2"
+    },
+    {
+      "path": "blog-pdf-page-size.html",
+      "bytes": 25669,
+      "sha256": "eb4faa4795fb82390b11d9b9215cbd12f46774e229324d2f0757668218f4e904"
+    },
+    {
+      "path": "blog-pdf-tips.html",
+      "bytes": 22545,
+      "sha256": "3245290ccc4b545d0acfdf0126c8b7dd9e0f536d499148cce55f8fb9c749ae19"
+    },
+    {
+      "path": "blog-phone-to-pdf.html",
+      "bytes": 26677,
+      "sha256": "6f4929d02176046b05af71b0ff3f5e7bbed64752ef38dd772cefe648ab724520"
+    },
+    {
+      "path": "blog-unlock-pdf.html",
+      "bytes": 23975,
+      "sha256": "af60e8b7dde1ae29bff78cab18e6da38df8d400139d84fad02cd51301750284c"
+    },
+    {
+      "path": "blog-windows-compress-pdf.html",
+      "bytes": 24954,
+      "sha256": "8f6bc41c4aa973971c5d607a398a6079f6c1fd2999c69a683bd6325b4ed50902"
+    },
+    {
+      "path": "blog.html",
+      "bytes": 36389,
+      "sha256": "77cc6aa824d5cdfc610eb87477ae0dbdf63dd645b6cc9dd5df372fe334dcffcd"
+    },
+    {
+      "path": "compress-pdf-for-application.html",
+      "bytes": 25658,
+      "sha256": "c19a0903d6464d66e83dddff7a8a688e83bd83c965adf50d1f9b24283f38d9cf"
+    },
+    {
+      "path": "compress-pdf-for-certificate.html",
+      "bytes": 37073,
+      "sha256": "895e40555f8d87af1e38426ac316fbc3cb2928f185d628a51bbcd917a0f06306"
+    },
+    {
+      "path": "compress-pdf-for-contract.html",
+      "bytes": 37063,
+      "sha256": "164aa5813fdb0f752bf25a3e31453376166f33920ba42f87d3372246dd9a9fc2"
+    },
+    {
+      "path": "compress-pdf-for-enterprise.html",
+      "bytes": 25894,
+      "sha256": "2dedea1023c6d0e1153bfb1c7edddc42dbef1103815d7dc75b09b529757b15bd"
+    },
+    {
+      "path": "compress-pdf-for-exam-registration.html",
+      "bytes": 26324,
+      "sha256": "ba0630befe8e21eb135edb815b1b083ea450dedac25edfb81f6dcfe75ff5cadc"
+    },
+    {
+      "path": "compress-pdf-for-pay-slip.html",
+      "bytes": 37037,
+      "sha256": "da9c6cd5d29d9d745100cc30f6fb4e289ffec72da2c671b07815339de243d882"
+    },
+    {
+      "path": "compress-pdf-for-receipt.html",
+      "bytes": 37199,
+      "sha256": "8fc66612b030a632c73dc2e1b7fc4d00d3b791ab02633b80079140eda5222ca7"
+    },
+    {
+      "path": "compress-pdf-for-thesis.html",
+      "bytes": 37333,
+      "sha256": "8f072f14a7b0140d3146050f37fad83ffb8546e99344f45706984441d5a79a59"
+    },
+    {
+      "path": "compress-pdf-for-visa.html",
+      "bytes": 26044,
+      "sha256": "56e45f3356409a1a10b0e1ca0f84469abfe399cc86d34809e0fa849210c991d2"
+    },
+    {
+      "path": "compress-pdf-id-card.html",
+      "bytes": 26392,
+      "sha256": "46c0c6aa87b74737153e4c7d8b857f20f2978de9b102e978bc824e8901722854"
+    },
+    {
+      "path": "compress-pdf-pay-slip.html",
+      "bytes": 25506,
+      "sha256": "57507846b1b92356109a73dd76788e1a43105c81a2297af391ec97bf04c80795"
+    },
+    {
+      "path": "compress-pdf-to-1mb.html",
+      "bytes": 25911,
+      "sha256": "ba9a42d8050b2a3038075d116859167b380af27a1c3fe44ea20dd295d7e2e6e4"
+    },
+    {
+      "path": "compress-pdf-to-200kb.html",
+      "bytes": 37271,
+      "sha256": "53593eef44980630e205928e939494de74e33b500460e31c929cce6b85e7fa37"
+    },
+    {
+      "path": "compress-pdf-to-2mb.html",
+      "bytes": 37069,
+      "sha256": "b2ed13fbf370fddd3f7483978579375021a41ec600a5d4800b6650bed1a7c83d"
+    },
+    {
+      "path": "compress-pdf-to-300kb.html",
+      "bytes": 37095,
+      "sha256": "2a533f43b0c732d3bc01e090714567f80b7f683ed96d75c849186a117037c076"
+    },
+    {
+      "path": "compress-pdf-to-500kb.html",
+      "bytes": 37187,
+      "sha256": "6aa43cfe3b60a95fef16a3944763e4e9aab92df90b0cbfb119bc9993d97bbd27"
+    },
+    {
+      "path": "compress-pdf-to-800kb.html",
+      "bytes": 37107,
+      "sha256": "55460f5af265b3bd0f62a4e49a447c1c5afa1bd99ac39c2b0a0803ccab03771f"
+    },
+    {
+      "path": "compress-scanned-pdf-to-1mb.html",
+      "bytes": 37365,
+      "sha256": "a4690e706afaab29e3690f7ac90b68cedba0222af3ec73b785335f4db0f49adb"
+    },
+    {
+      "path": "compress-scanned-pdf.html",
+      "bytes": 27002,
+      "sha256": "a033bd9bde9ac6a4e3796a8561949a3e7c6cd3474dfe580647f015ef9f0e14f5"
+    },
+    {
+      "path": "compress.html",
+      "bytes": 14667,
+      "sha256": "61f85601d81f98cf02f8422f880b3b2323a2c86b38257f936c5c2280057ef62f"
+    },
+    {
+      "path": "contact.html",
+      "bytes": 20690,
+      "sha256": "81f55237e802453b53cedb8eb0fb276db29a606671fecf9e8dc83b9ed0fb4c39"
+    },
+    {
+      "path": "en/about.html",
+      "bytes": 15532,
+      "sha256": "fd5b969bf4c80cfee47e3c92eb64aeb21fa09a028c1f48a6802cf9f168cec088"
+    },
+    {
+      "path": "en/compress-pdf-to-1mb.html",
+      "bytes": 17392,
+      "sha256": "04500aa3d7796b358172101736b28c10580749525525b580b527579d93e80852"
+    },
+    {
+      "path": "en/compress-pdf-to-500kb.html",
+      "bytes": 17053,
+      "sha256": "1cdeedb9d70aed05d6c96ae15f3aa031eeb8b4b6f510c180503def9d274fd302"
+    },
+    {
+      "path": "en/compress-pdf-without-quality-loss.html",
+      "bytes": 17198,
+      "sha256": "a714e8acb3e04ac2d8a63cd41eaba4a202a0e9ab69fef87b6c8bc0366e70ba1d"
+    },
+    {
+      "path": "en/compress-pdf.html",
+      "bytes": 14777,
+      "sha256": "1ff75ab13588c16de68f2e7c45485624c1282c4468064b756e3765f0f6a8f97f"
+    },
+    {
+      "path": "en/index.html",
+      "bytes": 18408,
+      "sha256": "807958de0fe11a98df0a617bb97bd82dbcfbc9f8f118138ceb66cb47667ba8cd"
+    },
+    {
+      "path": "en/jpg-to-pdf.html",
+      "bytes": 13399,
+      "sha256": "c0000efe308c24d726b70d256db254f6358ca348f9e4b6dbc87b0d6715bbd94f"
+    },
+    {
+      "path": "en/manage-pdf.html",
+      "bytes": 14164,
+      "sha256": "4090abda41bee237fd0afff83e589e1ebdeb0174372eba2abc1de5dd28e13ee1"
+    },
+    {
+      "path": "en/merge-pdf.html",
+      "bytes": 15404,
+      "sha256": "66fa63cf39d28dc9d4e076748b97da19a156d4c7e09e9ed6318f004ef8d09e65"
+    },
+    {
+      "path": "en/pdf-to-jpg.html",
+      "bytes": 13969,
+      "sha256": "7ee4b961a686078782b11a76f81216056860fee72e3ad1c25871e9126e4ad7a3"
+    },
+    {
+      "path": "en/pdf-too-large-to-upload.html",
+      "bytes": 16940,
+      "sha256": "1429fd8d47521ee65ceed4ba4c3bf3039b04d19dad950e878b43a57b4163e6f4"
+    },
+    {
+      "path": "en/pdf-tools.html",
+      "bytes": 17081,
+      "sha256": "b8574b69d1e6a14684b26842fe48392ead76acbeda1d745a79d06d29112e2309"
+    },
+    {
+      "path": "en/privacy.html",
+      "bytes": 15503,
+      "sha256": "29f07268829a6f1cc1324eda3e90f5564987db96b67cddd0947980901fe07c80"
+    },
+    {
+      "path": "en/rotate-pdf.html",
+      "bytes": 13345,
+      "sha256": "78cb34c59bb3239e44df377b477376c7c55313f05b999d875e33c56858db93a4"
+    },
+    {
+      "path": "en/split-pdf.html",
+      "bytes": 14454,
+      "sha256": "6e608defe217f1fd8ed85e40196d7a8c79d558d7aea056b1d524eb51456f3979"
+    },
+    {
+      "path": "en/unlock-pdf.html",
+      "bytes": 14865,
+      "sha256": "439b71eef014e2c240692aca04c2cf00cff5f1bc9c963e7d035b90e0ce77c5a5"
+    },
+    {
+      "path": "en/upload-ready.html",
+      "bytes": 20214,
+      "sha256": "dac4acfef122ea63a50973a36b00ad4980d3e7f88a77a16e9c430e34f9d10fa8"
+    },
+    {
+      "path": "es/about.html",
+      "bytes": 16132,
+      "sha256": "bd804431f7b854f94e3111d93bd9e1d8934814bc8fd2e77deb9f5d1ea3f17ed8"
+    },
+    {
+      "path": "es/compress-pdf-to-1mb.html",
+      "bytes": 17918,
+      "sha256": "ca4b793665ee82e959995f5489ed1e492d500665664ad88cdbfee7880a1ae2bd"
+    },
+    {
+      "path": "es/compress-pdf-to-500kb.html",
+      "bytes": 17541,
+      "sha256": "37d8df945c9b41b829740860245184269b71b0aace55ef6c1c5f68cbd1b97b44"
+    },
+    {
+      "path": "es/compress-pdf-without-quality-loss.html",
+      "bytes": 17641,
+      "sha256": "30a616150b320a7f71fcc8d19c1a33f72e5be34e1db79b0b7bee69353f241547"
+    },
+    {
+      "path": "es/compress-pdf.html",
+      "bytes": 15048,
+      "sha256": "cb55f6f754105262a3c4152b3c40c5ec66ed322e646cce47e000a630d65ab8e4"
+    },
+    {
+      "path": "es/index.html",
+      "bytes": 19091,
+      "sha256": "eb07dfbc5d1848d6b455bd4c1a60c717d0f0dd45a6d878f5cedbd72a646e4791"
+    },
+    {
+      "path": "es/jpg-to-pdf.html",
+      "bytes": 13547,
+      "sha256": "7376eaf82167e406b4eca7a3d5233f9d927362f770ffc038d04dd34625702db2"
+    },
+    {
+      "path": "es/manage-pdf.html",
+      "bytes": 14474,
+      "sha256": "d0543bc39e5b756dd94c55786363de489a6ece3f1847f150e3e071a0ef4d6d3b"
+    },
+    {
+      "path": "es/merge-pdf.html",
+      "bytes": 15812,
+      "sha256": "b5e32bc679bcc264bfea2405cd981988fbc581cb33f8082ff2ca8bd54f881117"
+    },
+    {
+      "path": "es/pdf-to-jpg.html",
+      "bytes": 14173,
+      "sha256": "5903699662ce3d0fbc86c41d57eb15a73276800c52970d65acf48dd702dc855c"
+    },
+    {
+      "path": "es/pdf-too-large-to-upload.html",
+      "bytes": 17499,
+      "sha256": "e4a2cfa6aae39b321a1251f76f2d305add82bb8f469a380d48d59a991a719b1a"
+    },
+    {
+      "path": "es/pdf-tools.html",
+      "bytes": 17648,
+      "sha256": "b5039b1503772ecd8ace0c58fa732b3c2b02b2691938195db846c940e983a742"
+    },
+    {
+      "path": "es/privacy.html",
+      "bytes": 16236,
+      "sha256": "c5f08861a7af72dcdc5d5e29db5d29043bde1d0b1f3b719ec2087208501f1b4a"
+    },
+    {
+      "path": "es/rotate-pdf.html",
+      "bytes": 13601,
+      "sha256": "ed6b14403ed85172e5fb410e8298a78e42b7a6849a8b82787a39dbc0deddaf32"
+    },
+    {
+      "path": "es/split-pdf.html",
+      "bytes": 14714,
+      "sha256": "52cb8cdf360532150ffac13c2045f09ce64a8c2c1e669ae510c0d17d7b7eb39a"
+    },
+    {
+      "path": "es/unlock-pdf.html",
+      "bytes": 15162,
+      "sha256": "f020209bf894bbe1c2489a357fec9c77ebc346a413be899abe3aa3f1d7852661"
+    },
+    {
+      "path": "es/upload-ready.html",
+      "bytes": 20606,
+      "sha256": "1c7f3cd1bd9fcb7801817941372bdc9d98824ea3258b36852ba8fe10e772b871"
+    },
+    {
+      "path": "guide-pdf-compress-methods.html",
+      "bytes": 9336,
+      "sha256": "8949f9035ffb562f74c733a33e7153310339559ae8d49e330074a9f44e75fc20"
+    },
+    {
+      "path": "guide-pdf-merge-split.html",
+      "bytes": 8537,
+      "sha256": "c54c865a00dc30c7607136ad626ba17f1e60c5150e7e929f9ca0b7c3cd9175f3"
+    },
+    {
+      "path": "guide-pdf-too-large-complete.html",
+      "bytes": 9098,
+      "sha256": "eb562cb23a5c4df1ae6aeea32125aeb777d72a2ec6f6f0cac5d68805dad5f767"
+    },
+    {
+      "path": "guide-resume-pdf-optimization.html",
+      "bytes": 8943,
+      "sha256": "251bbf1be3916d2c79092c40088519c1f1fd3742ce9a384186f30794032323ae"
+    },
+    {
+      "path": "guide-visa-pdf-handling.html",
+      "bytes": 9190,
+      "sha256": "d9ced5c9d0e6fef4ed1f6e492f60d46a649011bbedf1e50d47eca7861982f685"
+    },
+    {
+      "path": "how-to-compress-pdf-under-200kb.html",
+      "bytes": 37793,
+      "sha256": "d043f982b2c06c62c835a133dd2e2fd63c3eca1ab55c843bd70e98e72826d6e5"
+    },
+    {
+      "path": "id/about.html",
+      "bytes": 15755,
+      "sha256": "ef98c100808fb9f92e8be4187ed8e64b83c1332c17777ef45cdbe8f2c2db2d8b"
+    },
+    {
+      "path": "id/compress-pdf-to-1mb.html",
+      "bytes": 17470,
+      "sha256": "1fe8cbc800c9ad0fa61b2765d46dc27634f2560ceac4ebacd97abf6b18bab7df"
+    },
+    {
+      "path": "id/compress-pdf-to-500kb.html",
+      "bytes": 17214,
+      "sha256": "1e017b195d50efdb58deb12019f28adb0f8e5a7fb14d9b49f4bda579b444b681"
+    },
+    {
+      "path": "id/compress-pdf-without-quality-loss.html",
+      "bytes": 17368,
+      "sha256": "b1e2fd3e366966c9836bef1ceb32e3c5b2f23ba082874bf4ddb404ebceb7c630"
+    },
+    {
+      "path": "id/compress-pdf.html",
+      "bytes": 14791,
+      "sha256": "9e8f085d7eaff0a920ee4530fc945ddd20b43e270be31632fcb3845d71cb7b1c"
+    },
+    {
+      "path": "id/index.html",
+      "bytes": 18579,
+      "sha256": "79b384be8f72499952b3fd14aa6123565434bdb0196d39e2186b25a5e07e1d9f"
+    },
+    {
+      "path": "id/jpg-to-pdf.html",
+      "bytes": 13486,
+      "sha256": "46726e9eb2bc16f4d238187b5737073c7800cf8df31db4c85a05afc5583707b6"
+    },
+    {
+      "path": "id/manage-pdf.html",
+      "bytes": 14289,
+      "sha256": "d8a87dd496c9d76d1b1ca900d2fba1541195d7129dd3db4df7de28c0d475dd4d"
+    },
+    {
+      "path": "id/merge-pdf.html",
+      "bytes": 15592,
+      "sha256": "c1964eb7fa4fadd768762936b0b84086a2ca7377878165e31ed89772f7f4dd2e"
+    },
+    {
+      "path": "id/pdf-to-jpg.html",
+      "bytes": 14072,
+      "sha256": "66902813e0cefc59d1f70eaabd9c3369e585465d31bb29ca8f2bc6f7774c8f74"
+    },
+    {
+      "path": "id/pdf-too-large-to-upload.html",
+      "bytes": 17257,
+      "sha256": "7b7b2076132deda7db76faddbffaacf2f180989d912f07a8899af1598e368be6"
+    },
+    {
+      "path": "id/pdf-tools.html",
+      "bytes": 17309,
+      "sha256": "e126c7077feefb8144c50da26712b92ae754fe167c7aa2b868bced67ffa3d6b4"
+    },
+    {
+      "path": "id/privacy.html",
+      "bytes": 15625,
+      "sha256": "6686f4e6f303a668211fad127ee935a6f27fe8f26b4da7e9f1f1fb95aeb45a91"
+    },
+    {
+      "path": "id/rotate-pdf.html",
+      "bytes": 13504,
+      "sha256": "2e8caae98f68c5f49ecb9dea395e54b57b0866934ac81edb3682d9f6580d6f01"
+    },
+    {
+      "path": "id/split-pdf.html",
+      "bytes": 14668,
+      "sha256": "8d8a9e46ca64b1559936857c238dac2a2dbd3fd38dcd2134ed2c48c706df0fda"
+    },
+    {
+      "path": "id/unlock-pdf.html",
+      "bytes": 15019,
+      "sha256": "3fbebc09ce546c7c0acea494c89d0c229e9d324ccc55081ee6b6c90d29d4100d"
+    },
+    {
+      "path": "id/upload-ready.html",
+      "bytes": 20327,
+      "sha256": "541932feb56c42c8c54da60f8fd0b864ddeec4151567954e84b4335de0a1ea7d"
+    },
+    {
+      "path": "index.html",
+      "bytes": 18385,
+      "sha256": "a2e5f8a2dd33fc8b151ca1744b31b736054c36a8d8fb951cea161b83ee939aab"
+    },
+    {
+      "path": "ja/about.html",
+      "bytes": 16591,
+      "sha256": "0b877c82def34148ac1839575a2489b47858c352132b0a5987c80c5448223cb6"
+    },
+    {
+      "path": "ja/compress-pdf-to-1mb.html",
+      "bytes": 18464,
+      "sha256": "143368092886c44e2c8e7bcccc114c1cd348383c2abf8a889c955de45c50844b"
+    },
+    {
+      "path": "ja/compress-pdf-to-500kb.html",
+      "bytes": 18054,
+      "sha256": "b03bf6614102a616dde42c380cefa7ce17091848a0e23bda9e30f38b7e171d92"
+    },
+    {
+      "path": "ja/compress-pdf-without-quality-loss.html",
+      "bytes": 18308,
+      "sha256": "dd56d6132df035dd29ac7c95fc3c098c85e43a7711c62ee78f261863d884b684"
+    },
+    {
+      "path": "ja/compress-pdf.html",
+      "bytes": 15387,
+      "sha256": "ff748e2d1646bb36cded2c81bb611a93e709b755c6473c0670f7143c1254c8ca"
+    },
+    {
+      "path": "ja/index.html",
+      "bytes": 19595,
+      "sha256": "7e8d549918b8897617bca09cc8aafd4b0a83dea3109bc39ac84576f94d909f35"
+    },
+    {
+      "path": "ja/jpg-to-pdf.html",
+      "bytes": 13926,
+      "sha256": "3e35de10a28ef11889c92ac13791b71b7e582eb6bfc2f27706d7f63fc587dd31"
+    },
+    {
+      "path": "ja/manage-pdf.html",
+      "bytes": 14889,
+      "sha256": "4ed09ee9b717dabead3f1d036c17a5b5a314d3ad588e77ead0d24f3c764dce0c"
+    },
+    {
+      "path": "ja/merge-pdf.html",
+      "bytes": 16241,
+      "sha256": "d0f0cbdc4581a695a4e09699129607f2c37fcc9d99b9e6c3a5cd0eb1b0a5974e"
+    },
+    {
+      "path": "ja/pdf-to-jpg.html",
+      "bytes": 14548,
+      "sha256": "62857f3a9dc7f7e6746ae7cfce894b990b52117f71e973b316c0102adaf367a1"
+    },
+    {
+      "path": "ja/pdf-too-large-to-upload.html",
+      "bytes": 18205,
+      "sha256": "f17f39d41ca2c82c882bb5d7b88426c4327fa92ceb291b8e1fecde261b5e8623"
+    },
+    {
+      "path": "ja/pdf-tools.html",
+      "bytes": 17985,
+      "sha256": "0888d1762d9c918bf0245a19057f1006dd4769fb6d45efd7e0945b35aaf7531b"
+    },
+    {
+      "path": "ja/privacy.html",
+      "bytes": 16663,
+      "sha256": "768eed0e8840673538c8a3e6fc8c7cdbf890d44959e6d84eec3e143df68b6802"
+    },
+    {
+      "path": "ja/rotate-pdf.html",
+      "bytes": 13875,
+      "sha256": "568b6ff732d2cc3d7beb226563042658afb5fe2890c37c54067958969a8e800e"
+    },
+    {
+      "path": "ja/split-pdf.html",
+      "bytes": 15065,
+      "sha256": "e9e4af1a691370b2a1b9f86fffc6c8f35980faf3987e620997b91aa372eb7fba"
+    },
+    {
+      "path": "ja/unlock-pdf.html",
+      "bytes": 15591,
+      "sha256": "d340f3ad65504750a416e3d15fbd0c8d4555749c8959592769c0c48cb8173323"
+    },
+    {
+      "path": "ja/upload-ready.html",
+      "bytes": 21151,
+      "sha256": "25edf12bf0a72163f1c21878114be4148f46d40c81a9cb9c3c97eb912e96706b"
+    },
+    {
+      "path": "job-application-pdf-size.html",
+      "bytes": 44266,
+      "sha256": "c3f22cbc4a9be46cda6ad052b7e0aac9000f3b9af2a6e7063c1eaa96b022f80a"
+    },
+    {
+      "path": "jpg-to-pdf.html",
+      "bytes": 13441,
+      "sha256": "b9be2317679440d50cb8779d61bd41faa49833ae6b8da9af1e39dd86123bdeb0"
+    },
+    {
+      "path": "manage.html",
+      "bytes": 14220,
+      "sha256": "eb3f12f807e351234d85489aa9846f965f771f8d03732c7da3d8d91922de8c33"
+    },
+    {
+      "path": "merge.html",
+      "bytes": 15414,
+      "sha256": "82658d91102fe5decccd7bddd5b9a1eff950fcee33982767a4ad9f7745b67dc4"
+    },
+    {
+      "path": "pdf-compress-without-quality-loss.html",
+      "bytes": 40740,
+      "sha256": "7f289f14cc891be0543035ed4393aefbde08a98879846901abf6aa76c68e809c"
+    },
+    {
+      "path": "pdf-contract-too-large.html",
+      "bytes": 25927,
+      "sha256": "079fa414ca3ded3afb958f2baffbdefead92e80ac2264218ec2516dacfe04ef9"
+    },
+    {
+      "path": "pdf-file-too-big-for-email.html",
+      "bytes": 37739,
+      "sha256": "014517d0d898c23a797c23c23912974dc0d9e42fc4227dae53dad21c9ebb8922"
+    },
+    {
+      "path": "pdf-for-exam-registration-too-large.html",
+      "bytes": 37467,
+      "sha256": "c3ec0e74dae2a5fe9f92b8a1d9d78ef936e6bad7490f7e30cdcffc1e94922c8c"
+    },
+    {
+      "path": "pdf-receipt-too-large.html",
+      "bytes": 26058,
+      "sha256": "56e93c8ffb0611a36d484512aef504431a5ca2da738c893535072c871fa38aad"
+    },
+    {
+      "path": "pdf-rotate.html",
+      "bytes": 13379,
+      "sha256": "b1218b9346da1a53786a962295a271ea2e04ad0851e600728087a0f5eab5d114"
+    },
+    {
+      "path": "pdf-size-reduce-online.html",
+      "bytes": 37421,
+      "sha256": "1ea1b71f40cbee1c8844ef98b59a6ebc3eb395a0430389d761be5c1c5a8f8fed"
+    },
+    {
+      "path": "pdf-thesis-large.html",
+      "bytes": 25892,
+      "sha256": "d26d91119833994bc7d4b3d3701af6425dc6486e0a846ee5b1eebc4b11a1b7c3"
+    },
+    {
+      "path": "pdf-to-jpg.html",
+      "bytes": 14006,
+      "sha256": "b5246f97cb215e8912e8ce6ff202e79b7494a50c4b0279aaf47169a7c7a6eda8"
+    },
+    {
+      "path": "pdf-too-large-to-upload.html",
+      "bytes": 26986,
+      "sha256": "02fc5344d1ed22f8258369f123d0d6bccf3f20eb71e830697edf74c1aa883fba"
+    },
+    {
+      "path": "pdf-too-large-upload-failed.html",
+      "bytes": 38242,
+      "sha256": "705ce5d88053cd51c146f71574ba34b445579102f850c26ebd15b7de313e45d2"
+    },
+    {
+      "path": "pdf-tools.html",
+      "bytes": 17055,
+      "sha256": "c2ff66800d2aea8b928de04d8ce72c513bbab90d2fb27501c4a78fe102fd3d34"
+    },
+    {
+      "path": "pdf-tutorial-for-students.html",
+      "bytes": 26075,
+      "sha256": "5ccd7feb1642821ff30c0fbb48be84f125c7e16a43247244f5e18aed0e963c25"
+    },
+    {
+      "path": "pdf-unlock.html",
+      "bytes": 14836,
+      "sha256": "14aea5f471d11e74106264ba5c3e597d5b6540389af40ff1c7d716933d14d5d9"
+    },
+    {
+      "path": "privacy.html",
+      "bytes": 15307,
+      "sha256": "2b077f44f31248194180e94ea8f9472c487bf33f4828b4d514fdc8647721ad28"
+    },
+    {
+      "path": "pt-br/about.html",
+      "bytes": 16160,
+      "sha256": "a7fce018ec9484c2d998d0ecccd595bffec5e9a3568f94e75a5c6b8e9548c656"
+    },
+    {
+      "path": "pt-br/compress-pdf-to-1mb.html",
+      "bytes": 17829,
+      "sha256": "d81bffcf04b07a7bf36152ad18328272799bd44dfbb88687c8cfcbf639e758c8"
+    },
+    {
+      "path": "pt-br/compress-pdf-to-500kb.html",
+      "bytes": 17518,
+      "sha256": "3ded1b10d296f90bcc0a1bca51ba0adcdc5bc45a1cf3f4ce58895cd9326cf2f9"
+    },
+    {
+      "path": "pt-br/compress-pdf-without-quality-loss.html",
+      "bytes": 17504,
+      "sha256": "2faa0044633f3197aed5f3498608990281de15d54312902cd67521018513ce35"
+    },
+    {
+      "path": "pt-br/compress-pdf.html",
+      "bytes": 15096,
+      "sha256": "7c7243702b43eda1a398e086cde69b1cfd52f3958242ed4868892ab517fb25e0"
+    },
+    {
+      "path": "pt-br/index.html",
+      "bytes": 19093,
+      "sha256": "0916fdbbdfeada19c99d7672d96932a22ee243bf5eb57f1f5bec2a5a5b35bf0d"
+    },
+    {
+      "path": "pt-br/jpg-to-pdf.html",
+      "bytes": 13702,
+      "sha256": "c437b8e20782c49cbfe838bdbfaf49a7417c2ddd2af12a304ade31a233c713d0"
+    },
+    {
+      "path": "pt-br/manage-pdf.html",
+      "bytes": 14548,
+      "sha256": "234cc05288be1a6c0905f77b532b577f2cadbc625d9a14f1b35d467ffdd37c5b"
+    },
+    {
+      "path": "pt-br/merge-pdf.html",
+      "bytes": 15872,
+      "sha256": "cfd2550318156178ccbdc6d18c86611c09caa0d00e177cf2905fcf1bcadc7952"
+    },
+    {
+      "path": "pt-br/pdf-to-jpg.html",
+      "bytes": 14297,
+      "sha256": "4fcee9df74dcd58cc21e251f11dd65d3b58d8e80e5a04f4f63f43fd0de5cef34"
+    },
+    {
+      "path": "pt-br/pdf-too-large-to-upload.html",
+      "bytes": 17561,
+      "sha256": "1514548954398c9283f60f6c54c876b1dab0266b75dc371704e5f26c3db6f96b"
+    },
+    {
+      "path": "pt-br/pdf-tools.html",
+      "bytes": 17791,
+      "sha256": "19018a2acf4b79acff29f73a83406880be3eb529ace73045f3e5ad0e48bd25e1"
+    },
+    {
+      "path": "pt-br/privacy.html",
+      "bytes": 16278,
+      "sha256": "70145c6056d101f57d3cdca10cff9b6389ee4127a45a61212e8802de888706b0"
+    },
+    {
+      "path": "pt-br/rotate-pdf.html",
+      "bytes": 13721,
+      "sha256": "74100fd36d01aaea1948589f85aab5696aef79058aa275b16f7928a5d1d9a359"
+    },
+    {
+      "path": "pt-br/split-pdf.html",
+      "bytes": 14821,
+      "sha256": "23c2aa66cb02b6c789df9bb792de1fc263ea53a5060c021ca4876758d35c6b70"
+    },
+    {
+      "path": "pt-br/unlock-pdf.html",
+      "bytes": 15214,
+      "sha256": "6760dccad5481ed049f1d901a86680074707f2d53893b031c89d34950a915d32"
+    },
+    {
+      "path": "pt-br/upload-ready.html",
+      "bytes": 20686,
+      "sha256": "1966f892cbdb3b99bbbadfec92467d26b3460ddfea543415d1bfb0363e7a9684"
+    },
+    {
+      "path": "resize-pdf-for-upload.html",
+      "bytes": 25579,
+      "sha256": "a1b18bbf36cada36496750d11446070740424bf64f4f7a95fdc28be89f3ed03a"
+    },
+    {
+      "path": "robots.txt",
+      "bytes": 66,
+      "sha256": "a41858b056722868d2bce796c86eb44221592831165d7141e7735c3b14da7286"
+    },
+    {
+      "path": "school-application-pdf-compress.html",
+      "bytes": 43315,
+      "sha256": "20d496414d29afc88cbaee3a65e6d48dd3f29bb205a78cfb581cdf7e474bfcbd"
+    },
+    {
+      "path": "seo-action-certificate-pdf-compress-1mb.html",
+      "bytes": 11483,
+      "sha256": "fcf3abe1ad33f793d49a8f82f6dd5f03e87ad4092ae827a6b014bfd6adbb874b"
+    },
+    {
+      "path": "seo-action-certificate-pdf-compress-200kb.html",
+      "bytes": 11507,
+      "sha256": "138a43f7b410073059307c953ee57f6c5ede53c54a14ce2fbffb8d6914019d1e"
+    },
+    {
+      "path": "seo-action-certificate-pdf-compress-2mb.html",
+      "bytes": 11483,
+      "sha256": "b817c2a23e5e0f0d8d7ad07aa6c4dbd902c7c27184ca005dcc088457c4fb481e"
+    },
+    {
+      "path": "seo-action-certificate-pdf-compress-500kb.html",
+      "bytes": 11507,
+      "sha256": "8dfa29d54f4b952539c599abfb77fceefdb06bbf502c74049cf16fe2dd593623"
+    },
+    {
+      "path": "seo-action-certificate-pdf-compress.html",
+      "bytes": 11435,
+      "sha256": "bd148b54423a8e47066532553fd71345bc6881ceb1f06f9ef1ac1a9c8dd1272f"
+    },
+    {
+      "path": "seo-action-contract-pdf-compress-1mb.html",
+      "bytes": 12278,
+      "sha256": "ca230918d548c0333918c978ef1e5abd70c5588440b9896cf2c0fce4ec9aad4d"
+    },
+    {
+      "path": "seo-action-contract-pdf-compress-200kb.html",
+      "bytes": 12306,
+      "sha256": "630a6ec9c01d250ae2546b96fd94c94b322448ed59b7d634f534aec11da9db58"
+    },
+    {
+      "path": "seo-action-contract-pdf-compress-2mb.html",
+      "bytes": 12278,
+      "sha256": "638d5f29b10f243d2efa868011c36cf5ad41563b1c2473790f17ac1e1ef3fba3"
+    },
+    {
+      "path": "seo-action-contract-pdf-compress-500kb.html",
+      "bytes": 12306,
+      "sha256": "6c2065e7dbaffa8391cd9ed7d467ff2ceb2793d406011fa2635bc78081840133"
+    },
+    {
+      "path": "seo-action-contract-pdf-compress.html",
+      "bytes": 12222,
+      "sha256": "7daad82e6ae45089a381cb45f6dbeba3fe67bd327ba0d10302657652654dd737"
+    },
+    {
+      "path": "seo-action-how-to-certificate-pdf-compress.html",
+      "bytes": 11519,
+      "sha256": "457c511e0117ea2521b5f66f57f759519d5419835c91ccac278a855312d1aa3d"
+    },
+    {
+      "path": "seo-action-how-to-contract-pdf-compress.html",
+      "bytes": 12320,
+      "sha256": "2518571758859d435ec7c987a72d9c083568251452f84f8679ce748721a22aa3"
+    },
+    {
+      "path": "seo-action-how-to-exam-registration-pdf.html",
+      "bytes": 11483,
+      "sha256": "8e2b70561420e0323020748f8e18359061eb2ac1a0d623a432501c39b4b685ec"
+    },
+    {
+      "path": "seo-action-how-to-recruitment-pdf-upload.html",
+      "bytes": 11495,
+      "sha256": "7ed619a213233101a7c669c51e191d65d37005c761d7d9a848dd575622f8b9c3"
+    },
+    {
+      "path": "seo-action-how-to-school-pdf-submit.html",
+      "bytes": 11441,
+      "sha256": "03d8d4d8a4faaaf6c071aa7b4253d5449bf1f61fb67834ce4baeba9632f098dd"
+    },
+    {
+      "path": "seo-action-how-to-test-pdf-upload.html",
+      "bytes": 11411,
+      "sha256": "cf681f09808e4c0882be3a32ccab3554fe602c478c91685de2c5bb1ad17dc1f2"
+    },
+    {
+      "path": "seo-action-how-to-visa-pdf-size.html",
+      "bytes": 12339,
+      "sha256": "a03baf1dc317797843e7b591619f2d9c636a0f50005766d9443073c16426728f"
+    },
+    {
+      "path": "seo-action-pdf免费在线压缩.html",
+      "bytes": 16107,
+      "sha256": "fd22d525341fd70604d86d5c29cf53f681e50e0a5c9793d62e50695e0e0a1435"
+    },
+    {
+      "path": "seo-action-pdf压缩到200kb.html",
+      "bytes": 16027,
+      "sha256": "9ed35578f5e7a1457abf956fd5eaf1de95fe2beaf800fdd6fc8b6268e72314b7"
+    },
+    {
+      "path": "seo-action-pdf压缩到500kb.html",
+      "bytes": 16027,
+      "sha256": "b698b72549372b7de22dddd2afeeaf578312dd7b208224c4e3590c58883cb73d"
+    },
+    {
+      "path": "seo-action-pdf大小缩小.html",
+      "bytes": 15987,
+      "sha256": "86d61f469a5d53708d26ac2627122f940a08248f75dbbc892d68eb59b4f158b9"
+    },
+    {
+      "path": "seo-action-pdf文件压缩软件.html",
+      "bytes": 16107,
+      "sha256": "e824eac67cd5cfcf582d74bf4a6057ce965d7f147a8a7fc4bbf7bc62ed5a85a2"
+    },
+    {
+      "path": "seo-action-what-is-certificate-pdf-compress.html",
+      "bytes": 11531,
+      "sha256": "36f7000f8f8ed803f689f95900acd6b4ed53dfa024d8f1544ffdb5e95c607f3e"
+    },
+    {
+      "path": "seo-action-what-is-contract-pdf-compress.html",
+      "bytes": 12334,
+      "sha256": "81460617b4fb934bb73e5541bbc10ef30b343162bda8229823f16116d3a749db"
+    },
+    {
+      "path": "seo-action-why-is-certificate-pdf-compress.html",
+      "bytes": 11519,
+      "sha256": "6c3486d928f94f0c5f972a46ae3d20250150ca7f56d1730bca2ba79603f298b3"
+    },
+    {
+      "path": "seo-action-why-is-contract-pdf-compress.html",
+      "bytes": 12320,
+      "sha256": "93b5e8feb7848a1ebf81e8ece8f3738758880c49da71d401ac4c3c09577472b3"
+    },
+    {
+      "path": "seo-content-pdf-exceeds-upload-limit.html",
+      "bytes": 11437,
+      "sha256": "cb015304c2e5a97ebea6b76087ee630775b16061e71d39feecdbcc52c21e5b9f"
+    },
+    {
+      "path": "seo-content-pdf分割页面.html",
+      "bytes": 15989,
+      "sha256": "8ce65d0d9f5437aa0f60f9abb628b66e7181fe5aa8a28570d8bedc53cf3906a9"
+    },
+    {
+      "path": "seo-content-pdf合并多个文件.html",
+      "bytes": 16109,
+      "sha256": "a3cff42baa71dce49af70c9b94a8bb87f02712b55a2ba15f0c7f47b8cfff4095"
+    },
+    {
+      "path": "seo-content-pdf旋转方向调整.html",
+      "bytes": 16109,
+      "sha256": "3a21da9ec9a9d2c5520457d7874dc6fbd2eaceeb0e892cf3ebd16b9ae52a6285"
+    },
+    {
+      "path": "seo-content-pdf解锁密码.html",
+      "bytes": 15989,
+      "sha256": "e4ae44e606ed4f667ae64d322ffa317e75517c64f1aaa64cef9bd1b2fdf22975"
+    },
+    {
+      "path": "seo-content-pdf转图片格式.html",
+      "bytes": 16049,
+      "sha256": "506ae7cd0842fa9b3840a147541928de64bc60c503bca2671ae929d7acd0d2b4"
+    },
+    {
+      "path": "seo-content-图片转pdf文件.html",
+      "bytes": 16049,
+      "sha256": "c5318a1b58f7f0199d531cfa1ea5166005a15c1d78d7fae6351219ed0dc183c6"
+    },
+    {
+      "path": "seo-content-留学申请pdf大小.html",
+      "bytes": 11407,
+      "sha256": "215d29591a4e2ff6271602ea1e3fb64a66716f7592e4e3b72a55a237567e340f"
+    },
+    {
+      "path": "seo-pain-how-to-pdf-cannot-upload.html",
+      "bytes": 12369,
+      "sha256": "7c4a9f45260f16516b8a25d3b348b386ff2b583715e5bb4e5fcc71719c33bccd"
+    },
+    {
+      "path": "seo-pain-how-to-pdf-upload-failed.html",
+      "bytes": 12369,
+      "sha256": "d3cff73c53e712a543133509ae8d5e206ab49aabae7273f59f3fe0ae9d9687b0"
+    },
+    {
+      "path": "seo-pain-pdf-cannot-upload.html",
+      "bytes": 12271,
+      "sha256": "4c51f03c8e99737d97cc0e449e0af30a46caba93a71e99bc2a9a565a2ed6c866"
+    },
+    {
+      "path": "seo-pain-pdf-upload-failed.html",
+      "bytes": 12271,
+      "sha256": "6f3c636d49a43037c7e6fb44dfd84131cfe2439adade7a1e01f08b27947ffb80"
+    },
+    {
+      "path": "seo-pain-pdf上传失败怎么解决.html",
+      "bytes": 16223,
+      "sha256": "3581d2c9d7ece4ba2fa9ab5fc32811cf3b4152448cc774f883fa18373bef5501"
+    },
+    {
+      "path": "seo-pain-pdf压缩后模糊.html",
+      "bytes": 16043,
+      "sha256": "d5d94cdebbf292897642c624b975663a79d3fb01ef82ce91c176234650aa0853"
+    },
+    {
+      "path": "seo-pain-pdf太大发不出去.html",
+      "bytes": 16097,
+      "sha256": "030109b0241e5dc01449aa493b2db298fb64eed2a2b4f2853fa7f24a2d35971d"
+    },
+    {
+      "path": "seo-pain-pdf太大合同.html",
+      "bytes": 12231,
+      "sha256": "672dae75e7b9d559fb9464173a24b7728e2c124b69495af210316a9dfc7b1808"
+    },
+    {
+      "path": "seo-pain-pdf太大微信.html",
+      "bytes": 11323,
+      "sha256": "d01cb9b6b959c0a3d0486519c2449d604f1bb8a7b7d197d07316e86e0a183b5a"
+    },
+    {
+      "path": "seo-pain-pdf太大打不开.html",
+      "bytes": 16037,
+      "sha256": "dae511529022baf107fa10b4cc0e034b9a18262a3dfa9cdec8d4bfc389732a30"
+    },
+    {
+      "path": "seo-pain-pdf太大报名.html",
+      "bytes": 11323,
+      "sha256": "3c4ab93590b8b56e69cc85941a4d3f2ff8aa8aad5eeb75f628c224ba9cbdfbb6"
+    },
+    {
+      "path": "seo-pain-pdf太大无法上传.html",
+      "bytes": 16097,
+      "sha256": "b08da81422324e65f119ed7cac83af71710354d88489ff634b6662e7bf2033d8"
+    },
+    {
+      "path": "seo-pain-pdf太大签证.html",
+      "bytes": 12351,
+      "sha256": "eba3018fd9fde6a08dea9046905db1471bdf138a66f079a9168086cf116a141f"
+    },
+    {
+      "path": "seo-pain-pdf太大简历.html",
+      "bytes": 12322,
+      "sha256": "8b7fa4bb888beb18be3b1473f123cd60f759d782e5f18234b40554d53e1eddaa"
+    },
+    {
+      "path": "seo-pain-pdf太大考试.html",
+      "bytes": 12243,
+      "sha256": "703d9b0649bdf24346abf9de09cf5a9dfb56e03d3a125a69742c998ff2a3378d"
+    },
+    {
+      "path": "seo-pain-pdf文件太大无法提交.html",
+      "bytes": 16211,
+      "sha256": "3708d377cc98c755ee81ec6229ba26aa6474d250fa9a452c657c846238b3bd3b"
+    },
+    {
+      "path": "seo-pain-what-is-pdf-cannot-upload.html",
+      "bytes": 12383,
+      "sha256": "381528880ac6ca740bce1ef5eb64086527ca9d057c2c67e3f5be195f04c79959"
+    },
+    {
+      "path": "seo-pain-what-is-pdf-upload-failed.html",
+      "bytes": 12383,
+      "sha256": "271bbd612d96648e17a2e87db89239d287e7f035da4d27dda8a4fb294d8a9790"
+    },
+    {
+      "path": "seo-pain-why-is-pdf-cannot-upload.html",
+      "bytes": 12369,
+      "sha256": "d08250cfce9ea9cf33d74b2874fd728722a13e686eac009cc75c9d9f1a2a5f9a"
+    },
+    {
+      "path": "seo-pain-why-is-pdf-upload-failed.html",
+      "bytes": 12369,
+      "sha256": "e62e017f7bbac682e567e74ebb4dc3857aba4231cdb11f7a51de83e725ed8551"
+    },
+    {
+      "path": "seo-scenario-exam-registration-pdf.html",
+      "bytes": 11403,
+      "sha256": "49cac3876c685d999acad75d78e2e2e4f86d2c82b4147b876ed395a3ec97e750"
+    },
+    {
+      "path": "seo-scenario-school-pdf-submit.html",
+      "bytes": 11361,
+      "sha256": "c3a765c0348866c66e4a520601bd8ea8e3173b880a40fd1515deac44a9edee21"
+    },
+    {
+      "path": "seo-scenario-visa-pdf-size-1mb.html",
+      "bytes": 11361,
+      "sha256": "9ee1c4cadc88f6b573bcbfcb3b5aaf848c993ae999a4e8ce8b5fbce75e8778a4"
+    },
+    {
+      "path": "seo-scenario-visa-pdf-size-200kb.html",
+      "bytes": 11385,
+      "sha256": "25d5eac32e0f354dc6db63e4cd0d6d8a9466435e7826c2bb88bcc894b1784bab"
+    },
+    {
+      "path": "seo-scenario-visa-pdf-size-2mb.html",
+      "bytes": 11361,
+      "sha256": "dc0a70fdfe7390f5590223fdf1347013f0080ebf251d29a19fc36185be107939"
+    },
+    {
+      "path": "seo-scenario-visa-pdf-size-500kb.html",
+      "bytes": 11385,
+      "sha256": "d7c1010acbeda4b0a58fb0677f0d0bcf81198e6bd36d69840e0c2ae46a53b100"
+    },
+    {
+      "path": "seo-scenario-visa-pdf-size.html",
+      "bytes": 12291,
+      "sha256": "64b899a3550f17e5224373f64297d7b0d1456ecef30768db4703b3d164813870"
+    },
+    {
+      "path": "seo-scenario-what-is-exam-registration-pdf.html",
+      "bytes": 11499,
+      "sha256": "6c34738ce0eb277b1489a2c033fdbe254c74a8a30e2270c64593316b953320c9"
+    },
+    {
+      "path": "seo-scenario-what-is-school-pdf-submit.html",
+      "bytes": 11457,
+      "sha256": "234cacc0f56ce75365f3d11bc2425ec02c4ee6276a720f1789e246e307f29240"
+    },
+    {
+      "path": "seo-scenario-what-is-visa-pdf-size.html",
+      "bytes": 11409,
+      "sha256": "bf5198dfe9835d639a08c5df75b1e56dd0ea578b95195981beefd8eef169a0f0"
+    },
+    {
+      "path": "seo-scenario-why-is-exam-registration-pdf.html",
+      "bytes": 11487,
+      "sha256": "fe06c4523ef83819254375015c45429fc15c21674afd9a6183ab2554bbd41cfa"
+    },
+    {
+      "path": "seo-scenario-why-is-school-pdf-submit.html",
+      "bytes": 11445,
+      "sha256": "a5bce9724bbd969864528e20bc202da75ab316dec188def79b48cc413b32317e"
+    },
+    {
+      "path": "seo-scenario-why-is-visa-pdf-size.html",
+      "bytes": 11397,
+      "sha256": "f75fd79f8323d8c27fa871dcc95fca556a67bc87986f831e9a0fbc061eea02d4"
+    },
+    {
+      "path": "seo-scenario-企业oa上传pdf太大.html",
+      "bytes": 16131,
+      "sha256": "aee22294b3ea97548d03b0bf77fef7538d8a956af83c5d8f9c51b018c6400b74"
+    },
+    {
+      "path": "seo-scenario-微信发送pdf太大.html",
+      "bytes": 16093,
+      "sha256": "308b57a3b82a4a8cc8e1fdd0a98a4806de1d71984f56f2853087c0468c3eaa85"
+    },
+    {
+      "path": "seo-scenario-扫描件pdf压缩.html",
+      "bytes": 16051,
+      "sha256": "d4db421d2b98d35008c24b3ac71e3789282ae4f404410fff1e64ea13b3ac7cb8"
+    },
+    {
+      "path": "seo-scenario-报名材料pdf太大.html",
+      "bytes": 16093,
+      "sha256": "5df84eca598233edbff5f1632f4ac18943388c66640cac1066f50edab296fbe4"
+    },
+    {
+      "path": "seo-scenario-留学申请pdf大小.html",
+      "bytes": 16111,
+      "sha256": "7438c41c64254c1530296684fa62d91214c0e59bf8a0ff131bafb4a3e3b2f66f"
+    },
+    {
+      "path": "seo-scenario-签证pdf太大.html",
+      "bytes": 15979,
+      "sha256": "1a698040e09e9683c93dc127dff2105dfddfc46c0aaa50e7fdb2c8656afb4d81"
+    },
+    {
+      "path": "seo-scenario-简历pdf压缩.html",
+      "bytes": 15991,
+      "sha256": "3cbaa57319e72678133d05f11db57e133ed3f0ec862b8a7c9be3950a8154b3ef"
+    },
+    {
+      "path": "seo-scenario-考试注册pdf上传限制.html",
+      "bytes": 16231,
+      "sha256": "97c71fa48eddf798d5ddd8961603b0b1b20999c429dec088ff7b5fef64219a11"
+    },
+    {
+      "path": "seo-scenario-证件照pdf太大.html",
+      "bytes": 16036,
+      "sha256": "f518f34d2f13d5a8a09d2ee0eda5a236c7fff9f738290115d0fa04442acdbe6d"
+    },
+    {
+      "path": "seo-scenario-邮件附件pdf太大.html",
+      "bytes": 16093,
+      "sha256": "91edbc736af12d1f377c17eddf0f86bc9047ae2656d20bf0a7b3d82813013ba8"
+    },
+    {
+      "path": "seo-tools-jpg转pdf在线.html",
+      "bytes": 15985,
+      "sha256": "51239584e646fd114948ebc626fbe48b0326ef85f19847a967c02a7cdd341681"
+    },
+    {
+      "path": "seo-tools-pdf分割工具.html",
+      "bytes": 15985,
+      "sha256": "ff017c60167cdf6dce0bee73672d29fa66571ebb7ecab741a92c2c674613cf76"
+    },
+    {
+      "path": "seo-tools-pdf压缩工具.html",
+      "bytes": 15985,
+      "sha256": "1b95fbfc34e8d381f23da5e68ee5e9fa278a569fcc5b4ca339ea1bcfc524df11"
+    },
+    {
+      "path": "seo-tools-pdf合并工具.html",
+      "bytes": 15985,
+      "sha256": "a4e50cc64ff253298be9ef8cd5eb656c1e8e932e0dde5c7ebe33c898b37cd9f3"
+    },
+    {
+      "path": "seo-tools-pdf旋转在线.html",
+      "bytes": 15985,
+      "sha256": "5f2e4c198ee08716c54e717d22fb11aa888f0bb290a2624333e7595c6a24ab0c"
+    },
+    {
+      "path": "seo-tools-pdf转jpg在线.html",
+      "bytes": 15985,
+      "sha256": "3b23b7b719c765553b2f0b4442add87d66918dc00a3c70a94ec366740b837383"
+    },
+    {
+      "path": "services.html",
+      "bytes": 23415,
+      "sha256": "4d131f137baf4bc3c534296740b5e014083cacf6aa5b14452fdc45b3bcc1379c"
+    },
+    {
+      "path": "sitemap.xml",
+      "bytes": 70933,
+      "sha256": "fed3fb63a7ce0c986135962b5774ca12c97ff394339d1f2c007d97fbb99e8742"
+    },
+    {
+      "path": "split.html",
+      "bytes": 14446,
+      "sha256": "a84e649f2a1f96a98470bfbe25ef81b35e41bf61457cc2a4596e75e36d7192d4"
+    },
+    {
+      "path": "terms.html",
+      "bytes": 18163,
+      "sha256": "32590e04090339900fd7236621084969478c007b1c173f12495269ba4b8e02b9"
+    },
+    {
+      "path": "upload-ready.html",
+      "bytes": 20170,
+      "sha256": "aadfd24497a3ebf4b4e488f749a8ceb16f55f243a011c9a513cf2c8930d14cd0"
+    },
+    {
+      "path": "visa-pdf-too-large.html",
+      "bytes": 42162,
+      "sha256": "49d9cbdc53c4b0c3bc8dfdec8fb92524deb440bfadde7703f84584fc28153345"
+    }
+  ]
+}
