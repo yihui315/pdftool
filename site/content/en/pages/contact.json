@@ -1,0 +1,31 @@
+{
+  "adLabel": "Advertisement",
+  "seo": {
+    "title": "Contact Us - PDFTool.work",
+    "description": "Get in touch with the PDFTool.work team for support, partnerships, or feedback."
+  },
+  "h1": "Contact Us",
+  "lead": "We typically respond within 1 business day.",
+  "strings": {
+    "heroEyebrow": "Contact",
+    "heroTitle": "Contact Us",
+    "heroLead": "Have questions or feedback? We typically respond within 1 business day.",
+    "emailTitle": "Email",
+    "emailIntro": "We typically respond within 1 business day.",
+    "emailAddress": "service@pdftool.work",
+    "emailResponseTime": "Usually 1 business day",
+    "whatWeHelpTitle": "What We Can Help With",
+    "whatWeHelpIntro": "Here are the areas we can assist with:",
+    "whatWeHelpItem1": "File processing issues",
+    "whatWeHelpItem2": "Feature requests and feedback",
+    "whatWeHelpItem3": "Partnership inquiries",
+    "whatWeHelpItem4": "Legal and infringement matters",
+    "whatWeHelpNote": "We protect your privacy and never use your contact info for marketing.",
+    "faqEyebrow": "FAQ",
+    "faqTitle": "About Contact",
+    "faqResponseQuestion": "How quickly do you respond?",
+    "faqResponseAnswer": "Typically within 1 business day, slightly longer on holidays.",
+    "faqSensitiveQuestion": "Can I send sensitive files?",
+    "faqSensitiveAnswer": "Not recommended via email. Our tools process files locally in your browser without uploading to servers."
+  }
+}

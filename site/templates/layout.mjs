@@ -10,7 +10,6 @@ import { assetUrl } from "../lib/paths.mjs";
 import { renderSeoHead } from "../lib/seo.mjs";
 
 const ANALYTICS_ID = "G-3GQPKP7FYH";
-const ADSENSE_CLIENT = "ca-pub-2913395948188969";
 
 function requireLayoutInput({ locale, routeKey, common, page, runtime, fragment }) {
   if (typeof locale !== "string") throw new Error("Layout locale is required");
@@ -111,9 +110,6 @@ function renderHead({ locale, routeKey, page, origin, structuredData }) {
     "gtag('js', new Date());",
     `gtag('config', '${ANALYTICS_ID}');`,
     "</script>",
-    `<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${escapeAttribute(
-      ADSENSE_CLIENT
-    )}" crossorigin="anonymous"></script>`
   ].join("\n");
 }
 
@@ -149,26 +145,10 @@ function renderRuntimePayload({ locale, runtime }) {
   })}</script>`;
 }
 
-function renderAdFillDetection() {
-  return `\n<script>
-/**
- * Ad fill detection: CSS :has() hides placeholder, MutationObserver fires GA event.
- */
-(function(){var s=document.querySelector('.editorial-ad-slot');if(!s)return;
-var r=0;
-function f(){if(r)return;r=1;
-if(typeof window.dataLayer!=='undefined'){window.dataLayer.push({event:'ad_fill',ad_client:'${escapeAttribute(ADSENSE_CLIENT)}',page_path:window.location.pathname});}}
-var c=0,i=setInterval(function(){c++;var e=s.querySelector('iframe');if(e||c>60){clearInterval(i);if(e)f();}},500);
-var o=new MutationObserver(function(m){for(var t=0;t<m.length;t++){var a=m[t];if(a.target===s||s.contains(a.target)){var e=s.querySelector('iframe');if(e){f();o.disconnect();clearInterval(i);break;}}}});
-o.observe(s,{childList:true,subtree:true,attributes:true,attributeFilter:['data-adsbygoogle-status','style']});})();
-</script>`;
-}
-
 function renderScripts(routeKey, { locale, runtime }) {
   const route = getRoute(routeKey);
   return [
     renderRuntimePayload({ locale, runtime }),
-    renderAdFillDetection(),
     `<script src="${assetUrl("assets/js/site.js")}" defer></script>`,
     `<script src="${assetUrl("assets/js/i18n.js")}" defer></script>`,
     ...route.scripts.map((script) => {
@@ -202,6 +182,16 @@ export function renderLayout({
     renderHead({ locale, routeKey, page, origin, structuredData }),
     "</head>",
     '<body class="bg-[#f8f3ea] text-slate-950 antialiased">',
+    '<!-- Static HTML cookie consent banner (visible in source code) -->',
+    `<div id="cookie-consent-banner" role="dialog" aria-modal="true" aria-label="Cookie Consent" data-consent-banner>
+  <div class="cookie-consent-inner">
+    <p class="cookie-consent-text">${escapeHtml(common.consent.text)} <a href="${escapeHtml(canonicalPath(locale, 'privacy'))}" target="_blank" class="cookie-consent-link">${escapeHtml(common.consent.learnMore)}</a></p>
+    <div class="cookie-consent-buttons">
+      <button class="cookie-btn cookie-btn-accept" data-consent="accept" data-consent-accept>${escapeHtml(common.consent.accept)}</button>
+      <button class="cookie-btn cookie-btn-reject" data-consent="reject" data-consent-reject>${escapeHtml(common.consent.reject)}</button>
+    </div>
+  </div>
+</div>`,
     `<a class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:m-4 focus:rounded-full focus:bg-white focus:px-4 focus:py-2 focus:text-slate-950" href="#main-content">${escapeHtml(
       common.accessibility.skipToContent
     )}</a>`,
@@ -230,7 +220,6 @@ export function renderLayout({
     fragment,
     "</main>",
     renderFooter({ locale, common }),
-    renderScripts(routeKey, { locale, runtime }),
     "</body>",
     "</html>"
   ].join("\n");

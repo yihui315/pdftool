@@ -1,0 +1,31 @@
+{
+  "adLabel": "广告",
+  "seo": {
+    "title": "联系我们 - PDFTool.work",
+    "description": "联系 PDFTool.work 团队，获取支持、合作或反馈。"
+  },
+  "h1": "联系我们",
+  "lead": "通常 1 个工作日内回复",
+  "strings": {
+    "heroEyebrow": "联系我们",
+    "heroTitle": "联系我们",
+    "heroLead": "有问题或建议？我们通常 1 个工作日内回复。",
+    "emailTitle": "电子邮件",
+    "emailIntro": "发送邮件后，我们通常在 1 个工作日内回复。",
+    "emailAddress": "service@pdftool.work",
+    "emailResponseTime": "通常 1 个工作日内回复",
+    "whatWeHelpTitle": "我们能帮您什么",
+    "whatWeHelpIntro": "以下是我们最常见的服务范围：",
+    "whatWeHelpItem1": "文件处理问题解答",
+    "whatWeHelpItem2": "功能建议与反馈",
+    "whatWeHelpItem3": "合作伙伴咨询",
+    "whatWeHelpItem4": "侵权与法律问题",
+    "whatWeHelpNote": "我们承诺保护您的隐私，不会将您的联系信息用于营销推广。",
+    "faqEyebrow": "常见问题",
+    "faqTitle": "关于联系我们",
+    "faqResponseQuestion": "多久可以收到回复？",
+    "faqResponseAnswer": "我们通常在 1 个工作日内回复。如遇节假日可能略有延迟。",
+    "faqSensitiveQuestion": "我可以发送敏感文件吗？",
+    "faqSensitiveAnswer": "不建议通过邮件发送敏感文件。我们的工具在浏览器本地处理文件，不会上传到服务器。"
+  }
+}

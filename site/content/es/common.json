@@ -13,7 +13,9 @@
     "rotate": "Rotar PDF",
     "unlock": "Desbloquear PDF",
     "about": "Acerca de",
-    "privacy": "Privacidad"
+    "privacy": "Privacidad",
+    "contact": "Contacto",
+    "terms": "Términos de servicio"
   },
   "languageMenu": {
     "label": "Idioma",
@@ -30,5 +32,11 @@
     "tagline": "Herramientas PDF basadas en el navegador para documentos diarios y preparación de cargas.",
     "copyright": "© PDFTool.work",
     "privacy": "Política de privacidad"
+  },
+  "consent": {
+    "text": "Este sitio utiliza Google AdSense para mostrar anuncios. Elija 'Aceptar' para permitir cookies de análisis/publicidad, o 'Rechazar' para usar solo cookies esenciales.",
+    "accept": "Aceptar todo",
+    "reject": "Rechazar todo",
+    "learnMore": "Más información"
   }
 }

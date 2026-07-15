@@ -107,7 +107,9 @@ export const CORE_ROUTES = Object.freeze([
     routeScript("/assets/js/unlock.js")
   ]),
   coreRoute("about", "about.html", "about.html", "about.html"),
-  coreRoute("privacy", "privacy.html", "privacy.html", "privacy.html")
+  coreRoute("privacy", "privacy.html", "privacy.html", "privacy.html"),
+  coreRoute("contact", "contact.html", "contact.html", "contact.html"),
+  coreRoute("terms", "terms.html", "terms.html", "terms.html")
 ]);
 
 export const LANDING_ROUTES = Object.freeze([

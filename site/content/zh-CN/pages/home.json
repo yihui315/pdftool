@@ -1,5 +1,4 @@
 {
-  "adLabel": "广告位",
   "seo": {
     "title": "免费在线 PDF 工具 - PDFTool.work",
     "description": "PDFTool.work 提供浏览器本地 PDF 工具，用于合并、拆分、压缩、旋转、解锁和页面整理，适合日常办公与材料上传准备。"
@@ -48,8 +47,6 @@
     "faqLocalQuestion": "PDF 文件会上传到 PDFTool.work 服务器吗？",
     "faqLocalAnswer": "这些工具设计为在浏览器本地读取和处理所选 PDF 内容。网站页面本身仍可能请求静态资源、统计脚本或广告资源。",
     "faqLargeQuestion": "大文件处理失败怎么办？",
-    "faqLargeAnswer": "建议使用桌面浏览器，关闭其他占用内存的页面，并检查 PDF 是否为超大扫描件或结构复杂的文件。",
-    "faqAdsQuestion": "为什么页面有广告位？",
-    "faqAdsAnswer": "广告位用于支持免费工具的持续维护。广告与统计请求不用于读取工具中选择的 PDF 内容。"
+    "faqLargeAnswer": "建议使用桌面浏览器，关闭其他占用内存的页面，并检查 PDF 是否为超大扫描件或结构复杂的文件。"
   }
 }

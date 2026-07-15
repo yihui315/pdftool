@@ -488,6 +488,7 @@ export async function buildSite({
     locales: normalizedLocales,
     contentByLocale
   });
+  console.log("DEBUG rendered routes:", renderedRoutes.map(r=>r.key));
 
   const isFullProductionBuild =
     resolve(contentRoot) === resolve(defaultContentRoot) &&

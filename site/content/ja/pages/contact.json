@@ -1,0 +1,31 @@
+{
+  "adLabel": "広告",
+  "seo": {
+    "title": "お問い合わせ - PDFTool.work",
+    "description": "PDFTool.workチームにお問い合わせください。"
+  },
+  "h1": "お問い合わせ",
+  "lead": "通常、1営業日以内に回答いたします。",
+  "strings": {
+    "heroEyebrow": "お問い合わせ",
+    "heroTitle": "お問い合わせ",
+    "heroLead": "ご質問やフィードバックがございましたら、通常1営業日以内に回答いたします。",
+    "emailTitle": "メール",
+    "emailIntro": "通常、1営業日以内に回答いたします。",
+    "emailAddress": "service@pdftool.work",
+    "emailResponseTime": "通常1営業日以内",
+    "whatWeHelpTitle": "我能帮您什么",
+    "whatWeHelpIntro": "以下の分野でサポートを提供しています：",
+    "whatWeHelpItem1": "ファイル処理の問題",
+    "whatWeHelpItem2": "機能のリクエスト",
+    "whatWeHelpItem3": "パートナーシップの問い合わせ",
+    "whatWeHelpItem4": "法的問題",
+    "whatWeHelpNote": "当社はお客様のプライバシーを保護し、連絡先情報をマーケティングに使用することは決してありません。",
+    "faqEyebrow": "よくある質問",
+    "faqTitle": "お問い合わせについて",
+    "faqResponseQuestion": "どのくらいの時間で返信されますか？",
+    "faqResponseAnswer": "通常、1営業日以内に回答いたします。",
+    "faqSensitiveQuestion": "機密ファイルを送信できますか？",
+    "faqSensitiveAnswer": "メールでの送信は推奨されません。私たちのツールはファイルをお客様のブラウザでローカルに処理します。"
+  }
+}

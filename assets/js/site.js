@@ -95,6 +95,26 @@
   const existing = getCookie(COOKIE_NAME);
   if (existing) return;
 
+  var msgScript = document.getElementById('runtime-i18n');
+  var consentText = '本网站使用 Google AdSense 展示广告。选择「接受」允许我们使用分析/广告 Cookie，选择「拒绝」则仅使用必要 Cookie。';
+  var acceptText = 'Accept All';
+  var rejectText = 'Reject All';
+  var learnMoreText = '了解更\u591a';
+  var privacyUrl = 'privacy.html';
+  if (msgScript) {
+    try {
+      var msg = JSON.parse(msgScript.textContent);
+      if (msg.messages && msg.messages.consent) {
+        consentText = msg.messages.consent.text || consentText;
+        acceptText = msg.messages.consent.accept || acceptText;
+        rejectText = msg.messages.consent.reject || rejectText;
+        learnMoreText = msg.messages.consent.learnMore || learnMoreText;
+      }
+      if (msg.locale && msg.locale !== 'zh-CN') {
+        privacyUrl = msg.locale + '/privacy.html';
+      }
+    } catch(e) {}
+  }
   var banner = document.createElement('div');
   banner.id = 'cookie-consent-banner';
   banner.setAttribute('role', 'dialog');
@@ -102,10 +122,10 @@
   banner.setAttribute('aria-label', 'Cookie Consent');
   banner.innerHTML =
     '<div class=cookie-consent-inner>' +
-    '<p class=cookie-consent-text>本网站使用 Google AdSense 展示广告。选择「接受」允许我们使用分析/广告 Cookie，选择「拒绝」则仅使用必要 Cookie。<a href=privacy.html target=_blank class=cookie-consent-link>了解更多</a></p>' +
+    '<p class=cookie-consent-text>' + consentText + ' <a href=' + privacyUrl + ' target=_blank class=cookie-consent-link>' + learnMoreText + '</a></p>' +
     '<div class=cookie-consent-buttons>' +
-    '<button class=cookie-btn cookie-btn-accept data-consent=accept>Accept All</button>' +
-    '<button class=cookie-btn cookie-btn-reject data-consent=reject>Reject All</button>' +
+    '<button class=cookie-btn cookie-btn-accept data-consent=accept>' + acceptText + '</button>' +
+    '<button class=cookie-btn cookie-btn-reject data-consent=reject>' + rejectText + '</button>' +
     '</div></div>';
   document.body.appendChild(banner);
 

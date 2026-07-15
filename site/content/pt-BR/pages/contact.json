@@ -1,0 +1,31 @@
+{
+  "adLabel": "Anúncio",
+  "seo": {
+    "title": "Contato - PDFTool.work",
+    "description": "Entre em contato com a equipe do PDFTool.work."
+  },
+  "h1": "Contato",
+  "lead": "Normalmente respondemos em 1 dia útil.",
+  "strings": {
+    "heroEyebrow": "Contato",
+    "heroTitle": "Contato",
+    "heroLead": "Tem dúvidas ou feedback? Normalmente respondemos em 1 dia útil.",
+    "emailTitle": "E-mail",
+    "emailIntro": "Normalmente respondemos em 1 dia útil.",
+    "emailAddress": "service@pdftool.work",
+    "emailResponseTime": "Normalmente 1 dia útil",
+    "whatWeHelpTitle": "Como podemos ajudar",
+    "whatWeHelpIntro": "Estas são as áreas em que podemos ajudar:",
+    "whatWeHelpItem1": "Problemas de processamento de arquivos",
+    "whatWeHelpItem2": "Solicitações de recursos",
+    "whatWeHelpItem3": "Consultas de parcerias",
+    "whatWeHelpItem4": "Assuntos legais",
+    "whatWeHelpNote": "Protegemos sua privacidade e nunca usamos suas informações de contato para marketing.",
+    "faqEyebrow": "Perguntas frequentes",
+    "faqTitle": "Sobre contato",
+    "faqResponseQuestion": "Quão rápido vocês respondem?",
+    "faqResponseAnswer": "Normalmente em 1 dia útil.",
+    "faqSensitiveQuestion": "Posso enviar arquivos sensíveis?",
+    "faqSensitiveAnswer": "Não recomendado por e-mail. Nossas ferramentas processam arquivos localmente."
+  }
+}

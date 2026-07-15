@@ -13,7 +13,9 @@
     "rotate": "Putar PDF",
     "unlock": "Buka kunci PDF",
     "about": "Tentang",
-    "privacy": "Privasi"
+    "privacy": "Privasi",
+    "contact": "Hubungi kami",
+    "terms": "Ketentuan layanan"
   },
   "languageMenu": {
     "label": "Bahasa",
@@ -30,5 +32,11 @@
     "tagline": "Alat PDF berbasis browser untuk dokumen harian dan persiapan unggahan.",
     "copyright": "© PDFTool.work",
     "privacy": "Kebijakan Privasi"
+  },
+  "consent": {
+    "text": "Situs ini menggunakan Google AdSense untuk menampilkan iklan. Pilih 'Terima' untuk mengizinkan cookie analitik/iklan, atau 'Tolak' untuk hanya menggunakan cookie esensial.",
+    "accept": "Terima Semua",
+    "reject": "Tolak Semua",
+    "learnMore": "Pelajari Lebih Lanjut"
   }
 }

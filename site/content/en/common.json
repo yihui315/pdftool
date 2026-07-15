@@ -13,7 +13,9 @@
     "rotate": "Rotate PDF",
     "unlock": "Unlock PDF",
     "about": "About",
-    "privacy": "Privacy"
+    "privacy": "Privacy",
+    "contact": "Contact",
+    "terms": "Terms of Service"
   },
   "languageMenu": {
     "label": "Language",
@@ -30,5 +32,11 @@
     "tagline": "Browser-based PDF tools for everyday documents and upload prep.",
     "copyright": "© PDFTool.work",
     "privacy": "Privacy Policy"
+  },
+  "consent": {
+    "text": "This site uses Google AdSense to display ads. Choose 'Accept' to allow analytics/ad cookies, or 'Reject' to use only essential cookies.",
+    "accept": "Accept All",
+    "reject": "Reject All",
+    "learnMore": "Learn More"
   }
 }

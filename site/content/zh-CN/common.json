@@ -13,7 +13,9 @@
     "rotate": "旋转 PDF",
     "unlock": "解锁 PDF",
     "about": "关于",
-    "privacy": "隐私"
+    "privacy": "隐私",
+    "contact": "联系我们",
+    "terms": "服务条款"
   },
   "languageMenu": {
     "label": "语言",
@@ -30,5 +32,11 @@
     "tagline": "浏览器本地 PDF 工具，适合日常办公、学习材料和轻量文件整理。",
     "copyright": "© PDFTool.work",
     "privacy": "隐私政策"
+  },
+  "consent": {
+    "text": "本网站使用 Google AdSense 展示广告。选择「接受」允许我们使用分析/广告 Cookie，选择「拒绝」则仅使用必要 Cookie。",
+    "accept": "接受",
+    "reject": "拒绝",
+    "learnMore": "了解更多"
   }
 }

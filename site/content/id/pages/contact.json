@@ -1,0 +1,31 @@
+{
+  "adLabel": "Iklan",
+  "seo": {
+    "title": "Hubungi Kami - PDFTool.work",
+    "description": "Hubungi tim PDFTool.work untuk dukungan."
+  },
+  "h1": "Hubungi Kami",
+  "lead": "Kami biasanya merespons dalam 1 hari kerja.",
+  "strings": {
+    "heroEyebrow": "Kontak",
+    "heroTitle": "Hubungi Kami",
+    "heroLead": "Punya pertanyaan atau feedback? Kami biasanya merespons dalam 1 hari kerja.",
+    "emailTitle": "Surel",
+    "emailIntro": "Kami biasanya merespons dalam 1 hari kerja.",
+    "emailAddress": "service@pdftool.work",
+    "emailResponseTime": "Biasanya 1 hari kerja",
+    "whatWeHelpTitle": "Cara Kami Dapat Membantu",
+    "whatWeHelpIntro": "Berikut adalah area di mana kami dapat membantu:",
+    "whatWeHelpItem1": "Masalah pemrosesan file",
+    "whatWeHelpItem2": "Permintaan fitur",
+    "whatWeHelpItem3": "Pertanyaan kemitraan",
+    "whatWeHelpItem4": "Masalah hukum",
+    "whatWeHelpNote": "Kami melindungi privasi Anda dan tidak pernah menggunakan informasi kontak Anda untuk pemasaran.",
+    "faqEyebrow": "Pertanyaan Umum",
+    "faqTitle": "Tentang Hubungi Kami",
+    "faqResponseQuestion": "Seberapa cepat kalian merespons?",
+    "faqResponseAnswer": "Biasanya dalam 1 hari kerja.",
+    "faqSensitiveQuestion": "Bisakah saya mengirim file sensitif?",
+    "faqSensitiveAnswer": "Tidak direkomendasikan melalui surel. Alat kami memproses file secara lokal di browser Anda."
+  }
+}

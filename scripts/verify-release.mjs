@@ -46,7 +46,7 @@ const generatedRequiredFiles = Object.freeze([
   ...sharedRequiredFiles
 ]);
 
-const policyRequiredFiles = Object.freeze(["terms.html", "contact.html"]);
+const policyRequiredFiles = Object.freeze([]);
 
 const requiredDirectories = Object.freeze([
   "assets/vendor/pdfjs/cmaps",
