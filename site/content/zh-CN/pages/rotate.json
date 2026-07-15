@@ -6,6 +6,7 @@
   "h1": "旋转 PDF",
   "lead": "调整 PDF 页面方向，导出修正后的文件。",
   "strings": {
+    "adLabel": "广告位",
     "heroEyebrow": "页面方向",
     "heroTitle": "旋转 PDF",
     "heroLead": "修正横向、倒置或扫描方向错误的 PDF 页面。",

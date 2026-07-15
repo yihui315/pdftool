@@ -6,6 +6,7 @@
   "h1": "PDF too large to upload?",
   "lead": "Use a simple checklist to reduce size, check the result, and prepare the file for the target platform.",
   "strings": {
+    "adLabel": "Advertisement",
     "primaryToolRoute": "uploadReady",
     "breadcrumbLabel": "Breadcrumb",
     "breadcrumbCurrent": "PDF too large to upload",

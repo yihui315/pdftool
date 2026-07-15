@@ -6,6 +6,7 @@
   "h1": "PDF ke JPG",
   "lead": "Ekspor halaman PDF sebagai gambar untuk pratinjau, tangkapan layar, atau berbagi ringan.",
   "strings": {
+    "adLabel": "Iklan",
     "heroEyebrow": "Konversi format",
     "heroTitle": "PDF ke JPG",
     "heroLead": "Pilih PDF dan render halamannya sebagai gambar JPG atau PNG di browser.",

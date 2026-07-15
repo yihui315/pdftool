@@ -6,6 +6,7 @@
   "h1": "合并 PDF",
   "lead": "选择多个 PDF，在浏览器中排序并合成为一个文件。",
   "strings": {
+    "adLabel": "广告位",
     "heroEyebrow": "PDF 合并",
     "heroTitle": "合并 PDF",
     "heroLead": "把多个 PDF 按需要的顺序组合成一个文件。文件内容由当前浏览器读取，适合轻量材料整理。",

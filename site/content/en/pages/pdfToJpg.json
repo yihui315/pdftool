@@ -6,6 +6,7 @@
   "h1": "PDF to JPG",
   "lead": "Export PDF pages as images for previews, screenshots, or lightweight sharing.",
   "strings": {
+    "adLabel": "Advertisement",
     "heroEyebrow": "Format conversion",
     "heroTitle": "PDF to JPG",
     "heroLead": "Choose a PDF and render its pages as JPG or PNG images in the browser.",

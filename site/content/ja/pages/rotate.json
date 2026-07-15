@@ -6,6 +6,7 @@
   "h1": "PDFを回転",
   "lead": "PDF ページの向きを調整し、修正したファイルを書き出します。",
   "strings": {
+    "adLabel": "広告",
     "heroEyebrow": "ページの向き",
     "heroTitle": "PDFを回転",
     "heroLead": "横向き、逆さま、または誤った向きでスキャンされた PDF ページを修正します。",

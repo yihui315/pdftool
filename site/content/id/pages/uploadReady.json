@@ -6,6 +6,7 @@
   "h1": "Persiapan unggah PDF",
   "lead": "Pilih PDF dan ukuran target, lalu coba buat hasil yang siap diunggah di browser.",
   "strings": {
+    "adLabel": "Iklan",
     "heroEyebrow": "Persiapan unggahan",
     "heroTitle": "Persiapan unggah PDF",
     "heroLead": "Dirancang untuk alur unggahan ujian, visa, aplikasi, dan formulir. Alat memproses file di browser dan mengingatkan Anda untuk meninjau hasil.",

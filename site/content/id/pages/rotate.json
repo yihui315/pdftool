@@ -6,6 +6,7 @@
   "h1": "Putar PDF",
   "lead": "Sesuaikan orientasi halaman PDF dan ekspor file yang sudah diperbaiki.",
   "strings": {
+    "adLabel": "Iklan",
     "heroEyebrow": "Orientasi halaman",
     "heroTitle": "Putar PDF",
     "heroLead": "Perbaiki halaman PDF yang miring, terbalik, atau salah orientasi saat dipindai.",

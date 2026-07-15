@@ -6,6 +6,7 @@
   "h1": "Compress PDF",
   "lead": "Try safe PDF structure optimization in your browser, then review readability and page count.",
   "strings": {
+    "adLabel": "Advertisement",
     "heroEyebrow": "PDF compression",
     "heroTitle": "Compress PDF",
     "heroLead": "Useful before uploading a PDF that may be too large. Results depend on the original file, image content, and PDF structure.",

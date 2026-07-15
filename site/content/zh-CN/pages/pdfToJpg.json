@@ -6,6 +6,7 @@
   "h1": "PDF 转 JPG",
   "lead": "把 PDF 页面导出为图片，适合预览、截图或轻量分享。",
   "strings": {
+    "adLabel": "广告位",
     "heroEyebrow": "格式转换",
     "heroTitle": "PDF 转 JPG",
     "heroLead": "选择 PDF 后，在浏览器中把页面渲染为 JPG 或 PNG 图片。",

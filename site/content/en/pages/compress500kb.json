@@ -6,6 +6,7 @@
   "h1": "Compress PDF to 500 KB",
   "lead": "Try to reduce a PDF for stricter upload forms while keeping readability checks front and center.",
   "strings": {
+    "adLabel": "Advertisement",
     "primaryToolRoute": "compress",
     "breadcrumbLabel": "Breadcrumb",
     "breadcrumbCurrent": "Compress PDF to 500 KB",

@@ -6,6 +6,7 @@
   "h1": "Rotar PDF",
   "lead": "Ajusta la orientación de páginas PDF y exporta el archivo corregido.",
   "strings": {
+    "adLabel": "Publicidad",
     "heroEyebrow": "Orientación de páginas",
     "heroTitle": "Rotar PDF",
     "heroLead": "Corrige páginas PDF de lado, invertidas o escaneadas con orientación incorrecta.",

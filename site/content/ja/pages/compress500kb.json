@@ -6,6 +6,7 @@
   "h1": "PDFを500 KBに圧縮",
   "lead": "厳しいアップロード条件に合わせて PDF を小さくし、読みやすさを確認します。",
   "strings": {
+    "adLabel": "広告",
     "primaryToolRoute": "compress",
     "breadcrumbLabel": "パンくず",
     "breadcrumbCurrent": "PDFを500 KBに圧縮",

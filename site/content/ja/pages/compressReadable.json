@@ -6,6 +6,7 @@
   "h1": "読みやすさを確認しながらPDFを圧縮",
   "lead": "日常的な PDF を小さくしつつ、フォーム、学習資料、添付に使える結果か確認します。",
   "strings": {
+    "adLabel": "広告",
     "primaryToolRoute": "compress",
     "breadcrumbLabel": "パンくず",
     "breadcrumbCurrent": "読みやすさを確認しながらPDFを圧縮",

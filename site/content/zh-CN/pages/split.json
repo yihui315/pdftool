@@ -6,6 +6,7 @@
   "h1": "拆分 PDF",
   "lead": "按页码范围提取 PDF 页面，生成一个或多个结果文件。",
   "strings": {
+    "adLabel": "广告位",
     "heroEyebrow": "PDF 拆分",
     "heroTitle": "拆分 PDF",
     "heroLead": "上传一个 PDF，选择单页拆分或输入页码范围。适合只提交必要材料。",

@@ -6,6 +6,7 @@
   "h1": "Comprimir PDF",
   "lead": "Prueba una optimización segura de la estructura del PDF en tu navegador y revisa legibilidad y páginas después.",
   "strings": {
+    "adLabel": "Publicidad",
     "heroEyebrow": "Compresión PDF",
     "heroTitle": "Comprimir PDF",
     "heroLead": "Útil antes de subir un PDF que puede ser demasiado grande. El resultado depende del archivo original, las imágenes y la estructura del PDF.",

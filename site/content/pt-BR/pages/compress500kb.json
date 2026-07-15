@@ -6,6 +6,7 @@
   "h1": "Comprimir PDF para 500 KB",
   "lead": "Tente reduzir um PDF para formulários mais rígidos mantendo a revisão de legibilidade no centro.",
   "strings": {
+    "adLabel": "Publicidade",
     "primaryToolRoute": "compress",
     "breadcrumbLabel": "Navegação estrutural",
     "breadcrumbCurrent": "Comprimir PDF para 500 KB",

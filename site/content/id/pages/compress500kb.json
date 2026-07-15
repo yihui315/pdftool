@@ -6,6 +6,7 @@
   "h1": "Kompres PDF ke 500 KB",
   "lead": "Coba kurangi PDF untuk formulir yang lebih ketat sambil tetap memeriksa keterbacaan.",
   "strings": {
+    "adLabel": "Iklan",
     "primaryToolRoute": "compress",
     "breadcrumbLabel": "Breadcrumb",
     "breadcrumbCurrent": "Kompres PDF ke 500 KB",

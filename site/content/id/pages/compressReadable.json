@@ -6,6 +6,7 @@
   "h1": "Kompres PDF tetap mudah dibaca",
   "lead": "Perkecil PDF harian dengan langkah peninjauan agar hasil tetap berguna untuk formulir, materi belajar, dan lampiran.",
   "strings": {
+    "adLabel": "Iklan",
     "primaryToolRoute": "compress",
     "breadcrumbLabel": "Breadcrumb",
     "breadcrumbCurrent": "Kompres PDF tetap mudah dibaca",

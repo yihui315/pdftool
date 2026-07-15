@@ -6,6 +6,7 @@
   "h1": "Desbloquear PDF",
   "lead": "Cuando tienes permiso y la contraseña, intenta quitar restricciones de apertura de un PDF.",
   "strings": {
+    "adLabel": "Publicidad",
     "heroEyebrow": "Desbloquear PDF",
     "heroTitle": "Desbloquear PDF",
     "heroLead": "Usa esta herramienta solo si tienes autorización para manejar el archivo y conoces la contraseña. Algunos PDF con cifrado fuerte pueden no funcionar en el navegador.",

@@ -6,6 +6,7 @@
   "h1": "JPG to PDF",
   "lead": "Collect photos, scans, or screenshots into a PDF file.",
   "strings": {
+    "adLabel": "Advertisement",
     "heroEyebrow": "Format conversion",
     "heroTitle": "JPG to PDF",
     "heroLead": "Choose several images, adjust their order, and create a PDF in the browser.",

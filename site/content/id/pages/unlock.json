@@ -6,6 +6,7 @@
   "h1": "Buka kunci PDF",
   "lead": "Jika Anda memiliki izin dan kata sandi, coba hapus batas pembukaan PDF.",
   "strings": {
+    "adLabel": "Iklan",
     "heroEyebrow": "Buka kunci PDF",
     "heroTitle": "Buka kunci PDF",
     "heroLead": "Gunakan hanya jika Anda berwenang menangani file dan mengetahui kata sandinya. Beberapa PDF dengan enkripsi kuat mungkin tidak berfungsi di browser.",

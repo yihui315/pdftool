@@ -6,6 +6,7 @@
   "h1": "Preparar PDF para envio",
   "lead": "Escolha um PDF e um tamanho alvo para tentar criar um resultado pronto para envio no navegador.",
   "strings": {
+    "adLabel": "Publicidade",
     "heroEyebrow": "Preparação de envio",
     "heroTitle": "Preparar PDF para envio",
     "heroLead": "Feito para exames, vistos, inscrições e formulários. A ferramenta processa o arquivo no navegador e lembra você de revisar o resultado.",

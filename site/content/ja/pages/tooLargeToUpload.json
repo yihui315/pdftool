@@ -6,6 +6,7 @@
   "h1": "PDFが大きすぎてアップロードできない場合",
   "lead": "サイズを減らし、結果を確認し、提出先に合わせてファイルを準備するための簡単な手順です。",
   "strings": {
+    "adLabel": "広告",
     "primaryToolRoute": "uploadReady",
     "breadcrumbLabel": "パンくず",
     "breadcrumbCurrent": "PDFが大きすぎる",

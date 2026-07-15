@@ -6,6 +6,7 @@
   "h1": "Girar PDF",
   "lead": "Ajuste a orientação das páginas PDF e exporte o arquivo corrigido.",
   "strings": {
+    "adLabel": "Publicidade",
     "heroEyebrow": "Orientação de páginas",
     "heroTitle": "Girar PDF",
     "heroLead": "Corrija páginas PDF de lado, invertidas ou digitalizadas com orientação incorreta.",

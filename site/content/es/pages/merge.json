@@ -6,6 +6,7 @@
   "h1": "Combinar PDF",
   "lead": "Selecciona varios PDF, ordénalos en el navegador y crea un archivo combinado.",
   "strings": {
+    "adLabel": "Publicidad",
     "heroEyebrow": "Combinar PDF",
     "heroTitle": "Combinar PDF",
     "heroLead": "Une varios PDF en un solo archivo con el orden que necesitas. El contenido seleccionado se lee en el navegador actual para una organización ligera de documentos.",

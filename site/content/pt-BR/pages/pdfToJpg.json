@@ -6,6 +6,7 @@
   "h1": "PDF para JPG",
   "lead": "Exporte páginas PDF como imagens para prévias, capturas de tela ou compartilhamento leve.",
   "strings": {
+    "adLabel": "Publicidade",
     "heroEyebrow": "Conversão de formato",
     "heroTitle": "PDF para JPG",
     "heroLead": "Escolha um PDF e renderize suas páginas como imagens JPG ou PNG no navegador.",

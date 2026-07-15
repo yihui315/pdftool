@@ -6,6 +6,7 @@
   "h1": "解锁 PDF",
   "lead": "在拥有权限和密码时，尝试移除 PDF 打开限制。",
   "strings": {
+    "adLabel": "广告位",
     "heroEyebrow": "PDF 解锁",
     "heroTitle": "解锁 PDF",
     "heroLead": "仅在你有权处理该文件并知道密码时使用。部分强加密 PDF 可能无法在浏览器中处理。",

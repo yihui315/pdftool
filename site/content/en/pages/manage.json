@@ -6,6 +6,7 @@
   "h1": "Manage PDF pages",
   "lead": "Delete, reorder, and rotate PDF pages for scans and multi-page document cleanup.",
   "strings": {
+    "adLabel": "Advertisement",
     "heroEyebrow": "Page management",
     "heroTitle": "Manage PDF pages",
     "heroLead": "Upload a PDF, remove pages, change order, rotate pages, and export the cleaned result.",

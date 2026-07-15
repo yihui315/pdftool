@@ -6,6 +6,7 @@
   "h1": "Kompres PDF",
   "lead": "Coba optimasi struktur PDF yang aman di browser, lalu tinjau keterbacaan dan jumlah halaman.",
   "strings": {
+    "adLabel": "Iklan",
     "heroEyebrow": "Kompresi PDF",
     "heroTitle": "Kompres PDF",
     "heroLead": "Berguna sebelum mengunggah PDF yang mungkin terlalu besar. Hasil bergantung pada file asli, isi gambar, dan struktur PDF.",

@@ -6,6 +6,7 @@
   "h1": "Rotate PDF",
   "lead": "Adjust PDF page orientation and export the corrected file.",
   "strings": {
+    "adLabel": "Advertisement",
     "heroEyebrow": "Page orientation",
     "heroTitle": "Rotate PDF",
     "heroLead": "Fix sideways, upside-down, or incorrectly scanned PDF pages.",

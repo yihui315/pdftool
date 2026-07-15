@@ -6,6 +6,7 @@
   "h1": "Preparar PDF para subir",
   "lead": "Elige un PDF y un tamaño objetivo para intentar crear un resultado listo para subir desde tu navegador.",
   "strings": {
+    "adLabel": "Publicidad",
     "heroEyebrow": "Preparación de subida",
     "heroTitle": "Preparar PDF para subir",
     "heroLead": "Pensado para exámenes, visados, solicitudes y formularios. La herramienta procesa el archivo en el navegador y te recuerda revisar el resultado.",

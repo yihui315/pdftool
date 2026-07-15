@@ -6,6 +6,7 @@
   "h1": "Pisahkan PDF",
   "lead": "Ekstrak rentang halaman dari PDF dan buat satu atau beberapa file hasil.",
   "strings": {
+    "adLabel": "Iklan",
     "heroEyebrow": "Pemisahan PDF",
     "heroTitle": "Pisahkan PDF",
     "heroLead": "Unggah satu PDF, pilih pemisahan per halaman, atau masukkan rentang halaman. Berguna saat Anda hanya perlu mengirim materi tertentu.",

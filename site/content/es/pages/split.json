@@ -6,6 +6,7 @@
   "h1": "Dividir PDF",
   "lead": "Extrae rangos de páginas de un PDF y crea uno o varios archivos de resultado.",
   "strings": {
+    "adLabel": "Publicidad",
     "heroEyebrow": "Dividir PDF",
     "heroTitle": "Dividir PDF",
     "heroLead": "Sube un PDF, elige división por páginas individuales o introduce rangos. Es útil cuando solo necesitas enviar parte del material.",

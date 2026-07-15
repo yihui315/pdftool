@@ -6,6 +6,7 @@
   "h1": "Compress PDF while keeping it readable",
   "lead": "Shrink everyday PDFs with a review step so the result stays useful for forms, study material, and attachments.",
   "strings": {
+    "adLabel": "Advertisement",
     "primaryToolRoute": "compress",
     "breadcrumbLabel": "Breadcrumb",
     "breadcrumbCurrent": "Compress PDF and keep it readable",

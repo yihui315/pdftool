@@ -6,6 +6,7 @@
   "h1": "管理 PDF 页面",
   "lead": "删除、排序和旋转 PDF 页面，适合整理扫描件和多页材料。",
   "strings": {
+    "adLabel": "广告位",
     "heroEyebrow": "页面管理",
     "heroTitle": "管理 PDF 页面",
     "heroLead": "上传 PDF 后，可以删除、重新排序或旋转页面，再导出整理后的结果。",

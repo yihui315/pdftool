@@ -6,6 +6,7 @@
   "h1": "PDF upload preparation",
   "lead": "Choose a PDF and target size, then try to create an upload-ready result in your browser.",
   "strings": {
+    "adLabel": "Advertisement",
     "heroEyebrow": "Upload preparation",
     "heroTitle": "PDF upload preparation",
     "heroLead": "Designed for exam, visa, application, and form upload workflows. The tool processes files in the browser and reminds you to review the result.",

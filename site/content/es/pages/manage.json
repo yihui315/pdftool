@@ -6,6 +6,7 @@
   "h1": "Gestionar páginas PDF",
   "lead": "Elimina, reordena y rota páginas PDF para limpiar escaneos y documentos de varias páginas.",
   "strings": {
+    "adLabel": "Publicidad",
     "heroEyebrow": "Gestión de páginas",
     "heroTitle": "Gestionar páginas PDF",
     "heroLead": "Sube un PDF, elimina páginas, cambia el orden, rota páginas y exporta el resultado limpio.",

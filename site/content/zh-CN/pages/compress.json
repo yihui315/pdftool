@@ -6,6 +6,7 @@
   "h1": "压缩 PDF",
   "lead": "在浏览器中尝试安全优化 PDF 结构，处理后请复核清晰度和页数。",
   "strings": {
+    "adLabel": "广告位",
     "heroEyebrow": "PDF 压缩",
     "heroTitle": "压缩 PDF",
     "heroLead": "适合上传前尝试减小 PDF 体积。结果取决于原文件内容、图片数量和 PDF 结构。",

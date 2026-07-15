@@ -6,6 +6,7 @@
   "h1": "Unlock PDF",
   "lead": "When you have permission and the password, try to remove PDF opening restrictions.",
   "strings": {
+    "adLabel": "Advertisement",
     "heroEyebrow": "PDF unlock",
     "heroTitle": "Unlock PDF",
     "heroLead": "Use this only when you are allowed to handle the file and know the password. Some strongly encrypted PDFs may not work in the browser.",

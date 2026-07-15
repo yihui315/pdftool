@@ -6,6 +6,7 @@
   "h1": "PDFを1 MBに圧縮",
   "lead": "フォームや申請で 1 MB 前後の PDF が必要なとき、ブラウザの圧縮ツールを使えます。",
   "strings": {
+    "adLabel": "広告",
     "primaryToolRoute": "compress",
     "breadcrumbLabel": "パンくず",
     "breadcrumbCurrent": "PDFを1 MBに圧縮",

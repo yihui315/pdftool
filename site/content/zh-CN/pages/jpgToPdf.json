@@ -6,6 +6,7 @@
   "h1": "JPG 转 PDF",
   "lead": "把照片、扫描件或截图整理成一个 PDF 文件。",
   "strings": {
+    "adLabel": "广告位",
     "heroEyebrow": "格式转换",
     "heroTitle": "JPG 转 PDF",
     "heroLead": "选择多张图片，调整顺序后在浏览器中生成 PDF。",

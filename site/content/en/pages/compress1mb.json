@@ -6,6 +6,7 @@
   "h1": "Compress PDF to 1 MB",
   "lead": "Use the browser-based compressor when a form or application asks for a PDF near 1 MB.",
   "strings": {
+    "adLabel": "Advertisement",
     "primaryToolRoute": "compress",
     "breadcrumbLabel": "Breadcrumb",
     "breadcrumbCurrent": "Compress PDF to 1 MB",

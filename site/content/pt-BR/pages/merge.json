@@ -6,6 +6,7 @@
   "h1": "Juntar PDF",
   "lead": "Selecione vários PDFs, organize a ordem no navegador e crie um arquivo combinado.",
   "strings": {
+    "adLabel": "Publicidade",
     "heroEyebrow": "Juntar PDF",
     "heroTitle": "Juntar PDF",
     "heroLead": "Combine vários PDFs em um arquivo na ordem que você precisa. O conteúdo selecionado é lido pelo navegador atual para organização leve de documentos.",

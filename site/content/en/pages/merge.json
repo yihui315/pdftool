@@ -6,6 +6,7 @@
   "h1": "Merge PDF",
   "lead": "Select multiple PDFs, reorder them in the browser, and create one combined file.",
   "strings": {
+    "adLabel": "Advertisement",
     "heroEyebrow": "PDF merge",
     "heroTitle": "Merge PDF",
     "heroLead": "Combine multiple PDFs into one file in the order you need. Selected file contents are read by the current browser for lightweight document cleanup.",

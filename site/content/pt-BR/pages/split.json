@@ -6,6 +6,7 @@
   "h1": "Dividir PDF",
   "lead": "Extraia intervalos de páginas de um PDF e crie um ou mais arquivos de resultado.",
   "strings": {
+    "adLabel": "Publicidade",
     "heroEyebrow": "Dividir PDF",
     "heroTitle": "Dividir PDF",
     "heroLead": "Envie um PDF, escolha dividir página por página ou informe intervalos. Útil quando você só precisa enviar parte do material.",

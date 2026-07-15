@@ -6,6 +6,7 @@
   "h1": "Split PDF",
   "lead": "Extract page ranges from a PDF and create one or more result files.",
   "strings": {
+    "adLabel": "Advertisement",
     "heroEyebrow": "PDF split",
     "heroTitle": "Split PDF",
     "heroLead": "Upload one PDF, choose single-page splitting or enter page ranges. Useful when you only need to submit selected material.",

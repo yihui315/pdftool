@@ -6,6 +6,7 @@
   "h1": "JPGからPDFへ",
   "lead": "写真、スキャン、スクリーンショットを 1 つの PDF ファイルにまとめます。",
   "strings": {
+    "adLabel": "広告",
     "heroEyebrow": "形式変換",
     "heroTitle": "JPGからPDFへ",
     "heroLead": "複数の画像を選択し、順番を調整して、ブラウザで PDF を作成します。",

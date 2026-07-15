@@ -6,6 +6,7 @@
   "h1": "PDF grande demais para enviar?",
   "lead": "Use uma lista simples para reduzir tamanho, conferir o resultado e preparar o arquivo para a plataforma.",
   "strings": {
+    "adLabel": "Publicidade",
     "primaryToolRoute": "uploadReady",
     "breadcrumbLabel": "Navegação estrutural",
     "breadcrumbCurrent": "PDF grande demais para enviar",

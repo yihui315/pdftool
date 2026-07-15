@@ -6,6 +6,7 @@
   "h1": "Gabungkan PDF",
   "lead": "Pilih beberapa PDF, atur urutannya di browser, lalu buat satu file gabungan.",
   "strings": {
+    "adLabel": "Iklan",
     "heroEyebrow": "Penggabungan PDF",
     "heroTitle": "Gabungkan PDF",
     "heroLead": "Satukan beberapa PDF menjadi satu file sesuai urutan yang Anda butuhkan. Isi file yang dipilih dibaca oleh browser saat ini untuk pembersihan dokumen ringan.",

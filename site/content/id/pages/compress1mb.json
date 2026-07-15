@@ -6,6 +6,7 @@
   "h1": "Kompres PDF ke 1 MB",
   "lead": "Gunakan kompresor berbasis browser saat formulir atau aplikasi meminta PDF sekitar 1 MB.",
   "strings": {
+    "adLabel": "Iklan",
     "primaryToolRoute": "compress",
     "breadcrumbLabel": "Breadcrumb",
     "breadcrumbCurrent": "Kompres PDF ke 1 MB",

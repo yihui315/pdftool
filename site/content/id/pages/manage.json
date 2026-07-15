@@ -6,6 +6,7 @@
   "h1": "Kelola halaman PDF",
   "lead": "Hapus, urutkan, dan putar halaman PDF untuk membersihkan hasil pindai dan dokumen multi-halaman.",
   "strings": {
+    "adLabel": "Iklan",
     "heroEyebrow": "Pengelolaan halaman",
     "heroTitle": "Kelola halaman PDF",
     "heroLead": "Unggah PDF, hapus halaman, ubah urutan, putar halaman, lalu ekspor hasil yang sudah dirapikan.",

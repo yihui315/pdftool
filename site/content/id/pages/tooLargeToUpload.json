@@ -6,6 +6,7 @@
   "h1": "PDF terlalu besar untuk diunggah?",
   "lead": "Gunakan daftar singkat untuk mengurangi ukuran, memeriksa hasil, dan menyiapkan file untuk platform tujuan.",
   "strings": {
+    "adLabel": "Iklan",
     "primaryToolRoute": "uploadReady",
     "breadcrumbLabel": "Breadcrumb",
     "breadcrumbCurrent": "PDF terlalu besar untuk diunggah",

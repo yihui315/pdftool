@@ -6,6 +6,7 @@
   "h1": "¿PDF demasiado grande para subir?",
   "lead": "Sigue una lista breve para reducir tamaño, revisar el resultado y preparar el archivo para la plataforma.",
   "strings": {
+    "adLabel": "Publicidad",
     "primaryToolRoute": "uploadReady",
     "breadcrumbLabel": "Ruta de navegación",
     "breadcrumbCurrent": "PDF demasiado grande para subir",

@@ -6,6 +6,7 @@
   "h1": "PDFからJPGへ",
   "lead": "PDF ページを画像として書き出し、プレビュー、スクリーンショット、軽い共有に使えます。",
   "strings": {
+    "adLabel": "広告",
     "heroEyebrow": "形式変換",
     "heroTitle": "PDFからJPGへ",
     "heroLead": "PDF を選択し、ブラウザでページを JPG または PNG 画像として描画します。",
