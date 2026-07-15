@@ -20,6 +20,24 @@
     });
   }
 
+  // Language menu toggle
+  const langToggle = document.querySelector("[data-language-toggle]");
+  const langMenu = document.querySelector("[data-language-menu]");
+  if (langToggle && langMenu) {
+    langToggle.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const isHidden = langMenu.classList.contains("hidden");
+      langMenu.classList.toggle("hidden", !isHidden);
+      langToggle.setAttribute("aria-expanded", String(isHidden));
+    });
+    document.addEventListener("click", (e) => {
+      if (!langToggle.contains(e.target) && !langMenu.contains(e.target)) {
+        langMenu.classList.add("hidden");
+        langToggle.setAttribute("aria-expanded", "false");
+      }
+    });
+  }
+
   const currentFile = window.location.pathname.split("/").pop() || "index.html";
   document.querySelectorAll("[data-nav-link]").forEach((link) => {
     const href = link.getAttribute("href") || "";
