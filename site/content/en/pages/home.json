@@ -22,8 +22,6 @@
     "proofLead": "PDF results depend on the browser, device resources, and the internal structure of the document. The site may also load analytics and ads to support operation.",
     "proofBrowser": "Selected PDF contents are read by the current browser for the tool operation.",
     "proofLimits": "Very large files can be limited by browser memory, device performance, and PDF structure.",
-    "proofAds": "Advertising and analytics resources do not need to read the PDF you selected.",
-    "adLabel": "Advertisement",
     "toolsEyebrow": "Common tasks",
     "toolsTitle": "Start with everyday PDF jobs",
     "toolsLead": "Choose a tool for application packets, contracts, receipts, course material, and routine document cleanup.",
@@ -50,8 +48,6 @@
     "faqLocalQuestion": "Does PDFTool.work upload my PDF to its server?",
     "faqLocalAnswer": "The tools are designed for the browser to read and process the selected PDF contents locally. The page itself may still request static assets, analytics scripts, or advertising resources.",
     "faqLargeQuestion": "What if a large file fails?",
-    "faqLargeAnswer": "Use a desktop browser, close memory-heavy tabs, and check whether the PDF is a large scan or has a complex internal structure.",
-    "faqAdsQuestion": "Why are there ad slots?",
-    "faqAdsAnswer": "Ad slots help support ongoing maintenance of the free tools. Ads and analytics requests are not used to read the PDF selected in a tool."
+    "faqLargeAnswer": "Use a desktop browser, close memory-heavy tabs, and check whether the PDF is a large scan or has a complex internal structure."
   }
 }

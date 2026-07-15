@@ -22,8 +22,6 @@
     "proofLead": "Los resultados PDF dependen del navegador, los recursos del dispositivo y la estructura interna del documento. El sitio también puede cargar analítica y anuncios para apoyar su operación.",
     "proofBrowser": "El contenido del PDF seleccionado se lee en el navegador actual para ejecutar la herramienta.",
     "proofLimits": "Los archivos muy grandes pueden estar limitados por la memoria del navegador, el rendimiento del dispositivo y la estructura del PDF.",
-    "proofAds": "Los recursos de publicidad y analítica no necesitan leer el PDF que seleccionaste.",
-    "adLabel": "Publicidad",
     "toolsEyebrow": "Tareas comunes",
     "toolsTitle": "Empieza con trabajos PDF cotidianos",
     "toolsLead": "Elige una herramienta para solicitudes, contratos, recibos, materiales de estudio y limpieza rutinaria de documentos.",
@@ -50,8 +48,6 @@
     "faqLocalQuestion": "¿PDFTool.work sube mi PDF a su servidor?",
     "faqLocalAnswer": "Las herramientas están diseñadas para que el navegador lea y procese localmente el contenido del PDF seleccionado. La página puede solicitar recursos estáticos, scripts de analítica o recursos publicitarios.",
     "faqLargeQuestion": "¿Qué pasa si falla un archivo grande?",
-    "faqLargeAnswer": "Usa un navegador de escritorio, cierra pestañas que consuman mucha memoria y revisa si el PDF es un escaneo grande o tiene una estructura interna compleja.",
-    "faqAdsQuestion": "¿Por qué hay espacios publicitarios?",
-    "faqAdsAnswer": "Los anuncios ayudan a mantener las herramientas gratis. Las solicitudes de publicidad y analítica no se usan para leer el PDF seleccionado en una herramienta."
+    "faqLargeAnswer": "Usa un navegador de escritorio, cierra pestañas que consuman mucha memoria y revisa si el PDF es un escaneo grande o tiene una estructura interna compleja."
   }
 }

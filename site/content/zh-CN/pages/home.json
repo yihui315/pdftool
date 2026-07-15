@@ -22,8 +22,6 @@
     "proofLead": "PDF 处理效果会受到浏览器、设备性能和文件结构影响。页面也可能加载统计与广告请求来支持网站运营。",
     "proofBrowser": "所选 PDF 内容由当前浏览器读取并生成结果。",
     "proofLimits": "较大的文件、扫描件或复杂结构可能占用更多内存。",
-    "proofAds": "广告位与统计脚本不需要读取你选择的 PDF 内容。",
-    "adLabel": "广告位",
     "toolsEyebrow": "常用任务",
     "toolsTitle": "从最常见的 PDF 操作开始",
     "toolsLead": "选择一个工具，完成上传材料、合同、发票、课程资料和日常文档整理。",
@@ -50,8 +48,6 @@
     "faqLocalQuestion": "PDF 文件会上传到 PDFTool.work 服务器吗？",
     "faqLocalAnswer": "这些工具设计为在浏览器本地读取和处理所选 PDF 内容。网站页面本身仍可能请求静态资源、统计脚本或广告资源。",
     "faqLargeQuestion": "大文件处理失败怎么办？",
-    "faqLargeAnswer": "建议使用桌面浏览器，关闭其他占用内存的页面，并检查 PDF 是否为超大扫描件或结构复杂的文件。",
-    "faqAdsQuestion": "为什么页面有广告位？",
-    "faqAdsAnswer": "广告位用于支持免费工具的持续维护。广告与统计请求不用于读取工具中选择的 PDF 内容。"
+    "faqLargeAnswer": "建议使用桌面浏览器，关闭其他占用内存的页面，并检查 PDF 是否为超大扫描件或结构复杂的文件。"
   }
 }

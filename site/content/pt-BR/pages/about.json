@@ -19,7 +19,6 @@
     "principleLocalText": "As ferramentas priorizam a leitura do conteúdo PDF selecionado e a geração de resultados no navegador, reduzindo fluxos desnecessários de envio ao servidor.",
     "principleHonestTitle": "Limites honestos",
     "principleHonestText": "Resultados de compressão, tempo de processamento e estabilidade podem depender da memória do dispositivo, da capacidade do navegador e da estrutura do PDF.",
-    "adLabel": "Publicidade",
     "operationsTitle": "Como o site opera",
     "operationsIntro": "PDFTool.work é baseado em páginas estáticas, scripts frontend e conteúdo localizado. Continuaremos melhorando páginas multilíngues e orientações mais claras para as ferramentas.",
     "operationsToolsTitle": "Escopo atual das ferramentas",

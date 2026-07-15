@@ -19,7 +19,6 @@
     "principleLocalText": "Alat memprioritaskan pembacaan isi PDF yang dipilih dan pembuatan hasil di sisi browser, sehingga mengurangi alur unggahan server yang tidak perlu.",
     "principleHonestTitle": "Batas yang jujur",
     "principleHonestText": "Hasil kompresi, waktu pemrosesan, dan stabilitas dapat bergantung pada memori perangkat, kemampuan browser, dan struktur PDF.",
-    "adLabel": "Iklan",
     "operationsTitle": "Cara situs beroperasi",
     "operationsIntro": "PDFTool.work berbasis halaman statis, skrip frontend, dan konten terlokalisasi. Kami akan terus meningkatkan halaman multibahasa dan panduan alat yang lebih jelas.",
     "operationsToolsTitle": "Cakupan alat saat ini",

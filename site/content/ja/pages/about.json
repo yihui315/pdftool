@@ -19,7 +19,6 @@
     "principleLocalText": "ツールは、選択した PDF 内容のブラウザ側読み取りと結果生成を優先し、不要なサーバーアップロードの流れを減らします。",
     "principleHonestTitle": "正直な制限説明",
     "principleHonestText": "圧縮結果、処理時間、安定性は、端末メモリ、ブラウザ能力、PDF 構造に左右されることがあります。",
-    "adLabel": "広告",
     "operationsTitle": "サイトの運営方法",
     "operationsIntro": "PDFTool.work は静的ページ、フロントエンドスクリプト、ローカライズされたコンテンツに基づいています。多言語ページとより明確なツール案内を継続的に改善します。",
     "operationsToolsTitle": "現在のツール範囲",

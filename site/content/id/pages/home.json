@@ -22,8 +22,6 @@
     "proofLead": "Hasil PDF bergantung pada browser, sumber daya perangkat, dan struktur internal dokumen. Situs juga dapat memuat analitik dan iklan untuk mendukung operasi.",
     "proofBrowser": "Isi PDF yang dipilih dibaca oleh browser saat ini untuk operasi alat.",
     "proofLimits": "File yang sangat besar dapat dibatasi oleh memori browser, kinerja perangkat, dan struktur PDF.",
-    "proofAds": "Sumber daya iklan dan analitik tidak perlu membaca PDF yang Anda pilih.",
-    "adLabel": "Iklan",
     "toolsEyebrow": "Tugas umum",
     "toolsTitle": "Mulai dari pekerjaan PDF sehari-hari",
     "toolsLead": "Pilih alat untuk berkas aplikasi, kontrak, tanda terima, materi kursus, dan pembersihan dokumen rutin.",
@@ -50,8 +48,6 @@
     "faqLocalQuestion": "Apakah PDFTool.work mengunggah PDF saya ke servernya?",
     "faqLocalAnswer": "Alat dirancang agar browser membaca dan memproses isi PDF yang dipilih secara lokal. Halaman itu sendiri masih dapat meminta aset statis, skrip analitik, atau sumber daya iklan.",
     "faqLargeQuestion": "Bagaimana jika file besar gagal?",
-    "faqLargeAnswer": "Gunakan browser desktop, tutup tab yang berat di memori, dan periksa apakah PDF adalah pindaian besar atau memiliki struktur internal yang kompleks.",
-    "faqAdsQuestion": "Mengapa ada slot iklan?",
-    "faqAdsAnswer": "Slot iklan membantu mendukung pemeliharaan alat gratis. Permintaan iklan dan analitik tidak digunakan untuk membaca PDF yang dipilih di alat."
+    "faqLargeAnswer": "Gunakan browser desktop, tutup tab yang berat di memori, dan periksa apakah PDF adalah pindaian besar atau memiliki struktur internal yang kompleks."
   }
 }

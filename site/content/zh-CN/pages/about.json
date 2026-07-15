@@ -19,7 +19,6 @@
     "principleLocalText": "工具优先让浏览器读取所选 PDF 内容并生成结果，减少不必要的服务器上传流程。",
     "principleHonestTitle": "诚实说明边界",
     "principleHonestText": "压缩效果、处理速度和稳定性会受到设备内存、浏览器能力和 PDF 结构影响。",
-    "adLabel": "广告位",
     "operationsTitle": "网站运营说明",
     "operationsIntro": "PDFTool.work 以静态页面、前端脚本和本地化内容为基础。我们会继续补充多语言页面和更清楚的工具说明。",
     "operationsToolsTitle": "当前工具范围",

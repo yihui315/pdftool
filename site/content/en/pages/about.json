@@ -19,7 +19,6 @@
     "principleLocalText": "Tools prioritize browser-side reading of selected PDF contents and result generation, reducing unnecessary server upload flows.",
     "principleHonestTitle": "Honest limits",
     "principleHonestText": "Compression results, processing time, and stability can depend on device memory, browser capability, and PDF structure.",
-    "adLabel": "Advertisement",
     "operationsTitle": "How the site operates",
     "operationsIntro": "PDFTool.work is based on static pages, frontend scripts, and localized content. We will continue improving multilingual pages and clearer tool guidance.",
     "operationsToolsTitle": "Current tool scope",
