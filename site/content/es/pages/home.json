@@ -48,6 +48,8 @@
     "faqLocalQuestion": "¿PDFTool.work sube mi PDF a su servidor?",
     "faqLocalAnswer": "Las herramientas están diseñadas para que el navegador lea y procese localmente el contenido del PDF seleccionado. La página puede solicitar recursos estáticos, scripts de analítica o recursos publicitarios.",
     "faqLargeQuestion": "¿Qué pasa si falla un archivo grande?",
-    "faqLargeAnswer": "Usa un navegador de escritorio, cierra pestañas que consuman mucha memoria y revisa si el PDF es un escaneo grande o tiene una estructura interna compleja."
+    "faqLargeAnswer": "Usa un navegador de escritorio, cierra pestañas que consuman mucha memoria y revisa si el PDF es un escaneo grande o tiene una estructura interna compleja.",
+    "faqAdsQuestion": "¿Por qué hay espacios publicitarios en la página?",
+    "faqAdsAnswer": "Los espacios publicitarios ayudan a mantener la herramienta gratuita. Las solicitudes de anuncios y estadísticas no leen el contenido de los PDF que seleccionas."
   }
 }
