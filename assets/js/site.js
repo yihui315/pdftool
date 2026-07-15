@@ -61,20 +61,44 @@
     });
   });
 
-  document.querySelectorAll('.adsbygoogle[data-ad-client*="XXXXXXXXXXXXXXXX"]').forEach((slot) => {
-    slot.closest("[data-ad-container]")?.classList.add("hidden");
-  });
+  /* Consent banner */
+  const consentBanner = document.getElementById("cmp-consent-banner");
+  if (consentBanner) {
+    const acceptBtn = document.getElementById("cmp-accept-all");
+    const rejectBtn = document.getElementById("cmp-reject-all");
+    const storageKey = "pdf_cookie_consent";
 
-  window.adsbygoogle = window.adsbygoogle || [];
-  document
-    .querySelectorAll('.adsbygoogle:not([data-ad-client*="XXXXXXXXXXXXXXXX"])')
-    .forEach(() => {
+    function getConsent() {
       try {
-        window.adsbygoogle.push({});
-      } catch (error) {
-        console.warn("AdSense slot initialization skipped:", error);
+        const val = localStorage.getItem(storageKey);
+        return val === "accepted" || val === "rejected";
+      } catch {
+        return false;
       }
+    }
+
+    function setConsent(value) {
+      try {
+        localStorage.setItem(storageKey, value);
+      } catch {}
+    }
+
+    if (getConsent()) {
+      consentBanner.classList.add("hidden");
+    } else {
+      consentBanner.classList.remove("hidden");
+    }
+
+    acceptBtn?.addEventListener("click", function () {
+      setConsent("accepted");
+      consentBanner.classList.add("hidden");
     });
+
+    rejectBtn?.addEventListener("click", function () {
+      setConsent("rejected");
+      consentBanner.classList.add("hidden");
+    });
+  }
 })();
 
 /* ===== Cookie Consent (GDPR / TDAMD compliance) ===== */

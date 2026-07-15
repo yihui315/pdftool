@@ -121,6 +121,22 @@ function renderComplianceLinks(locale) {
   ].join("\n");
 }
 
+function renderConsentBanner({ common }) {
+  const c = common.consent;
+  if (!c) return "";
+  return [
+    '<div id="cmp-consent-banner" class="fixed bottom-0 left-0 right-0 z-50 border-t border-slate-200 bg-white/95 backdrop-blur shadow-lg" role="dialog" aria-labelledby="consent-title" aria-modal="false">',
+    '<div class="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">',
+    `<p class="text-sm text-slate-600" id="consent-title">${escapeHtml(c.message)}</p>`,
+    '<div class="flex shrink-0 flex-wrap gap-2">',
+    `<button class="rounded-full border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100" type="button" id="cmp-accept-all">${escapeHtml(c.acceptAll)}</button>`,
+    `<button class="rounded-full bg-slate-800 px-4 py-2 text-sm font-medium text-white hover:bg-slate-700" type="button" id="cmp-reject-all">${escapeHtml(c.rejectAll)}</button>`,
+    '</div>',
+    '</div>',
+    '</div>'
+  ].join("\n");
+}
+
 function renderFooter({ locale, common }) {
   return [
     '<footer class="border-t border-slate-200 bg-white">',
@@ -220,6 +236,8 @@ export function renderLayout({
     fragment,
     "</main>",
     renderFooter({ locale, common }),
+    renderConsentBanner({ common }),
+    renderScripts(routeKey, { locale, runtime }),
     "</body>",
     "</html>"
   ].join("\n");

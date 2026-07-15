@@ -28,6 +28,12 @@
     "openMenu": "メニュー",
     "closeMenu": "閉じる"
   },
+  "consent": {
+    "message": "このサイトでは、基本分析とGoogle AdSenseの広告パーソナライゼーションのためにCookieを使用します。",
+    "acceptAll": "すべて許可",
+    "rejectAll": "すべて拒否",
+    "details": "設定を管理"
+  },
   "footer": {
     "tagline": "日常文書とアップロード準備のためのブラウザベース PDF ツール。",
     "copyright": "© PDFTool.work",

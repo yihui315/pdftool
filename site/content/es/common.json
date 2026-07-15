@@ -28,6 +28,12 @@
     "openMenu": "Menú",
     "closeMenu": "Cerrar"
   },
+  "consent": {
+    "message": "Este sitio utiliza cookies para análisis básicos y personalización de anuncios de Google AdSense.",
+    "acceptAll": "Aceptar todo",
+    "rejectAll": "Rechazar todo",
+    "details": "Gestionar configuración"
+  },
   "footer": {
     "tagline": "Herramientas PDF basadas en el navegador para documentos diarios y preparación de cargas.",
     "copyright": "© PDFTool.work",

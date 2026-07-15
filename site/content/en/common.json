@@ -28,6 +28,12 @@
     "openMenu": "Menu",
     "closeMenu": "Close"
   },
+  "consent": {
+    "message": "This site uses cookies for basic analytics and ad personalization by Google AdSense.",
+    "acceptAll": "Accept All",
+    "rejectAll": "Reject All",
+    "details": "Manage settings"
+  },
   "footer": {
     "tagline": "Browser-based PDF tools for everyday documents and upload prep.",
     "copyright": "© PDFTool.work",

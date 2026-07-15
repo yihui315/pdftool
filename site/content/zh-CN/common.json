@@ -28,6 +28,12 @@
     "openMenu": "菜单",
     "closeMenu": "关闭"
   },
+  "consent": {
+    "message": "本网站使用 Cookie 进行基本分析及 Google AdSense 广告个性化。",
+    "acceptAll": "接受全部",
+    "rejectAll": "拒绝",
+    "details": "管理设置"
+  },
   "footer": {
     "tagline": "浏览器本地 PDF 工具，适合日常办公、学习材料和轻量文件整理。",
     "copyright": "© PDFTool.work",

@@ -28,6 +28,12 @@
     "openMenu": "Menu",
     "closeMenu": "Tutup"
   },
+  "consent": {
+    "message": "Situs ini menggunakan cookie untuk analisis dasar dan personalisasi iklan Google AdSense.",
+    "acceptAll": "Terima semua",
+    "rejectAll": "Tolak semua",
+    "details": "Kelola pengaturan"
+  },
   "footer": {
     "tagline": "Alat PDF berbasis browser untuk dokumen harian dan persiapan unggahan.",
     "copyright": "© PDFTool.work",
