@@ -23,8 +23,8 @@ The project uses Vitest 4 with jsdom 29 for unit and DOM tests, plus Playwright 
 - Unit, content, rendering, manifest, sitemap and DOM interaction tests live in `tests/` and use the `*.test.js` suffix.
 - AI/SEO tests live in `tests/ai/`.
 - Browser tests live in `tests/browser/` and use the `*.spec.js` suffix. They exercise real Worker, Canvas, PDF.js and download behavior.
-- Locale coverage verifies all 98 generated routes, reciprocal hreflang links, canonical URLs, root-absolute assets and language-isolated navigation/runtime strings.
-- Release coverage verifies the immutable manifest, file hashes, approved legacy pages, first-party PDF dependencies and required PDF.js support directories.
+- Locale coverage verifies all 110 generated routes, reciprocal hreflang links, canonical URLs, root-absolute assets and language-isolated navigation/runtime strings.
+- Release coverage verifies the immutable manifest, file hashes, approved legacy pages, first-party PDF dependencies, required PDF.js support directories, production Nginx routing rules and the sitemap HTTP 200 deployment gate.
 - CI and local `npm test` both test the generated release rather than serving source HTML directly.
 
 ## Conventions
