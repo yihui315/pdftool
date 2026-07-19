@@ -40,7 +40,9 @@ function validCommon() {
       rotate: "Rotate PDF",
       unlock: "Unlock PDF",
       about: "About",
-      privacy: "Privacy"
+      privacy: "Privacy",
+      contact: "Contact",
+      terms: "Terms of Service"
     },
     languageMenu: {
       label: "Choose language",
@@ -52,6 +54,16 @@ function validCommon() {
       mobileNavigation: "Mobile navigation",
       openMenu: "Menu",
       closeMenu: "Close"
+    },
+    consent: {
+      message: "Cookie preferences",
+      acceptAll: "Accept all",
+      rejectAll: "Reject all",
+      details: "Details",
+      text: "This site uses cookies.",
+      accept: "Accept",
+      reject: "Reject",
+      learnMore: "Learn more"
     },
     footer: {
       tagline: "Private browser-based PDF tools.",

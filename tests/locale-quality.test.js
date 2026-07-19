@@ -77,7 +77,7 @@ describe("localized content quality gates", () => {
         contentRoot,
         outDir
       });
-      expect(manifest.routes).toHaveLength(13);
+      expect(manifest.routes).toHaveLength(15);
       expect(manifest.routes.map(({ file }) => file)).toContain("es/merge-pdf.html");
     } finally {
       await rm(outDir, { recursive: true, force: true });
@@ -122,7 +122,7 @@ describe("localized content quality gates", () => {
         contentRoot,
         outDir
       });
-      expect(manifest.routes).toHaveLength(13);
+      expect(manifest.routes).toHaveLength(15);
       expect(manifest.routes.map(({ file }) => file)).toContain(
         "pt-br/merge-pdf.html"
       );
@@ -184,7 +184,7 @@ describe("localized content quality gates", () => {
         contentRoot,
         outDir
       });
-      expect(manifest.routes).toHaveLength(13);
+      expect(manifest.routes).toHaveLength(15);
       expect(manifest.routes.map(({ file }) => file)).toContain("ja/merge-pdf.html");
       expect(manifest.routes.find(({ key }) => key === "home").canonicalPath).toBe(
         "/ja/"
@@ -238,7 +238,7 @@ describe("localized content quality gates", () => {
         contentRoot,
         outDir
       });
-      expect(manifest.routes).toHaveLength(13);
+      expect(manifest.routes).toHaveLength(15);
       expect(manifest.routes.map(({ file }) => file)).toContain("id/merge-pdf.html");
       expect(manifest.routes.find(({ key }) => key === "home").canonicalPath).toBe(
         "/id/"

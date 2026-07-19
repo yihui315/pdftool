@@ -24,7 +24,9 @@ const CORE_KEYS = [
   "rotate",
   "unlock",
   "about",
-  "privacy"
+  "privacy",
+  "contact",
+  "terms"
 ];
 
 const LANDING_KEYS = [
@@ -132,7 +134,9 @@ describe("route registry", () => {
       ["pdf-rotate.html", "rotate-pdf.html"],
       ["pdf-unlock.html", "unlock-pdf.html"],
       ["about.html", "about.html"],
-      ["privacy.html", "privacy.html"]
+      ["privacy.html", "privacy.html"],
+      ["contact.html", "contact.html"],
+      ["terms.html", "terms.html"]
     ]);
 
     expect(LANDING_ROUTES.map(({ localizedFilename }) => localizedFilename)).toEqual([
@@ -157,7 +161,9 @@ describe("route registry", () => {
       "rotate.html",
       "unlock.html",
       "about.html",
-      "privacy.html"
+      "privacy.html",
+      "contact.html",
+      "terms.html"
     ]);
 
     const routeScripts = CORE_ROUTES.flatMap(({ scripts }) => scripts);
@@ -206,16 +212,18 @@ describe("route registry", () => {
         { src: "/assets/js/unlock.js", type: "classic" }
       ],
       about: [],
-      privacy: []
+      privacy: [],
+      contact: [],
+      terms: []
     });
   });
 
   test("supports every core route in all locales and landing routes outside Chinese", () => {
-    expect(routesForLocale("zh-CN")).toHaveLength(13);
+    expect(routesForLocale("zh-CN")).toHaveLength(15);
     expect(routesForLocale("zh-CN").map(({ key }) => key)).toEqual(CORE_KEYS);
 
     for (const code of ["en", "es", "pt-BR", "ja", "id"]) {
-      expect(routesForLocale(code)).toHaveLength(17);
+      expect(routesForLocale(code)).toHaveLength(19);
       expect(routesForLocale(code).map(({ key }) => key)).toEqual([
         ...CORE_KEYS,
         ...LANDING_KEYS
@@ -281,10 +289,10 @@ describe("public route paths", () => {
     expect(alternatePaths("home").every(Object.isFrozen)).toBe(true);
   });
 
-  test("produces 98 unique URL-safe output paths", () => {
+  test("produces 110 unique URL-safe output paths", () => {
     const paths = allOutputPaths();
-    expect(paths).toHaveLength(98);
-    expect(new Set(paths).size).toBe(98);
+    expect(paths).toHaveLength(110);
+    expect(new Set(paths).size).toBe(110);
     expect(paths.every((path) => !path.startsWith("/") && !path.includes("\\"))).toBe(true);
     expect(Object.isFrozen(paths)).toBe(true);
 
