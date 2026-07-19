@@ -91,6 +91,7 @@ pdftool.work/
 │  └─ tailwind.css
 ├─ scripts/
 │  ├─ build-site.mjs       # 原子生成并校验 dist/
+│  ├─ check-sitemap-http.mjs # 验证 sitemap 及全部规范 URL 首次响应为 HTTP 200
 │  ├─ copy-vendor.mjs
 │  └─ verify-release.mjs
 ├─ dist/                   # npm run build 生成，不直接手改
@@ -150,7 +151,7 @@ npm test
 npm run build 会执行以下步骤：
 
 1. 扫描 HTML、模板和浏览器脚本，生成压缩后的 `assets/css/tailwind.min.css`。
-2. 从 `site/content/` 和 `site/templates/` 生成 98 条多语言路由，并保留获准发布的既有静态页面。
+2. 从 `site/content/` 和 `site/templates/` 生成 110 条多语言路由，并保留获准发布的既有静态页面。
 3. 复制锁定的 pdf-lib 1.17.1 与 pdfjs-dist 6.1.200，包括 PDF.js 模块、Worker、CMap、标准字体、WASM 解码器和 ICC 配置。
 4. 在临时目录生成 canonical、hreflang、sitemap 和带文件哈希的 `release-manifest.json`，通过发布校验后原子替换 `dist/`。
 
@@ -228,6 +229,8 @@ sudo ufw status
 
 ### 3. 安装 Nginx 站点配置
 
+常规发布时，`deploy.ps1` 和 `deploy.sh` 会自动上传版本控制中的 Nginx 配置、备份服务器旧配置、执行 `nginx -t` 并重新加载；任何配置校验或上线健康检查失败都会恢复上一份配置和发布物。以下命令仅用于首次引导或手动排障：
+
 在本地项目根目录运行：
 
 ~~~powershell
@@ -275,7 +278,7 @@ powershell -ExecutionPolicy Bypass -File .\deploy\deploy.ps1
 - -EmergencySkipTests：紧急跳过测试，会打印醒目警告，不应作为常规发布参数。
 - -SkipHealthCheck：紧急跳过发布后完整烟测，不应作为常规发布参数。
 
-脚本只上传经过 manifest 哈希校验的 `dist/` 静态成品，不上传 node_modules、src、site、scripts、package.json 或部署配置。
+应用发布物只上传经过 manifest 哈希校验的 `dist/` 静态成品；Nginx 配置会作为独立部署文件上传并原子安装。脚本不会上传 node_modules、src、site、scripts 或 package.json。
 
 ## SSL 证书
 
@@ -369,8 +372,9 @@ npm run build
 - PDF.js 模块、Worker、CMap、字体、WASM 和 ICC 代表资源返回正确 MIME 类型。
 - www 正确 301 到主域。
 - sitemap.xml、robots.txt 和 ads.txt 可访问。
+- sitemap 中每个规范 URL 的首次响应均为 HTTP 200，不依赖重定向落到最终页面。
 - 浏览器控制台没有资源 404 或 JavaScript 错误。
-- 四个 PDF 工具均可生成并下载结果。
+- 十个核心 PDF 工具与入口均可完成对应处理并下载结果。
 - 手机宽度下没有横向滚动。
 - privacy@pdftool.work 可以正常收件。
 - AdSense 广告容器可见，浏览器控制台没有重复初始化或广告脚本错误。
