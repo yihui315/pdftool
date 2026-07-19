@@ -16,6 +16,11 @@ $releaseName = Get-Date -Format "yyyyMMddHHmmss"
 $remoteRelease = "$RemoteRoot/releases/$releaseName"
 $target = "$User@$Server"
 $manifestPath = "dist/release-manifest.json"
+$nginxConfigPath = "deploy/nginx/pdftool.work"
+$nginxSite = "/etc/nginx/sites-available/pdftool.work"
+$nginxEnabled = "/etc/nginx/sites-enabled/pdftool.work"
+$nginxBackup = "$nginxSite.gstack-$releaseName"
+$nginxStaging = "/tmp/pdftool.work.nginx-$releaseName"
 
 Set-Location $projectRoot
 
@@ -94,8 +99,16 @@ if ($IdentityFile) {
 $previousOutput = & ssh @sshArgs $target "readlink -f '$RemoteRoot/current' 2>/dev/null || true"
 if ($LASTEXITCODE -ne 0) { throw "Unable to inspect the current remote release." }
 $previousRelease = ($previousOutput -join "").Trim()
+$previousNginxExists = (((& ssh @sshArgs $target "test -f '$nginxSite' && echo 1 || echo 0") -join "").Trim() -eq "1")
+if ($LASTEXITCODE -ne 0) { throw "Unable to inspect the current Nginx configuration." }
 
 function Restore-PreviousRelease {
+  if ($previousNginxExists) {
+    & ssh @sshArgs $target "test -f '$nginxBackup' && cp '$nginxBackup' '$nginxSite' || true"
+  } else {
+    & ssh @sshArgs $target "rm -f '$nginxSite' '$nginxEnabled'"
+  }
+  if ($LASTEXITCODE -ne 0) { throw "Automatic Nginx rollback failed." }
   if (-not $previousRelease) { return }
   & ssh @sshArgs $target "set -eu; ln -sfn '$previousRelease' '$RemoteRoot/current.next'; mv -Tf '$RemoteRoot/current.next' '$RemoteRoot/current'; nginx -t; systemctl reload nginx"
   if ($LASTEXITCODE -ne 0) { throw "Automatic rollback failed." }
@@ -127,6 +140,22 @@ try {
   $remoteCommit = ((& ssh @sshArgs $target "cat '$remoteRelease/.release-commit'") -join "").Trim()
   if ($LASTEXITCODE -ne 0 -or $remoteCommit -ne $expectedCommit) {
     throw "Remote release commit marker mismatch."
+  }
+
+  & scp @scpArgs $nginxConfigPath "$($target):$nginxStaging"
+  if ($LASTEXITCODE -ne 0) { throw "Nginx configuration upload failed." }
+  $installNginxCommand = @"
+set -eu
+if [ -f '$nginxSite' ]; then cp '$nginxSite' '$nginxBackup'; fi
+install -m 644 '$nginxStaging' '$nginxSite'
+ln -sfn '$nginxSite' '$nginxEnabled'
+nginx -t
+rm -f '$nginxStaging'
+"@
+  & ssh @sshArgs $target $installNginxCommand
+  if ($LASTEXITCODE -ne 0) {
+    Restore-PreviousRelease
+    throw "Nginx configuration install failed; rollback attempted."
   }
 
   $activateCommand = @"
@@ -204,6 +233,11 @@ if ($LASTEXITCODE -ne 0 -or $activeCommit -ne $expectedCommit) {
   $smokeFailures.Add("Active release commit marker does not match $expectedCommit")
 }
 
+& node scripts/check-sitemap-http.mjs "$origin/sitemap.xml"
+if ($LASTEXITCODE -ne 0) {
+  $smokeFailures.Add("Sitemap HTTP gate rejected a redirected or unavailable canonical URL")
+}
+
 if ($smokeFailures.Count -gt 0) {
   Write-Warning ($smokeFailures -join [Environment]::NewLine)
   Restore-PreviousRelease
@@ -211,3 +245,4 @@ if ($smokeFailures.Count -gt 0) {
 }
 
 Write-Host "Release smoke checks passed." -ForegroundColor Green
+& ssh @sshArgs $target "rm -f '$nginxBackup' '$nginxStaging'"

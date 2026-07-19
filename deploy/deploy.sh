@@ -9,6 +9,11 @@ SITE_DIR=${SITE_DIR:-/var/www/pdftool.work}
 HEALTH_ORIGIN=${HEALTH_ORIGIN:-https://pdftool.work}
 RELEASE_DIR="$SITE_DIR/releases/$TIMESTAMP"
 MANIFEST="dist/release-manifest.json"
+NGINX_CONFIG="deploy/nginx/pdftool.work"
+NGINX_SITE="/etc/nginx/sites-available/pdftool.work"
+NGINX_ENABLED="/etc/nginx/sites-enabled/pdftool.work"
+NGINX_BACKUP="${NGINX_SITE}.gstack-${TIMESTAMP}"
+NGINX_STAGING="/tmp/pdftool.work.nginx-${TIMESTAMP}"
 
 for command in npm node git tar ssh sshpass curl; do
   if ! command -v "$command" >/dev/null 2>&1; then
@@ -63,8 +68,14 @@ node -e "const m=require('./$MANIFEST'); for (const f of m.fileDetails) console.
 export SSHPASS="$SSH_PASS"
 SSH=(sshpass -e ssh -o StrictHostKeyChecking=no "$SERVER")
 previousRelease=$("${SSH[@]}" "readlink -f '$SITE_DIR/current' 2>/dev/null || true")
+previousNginxExists=$("${SSH[@]}" "test -f '$NGINX_SITE' && echo 1 || echo 0")
 
 rollback() {
+  if [ "$previousNginxExists" = "1" ]; then
+    "${SSH[@]}" "test -f '$NGINX_BACKUP' && cp '$NGINX_BACKUP' '$NGINX_SITE' || true"
+  else
+    "${SSH[@]}" "rm -f '$NGINX_SITE' '$NGINX_ENABLED'"
+  fi
   if [ -n "$previousRelease" ]; then
     "${SSH[@]}" "set -eu; ln -sfn '$previousRelease' '$SITE_DIR/current.next'; mv -Tf '$SITE_DIR/current.next' '$SITE_DIR/current'; nginx -t; systemctl reload nginx"
     echo "Rolled back to $previousRelease" >&2
@@ -87,6 +98,20 @@ fi
 REMOTE_COMMIT=$("${SSH[@]}" "cat '$RELEASE_DIR/.release-commit'")
 if [ "$REMOTE_COMMIT" != "$EXPECTED_COMMIT" ]; then
   echo "Remote release commit marker mismatch." >&2
+  exit 1
+fi
+
+echo "Installing canonical Nginx host configuration..."
+tar -C deploy/nginx -cf - pdftool.work | "${SSH[@]}" "tar -C /tmp -xf - && mv '/tmp/pdftool.work' '$NGINX_STAGING'"
+installNginxCommand="set -eu
+if [ -f '$NGINX_SITE' ]; then cp '$NGINX_SITE' '$NGINX_BACKUP'; fi
+install -m 644 '$NGINX_STAGING' '$NGINX_SITE'
+ln -sfn '$NGINX_SITE' '$NGINX_ENABLED'
+nginx -t
+rm -f '$NGINX_STAGING'"
+if ! "${SSH[@]}" "$installNginxCommand"; then
+  rollback
+  echo "Nginx configuration install failed." >&2
   exit 1
 fi
 
@@ -154,11 +179,18 @@ if [ "$ACTIVE_COMMIT" != "$EXPECTED_COMMIT" ]; then
   smokeFailed=1
 fi
 
+if ! node scripts/check-sitemap-http.mjs "$HEALTH_ORIGIN/sitemap.xml"; then
+  echo "Sitemap HTTP gate rejected a redirected or unavailable canonical URL." >&2
+  smokeFailed=1
+fi
+
 if [ "$smokeFailed" -ne 0 ]; then
   rollback
   echo "Post-deploy smoke checks failed." >&2
   exit 1
 fi
+
+"${SSH[@]}" "rm -f '$NGINX_BACKUP' '$NGINX_STAGING'"
 
 echo "Release smoke checks passed."
 echo "Release: $TIMESTAMP"

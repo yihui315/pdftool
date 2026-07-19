@@ -29,7 +29,9 @@ const navigation = Object.freeze({
   rotate: "Rotate PDF",
   unlock: "Unlock PDF",
   about: "About",
-  privacy: "Privacy"
+  privacy: "Privacy",
+  contact: "Contact",
+  terms: "Terms of Service"
 });
 const runtimeMessages = Object.freeze({
   "file.reading": "Reading {filename}"
@@ -61,6 +63,16 @@ async function writeEnglishHomeFixture(contentRoot, { locale = "en" } = {}) {
       mobileNavigation: "Mobile navigation",
       openMenu: "Menu",
       closeMenu: "Close"
+    },
+    consent: {
+      message: "Cookie preferences",
+      acceptAll: "Accept all",
+      rejectAll: "Reject all",
+      details: "Details",
+      text: "This site uses cookies.",
+      accept: "Accept",
+      reject: "Reject",
+      learnMore: "Learn more"
     },
     footer: {
       tagline: "Private browser-based PDF tools.",
@@ -222,14 +234,12 @@ describe("atomic multilingual release builds", () => {
 
     const manifest = await buildSite({ outDir });
 
-    expect(manifest.routes).toHaveLength(98);
+    expect(manifest.routes).toHaveLength(110);
     expect(manifest.routes.filter(({ key }) =>
       LANDING_ROUTES.some((route) => route.key === key)
     )).toHaveLength(20);
     expect(manifest.staticPages).toEqual(
       expect.arrayContaining([
-        "terms.html",
-        "contact.html",
         "seo-action-contract-pdf-compress-1mb.html"
       ])
     );

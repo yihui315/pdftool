@@ -179,7 +179,7 @@ export function alternatePaths(key) {
   );
 }
 
-/** Return all 98 immutable, unique repository-relative launch output paths. */
+/** Return all immutable, unique repository-relative launch output paths. */
 export function allOutputPaths() {
   return Object.freeze(
     LOCALES.flatMap(({ code }) =>

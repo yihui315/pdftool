@@ -54,6 +54,31 @@ describe("release configuration", () => {
     expect(nginx).toMatch(/location ~\* \\\.icc\$ \{[^}]*application\/vnd\.iccprofile;[^}]*}/);
   });
 
+  it("deploys the canonical host config and rejects redirected sitemap URLs", async () => {
+    const powershell = await source("deploy/deploy.ps1");
+    const bash = await source("deploy/deploy.sh");
+
+    for (const deploy of [powershell, bash]) {
+      expect(deploy).toContain("deploy/nginx/pdftool.work");
+      expect(deploy).toContain("/etc/nginx/sites-available/pdftool.work");
+      expect(deploy).toContain("check-sitemap-http.mjs");
+      expect(deploy).toContain("nginx -t");
+      expect(deploy).toContain("previousNginxExists");
+      expect(deploy).toMatch(/nginxBackup|NGINX_BACKUP/u);
+      expect(deploy).toMatch(/nginxStaging|NGINX_STAGING/u);
+      expect(deploy).toMatch(/cp[^\n]*(?:nginxBackup|NGINX_BACKUP)/u);
+      expect(deploy).toMatch(/rm -f[^\n]*(?:nginxSite|NGINX_SITE)/u);
+      expect(deploy.indexOf("check-sitemap-http.mjs")).toBeLessThan(
+        deploy.lastIndexOf("Post-deploy smoke checks failed")
+      );
+      expect(
+        Math.max(deploy.lastIndexOf("nginxBackup"), deploy.lastIndexOf("NGINX_BACKUP"))
+      ).toBeGreaterThan(
+        deploy.indexOf("check-sitemap-http.mjs")
+      );
+    }
+  });
+
   it("installs release browsers and runs build before separate test gates in CI", async () => {
     const workflow = await source(".github/workflows/test.yml");
     expect(workflow).toContain("playwright install --with-deps chromium msedge");

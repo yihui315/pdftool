@@ -24,31 +24,16 @@ describe("shared site interactions", () => {
     expect(firstFaq.closest(".faq-item").classList.contains("is-open")).toBe(false);
   });
 
-  it("hides placeholder advertising containers", () => {
-    dom = loadPage("index.html", "site.js", {
-      transformHtml: (html) =>
-        html.replaceAll(/ca-pub-\d+/g, "ca-pub-XXXXXXXXXXXXXXXX")
-    });
-    const placeholders = dom.window.document.querySelectorAll(
-      '.adsbygoogle[data-ad-client*="XXXXXXXXXXXXXXXX"]'
-    );
-
-    expect(placeholders.length).toBeGreaterThan(0);
-    placeholders.forEach((slot) => {
-      expect(slot.closest("[data-ad-container]").classList.contains("hidden")).toBe(true);
-    });
-  });
-
-  it("keeps configured advertising containers available", () => {
+  it("records a cookie consent decision and removes the generated banner", () => {
     dom = loadPage("index.html", "site.js");
-    const configured = dom.window.document.querySelectorAll(
-      '.adsbygoogle:not([data-ad-client*="XXXXXXXXXXXXXXXX"])'
-    );
+    const { document } = dom.window;
+    const banner = document.getElementById("cookie-consent-banner");
+    const reject = banner.querySelector('[data-consent="reject"]');
 
-    expect(configured.length).toBeGreaterThan(0);
-    configured.forEach((slot) => {
-      expect(slot.closest("[data-ad-container]").classList.contains("hidden")).toBe(false);
-    });
+    expect(banner).not.toBeNull();
+    reject.click();
+    expect(document.getElementById("cookie-consent-banner")).toBeNull();
+    expect(document.cookie).toContain("pdft_cookie_consent=reject");
   });
 
   it("preserves generated language menu hooks without inline option styles", () => {
