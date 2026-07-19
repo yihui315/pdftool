@@ -1,19 +1,38 @@
+# Canonicalize every clear-text request in one hop.
 server {
     listen 80;
     listen [::]:80;
-
     server_name pdftool.work www.pdftool.work;
+    return 301 https://pdftool.work$request_uri;
+}
+
+# Keep the www redirect isolated from the apex content server. A conditional
+# redirect in a shared TLS server can send the apex URL back to itself.
+server {
+    listen 443 ssl;
+    listen [::]:443 ssl;
+    server_name www.pdftool.work;
+
+    ssl_certificate /etc/letsencrypt/live/pdftool.work/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/pdftool.work/privkey.pem;
+
+    return 301 https://pdftool.work$request_uri;
+}
+
+server {
+    listen 443 ssl;
+    listen [::]:443 ssl;
+    server_name pdftool.work;
+
+    ssl_certificate /etc/letsencrypt/live/pdftool.work/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/pdftool.work/privkey.pem;
+
     root /var/www/pdftool.work/current;
     index index.html;
     charset utf-8;
 
     access_log /var/log/nginx/pdftool.work.access.log;
     error_log /var/log/nginx/pdftool.work.error.log warn;
-
-    # Redirect www to the canonical apex domain. After SSL, $scheme stays HTTPS.
-    if ($host = www.pdftool.work) {
-        return 301 $scheme://pdftool.work$request_uri;
-    }
 
     add_header X-Content-Type-Options "nosniff" always;
     add_header X-Frame-Options "SAMEORIGIN" always;
@@ -30,7 +49,6 @@ server {
         try_files $uri $uri/ =404;
     }
 
-    # Module workers must never fall back to text/plain when nosniff is active.
     location ~* \.mjs$ {
         default_type application/javascript;
         expires 7d;
@@ -61,7 +79,6 @@ server {
         try_files $uri =404;
     }
 
-    # Asset names are not content-hashed yet, so keep the cache window bounded.
     location ~* \.(?:css|js|png|jpe?g|gif|webp|svg|ico|woff2?)$ {
         expires 7d;
         try_files $uri =404;
