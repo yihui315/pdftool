@@ -1,1 +1,3 @@
+# pdftool.work ads.txt — Authorized Digital Sellers
+# For more information about ads.txt, please visit https://support.google.com/partnerads/answer/7532448
 google.com, pub-2913395948188969, DIRECT, f08c47fec0942fa0
